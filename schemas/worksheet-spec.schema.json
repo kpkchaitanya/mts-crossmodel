@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MTS Worksheet Spec",
+  "type": "object",
+  "required": ["subject", "grade", "week_start", "items"],
+  "properties": {
+    "subject": {"enum": ["math", "ela"]},
+    "grade": {"type": "string"},
+    "week_start": {"type": "string", "format": "date"},
+    "curriculum_confidence": {"enum": ["confirmed", "strongly_inferred", "inferred"]},
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "prompt", "answer_rule", "skill", "difficulty"],
+        "properties": {
+          "id": {"type": "string"},
+          "day": {"type": ["string", "null"]},
+          "prompt": {"type": "string"},
+          "answer_rule": {},
+          "skill": {"type": "string"},
+          "difficulty": {"type": "string"},
+          "evidence_note": {"type": ["string", "null"]},
+          "verification": {"type": "object"}
+        }
+      }
+    }
+  }
+}
+

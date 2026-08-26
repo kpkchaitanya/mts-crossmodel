@@ -1,0 +1,26 @@
+version: "1.0"
+project:
+  name: "MTS AI Generation"
+  timezone: "America/New_York"
+governance:
+  instruction_precedence: ["current_user", "constitution", "config", "requirements", "design"]
+artifacts:
+  worksheet_spec_required: true
+  derive_worksheet_and_key_from_same_spec: true
+verification:
+  verify_every_item: true
+  reverify_after_edits: true
+  block_render_on_required_failure: true
+formatting:
+  print_friendly: true
+  editable_google_docs: true
+  minimize_excess_whitespace: true
+  visual_qa_required: true
+publishing:
+  require_configured_final_gate: true
+  outputs_root: "outputs"
+  staging_root: "outputs-copilot"
+telemetry:
+  runs_root: "runs"
+  unavailable_authoritative_values: null
+

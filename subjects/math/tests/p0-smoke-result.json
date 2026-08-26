@@ -1,0 +1,77 @@
+{
+  "run": "p0-smoke-2026-08-24",
+  "status": "PASS",
+  "curriculum": {
+    "current": [
+      "NC.6.RP.1",
+      "NC.6.RP.3",
+      "NC.6.NS.4"
+    ],
+    "topics": [
+      "ratio concepts",
+      "ratio reasoning",
+      "factors and multiples"
+    ],
+    "spiral": [
+      "area",
+      "surface area",
+      "fractions/decimals"
+    ],
+    "confidence": "inferred",
+    "week_start": "2026-08-24",
+    "source": "weekly_cache",
+    "cache_hit": true
+  },
+  "template_guard": {
+    "status": "HIT",
+    "cache_valid": true,
+    "checks": {
+      "worksheet_revision_matches": true,
+      "answer_key_revision_matches": true
+    },
+    "expected": {
+      "worksheet": "3",
+      "answer_key": "2"
+    },
+    "actual": {
+      "worksheet": "3",
+      "answer_key": "2"
+    }
+  },
+  "verification": {
+    "status": "PASS",
+    "questions": 4,
+    "deterministic_checked": 3,
+    "reasoning_required": 1,
+    "failures": [],
+    "structure_errors": []
+  },
+  "qa": {
+    "status": "PASS",
+    "checks": {
+      "rendered_text_nonempty": true,
+      "grade_present": true,
+      "all_question_numbers_present": true,
+      "no_unresolved_placeholders": true,
+      "no_pending_approval_label": true,
+      "title_present": true,
+      "no_extra_numbered_slots": true
+    },
+    "failed_checks": []
+  },
+  "telemetry": {
+    "started_at": "2026-08-24T13:56:46.661237+00:00",
+    "completed_at": "2026-08-24T13:56:46.662208+00:00",
+    "elapsed_seconds": 0.001,
+    "stage_seconds": {
+      "curriculum": 0.0,
+      "template_guard": 0.0,
+      "verification": 0.0,
+      "targeted_qa": 0.0009
+    },
+    "tool_calls": 0,
+    "cache_hits": 2,
+    "cache_misses": 0,
+    "token_usage": null
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "last_inspected": "2026-08-24",
+  "worksheet_template": {
+    "id": "1ng3-EQmHRQfUftIEoQnyh7N43hzi1ViUjf44LTgPqo0",
+    "revision_id": "3",
+    "title": "MTS-TEMPLATE-ClassWorksheet-32Q-Worksheet"
+  },
+  "answer_key_template": {
+    "id": "1uBKm2dzzeqy3gwYRxDAG34HGFnTRXAqJJb1sLJViNIo",
+    "revision_id": "2",
+    "title": "MTS-TEMPLATE-ClassWorksheet-32Q-AnswerKey"
+  },
+  "layout": {
+    "header_title": "MTS - CLASS WORKSHEET",
+    "question_slots": 32,
+    "sections": {"A": [1,8], "B": [9,16], "C": [17,24], "D": [25,32]},
+    "outer_layout": "two-column table",
+    "special_blocks": ["MAKE24", "BONUS BRAIN CHALLENGE"],
+    "default_question_font_pt": 9.5,
+    "grade_1_question_font_pt": 11,
+    "grade_1_active_question_slots": 20
+  },
+  "cache_rule": "Use this manifest without full template reinspection when current revision IDs match. If either revision differs, inspect that template once and refresh this manifest before rendering."
+}

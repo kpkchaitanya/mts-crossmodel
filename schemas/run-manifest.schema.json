@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MTS Run Manifest",
+  "type": "object",
+  "required": ["run_id", "subject", "status", "started_at"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "subject": {"enum": ["math", "ela"]},
+    "status": {"type": "string"},
+    "started_at": {"type": "string"},
+    "source_provenance": {"type": "array"},
+    "approvals": {"type": "array"},
+    "verification": {"type": "object"},
+    "qa": {"type": "object"},
+    "telemetry": {"type": "object"},
+    "outputs": {"type": "array"}
+  }
+}
+

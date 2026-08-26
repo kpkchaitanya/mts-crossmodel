@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MTS Run Manifest P0",
+  "type": "object",
+  "required": ["run_id", "week_start", "stages", "gates", "telemetry"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "week_start": {"type": "string", "format": "date"},
+    "grades": {"type": "array", "items": {"type": "string"}},
+    "stages": {"type": "object"},
+    "gates": {"type": "object"},
+    "publication": {"type": "object"},
+    "telemetry": {
+      "type": "object",
+      "properties": {
+        "started_at": {"type": ["string", "null"]},
+        "completed_at": {"type": ["string", "null"]},
+        "elapsed_seconds": {"type": ["number", "null"]},
+        "stage_seconds": {"type": "object"},
+        "tool_calls": {"type": "integer", "minimum": 0},
+        "cache_hits": {"type": "integer", "minimum": 0},
+        "cache_misses": {"type": "integer", "minimum": 0},
+        "token_usage": {"type": ["object", "null"], "description": "Populate only when authoritative token telemetry is exposed."}
+      }
+    }
+  }
+}

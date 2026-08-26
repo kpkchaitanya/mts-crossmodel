@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MTS Worksheet Spec",
+  "type": "object",
+  "required": ["worksheet", "curriculum", "sections", "verification"],
+  "properties": {
+    "worksheet": {
+      "type": "object",
+      "required": ["grade", "week_start", "question_count", "duration_minutes"],
+      "properties": {
+        "grade": {"type": "string"},
+        "week_start": {"type": "string", "format": "date"},
+        "question_count": {"type": "integer", "minimum": 1},
+        "duration_minutes": {"type": "integer", "minimum": 1}
+      }
+    },
+    "curriculum": {
+      "type": "object",
+      "required": ["current", "confidence"],
+      "properties": {
+        "current": {"type": "array", "items": {"type": "string"}},
+        "spiral": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"enum": ["confirmed", "strongly_inferred", "inferred"]}
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "questions"],
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "questions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["number", "prompt", "answer", "skill", "difficulty"],
+              "properties": {
+                "number": {"type": "integer", "minimum": 1},
+                "prompt": {"type": "string"},
+                "answer": {},
+                "skill": {"type": "string"},
+                "standard": {"type": ["string", "null"]},
+                "difficulty": {"enum": ["easy", "medium", "hard", "challenge"]},
+                "verification": {"type": ["object", "null"]}
+              }
+            }
+          }
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["PENDING", "PASS", "FAIL"]},
+        "checked": {"type": "integer", "minimum": 0},
+        "failed": {"type": "integer", "minimum": 0},
+        "ambiguous": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

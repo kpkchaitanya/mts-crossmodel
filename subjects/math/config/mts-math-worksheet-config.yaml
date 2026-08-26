@@ -1,0 +1,197 @@
+version: "1.1"
+
+project:
+  name: "MTS Math Worksheet Generation"
+  district: "Cabarrus County Schools"
+  state: "North Carolina"
+  timezone: "America/New_York"
+
+worksheet:
+  type: "class"
+  default_duration_minutes: 15
+  require_human_gates: true
+  verify_answers: true
+  reverify_after_edits: true
+
+grades:
+  grade_1:
+    enabled: true
+    display_name: "Grade 1"
+    questions: 20
+    expected_pages: 1
+    template_type: "grade_1_class"
+  grade_4:
+    enabled: true
+    display_name: "Grade 4"
+    questions: 32
+    expected_pages: 2
+    template_type: "standard_class"
+  grade_5:
+    enabled: true
+    display_name: "Grade 5"
+    questions: 32
+    expected_pages: 2
+    template_type: "standard_class"
+  grade_6:
+    enabled: true
+    display_name: "Grade 6"
+    questions: 32
+    expected_pages: 2
+    template_type: "standard_class"
+  grade_9_10:
+    enabled: true
+    display_name: "Grades 9 & 10"
+    questions: 32
+    expected_pages: 2
+    template_type: "high_school_combined"
+    split:
+      grade_9: {questions: 16}
+      grade_10: {questions: 16}
+
+content_mix:
+  current_curriculum_percent: 65
+  spiral_review_percent: 25
+  reasoning_challenge_percent: 10
+
+curriculum:
+  source_priority:
+    - "Cabarrus County Schools"
+    - "North Carolina DPI"
+    - "NC Standard Course of Study"
+    - "Logical Pacing Inference"
+  require_confidence_label: true
+  allowed_confidence_levels: ["confirmed", "strongly_inferred", "inferred"]
+  consider_school_calendar: true
+
+question_generation:
+  understanding_over_memorization: true
+  mental_math: true
+  number_sense: true
+  pattern_recognition: true
+  real_world_application: true
+  reasoning_questions: true
+  progressive_difficulty: true
+  avoid_excessive_repetition: true
+  fraction_style: "3/8"
+  avoid_raw_latex: true
+
+verification:
+  enabled: true
+  verify_every_question: true
+  checks:
+    arithmetic: true
+    fractions: true
+    decimals: true
+    percentages: true
+    equations: true
+    algebra: true
+    patterns: true
+    word_problems: true
+    multi_step_problems: true
+    puzzles: true
+    question_answer_consistency: true
+    ambiguity: true
+    multiple_possible_answers: true
+  require_all_pass_before_document_generation: true
+  show_verification_summary: true
+
+human_gates:
+  gate_1_curriculum_scope: true
+  gate_2_questions: true
+  gate_3_verification: true
+  gate_4_formatting: true
+  gate_5_publish: true
+
+formatting:
+  print_friendly: true
+  minimize_whitespace: true
+  preserve_template_layout: true
+  preserve_section_colors: true
+  editable_google_docs: true
+  answer_key_separate_document: true
+  visually_review_before_publish: true
+  grade_1_larger_font: true
+
+# Grade 1 and combined Grade 9/10 use the standard class template until dedicated templates are approved.
+templates:
+  grade_1_class: &standard_template
+    worksheet_url: "https://docs.google.com/document/d/1ng3-EQmHRQfUftIEoQnyh7N43hzi1ViUjf44LTgPqo0/edit"
+    answer_key_url: "https://docs.google.com/document/d/1uBKm2dzzeqy3gwYRxDAG34HGFnTRXAqJJb1sLJViNIo/edit"
+  standard_class: *standard_template
+  high_school_combined: *standard_template
+
+publishing:
+  target_folder_name: "outputs"
+  copilot_dump_folder_name: "outputs-copilot"
+  copilot_dump_is_staging_only: true
+  target_folder_url: "https://drive.google.com/drive/folders/1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+  export_pdf: false
+  naming:
+    grade_1:
+      worksheet: "MTS-Math-1stGrade-ClassWorksheet-{date}"
+      answer_key: "MTS-Math-1stGrade-ClassWorksheet-{date}_KEY"
+    grade_4:
+      worksheet: "MTS-Math-4thGrade-ClassWorksheet-{date}"
+      answer_key: "MTS-Math-4thGrade-ClassWorksheet-{date}_KEY"
+    grade_5:
+      worksheet: "MTS-Math-5thGrade-ClassWorksheet-{date}"
+      answer_key: "MTS-Math-5thGrade-ClassWorksheet-{date}_KEY"
+    grade_6:
+      worksheet: "MTS-Math-6thGrade-ClassWorksheet-{date}"
+      answer_key: "MTS-Math-6thGrade-ClassWorksheet-{date}_KEY"
+    grade_9_10:
+      worksheet: "MTS-Math-9th_10thGrade-ClassWorksheet-{date}"
+      answer_key: "MTS-Math-9th_10thGrade-ClassWorksheet-{date}_KEY"
+
+final_qa:
+  confirm_question_count: true
+  confirm_numbering: true
+  confirm_answers_match_questions: true
+  confirm_grade_labels: true
+  confirm_titles_and_dates: true
+  confirm_page_layout: true
+  confirm_no_missing_questions: true
+  confirm_no_rendering_issues: true
+
+overrides:
+  precedence: ["current_user_instruction", "configuration_file", "design_default"]
+  persist_user_override: false
+
+p0_runtime:
+  enabled: true
+  fallback_to_v1_on_cache_miss: true
+  curriculum_cache:
+    backbone_path: "knowledge/curriculum/progressive/progressive-math-backbone.json"
+    standards_path: "knowledge/curriculum/nc-math/standards-cache.json"
+    pacing_path: "knowledge/curriculum/ccs-2026-2027/pacing.json"
+    sources_path: "knowledge/sources.json"
+    prefer_cache_before_web: true
+    require_confidence_label: true
+    web_refresh_on: ["cache_miss", "source_changed_or_expired", "insufficient_confidence", "explicit_freshness_request"]
+  worksheet_spec:
+    required: true
+    schema_path: "schemas/worksheet-spec.schema.json"
+    single_source_for_worksheet_and_key: true
+  deterministic_verification:
+    runtime_path: "src/p0_runtime.py"
+    use_when_applicable: true
+    reasoning_checks_still_required: true
+    block_render_on_failure: true
+  template_cache:
+    manifest_path: "config/template-manifest.json"
+    revision_check_before_full_inspection: true
+    full_inspection_only_on_revision_change: true
+  targeted_qa:
+    enabled: true
+    check_question_count: true
+    check_numbering: true
+    check_labels: true
+    check_placeholders: true
+    check_missing_or_leftover_questions: true
+    check_answer_count: true
+    preserve_visual_review: true
+  telemetry:
+    enabled: true
+    run_schema_path: "schemas/run-manifest.schema.json"
+    persist_under: "runs/"
+    track: ["stage_seconds", "tool_calls", "cache_hits", "cache_misses", "retries", "token_usage_when_authoritative_available"]

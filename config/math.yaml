@@ -1,0 +1,16 @@
+version: "1.0"
+subject: "math"
+mode:
+  default: "human_supervised"
+curriculum:
+  confidence_labels: ["confirmed", "strongly_inferred", "inferred"]
+  progressive_backbone: "subjects/math/knowledge/curriculum/progressive/progressive-math-backbone.json"
+verification:
+  recompute_every_answer: true
+  check_sufficient_information: true
+  check_unintended_answers: true
+  check_pattern_uniqueness: true
+  check_notation_and_diagrams: true
+publishing:
+  target: "outputs/math"
+
