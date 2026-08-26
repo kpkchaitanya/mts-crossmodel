@@ -1,7 +1,7 @@
 # MTS AI Generation
 
 Cross-model, cross-harness repository for generating, verifying, rendering, and publishing MTS Math
-and ELA worksheets.
+and ELA worksheets. H
 
 ## Supported harnesses
 
