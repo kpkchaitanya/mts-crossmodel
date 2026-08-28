@@ -79,12 +79,26 @@ def test_template_change_preserves_scope_and_question_approvals():
     assert invalidated["approvals"][2].get("invalidated_at")
 
 
+def test_question_review_requires_persisted_spec_reference():
+    manifest = {"approvals": [{"gate": "question_review", "artifact_revision": "questions-r1", "status": "approved"}]}
+    try:
+        gates.require_question_review(manifest, artifact_revision="questions-r1")
+    except gates.GateError as error:
+        assert "persisted Worksheet Spec" in str(error)
+    else:
+        raise AssertionError("Gate 2 must not advance without a persisted Worksheet Spec.")
+
+    manifest["spec_references"] = [{"worksheet_id": "grade-4", "spec_path": "specs/grade-4/r1.json"}]
+    assert gates.require_question_review(manifest, artifact_revision="questions-r1") == "verification_in_progress"
+
+
 def main():
     tests = [
         test_approved_revision_allows_only_matching_transition,
         test_rejected_and_missing_approvals_fail_closed,
         test_question_change_invalidates_only_dependent_approvals,
         test_template_change_preserves_scope_and_question_approvals,
+        test_question_review_requires_persisted_spec_reference,
     ]
     for test in tests:
         test()

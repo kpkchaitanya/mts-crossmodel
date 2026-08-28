@@ -90,6 +90,13 @@ def require_approval(manifest: dict[str, Any], *, gate: str, artifact_revision: 
     return GATES[gate]
 
 
+def require_question_review(manifest: dict[str, Any], *, artifact_revision: str) -> str:
+    """Require Gate 2 approval plus durable Specs for every planned Worksheet."""
+    if not manifest.get("spec_references"):
+        raise GateError("Gate 2 requires persisted Worksheet Spec references.")
+    return require_approval(manifest, gate="question_review", artifact_revision=artifact_revision)
+
+
 def invalidate(manifest: dict[str, Any], *, change: str, reason: str) -> dict[str, Any]:
     """Record an input change and invalidate only dependent gate decisions."""
     if change not in _INVALIDATION_RULES:

@@ -115,3 +115,15 @@ class RunRepository:
         if not manifest_path.exists():
             raise RunRepositoryError(f"Run Manifest not found: {manifest_path}")
         _write_json(manifest_path, manifest)
+
+    def add_spec_reference(self, manifest: Mapping[str, Any], reference: Mapping[str, Any]) -> dict[str, Any]:
+        """Persist a Worksheet Spec reference before its Gate 2 approval."""
+        if not reference.get("worksheet_id") or not reference.get("spec_path") or not reference.get("fingerprint"):
+            raise RunRepositoryError("A Spec reference requires worksheet_id, spec_path, and fingerprint.")
+        updated = deepcopy(dict(manifest))
+        references = updated.setdefault("spec_references", [])
+        if any(item.get("spec_path") == reference["spec_path"] for item in references):
+            return updated
+        references.append(_plain(reference))
+        self.save_manifest(updated)
+        return updated

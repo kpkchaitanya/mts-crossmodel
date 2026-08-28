@@ -10,7 +10,7 @@ subject verification, grade progression, and subject-specific layout needs.
 
 ## Execution path
 
-`intent -> subject/grade resolution -> curriculum scope -> Worksheet Spec -> subject verification -> render -> content and visual QA -> approval -> publish`
+`intent -> subject/grade resolution -> curriculum scope -> Worksheet Spec -> persist immutable Spec revision -> Gate 2 -> subject verification -> render -> content and visual QA -> approval -> publish`
 
 ## Source of truth
 
@@ -21,6 +21,11 @@ subject verification, grade progression, and subject-specific layout needs.
 - Subject behavior: `subjects/<subject>/`
 - Machine contracts: `schemas/`
 - Per-run truth: `runs/<subject>/`
+ 
+Generation must materialize each approved Worksheet as an immutable, schema-validated Spec revision
+under its Run directory before Gate 2 can transition to verification. The Run Manifest stores the
+Spec references and fingerprints; chat output is review evidence, not the source artifact. Gate 2
+must fail closed when the complete planned Worksheet set has no durable Spec references.
 
 Harness adapters may point to these sources but may not redefine them.
 
