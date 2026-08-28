@@ -47,6 +47,21 @@ The current worksheet workflow is:
 Gate 2 requires durable spec references for the complete planned worksheet set before verification can
 continue.
 
+## Gates
+
+`config/base.yaml` `gates` defines the five configured gates (Curriculum Scope Review, Question
+Review, Verification Review, Formatting Review, Publish Approval). `/generate-worksheet` accepts a
+`gates` parameter (`all`, `bypass all`, or `bypass <gate_id>[,<gate_id>...]`) as an explicit,
+run-scoped override. Bypassing a gate only removes its stop-and-approve checkpoint — Worksheet Spec
+persistence, independent verification, reverification after edits, and visual QA stay mandatory, and
+the bypass decision is recorded in the Run Manifest so it is explicit and auditable rather than
+silent.
+
+Once Gate 5 (Publish Approval) is recorded, `config/base.yaml` `publishing.default_publish` makes
+`/generate-worksheet` publish automatically (`publish=yes` is the default). Pass `publish=no` to stage
+approved artifacts under `outputs-copilot/` (or a staging Drive folder) without moving them into
+canonical `outputs/<subject>/`.
+
 ## Slash Command Catalog
 
 <table border="1" cellpadding="6" cellspacing="0" rules="all" frame="box" style="border-collapse: collapse; border: 1px solid #6b7280;">
@@ -61,6 +76,14 @@ continue.
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Generate Worksheet — Unified Entry Point</td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-worksheet</code></td>
+      <td style="border: 1px solid #6b7280;">Subject- and worksheet-type-agnostic entry point; resolves <code>subject</code>, <code>worksheettype</code>, <code>gates</code>, <code>grades</code> (default <code>all</code>), <code>week</code> (default <code>current</code>), and <code>publish</code> (default <code>yes</code>; use <code>publish=no</code> to stage only), and delegates to the matching subject command. See <code>commands/generate-worksheet.md</code>.</td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-worksheet subject=math worksheettype=weekly gates=bypass all</code></td>
+      <td style="border: 1px solid #6b7280;">Active for Math; delegates to <code>/generate-weekly-classworksheets</code></td>
+      <td style="border: 1px solid #6b7280;">Refuses and reports; ELA generation not yet registered</td>
+    </tr>
     <tr>
       <td style="border: 1px solid #6b7280;">Setup Project (SP)</td>
       <td style="border: 1px solid #6b7280;">Not yet registered</td>
@@ -196,10 +219,10 @@ response guidance. It favors readable, high-value work over cramped passages or 
 - `constitution.md` — governing principles.
 - `AGENTS.md` — repository execution contract and read order.
 - `docs/requirements.md` — shared product requirements.
-- `docs/design.md` — shared architecture and execution design.
+- `specs/generate_math_worksheets/03. design/design.md` — canonical shared and Math architecture/execution design.
 - `config/base.yaml` — shared runtime defaults.
 - `config/math.yaml` and `config/ela.yaml` — subject defaults.
-- `subjects/<subject>/requirements.md` and `subjects/<subject>/design.md` — subject behavior.
+- `subjects/<subject>/requirements.md` — subject behavior.
 - `workflows/generate-weekly-worksheets.md` — end-to-end generation procedure.
 - `schemas/` — machine-validatable contracts for specs, manifests, and worksheet types.
 - `runs/<subject>/` — per-run truth, including persisted specs and manifests.
@@ -220,16 +243,17 @@ Harness adapters may point to canonical sources, but they must not redefine gove
 
 1. Read `AGENTS.md`.
 2. Read `constitution.md`.
-3. Read `docs/requirements.md`, `docs/design.md`, and `config/base.yaml`.
+3. Read `docs/requirements.md`, `specs/generate_math_worksheets/03. design/design.md`, and `config/base.yaml`.
 4. Select Math or ELA.
-5. Read the selected subject's requirements, design, and configuration.
+5. Read the selected subject's requirements and configuration.
 6. Use the applicable workflow, skills, schemas, and tests.
 
 ## Repository Map
 
 - `config/` — shared defaults, subject defaults, and worksheet-type defaults.
-- `docs/` — consolidated requirements, design, plans, migration notes, and supporting knowledge.
-- `subjects/` — subject-specific requirements, design, curriculum knowledge, commands, skills, and
+- `docs/` — consolidated requirements, plans, migration notes, and supporting knowledge.
+- `specs/generate_math_worksheets/` — canonical design document (`03. design/design.md`) plus the intent/architecture/implementation trail that produced it.
+- `subjects/` — subject-specific requirements, curriculum knowledge, commands, skills, and
   templates.
 - `workflows/` — end-to-end procedures such as weekly worksheet generation.
 - `schemas/` — JSON schemas for Worksheet Specs, Run Manifests, and worksheet type contracts.

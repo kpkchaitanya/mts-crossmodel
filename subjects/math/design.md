@@ -1,7 +1,5 @@
 # Math Design
 
-> **Archived.** Superseded by [`specs/generate_math_worksheets/03. design/design.md`](../../../specs/generate_math_worksheets/03.%20design/design.md), the canonical design document. Kept here for history only.
-
 Resolve progressive context, pacing evidence, and standards; construct the configured question mix;
 create the canonical Worksheet Spec; apply deterministic checks where supported; independently review
 conceptual and wording quality; then use the shared rendering, QA, gate, and publishing components.

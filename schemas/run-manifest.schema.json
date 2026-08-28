@@ -10,6 +10,7 @@
     "started_at": {"type": "string"},
     "source_provenance": {"type": "array"},
     "approvals": {"type": "array"},
+    "gates": {"type": "object"},
     "verification": {"type": "object"},
     "qa": {"type": "object"},
     "telemetry": {"type": "object"},

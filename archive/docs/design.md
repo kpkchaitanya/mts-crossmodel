@@ -1,5 +1,7 @@
 # Consolidated Design
 
+> **Archived.** Superseded by [`specs/generate_math_worksheets/03. design/design.md`](../../specs/generate_math_worksheets/03.%20design/design.md), the canonical design document. Kept here for history only.
+
 ## Architecture
 
 The repository uses a shared core with subject modules.

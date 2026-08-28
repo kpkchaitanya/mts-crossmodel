@@ -2,6 +2,49 @@
 
 Status: Proposed for M4 design review
 
+## Table of Contents
+
+- [MTS Worksheet and Assessment Generation - M4 Detailed System Design](#mts-worksheet-and-assessment-generation---m4-detailed-system-design)
+  - [Table of Contents](#table-of-contents)
+  - [1. Purpose And Authority](#1-purpose-and-authority)
+  - [2. Detailed Lifecycle State Machine](#2-detailed-lifecycle-state-machine)
+    - [2.1 Gate Contract](#21-gate-contract)
+    - [2.2 Invalidation Contract](#22-invalidation-contract)
+  - [3. Module And Interface Design](#3-module-and-interface-design)
+    - [3.1 C3 Component Design](#31-c3-component-design)
+    - [3.2 C4 Implementation Mapping](#32-c4-implementation-mapping)
+    - [3.3 Shared Core Interfaces](#33-shared-core-interfaces)
+    - [3.4 Subject Module Interface](#34-subject-module-interface)
+    - [3.5 Worksheet Type Interface](#35-worksheet-type-interface)
+      - [3.5.1 Weekly Worksheet Spec Preparation Flow](#351-weekly-worksheet-spec-preparation-flow)
+      - [3.5.2 Count Semantics](#352-count-semantics)
+    - [3.6 Google Docs/Drive Adapter Contract](#36-google-docsdrive-adapter-contract)
+    - [3.7 Question Diversity, Difficulty, and Topic-Override Planning](#37-question-diversity-difficulty-and-topic-override-planning)
+      - [Inputs](#inputs)
+      - [How 100% of a day's slots are decided — three layers, in order](#how-100-of-a-days-slots-are-decided--three-layers-in-order)
+      - [Worked example](#worked-example)
+      - [Tuning guide](#tuning-guide)
+      - [Content-authoring caution: one template per skill label, not one template for several](#content-authoring-caution-one-template-per-skill-label-not-one-template-for-several)
+    - [3.8 Notation and Text-Formatting Contract](#38-notation-and-text-formatting-contract)
+  - [4. Detailed Entity Relationship Design](#4-detailed-entity-relationship-design)
+  - [5. Data Classification, Ownership, And Contracts](#5-data-classification-ownership-and-contracts)
+    - [5.1 Data Classification And Ownership](#51-data-classification-and-ownership)
+    - [5.2 Data Creation Sequence](#52-data-creation-sequence)
+    - [5.3 Configuration File Contracts](#53-configuration-file-contracts)
+    - [5.4 Master Data And Knowledge Contracts](#54-master-data-and-knowledge-contracts)
+    - [5.5 Transaction And Run Data Contracts](#55-transaction-and-run-data-contracts)
+    - [5.6 Shared Worksheet Spec](#56-shared-worksheet-spec)
+    - [5.7 Run Manifest](#57-run-manifest)
+    - [5.8 Extension Registration Contracts](#58-extension-registration-contracts)
+  - [6. Responsibility And Technology Design](#6-responsibility-and-technology-design)
+    - [6.1 Detailed Responsibility Allocation](#61-detailed-responsibility-allocation)
+    - [6.2 Detailed Technology Boundaries](#62-detailed-technology-boundaries)
+  - [7. File And Ownership Design](#7-file-and-ownership-design)
+  - [8. Test Design](#8-test-design)
+  - [9. M5 Implementation Sequence](#9-m5-implementation-sequence)
+  - [10. M4 Review Checklist](#10-m4-review-checklist)
+  - [Appendix A - Spec Preparation Validation Rules](#appendix-a---spec-preparation-validation-rules)
+
 ## 1. Purpose And Authority
 
 This document turns the approved M3 Architecture into implementable contracts. It is derived from the M1 Product Idea, M2 Requirements, and M3 Architecture. It defines detailed state, data, module, adapter, extension, and test contracts; it does not authorize implementation until M4 review is complete.
@@ -275,6 +318,178 @@ output. The Worksheet Type configuration is authoritative for `questions_per_day
 populate only the configured count, remove unused numbered placeholder paragraphs, and validate that
 the final student and answer-key documents contain no empty numbered rows or unresolved placeholders.
 
+Numeric answer-key display is rounded via `display_answer(value, decimal_places, noise_threshold)`
+(`scripts/render_weekly_specs_to_drive.py`), defaulting to `config/base.yaml`
+`formatting.answer_decimal_places` (`2`). Rounding only applies **when relevant**: a float is shown
+as-is if its raw value already has `noise_threshold` (default `3`) decimal digits or fewer — a clean,
+intentional value like `0.125` or `9.0` is never truncated or padded. Only floats with *more* raw
+decimal digits (almost always floating-point noise from an irrational computation, e.g.
+`3.9999999999999996` from `64**(1/3)`) get rounded to `decimal_places` for display. Rounding is
+display-only — it never touches the Spec's stored `answer` value used for verification. Lists/tuples
+(e.g. prime-factorization or coordinate-transformation answers) apply the same rule element-wise;
+integers pass through unchanged.
+
+**Known gap (2026-08-28):** `p0_runtime.targeted_text_qa_v2` assumes *global* question numbering
+(literal `"N."` for every `N` in `1..question_count`) and does not fit the Weekly Worksheet's *local*
+per-day numbering (1..`questions_per_day`, repeated each day) described above. Using it against a
+real Weekly render produces false failures. Until `targeted_text_qa_v2`/`validate_subject_output` are
+made worksheet-type-aware, Weekly Worksheet QA must use a per-day-numbering-aware check instead (see
+the `weekly_text_qa` pattern in the Weekly execution runbook) — do not silently skip QA to work around
+this; use the corrected check.
+
+### 3.7 Question Diversity, Difficulty, and Topic-Override Planning
+
+Question authoring (the actual prompts/numbers) is agent-owned, but its *shape* is planned and
+validated by deterministic code (`subjects/math/src/question_plan.py`), not left to authoring
+judgment alone. This section is the full reference for that planning: every input, and exactly how
+each of a day's slots (100% of that day's questions) is decided.
+
+#### Inputs
+
+| Input | Where it comes from | Default |
+|---|---|---|
+| `sections` | The worksheet type's day list, e.g. `["monday", ..., "friday"]` (`config/worksheet-types/weekly-worksheet.yaml` `sections`) | required |
+| `slots_per_day` | The grade's `questions_per_day` for the resolved worksheet type (`config/worksheet-types/weekly-worksheet.yaml` `grade_defaults.<grade>.questions_per_day`) | required |
+| `primary_skills` | The resolved curriculum scope's *current*-week topics for that grade (`weekly_pacing_cache` `topics`, via `MathSubjectModule.resolve_curriculum`) | required, non-empty |
+| `spiral_skills` | The resolved curriculum scope's *spiral*-review topics for that grade (`weekly_pacing_cache` `spiral`) | optional (`None`/`[]` disables spiral injection) |
+| `difficulty` | `/generate-worksheet` `difficulty` parameter | `medium_plus` (`config/base.yaml` `question_design.difficulty.default`) |
+| `diversity` | `/generate-worksheet` `diversity` parameter | `medium_plus` (`config/base.yaml` `question_design.diversity.default`) |
+| `topic_overrides` | `/generate-worksheet` `topic_overrides` parameter, parsed by `question_plan.parse_topic_overrides`, sliced to the grade being planned | none |
+
+#### How 100% of a day's slots are decided — three layers, in order
+
+Each day's `slots_per_day` slots are filled by three independent layers applied **in this order**;
+each layer only ever decides *part* of the slot's final content, and every slot ends up with exactly
+one `skill` and one `difficulty`:
+
+**Layer 1 — `topic_overrides` claims a fixed share of slots first.**
+For each override entry (in the order given), its slot count is resolved (`N%` → `round(slots_per_day *
+N / 100)`, or a literal `count`), and that many slots are placed **evenly spaced** across the whole day
+via `_assign_evenly_spaced` (target index `(i + 0.5) * slots_per_day / count`, so a 60%-of-10 override
+lands near slots 1, 3, 5, 6, 8, 10 — not bunched at the start). Multiple overrides for the same day
+claim their shares in sequence, probing forward to the next free slot on any collision. If the combined
+claimed slots would exceed `slots_per_day`, `build_day_plan` raises rather than silently truncating.
+Slots claimed here get their override's `topic` as their `skill` and are tagged `topic_override: true`.
+
+**Layer 2 — the remaining slots are filled by the primary/spiral rotation, sized by `diversity`.**
+Whatever slots Layer 1 didn't claim (in their original left-to-right order) are handed to
+`build_skill_sequence`, sized to exactly that remaining count. `diversity` controls two things here:
+the `spiral_interval` (every Nth slot **within this remaining sequence**, not the original day
+numbering, is a spiral-review skill instead of the next current-week skill) and, separately, the
+`min_distinct_skills_per_day` that `validate_progression` will require later. Primary skills rotate
+round-robin (`primary_skills[index % len(primary_skills)]`), guaranteeing no two *primary* slots in a
+row repeat as long as 2+ primary skills are configured.
+
+| Diversity | Min distinct skills/day | Spiral every Nth remaining slot |
+|---|---|---|
+| Low | 1 | never |
+| Low+ | 2 | 6th |
+| Medium | 2 | 5th |
+| **Medium+ (default)** | **3** | **4th** |
+| High | 4 | 3rd |
+| Very High | 5 | 2nd |
+
+**Layer 3 — `difficulty` is computed independently for every slot, regardless of Layer 1/2.**
+`difficulty_for_slot` never looks at which skill occupies a slot; it only uses the slot's *position*:
+`progress = 0.5 × (day_index / (num_days - 1)) + 0.5 × (slot_index / (slots_per_day - 1))`, then
+`rank = round(start_rank + (end_rank - start_rank) × progress)`, where `(start_rank, end_rank)` is the
+band `difficulty` selects on the shared 6-point scale:
+
+| Difficulty | Band (0=low .. 5=very_high) |
+|---|---|
+| Low | 0 – 1 |
+| Low+ | 0 – 2 |
+| Medium | 1 – 3 |
+| **Medium+ (default)** | **1 – 4** |
+| High | 2 – 5 |
+| Very High | 3 – 5 |
+
+Because Layer 3 is fully decoupled from Layers 1–2, a topic-override slot on Friday afternoon is just
+as hard as a rotation slot in the same position — overrides change *what* is asked, never *how hard*.
+
+#### Worked example
+
+Grade 1, Monday, `slots_per_day=10`, `primary_skills=["addition_within_20", "subtraction_within_20"]`,
+`spiral_skills=["counting_sequence"]`, `difficulty=medium_plus`, `diversity=medium_plus`,
+`topic_overrides=[{"topic": "count_on_and_back", "kind": "percent", "value": 60}]`:
+
+1. **Layer 1**: 60% of 10 = 6 override slots, evenly spaced → 0-indexed slots `{0, 2, 4, 5, 7, 9}`
+   (1-indexed: 1, 3, 5, 6, 8, 10) get `skill = "count_on_and_back"`.
+2. **Layer 2**: the 4 remaining 0-indexed slots `[1, 3, 6, 8]` (1-indexed: 2, 4, 7, 9) go through
+   `build_skill_sequence(length=4, diversity="medium_plus")`. `spiral_interval=4`, so only the *4th
+   remaining slot* (1-indexed day slot 9) is spiral; the other 3 rotate through the 2 primary skills:
+   `addition_within_20, subtraction_within_20, addition_within_20`.
+3. **Layer 3**: `day_index=0` (Monday), band `(1, 4)` → every slot this day resolves to rank 1–2
+   (`low_plus`/`medium`), independent of the skill assigned above.
+
+| Slot (1-indexed) | Skill (Layer 1 or 2) | Difficulty (Layer 3) |
+|---|---|---|
+| 1 | count_on_and_back (override) | low_plus |
+| 2 | addition_within_20 (primary) | low_plus |
+| 3 | count_on_and_back (override) | low_plus |
+| 4 | subtraction_within_20 (primary) | medium |
+| 5 | count_on_and_back (override) | medium |
+| 6 | count_on_and_back (override) | medium |
+| 7 | addition_within_20 (primary) | medium |
+| 8 | count_on_and_back (override) | medium |
+| 9 | counting_sequence (spiral) | medium |
+| 10 | count_on_and_back (override) | medium |
+
+The same day's Friday counterpart (`day_index=4`) recomputes only Layer 3 against the same band,
+shifting every slot's difficulty up (band midpoint moves from ~1.0 to ~2.5–4.0) while Layers 1–2 (which
+skill goes where) are recomputed fresh per day from the same `topic_overrides`/`primary_skills`/
+`spiral_skills` inputs — a day is never a copy of another day's skill assignment, only its *shape*.
+
+#### Tuning guide
+
+- **Want more forced-topic coverage this week?** Raise the `topic_overrides` percentage/count for that
+  grade — it directly reduces how many slots Layer 2 gets, without touching difficulty.
+- **Want more variety in the non-override slots?** Raise `diversity` — it lowers the spiral interval
+  (spiral shows up more often) and raises the distinct-skill minimum `validate_progression` enforces.
+- **Want a gentler or steeper ramp?** Change `difficulty` — it only ever shifts the `(start_rank,
+  end_rank)` band; it never changes which skill is asked, so it composes cleanly with any
+  `topic_overrides`/`diversity` setting.
+- **Want to check whether a hand-edited spec still satisfies the intended shape?** Run
+  `MathSubjectModule.check_diversity_and_progression(spec, diversity=<level>)` — it recomputes ranks
+  from each question's stored `difficulty` label and requires both non-decreasing *and* net-increasing
+  difficulty per day, plus the diversity minimum, using the exact same rank table as Layer 3.
+
+`MathSubjectModule.build_week_plan(...)` resolves all inputs above into one slot-by-slot plan
+(`{day_id: [{slot, skill, difficulty}, ...]}`) before authoring; `check_diversity_and_progression(spec)`
+validates the authored result before it is persisted (see `subjects/math/skills/weekly-worksheet-execution-runbook.md`
+step 8a/8d).
+
+#### Content-authoring caution: one template per skill label, not one template for several
+
+The plan only guarantees distinct *skill labels* per slot; it cannot guarantee distinct *question
+content* — that is authoring's responsibility. A real defect (2026-08-28, Grades 9-10) showed the
+failure mode: three different skill labels (`equations/inequalities`, `create equations`, `functions`)
+were all authored through one shared `f(x) = mx + b` template, so ~60% of a combined Math 1/Math 2
+worksheet was near-duplicate questions wearing different skill-label "name tags" — diversity theater
+that still passes `validate_progression` (which only checks label counts) while visibly failing the
+actual goal. **Rule: every skill label authoring maps to must have its own genuinely distinct
+template/phrasing**, and per-slot parameters must be seeded so that two different skills at the same
+day/difficulty never coincidentally produce identical numbers.
+
+### 3.8 Notation and Text-Formatting Contract
+
+Worksheet prompts must never leak raw code syntax (`25**(1/2)`, `x^2`, `*`, `/`, `>=`) to students.
+`subjects/math/src/notation.py` is the single source for Grade 1-12 display formatting:
+
+| Category | Provided by | Typical grade band |
+|---|---|---|
+| Exponents/roots | `superscript()`, `subscript()`, `radical(n, index)` | 5+ (squares/cubes), 8+ (general/rational exponents) |
+| Fractions | `fraction(numerator, denominator)` (precomposed glyph, e.g. `½`, else plain `a/b`) | 1+ |
+| Basic operators | `TIMES`, `DIVIDE`, `PLUS_MINUS`, `APPROX`, `NOT_EQUAL`, `LESS_EQUAL`, `GREATER_EQUAL` | 1+ (never raw `*`/`/`/`>=`/`<=`) |
+| Geometry | `DEGREE`, `ANGLE`, `PARALLEL`, `PERPENDICULAR`, `PI`, `TRIANGLE` | 4+ |
+| Sets/intervals | `ELEMENT_OF`, `UNION`, `INTERSECTION`, `SUBSET`, `INFINITY`, `interval(a, b, left_closed, right_closed)` | 8-12 |
+| Absolute value | `absolute_value(expr)` → `\|expr\|` | 6+ |
+| Advanced | `THETA`, `DELTA` | 9-12 (limited use today) |
+
+`GRADE_BAND_NOTATION` is an advisory (not enforced) lookup of what to introduce/avoid per grade band;
+authoring still uses judgment for grade-appropriateness — this table does not replace the existing
+`review_guidance` reasoning-review requirement.
+
 ## 4. Detailed Entity Relationship Design
 
 This ERD is the detailed implementation model. It shows ownership and reference relationships without treating the Run Manifest as a second source of Worksheet content.
@@ -414,7 +629,7 @@ The root `schemas/` directory owns shared contracts. `subjects/<subject>/schemas
 | Master data and knowledge | What stable, approved facts does the system know? | Curriculum/template/source management | Reusable across Runs; changes are versioned with source provenance. | `subjects/<subject>/knowledge/`, `templates/by-worksheet-type/` |
 | Transaction and run data | What happened for this request, cycle, Batch, Worksheet, and Run? | A specific worksheet-generation Run | Never reused as a default; changed records create a new revision or Run evidence record. | `runs/<subject>/<run_id>/` |
 
-Configuration contains variable behavior: enabled subjects/grades, Worksheet Type rules, gates, counts, duration, naming, destinations, and cache thresholds. It must not contain historical curriculum evidence, question content, gate approvals, or Run results.
+Configuration contains variable behavior: enabled subjects/grades, Worksheet Type rules, gates, counts, duration, naming, destinations, cache thresholds, school-year week numbering (`calendar.week_1_start`), question-authoring defaults (`question_design.difficulty`/`.diversity`), and answer-display formatting (`formatting.answer_decimal_places`). It must not contain historical curriculum evidence, question content, gate approvals, or Run results.
 
 Master data and knowledge contains versioned reusable facts: subject/grade catalog entries, standards, yearly progression, curriculum sources, approved template metadata, template revisions, layout contracts, and approved fallback relationships. A template manifest is master data because it describes an approved, versioned external asset; a Worksheet Type configuration selects a template but does not redefine the template's inspected structure.
 

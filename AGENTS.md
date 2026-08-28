@@ -17,7 +17,7 @@ A run-level override is not persisted unless the user explicitly requests it.
 
 1. `constitution.md`
 2. `docs/requirements.md`
-3. `docs/design.md`
+3. `specs/generate_math_worksheets/03. design/design.md` (canonical design document)
 4. `config/base.yaml`
 5. The selected subject's requirements, design, and configuration
 6. The applicable workflow and skills

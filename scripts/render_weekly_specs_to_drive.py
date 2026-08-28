@@ -4,7 +4,6 @@ from __future__ import annotations
 from pathlib import Path
 import json
 import argparse
-from googleapiclient.discovery import build
 
 
 SCOPES = ["https://www.googleapis.com/auth/drive"]
@@ -15,18 +14,33 @@ TEMPLATE_MANIFEST = REPO / "subjects" / "math" / "config" / "template-manifests"
 OAUTH_TOKEN = Path(r"c:\Users\neeli\kpkDevelopment\mts-new\.secrets\oauth-token.json")
 
 
-def display_answer(answer: object) -> str:
-    if isinstance(answer, list):
-        return ", ".join(str(item) for item in answer)
+def display_answer(answer: object, *, decimal_places: int = 2, noise_threshold: int = 3) -> str:
+    """Render an answer for display.
+
+    Rounding only kicks in when it's actually relevant: if a float's raw value already has
+    `noise_threshold` decimal digits or fewer, it's shown as-is (a clean, intentional value like
+    `0.125` is never truncated). Only floats with MORE raw decimal digits than that (almost always
+    floating-point noise from an irrational computation, e.g. `3.9999999999999996`) get rounded to
+    `decimal_places` for display; the underlying stored `answer` used for verification is untouched.
+    """
+    if isinstance(answer, (list, tuple)):
+        return ", ".join(display_answer(item, decimal_places=decimal_places, noise_threshold=noise_threshold) for item in answer)
+    if isinstance(answer, float):
+        raw = repr(answer)
+        raw_decimal_digits = len(raw.split(".", 1)[1]) if "." in raw else 0
+        if raw_decimal_digits <= noise_threshold:
+            return raw
+        rounded = round(answer, decimal_places)
+        return f"{rounded:.{decimal_places}f}"
     return str(answer)
 
 
-def projection(spec: dict, answer_key: bool) -> str:
+def projection(spec: dict, answer_key: bool, *, decimal_places: int = 2) -> str:
     lines = [spec["worksheet"]["grade"], f"Week of {spec['worksheet']['week_start']}", ""]
     for section in spec["sections"]:
         lines.extend([section["title"], ""])
         for question in section["questions"]:
-            value = display_answer(question["answer"]) if answer_key else question["prompt"]
+            value = display_answer(question["answer"], decimal_places=decimal_places) if answer_key else question["prompt"]
             lines.append(f"{question['number']}. {value}")
         lines.append("")
     if answer_key:
@@ -66,7 +80,7 @@ def paragraph_ranges_containing(body: list[dict], placeholders: set[str]) -> dic
     return ranges
 
 
-def render_document(docs, document_id: str, content: str, spec: dict, answer_key: bool) -> None:
+def render_document(docs, document_id: str, content: str, spec: dict, answer_key: bool, *, decimal_places: int = 2) -> None:
     existing, body = document_text(docs, document_id)
     if "{{MON_Q1}}" in existing or "{{MON_A1}}" in existing:
         prefixes = {"monday": "MON", "tuesday": "TUE", "wednesday": "WED", "thursday": "THU", "friday": "FRI"}
@@ -76,7 +90,7 @@ def render_document(docs, document_id: str, content: str, spec: dict, answer_key
             questions = {number: question for number, question in enumerate(section["questions"], start=1)}
             for number in range(1, 11):
                 question = questions.get(number)
-                values[f"{{{{{prefix}_{'A' if answer_key else 'Q'}{number}}}}}"] = display_answer(question["answer"]) if answer_key and question else question["prompt"] if question else ""
+                values[f"{{{{{prefix}_{'A' if answer_key else 'Q'}{number}}}}}"] = display_answer(question["answer"], decimal_places=decimal_places) if answer_key and question else question["prompt"] if question else ""
         empty_placeholders = {placeholder for placeholder, value in values.items() if not value and placeholder in existing}
         ranges = paragraph_ranges_containing(body, empty_placeholders)
         requests = [
@@ -124,6 +138,7 @@ def main() -> None:
     output = run_root / "rendered-artifacts.json"
     from google.auth.transport.requests import Request
     from google.oauth2.credentials import Credentials
+    from googleapiclient.discovery import build
 
     creds = Credentials.from_authorized_user_file(str(OAUTH_TOKEN), SCOPES)
     if creds.expired and creds.refresh_token:

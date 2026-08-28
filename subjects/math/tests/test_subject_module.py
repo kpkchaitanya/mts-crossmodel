@@ -66,12 +66,31 @@ def test_build_spec_requires_generated_candidate():
         raise AssertionError("A Math candidate spec is required.")
 
 
+def test_build_week_plan_and_check_diversity_and_progression_delegate_to_question_plan():
+    sections = [{"id": "monday"}, {"id": "tuesday"}]
+    plan = MODULE.build_week_plan(
+        sections, ["skill_a", "skill_b"], None, 4,
+        difficulty="high", diversity="low",
+        topic_overrides=[{"topic": "override_topic", "kind": "count", "value": 2}],
+    )
+    assert set(plan) == {"monday", "tuesday"}
+    assert sum(1 for entry in plan["monday"] if entry.get("topic_override")) == 2
+
+    spec = {"sections": [{"id": "monday", "questions": [
+        {"number": i + 1, "skill": entry["skill"], "difficulty": entry["difficulty"]}
+        for i, entry in enumerate(plan["monday"])
+    ]}]}
+    result = MODULE.check_diversity_and_progression(spec, diversity="low")
+    assert result["status"] == "PASS"
+
+
 def main():
     tests = [
         test_resolve_curriculum_preserves_p0_cache_behavior,
         test_blueprint_uses_worksheet_type_defaults,
         test_verification_and_output_qa_delegate_to_p0_runtime,
         test_build_spec_requires_generated_candidate,
+        test_build_week_plan_and_check_diversity_and_progression_delegate_to_question_plan,
     ]
     for test in tests:
         test()

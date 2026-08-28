@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 import p0_runtime as p0
+import question_plan
 
 
 class MathSubjectError(ValueError):
@@ -91,6 +92,32 @@ class MathSubjectModule:
     def verify_spec(self, spec: Mapping[str, Any], policy: Mapping[str, Any] | None = None) -> dict[str, Any]:
         """Delegate deterministic Math verification to the P0 runtime."""
         return p0.verify_spec(deepcopy(dict(spec)))
+
+    def build_week_plan(
+        self,
+        sections: list[Mapping[str, Any]],
+        primary_skills: list[str],
+        spiral_skills: list[str] | None,
+        slots_per_day: int,
+        *,
+        difficulty: str = question_plan.DEFAULT_DIFFICULTY,
+        diversity: str = question_plan.DEFAULT_DIVERSITY,
+        topic_overrides: list[Mapping[str, Any]] | None = None,
+    ) -> dict[str, list[dict[str, Any]]]:
+        """Build the per-day skill/difficulty authoring plan; authoring itself remains AI-owned."""
+        return question_plan.build_week_plan(
+            sections=[dict(section) for section in sections],
+            primary_skills=primary_skills,
+            spiral_skills=spiral_skills,
+            slots_per_day=slots_per_day,
+            difficulty=difficulty,
+            diversity=diversity,
+            topic_overrides=[dict(o) for o in topic_overrides] if topic_overrides else None,
+        )
+
+    def check_diversity_and_progression(self, spec: Mapping[str, Any], *, diversity: str = question_plan.DEFAULT_DIVERSITY) -> dict[str, Any]:
+        """Deterministic QA: per-day difficulty must be non-decreasing and skills must meet the diversity minimum."""
+        return question_plan.validate_progression(deepcopy(dict(spec)), diversity=diversity)
 
     def review_guidance(self, spec: Mapping[str, Any], policy: Mapping[str, Any]) -> dict[str, Any]:
         return {

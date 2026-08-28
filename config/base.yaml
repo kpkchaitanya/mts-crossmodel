@@ -2,6 +2,19 @@ version: "1.0"
 project:
   name: "MTS Testing System"
   timezone: "America/New_York"
+calendar:
+  # Shared school-year week numbering for the `week=<n>` command parameter.
+  # week_1_start must be a Monday; week N start = week_1_start + 7*(N-1) days.
+  school_year: "2026-2027"
+  week_1_start: "2026-08-17"
+question_design:
+  # Shared 6-point ordinal scale for the /generate-worksheet `difficulty` and `diversity`
+  # parameters; see subjects/math/src/question_plan.py for the level -> behavior mapping.
+  levels: ["low", "low_plus", "medium", "medium_plus", "high", "very_high"]
+  difficulty:
+    default: "medium_plus"
+  diversity:
+    default: "medium_plus"
 governance:
   instruction_precedence: ["current_user", "constitution", "config", "requirements", "design"]
 artifacts:
@@ -16,11 +29,39 @@ formatting:
   editable_google_docs: true
   minimize_excess_whitespace: true
   visual_qa_required: true
+  # Configurable rounding for numeric answer-key display (does not affect stored/verified answers).
+  # Only applied when a float's raw value has more than answer_rounding_noise_threshold decimal
+  # digits (e.g. floating-point noise like 3.9999999999999996); clean short decimals are untouched.
+  answer_decimal_places: 2
+  answer_rounding_noise_threshold: 3
 publishing:
   require_configured_final_gate: true
   outputs_root: "outputs"
   staging_root: "outputs-copilot"
+  # Default for the /generate-worksheet `publish` parameter; explicit `publish=no` overrides per run.
+  default_publish: true
 telemetry:
   runs_root: "runs"
   unavailable_authoritative_values: null
+gates:
+  default: "all"
+  # ids and forward transitions must match src/runtime/gates.py GATES exactly.
+  definitions:
+    - {id: "scope_review", name: "Gate 1: Curriculum Scope Review", advances_to: "worksheet_prepared"}
+    - {id: "question_review", name: "Gate 2: Question Review", advances_to: "verification_in_progress"}
+    - {id: "verification_review", name: "Gate 3: Verification Review", advances_to: "render_ready"}
+    - {id: "formatting_review", name: "Gate 4: Formatting Review", advances_to: "publish_approval_pending"}
+    - {id: "publish_approval", name: "Gate 5: Publish Approval", advances_to: "published"}
+  bypass:
+    allowed: true
+    requires_explicit_current_user_instruction: true
+    silent_bypass_prohibited: true
+    record_in_run_manifest: true
+    # Bypassing a gate only removes its stop-and-approve checkpoint; it never
+    # waives the requirements below, which stay enforced by artifacts/verification/formatting.
+    non_bypassable_requirements:
+      - "artifacts.worksheet_spec_required"
+      - "verification.verify_every_item"
+      - "verification.reverify_after_edits"
+      - "formatting.visual_qa_required"
 

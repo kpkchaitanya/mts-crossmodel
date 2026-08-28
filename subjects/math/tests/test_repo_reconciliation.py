@@ -10,7 +10,7 @@ ROOT_EXPECTED = [
     "README.md",
     "constitution.md",
     "docs/requirements.md",
-    "docs/design.md",
+    "specs/generate_math_worksheets/03. design/design.md",
     "config/base.yaml",
     "config/math.yaml",
     "config/ela.yaml",
@@ -33,7 +33,6 @@ ROOT_EXPECTED = [
 MATH_EXPECTED = [
     "README.md",
     "requirements.md",
-    "design.md",
     "MIGRATION.md",
     "docs/curriculum-source-guidance.md",
     "docs/plan.md",
