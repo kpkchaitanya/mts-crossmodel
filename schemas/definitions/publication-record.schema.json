@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MTS Publication Record",
+  "type": "object",
+  "required": ["publication_id", "run_id", "spec_id", "spec_revision", "status", "destination", "student_artifact_id", "answer_key_artifact_id", "recorded_at"],
+  "properties": {
+    "publication_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "spec_id": {"type": "string"},
+    "spec_revision": {"type": "integer", "minimum": 1},
+    "status": {"enum": ["pending", "published", "failed"]},
+    "destination": {"type": "string"},
+    "student_artifact_id": {"type": "string"},
+    "answer_key_artifact_id": {"type": "string"},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  },
+  "additionalProperties": false
+}

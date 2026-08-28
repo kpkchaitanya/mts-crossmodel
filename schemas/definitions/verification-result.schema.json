@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MTS Verification Result",
+  "type": "object",
+  "required": ["result_id", "spec_id", "spec_revision", "status", "checked_at", "questions"],
+  "properties": {
+    "result_id": {"type": "string"},
+    "spec_id": {"type": "string"},
+    "spec_revision": {"type": "integer", "minimum": 1},
+    "status": {"enum": ["pending", "pass", "fail", "blocked"]},
+    "checked_at": {"type": "string", "format": "date-time"},
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["question_id", "status", "method"],
+        "properties": {
+          "question_id": {"type": "string"},
+          "status": {"enum": ["pass", "fail", "reasoning_required", "ambiguous"]},
+          "method": {"type": "string"},
+          "evidence": {"type": ["object", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "subject": "math",
+  "grade_course_catalog": "grade-course-catalog.json",
+  "curriculum_sources": "sources.json",
+  "yearly_progression": "curriculum/progressive/progressive-math-backbone.json",
+  "standards": "curriculum/nc-math/standards-cache.json",
+  "weekly_pacing_cache": "curriculum/ccs-2026-2027/pacing.json",
+  "template_manifest": "../config/template-manifest.json"
+}

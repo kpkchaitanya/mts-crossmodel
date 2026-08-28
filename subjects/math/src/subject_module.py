@@ -1,0 +1,108 @@
+"""Math subject-module adapter for the established P0 runtime behavior."""
+from __future__ import annotations
+
+from collections.abc import Mapping
+from copy import deepcopy
+from pathlib import Path
+from typing import Any
+
+import p0_runtime as p0
+
+
+class MathSubjectError(ValueError):
+    """Raised when a Math subject-module request is incomplete or invalid."""
+
+
+class MathSubjectModule:
+    """Adapt existing Math P0 curriculum, verification, and QA capabilities."""
+
+    subject_id = "math"
+
+    def __init__(self, module_root: str | Path | None = None) -> None:
+        self.module_root = Path(module_root) if module_root else Path(__file__).resolve().parents[1]
+
+    def resolve_curriculum(
+        self,
+        request: Mapping[str, Any],
+        knowledge: Mapping[str, Any] | None = None,
+        policy: Mapping[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        """Resolve Math curriculum from the established local P0 knowledge assets."""
+        grade = request.get("grade_or_course")
+        on_date = request.get("on_date")
+        if not isinstance(grade, str) or not grade:
+            raise MathSubjectError("Math curriculum request must provide grade_or_course.")
+        if not isinstance(on_date, str) or not on_date:
+            raise MathSubjectError("Math curriculum request must provide on_date.")
+
+        sources = knowledge or self._load_master_data()
+        knowledge_root = self.module_root / "knowledge"
+        try:
+            pacing = p0.load_json(knowledge_root / str(sources["weekly_pacing_cache"]))
+            backbone = p0.load_json(knowledge_root / str(sources["yearly_progression"]))
+        except KeyError as error:
+            raise MathSubjectError(f"Math knowledge index is missing {error.args[0]}.") from error
+
+        resolved = p0.resolve_curriculum(pacing, grade, on_date, backbone)
+        resolved["grade_or_course"] = grade
+        return resolved
+
+    def prepare_blueprint(
+        self,
+        scope: Mapping[str, Any],
+        worksheet_type: Mapping[str, Any],
+        policy: Mapping[str, Any],
+    ) -> dict[str, Any]:
+        """Resolve the P0 Class Worksheet count/duration for an approved Math scope."""
+        grade = scope.get("grade_or_course")
+        if not isinstance(grade, str) or not grade:
+            raise MathSubjectError("Math scope must provide grade_or_course.")
+        grade_defaults = worksheet_type.get("grade_defaults", {})
+        grade_policy = grade_defaults.get(grade)
+        if not isinstance(grade_policy, Mapping):
+            raise MathSubjectError(f"Worksheet Type has no Math defaults for {grade}.")
+        return {
+            "subject": self.subject_id,
+            "grade_or_course": grade,
+            "worksheet_type": worksheet_type.get("worksheet_type_id"),
+            "question_count": grade_policy.get("question_count"),
+            "duration_minutes": worksheet_type.get("duration_minutes"),
+            "curriculum_scope": deepcopy(dict(scope)),
+        }
+
+    def build_spec(self, plan: Mapping[str, Any], approved_inputs: Mapping[str, Any]) -> dict[str, Any]:
+        """Accept a generated candidate Spec; question generation remains AI-owned."""
+        candidate = approved_inputs.get("spec")
+        if not isinstance(candidate, Mapping):
+            raise MathSubjectError("Math build_spec requires a generated candidate spec.")
+        return deepcopy(dict(candidate))
+
+    def verify_spec(self, spec: Mapping[str, Any], policy: Mapping[str, Any] | None = None) -> dict[str, Any]:
+        """Delegate deterministic Math verification to the P0 runtime."""
+        return p0.verify_spec(deepcopy(dict(spec)))
+
+    def review_guidance(self, spec: Mapping[str, Any], policy: Mapping[str, Any]) -> dict[str, Any]:
+        return {
+            "requires_reasoning_review": True,
+            "checks": ["ambiguity", "sufficient_information", "grade_appropriateness", "question_answer_consistency"],
+        }
+
+    def render_requirements(self, spec: Mapping[str, Any], worksheet_type: Mapping[str, Any]) -> dict[str, Any]:
+        return {
+            "plain_fraction_notation": "3/8",
+            "avoid_raw_latex": True,
+            "template_manifest": worksheet_type.get("template_selection", {}).get("template_manifest"),
+        }
+
+    def validate_subject_output(self, artifacts: Mapping[str, str], spec: Mapping[str, Any]) -> dict[str, Any]:
+        student_text = artifacts.get("student_worksheet")
+        answer_key_text = artifacts.get("answer_key")
+        if not isinstance(student_text, str) or not isinstance(answer_key_text, str):
+            raise MathSubjectError("Math output validation requires student_worksheet and answer_key text.")
+        return {
+            "student_worksheet": p0.targeted_text_qa_v2(student_text, deepcopy(dict(spec))),
+            "answer_key": p0.targeted_text_qa_v2(answer_key_text, deepcopy(dict(spec)), answer_key=True),
+        }
+
+    def _load_master_data(self) -> dict[str, Any]:
+        return p0.load_json(self.module_root / "knowledge" / "master-data-index.json")

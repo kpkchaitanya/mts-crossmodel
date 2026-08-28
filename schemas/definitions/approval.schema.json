@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MTS Gate Approval",
+  "type": "object",
+  "required": ["approval_id", "run_id", "gate", "artifact_revision", "status", "recorded_at"],
+  "properties": {
+    "approval_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "gate": {"enum": ["scope_review", "question_review", "verification_review", "formatting_review", "publish_approval"]},
+    "artifact_revision": {"type": "string"},
+    "status": {"enum": ["approved", "rejected"]},
+    "reviewer": {"type": ["string", "null"]},
+    "notes": {"type": ["string", "null"]},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  },
+  "additionalProperties": false
+}

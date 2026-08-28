@@ -1,0 +1,20 @@
+version: "1.0"
+worksheet_type_id: "compact-unbranded"
+display_name: "Compact/Unbranded Worksheet"
+status: "draft"
+compatible_subjects: ["math"]
+duration_minutes: null
+template_selection:
+  template_manifest: "templates/by-worksheet-type/template-manifest.json"
+validation:
+  require_verification: true
+  require_visual_qa: true
+extension_readiness:
+  user_defined_constraints:
+    - "question_count"
+    - "page_constraint"
+  blockers:
+    - "Approve default grade/course question counts or require an explicit count for every run."
+    - "Approve compact page constraints and minimum readability/answer-space rules."
+    - "Approve unbranded template registration and visual QA criteria."
+    - "Add Compact/Unbranded regression fixtures before activation."

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MTS Render Artifact",
+  "type": "object",
+  "required": ["artifact_id", "run_id", "spec_id", "spec_revision", "artifact_kind", "status", "template_revision", "document_url"],
+  "properties": {
+    "artifact_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "spec_id": {"type": "string"},
+    "spec_revision": {"type": "integer", "minimum": 1},
+    "artifact_kind": {"enum": ["student_worksheet", "answer_key"]},
+    "status": {"enum": ["staged", "validated", "published", "failed"]},
+    "template_id": {"type": ["string", "null"]},
+    "template_revision": {"type": "string"},
+    "document_url": {"type": "string"}
+  },
+  "additionalProperties": false
+}

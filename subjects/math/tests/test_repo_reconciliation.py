@@ -18,6 +18,16 @@ ROOT_EXPECTED = [
     ".github/copilot-instructions.md",
     "schemas/worksheet-spec.schema.json",
     "schemas/run-manifest.schema.json",
+    "schemas/worksheet-type.schema.json",
+    "config/worksheet-types/class-worksheet.yaml",
+    "config/worksheet-types/weekly-worksheet.yaml",
+    "config/worksheet-types/homework-4-day.yaml",
+    "config/worksheet-types/compact-unbranded.yaml",
+    "templates/by-worksheet-type/template-manifest.json",
+    "src/rendering/google_docs_adapter.py",
+    "tests/integration/test_google_docs_adapter.py",
+    "tests/integration/test_math_class_lifecycle.py",
+    "tests/integration/test_weekly_math_lifecycle.py",
 ]
 
 MATH_EXPECTED = [
@@ -38,9 +48,15 @@ MATH_EXPECTED = [
     "knowledge/curriculum/nc-math/standards-cache.json",
     "knowledge/curriculum/ccs-2026-2027/pacing.json",
     "knowledge/sources.json",
+    "knowledge/grade-course-catalog.json",
+    "knowledge/master-data-index.json",
     "schemas/worksheet-spec.schema.json",
     "schemas/run-manifest.schema.json",
     "src/p0_runtime.py",
+    "src/subject_module.py",
+    "src/weekly_workflow.py",
+    "tests/test_subject_module.py",
+    "tests/test_weekly_workflow.py",
 ]
 
 
@@ -104,6 +120,8 @@ def test_json_assets_parse():
     root_assets = [
         "schemas/worksheet-spec.schema.json",
         "schemas/run-manifest.schema.json",
+        "schemas/worksheet-type.schema.json",
+        "templates/by-worksheet-type/template-manifest.json",
     ]
     for rel in math_assets:
         json.loads(read_math(rel))
