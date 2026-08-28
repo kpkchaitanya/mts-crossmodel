@@ -3,19 +3,15 @@ from __future__ import annotations
 
 from pathlib import Path
 import json
-import re
-
-from google.oauth2 import service_account
+import argparse
 from googleapiclient.discovery import build
 
 
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 REPO = Path(__file__).resolve().parents[1]
-SPECS = REPO / "runs" / "math" / "run-2026-08-24-weekly" / "specs"
-OUTPUT = REPO / "runs" / "math" / "run-2026-08-24-weekly" / "rendered-artifacts.json"
+DEFAULT_RUN_ROOT = REPO / "runs" / "math" / "run-2026-08-24-grade-6-weekly"
 STAGING_FOLDER = "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
-WORKSHEET_TEMPLATE = "1ng3-EQmHRQfUftIEoQnyh7N43hzi1ViUjf44LTgPqo0"
-ANSWER_KEY_TEMPLATE = "1uBKm2dzzeqy3gwYRxDAG34HGFnTRXAqJJb1sLJViNIo"
+TEMPLATE_MANIFEST = REPO / "subjects" / "math" / "config" / "template-manifests" / "weekly-worksheet.json"
 OAUTH_TOKEN = Path(r"c:\Users\neeli\kpkDevelopment\mts-new\.secrets\oauth-token.json")
 
 
@@ -57,9 +53,42 @@ def document_text(docs, document_id: str) -> tuple[str, list[dict]]:
     return "".join(chunks), body
 
 
-def render_document(docs, document_id: str, content: str) -> None:
+def paragraph_ranges_containing(body: list[dict], placeholders: set[str]) -> dict[str, tuple[int, int]]:
+    ranges = {}
+    for item in body:
+        paragraph = item.get("paragraph")
+        if not paragraph:
+            continue
+        text = "".join(element.get("textRun", {}).get("content", "") for element in paragraph.get("elements", []))
+        for placeholder in placeholders:
+            if placeholder in text:
+                ranges[placeholder] = (item["startIndex"], item["endIndex"])
+    return ranges
+
+
+def render_document(docs, document_id: str, content: str, spec: dict, answer_key: bool) -> None:
     existing, body = document_text(docs, document_id)
-    if "{{CONTENT}}" in existing:
+    if "{{MON_Q1}}" in existing or "{{MON_A1}}" in existing:
+        prefixes = {"monday": "MON", "tuesday": "TUE", "wednesday": "WED", "thursday": "THU", "friday": "FRI"}
+        values = {"{{GRADE_OR_COURSE}}": spec["worksheet"]["grade"], "{{WEEK_OF}}": spec["worksheet"]["week_start"], "{{SCHOOL_LEVEL}}": "Middle School"}
+        for section in spec["sections"]:
+            prefix = prefixes[section["id"]]
+            questions = {number: question for number, question in enumerate(section["questions"], start=1)}
+            for number in range(1, 11):
+                question = questions.get(number)
+                values[f"{{{{{prefix}_{'A' if answer_key else 'Q'}{number}}}}}"] = display_answer(question["answer"]) if answer_key and question else question["prompt"] if question else ""
+        empty_placeholders = {placeholder for placeholder, value in values.items() if not value and placeholder in existing}
+        ranges = paragraph_ranges_containing(body, empty_placeholders)
+        requests = [
+            {"deleteContentRange": {"range": {"startIndex": start, "endIndex": end}}}
+            for start, end in sorted(ranges.values(), reverse=True)
+        ]
+        requests.extend(
+            {"replaceAllText": {"containsText": {"text": placeholder, "matchCase": True}, "replaceText": value}}
+            for placeholder, value in values.items()
+            if value and placeholder in existing
+        )
+    elif "{{CONTENT}}" in existing:
         request = {"replaceAllText": {"containsText": {"text": "{{CONTENT}}", "matchCase": True}, "replaceText": content}}
         requests = [request]
     else:
@@ -85,6 +114,14 @@ def name_for(worksheet_id: str, date: str) -> str:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--run-root", type=Path, default=DEFAULT_RUN_ROOT)
+    parser.add_argument("--worksheet-id", default=None)
+    parser.add_argument("--date", default="2026-08-24")
+    args = parser.parse_args()
+    run_root = args.run_root if args.run_root.is_absolute() else REPO / args.run_root
+    specs_root = run_root / "specs"
+    output = run_root / "rendered-artifacts.json"
     from google.auth.transport.requests import Request
     from google.oauth2.credentials import Credentials
 
@@ -93,27 +130,49 @@ def main() -> None:
         creds.refresh(Request())
     drive = build("drive", "v3", credentials=creds)
     docs = build("docs", "v1", credentials=creds)
-    date = "2026-08-24"
+    from sys import path as module_path
+    module_path.insert(0, str(REPO / "src" / "runtime"))
+    import policy
+
+    resolved_policy = policy.resolve({"subject": "math", "worksheet_type": "weekly-worksheet"}, repository_root=REPO)
+    manifest_path = REPO / resolved_policy["template_selection"]["template_manifest"]
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    worksheet_template = manifest["worksheet_template"]["id"]
+    answer_key_template = manifest["answer_key_template"]["id"]
+    date = args.date
     results = []
-    for spec_path in sorted(SPECS.glob("*.json")):
+    if args.worksheet_id:
+        flat_path = specs_root / f"{args.worksheet_id}.json"
+        revision_paths = sorted((specs_root / args.worksheet_id).glob("*.json"))
+        spec_paths = [flat_path] if flat_path.is_file() else revision_paths[-1:]
+    else:
+        spec_paths = sorted(specs_root.glob("*.json"))
+    if args.worksheet_id == "grades-9-10":
+        grade_defaults = resolved_policy["grade_defaults"]["grade_9_10"]
+        expected_count = grade_defaults["questions_per_day"] * len(resolved_policy["sections"])
+        spec = json.loads(spec_paths[-1].read_text(encoding="utf-8")) if spec_paths else {}
+        if spec.get("worksheet", {}).get("question_count") != expected_count:
+            raise ValueError("Combined Grades 9/10 Weekly render requires 5 questions per day and 25 questions per week.")
+    for spec_path in spec_paths:
         spec = json.loads(spec_path.read_text(encoding="utf-8"))
-        worksheet_id = spec_path.stem
+        worksheet_id = args.worksheet_id or spec_path.stem
         base_name = name_for(worksheet_id, date)
-        worksheet = copy_document(drive, WORKSHEET_TEMPLATE, base_name)
-        key = copy_document(drive, ANSWER_KEY_TEMPLATE, base_name + "_KEY")
-        render_document(docs, worksheet["id"], projection(spec, False))
-        render_document(docs, key["id"], projection(spec, True))
+        worksheet = copy_document(drive, worksheet_template, base_name)
+        key = copy_document(drive, answer_key_template, base_name + "_KEY")
+        render_document(docs, worksheet["id"], projection(spec, False), spec, False)
+        render_document(docs, key["id"], projection(spec, True), spec, True)
         results.append({
             "worksheet_id": worksheet_id,
             "worksheet": worksheet,
             "answer_key": key,
             "status": "rendered",
-            "template_ids": {"worksheet": WORKSHEET_TEMPLATE, "answer_key": ANSWER_KEY_TEMPLATE},
+            "template_ids": {"worksheet": worksheet_template, "answer_key": answer_key_template},
         })
         print(worksheet_id)
         print(f"  worksheet=https://docs.google.com/document/d/{worksheet['id']}/edit")
         print(f"  answer_key=https://docs.google.com/document/d/{key['id']}/edit")
-    OUTPUT.write_text(json.dumps({"status": "rendered_to_staging", "staging_folder": STAGING_FOLDER, "artifacts": results}, indent=2) + "\n", encoding="utf-8")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps({"status": "rendered_to_staging", "staging_folder": STAGING_FOLDER, "artifacts": results}, indent=2) + "\n", encoding="utf-8")
     print(f"RENDER_PASS {len(results)} pairs")
 
 

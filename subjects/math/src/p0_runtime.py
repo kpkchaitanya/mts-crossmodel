@@ -143,6 +143,12 @@ def verify_question(question: dict[str, Any]) -> dict[str, Any]:
     v = question.get("verification")
     if not v:
         return {"number": question.get("number"), "status": "REASONING_REQUIRED"}
+    if v.get("method") == "reasoning_review":
+        return {
+            "number": question.get("number"),
+            "status": "REASONING_REQUIRED",
+            "criterion": v.get("criterion"),
+        }
     try:
         actual = compute(v["method"], v.get("inputs", {}))
         ok = equivalent(actual, question.get("answer"))

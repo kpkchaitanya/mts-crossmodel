@@ -18,7 +18,7 @@ Canonical governing files:
 2. `specs/generate_math_worksheets/01. intent/product_idea.md` — product intent, Functional Areas, Core Entities, scope, and vocabulary.
 3. This requirements document — WHAT the system must do and acceptance criteria.
 4. The approved architecture and design artifacts for this feature — HOW the system satisfies the requirements.
-5. `config/mts-math-worksheet-config.yaml` — changeable defaults, feature flags, thresholds, IDs, and locations.
+5. `config/*.yaml` and `subjects/<subject>/config/` — changeable defaults, feature flags, thresholds, IDs, and locations.
 6. `skills/*.md` — reusable execution workflows.
 7. `commands/*.md` — concise invocation entry points.
 8. `AGENTS.md` — repository execution contract.
@@ -321,7 +321,7 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | FR-PW-014 | 4-Day Homework shall remain a separate supported Worksheet Type and may use continuity from class/current concepts, reinforcement, and slight extension. |
 | FR-PW-015 | Compact/Unbranded Worksheet shall permit simplified presentation and user-defined compact question/page constraints. |
 | FR-PW-016 | Speed Math Worksheet shall support fluency, mental math, concept application, multi-step/pattern work, and configured challenge/bonus structures. |
-| FR-PW-017 | For combined Grades 9 & 10, the Worksheet shall preserve the configured grade split while keeping the curriculum resolution independent. |
+| FR-PW-017 | For combined Grades 9 & 10, the Worksheet shall preserve the configured grade split while keeping the curriculum resolution independent. The combined `questions_per_week` shall equal `questions_per_day` multiplied by the number of configured weekly sections; the course split shall sum to that combined weekly count. |
 | FR-PW-018 | Default content mix shall be configuration-driven; current baseline is 65% current curriculum, 25% spiral review, and 10% reasoning/challenge. |
 
 ## 5.7 Generate Worksheet — GW

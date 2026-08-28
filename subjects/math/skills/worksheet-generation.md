@@ -4,7 +4,7 @@
 Generating one or more weekly MTS Math class worksheets.
 
 ## Required inputs
-Read `AGENTS.md`, `docs/requirements.md`, `docs/design.md`, `config/mts-math-worksheet-config.yaml`, and `templates/template-links.md`. Apply the current user request as the highest-precedence run override.
+Read `AGENTS.md`, `docs/requirements.md`, `docs/design.md`, the active files under `config/`, and `templates/template-links.md`. Apply the current user request as the highest-precedence run override.
 
 ## Workflow
 1. Initialize/resume a run manifest under `runs/`.

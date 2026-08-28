@@ -10,14 +10,14 @@ sections:
   - {id: "thursday", title: "Apply and Review"}
   - {id: "friday", title: "Mastery"}
 grade_defaults:
-  grade_1: {questions_per_day: 10, question_count: 50}
-  grade_4: {questions_per_day: 10, question_count: 50}
-  grade_5: {questions_per_day: 10, question_count: 50}
-  grade_6: {questions_per_day: 8, question_count: 40}
-  grade_9_10: {questions_per_day: 5, question_count: 50, grade_split: {math_1: 25, math_2: 25}}
+  grade_1: {questions_per_day: 10, questions_per_week: 50}
+  grade_4: {questions_per_day: 10, questions_per_week: 50}
+  grade_5: {questions_per_day: 10, questions_per_week: 50}
+  grade_6: {questions_per_day: 8, questions_per_week: 40}
+  grade_9_10: {questions_per_day: 5, questions_per_week: 25, grade_split: {math_1: 13, math_2: 12}, source_selector: {math_1: 9, math_2: 10}}
 duration_minutes: null
 template_selection:
-  template_manifest: "subjects/math/config/template-manifest.json"
+  template_manifest: "subjects/math/config/template-manifests/weekly-worksheet.json"
   template_key_by_grade:
     grade_1: "grade_1_class"
     grade_4: "standard_class"
@@ -29,4 +29,4 @@ validation:
   require_visual_qa: true
 extension_readiness:
   regression_baseline: "subjects/math/tests/test_subject_module.py"
-  template_fallback: "Existing approved Class Worksheet templates are used until dedicated Weekly templates are approved."
+  template_fallback: "false; dedicated Weekly Worksheet masters are registered."

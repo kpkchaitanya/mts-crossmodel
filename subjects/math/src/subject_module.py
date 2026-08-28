@@ -61,13 +61,24 @@ class MathSubjectModule:
         grade_policy = grade_defaults.get(grade)
         if not isinstance(grade_policy, Mapping):
             raise MathSubjectError(f"Worksheet Type has no Math defaults for {grade}.")
+        count_key = "questions_per_week" if worksheet_type.get("worksheet_type_id") == "weekly-worksheet" else "questions_per_worksheet"
+        if count_key not in grade_policy:
+            raise MathSubjectError(f"Worksheet Type has no {count_key} default for {grade}.")
+        if worksheet_type.get("worksheet_type_id") == "weekly-worksheet":
+            daily_count = grade_policy.get("questions_per_day")
+            sections = worksheet_type.get("sections", ())
+            if not isinstance(daily_count, int) or not isinstance(sections, (list, tuple)) or not sections:
+                raise MathSubjectError(f"Weekly Worksheet has invalid daily count or sections for {grade}.")
+            if grade_policy[count_key] != daily_count * len(sections):
+                raise MathSubjectError(f"Weekly questions_per_week must equal questions_per_day times sections for {grade}.")
         return {
             "subject": self.subject_id,
             "grade_or_course": grade,
             "worksheet_type": worksheet_type.get("worksheet_type_id"),
-            "question_count": grade_policy.get("question_count"),
+            count_key: grade_policy[count_key],
             "duration_minutes": worksheet_type.get("duration_minutes"),
             "curriculum_scope": deepcopy(dict(scope)),
+            **({"questions_per_day": grade_policy["questions_per_day"]} if worksheet_type.get("worksheet_type_id") == "weekly-worksheet" else {}),
         }
 
     def build_spec(self, plan: Mapping[str, Any], approved_inputs: Mapping[str, Any]) -> dict[str, Any]:

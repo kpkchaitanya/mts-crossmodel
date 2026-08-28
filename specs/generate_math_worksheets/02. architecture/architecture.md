@@ -124,6 +124,13 @@ The shared core must depend on a subject module and a Worksheet Type selected by
 
 New subjects and Worksheet Types must be additive: they may register configuration, knowledge, templates, verification rules, and tests, but must not require changes to shared gate, publication-pair, audit, or run-evidence semantics unless a new approved requirement requires it.
 
+Template routing uses two levels: the shared Worksheet Type registry selects the subject/type
+manifest, and that subject/type manifest identifies the external student and answer-key masters.
+For Math, Class Worksheet and Weekly Worksheet therefore have separate manifests even when they
+share layout conventions or use the same rendering adapter. Worksheet Type configuration owns
+behavior such as counts and sections; the selected template manifest owns Google Doc IDs,
+revisions, inspected layout, and cache state.
+
 ## 3. Informational Architecture
 
 ### Canonical records
@@ -179,7 +186,7 @@ The existing shared Worksheet Spec and Run Manifest schemas are intentionally cr
 | Synchronization | Both rendered outputs consume the same verified Worksheet Spec revision. |
 | Human approval integrity | Gate State Controller persists and validates each enabled transition. |
 | Curriculum integrity | Curriculum Service retains source, freshness, confidence, and cache/fallback basis. |
-| Template fidelity | Render Adapter copies masters only; Template Lifecycle Service tracks revisions. |
+| Template fidelity | Render Adapter copies masters only; Template Lifecycle Service resolves the subject/type manifest and tracks revisions. |
 | Recoverability | Run Repository records checkpoints and dependency invalidation to resume only valid work. |
 | Reviewability | Summary, structured artifacts, and evidence-on-demand are retained for consequential decisions. |
 | Portability | Model/harness adapters invoke canonical workflows and contracts rather than duplicating policy. |

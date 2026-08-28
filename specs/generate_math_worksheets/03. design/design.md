@@ -141,7 +141,7 @@ The C3 components are independently testable. Subject modules invoke shared core
 | Blueprint Planner | `subjects/<subject>/src/blueprint.py` | Apply Worksheet Type rules to the approved subject scope. |
 | Spec Builder | `subjects/<subject>/src/generation.py` | Build the ordered Worksheet Spec from the approved blueprint. |
 | Subject Verifier | `subjects/<subject>/src/verification.py` | Provide deterministic checks and required reasoning-review results. |
-| Template Service | `src/rendering/template_service.py` | Resolve the registered template pair and validate revision/cache state. |
+| Template Service | `src/rendering/template_service.py` | Resolve the shared registry entry, selected subject/type manifest, template pair, and revision/cache state. |
 | Google Docs Adapter | `src/rendering/google_docs_adapter.py` | Copy masters, render projections, and inspect resulting documents. |
 | Validation Service | `src/verification/validation_service.py` | Run shared content QA and combine subject/type-specific validation. |
 | Publication Service | `src/verification/publication_service.py` | Publish approved artifact pairs and verify naming/destination. |
@@ -156,7 +156,7 @@ No M5 file may combine subject semantics, shared gate control, and Google API I/
 | `RunRepository.create_or_resume` | Request identity and policy snapshot | Run Manifest checkpoint | Reject incompatible resume revision. |
 | `GateController.require_approval` | Gate, artifact revision, manifest | Approval or blocked state | Fail closed when approval is absent/rejected/stale. |
 | `SpecRepository.write_revision` | Validated Spec and parent revision | Immutable Spec reference | Reject schema/lineage failure. Gate 2 cannot transition until every planned Worksheet has a persisted reference. |
-| `TemplateService.resolve` | Subject, Worksheet Type, grade/course, template selection | Template pair and revision metadata | Reject unregistered or stale-uninspected template. |
+| `TemplateService.resolve` | Subject, Worksheet Type, grade/course, template selection | Template pair and revision metadata | Resolve the shared registry to the subject/type manifest; reject unregistered, fallback-disallowed, or stale-uninspected templates. |
 | `Renderer.render_pair` | Verified Spec reference, template pair, destination | Two staging Render Artifacts | Reject non-passing verification or master-write request. |
 | `Validator.validate_pair` | Render artifacts and Spec reference | Content and visual QA record | Block final approval on any required QA failure. |
 | `Publisher.publish_pair` | Gate 5 approval, validated pair, destination | Publication Record | Reject missing, mismatched, or incorrectly named pair. |
@@ -192,6 +192,71 @@ type-specific validation rules
 type regression fixtures
 ```
 
+#### 3.5.1 Weekly Worksheet Spec Preparation Flow
+
+The following deterministic sequence is the design contract for preparing a Weekly Worksheet Spec.
+It applies to every subject and grade/course. Subject-specific behavior supplies the source-question
+selection policy; it does not change the shared count, validation, distribution, or Spec lifecycle.
+
+1. Resolve **Subject + Worksheet Type**.
+2. Load the selected grade/course configuration.
+3. Derive `questions_per_week` from `questions_per_day x configured sections`.
+4. Apply an optional configured split.
+5. Select source questions using `source_selector`.
+6. Validate the selected total.
+7. Distribute questions across configured sections.
+8. Assign local document slots.
+9. Create one canonical Worksheet Spec.
+
+```mermaid
+flowchart LR
+  REQ[User Request] --> ROUTE[1. Resolve Subject + Worksheet Type]
+  ROUTE --> TYPE[Worksheet Type Configuration]
+  TYPE --> GRADE[2. Load Grade/Course Configuration]
+  GRADE --> COUNTS[3. Derive Weekly Count<br/>daily count x sections]
+  GRADE --> SPLIT[4. Apply Optional Split]
+  KNOW[Subject Knowledge<br/>source questions] --> SELECT[5. Select with source_selector]
+  SPLIT --> SELECT
+  COUNTS --> SELECT
+  SELECT --> VALIDATE[6. Validate Selected Total]
+  VALIDATE --> DISTRIBUTE[7. Distribute Across Sections]
+  DISTRIBUTE --> SLOTS[8. Assign Local Document Slots]
+  SLOTS --> SPEC[9. Canonical Worksheet Spec]
+  POLICY[Subject Policy] --> ROUTE
+  CURRICULUM[Resolved Curriculum Scope] --> SPEC
+```
+
+The flow has explicit ownership boundaries:
+
+| Flow responsibility | Owner | Source or mechanism |
+|---|---|---|
+| Subject and Worksheet Type routing | Shared runtime | Policy Resolver and active template registry |
+| Grade/course defaults | Worksheet Type configuration | `grade_defaults` |
+| Daily/weekly arithmetic | Shared runtime | Deterministic count validation |
+| Optional distribution split | Worksheet Type configuration | `grade_split` and `source_selector` |
+| Source-question meaning and selection | Subject module | Subject knowledge and subject-specific selection policy |
+| Count and section reconciliation | Shared runtime | Blueprint/Spec preparation validation |
+| Local document slot assignment | Renderer | Template placeholder/layout contract |
+| Canonical content record | Shared Spec lifecycle | Immutable Worksheet Spec revision |
+
+The preparation rules and pass/fail visualization are provided in **Appendix A - Spec Preparation
+Validation Rules**. The builder must apply those rules before creating the Spec and stop with a
+reported mismatch when any rule fails.
+
+#### 3.5.2 Count Semantics
+
+Counts are configuration values, not agent assumptions:
+
+```text
+Weekly: questions_per_week = questions_per_day x configured sections
+Single-sheet: questions_per_worksheet = count in one artifact
+```
+
+For combined products, `grade_split` distributes the combined weekly total and must sum to
+`questions_per_week`. It is not multiplied by the number of days. Optional `source_selector` values
+identify the source group for each split entry. The builder must fail closed on any count, split, or
+section mismatch. Template slot capacity never changes the logical question count.
+
 SAT/ACT Worksheet Types define their approved scope only after their respective M1/M2 artifacts are added. “Mini” types must be separate type IDs, not informal count overrides, so their time, sections, scoring, and templates remain testable.
 
 ### 3.6 Google Docs/Drive Adapter Contract
@@ -203,6 +268,12 @@ The adapter separates external I/O from workflow policy:
 3. `inspect_document(copy_id)` returns text/structural evidence needed for automated QA.
 4. `publish_pair(student_artifact, key_artifact, destination)` confirms both files, names, parent folders, and links before recording success.
 5. Retryable external failures are recorded in the Run Manifest. Nonretryable failures return a blocked state and preserve upstream approvals.
+
+For variable-count Weekly Worksheets, template question slots are layout capacity, not required
+output. The Worksheet Type configuration is authoritative for `questions_per_day` and
+`questions_per_week`. A renderer must map globally numbered Spec questions to local day slots,
+populate only the configured count, remove unused numbered placeholder paragraphs, and validate that
+the final student and answer-key documents contain no empty numbered rows or unresolved placeholders.
 
 ## 4. Detailed Entity Relationship Design
 
@@ -380,7 +451,12 @@ config/
     <worksheet-type>.yaml                # Counts, sections, duration, scoring, template selection, validation
 ```
 
-A Worksheet Type file is configuration because its behavior is intentionally changeable. It can select an approved template by stable key or ID, but the template's revision and inspected layout remain Master Data.
+A Worksheet Type file is configuration because its behavior is intentionally changeable. It selects a
+subject/type template manifest by path and stable template key. The shared registry validates that
+the subject/type is registered and active. The selected manifest owns the external student and
+answer-key IDs, live revisions, inspected layout, and cache state. A Worksheet Type must not redefine
+that inspected structure. Class and Weekly Math use separate manifests; a fallback is explicit in
+the registry and is not implied by a missing manifest.
 
 ### 5.4 Master Data And Knowledge Contracts
 
@@ -394,7 +470,10 @@ subjects/
       curriculum-sources.json            # Source authority, freshness, provenance
 templates/
   by-worksheet-type/
-    template-manifest.json               # Approved template IDs, revisions, layout contracts, fallbacks
+    template-manifest.json               # Shared subject/Worksheet Type registry and routing
+subjects/
+  <subject>/config/template-manifests/
+    <worksheet-type>.json                # Subject/type master IDs, revisions, layout, cache state
 ```
 
 Master Data changes require a version/revision update and invalidate only dependent Transaction/Run Data under the Section 2.2 invalidation contract.
@@ -426,7 +505,7 @@ Transaction records are append-only evidence wherever possible. A correction cre
 |---|---|---|
 | Identity | `spec_version`, `spec_id`, `subject`, `worksheet_type`, `worksheet_id`, `revision` | Identifies one immutable logical content revision. |
 | Scope | `instructional_cycle`, `grade_or_course`, `weekly_curriculum`, `source_provenance`, `confidence` | Records approved instructional or assessment scope. |
-| Blueprint | `worksheet_type`, `sections`, `question_count`, `duration_minutes`, `scoring_policy`, `template_profile` | Defines profile-driven structure and delivery expectations. |
+| Blueprint | `worksheet_type`, `questions_per_day`, `questions_per_week` or `questions_per_worksheet`, `sections`, `duration_minutes`, `scoring_policy`, `template_profile` | Defines profile-driven structure and delivery expectations; count names must match the Worksheet Type scope and derived totals must pass consistency rules. |
 | Content | `questions[]` with `id`, `number`, `section_id`, `prompt`, `answer`, `skill`, `difficulty`, `standards`, `answer_rule` | Is the only content source for student and key projections. |
 | Verification | `verification_status`, `question_results[]`, `reasoning_review_status` | Records readiness and per-question proof. |
 | Lineage | `created_at`, `created_by`, `parent_revision`, `input_revisions` | Supports audit and dependency invalidation. |
@@ -486,52 +565,52 @@ A Worksheet Type can be compatible with multiple subjects. A Worksheet Type does
 
 ```text
 config/
-  base.yaml
-  math.yaml
-  ela.yaml
+  base.yaml                              # Shared lifecycle and platform defaults
+  math.yaml                              # Math subject-wide policy and defaults
+  ela.yaml                               # ELA subject-wide policy and defaults
   worksheet-types/
-    weekly-worksheet.yaml
-    class-worksheet.yaml
-    sat.yaml
-    sat-mini.yaml
-    act.yaml
-    act-mini.yaml
+    weekly-worksheet.yaml                # Weekly sections, counts, and template selection
+    class-worksheet.yaml                 # Single-sheet class counts and template selection
+    sat.yaml                              # SAT Worksheet Type rules and profile
+    sat-mini.yaml                         # SAT Mini Worksheet Type rules and profile
+    act.yaml                              # ACT Worksheet Type rules and profile
+    act-mini.yaml                         # ACT Mini Worksheet Type rules and profile
 schemas/
-  worksheet-spec.schema.json
-  run-manifest.schema.json
+  worksheet-spec.schema.json             # Canonical worksheet content and verification contract
+  run-manifest.schema.json               # Run state, approvals, artifacts, and telemetry contract
   definitions/
-    approval.schema.json
-    verification-result.schema.json
-    render-artifact.schema.json
-    publication-record.schema.json
+    approval.schema.json                 # Revision-scoped human gate decision
+    verification-result.schema.json      # Per-question and aggregate verification evidence
+    render-artifact.schema.json          # Copied worksheet/key document record
+    publication-record.schema.json       # Final paired publication result
 src/
   runtime/
-    policy.py
-    run_repository.py
-    gates.py
-    spec_repository.py
+    policy.py                            # Resolve immutable Subject + Worksheet Type policy
+    run_repository.py                    # Persist and resume Run Manifests
+    gates.py                             # Enforce approvals and dependency invalidation
+    spec_repository.py                   # Persist immutable Worksheet Spec revisions
   rendering/
-    template_service.py
-    google_docs_adapter.py
+    template_service.py                  # Resolve template registry and revision metadata
+    google_docs_adapter.py               # Copy, render, inspect, and publish Google Docs
   verification/
-    validation_service.py
-    publication_service.py
+    validation_service.py                # Run content and visual QA validation
+    publication_service.py               # Publish validated worksheet/key pairs
 subjects/
-  math/
-  ela/
+  math/                                  # Math knowledge, module, templates, and tests
+  ela/                                   # ELA knowledge, module, templates, and tests
 runs/
-  <subject>/<run_id>/
-    run-manifest.json
-    specs/<spec_id>-r<revision>.json
-    qa/
-    artifacts/
+  <subject>/<run_id>/                    # Durable evidence for one execution attempt
+    run-manifest.json                    # Run identity, state, approvals, and references
+    specs/<spec_id>-r<revision>.json     # Immutable canonical Worksheet Spec revision
+    qa/                                   # Content, visual, and release QA evidence
+    artifacts/                            # Rendered and published artifact records
 tests/
-  shared/
-  math/
-  ela/
-  profiles/
-  integration/
-  golden-examples/
+  shared/                                # Cross-subject runtime and contract tests
+  math/                                  # Math subject and curriculum tests
+  ela/                                   # ELA subject and curriculum tests
+  profiles/                              # Worksheet Type profile tests
+  integration/                           # Cross-component lifecycle tests
+  golden-examples/                       # Protected expected behavior examples
 ```
 
 This is a target structure for M5 migration. Existing P0 files remain in place until their replacement is implemented and regression-tested.
@@ -568,3 +647,40 @@ Each fitness function in M3 must map to at least one test fixture or a documente
 - Are Google Docs/Drive calls confined to adapters?
 - Are every M3 fitness function and M2 NFR represented in the test design?
 - Does the M5 sequence preserve the working Math baseline before extending ELA or SAT/ACT?
+
+## Appendix A - Spec Preparation Validation Rules
+
+In this document, an **invariant** means a rule that must always be true. These checks make the
+Weekly Worksheet preparation flow concrete and explain what happens when a rule fails.
+
+```mermaid
+flowchart TD
+  INPUT[Configuration + selected source questions] --> CHECK{Do the rules always hold?}
+  CHECK -->|Yes| SPEC[Create canonical Worksheet Spec]
+  CHECK -->|No| STOP[Stop and report mismatch]
+  COUNT[Weekly total = daily count x sections] --> CHECK
+  SPLIT[Split total = weekly total] --> CHECK
+  SELECT[Selected questions = weekly total] --> CHECK
+  SECTIONS[Each section has configured daily count] --> CHECK
+  SOURCE[Each split has a valid source selector] --> CHECK
+  CANONICAL[One Spec feeds worksheet and answer key] --> CHECK
+```
+
+| Rule that must always hold | Concrete example | If it fails |
+|---|---|---|
+| Weekly total equals daily count times sections | `5 x 5 = 25` for combined Grades 9/10 | Stop; do not create the Spec |
+| Split total equals weekly total | `13 + 12 = 25` | Stop; correct configuration |
+| Selected questions equal the expected total | Select exactly 25 questions | Stop; do not render |
+| Each section receives its configured daily count | Five sections receive 5 each | Stop; redistribute or correct config |
+| Split source selectors resolve | `math_1 -> Grade 9`, `math_2 -> Grade 10` | Stop; identify the source groups |
+| Worksheet and answer key use one Spec | Both derive from the same Spec revision | Stop; prevent mismatched artifacts |
+
+The detailed validation contract is:
+
+- `questions_per_week = questions_per_day x number_of_configured_sections` for Weekly Worksheets.
+- An optional split sums exactly to `questions_per_week`.
+- Every split entry has a resolvable `source_selector` when source groups are required.
+- Selected questions equal `questions_per_week`.
+- Sections contain the configured daily allocation.
+- Local document slots are presentation positions and do not redefine canonical question numbers.
+- The Worksheet Spec is the sole source for both the student worksheet and answer key.

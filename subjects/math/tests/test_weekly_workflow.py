@@ -40,13 +40,14 @@ def test_weekly_counts_sections_and_high_school_split_are_preserved():
     )
     plans = {entry["grade_or_course"]: entry for entry in review["worksheet_plans"]}
     assert WEEKLY_POLICY["sections"] and len(WEEKLY_POLICY["sections"]) == 5
-    assert plans["grade_1"]["plan"]["question_count"] == 50
-    assert plans["grade_4"]["plan"]["question_count"] == 50
-    assert plans["grade_5"]["plan"]["question_count"] == 50
-    assert plans["grade_6"]["plan"]["question_count"] == 40
+    assert plans["grade_1"]["plan"]["questions_per_week"] == 50
+    assert plans["grade_4"]["plan"]["questions_per_week"] == 50
+    assert plans["grade_5"]["plan"]["questions_per_week"] == 50
+    assert plans["grade_6"]["plan"]["questions_per_week"] == 40
     high_school = plans["grade_9_10"]
-    assert high_school["plan"]["question_count"] == 50
-    assert high_school["plan"]["grade_split"] == {"math_1": 25, "math_2": 25}
+    assert high_school["plan"]["questions_per_week"] == 25
+    assert high_school["plan"]["questions_per_day"] == 5
+    assert high_school["plan"]["grade_split"] == {"math_1": 13, "math_2": 12}
     assert [scope["grade_or_course"] for scope in high_school["curriculum_scopes"]] == ["math_1", "math_2"]
 
 

@@ -17,7 +17,7 @@ def test_active_class_worksheet_resolves():
     assert resolved["status"] == "active"
     assert resolved["project"]["timezone"] == "America/New_York"
     assert resolved["publishing"]["target"] == "outputs/math"
-    assert resolved["grade_defaults"]["grade_6"]["question_count"] == 32
+    assert resolved["grade_defaults"]["grade_6"]["questions_per_worksheet"] == 32
 
 
 def test_request_override_has_highest_precedence_and_snapshot_is_immutable():
@@ -46,11 +46,24 @@ def test_active_weekly_worksheet_resolves_all_math_grades():
     )
     assert resolved["status"] == "active"
     assert resolved["compatible_subjects"] == ("math",)
-    assert resolved["grade_defaults"]["grade_1"]["question_count"] == 50
-    assert resolved["grade_defaults"]["grade_4"]["question_count"] == 50
-    assert resolved["grade_defaults"]["grade_5"]["question_count"] == 50
-    assert resolved["grade_defaults"]["grade_6"]["question_count"] == 40
-    assert resolved["grade_defaults"]["grade_9_10"]["grade_split"] == {"math_1": 25, "math_2": 25}
+    assert resolved["grade_defaults"]["grade_1"]["questions_per_week"] == 50
+    assert resolved["grade_defaults"]["grade_4"]["questions_per_week"] == 50
+    assert resolved["grade_defaults"]["grade_5"]["questions_per_week"] == 50
+    assert resolved["grade_defaults"]["grade_6"]["questions_per_week"] == 40
+    assert resolved["grade_defaults"]["grade_9_10"]["questions_per_week"] == 25
+    assert resolved["grade_defaults"]["grade_9_10"]["grade_split"] == {"math_1": 13, "math_2": 12}
+    assert resolved["template_selection"]["template_manifest"] == "subjects/math/config/template-manifests/weekly-worksheet.json"
+    assert resolved["template_selection"]["template_registry_entry"]["template_fallback"] is False
+
+
+def test_weekly_counts_are_explicitly_derived_from_daily_count_and_sections():
+    resolved = policy.resolve(
+        {"subject": "math", "worksheet_type": "weekly-worksheet"},
+        repository_root=REPO,
+    )
+    section_count = len(resolved["sections"])
+    for defaults in resolved["grade_defaults"].values():
+        assert defaults["questions_per_week"] == defaults["questions_per_day"] * section_count
 
 
 def test_draft_homework_type_is_rejected():
@@ -96,6 +109,7 @@ def main():
         test_active_class_worksheet_resolves,
         test_request_override_has_highest_precedence_and_snapshot_is_immutable,
         test_active_weekly_worksheet_resolves_all_math_grades,
+        test_weekly_counts_are_explicitly_derived_from_daily_count_and_sections,
         test_draft_homework_type_is_rejected,
         test_draft_compact_unbranded_type_is_rejected,
         test_unknown_and_incompatible_requests_are_rejected,

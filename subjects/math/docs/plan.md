@@ -488,7 +488,7 @@ Examples:
 
 ```yaml
 # Grade 1
-question_count: 20
+questions_per_worksheet: 20
 sections:
   - number_sense
   - add_subtract
@@ -498,7 +498,7 @@ sections:
 
 ```yaml
 # Grades 4–6
-question_count: 32
+questions_per_worksheet: 32
 content_mix:
   current_curriculum: 21
   spiral: 8
@@ -512,7 +512,7 @@ sections:
 
 ```yaml
 # Grades 9/10
-question_count: 32
+questions_per_worksheet: 32
 grade_split:
   grade_9: 16
   grade_10: 16
@@ -771,7 +771,7 @@ Implementation should still follow phase dependencies rather than rank alone.
 MTS Math Worksheet Generation/
 ├── README.md
 ├── design.md
-├── mts-math-worksheet-config.yaml
+├── archive/mts-math-worksheet-config.yaml
 ├── plan.md
 │
 ├── knowledge/

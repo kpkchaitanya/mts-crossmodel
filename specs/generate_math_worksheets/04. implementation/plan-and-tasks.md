@@ -204,7 +204,7 @@ Entry condition: M5.7 complete.
 - [ ] Add a regression fixture for each remaining active type.
 - [ ] Approve 4-Day Homework counts, duration/continuity rules, template policy, and regression fixtures before activation.
 - [ ] Approve Compact/Unbranded count/page constraints, readability rules, unbranded templates, and regression fixtures before activation.
-- [ ] Register dedicated Weekly Worksheet templates when they are approved; the current active fallback remains valid until then.
+- [x] Register dedicated Weekly Worksheet templates and route Weekly Math to their subject/type manifest.
 
 ### M5.9 ELA Extension - Blocked
 
@@ -241,3 +241,4 @@ Unblock each Worksheet Type independently only after its requirements, timing/sc
 | 2026-08-27 | M5.7a Weekly Math Workflow Orchestrator | Complete | `python subjects/math/tests/test_weekly_workflow.py` passed 3/3; Math migration gate passed 3/3 suites and 14 checks. |
 | 2026-08-27 | M5.7b Weekly Math Staging Integration | Complete | `python tests/integration/test_weekly_math_lifecycle.py` passed 1/1 with five Plans, five-day candidate Specs, and 240 fixture Questions; Math migration gate passed 3/3 suites and 14 checks. |
 | 2026-08-27 | M5.8 Worksheet Type Activation | In progress | Compact/Unbranded Worksheet registered as a draft; `python tests/shared/test_policy.py` passed 6/6 and Math migration gate passed 3/3 suites and 14 checks. |
+| 2026-08-28 | M5.8 Worksheet Type Activation | In progress | Dedicated Weekly Worksheet student/key masters registered in `subjects/math/config/template-manifests/weekly-worksheet.json`; renderer now consumes the manifest; policy and reconciliation tests pass. |

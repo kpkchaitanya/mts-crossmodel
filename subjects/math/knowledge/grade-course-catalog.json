@@ -11,7 +11,7 @@
       "display_name": "Grades 9 and 10 Combined",
       "enabled": true,
       "curriculum_scopes": ["math_1", "math_2"],
-      "rendering_split": {"math_1": 16, "math_2": 16}
+      "rendering_split": {"math_1": 13, "math_2": 12}
     }
   ]
 }

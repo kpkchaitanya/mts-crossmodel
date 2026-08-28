@@ -11,8 +11,8 @@
       "worksheet_type_id": "weekly-worksheet",
       "subject": "math",
       "status": "active",
-      "manifest_path": "../../subjects/math/config/template-manifest.json",
-      "template_fallback": true
+      "manifest_path": "../../subjects/math/config/template-manifests/weekly-worksheet.json",
+      "template_fallback": false
     },
     {
       "worksheet_type_id": "weekly-worksheet",

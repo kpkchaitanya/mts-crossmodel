@@ -142,7 +142,11 @@ def test_all_weekly_math_plans_reach_publish_approval_readiness():
         validated_artifacts = []
         for plan_entry in workflow["worksheet_plans"]:
             grade = plan_entry["grade_or_course"]
-            count = plan_entry["plan"]["question_count"]
+            count = plan_entry["plan"]["questions_per_week"]
+            if grade == "grade_9_10":
+                assert plan_entry["plan"]["questions_per_day"] == 5
+                assert count == 25
+                assert sum(plan_entry["plan"]["grade_split"].values()) == count
             spec = math.build_spec(plan_entry["plan"], {"spec": candidate_spec(grade, count)})
             assert [section["id"] for section in spec["sections"]] == ["monday", "tuesday", "wednesday", "thursday", "friday"]
             manifest = approve(repository, manifest, "question_review", f"{grade}-questions-r1")

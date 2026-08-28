@@ -70,6 +70,10 @@ def _combined_high_school_plan(
     if grade_split is not None:
         raise WeeklyWorkflowError("Combined scope must not supply its own grade split.")
     plan["grade_split"] = dict(resolved_policy["grade_defaults"][entry["id"]]["grade_split"])
+    if sum(plan["grade_split"].values()) != plan["questions_per_week"]:
+        raise WeeklyWorkflowError("Combined Grades 9/10 split must equal questions_per_week.")
+    if plan["questions_per_week"] != plan["questions_per_day"] * len(resolved_policy["sections"]):
+        raise WeeklyWorkflowError("Weekly questions_per_week must equal questions_per_day times the section count.")
     return {"grade_or_course": entry["id"], "curriculum_scopes": curriculum_scopes, "plan": plan}
 
 

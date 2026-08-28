@@ -37,8 +37,9 @@ MATH_EXPECTED = [
     "MIGRATION.md",
     "docs/curriculum-source-guidance.md",
     "docs/plan.md",
-    "config/mts-math-worksheet-config.yaml",
+    "config/archive/mts-math-worksheet-config.yaml",
     "config/template-manifest.json",
+    "config/template-manifests/weekly-worksheet.json",
     "skills/worksheet-generation.md",
     "skills/verification.md",
     "commands/generate-weekly-classworksheets.md",
@@ -95,7 +96,7 @@ def test_harness_adapters_are_thin():
 
 
 def test_math_config_retains_behavior_paths():
-    cfg = read_math("config/mts-math-worksheet-config.yaml")
+    cfg = read_math("config/archive/mts-math-worksheet-config.yaml")
     for path in [
         "src/p0_runtime.py",
         "schemas/worksheet-spec.schema.json",
@@ -105,6 +106,8 @@ def test_math_config_retains_behavior_paths():
     ]:
         assert path in cfg
     assert "gate_5_publish: true" in cfg
+    weekly = read_root("config/worksheet-types/weekly-worksheet.yaml")
+    assert "subjects/math/config/template-manifests/weekly-worksheet.json" in weekly
 
 
 def test_json_assets_parse():
@@ -130,7 +133,7 @@ def test_json_assets_parse():
 
 
 def test_output_folder_semantics():
-    config = read_math("config/mts-math-worksheet-config.yaml")
+    config = read_math("config/archive/mts-math-worksheet-config.yaml")
     agents = read_root("AGENTS.md")
     assert 'target_folder_name: "outputs"' in config
     assert 'copilot_dump_folder_name: "outputs-copilot"' in config

@@ -17,36 +17,36 @@ grades:
   grade_1:
     enabled: true
     display_name: "Grade 1"
-    questions: 20
+    questions_per_worksheet: 20
     expected_pages: 1
     template_type: "grade_1_class"
   grade_4:
     enabled: true
     display_name: "Grade 4"
-    questions: 32
+    questions_per_worksheet: 32
     expected_pages: 2
     template_type: "standard_class"
   grade_5:
     enabled: true
     display_name: "Grade 5"
-    questions: 32
+    questions_per_worksheet: 32
     expected_pages: 2
     template_type: "standard_class"
   grade_6:
     enabled: true
     display_name: "Grade 6"
-    questions: 32
+    questions_per_worksheet: 32
     expected_pages: 2
     template_type: "standard_class"
   grade_9_10:
     enabled: true
     display_name: "Grades 9 & 10"
-    questions: 32
+    questions_per_worksheet: 32
     expected_pages: 2
     template_type: "high_school_combined"
     split:
-      grade_9: {questions: 16}
-      grade_10: {questions: 16}
+      grade_9: {questions_per_worksheet: 16}
+      grade_10: {questions_per_worksheet: 16}
 
 content_mix:
   current_curriculum_percent: 65
@@ -112,7 +112,6 @@ formatting:
   visually_review_before_publish: true
   grade_1_larger_font: true
 
-# Grade 1 and combined Grade 9/10 use the standard class template until dedicated templates are approved.
 templates:
   grade_1_class: &standard_template
     worksheet_url: "https://docs.google.com/document/d/1ng3-EQmHRQfUftIEoQnyh7N43hzi1ViUjf44LTgPqo0/edit"

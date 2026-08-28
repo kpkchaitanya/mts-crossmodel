@@ -11,7 +11,7 @@ validation:
   require_visual_qa: true
 extension_readiness:
   user_defined_constraints:
-    - "question_count"
+    - "questions_per_worksheet"
     - "page_constraint"
   blockers:
     - "Approve default grade/course question counts or require an explicit count for every run."

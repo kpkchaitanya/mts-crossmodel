@@ -12,7 +12,7 @@ MODULE = subject_module.MathSubjectModule(REPO)
 TYPE_CONFIG = {
     "worksheet_type_id": "class-worksheet",
     "duration_minutes": 15,
-    "grade_defaults": {"grade_6": {"question_count": 32}},
+    "grade_defaults": {"grade_6": {"questions_per_worksheet": 32}},
     "template_selection": {"template_manifest": "subjects/math/config/template-manifest.json"},
 }
 
@@ -38,7 +38,7 @@ def test_resolve_curriculum_preserves_p0_cache_behavior():
 def test_blueprint_uses_worksheet_type_defaults():
     plan = MODULE.prepare_blueprint({"grade_or_course": "grade_6"}, TYPE_CONFIG, {})
     assert plan["worksheet_type"] == "class-worksheet"
-    assert plan["question_count"] == 32
+    assert plan["questions_per_worksheet"] == 32
     assert plan["duration_minutes"] == 15
 
 

@@ -1,4 +1,10 @@
-# MTS Class Worksheet Template Registry v1.1
+# MTS Worksheet Template Registry v1.2
+
+## Weekly Worksheet
+- Worksheet: https://docs.google.com/document/d/1am6MWISljNdj6rytAUDN-ulRozi1XIH4H0R0-VDEAqo/edit?usp=drive_link
+- Answer Key: https://docs.google.com/document/d/1aqfc31qO8LxuSx319hfakJouHsalMQ09WgFpMt_8S3Y/edit?usp=drive_link
+- Manifest: `subjects/math/config/template-manifests/weekly-worksheet.json`
+- Status: Dedicated Weekly masters registered; structural inspection pending.
 
 ## Standard 32-Question Class Worksheet
 - Worksheet: https://docs.google.com/document/d/1ng3-EQmHRQfUftIEoQnyh7N43hzi1ViUjf44LTgPqo0/edit
