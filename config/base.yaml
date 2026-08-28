@@ -1,6 +1,6 @@
 version: "1.0"
 project:
-  name: "MTS AI Generation"
+  name: "MTS Testing System"
   timezone: "America/New_York"
 governance:
   instruction_precedence: ["current_user", "constitution", "config", "requirements", "design"]

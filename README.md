@@ -47,6 +47,135 @@ The current worksheet workflow is:
 Gate 2 requires durable spec references for the complete planned worksheet set before verification can
 continue.
 
+## Slash Command Catalog
+
+<table border="1" cellpadding="6" cellspacing="0" rules="all" frame="box" style="border-collapse: collapse; border: 1px solid #6b7280;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid #6b7280;">Functional Area</th>
+      <th style="border: 1px solid #6b7280;">Slash Command</th>
+      <th style="border: 1px solid #6b7280;">Purpose</th>
+      <th style="border: 1px solid #6b7280;">Example Usage</th>
+      <th style="border: 1px solid #6b7280;">Math Status</th>
+      <th style="border: 1px solid #6b7280;">ELA Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Setup Project (SP)</td>
+      <td style="border: 1px solid #6b7280;">Not yet registered</td>
+      <td style="border: 1px solid #6b7280;">Load canonical artifacts, resolve subject, supported grades, worksheet types, and override policy.</td>
+      <td style="border: 1px solid #6b7280;"><code>/setup-project math weekly</code></td>
+      <td style="border: 1px solid #6b7280;">Covered by canonical read order; command planned</td>
+      <td style="border: 1px solid #6b7280;">Covered by canonical read order; command planned</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Setup Yearly Curriculum (SYC)</td>
+      <td style="border: 1px solid #6b7280;">Not yet registered</td>
+      <td style="border: 1px solid #6b7280;">Build or reuse grade/course yearly curriculum progression with standards, prerequisites, provenance, and targeted invalidation.</td>
+      <td style="border: 1px solid #6b7280;"><code>/setup-yearly-curriculum math grade 6</code></td>
+      <td style="border: 1px solid #6b7280;">Knowledge assets and cache present; command planned</td>
+      <td style="border: 1px solid #6b7280;">Requirements/design defined; curriculum command not registered</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Prepare Instructional Cycle (PIC)</td>
+      <td style="border: 1px solid #6b7280;">Not yet registered</td>
+      <td style="border: 1px solid #6b7280;">Establish week, dates, cycle type, grades, calendar context, and run-level overrides before batch creation.</td>
+      <td style="border: 1px solid #6b7280;"><code>/prepare-instructional-cycle math week 5 grades 1,4,5,6,9-10</code></td>
+      <td style="border: 1px solid #6b7280;">Modeled inside weekly generation; standalone command planned</td>
+      <td style="border: 1px solid #6b7280;">Designed conceptually; standalone command not registered</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Resolve Weekly Curriculum (RWC)</td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets</code></td>
+      <td style="border: 1px solid #6b7280;">Resolve the current weekly curriculum scope using cache-first, source-aware logic and stop at Gate 1 when enabled.</td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets week 5 grades 1,4,5,6,9-10</code></td>
+      <td style="border: 1px solid #6b7280;">Active command path</td>
+      <td style="border: 1px solid #6b7280;">Subject docs exist; command not registered</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Prepare Batch (PB)</td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets</code></td>
+      <td style="border: 1px solid #6b7280;">Plan the requested worksheet set, shared overrides, grade/course split, and independent regeneration boundaries.</td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets week 5 grades 4,5</code></td>
+      <td style="border: 1px solid #6b7280;">Active command path</td>
+      <td style="border: 1px solid #6b7280;">Planned through shared workflow adaptation</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Prepare Worksheet (PW)</td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets</code></td>
+      <td style="border: 1px solid #6b7280;">Apply worksheet type, grade/course, counts, sections, difficulty, template profile, and per-worksheet overrides.</td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets week 5 grade 6 weekly</code></td>
+      <td style="border: 1px solid #6b7280;">Active command path</td>
+      <td style="border: 1px solid #6b7280;">Planned; subject rules documented</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Generate Worksheet (GW)</td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets</code></td>
+      <td style="border: 1px solid #6b7280;">Generate the canonical Worksheet Spec, ordered sections, questions, expected answers, standards, and Gate 2 review surface.</td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets week 5 grade 1</code></td>
+      <td style="border: 1px solid #6b7280;">Active command path</td>
+      <td style="border: 1px solid #6b7280;">Planned; no ELA generation slash command yet</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Verify Worksheet (VW)</td>
+      <td style="border: 1px solid #6b7280;"><code>/verify-worksheet</code></td>
+      <td style="border: 1px solid #6b7280;">Independently verify the approved Worksheet Spec/question set, report failed or ambiguous items, and stop at Gate 3 when enabled.</td>
+      <td style="border: 1px solid #6b7280;"><code>/verify-worksheet runs/math/&lt;run-id&gt;/specs/&lt;worksheet-spec&gt;.json</code></td>
+      <td style="border: 1px solid #6b7280;">Active command path</td>
+      <td style="border: 1px solid #6b7280;">Verifier requirements documented; command not registered</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Format Worksheet (FW)</td>
+      <td style="border: 1px solid #6b7280;">Not yet registered</td>
+      <td style="border: 1px solid #6b7280;">Render verified worksheet and answer key documents from the same spec without modifying master templates.</td>
+      <td style="border: 1px solid #6b7280;">Planned after verification gate</td>
+      <td style="border: 1px solid #6b7280;">Planned after verification gate</td>
+      <td style="border: 1px solid #6b7280;">Planned after subject generation path</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Validate Worksheet (VAL)</td>
+      <td style="border: 1px solid #6b7280;">Not yet registered</td>
+      <td style="border: 1px solid #6b7280;">Run content QA, visual/layout QA, editability checks, and final readiness checks before approval.</td>
+      <td style="border: 1px solid #6b7280;"><code>/validate-worksheet runs/math/&lt;run-id&gt;</code></td>
+      <td style="border: 1px solid #6b7280;">Planned QA command; criteria documented</td>
+      <td style="border: 1px solid #6b7280;">Planned QA command; criteria documented</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Publish Worksheet (PUB)</td>
+      <td style="border: 1px solid #6b7280;">Not yet registered</td>
+      <td style="border: 1px solid #6b7280;">Publish only approved worksheet/key pairs to canonical <code>outputs/&lt;subject&gt;/</code> destinations and record links/status.</td>
+      <td style="border: 1px solid #6b7280;">Planned after publish approval</td>
+      <td style="border: 1px solid #6b7280;">Planned; output policy active</td>
+      <td style="border: 1px solid #6b7280;">Planned; output policy active</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Manage Templates (MT)</td>
+      <td style="border: 1px solid #6b7280;">Not yet registered</td>
+      <td style="border: 1px solid #6b7280;">Maintain template registration, revision manifests, cache validity, fallback templates, and controlled template promotion.</td>
+      <td style="border: 1px solid #6b7280;"><code>/manage-templates list</code></td>
+      <td style="border: 1px solid #6b7280;">Planned; Math templates governed</td>
+      <td style="border: 1px solid #6b7280;">Planned; ELA templates governed</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Manage Workflow (MW)</td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets</code>, <code>/verify-worksheet</code></td>
+      <td style="border: 1px solid #6b7280;">Enforce gates, persist run manifests, support resume/invalidation, capture telemetry, and preserve auditability.</td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets resume runs/math/&lt;run-id&gt;</code></td>
+      <td style="border: 1px solid #6b7280;">Active through Math commands</td>
+      <td style="border: 1px solid #6b7280;">Shared governance active; ELA command surface pending</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Cross-Cutting NFRs</td>
+      <td style="border: 1px solid #6b7280;">Applies to all commands and workflows</td>
+      <td style="border: 1px solid #6b7280;">Preserve correctness, synchronization, curriculum integrity, reviewability, portability, and observability.</td>
+      <td style="border: 1px solid #6b7280;">Use the relevant command for the active lifecycle stage.</td>
+      <td style="border: 1px solid #6b7280;">Active governing criteria</td>
+      <td style="border: 1px solid #6b7280;">Active governing criteria</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Subjects
 
 ### Math
