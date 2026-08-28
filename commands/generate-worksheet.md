@@ -87,13 +87,22 @@ requirement to apply configured human gates without silently bypassing them.
 5. Resolve `publish` (default `yes` from `config/base.yaml` `publishing.default_publish`) and record it in the Run Manifest alongside `gates`.
 6. Resolve `difficulty` and `diversity` (default `medium_plus` from `config/base.yaml` `question_design`) and pass them to the subject's `build_week_plan(...)` before authoring, and to `check_diversity_and_progression(spec)` as a QA gate after authoring. See Question design above.
 7. Resolve `topic_overrides` (default none) via `question_plan.parse_topic_overrides(raw)` once, and pass the per-grade slice to `build_week_plan(...)` for each grade. See Question design above.
-8. Execute the resolved subject's execution runbook directly (for `subject=math` and
+8. **Echo the fully-resolved parameter set back to the user before any authoring/rendering starts** —
+   every parameter above (`subject`, `worksheettype`, `grades`, `week`, `gates`, `publish`,
+   `difficulty`, `diversity`, and `topic_overrides`), explicitly stating `topic_overrides: none` when
+   the user did not supply one for *this* invocation. Never carry a `topic_overrides` (or any other
+   parameter) value forward from an earlier conversation turn, an example from prior design
+   discussion, or a previous run — every invocation resolves its parameters from that invocation's
+   input and configured defaults only. This step exists specifically to make an incorrectly
+   carried-over value visible and correctable before it reaches authored content or a published
+   document, not just auditable afterward in the Run Manifest.
+9. Execute the resolved subject's execution runbook directly (for `subject=math` and
    `worksheettype=weekly`, this is
    [`subjects/math/skills/weekly-worksheet-execution-runbook.md`](../subjects/math/skills/weekly-worksheet-execution-runbook.md)),
    which lists the exact module calls, scripts, and gate ids to run — do not re-derive the process
    from `specs/generate_math_worksheets/03. design/design.md`/`docs/requirements.md` first; those are background rationale only.
-9. In a Copilot repository context, stage generated artifacts under `outputs-copilot/`; canonical `outputs/<subject>/` is reserved for the approved publish step.
-10. Once `publish_approval` is recorded for the run: if `publish=yes` (default), immediately execute the publish step (e.g. `GoogleDocsAdapter.publish_pair`) into `outputs/<subject>/` and report the published links. If `publish=no`, stop after staging and report that artifacts are staged only, pending a separate publish action.
+10. In a Copilot repository context, stage generated artifacts under `outputs-copilot/`; canonical `outputs/<subject>/` is reserved for the approved publish step.
+11. Once `publish_approval` is recorded for the run: if `publish=yes` (default), immediately execute the publish step (e.g. `GoogleDocsAdapter.publish_pair`) into `outputs/<subject>/` and report the published links. If `publish=no`, stop after staging and report that artifacts are staged only, pending a separate publish action.
 
 ## Examples
 
