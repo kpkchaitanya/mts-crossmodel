@@ -13,4 +13,11 @@ verification:
   check_notation_and_diagrams: true
 publishing:
   target: "outputs/math"
+  final_delivery:
+    destinations_by_grade:
+      grade_1: {folder_id: "1na4xEkS4mYB97qwjNZRdQ6q3RG3xk3Q9", label: "1st Grade"}
+      grade_4: {folder_id: "1WgYy1NG2buVLXEEhxyrHzloWbkjljD1K", label: "4th Grade"}
+      grade_5: {folder_id: "130VEomHbyC2-oyANo49W73dfDSi1VU5p", label: "5th Grade"}
+      grade_6: {folder_id: "10tSM2SwAxzGkzuYT47vNCo16K9TtPZre", label: "6th Grade"}
+      grade_9_10: {folder_id: "1RSSV84MDP8vHq7UwVm9GYH-36ZvGh1Cc", label: "9/10 Grade"}
 

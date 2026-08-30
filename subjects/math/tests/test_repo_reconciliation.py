@@ -9,7 +9,7 @@ ROOT_EXPECTED = [
     "AGENTS.md",
     "README.md",
     "constitution.md",
-    "docs/requirements.md",
+    "specs/generate_math_worksheets/01. intent/requirements.md",
     "specs/generate_math_worksheets/03. design/design.md",
     "config/base.yaml",
     "config/math.yaml",

@@ -3,7 +3,7 @@
 Self-contained execution reference. This is the only file you need to run a Math Weekly Worksheet
 generation once `subject`, `worksheettype`, and `gates` are resolved by
 [`/generate-worksheet`](../../../commands/generate-worksheet.md). Do not re-derive this sequence from
-`specs/generate_math_worksheets/03. design/design.md`/`docs/requirements.md` — those remain background rationale, not execution steps.
+`specs/generate_math_worksheets/03. design/design.md`/`specs/generate_math_worksheets/01. intent/requirements.md` — those remain background rationale, not execution steps.
 Every function below is real, tested code (see `tests/integration/test_weekly_math_lifecycle.py`).
 
 ## Module setup (do this once per run)
@@ -73,7 +73,8 @@ reviewer name.
 10. **Gate 5 (`publish_approval`)**: present the full batch (all grades/courses, staged Drive links) for final approval unless bypassed, then `manifest = gates.record_approval(manifest, gate="publish_approval", artifact_revision=<batch-revision-id>, status="approved", reviewer=...)`.
 11. Resolve `publish` (default `yes` per `config/base.yaml` `publishing.default_publish`): once step 10's approval is recorded, `publish=yes` (default) immediately runs `adapter.publish_pair(student_artifact, answer_key_artifact, final_destination_id)` per grade/course, moving staged documents into `outputs/math/`. `publish=no` stops here and leaves artifacts staged only. Never call `publish_pair` before step 10's approval is recorded, even when `gates=bypass all` — bypass skips the stop-and-wait UI step, not the recorded approval itself.
 12. Persist final manifest status (`"status": "published"` when published this run, otherwise `"status": "publish_approval_pending"` when `publish=no`), telemetry, and output links; `repo.save_manifest(manifest)`.
-13. Report a compact summary back to the user: worksheets generated, grades/week resolved, gates bypassed (explicit list), the `publish` decision, topic overrides applied, verification/QA outcomes, and Drive links (staged and/or published).
+13. **Final Delivery** (audience-facing; only after step 10's `publish_approval` is recorded). Staging is everything up to and including step 11; Final Delivery distributes the approved pair to parents. Per grade: `week_folder = adapter.ensure_child_folder(<parent folder id from config/math.yaml `publishing.final_delivery.destinations_by_grade`>, resolved_policy["publishing"]["final_delivery"]["week_folder_pattern"].replace("{{WEEK_OF}}", <ISO Monday>))`, then `adapter.deliver_pair(student_artifact, answer_key_artifact, week_folder["id"], mode=<configured mode>, deliver_answer_key=<configured flag>)`. `ensure_child_folder` is idempotent, so re-delivering a week reuses its folder instead of creating a duplicate. Default `mode: copy` leaves staging intact as the audit trail. `scripts/deliver_weekly_worksheets.py --run-root runs/math/<run_id> --week-of <ISO date|week number|current>` performs this for a whole batch and writes `delivered-artifacts.json`; add `--dry-run` to review the grade -> folder mapping first. Never deliver an artifact that has not passed verification, visual QA, and Gate 5.
+14. Report a compact summary back to the user: worksheets generated, grades/week resolved, gates bypassed (explicit list), the `publish` decision, topic overrides applied, verification/QA outcomes, and Drive links (staged, published, and delivered).
 
 ## Fast-path reminders
 
@@ -81,6 +82,7 @@ reviewer name.
 - `SpecRepository.write_revision` enforces immutability: writing a different payload to an existing `revision` path raises. Use a new `revision` id for edits.
 - `scripts/prepare_weekly_spec.py --source <path> --destination <path> --grade-id <id>` is an optional CLI alternative to steps 8b–8e for building a spec from a larger source question bank; it still requires manual verification/QA afterward.
 - `scripts/render_weekly_specs_to_drive.py` is a standalone reference implementation of step 8i/10 for ad hoc Drive rendering outside this in-process flow; prefer `google_docs_adapter.GoogleDocsAdapter` directly when already in a Python session.
+- `scripts/deliver_weekly_worksheets.py` reads a run's `published-artifacts.json` (falling back to `rendered-artifacts.json`) and is the batch entry point for step 13. It refuses any grade with no configured Final Delivery parent folder.
 
 ## Run-mode failure and change control
 

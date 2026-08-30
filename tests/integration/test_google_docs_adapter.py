@@ -20,6 +20,8 @@ class FakeFiles:
         self.documents = {}
         self.copies = []
         self.updates = []
+        self.folders = {}
+        self.list_queries = []
 
     def copy(self, *, fileId, body, fields):
         document_id = f"copy-{len(self.copies) + 1}"
@@ -30,6 +32,20 @@ class FakeFiles:
 
     def get(self, *, fileId, fields):
         return Request(dict(self.documents[fileId]))
+
+    def list(self, *, q, fields, pageSize):
+        self.list_queries.append(q)
+        matches = [
+            folder for folder in self.folders.values()
+            if f"name = '{folder['name']}'" in q and f"'{folder['parents'][0]}' in parents" in q
+        ]
+        return Request({"files": [{"id": f["id"], "name": f["name"], "webViewLink": f["webViewLink"]} for f in matches]})
+
+    def create(self, *, body, fields):
+        folder_id = f"folder-{len(self.folders) + 1}"
+        folder = {"id": folder_id, "name": body["name"], "parents": body["parents"], "webViewLink": f"https://drive/{folder_id}"}
+        self.folders[folder_id] = folder
+        return Request(dict(folder))
 
     def update(self, *, fileId, addParents, removeParents, fields):
         document = self.documents[fileId]
@@ -128,6 +144,67 @@ def test_unverified_spec_and_incomplete_pair_fail_closed():
         assert "passing" in str(error)
     else:
         raise AssertionError("Unverified Spec must not render.")
+
+
+def staged_pair(adapter):
+    rendered = adapter.render_pair(
+        verified_spec(),
+        {"student_template_id": "student-master", "answer_key_template_id": "key-master"},
+        "staging-folder",
+        {"student_worksheet": "Grade 6", "answer_key": "Grade 6_KEY"},
+        {"student_worksheet": "1. Solve.", "answer_key": "ANSWER KEY\n1. 7"},
+    )
+    return rendered["student_worksheet"], rendered["answer_key"]
+
+
+def test_ensure_child_folder_is_idempotent():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+    created = adapter.ensure_child_folder("grade-6-parent", "Week_2026-08-31")
+    reused = adapter.ensure_child_folder("grade-6-parent", "Week_2026-08-31")
+    assert created["created"] is True
+    assert reused["created"] is False
+    assert reused["id"] == created["id"]
+    assert len(drive.file_service.folders) == 1
+
+
+def test_deliver_pair_copies_staged_documents_and_preserves_staging():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+    student, answer_key = staged_pair(adapter)
+    week_folder = adapter.ensure_child_folder("grade-6-parent", "Week_2026-08-31")
+
+    delivered = adapter.deliver_pair(student, answer_key, week_folder["id"], mode="copy")
+
+    assert delivered["status"] == "delivered"
+    assert delivered["student_worksheet"]["document"]["parents"] == [week_folder["id"]]
+    assert delivered["answer_key"]["document"]["parents"] == [week_folder["id"]]
+    assert drive.file_service.documents[student["document"]["id"]]["parents"] == ["staging-folder"]
+    assert drive.file_service.updates == []
+
+
+def test_deliver_pair_can_skip_the_answer_key():
+    adapter = adapter_module.GoogleDocsAdapter(FakeDrive(), FakeDocs())
+    student, answer_key = staged_pair(adapter)
+    delivered = adapter.deliver_pair(student, answer_key, "week-folder", deliver_answer_key=False)
+    assert "answer_key" not in delivered
+
+
+def test_deliver_pair_rejects_unstaged_artifact_and_bad_mode():
+    adapter = adapter_module.GoogleDocsAdapter(FakeDrive(), FakeDocs())
+    student, answer_key = staged_pair(adapter)
+    try:
+        adapter.deliver_pair({**student, "status": "pending"}, answer_key, "week-folder")
+    except adapter_module.GoogleDocsAdapterError as error:
+        assert "staged" in str(error)
+    else:
+        raise AssertionError("Unstaged artifact must not be delivered.")
+    try:
+        adapter.deliver_pair(student, answer_key, "week-folder", mode="link")
+    except adapter_module.GoogleDocsAdapterError as error:
+        assert "mode" in str(error)
+    else:
+        raise AssertionError("Unknown delivery mode must fail closed.")
 
     try:
         adapter.publish_pair({"artifact_kind": "student_worksheet", "status": "staged"}, {}, "final-folder")

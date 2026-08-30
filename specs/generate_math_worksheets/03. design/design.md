@@ -93,7 +93,8 @@ stateDiagram-v2
     gate_5_decision --> publish_ready: Approval not required
     publish_approval_pending --> published: approved
     publish_ready --> published
-    published --> [*]
+    published --> delivered: Final Delivery to the configured audience destination
+    delivered --> [*]
 
     scope_resolved --> scope_invalidated: Scope or preparation changed
     scope_invalidated --> scope_resolved: Resolve updated scope
@@ -117,6 +118,8 @@ stateDiagram-v2
 | Gate 4: Formatting Review | Rendered student/key artifacts and QA result | Same fields | `publish_approval_pending` |
 | Gate 5: Publish Approval | Final validation and intended publication pair | Same fields | `published` |
 
+Gate 5 authorizes both publication and the subsequent Final Delivery of the same approved revision. Final Delivery adds no gate of its own; it may never run against an artifact revision Gate 5 has not approved.
+
 A rejection, expired approval, or changed source revision blocks the associated transition. An approval never applies to a later revision.
 
 ### 2.2 Invalidation Contract
@@ -128,6 +131,7 @@ A rejection, expired approval, or changed source revision blocks the associated 
 | Question or answer | That Question verification and affected Worksheet verification/render/validation/publication | Curriculum approval and unrelated Worksheets |
 | Template revision | Affected template cache, rendered artifacts, validation, and publication | Approved scope, questions, and verification |
 | Destination/naming configuration | Publication readiness and publication record | Scope, questions, verification, rendering, and validation |
+| Audience destination or week-folder configuration | Delivery readiness and delivery record | Publication record and all upstream approvals |
 
 ## 3. Module And Interface Design
 
@@ -152,6 +156,7 @@ flowchart LR
     REN[Google Docs Adapter]
     VAL[Validation Service]
     PUB[Publication Service]
+    DIST[Final Delivery Service]
   end
   subgraph EXT[Extension Definitions]
     KNOW[(Subject Knowledge)]
@@ -163,11 +168,12 @@ flowchart LR
   KNOW --> CUR
   TYPE --> POL
   TYPE --> PLAN
-  SPEC --> VER --> GATE --> TPL --> REN --> VAL --> PUB
+  SPEC --> VER --> GATE --> TPL --> REN --> VAL --> PUB --> DIST
   TM --> TPL
   RUN --> GATE
   RUN --> VAL
   RUN --> PUB
+  RUN --> DIST
 ```
 
 The C3 components are independently testable. Subject modules invoke shared core interfaces; delivery services never make curriculum or gate-policy decisions.
@@ -188,6 +194,7 @@ The C3 components are independently testable. Subject modules invoke shared core
 | Google Docs Adapter | `src/rendering/google_docs_adapter.py` | Copy masters, render projections, and inspect resulting documents. |
 | Validation Service | `src/verification/validation_service.py` | Run shared content QA and combine subject/type-specific validation. |
 | Publication Service | `src/verification/publication_service.py` | Publish approved artifact pairs and verify naming/destination. |
+| Final Delivery Service | `scripts/deliver_weekly_worksheets.py` over `src/rendering/google_docs_adapter.py` | Resolve the per-grade audience destination, ensure the week folder, and distribute the published pair. |
 
 No M5 file may combine subject semantics, shared gate control, and Google API I/O. That separation is the C4 enforcement of the M3 boundaries.
 
@@ -203,6 +210,8 @@ No M5 file may combine subject semantics, shared gate control, and Google API I/
 | `Renderer.render_pair` | Verified Spec reference, template pair, destination | Two staging Render Artifacts | Reject non-passing verification or master-write request. |
 | `Validator.validate_pair` | Render artifacts and Spec reference | Content and visual QA record | Block final approval on any required QA failure. |
 | `Publisher.publish_pair` | Gate 5 approval, validated pair, destination | Publication Record | Reject missing, mismatched, or incorrectly named pair. |
+| `Deliverer.ensure_week_folder` | Grade audience parent destination, resolved week folder name | Week folder reference | Reuse an existing folder; reject an ambiguous duplicate name. |
+| `Deliverer.deliver_pair` | Published pair, week folder, delivery mode | Delivery Record | Reject an unapproved/unpublished artifact, an unknown mode, or a grade with no configured destination. |
 
 ### 3.4 Subject Module Interface
 
@@ -310,7 +319,9 @@ The adapter separates external I/O from workflow policy:
 2. `render_document(copy_id, projection)` consumes a projection generated from the verified Spec revision.
 3. `inspect_document(copy_id)` returns text/structural evidence needed for automated QA.
 4. `publish_pair(student_artifact, key_artifact, destination)` confirms both files, names, parent folders, and links before recording success.
-5. Retryable external failures are recorded in the Run Manifest. Nonretryable failures return a blocked state and preserve upstream approvals.
+5. `ensure_child_folder(parent_id, name)` resolves a named child folder under an audience destination, creating it only when absent and refusing an ambiguous duplicate name, so delivery is idempotent.
+6. `deliver_pair(student_artifact, key_artifact, destination, mode, deliver_answer_key)` distributes an already-approved pair; it never renders, edits, or re-verifies content.
+7. Retryable external failures are recorded in the Run Manifest. Nonretryable failures return a blocked state and preserve upstream approvals.
 
 For variable-count Weekly Worksheets, template question slots are layout capacity, not required
 output. The Worksheet Type configuration is authoritative for `questions_per_day` and
@@ -490,6 +501,34 @@ Worksheet prompts must never leak raw code syntax (`25**(1/2)`, `x^2`, `*`, `/`,
 authoring still uses judgment for grade-appropriateness — this table does not replace the existing
 `review_guidance` reasoning-review requirement.
 
+### 3.9 Staging And Final Delivery Contract
+
+Distribution has two distinct phases. Confusing them is what this contract prevents.
+
+| Phase | Purpose | Location | Audience |
+|---|---|---|---|
+| Staging | Render, correct, verify, QA, and hold approved artifacts | `config/base.yaml` `publishing.staging.render_folder_id`, then `.approved_folder_id` (mirrored by `outputs-copilot/`) | Authoring and review only |
+| Final Delivery | Distribute an approved, unmodified pair | `Week_<WEEK_OF>` under `config/<subject>.yaml` `publishing.final_delivery.destinations_by_grade.<grade>.folder_id` | Parents/students |
+
+Rules:
+
+1. Final Delivery is a distribution step, never an authoring step. It copies existing documents; it
+   never renders, edits, re-numbers, or re-verifies content.
+2. It requires a recorded Gate 5 approval for the delivered revision. It introduces no new gate.
+3. Destinations are configuration, resolved per grade. A grade with no configured destination is a
+   fail-closed error, never a fallback to a shared folder.
+4. `WEEK_OF` is the ISO Monday of the delivered instructional week, resolved against
+   `config/base.yaml` `calendar.week_1_start`. The folder name comes from
+   `final_delivery.week_folder_pattern`, so the audience-facing naming stays configurable.
+5. Delivery is idempotent: `reuse_existing_week_folder` requires resolving an existing week folder
+   rather than creating a second one, so a re-delivery corrects a week in place.
+6. `final_delivery.mode: copy` is the default so Staging survives delivery as the audit trail;
+   `move` is available where staging retention is not wanted.
+7. `final_delivery.deliver_answer_key` controls whether the Answer Key accompanies the Student
+   Worksheet, because audience visibility of keys is a policy decision, not a rendering one.
+8. Each delivery writes a Delivery Record to the Run's evidence (`delivered-artifacts.json`) naming
+   the source artifacts, week, mode, destination folders, and resulting document links.
+
 ## 4. Detailed Entity Relationship Design
 
 This ERD is the detailed implementation model. It shows ownership and reference relationships without treating the Run Manifest as a second source of Worksheet content.
@@ -514,6 +553,7 @@ erDiagram
   WORKSHEET_SPEC ||--o{ RENDER_ARTIFACT : renders
   RENDER_ARTIFACT ||--o{ VALIDATION_RESULT : assesses
   RENDER_ARTIFACT ||--o{ PUBLICATION_RECORD : publishes
+  PUBLICATION_RECORD ||--o{ DELIVERY_RECORD : delivers
 
   PROJECT {
     string project_id PK
@@ -615,6 +655,16 @@ erDiagram
     string destination
     string status
   }
+  DELIVERY_RECORD {
+    string delivery_id PK
+    string publication_id FK
+    string grade_or_course
+    string audience_parent_folder
+    string week_folder
+    string week_of
+    string mode
+    string status
+  }
 ```
 
 ## 5. Data Classification, Ownership, And Contracts
@@ -672,6 +722,12 @@ the subject/type is registered and active. The selected manifest owns the extern
 answer-key IDs, live revisions, inspected layout, and cache state. A Worksheet Type must not redefine
 that inspected structure. Class and Weekly Math use separate manifests; a fallback is explicit in
 the registry and is not implied by a missing manifest.
+
+Distribution locations are configuration for the same reason. `base.yaml` owns audience-neutral
+distribution behavior (`publishing.staging`, `publishing.final_delivery` mode, week-folder pattern,
+reuse, answer-key policy); `<subject>.yaml` owns the per-grade audience destinations
+(`publishing.final_delivery.destinations_by_grade`), because which folder a grade's families watch is
+a subject-scoped fact. No destination ID may be embedded in a script or adapter.
 
 ### 5.4 Master Data And Knowledge Contracts
 
@@ -806,7 +862,7 @@ src/
     spec_repository.py                   # Persist immutable Worksheet Spec revisions
   rendering/
     template_service.py                  # Resolve template registry and revision metadata
-    google_docs_adapter.py               # Copy, render, inspect, and publish Google Docs
+    google_docs_adapter.py               # Copy, render, inspect, publish, and deliver Google Docs
   verification/
     validation_service.py                # Run content and visual QA validation
     publication_service.py               # Publish validated worksheet/key pairs
@@ -819,6 +875,7 @@ runs/
     specs/<spec_id>-r<revision>.json     # Immutable canonical Worksheet Spec revision
     qa/                                   # Content, visual, and release QA evidence
     artifacts/                            # Rendered and published artifact records
+    delivered-artifacts.json              # Final Delivery record for the batch
 tests/
   shared/                                # Cross-subject runtime and contract tests
   math/                                  # Math subject and curriculum tests
@@ -837,7 +894,7 @@ This is a target structure for M5 migration. Existing P0 files remain in place u
 | Unit | Policy resolution, schemas, gate transitions, invalidation, deterministic Math methods | Valid/invalid requests, approval revisions, edited Spec revisions |
 | Subject | Math deterministic/reasoning checks; ELA language checks | Grade/course scope and question examples per subject |
 | Profile | Weekly, Class, Homework, Compact, Speed Math, SAT/ACT profiles | Valid and invalid blueprint/count/time/score configurations |
-| Integration | Spec -> verification -> copied-template render -> QA -> approved paired publication | Mock Google Docs/Drive and a verified Spec fixture |
+| Integration | Spec -> verification -> copied-template render -> QA -> approved paired publication -> per-grade Final Delivery | Mock Google Docs/Drive and a verified Spec fixture |
 | Regression | Preserve working `mts-new` Math behaviors during migration | Current Math fixtures, expected content/QA/manifest outcomes |
 | Manual visual | Pagination, readability, gaps, wrapping, answer space, colors, key density | Rendered staging document links and recorded reviewer decision |
 
@@ -849,10 +906,11 @@ Each fitness function in M3 must map to at least one test fixture or a documente
 2. Implement policy snapshots, Run Manifest persistence, gate controller, and revision/invalidation mechanics.
 3. Extract Math P0 helpers behind the Subject Module interface and preserve all existing Math tests.
 4. Migrate Google Docs/Drive render and publishing scripts from `mts-new` behind adapters with mocked integration tests.
-5. Add Worksheet Type registration and migrate existing Math Worksheet Types into type definitions.
-6. Build the ELA extension package with approved ELA M1/M2 scope, knowledge, templates, verifier, and tests.
-7. Add SAT, SAT Mini, ACT, and ACT Mini only after their profile requirements, scoring/validation rules, fixtures, and templates are approved.
-8. Run the full Math regression gate and extension-isolation tests before replacing legacy workflow paths.
+5. Add configuration-driven Final Delivery of published pairs into per-grade, per-week audience folders, with idempotent folder resolution and a persisted Delivery Record.
+6. Add Worksheet Type registration and migrate existing Math Worksheet Types into type definitions.
+7. Build the ELA extension package with approved ELA M1/M2 scope, knowledge, templates, verifier, and tests.
+8. Add SAT, SAT Mini, ACT, and ACT Mini only after their profile requirements, scoring/validation rules, fixtures, and templates are approved.
+9. Run the full Math regression gate and extension-isolation tests before replacing legacy workflow paths.
 
 ## 10. M4 Review Checklist
 
@@ -860,6 +918,7 @@ Each fitness function in M3 must map to at least one test fixture or a documente
 - Are all five gate transitions and invalidation rules complete and fail-closed?
 - Can a subject/profile be added without changing shared lifecycle semantics?
 - Are Google Docs/Drive calls confined to adapters?
+- Are Staging and Final Delivery distinct, with delivery gated on Gate 5, destination-configured per grade, idempotent per week, and incapable of modifying content?
 - Are every M3 fitness function and M2 NFR represented in the test design?
 - Does the M5 sequence preserve the working Math baseline before extending ELA or SAT/ACT?
 

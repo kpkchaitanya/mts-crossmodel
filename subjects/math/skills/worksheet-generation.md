@@ -4,7 +4,7 @@
 Generating one or more weekly MTS Math class worksheets.
 
 ## Required inputs
-Read `AGENTS.md`, `docs/requirements.md`, `specs/generate_math_worksheets/03. design/design.md`, the active files under `config/`, and `templates/template-links.md`. Apply the current user request as the highest-precedence run override.
+Read `AGENTS.md`, `specs/generate_math_worksheets/01. intent/requirements.md`, `specs/generate_math_worksheets/03. design/design.md`, the active files under `config/`, and `templates/template-links.md`. Apply the current user request as the highest-precedence run override.
 
 ## Workflow
 1. Initialize/resume a run manifest under `runs/`. Resolve the `gates` parameter (from `/generate-worksheet` or a direct invocation) against `config/base.yaml` `gates` and record which gates, if any, are explicitly bypassed for this run before continuing.
@@ -21,6 +21,7 @@ Read `AGENTS.md`, `docs/requirements.md`, `specs/generate_math_worksheets/03. de
 12. Run final QA and present Gate 5 unless explicitly bypassed.
 13. In Copilot context, stage/dump generated artifacts under `outputs-copilot/`; this is not publication.
 14. Publish final artifacts only after final approval (explicit gate bypass counts as approval only when the user requested it for this run) to `outputs/`; verify final folder/name and persist telemetry/status.
+15. Deliver the published pair to its audience: create/reuse `Week_<WEEK_OF>` under the grade's `publishing.final_delivery.destinations_by_grade` folder and copy the pair there. Delivery distributes approved content only; it never renders or edits.
 
 ## Fast-path invariants
 - Use `knowledge/curriculum/progressive/progressive-math-backbone.json` for long-term `builds_from`/`leads_to` context; CCS pacing determines what is current.

@@ -100,9 +100,10 @@ requirement to apply configured human gates without silently bypassing them.
    `worksheettype=weekly`, this is
    [`subjects/math/skills/weekly-worksheet-execution-runbook.md`](../subjects/math/skills/weekly-worksheet-execution-runbook.md)),
    which lists the exact module calls, scripts, and gate ids to run — do not re-derive the process
-   from `specs/generate_math_worksheets/03. design/design.md`/`docs/requirements.md` first; those are background rationale only. The runbook's run-mode failure and change-control protocol is mandatory during execution.
+   from `specs/generate_math_worksheets/03. design/design.md`/`specs/generate_math_worksheets/01. intent/requirements.md` first; those are background rationale only. The runbook's run-mode failure and change-control protocol is mandatory during execution.
 10. In a Copilot repository context, stage generated artifacts under `outputs-copilot/`; canonical `outputs/<subject>/` is reserved for the approved publish step.
 11. Once `publish_approval` is recorded for the run: if `publish=yes` (default), immediately execute the publish step (e.g. `GoogleDocsAdapter.publish_pair`) into `outputs/<subject>/` and report the published links. If `publish=no`, stop after staging and report that artifacts are staged only, pending a separate publish action.
+12. Publishing ends **Staging**. **Final Delivery** is the separate, audience-facing step that copies the approved pair into `Week_<WEEK_OF>` under each grade's parent folder from `config/<subject>.yaml` `publishing.final_delivery.destinations_by_grade`. It never renders or edits content, only distributes an already-approved artifact, and staging is retained as the audit trail.
 
 ## Examples
 

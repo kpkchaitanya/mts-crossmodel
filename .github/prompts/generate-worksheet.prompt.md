@@ -15,7 +15,7 @@ resolution, gate handling, and delegation to the resolved subject command. Also 
 
 - [AGENTS.md](../../AGENTS.md)
 - [constitution.md](../../constitution.md)
-- [docs/requirements.md](../../docs/requirements.md) and [specs/generate_math_worksheets/03. design/design.md](<../../specs/generate_math_worksheets/03. design/design.md>) (canonical design)
+- [specs/generate_math_worksheets/01. intent/requirements.md](<../../specs/generate_math_worksheets/01. intent/requirements.md>) (canonical requirements) and [specs/generate_math_worksheets/03. design/design.md](<../../specs/generate_math_worksheets/03. design/design.md>) (canonical design)
 - [config/base.yaml](../../config/base.yaml)
 - The selected subject's `config/<subject>.yaml` and `requirements.md`
 

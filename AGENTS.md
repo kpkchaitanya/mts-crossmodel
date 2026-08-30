@@ -16,7 +16,7 @@ A run-level override is not persisted unless the user explicitly requests it.
 ## Read order
 
 1. `constitution.md`
-2. `docs/requirements.md`
+2. `specs/generate_math_worksheets/01. intent/requirements.md`
 3. `specs/generate_math_worksheets/03. design/design.md` (canonical design document)
 4. `config/base.yaml`
 5. The selected subject's requirements, design, and configuration

@@ -218,7 +218,7 @@ response guidance. It favors readable, high-value work over cramped passages or 
 
 - `constitution.md` — governing principles.
 - `AGENTS.md` — repository execution contract and read order.
-- `docs/requirements.md` — shared product requirements.
+- `specs/generate_math_worksheets/01. intent/requirements.md` — canonical shared and Math product requirements.
 - `specs/generate_math_worksheets/03. design/design.md` — canonical shared and Math architecture/execution design.
 - `config/base.yaml` — shared runtime defaults.
 - `config/math.yaml` and `config/ela.yaml` — subject defaults.
@@ -243,7 +243,7 @@ Harness adapters may point to canonical sources, but they must not redefine gove
 
 1. Read `AGENTS.md`.
 2. Read `constitution.md`.
-3. Read `docs/requirements.md`, `specs/generate_math_worksheets/03. design/design.md`, and `config/base.yaml`.
+3. Read `specs/generate_math_worksheets/01. intent/requirements.md`, `specs/generate_math_worksheets/03. design/design.md`, and `config/base.yaml`.
 4. Select Math or ELA.
 5. Read the selected subject's requirements and configuration.
 6. Use the applicable workflow, skills, schemas, and tests.

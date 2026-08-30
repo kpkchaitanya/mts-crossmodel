@@ -109,6 +109,83 @@ class GoogleDocsAdapter:
             published.append(moved)
         return {"status": "published", "student_worksheet": published[0], "answer_key": published[1]}
 
+    def ensure_child_folder(self, parent_id: str, name: str) -> dict[str, Any]:
+        """Return the named folder under `parent_id`, creating it only when absent."""
+        if not parent_id or not name:
+            raise GoogleDocsAdapterError("parent_id and name are required.")
+        escaped = name.replace("\\", "\\\\").replace("'", "\\'")
+        query = (
+            f"name = '{escaped}' and '{parent_id}' in parents"
+            " and mimeType = 'application/vnd.google-apps.folder' and trashed = false"
+        )
+        matches = self.drive.files().list(
+            q=query, fields="files(id,name,webViewLink)", pageSize=2,
+        ).execute().get("files", [])
+        if len(matches) > 1:
+            raise GoogleDocsAdapterError(f"Ambiguous delivery folder '{name}' under {parent_id}.")
+        if matches:
+            return {**matches[0], "created": False}
+        created = self.drive.files().create(
+            body={"name": name, "mimeType": "application/vnd.google-apps.folder", "parents": [parent_id]},
+            fields="id,name,webViewLink",
+        ).execute()
+        if not created.get("id"):
+            raise GoogleDocsAdapterError("Google Drive did not return an ID for the created folder.")
+        return {**created, "created": True}
+
+    def deliver_pair(
+        self,
+        student_artifact: Mapping[str, Any],
+        answer_key_artifact: Mapping[str, Any],
+        destination_id: str,
+        *,
+        mode: str = "copy",
+        deliver_answer_key: bool = True,
+    ) -> dict[str, Any]:
+        """Deliver an approved staged pair to an audience-facing destination folder."""
+        if not destination_id:
+            raise GoogleDocsAdapterError("Delivery destination is required.")
+        if mode not in {"copy", "move"}:
+            raise GoogleDocsAdapterError("Delivery mode must be 'copy' or 'move'.")
+        student_id = self._delivery_document_id(student_artifact, "student_worksheet")
+        answer_key_id = self._delivery_document_id(answer_key_artifact, "answer_key") if deliver_answer_key else None
+        if answer_key_id is not None and student_id == answer_key_id:
+            raise GoogleDocsAdapterError("Student Worksheet and Answer Key must be different documents.")
+
+        delivered: dict[str, Any] = {"status": "delivered", "mode": mode, "destination_id": destination_id}
+        for key, document_id in (("student_worksheet", student_id), ("answer_key", answer_key_id)):
+            if document_id is None:
+                continue
+            metadata = self.drive.files().get(fileId=document_id, fields="id,name,parents,webViewLink").execute()
+            if mode == "copy":
+                result = self.drive.files().copy(
+                    fileId=document_id,
+                    body={"name": metadata["name"], "parents": [destination_id]},
+                    fields="id,name,parents,webViewLink",
+                ).execute()
+            else:
+                result = self.drive.files().update(
+                    fileId=document_id,
+                    addParents=destination_id,
+                    removeParents=",".join(metadata.get("parents", [])),
+                    fields="id,name,parents,webViewLink",
+                ).execute()
+            if destination_id not in result.get("parents", []):
+                raise GoogleDocsAdapterError("Delivered document is not in the requested destination.")
+            delivered[key] = {"source_document_id": document_id, "document": result}
+        return delivered
+
+    @staticmethod
+    def _delivery_document_id(artifact: Mapping[str, Any], expected_kind: str) -> str:
+        if artifact.get("artifact_kind") != expected_kind:
+            raise GoogleDocsAdapterError(f"{expected_kind} artifact is required.")
+        if artifact.get("status") not in {"staged", "validated", "published"}:
+            raise GoogleDocsAdapterError(f"{expected_kind} artifact must be staged, validated, or published before delivery.")
+        document_id = artifact.get("document", {}).get("id")
+        if not isinstance(document_id, str) or not document_id:
+            raise GoogleDocsAdapterError(f"{expected_kind} artifact must provide a document ID.")
+        return document_id
+
     @staticmethod
     def _body_text(body: list[dict[str, Any]]) -> str:
         text = []

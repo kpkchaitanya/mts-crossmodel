@@ -1,4 +1,4 @@
-# MTS Worksheet and Assessment Generation — Requirements v1.3
+# MTS Worksheet and Assessment Generation — Requirements v1.5
 
 ## 1. Purpose
 
@@ -47,6 +47,7 @@ A run-level override must not be persisted unless the user explicitly requests p
 | FW | Format Worksheet | Render verified content into worksheet/key documents. |
 | VAL | Validate Worksheet | Confirm completed artifacts are compliant and release-ready. |
 | PUB | Publish Worksheet | Publish approved worksheet/key pairs. |
+| DEL | Deliver Worksheet | Distribute published worksheet/key pairs to the target audience. |
 | MT | Manage Templates | Maintain reusable template assets and revisions. |
 | MW | Manage Workflow | Control gates, state, resume, invalidation, telemetry, and auditability. |
 
@@ -61,12 +62,12 @@ L0. Product
 `-- MTS Worksheet and Assessment Generation
     `-- L1. Full Scope Hierarchy
         |-- L2.1 Area: SP - Setup Project
-        |   |-- L3 Capabilities: Project context, subject modules, supported grades, Worksheet Types, override policy, model/harness neutrality
+        |   |-- L3 Capabilities: Project context, subject modules, supported grades, Worksheet Types, Worksheet Type lifecycle status and compatibility, override policy, model/harness neutrality
         |   |-- L3 Most Important Capabilities: Default Weekly Worksheet while preserving existing types and supporting approved SAT/ACT Worksheet Types
         |   |-- L3 Slash Commands: Not yet registered
         |   `-- L3 Requirements And Acceptance
-        |       `-- L4 Requirements: FR-SP-001 through FR-SP-014
-        |           `-- L4 One-line ACs: Load canonical artifacts; default to Weekly Worksheet unless another type is requested; resolve the selected subject and Worksheet Type. (Section 12: 1-2, 18)
+        |       `-- L4 Requirements: FR-SP-001 through FR-SP-017
+        |           `-- L4 One-line ACs: Load canonical artifacts; default to Weekly Worksheet unless another type is requested; resolve the selected subject and Worksheet Type. (Section 12: 1-2, 19)
         |
         |-- L2.2 Area: SYC - Setup Yearly Curriculum
         |   |-- L3 Capabilities: Grade/course yearly progression, NC standards, prerequisite relationships, provenance, targeted invalidation
@@ -77,12 +78,12 @@ L0. Product
         |           `-- L4 One-line ACs: Resolve or reuse the relevant Yearly Curriculum. (Section 12: 3)
         |
         |-- L2.3 Area: PIC - Prepare Instructional Cycle
-        |   |-- L3 Capabilities: Weekly/review/diagnostic/exam-prep/special cycles, dates, calendar context, grades, overrides
+        |   |-- L3 Capabilities: Weekly/review/diagnostic/exam-prep/special cycles, dates, calendar context, school-year week numbering and week resolution, grades, overrides
         |   |-- L3 Most Important Capabilities: Keep Instructional Cycle distinct from Batch and technical Run
         |   |-- L3 Slash Commands: Not yet registered
         |   `-- L3 Requirements And Acceptance
-        |       `-- L4 Requirements: FR-PIC-001 through FR-PIC-007
-        |           `-- L4 One-line ACs: Prepare the Instructional Cycle. (Section 12: 4)
+        |       `-- L4 Requirements: FR-PIC-001 through FR-PIC-010
+        |           `-- L4 One-line ACs: Prepare the Instructional Cycle and resolve the requested week to a canonical week start. (Section 12: 4)
         |
         |-- L2.4 Area: RWC - Resolve Weekly Curriculum
         |   |-- L3 Capabilities: Cache-first scope resolution, source hierarchy, confidence labels, grade-specific scope, Gate 1
@@ -101,19 +102,19 @@ L0. Product
         |           `-- L4 One-line ACs: Prepare the Batch and the requested individual Worksheet specifications. (Section 12: 7)
         |
         |-- L2.6 Area: PW - Prepare Worksheet
-        |   |-- L3 Capabilities: Type, grade/course, counts, sections/days, content mix, difficulty, template profile, overrides
+        |   |-- L3 Capabilities: Type, grade/course, counts, sections/days, content mix, difficulty and diversity planning, topic overrides, numbering scheme, template profile, overrides
         |   |-- L3 Most Important Capabilities: Produce an approved plan for each Worksheet before Questions are generated
         |   |-- L3 Slash Commands: /generate-weekly-classworksheets
         |   `-- L3 Requirements And Acceptance
-        |       `-- L4 Requirements: FR-PW-001 through FR-PW-018
+        |       `-- L4 Requirements: FR-PW-001 through FR-PW-024
         |           `-- L4 One-line ACs: Apply the selected/default Worksheet Type and prepare individual Worksheet specifications. (Section 12: 2, 7)
         |
         |-- L2.7 Area: GW - Generate Worksheet
-        |   |-- L3 Capabilities: Canonical Worksheet Spec, ordered sections/days, questions, answers, standards, difficulty, Gate 2
+        |   |-- L3 Capabilities: Canonical Worksheet Spec, immutable revisions, ordered sections/days, questions, answers, standards, difficulty/diversity checks, Gate 2
         |   |-- L3 Most Important Capabilities: Generate one complete editable Question set from which student and key artifacts derive
         |   |-- L3 Slash Commands: /generate-weekly-classworksheets
         |   `-- L3 Requirements And Acceptance
-        |       `-- L4 Requirements: FR-GW-001 through FR-GW-012
+        |       `-- L4 Requirements: FR-GW-001 through FR-GW-015
         |           `-- L4 One-line ACs: Generate the complete editable Question set and stop at Gate 2 when enabled. (Section 12: 8)
         |
         |-- L2.8 Area: VW - Verify Worksheet
@@ -125,11 +126,11 @@ L0. Product
         |           `-- L4 One-line ACs: Independently verify every approved Question/Answer and stop at Gate 3 when enabled. (Section 12: 9)
         |
         |-- L2.9 Area: FW - Format Worksheet
-        |   |-- L3 Capabilities: Template-copy rendering, editable Google Docs, separate key, readable notation, natural pagination, Gate 4
+        |   |-- L3 Capabilities: Template-copy rendering, editable Google Docs, separate key, shared notation source, answer display precision, placeholder cleanup, natural pagination, Gate 4
         |   |-- L3 Most Important Capabilities: Render student and key documents from the same verified Worksheet Spec without modifying masters
         |   |-- L3 Slash Commands: Not yet registered
         |   `-- L3 Requirements And Acceptance
-        |       `-- L4 Requirements: FR-FW-001 through FR-FW-012
+        |       `-- L4 Requirements: FR-FW-001 through FR-FW-018
         |           `-- L4 One-line ACs: Render the Student Worksheet and Answer Key from the canonical Worksheet Spec without modifying masters. (Section 12: 10)
         |
         |-- L2.10 Area: VAL - Validate Worksheet
@@ -137,7 +138,7 @@ L0. Product
         |   |-- L3 Most Important Capabilities: Prove rendered output is complete, synchronized, readable, and release-ready
         |   |-- L3 Slash Commands: Not yet registered
         |   `-- L3 Requirements And Acceptance
-        |       `-- L4 Requirements: FR-VAL-001 through FR-VAL-008
+        |       `-- L4 Requirements: FR-VAL-001 through FR-VAL-009
         |           `-- L4 One-line ACs: Perform targeted content and visual/layout QA, then stop at Gates 4 and 5 when enabled. (Section 12: 11-13)
         |
         |-- L2.11 Area: PUB - Publish Worksheet
@@ -148,29 +149,37 @@ L0. Product
         |       `-- L4 Requirements: FR-PUB-001 through FR-PUB-008
         |           `-- L4 One-line ACs: Publish only approved Worksheet/Answer Key pairs to the configured canonical destination. (Section 12: 14)
         |
-        |-- L2.12 Area: MT - Manage Templates
+        |-- L2.12 Area: DEL - Deliver Worksheet
+        |   |-- L3 Capabilities: Audience destinations by grade/course, per-week delivery folders, idempotent re-delivery, staging retention, delivery evidence
+        |   |-- L3 Most Important Capabilities: Put the approved batch where parents actually look, without changing approved content
+        |   |-- L3 Slash Commands: Not yet registered
+        |   `-- L3 Requirements And Acceptance
+        |       `-- L4 Requirements: FR-DEL-001 through FR-DEL-010
+        |           `-- L4 One-line ACs: Deliver each published pair into the configured per-grade, per-week audience destination and record the result. (Section 12: 15)
+        |
+        |-- L2.13 Area: MT - Manage Templates
         |   |-- L3 Capabilities: Template registration, revision manifest, cache validity, fallback templates, controlled template promotion
         |   |-- L3 Most Important Capabilities: Protect master templates and re-inspect only the template state affected by revision changes
         |   |-- L3 Slash Commands: Not yet registered
         |   `-- L3 Requirements And Acceptance
-        |       `-- L4 Requirements: FR-MT-001 through FR-MT-009
+        |       `-- L4 Requirements: FR-MT-001 through FR-MT-010
         |           `-- L4 One-line ACs: Copy, rather than modify, master templates when rendering the Worksheet/Answer Key pair. (Section 12: 10)
         |
-        |-- L2.13 Area: MW - Manage Workflow
-        |   |-- L3 Capabilities: Run manifests, hard gates, resume, invalidation, telemetry, thin harness adapters, regression protection
+        |-- L2.14 Area: MW - Manage Workflow
+        |   |-- L3 Capabilities: Run manifests, hard gates, explicit recorded gate bypass, run-mode change control, resume, invalidation, telemetry, thin harness adapters, regression protection
         |   |-- L3 Most Important Capabilities: Enforce a resumable, auditable lifecycle without weakening human approval or correctness
         |   |-- L3 Slash Commands: /generate-weekly-classworksheets, /verify-worksheet
         |   `-- L3 Requirements And Acceptance
-        |       `-- L4 Requirements: FR-MW-001 through FR-MW-017
-        |           `-- L4 One-line ACs: Enforce all enabled gates, persist run state/telemetry, resume valid work, and preserve behavior through regression tests. (Section 12: 6, 8-9, 12-13, 15-17)
+        |       `-- L4 Requirements: FR-MW-001 through FR-MW-025
+        |           `-- L4 One-line ACs: Enforce all enabled gates or record explicit bypasses, persist run state/telemetry, resume valid work, hold shared infrastructure immutable mid-run, and preserve behavior through regression tests. (Section 12: 6, 8-9, 12-13, 16-18, 20)
         |
-        `-- L2.14 Cross-Cutting: Non-Functional Requirements
+        `-- L2.15 Cross-Cutting: Non-Functional Requirements
             |-- L3 Capabilities: Correctness, synchronization, curriculum integrity, reviewability, quality, performance, portability, observability, subject and assessment extensibility
             |-- L3 Most Important Capabilities: Prioritize independently verified, reviewable, template-faithful, recoverable Worksheet/Answer Key pairs
             |-- L3 Slash Commands: Applies to all commands and workflows
             `-- L3 Requirements And Acceptance
-                `-- L4 Requirements: NFR-001 through NFR-025
-                    `-- L4 One-line ACs: A completed normal run satisfies the end-to-end acceptance scenario in Section 12, including verification, gates, rendering, validation, publication, persistence, resumption, and regression protection.
+                `-- L4 Requirements: NFR-001 through NFR-027
+                    `-- L4 One-line ACs: A completed normal run satisfies the end-to-end acceptance scenario in Section 12, including verification, gates, rendering, validation, publication, delivery, persistence, resumption, and regression protection.
 ```
 
 ---
@@ -224,7 +233,9 @@ Worksheet
 | Student Worksheet Document | Student-facing rendered representation of a Worksheet. |
 | Answer Key | Teacher-facing rendered representation derived from the same Worksheet question objects. |
 
-Supporting entities include Grade/Course, Worksheet Type, Standard, Skill/Concept, Curriculum Source, Template, Formatting Profile, Verification Result, Validation Result, Approval, Run, Output Artifact, and Destination.
+Supporting entities include Grade/Course, Worksheet Type, Standard, Skill/Concept, Curriculum Source, Template, Formatting Profile, Verification Result, Validation Result, Approval, Run, Output Artifact, Destination, Audience Destination, and Delivery Record.
+
+A **Destination** is where an approved artifact is published for the system of record. An **Audience Destination** is the grade/course-scoped location the target audience (parents/students) actually reads from. A **Delivery Record** captures which published pair was placed in which Audience Destination, for which week, and how.
 
 A **Run** is a technical execution attempt and must remain distinct from an **Instructional Cycle** and a **Batch**.
 
@@ -250,6 +261,9 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | FR-SP-012 | The system shall support approved Worksheet Types, initially SAT, SAT Mini, ACT, and ACT Mini, whose sections, timing, scoring, template selection, and validation rules remain configuration-driven. |
 | FR-SP-013 | Subject modules and Worksheet Types shall reuse the shared Run, gate, artifact-pairing, template-protection, publication, and evidence lifecycle unless an approved cross-cutting requirement explicitly changes it. |
 | FR-SP-014 | A new subject module or Worksheet Type shall not be enabled until its requirements, configuration, knowledge, templates, verification rules, and regression tests are approved. |
+| FR-SP-015 | Every Worksheet Type shall declare a lifecycle status. Only an active Worksheet Type shall execute a run; a draft or disabled type shall be refused with an explanation rather than silently substituted. |
+| FR-SP-016 | A Worksheet Type shall declare the subjects it is compatible with, and a request pairing a subject with an incompatible Worksheet Type shall be refused before generation begins. |
+| FR-SP-017 | Known readiness blockers for a Worksheet Type shall be reported to the user, and a run shall proceed despite them only on explicit current-user acceptance for that run. |
 
 ## 5.2 Setup Yearly Curriculum — SYC
 
@@ -274,6 +288,9 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | FR-PIC-005 | The Instructional Cycle shall remain distinct from a Batch and a Run. |
 | FR-PIC-006 | Multiple Batches may be associated with one Instructional Cycle. |
 | FR-PIC-007 | The same Instructional Cycle may support different Subjects or special-generation Batches without redefining the instructional dates. |
+| FR-PIC-008 | The system shall maintain a configured school-year week numbering origin so an instructional week can be identified consistently across runs. |
+| FR-PIC-009 | A requested week shall be resolvable as the current week, an instructional week number, or an explicit date, and each form shall resolve to the same canonical week start so all three name the same Instructional Cycle. |
+| FR-PIC-010 | The resolved week start and its derived instructional week number shall be reported to the user and recorded in run state, so the reviewer can confirm which week was generated. |
 
 ## 5.4 Resolve Weekly Curriculum — RWC
 
@@ -323,6 +340,12 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | FR-PW-016 | Speed Math Worksheet shall support fluency, mental math, concept application, multi-step/pattern work, and configured challenge/bonus structures. |
 | FR-PW-017 | For combined Grades 9 & 10, the Worksheet shall preserve the configured grade split while keeping the curriculum resolution independent. The combined `questions_per_week` shall equal `questions_per_day` multiplied by the number of configured weekly sections; the course split shall sum to that combined weekly count. |
 | FR-PW-018 | Default content mix shall be configuration-driven; current baseline is 65% current curriculum, 25% spiral review, and 10% reasoning/challenge. |
+| FR-PW-019 | Difficulty and diversity shall be independent, run-selectable settings on a shared configured ordinal scale, each with a configured default, so a run can be made more or less ambitious without redefining the Worksheet Type. |
+| FR-PW-020 | The selected difficulty shall produce a planned difficulty for every question slot before authoring, such that difficulty increases across the week and within each day rather than being applied ad hoc during authoring. |
+| FR-PW-021 | The selected diversity shall determine a minimum number of distinct skills per day and the cadence at which spiral-review skills are substituted into the day's skill sequence, so no day drills a single skill. |
+| FR-PW-022 | The system shall support topic overrides that force a specified share — as a percentage or a fixed count — of a named grade/course's questions onto a named topic. |
+| FR-PW-023 | A topic override on a daily-sectioned Worksheet Type shall apply to each day's questions, not once across the whole week, and the applied overrides shall be reported to the user. |
+| FR-PW-024 | Question numbering shall be defined by the Worksheet Type. Weekly Worksheets shall number questions locally within each day rather than continuously across the week, and the chosen scheme shall govern rendering and QA consistently. |
 
 ## 5.7 Generate Worksheet — GW
 
@@ -340,6 +363,9 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | FR-GW-010 | Grades 9–10 content may include algebra, radicals, functions, factoring, equations, and other approved course-level concepts. |
 | FR-GW-011 | Challenge/bonus questions shall be subject to the same verification and ambiguity standards as standard Questions. |
 | FR-GW-012 | When Gate 2 is enabled, the complete editable proposed Question set shall be presented for explicit human review before verification proceeds. |
+| FR-GW-013 | Each Worksheet Spec revision shall be persisted immutably. An edit shall create a new revision rather than overwrite an existing one, and rewriting an existing revision with different content shall be rejected. |
+| FR-GW-014 | Gate 2 shall fail closed until every Worksheet planned for the Batch has a persisted Worksheet Spec reference, so no Worksheet can advance on unrecorded content. |
+| FR-GW-015 | A generated Question set shall pass the configured difficulty-progression and skill-diversity checks before it is persisted or presented for review; a failing set shall be revised rather than accepted. |
 
 ## 5.8 Verify Worksheet — VW
 
@@ -371,6 +397,12 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | FR-FW-010 | Formatting shall minimize unnecessary whitespace without creating a cramped page. |
 | FR-FW-011 | Explicit user-specified page constraints shall be honored when compatible with readability and completeness. |
 | FR-FW-012 | When Gate 4 is enabled, draft Worksheet/Answer Key links and formatting/layout QA results shall be presented for explicit review. |
+| FR-FW-013 | Student-facing content shall never expose raw code or programming syntax, including expressions such as `25**(1/2)`, `x^2`, `*`, `/`, `>=`, and `<=`. |
+| FR-FW-014 | Display notation shall be produced from a single shared subject notation source rather than ad hoc per-question formatting, so exponents, roots, fractions, operators, geometry symbols, sets/intervals, and absolute value render consistently. |
+| FR-FW-015 | Grade-band notation guidance shall be available to authoring as advisory support; it shall not replace the required reasoning review for grade appropriateness. |
+| FR-FW-016 | Numeric answers shall be displayed using a configured decimal precision, applied only when the raw value carries more decimal digits than a configured noise threshold, so an intentionally exact short decimal is never truncated or padded. |
+| FR-FW-017 | Answer display formatting shall never alter the stored answer used for verification. |
+| FR-FW-018 | A rendered Worksheet shall populate only the configured number of questions, remove unused numbered placeholders inherited from the template, and contain no empty numbered rows or unresolved placeholders. |
 
 ## 5.10 Validate Worksheet — VAL
 
@@ -384,6 +416,7 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | FR-VAL-006 | Validation shall confirm no Question or Answer was lost, duplicated, truncated, or rendered inconsistently. |
 | FR-VAL-007 | Validation shall confirm the final artifact remains editable when editable Google Docs are required. |
 | FR-VAL-008 | The final QA result shall be complete before Gate 5 / Publish Approval. |
+| FR-VAL-009 | Content QA shall apply the Worksheet Type's question-numbering scheme. A numbering check written for one scheme shall not be applied to a Worksheet Type using another, and a mismatch shall be corrected rather than resolved by skipping QA. |
 
 ## 5.11 Publish Worksheet — PUB
 
@@ -398,7 +431,24 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | FR-PUB-007 | The configured Google Drive output destination shall remain changeable through configuration or explicit run override. |
 | FR-PUB-008 | Publication status and final artifact links shall be recorded in run state. |
 
-## 5.12 Manage Templates — MT
+## 5.12 Deliver Worksheet — DEL
+
+Publication completes **Staging**. Delivery is the separate **Final Delivery** step that puts approved material in front of the target audience.
+
+| ID | Requirement |
+|---|---|
+| FR-DEL-001 | The system shall distinguish Staging from Final Delivery. Staging locations, including `outputs-copilot/` and the configured staging Drive folders, shall never be treated as audience-facing delivery. |
+| FR-DEL-002 | Final Delivery shall distribute only an already-published Worksheet/Answer Key pair; it shall not generate, render, renumber, edit, or re-verify content. |
+| FR-DEL-003 | Final Delivery shall require the recorded Publish Approval for the delivered revision when Gate 5 is enabled, and shall not introduce an additional human gate. |
+| FR-DEL-004 | Each grade/course shall have a configured Audience Destination parent location; a grade/course with no configured Audience Destination shall fail closed rather than fall back to a shared or default location. |
+| FR-DEL-005 | Each delivered Batch shall be placed in a per-week folder within the grade/course Audience Destination, named by a configurable pattern that defaults to `Week_<WEEK_OF>`, where `WEEK_OF` is the ISO Monday of the delivered instructional week. |
+| FR-DEL-006 | Final Delivery shall be idempotent: re-delivering a week shall resolve and reuse that week's existing folder rather than create a duplicate, so a correction replaces rather than multiplies audience material. |
+| FR-DEL-007 | The delivery mode shall be configurable; the default shall retain the staged artifacts as the audit trail rather than removing them from Staging. |
+| FR-DEL-008 | Whether the Answer Key accompanies the Student Worksheet into the Audience Destination shall be a configuration decision, not a rendering or authoring decision. |
+| FR-DEL-009 | Audience Destinations, week-folder naming, delivery mode, and answer-key delivery shall be changeable through configuration or explicit run override, and shall not be embedded in code or scripts. |
+| FR-DEL-010 | Each Final Delivery shall record a Delivery Record in run state identifying the source published artifacts, grade/course, instructional week, delivery mode, destination folders, and resulting audience-facing links. |
+
+## 5.13 Manage Templates — MT
 
 | ID | Requirement |
 |---|---|
@@ -411,14 +461,15 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | FR-MT-007 | Existing standard-template fallbacks shall remain available until dedicated Grade 1, Grades 9/10, or Weekly templates are approved. |
 | FR-MT-008 | Branded and unbranded/compact formatting shall be supported as configured Worksheet/Formatting Profiles. |
 | FR-MT-009 | A user-edited visual document may become a new approved template only through an explicit promotion/versioning action; generation shall not silently replace masters. |
+| FR-MT-010 | Rendering shall obtain its working document only by copying a master. No rendering path shall be capable of writing to a master template. |
 
-## 5.13 Manage Workflow — MW
+## 5.14 Manage Workflow — MW
 
 | ID | Requirement |
 |---|---|
 | FR-MW-001 | Each execution shall initialize or resume a Run manifest under `runs/`. |
 | FR-MW-002 | A Run shall capture Instructional Cycle, Batch, target Worksheets, stage state, approvals, verification status, artifact links, and telemetry. |
-| FR-MW-003 | Enabled human gates shall be hard state transitions and shall not be bypassed for optimization or speed. |
+| FR-MW-003 | Enabled human gates shall be hard state transitions and shall not be bypassed for optimization or speed. Bypass is permitted only under the explicit, recorded conditions in FR-MW-018 through FR-MW-021. |
 | FR-MW-004 | Gate 1 shall review Weekly Curriculum/curriculum scope before Question generation. |
 | FR-MW-005 | Gate 2 shall review the complete editable Question set. |
 | FR-MW-006 | Gate 3 shall review independent verification results. |
@@ -433,6 +484,14 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | FR-MW-015 | Harness-specific adapters shall remain thin and shall point to canonical requirements/design/skills rather than redefine behavior. |
 | FR-MW-016 | Workflow optimizations shall preserve correctness, provenance, human gates, and reviewability. |
 | FR-MW-017 | Regression tests shall protect critical existing behavior before repository, workflow, or cross-harness changes are treated as production-ready. |
+| FR-MW-018 | A gate shall be bypassable only on an explicit current-user instruction for that run. Bypass shall never be inferred, defaulted, or applied silently. |
+| FR-MW-019 | Every bypassed gate shall be named explicitly to the user and recorded in run state, so the audit trail shows which human review was skipped and on whose instruction. |
+| FR-MW-020 | Bypassing a gate shall remove only its stop-and-approve checkpoint. It shall never waive the canonical Worksheet Spec, independent verification of every item, reverification after edits, or required visual QA. |
+| FR-MW-021 | Where an approval must be recorded before an action, bypass shall not remove the recorded approval; it shall only remove the interactive wait. |
+| FR-MW-022 | During a run, shared source code, configuration, master templates, and canonical workflow documents shall be treated as immutable operational infrastructure. |
+| FR-MW-023 | On an execution, verification, rendering, QA, authentication, or publication failure, the affected step shall stop before retrying or producing replacement artifacts, and the observed issue, supporting evidence, and affected artifact state shall be reported. |
+| FR-MW-024 | A change to shared code, configuration, templates, or canonical workflow documents during a run shall require explicit current-user approval, including the smallest proposed change and its gate-invalidation impact. An instruction to continue a run shall not by itself authorize such a change. |
+| FR-MW-025 | Run-local evidence may record commands, diagnostics, and QA results, but shall not alter the approved workflow, policy, or gate requirements. |
 
 ---
 
@@ -465,6 +524,8 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | NFR-023 | **Responsibility placement:** Human approval/accountability, AI interpretation/generation/reasoning, and deterministic software execution shall remain explicitly separated. Repeatable deterministic behavior shall not rely solely on prompts or AI reasoning. |
 | NFR-024 | **Executable quality evidence:** Critical quality attributes, including verification completeness, worksheet/key synchronization, gate enforcement, master-template protection, and publication-pair integrity, shall have automated fitness functions or documented manual verification evidence when automation is not practical. |
 | NFR-025 | **Subject and Worksheet Type extensibility:** New subject modules and Worksheet Types shall be additive and configured through approved knowledge, configuration, templates, verification rules, and tests without changing shared Run control, gate enforcement, artifact synchronization, template protection, publication-pair semantics, or run-evidence behavior unless an approved cross-cutting requirement requires the change. |
+| NFR-026 | **Delivery integrity:** Content reaching the audience shall be byte-identical to the approved published artifact; Final Delivery shall have no capability to alter worksheet or key content. |
+| NFR-027 | **Delivery repeatability:** Re-delivering the same instructional week shall converge on one audience-facing folder per grade/course per week rather than accumulating duplicates, so the audience is never presented with ambiguous versions. |
 
 ---
 
@@ -479,6 +540,10 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | Gate 5 | Validate Worksheet → Publish Worksheet | Publish Approval |
 
 Never publish before configured final approval.
+
+Gate 5 authorizes both publication and the subsequent Final Delivery of that same approved revision. Deliver Worksheet adds no gate of its own and must never run against material Gate 5 has not approved.
+
+A gate may be bypassed only on an explicit current-user instruction for the current run, and every bypass must be named and recorded. Bypass removes the stop-and-approve checkpoint only; the canonical Worksheet Spec, independent verification of every item, reverification after edits, and required visual QA remain enforced.
 
 ---
 
@@ -519,8 +584,10 @@ Weekly documents shall paginate naturally rather than being compressed to a fixe
 - Inference must be labeled with the configured confidence model.
 - Weekly Worksheet and prior Worksheet Types must coexist.
 - Readable math notation must be used; raw LaTeX is prohibited in final student-facing content.
+- Raw code syntax is likewise prohibited in student-facing content; display notation comes from the shared subject notation source.
 - Readability and completeness take precedence over forcing Weekly Worksheets into a fixed number of pages.
 - `outputs/` is canonical final output; `outputs-copilot/` is staging only.
+- Audience-facing delivery locations are separate from `outputs/` and are owned per grade/course by configuration.
 - The current repository/configuration may temporarily contain older Class-oriented defaults; updated requirements are authoritative product intent until configuration/design are reconciled.
 
 ---
@@ -556,6 +623,11 @@ Weekly documents shall paginate naturally rather than being compressed to a fixe
 | R-012 | Publishing could become partial if Worksheet and Answer Key are not treated as one logical publish set. |
 | R-013 | Semantic regression tests alone may miss visual-template regressions; visual regression scope remains to be finalized. |
 | R-014 | Repository migration/cutover must not retire the working baseline before end-to-end validation. |
+| R-015 | An unconfigured or mistyped Audience Destination could deliver a grade's material to the wrong families; delivery must fail closed rather than fall back. |
+| R-016 | Re-delivering a corrected week could leave stale material visible to the audience if week-folder resolution is not idempotent. |
+| R-017 | Gate bypass is convenient and could normalize into a default, eroding human review unless every bypass stays explicit, named, and recorded. |
+| R-018 | Fixing shared code or configuration mid-run can silently invalidate already-approved gates, so run-mode changes must stop and seek approval rather than being repaired in place. |
+| R-019 | QA checks written for one question-numbering scheme produce false results on a Worksheet Type using another, creating pressure to skip QA rather than correct the check. |
 
 ---
 
@@ -570,18 +642,20 @@ The system must be able to:
 1. Load canonical project requirements, design, configuration, and workflow instructions.
 2. Default to **Weekly Worksheet** unless another Worksheet Type is explicitly requested.
 3. Resolve or reuse the relevant Yearly Curriculum.
-4. Prepare the Instructional Cycle.
+4. Prepare the Instructional Cycle, resolving the requested week to a canonical week start and reporting the resolved instructional week.
 5. Resolve Weekly Curriculum for each target grade/course using cache-first source-aware logic.
-6. Stop at Gate 1 for curriculum approval when enabled.
-7. Prepare the Batch and individual Worksheet specifications.
-8. Generate a complete editable Question set and stop at Gate 2 when enabled.
+6. Stop at Gate 1 for curriculum approval when enabled, or record an explicit, named bypass.
+7. Prepare the Batch and individual Worksheet specifications, including the planned difficulty, diversity, and any topic overrides.
+8. Generate a complete editable Question set, persist it as an immutable revision, and stop at Gate 2 when enabled.
 9. Independently verify every approved Question/Answer and stop at Gate 3 when enabled.
 10. Render Student Worksheet and Answer Key from the same canonical Worksheet Spec without modifying master templates.
 11. Perform targeted content QA and visual/layout QA.
 12. Stop at Gate 4 for formatting review when enabled.
 13. Complete final validation and stop at Gate 5 for explicit Publish Approval.
 14. Publish only approved Worksheet/Answer Key pairs to the configured canonical destination.
-15. Persist run state and authoritative telemetry.
-16. Resume from the latest valid state after interruption or edits.
-17. Preserve existing supported Worksheet Types and all critical behavior through regression testing.
-18. Resolve the requested subject module and Worksheet Type, and reject unapproved extensions before generation begins.
+15. Deliver each published pair into its grade/course Audience Destination under the week's delivery folder, reusing that folder on re-delivery, and record the delivery evidence.
+16. Persist run state and authoritative telemetry.
+17. Resume from the latest valid state after interruption or edits.
+18. Preserve existing supported Worksheet Types and all critical behavior through regression testing.
+19. Resolve the requested subject module and Worksheet Type, and reject unapproved, inactive, or incompatible extensions before generation begins.
+20. Stop and seek explicit approval, rather than repairing shared code, configuration, templates, or canonical workflow documents in place, when a run step fails.

@@ -40,6 +40,21 @@ publishing:
   staging_root: "outputs-copilot"
   # Default for the /generate-worksheet `publish` parameter; explicit `publish=no` overrides per run.
   default_publish: true
+  # Staging holds work-in-progress and post-Gate-5 approved artifacts; it is never the audience-facing
+  # location. Final Delivery copies approved artifacts into per-grade parent folders visible to parents.
+  staging:
+    render_folder_id: "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+    approved_folder_id: "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+  final_delivery:
+    enabled: true
+    audience: "parents"
+    requires_gate: "publish_approval"
+    # {{WEEK_OF}} resolves to the ISO Monday of the delivered instructional week.
+    week_folder_pattern: "Week_{{WEEK_OF}}"
+    reuse_existing_week_folder: true
+    # copy keeps staging intact as the audit trail; move would empty staging on delivery.
+    mode: "copy"
+    deliver_answer_key: true
 telemetry:
   runs_root: "runs"
   unavailable_authoritative_values: null
