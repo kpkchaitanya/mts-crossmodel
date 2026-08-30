@@ -38,6 +38,7 @@ def test_resolve_curriculum_preserves_p0_cache_behavior():
 def test_blueprint_uses_worksheet_type_defaults():
     plan = MODULE.prepare_blueprint({"grade_or_course": "grade_6"}, TYPE_CONFIG, {})
     assert plan["worksheet_type"] == "class-worksheet"
+    assert plan["grade_display_name"] == "Grade 6"
     assert plan["questions_per_worksheet"] == 32
     assert plan["duration_minutes"] == 15
 

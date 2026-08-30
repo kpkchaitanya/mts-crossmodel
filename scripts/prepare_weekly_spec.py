@@ -11,6 +11,7 @@ import yaml
 
 REPO = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = REPO / "config" / "worksheet-types" / "weekly-worksheet.yaml"
+GRADE_CATALOG = REPO / "subjects" / "math" / "knowledge" / "grade-course-catalog.json"
 
 
 def load_questions(source: Path) -> list[dict]:
@@ -34,6 +35,14 @@ def select_questions(questions: list[dict], grade_config: dict) -> list[dict]:
     return selected
 
 
+def grade_display_name(grade_id: str) -> str:
+    catalog = json.loads(GRADE_CATALOG.read_text(encoding="utf-8"))
+    for entry in catalog.get("grades_and_courses", []):
+        if entry.get("id") == grade_id:
+            return str(entry["display_name"])
+    raise ValueError(f"Grade/course {grade_id!r} is not registered in the Math grade catalog.")
+
+
 def build_spec(source_data: dict, questions: list[dict], sections: list[dict], grade_config: dict, grade_id: str) -> dict:
     expected = grade_config["questions_per_week"]
     daily = grade_config["questions_per_day"]
@@ -54,7 +63,11 @@ def build_spec(source_data: dict, questions: list[dict], sections: list[dict], g
         })
 
     worksheet = deepcopy(source_data.get("worksheet", {}))
-    worksheet.update({"question_count": expected, "grade_or_course": grade_id})
+    worksheet.update({
+        "question_count": expected,
+        "grade_or_course": grade_id,
+        "grade_display_name": grade_display_name(grade_id),
+    })
     return {
         "worksheet": worksheet,
         "curriculum": deepcopy(source_data.get("curriculum", {})),

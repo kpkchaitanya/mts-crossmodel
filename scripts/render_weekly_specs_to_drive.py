@@ -35,8 +35,13 @@ def display_answer(answer: object, *, decimal_places: int = 2, noise_threshold: 
     return str(answer)
 
 
+def grade_display_name(spec: dict) -> str:
+    worksheet = spec["worksheet"]
+    return str(worksheet.get("grade_display_name") or worksheet.get("grade") or worksheet["grade_or_course"])
+
+
 def projection(spec: dict, answer_key: bool, *, decimal_places: int = 2) -> str:
-    lines = [spec["worksheet"]["title"], spec["worksheet"]["grade"], f"Week of {spec['worksheet']['week_start']}", ""]
+    lines = [spec["worksheet"]["title"], grade_display_name(spec), f"Week of {spec['worksheet']['week_start']}", ""]
     for section in spec["sections"]:
         lines.extend([section.get("title", section["id"].title()), ""])
         for question in section["questions"]:
@@ -85,7 +90,7 @@ def render_document(docs, document_id: str, content: str, spec: dict, answer_key
     if "{{MON_Q1}}" in existing or "{{MON_A1}}" in existing:
         prefixes = {"monday": "MON", "tuesday": "TUE", "wednesday": "WED", "thursday": "THU", "friday": "FRI"}
         values = {
-            "{{GRADE_OR_COURSE}}": f"{spec['worksheet']['title']}\n{spec['worksheet']['grade']}",
+            "{{GRADE_OR_COURSE}}": f"{spec['worksheet']['title']}\n{grade_display_name(spec)}",
             "{{WEEK_OF}}": spec["worksheet"]["week_start"],
             "{{SCHOOL_LEVEL}}": "Middle School",
         }

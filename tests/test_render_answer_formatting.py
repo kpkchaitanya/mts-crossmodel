@@ -33,3 +33,8 @@ def test_display_answer_leaves_ints_and_lists_readable():
     assert render.display_answer(7) == "7"
     assert render.display_answer([2, 11]) == "2, 11"
     assert render.display_answer([2, 3.9999999999999996]) == "2, 4.00"
+
+
+def test_grade_display_name_prefers_human_label_and_preserves_legacy_specs():
+    assert render.grade_display_name({"worksheet": {"grade": "grade_5", "grade_display_name": "Grade 5"}}) == "Grade 5"
+    assert render.grade_display_name({"worksheet": {"grade": "grade_5"}}) == "grade_5"

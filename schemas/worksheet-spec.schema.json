@@ -6,6 +6,7 @@
   "properties": {
     "subject": {"enum": ["math", "ela"]},
     "grade": {"type": "string"},
+    "grade_display_name": {"type": "string"},
     "week_start": {"type": "string", "format": "date"},
     "curriculum_confidence": {"enum": ["confirmed", "strongly_inferred", "inferred"]},
     "items": {

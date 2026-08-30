@@ -75,6 +75,7 @@ class MathSubjectModule:
         return {
             "subject": self.subject_id,
             "grade_or_course": grade,
+            "grade_display_name": self._display_name_for_grade(grade),
             "worksheet_type": worksheet_type.get("worksheet_type_id"),
             count_key: grade_policy[count_key],
             "duration_minutes": worksheet_type.get("duration_minutes"),
@@ -174,3 +175,11 @@ class MathSubjectModule:
         except KeyError as error:
             raise MathSubjectError("Math knowledge index is missing question_form_compatibility.") from error
         return p0.load_json(self.module_root / "knowledge" / relative_path)
+
+    def _display_name_for_grade(self, grade_or_course: str) -> str:
+        master_data = self._load_master_data()
+        catalog = p0.load_json(self.module_root / "knowledge" / str(master_data["grade_course_catalog"]))
+        for entry in catalog.get("grades_and_courses", []):
+            if entry.get("id") == grade_or_course:
+                return str(entry["display_name"])
+        raise MathSubjectError(f"Math grade/course {grade_or_course!r} is not registered.")
