@@ -255,7 +255,7 @@ def targeted_text_qa_v2(rendered_text: str, spec: dict[str, Any], *, answer_key:
 
     qs = flatten_questions(spec)
     ws = spec.get("worksheet", {})
-    grade = str(ws.get("grade", "")).strip()
+    grade = str(ws.get("grade_display_name") or ws.get("grade", "")).strip()
     title = str(ws.get("title", "")).strip()
 
     def numbered_line_present(n: int) -> bool:

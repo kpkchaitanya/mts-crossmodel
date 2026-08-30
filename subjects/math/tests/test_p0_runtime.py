@@ -96,6 +96,19 @@ def test_spec_and_targeted_qa():
     assert 'no_extra_numbered_slots' in qa2['failed_checks']
 
 
+def test_targeted_qa_uses_grade_display_name_when_present():
+    spec = sample_spec()
+    spec['worksheet']['grade'] = 'grade_5'
+    spec['worksheet']['grade_display_name'] = 'Grade 5'
+    text = 'MTS - CLASS WORKSHEET\nGrade 5\n1. Find 3 + 4.\n2. Area...\n3. Explain...'
+    assert p0.targeted_text_qa_v2(text, spec)['status'] == 'PASS'
+
+    legacy = sample_spec()
+    legacy['worksheet']['grade'] = 'grade_5'
+    legacy_text = 'MTS - CLASS WORKSHEET\ngrade_5\n1. Find 3 + 4.\n2. Area...\n3. Explain...'
+    assert p0.targeted_text_qa_v2(legacy_text, legacy)['status'] == 'PASS'
+
+
 def test_template_cache_guard():
     hit = p0.template_cache_valid(manifest, '3', '2')
     assert hit['status'] == 'HIT'
@@ -124,6 +137,7 @@ def main():
         test_curriculum_cache,
         test_math_verifier,
         test_spec_and_targeted_qa,
+        test_targeted_qa_uses_grade_display_name_when_present,
         test_template_cache_guard,
         test_telemetry,
     ]
