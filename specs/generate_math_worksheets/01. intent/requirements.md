@@ -154,7 +154,7 @@ L0. Product
         |   |-- L3 Most Important Capabilities: Put the approved batch where parents actually look, without changing approved content
         |   |-- L3 Slash Commands: Not yet registered
         |   `-- L3 Requirements And Acceptance
-        |       `-- L4 Requirements: FR-DEL-001 through FR-DEL-010
+        |       `-- L4 Requirements: FR-DEL-001 through FR-DEL-011
         |           `-- L4 One-line ACs: Deliver each published pair into the configured per-grade, per-week audience destination and record the result. (Section 12: 15)
         |
         |-- L2.13 Area: MT - Manage Templates
@@ -447,6 +447,7 @@ Publication completes **Staging**. Delivery is the separate **Final Delivery** s
 | FR-DEL-008 | Whether the Answer Key accompanies the Student Worksheet into the Audience Destination shall be a configuration decision, not a rendering or authoring decision. |
 | FR-DEL-009 | Audience Destinations, week-folder naming, delivery mode, and answer-key delivery shall be changeable through configuration or explicit run override, and shall not be embedded in code or scripts. |
 | FR-DEL-010 | Each Final Delivery shall record a Delivery Record in run state identifying the source published artifacts, grade/course, instructional week, delivery mode, destination folders, and resulting audience-facing links. |
+| FR-DEL-011 | Final Delivery shall be run-selectable with a configured default. Requesting delivery without publication shall be refused rather than silently downgraded, and the resolved delivery decision shall be echoed to the user before the run proceeds and reported in the run summary. |
 
 ## 5.13 Manage Templates — MT
 

@@ -47,6 +47,8 @@ publishing:
     approved_folder_id: "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
   final_delivery:
     enabled: true
+    # Default for the /generate-worksheet `deliver` parameter; explicit `deliver=no` overrides per run.
+    default_deliver: true
     audience: "parents"
     requires_gate: "publish_approval"
     # {{WEEK_OF}} resolves to the ISO Monday of the delivered instructional week.

@@ -528,6 +528,10 @@ Rules:
    Worksheet, because audience visibility of keys is a policy decision, not a rendering one.
 8. Each delivery writes a Delivery Record to the Run's evidence (`delivered-artifacts.json`) naming
    the source artifacts, week, mode, destination folders, and resulting document links.
+9. Delivery is run-selectable through the `deliver` parameter, defaulting to
+   `final_delivery.default_deliver`. `deliver=yes` requires `publish=yes`; the combination
+   `deliver=yes publish=no` is refused rather than downgraded, because nothing has been published to
+   distribute.
 
 ## 4. Detailed Entity Relationship Design
 
