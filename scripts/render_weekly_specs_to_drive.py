@@ -36,9 +36,9 @@ def display_answer(answer: object, *, decimal_places: int = 2, noise_threshold: 
 
 
 def projection(spec: dict, answer_key: bool, *, decimal_places: int = 2) -> str:
-    lines = [spec["worksheet"]["grade"], f"Week of {spec['worksheet']['week_start']}", ""]
+    lines = [spec["worksheet"]["title"], spec["worksheet"]["grade"], f"Week of {spec['worksheet']['week_start']}", ""]
     for section in spec["sections"]:
-        lines.extend([section["title"], ""])
+        lines.extend([section.get("title", section["id"].title()), ""])
         for question in section["questions"]:
             value = display_answer(question["answer"], decimal_places=decimal_places) if answer_key else question["prompt"]
             lines.append(f"{question['number']}. {value}")
@@ -84,13 +84,27 @@ def render_document(docs, document_id: str, content: str, spec: dict, answer_key
     existing, body = document_text(docs, document_id)
     if "{{MON_Q1}}" in existing or "{{MON_A1}}" in existing:
         prefixes = {"monday": "MON", "tuesday": "TUE", "wednesday": "WED", "thursday": "THU", "friday": "FRI"}
-        values = {"{{GRADE_OR_COURSE}}": spec["worksheet"]["grade"], "{{WEEK_OF}}": spec["worksheet"]["week_start"], "{{SCHOOL_LEVEL}}": "Middle School"}
+        values = {
+            "{{GRADE_OR_COURSE}}": f"{spec['worksheet']['title']}\n{spec['worksheet']['grade']}",
+            "{{WEEK_OF}}": spec["worksheet"]["week_start"],
+            "{{SCHOOL_LEVEL}}": "Middle School",
+        }
         for section in spec["sections"]:
             prefix = prefixes[section["id"]]
             questions = {number: question for number, question in enumerate(section["questions"], start=1)}
             for number in range(1, 11):
                 question = questions.get(number)
-                values[f"{{{{{prefix}_{'A' if answer_key else 'Q'}{number}}}}}"] = display_answer(question["answer"], decimal_places=decimal_places) if answer_key and question else question["prompt"] if question else ""
+                placeholder = f"{{{{{prefix}_{'A' if answer_key else 'Q'}{number}}}}}"
+                if question:
+                    value = display_answer(question["answer"], decimal_places=decimal_places) if answer_key else question["prompt"]
+                    rendered_value = f"{question['number']}. {value}"
+                    if answer_key:
+                        values[f"{number}. Answer: {placeholder}"] = f"{question['number']}. Answer: {value}"
+                    else:
+                        values[f"{number}. {placeholder}"] = rendered_value
+                    values[placeholder] = rendered_value
+                else:
+                    values[placeholder] = ""
         empty_placeholders = {placeholder for placeholder, value in values.items() if not value and placeholder in existing}
         ranges = paragraph_ranges_containing(body, empty_placeholders)
         requests = [
@@ -118,11 +132,11 @@ def render_document(docs, document_id: str, content: str, spec: dict, answer_key
 
 def name_for(worksheet_id: str, date: str) -> str:
     names = {
-        "grade-1": "MTS-Math-1stGrade-WeeklyWorksheet",
-        "grade-4": "MTS-Math-4thGrade-WeeklyWorksheet",
-        "grade-5": "MTS-Math-5thGrade-WeeklyWorksheet",
-        "grade-6": "MTS-Math-6thGrade-WeeklyWorksheet",
-        "grades-9-10": "MTS-Math-9th_10thGrade-WeeklyWorksheet",
+        "grade_1": "MTS-Math-1stGrade-WeeklyWorksheet",
+        "grade_4": "MTS-Math-4thGrade-WeeklyWorksheet",
+        "grade_5": "MTS-Math-5thGrade-WeeklyWorksheet",
+        "grade_6": "MTS-Math-6thGrade-WeeklyWorksheet",
+        "grade_9_10": "MTS-Math-9th_10thGrade-WeeklyWorksheet",
     }
     return f"{names[worksheet_id]}-{date}"
 

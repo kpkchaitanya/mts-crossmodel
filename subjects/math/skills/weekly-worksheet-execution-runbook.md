@@ -81,3 +81,27 @@ reviewer name.
 - `SpecRepository.write_revision` enforces immutability: writing a different payload to an existing `revision` path raises. Use a new `revision` id for edits.
 - `scripts/prepare_weekly_spec.py --source <path> --destination <path> --grade-id <id>` is an optional CLI alternative to steps 8b–8e for building a spec from a larger source question bank; it still requires manual verification/QA afterward.
 - `scripts/render_weekly_specs_to_drive.py` is a standalone reference implementation of step 8i/10 for ad hoc Drive rendering outside this in-process flow; prefer `google_docs_adapter.GoogleDocsAdapter` directly when already in a Python session.
+
+## Run-mode failure and change control
+
+During a worksheet-generation run, treat shared source code, configuration, master templates, and
+canonical workflow documents as immutable operational infrastructure. Do not repair, refactor, or
+otherwise edit them while executing a run unless the current user explicitly authorizes the proposed
+change. This applies even when a failed check reveals an apparent local implementation defect.
+
+On any execution, verification, rendering, QA, authentication, or publication failure:
+
+1. Stop the affected run step before retrying or creating replacement artifacts.
+2. Report the observed issue and supporting evidence, the affected run/artifact state, and any
+   produced-but-invalid staged artifacts.
+3. Identify the exact file or external dependency involved, the smallest proposed change, its gate
+   invalidation impact, and the focused validation that would be run after approval.
+4. Wait for the user's explicit approval before modifying shared code, configuration, templates, or
+   canonical workflow documents. A request to continue a run does not itself authorize such changes.
+5. Keep operational evidence under `runs/math/<run_id>/` only. Run-local files may record commands,
+   diagnostics, and QA evidence, but may not silently alter the approved workflow, policy, or gate
+   requirements.
+
+After an approved build-mode change, rerun only the affected validation and apply the normal
+revision/invalidation contract before resuming the run. Never substitute an auto-bypass approval for
+required verification or visual QA.

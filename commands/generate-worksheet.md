@@ -100,7 +100,7 @@ requirement to apply configured human gates without silently bypassing them.
    `worksheettype=weekly`, this is
    [`subjects/math/skills/weekly-worksheet-execution-runbook.md`](../subjects/math/skills/weekly-worksheet-execution-runbook.md)),
    which lists the exact module calls, scripts, and gate ids to run — do not re-derive the process
-   from `specs/generate_math_worksheets/03. design/design.md`/`docs/requirements.md` first; those are background rationale only.
+   from `specs/generate_math_worksheets/03. design/design.md`/`docs/requirements.md` first; those are background rationale only. The runbook's run-mode failure and change-control protocol is mandatory during execution.
 10. In a Copilot repository context, stage generated artifacts under `outputs-copilot/`; canonical `outputs/<subject>/` is reserved for the approved publish step.
 11. Once `publish_approval` is recorded for the run: if `publish=yes` (default), immediately execute the publish step (e.g. `GoogleDocsAdapter.publish_pair`) into `outputs/<subject>/` and report the published links. If `publish=no`, stop after staging and report that artifacts are staged only, pending a separate publish action.
 
