@@ -20,6 +20,12 @@
           "answer_rule": {},
           "skill": {"type": "string"},
           "difficulty": {"type": "string"},
+          "form_family": {"type": "string"},
+          "cognitive_action": {"type": "string"},
+          "representation": {"type": "string"},
+          "context": {"type": ["string", "null"]},
+          "response_type": {"type": "string"},
+          "variation_seed": {"type": "integer"},
           "evidence_note": {"type": ["string", "null"]},
           "verification": {"type": "object"}
         }

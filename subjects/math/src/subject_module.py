@@ -103,8 +103,11 @@ class MathSubjectModule:
         difficulty: str = question_plan.DEFAULT_DIFFICULTY,
         diversity: str = question_plan.DEFAULT_DIVERSITY,
         topic_overrides: list[Mapping[str, Any]] | None = None,
+        form_diversity: str = question_plan.DEFAULT_FORM_DIVERSITY,
+        variation_seed: int | None = None,
+        grade_or_course: str | None = None,
     ) -> dict[str, list[dict[str, Any]]]:
-        """Build the per-day skill/difficulty authoring plan; authoring itself remains AI-owned."""
+        """Build the per-day skill/form/difficulty authoring plan; prompts remain AI-owned."""
         return question_plan.build_week_plan(
             sections=[dict(section) for section in sections],
             primary_skills=primary_skills,
@@ -113,11 +116,30 @@ class MathSubjectModule:
             difficulty=difficulty,
             diversity=diversity,
             topic_overrides=[dict(o) for o in topic_overrides] if topic_overrides else None,
+            form_diversity=form_diversity,
+            variation_seed=variation_seed,
+            grade_or_course=grade_or_course,
+            form_compatibility=self._load_form_compatibility() if grade_or_course and variation_seed is not None else None,
         )
 
     def check_diversity_and_progression(self, spec: Mapping[str, Any], *, diversity: str = question_plan.DEFAULT_DIVERSITY) -> dict[str, Any]:
         """Deterministic QA: per-day difficulty must be non-decreasing and skills must meet the diversity minimum."""
         return question_plan.validate_progression(deepcopy(dict(spec)), diversity=diversity)
+
+    def check_form_diversity(
+        self,
+        spec: Mapping[str, Any],
+        *,
+        grade_or_course: str,
+        form_diversity: str = question_plan.DEFAULT_FORM_DIVERSITY,
+    ) -> dict[str, Any]:
+        """Validate form metadata and prompt uniqueness for profiled Math topics."""
+        return question_plan.validate_form_diversity(
+            deepcopy(dict(spec)),
+            grade_or_course=grade_or_course,
+            form_compatibility=self._load_form_compatibility(),
+            form_diversity=form_diversity,
+        )
 
     def review_guidance(self, spec: Mapping[str, Any], policy: Mapping[str, Any]) -> dict[str, Any]:
         return {
@@ -144,3 +166,11 @@ class MathSubjectModule:
 
     def _load_master_data(self) -> dict[str, Any]:
         return p0.load_json(self.module_root / "knowledge" / "master-data-index.json")
+
+    def _load_form_compatibility(self) -> dict[str, Any]:
+        master_data = self._load_master_data()
+        try:
+            relative_path = str(master_data["question_form_compatibility"])
+        except KeyError as error:
+            raise MathSubjectError("Math knowledge index is missing question_form_compatibility.") from error
+        return p0.load_json(self.module_root / "knowledge" / relative_path)

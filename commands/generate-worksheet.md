@@ -17,6 +17,8 @@ worksheet-type definition instead of duplicating subject-specific logic.
 | `deliver` | `yes`, `no` | `yes` (`config/base.yaml` `publishing.final_delivery.default_deliver`) | Whether to execute Final Delivery after publication: copying each published pair into `Week_<WEEK_OF>` under that grade's audience folder in `config/<subject>.yaml` `publishing.final_delivery.destinations_by_grade`. Requires `publish=yes`; `deliver=yes publish=no` is refused rather than silently downgraded, because there is nothing published to deliver. `deliver=no` ends the run at Staging. Delivery never runs before `publish_approval` is recorded, and never modifies content. |
 | `difficulty` | `Low`, `Low+`, `Medium`, `Medium+`, `High`, `Very High` | `Medium+` (`config/base.yaml` `question_design.difficulty.default`) | How ambitious the difficulty ramp is across the week/day. See Question design below. |
 | `diversity` | `Low`, `Low+`, `Medium`, `Medium+`, `High`, `Very High` | `Medium+` (`config/base.yaml` `question_design.diversity.default`) | How many distinct skills mix per day and how often spiral-review is injected. See Question design below. |
+| `form_diversity` | `Low`, `Low+`, `Medium`, `Medium+`, `High`, `Very High` | `High` (`config/base.yaml` `question_design.form_diversity.default`) | How much a repeated skill changes mathematical action, representation, context, and response type. Applies only to active subject compatibility profiles. |
+| `variation_seed` | integer | generated once per run | Optional reproducibility seed for Form Diversity. A generated seed is persisted in the Run Manifest; an explicit value recreates the same eligible form plan. |
 | `topic_overrides` | `grade:amount:topic[;grade:amount:topic...]` (`amount` is `N%` or a fixed count) | none | Forces a subset of a specific grade's *daily* questions onto a named topic — e.g. `grade_1:60%:Count on and Count down using add and subtract`. Applies every day that week, not once across the week. See Question design below. |
 | `run` (resume) | an existing run id | none | Passed through unchanged to `RunRepository.create_or_resume` to resume an in-progress run instead of starting a new one. |
 
@@ -37,6 +39,11 @@ scale (`config/base.yaml` `question_design.levels`), resolved via
   spiral-review skill is substituted into the rotating current-week skill sequence, so no day drills a
   single skill. `check_diversity_and_progression(spec)` also fails if a day doesn't meet the configured
   minimum distinct-skill count.
+- `form_diversity` independently selects the required variety in form families. A form family combines
+   cognitive action, representation, and response type. The planner uses a persisted `variation_seed`
+   to select compatible forms for profiled topics; deterministic QA rejects prohibited reuse and
+   normalized duplicate prompts before Gate 2. Form Diversity does not change curriculum coverage,
+   topic-override counts, or difficulty.
 - `topic_overrides` is parsed once per command invocation via `question_plan.parse_topic_overrides(raw)`
   into `{grade_id: [{topic, kind, value}, ...]}`. When calling `build_week_plan(...)` for a given grade,
   pass `topic_overrides=<parsed>.get(grade_id)` for that grade only. Override slots are spread evenly
@@ -86,7 +93,7 @@ requirement to apply configured human gates without silently bypassing them.
 3. Resolve `grades` (default `all`) and `week` (default `current`) per Week resolution above into the `grade_ids`/`on_date` inputs the subject's scope resolution expects.
 4. Resolve `gates` per Gate resolution above and record the decision in the Run Manifest.
 5. Resolve `publish` (default `yes` from `config/base.yaml` `publishing.default_publish`) and record it in the Run Manifest alongside `gates`.
-6. Resolve `difficulty` and `diversity` (default `medium_plus` from `config/base.yaml` `question_design`) and pass them to the subject's `build_week_plan(...)` before authoring, and to `check_diversity_and_progression(spec)` as a QA gate after authoring. See Question design above.
+6. Resolve `difficulty`, `diversity`, and `form_diversity` (defaults from `config/base.yaml` `question_design`), then generate or resolve `variation_seed` and persist it in the Run Manifest before authoring. Pass them to the subject's `build_week_plan(...)`; after authoring, run both `check_diversity_and_progression(spec)` and `check_form_diversity(spec)` as QA gates. See Question design above.
 7. Resolve `topic_overrides` (default none) via `question_plan.parse_topic_overrides(raw)` once, and pass the per-grade slice to `build_week_plan(...)` for each grade. See Question design above.
 8. **Echo the fully-resolved parameter set back to the user before any authoring/rendering starts** —
    every parameter above (`subject`, `worksheettype`, `grades`, `week`, `gates`, `publish`, `deliver`,

@@ -15,6 +15,11 @@ question_design:
     default: "medium_plus"
   diversity:
     default: "medium_plus"
+  form_diversity:
+    default: "high"
+    seed_strategy: "generated_per_run"
+    allow_run_seed_override: true
+    activation: "profiled_topics_only"
 governance:
   instruction_precedence: ["current_user", "constitution", "config", "requirements", "design"]
 artifacts:

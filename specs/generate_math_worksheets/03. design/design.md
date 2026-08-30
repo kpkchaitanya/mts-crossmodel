@@ -470,6 +470,24 @@ skill goes where) are recomputed fresh per day from the same `topic_overrides`/`
 validates the authored result before it is persisted (see `subjects/math/skills/weekly-worksheet-execution-runbook.md`
 step 8a/8d).
 
+#### Form Diversity
+
+Form Diversity controls *how* a repeated skill is assessed, independently of skill diversity and
+difficulty. It uses the same configured six-level ordinal scale and defaults to `high`. A reusable form
+family records `cognitive_action`, `representation`, and `response_type`; a compact subject-owned
+compatibility profile names the form families a topic may use. The profile is not a static question bank.
+
+The planner receives one persisted `variation_seed` per run and uses seeded selection only among eligible
+compatible forms. It selects unused forms for a skill before weekly reuse and, at `high`, never repeats a
+form family in the same day. The selected metadata is stored in each planned slot and copied unchanged into
+the canonical Worksheet Spec. The authoring agent varies wording, values, and context within the selected
+form; it may not replace the selected form metadata.
+
+`validate_form_diversity(spec, ...)` deterministically rejects missing/incompatible metadata, same-day
+form reuse beyond the configured level, reuse before compatible forms are exhausted, and normalized duplicate
+prompts. Topics with no active profile receive no Form Diversity assignment and retain legacy generation
+behavior until a compatibility profile is deliberately added and tested.
+
 #### Content-authoring caution: one template per skill label, not one template for several
 
 The plan only guarantees distinct *skill labels* per slot; it cannot guarantee distinct *question

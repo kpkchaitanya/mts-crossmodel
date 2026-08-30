@@ -20,6 +20,8 @@ Design (see subjects/math/skills/weekly-worksheet-execution-runbook.md for how t
 """
 from __future__ import annotations
 
+import random
+import re
 from typing import Any
 
 LEVELS = ["low", "low_plus", "medium", "medium_plus", "high", "very_high"]
@@ -37,6 +39,7 @@ LEVEL_ALIASES = {
 
 DEFAULT_DIFFICULTY = "medium_plus"
 DEFAULT_DIVERSITY = "medium_plus"
+DEFAULT_FORM_DIVERSITY = "high"
 
 # difficulty level -> (start_rank, end_rank) band on the 0..5 LEVELS scale the week/day ramps across.
 _DIFFICULTY_BANDS = {
@@ -57,6 +60,16 @@ _DIVERSITY_SETTINGS = {
     "medium_plus": {"min_distinct_skills_per_day": 3, "spiral_interval": 4},
     "high": {"min_distinct_skills_per_day": 4, "spiral_interval": 3},
     "very_high": {"min_distinct_skills_per_day": 5, "spiral_interval": 2},
+}
+
+# form_diversity level -> daily form-family reuse limit. The existing shared ordinal scale applies.
+_FORM_DIVERSITY_SETTINGS = {
+    "low": {"max_same_form_per_day": 2, "require_unused_form_before_weekly_reuse": False},
+    "low_plus": {"max_same_form_per_day": 2, "require_unused_form_before_weekly_reuse": False},
+    "medium": {"max_same_form_per_day": 1, "require_unused_form_before_weekly_reuse": False},
+    "medium_plus": {"max_same_form_per_day": 1, "require_unused_form_before_weekly_reuse": True},
+    "high": {"max_same_form_per_day": 1, "require_unused_form_before_weekly_reuse": True},
+    "very_high": {"max_same_form_per_day": 1, "require_unused_form_before_weekly_reuse": True},
 }
 
 _LEVEL_RANK = {level: rank for rank, level in enumerate(LEVELS)}
@@ -236,6 +249,10 @@ def build_week_plan(
     difficulty: str = DEFAULT_DIFFICULTY,
     diversity: str = DEFAULT_DIVERSITY,
     topic_overrides: list[dict[str, Any]] | None = None,
+    form_diversity: str = DEFAULT_FORM_DIVERSITY,
+    variation_seed: int | None = None,
+    grade_or_course: str | None = None,
+    form_compatibility: dict[str, Any] | None = None,
 ) -> dict[str, list[dict[str, Any]]]:
     """Build a full week's slot-by-slot plan, keyed by section/day id, for authoring to fill in.
 
@@ -243,7 +260,7 @@ def build_week_plan(
     of *each* day's questions, not 60% of the week's total.
     """
     num_days = len(sections)
-    return {
+    plan = {
         section["id"]: build_day_plan(
             day_id=section["id"], day_index=day_index, num_days=num_days, slots_per_day=slots_per_day,
             primary_skills=primary_skills, spiral_skills=spiral_skills, difficulty=difficulty, diversity=diversity,
@@ -251,6 +268,122 @@ def build_week_plan(
         )
         for day_index, section in enumerate(sections)
     }
+    if form_compatibility and grade_or_course and variation_seed is not None:
+        assign_form_diversity(
+            plan,
+            grade_or_course=grade_or_course,
+            form_compatibility=form_compatibility,
+            form_diversity=form_diversity,
+            variation_seed=variation_seed,
+        )
+    return plan
+
+
+def _topic_profile(skill: str, grade_or_course: str, form_compatibility: dict[str, Any]) -> dict[str, Any] | None:
+    profile = form_compatibility.get("topics", {}).get(skill)
+    if not profile or grade_or_course not in profile.get("grade_or_courses", []):
+        return None
+    return profile
+
+
+def assign_form_diversity(
+    plan: dict[str, list[dict[str, Any]]],
+    *,
+    grade_or_course: str,
+    form_compatibility: dict[str, Any],
+    form_diversity: str = DEFAULT_FORM_DIVERSITY,
+    variation_seed: int,
+) -> None:
+    """Assign compatible form metadata in place, using a reproducible seeded selection."""
+    level = normalize_level(form_diversity, default=DEFAULT_FORM_DIVERSITY)
+    randomizer = random.Random(variation_seed)
+    form_families = form_compatibility.get("form_families", {})
+    used_this_week: dict[str, set[str]] = {}
+    for entries in plan.values():
+        used_today: set[str] = set()
+        for entry in entries:
+            profile = _topic_profile(entry["skill"], grade_or_course, form_compatibility)
+            if profile is None:
+                continue
+            allowed = list(profile.get("allowed_form_families", []))
+            if not allowed:
+                raise QuestionPlanError(f"Form Diversity profile for {entry['skill']!r} has no form families.")
+            unknown = [form for form in allowed if form not in form_families]
+            if unknown:
+                raise QuestionPlanError(f"Form Diversity profile for {entry['skill']!r} references unknown forms: {unknown}.")
+            unused_week = [form for form in allowed if form not in used_this_week.setdefault(entry["skill"], set())]
+            candidates = [form for form in (unused_week or allowed) if form not in used_today]
+            if not candidates:
+                candidates = unused_week or allowed
+            selected = randomizer.choice(sorted(candidates))
+            metadata = form_families[selected]
+            entry.update({
+                "form_family": selected,
+                "cognitive_action": metadata["cognitive_action"],
+                "representation": metadata["representation"],
+                "response_type": metadata["response_type"],
+                "variation_seed": variation_seed,
+            })
+            used_today.add(selected)
+            used_this_week[entry["skill"]].add(selected)
+
+
+def _normalize_prompt(prompt: Any) -> str:
+    return re.sub(r"[^a-z0-9]+", "", str(prompt).lower())
+
+
+def validate_form_diversity(
+    spec: dict[str, Any],
+    *,
+    grade_or_course: str,
+    form_compatibility: dict[str, Any],
+    form_diversity: str = DEFAULT_FORM_DIVERSITY,
+) -> dict[str, Any]:
+    """Validate Form Diversity metadata and prompt uniqueness for profiled topics."""
+    level = normalize_level(form_diversity, default=DEFAULT_FORM_DIVERSITY)
+    max_per_day = _FORM_DIVERSITY_SETTINGS[level]["max_same_form_per_day"]
+    form_families = form_compatibility.get("form_families", {})
+    failures: list[dict[str, Any]] = []
+    used_week: dict[str, set[str]] = {}
+    normalized_prompts: dict[str, int] = {}
+    sections_report = []
+    for section in spec.get("sections", []):
+        daily_forms: dict[str, int] = {}
+        daily_skill_forms: dict[str, set[str]] = {}
+        for question in section.get("questions", []):
+            prompt_key = _normalize_prompt(question.get("prompt", ""))
+            if prompt_key:
+                if prompt_key in normalized_prompts:
+                    failures.append({"type": "normalized_duplicate_prompt", "questions": [normalized_prompts[prompt_key], question.get("number")]})
+                normalized_prompts[prompt_key] = question.get("number")
+            skill = question.get("skill", "")
+            profile = _topic_profile(skill, grade_or_course, form_compatibility)
+            if profile is None:
+                continue
+            required = ("form_family", "cognitive_action", "representation", "response_type", "variation_seed")
+            missing = [field for field in required if field not in question]
+            if missing:
+                failures.append({"type": "missing_form_metadata", "question": question.get("number"), "fields": missing})
+                continue
+            form = question["form_family"]
+            expected = form_families.get(form)
+            if form not in profile.get("allowed_form_families", []) or expected is None:
+                failures.append({"type": "incompatible_form", "question": question.get("number"), "form_family": form})
+                continue
+            if any(question[field] != expected[field] for field in ("cognitive_action", "representation", "response_type")):
+                failures.append({"type": "form_metadata_mismatch", "question": question.get("number"), "form_family": form})
+            daily_forms[form] = daily_forms.get(form, 0) + 1
+            daily_skill_forms.setdefault(skill, set()).add(form)
+            prior = used_week.setdefault(skill, set())
+            allowed = set(profile["allowed_form_families"])
+            if form in prior and len(prior) < len(allowed):
+                failures.append({"type": "weekly_form_reused_before_exhaustion", "question": question.get("number"), "form_family": form})
+            prior.add(form)
+        repeated = [form for form, count in daily_forms.items() if count > max_per_day]
+        if repeated:
+            failures.append({"type": "daily_form_reuse", "section": section.get("id"), "form_families": repeated})
+        sections_report.append({"section": section.get("id"), "form_families": daily_forms, "profiled_skills": sorted(daily_skill_forms)})
+    return {"status": "PASS" if not failures else "FAIL", "level": level, "sections": sections_report, "failures": failures}
 
 
 def validate_progression(spec: dict[str, Any], *, diversity: str = DEFAULT_DIVERSITY) -> dict[str, Any]:

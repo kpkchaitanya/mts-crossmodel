@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "form_families": {
+    "coordinate.read_component": {
+      "cognitive_action": "retrieve",
+      "representation": "ordered_pair",
+      "response_type": "numeric_answer"
+    },
+    "coordinate.write_ordered_pair": {
+      "cognitive_action": "construct",
+      "representation": "coordinate_plane",
+      "response_type": "ordered_pair"
+    },
+    "coordinate.axis_proximity": {
+      "cognitive_action": "compare",
+      "representation": "ordered_pair",
+      "response_type": "selection"
+    },
+    "coordinate.translate_point": {
+      "cognitive_action": "transform",
+      "representation": "coordinate_plane",
+      "response_type": "ordered_pair"
+    },
+    "coordinate.verbal_location": {
+      "cognitive_action": "translate",
+      "representation": "verbal_context",
+      "response_type": "ordered_pair"
+    }
+  },
+  "topics": {
+    "coordinate geometry basics": {
+      "grade_or_courses": ["grade_5"],
+      "allowed_form_families": [
+        "coordinate.read_component",
+        "coordinate.write_ordered_pair",
+        "coordinate.axis_proximity",
+        "coordinate.translate_point",
+        "coordinate.verbal_location"
+      ]
+    }
+  }
+}

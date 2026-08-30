@@ -1,5 +1,6 @@
 """Tests for the Math question diversity/difficulty planning and validation module."""
 from pathlib import Path
+import json
 import sys
 
 REPO = Path(__file__).resolve().parents[1]
@@ -8,6 +9,7 @@ import question_plan as qp
 
 
 SECTIONS = [{"id": "monday"}, {"id": "tuesday"}, {"id": "wednesday"}, {"id": "thursday"}, {"id": "friday"}]
+FORM_COMPATIBILITY = json.loads((REPO / "knowledge" / "question-form-compatibility.json").read_text(encoding="utf-8"))
 
 
 def test_normalize_level_accepts_aliases_and_rejects_unknown():
@@ -144,3 +146,86 @@ def test_build_day_plan_rejects_overrides_exceeding_slot_count():
         pass
     else:
         raise AssertionError("Combined overrides exceeding slots_per_day must raise QuestionPlanError.")
+
+
+def _form_spec(plan: dict) -> dict:
+    questions = []
+    number = 1
+    for entries in plan.values():
+        section_questions = []
+        for entry in entries:
+            section_questions.append({
+                "number": number,
+                "prompt": f"Coordinate form {entry.get('form_family', number)} with value {number}.",
+                "skill": entry["skill"],
+                "difficulty": entry["difficulty"],
+                **{field: entry[field] for field in ("form_family", "cognitive_action", "representation", "response_type", "variation_seed") if field in entry},
+            })
+            number += 1
+        questions.append({"id": f"section-{len(questions) + 1}", "questions": section_questions})
+    return {"sections": questions}
+
+
+def test_form_diversity_plan_is_seeded_and_uses_distinct_daily_coordinate_forms():
+    kwargs = {
+        "sections": SECTIONS,
+        "primary_skills": ["coordinate geometry basics"],
+        "slots_per_day": 2,
+        "form_diversity": "high",
+        "variation_seed": 7281,
+        "grade_or_course": "grade_5",
+        "form_compatibility": FORM_COMPATIBILITY,
+    }
+    first = qp.build_week_plan(**kwargs)
+    second = qp.build_week_plan(**kwargs)
+    assert first == second
+    assert all(len({entry["form_family"] for entry in entries}) == 2 for entries in first.values())
+    assert all(entry["variation_seed"] == 7281 for entries in first.values() for entry in entries)
+    assert qp.validate_form_diversity(
+        _form_spec(first),
+        grade_or_course="grade_5",
+        form_compatibility=FORM_COMPATIBILITY,
+        form_diversity="high",
+    )["status"] == "PASS"
+
+
+def test_form_diversity_rejects_repeated_coordinate_retrieval_form_and_prompt():
+    repeated = {
+        "sections": [{"id": "monday", "questions": [
+            {
+                "number": 1, "prompt": "Point P is at (3, 5). What is the y-coordinate?",
+                "skill": "coordinate geometry basics", "difficulty": "medium",
+                "form_family": "coordinate.read_component", "cognitive_action": "retrieve",
+                "representation": "ordered_pair", "response_type": "numeric_answer", "variation_seed": 5,
+            },
+            {
+                "number": 2, "prompt": "Point P is at (3, 5); what is the y coordinate?",
+                "skill": "coordinate geometry basics", "difficulty": "high",
+                "form_family": "coordinate.read_component", "cognitive_action": "retrieve",
+                "representation": "ordered_pair", "response_type": "numeric_answer", "variation_seed": 5,
+            },
+        ]}]}
+    result = qp.validate_form_diversity(
+        repeated,
+        grade_or_course="grade_5",
+        form_compatibility=FORM_COMPATIBILITY,
+        form_diversity="high",
+    )
+    assert result["status"] == "FAIL"
+    assert {failure["type"] for failure in result["failures"]} >= {
+        "daily_form_reuse", "weekly_form_reused_before_exhaustion", "normalized_duplicate_prompt",
+    }
+
+
+def test_form_diversity_rejects_profiled_question_without_form_metadata():
+    spec = {"sections": [{"id": "monday", "questions": [
+        {"number": 1, "prompt": "Write the ordered pair for point A.", "skill": "coordinate geometry basics", "difficulty": "medium"},
+    ]}]}
+    result = qp.validate_form_diversity(
+        spec,
+        grade_or_course="grade_5",
+        form_compatibility=FORM_COMPATIBILITY,
+        form_diversity="high",
+    )
+    assert result["status"] == "FAIL"
+    assert result["failures"] == [{"type": "missing_form_metadata", "question": 1, "fields": ["form_family", "cognitive_action", "representation", "response_type", "variation_seed"]}]

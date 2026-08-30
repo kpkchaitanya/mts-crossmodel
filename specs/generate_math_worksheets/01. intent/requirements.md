@@ -106,7 +106,7 @@ L0. Product
         |   |-- L3 Most Important Capabilities: Produce an approved plan for each Worksheet before Questions are generated
         |   |-- L3 Slash Commands: /generate-weekly-classworksheets
         |   `-- L3 Requirements And Acceptance
-        |       `-- L4 Requirements: FR-PW-001 through FR-PW-024
+        |       `-- L4 Requirements: FR-PW-001 through FR-PW-028
         |           `-- L4 One-line ACs: Apply the selected/default Worksheet Type and prepare individual Worksheet specifications. (Section 12: 2, 7)
         |
         |-- L2.7 Area: GW - Generate Worksheet
@@ -114,7 +114,7 @@ L0. Product
         |   |-- L3 Most Important Capabilities: Generate one complete editable Question set from which student and key artifacts derive
         |   |-- L3 Slash Commands: /generate-weekly-classworksheets
         |   `-- L3 Requirements And Acceptance
-        |       `-- L4 Requirements: FR-GW-001 through FR-GW-015
+        |       `-- L4 Requirements: FR-GW-001 through FR-GW-018
         |           `-- L4 One-line ACs: Generate the complete editable Question set and stop at Gate 2 when enabled. (Section 12: 8)
         |
         |-- L2.8 Area: VW - Verify Worksheet
@@ -346,6 +346,10 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | FR-PW-022 | The system shall support topic overrides that force a specified share — as a percentage or a fixed count — of a named grade/course's questions onto a named topic. |
 | FR-PW-023 | A topic override on a daily-sectioned Worksheet Type shall apply to each day's questions, not once across the whole week, and the applied overrides shall be reported to the user. |
 | FR-PW-024 | Question numbering shall be defined by the Worksheet Type. Weekly Worksheets shall number questions locally within each day rather than continuously across the week, and the chosen scheme shall govern rendering and QA consistently. |
+| FR-PW-025 | Form Diversity shall be an independent, run-selectable setting on the configured ordinal scale, with a configured default. It controls how a skill is represented and assessed, not which skills are covered or how difficulty is assigned. |
+| FR-PW-026 | Form Diversity shall use reusable mathematical form families described by cognitive action, representation, context when applicable, and response type; it shall not require a prewritten question inventory for every grade/topic combination. |
+| FR-PW-027 | A profiled topic shall declare only its compatible form families. When a profile applies, the planner shall select compatible forms using a persisted per-run variation seed. |
+| FR-PW-028 | A topic without an active compatibility profile shall preserve established generation behavior until a profile is added and validated. |
 
 ## 5.7 Generate Worksheet — GW
 
@@ -366,6 +370,9 @@ A **Run** is a technical execution attempt and must remain distinct from an **In
 | FR-GW-013 | Each Worksheet Spec revision shall be persisted immutably. An edit shall create a new revision rather than overwrite an existing one, and rewriting an existing revision with different content shall be rejected. |
 | FR-GW-014 | Gate 2 shall fail closed until every Worksheet planned for the Batch has a persisted Worksheet Spec reference, so no Worksheet can advance on unrecorded content. |
 | FR-GW-015 | A generated Question set shall pass the configured difficulty-progression and skill-diversity checks before it is persisted or presented for review; a failing set shall be revised rather than accepted. |
+| FR-GW-016 | A Question generated for an active Form Diversity profile shall persist its selected `form_family`, `cognitive_action`, `representation`, `response_type`, and `variation_seed` in the canonical Worksheet Spec. |
+| FR-GW-017 | At configured High Form Diversity, a form family shall not repeat within a day, and an unused compatible form shall be selected before the same skill/form combination repeats within the week. |
+| FR-GW-018 | Before Gate 2, deterministic QA shall reject normalized duplicate prompts, missing or incompatible form metadata, and form reuse that violates the configured Form Diversity policy. |
 
 ## 5.8 Verify Worksheet — VW
 

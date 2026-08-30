@@ -6,5 +6,6 @@
   "yearly_progression": "curriculum/progressive/progressive-math-backbone.json",
   "standards": "curriculum/nc-math/standards-cache.json",
   "weekly_pacing_cache": "curriculum/ccs-2026-2027/pacing.json",
+  "question_form_compatibility": "question-form-compatibility.json",
   "template_manifest": "../config/template-manifest.json"
 }
