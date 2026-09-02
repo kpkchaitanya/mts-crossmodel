@@ -1,6 +1,156 @@
 {
   "schema_version": "1.0",
   "form_families": {
+    "generic.direct_compute": {
+      "cognitive_action": "compute",
+      "representation": "symbolic_expression",
+      "response_type": "numeric_answer"
+    },
+    "generic.missing_value": {
+      "cognitive_action": "solve_unknown",
+      "representation": "equation",
+      "response_type": "numeric_answer"
+    },
+    "generic.context_story": {
+      "cognitive_action": "model",
+      "representation": "word_problem",
+      "response_type": "numeric_answer"
+    },
+    "generic.representation_read": {
+      "cognitive_action": "retrieve",
+      "representation": "table_graph_or_diagram",
+      "response_type": "numeric_answer"
+    },
+    "generic.compare_select": {
+      "cognitive_action": "compare",
+      "representation": "numeric_or_verbal_choices",
+      "response_type": "selection"
+    },
+    "generic.sequence_pattern": {
+      "cognitive_action": "extend_pattern",
+      "representation": "sequence",
+      "response_type": "numeric_answer"
+    },
+    "generic.reverse_reasoning": {
+      "cognitive_action": "reverse_reason",
+      "representation": "equation_or_context",
+      "response_type": "numeric_answer"
+    },
+    "generic.multi_step": {
+      "cognitive_action": "compose_operations",
+      "representation": "multi_step_context",
+      "response_type": "numeric_answer"
+    },
+    "generic.error_check": {
+      "cognitive_action": "evaluate_reasonableness",
+      "representation": "worked_example_or_claim",
+      "response_type": "selection"
+    },
+    "generic.construct_example": {
+      "cognitive_action": "construct",
+      "representation": "open_numeric_condition",
+      "response_type": "numeric_answer"
+    },
+    "generic.sort_order": {
+      "cognitive_action": "order",
+      "representation": "number_set",
+      "response_type": "ordered_list"
+    },
+    "generic.match_rule": {
+      "cognitive_action": "match",
+      "representation": "rule_and_values",
+      "response_type": "selection"
+    },
+    "generic.table_complete": {
+      "cognitive_action": "complete",
+      "representation": "input_output_table",
+      "response_type": "numeric_answer"
+    },
+    "generic.visual_grouping": {
+      "cognitive_action": "interpret",
+      "representation": "array_or_grouping",
+      "response_type": "numeric_answer"
+    },
+    "generic.equivalent_form": {
+      "cognitive_action": "translate",
+      "representation": "equivalent_expression",
+      "response_type": "numeric_answer"
+    },
+    "generic.choose_operation": {
+      "cognitive_action": "select_strategy",
+      "representation": "short_context",
+      "response_type": "selection"
+    },
+    "generic.estimate": {
+      "cognitive_action": "estimate",
+      "representation": "rounded_values",
+      "response_type": "numeric_answer"
+    },
+    "generic.justify_claim": {
+      "cognitive_action": "justify",
+      "representation": "claim_with_numbers",
+      "response_type": "selection"
+    },
+    "generic.find_counterexample": {
+      "cognitive_action": "analyze_exception",
+      "representation": "numeric_condition",
+      "response_type": "numeric_answer"
+    },
+    "generic.compose_decompose": {
+      "cognitive_action": "decompose",
+      "representation": "part_whole_numeric",
+      "response_type": "numeric_answer"
+    },
+    "generic.classify": {
+      "cognitive_action": "classify",
+      "representation": "attribute_list",
+      "response_type": "selection"
+    },
+    "generic.measurement_context": {
+      "cognitive_action": "apply",
+      "representation": "measurement_context",
+      "response_type": "numeric_answer"
+    },
+    "generic.number_line": {
+      "cognitive_action": "locate",
+      "representation": "number_line",
+      "response_type": "numeric_answer"
+    },
+    "generic.decision_table": {
+      "cognitive_action": "decide",
+      "representation": "decision_table",
+      "response_type": "selection"
+    },
+    "generic.two_way_compare": {
+      "cognitive_action": "compare",
+      "representation": "two_value_context",
+      "response_type": "numeric_answer"
+    },
+    "generic.inverse_operation": {
+      "cognitive_action": "invert_operation",
+      "representation": "operation_pair",
+      "response_type": "numeric_answer"
+    },
+    "generic.constraint_solve": {
+      "cognitive_action": "satisfy_constraint",
+      "representation": "constraint_statement",
+      "response_type": "numeric_answer"
+    },
+    "generic.multi_representation": {
+      "cognitive_action": "connect_representations",
+      "representation": "mixed_numeric_visual",
+      "response_type": "numeric_answer"
+    },
+    "generic.reasonable_answer": {
+      "cognitive_action": "evaluate_reasonableness",
+      "representation": "answer_choice_context",
+      "response_type": "selection"
+    },
+    "generic.create_equivalent": {
+      "cognitive_action": "construct_equivalent",
+      "representation": "numeric_or_symbolic_expression",
+      "response_type": "numeric_answer"
+    },
     "coordinate.read_component": {
       "cognitive_action": "retrieve",
       "representation": "ordered_pair",
@@ -26,6 +176,41 @@
       "representation": "verbal_context",
       "response_type": "ordered_pair"
     }
+  },
+  "default_profile": {
+    "grade_or_courses": ["grade_1", "grade_4", "grade_5", "grade_6", "grade_9_10", "math_1", "math_2"],
+    "allowed_form_families": [
+      "generic.direct_compute",
+      "generic.missing_value",
+      "generic.context_story",
+      "generic.representation_read",
+      "generic.compare_select",
+      "generic.sequence_pattern",
+      "generic.reverse_reasoning",
+      "generic.multi_step",
+      "generic.error_check",
+      "generic.construct_example",
+      "generic.sort_order",
+      "generic.match_rule",
+      "generic.table_complete",
+      "generic.visual_grouping",
+      "generic.equivalent_form",
+      "generic.choose_operation",
+      "generic.estimate",
+      "generic.justify_claim",
+      "generic.find_counterexample",
+      "generic.compose_decompose",
+      "generic.classify",
+      "generic.measurement_context",
+      "generic.number_line",
+      "generic.decision_table",
+      "generic.two_way_compare",
+      "generic.inverse_operation",
+      "generic.constraint_solve",
+      "generic.multi_representation",
+      "generic.reasonable_answer",
+      "generic.create_equivalent"
+    ]
   },
   "topics": {
     "coordinate geometry basics": {

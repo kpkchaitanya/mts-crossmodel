@@ -281,9 +281,12 @@ def build_week_plan(
 
 def _topic_profile(skill: str, grade_or_course: str, form_compatibility: dict[str, Any]) -> dict[str, Any] | None:
     profile = form_compatibility.get("topics", {}).get(skill)
-    if not profile or grade_or_course not in profile.get("grade_or_courses", []):
-        return None
-    return profile
+    if profile and grade_or_course in profile.get("grade_or_courses", []):
+        return profile
+    default_profile = form_compatibility.get("default_profile")
+    if default_profile and grade_or_course in default_profile.get("grade_or_courses", []):
+        return default_profile
+    return None
 
 
 def assign_form_diversity(
@@ -314,7 +317,7 @@ def assign_form_diversity(
             unused_week = [form for form in allowed if form not in used_this_week.setdefault(entry["skill"], set())]
             candidates = [form for form in (unused_week or allowed) if form not in used_today]
             if not candidates:
-                candidates = unused_week or allowed
+                candidates = [form for form in allowed if form not in used_today] or allowed
             selected = randomizer.choice(sorted(candidates))
             metadata = form_families[selected]
             entry.update({
@@ -359,6 +362,7 @@ def validate_form_diversity(
             skill = question.get("skill", "")
             profile = _topic_profile(skill, grade_or_course, form_compatibility)
             if profile is None:
+                failures.append({"type": "missing_form_profile", "question": question.get("number"), "skill": skill, "grade_or_course": grade_or_course})
                 continue
             required = ("form_family", "cognitive_action", "representation", "response_type", "variation_seed")
             missing = [field for field in required if field not in question]

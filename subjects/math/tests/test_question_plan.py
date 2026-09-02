@@ -189,6 +189,42 @@ def test_form_diversity_plan_is_seeded_and_uses_distinct_daily_coordinate_forms(
     )["status"] == "PASS"
 
 
+def test_form_diversity_default_profile_applies_to_unprofiled_skills():
+    plan = qp.build_week_plan(
+        sections=SECTIONS,
+        primary_skills=["addition and subtraction within 20", "unknown-addend and unknown-subtrahend equations"],
+        spiral_skills=["counting sequence"],
+        slots_per_day=10,
+        form_diversity="high",
+        variation_seed=7281,
+        grade_or_course="grade_1",
+        form_compatibility=FORM_COMPATIBILITY,
+    )
+    assert all("form_family" in entry for entries in plan.values() for entry in entries)
+    assert all(len({entry["form_family"] for entry in entries}) == 10 for entries in plan.values())
+    assert qp.validate_form_diversity(
+        _form_spec(plan),
+        grade_or_course="grade_1",
+        form_compatibility=FORM_COMPATIBILITY,
+        form_diversity="high",
+    )["status"] == "PASS"
+
+
+def test_form_diversity_missing_profile_fails_when_no_default_applies():
+    compatibility = {"form_families": {}, "topics": {}}
+    spec = {"sections": [{"id": "monday", "questions": [
+        {"number": 1, "prompt": "Solve 2 + 2.", "skill": "unprofiled", "difficulty": "medium"},
+    ]}]}
+    result = qp.validate_form_diversity(
+        spec,
+        grade_or_course="grade_1",
+        form_compatibility=compatibility,
+        form_diversity="high",
+    )
+    assert result["status"] == "FAIL"
+    assert result["failures"] == [{"type": "missing_form_profile", "question": 1, "skill": "unprofiled", "grade_or_course": "grade_1"}]
+
+
 def test_form_diversity_rejects_repeated_coordinate_retrieval_form_and_prompt():
     repeated = {
         "sections": [{"id": "monday", "questions": [

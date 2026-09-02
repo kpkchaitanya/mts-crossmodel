@@ -483,10 +483,12 @@ form family in the same day. The selected metadata is stored in each planned slo
 the canonical Worksheet Spec. The authoring agent varies wording, values, and context within the selected
 form; it may not replace the selected form metadata.
 
-`validate_form_diversity(spec, ...)` deterministically rejects missing/incompatible metadata, same-day
-form reuse beyond the configured level, reuse before compatible forms are exhausted, and normalized duplicate
-prompts. Topics with no active profile receive no Form Diversity assignment and retain legacy generation
-behavior until a compatibility profile is deliberately added and tested.
+`validate_form_diversity(spec, ...)` deterministically rejects missing/incompatible metadata, missing
+profiles, same-day form reuse beyond the configured level, reuse before compatible forms are exhausted,
+and normalized duplicate prompts. Form Diversity is active by default for every generated grade/course;
+topic-specific profiles refine eligible forms, and unprofiled skills fall back to the subject-owned default
+profile. A run may only avoid this behavior through an explicit designed/configured override, not because a
+topic-specific profile is absent.
 
 #### Content-authoring caution: one template per skill label, not one template for several
 

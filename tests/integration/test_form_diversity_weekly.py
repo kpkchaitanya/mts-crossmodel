@@ -60,3 +60,29 @@ def test_grade_5_seeded_coordinate_geometry_plan_passes_form_diversity_qa():
         _authored_spec(plan), grade_or_course="grade_5", form_diversity="high"
     )
     assert result["status"] == "PASS"
+
+
+def test_all_enabled_math_grades_receive_form_metadata_by_default():
+    math = subject_module.MathSubjectModule(REPO / "subjects" / "math")
+    sections = [{"id": day} for day in ("monday", "tuesday", "wednesday", "thursday", "friday")]
+    grade_skills = {
+        "grade_1": ["addition and subtraction within 20", "unknown-addend and unknown-subtrahend equations", "counting sequence"],
+        "grade_4": ["data and graphing basics", "multi-digit place value", "compare multi-digit numbers"],
+        "grade_5": ["coordinate geometry basics", "numerical expressions", "patterns"],
+        "grade_6": ["prime factorization basics", "factor pairs and multiples", "ratio concepts"],
+        "grade_9_10": ["solve linear equations and inequalities", "create equations from contexts", "function notation and evaluation"],
+    }
+    for grade, skills in grade_skills.items():
+        plan = math.build_week_plan(
+            sections,
+            primary_skills=skills,
+            spiral_skills=None,
+            slots_per_day=5,
+            difficulty="medium_plus",
+            diversity="medium_plus",
+            form_diversity="high",
+            variation_seed=20260830,
+            grade_or_course=grade,
+        )
+        assert all("form_family" in entry for entries in plan.values() for entry in entries), grade
+        assert math.check_form_diversity(_authored_spec(plan), grade_or_course=grade, form_diversity="high")["status"] == "PASS"
