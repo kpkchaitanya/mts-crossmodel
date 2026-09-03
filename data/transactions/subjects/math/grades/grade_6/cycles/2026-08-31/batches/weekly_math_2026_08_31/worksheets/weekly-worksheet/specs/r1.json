@@ -1,0 +1,1398 @@
+{
+  "curriculum": {
+    "cache_hit": true,
+    "confidence": "inferred",
+    "current": [
+      "NC.6.RP",
+      "NC.6.NS",
+      "NC.6.G"
+    ],
+    "grade_or_course": "grade_6",
+    "progressive_context": {
+      "grade": 6,
+      "official_ccs_pacing": false,
+      "source": "mts_progressive_backbone",
+      "units": {
+        "algebra_functions": {
+          "builds_from": [
+            "parentheses",
+            "order/structure of operations",
+            "numerical expressions"
+          ],
+          "key_concepts": [
+            "variables",
+            "algebraic expressions",
+            "properties",
+            "one-variable equations",
+            "inequalities"
+          ],
+          "leads_to": [
+            "equivalent expressions",
+            "distributive property",
+            "multi-step equations"
+          ],
+          "progression": "Arithmetic relationships are generalized symbolically.",
+          "unit_family": "Patterns, Algebra & Functions",
+          "unit_name": "Variables, Expressions, Equations & Inequalities"
+        },
+        "data_probability": {
+          "builds_from": [
+            "measurement data",
+            "fraction/decimal interpretation",
+            "graphs"
+          ],
+          "key_concepts": [
+            "statistical questions",
+            "distributions",
+            "center",
+            "variability",
+            "data displays"
+          ],
+          "leads_to": [
+            "sampling",
+            "populations",
+            "variability"
+          ],
+          "progression": "Statistics becomes a formal study of distributions rather than just graphs.",
+          "unit_family": "Data, Statistics & Probability",
+          "unit_name": "Statistical Distributions"
+        },
+        "fractions_ratios": {
+          "builds_from": [
+            "add/subtract unlike fractions",
+            "multiply fractions",
+            "fraction division foundations"
+          ],
+          "key_concepts": [
+            "ratio meaning",
+            "equivalent ratios",
+            "unit rates",
+            "ratio tables",
+            "percent foundations"
+          ],
+          "leads_to": [
+            "unit rate",
+            "proportional relationships",
+            "constant of proportionality"
+          ],
+          "progression": "Multiplicative comparison becomes formal ratio and rate reasoning.",
+          "unit_family": "Fractions, Ratios & Proportional Reasoning",
+          "unit_name": "Ratios & Rates"
+        },
+        "geometry_measurement": {
+          "builds_from": [
+            "volume formulas",
+            "composite solids",
+            "coordinate plane"
+          ],
+          "key_concepts": [
+            "polygon area",
+            "nets",
+            "surface area",
+            "volume",
+            "coordinate geometry"
+          ],
+          "leads_to": [
+            "scale drawings",
+            "angle relationships",
+            "circles"
+          ],
+          "progression": "Geometry uses formulas and coordinates as algebraic tools.",
+          "unit_family": "Geometry, Measurement & Trigonometry",
+          "unit_name": "Area, Surface Area, Volume & Coordinates"
+        },
+        "modeling_connections": {
+          "builds_from": [
+            "numerical",
+            "graphical",
+            "geometric"
+          ],
+          "key_concepts": [
+            "number \u2192 ratio",
+            "ratio \u2192 variable",
+            "variable \u2192 equation"
+          ],
+          "leads_to": [
+            "proportional models",
+            "percent models",
+            "scale models"
+          ],
+          "progression": "Students transition from computing quantities to representing relationships.",
+          "unit_family": "Advanced Modeling / Connections",
+          "unit_name": "Generalization of Arithmetic"
+        },
+        "number_operations": {
+          "builds_from": [
+            "powers of 10",
+            "decimal place value",
+            "multi-digit multiplication"
+          ],
+          "key_concepts": [
+            "fraction division",
+            "decimal fluency",
+            "factors and multiples",
+            "positive/negative numbers",
+            "absolute value",
+            "coordinate numbers"
+          ],
+          "leads_to": [
+            "positive/negative fractions and decimals",
+            "addition/subtraction",
+            "multiplication/division"
+          ],
+          "progression": "The number system expands to signed rational numbers and more abstract operations.",
+          "unit_family": "Number Sense & Operations",
+          "unit_name": "Rational Number System"
+        }
+      }
+    },
+    "requires_weekly_resolution": true,
+    "source": "month_cache",
+    "spiral": [],
+    "standards_context": {
+      "domains": [
+        {
+          "id": "ratios",
+          "standards": [
+            "NC.6.RP.1",
+            "NC.6.RP.2",
+            "NC.6.RP.3",
+            "NC.6.RP.4"
+          ],
+          "topics": [
+            "ratio concepts",
+            "unit rates",
+            "ratio reasoning"
+          ]
+        },
+        {
+          "id": "number_system",
+          "standards": [
+            "NC.6.NS.1",
+            "NC.6.NS.2",
+            "NC.6.NS.3",
+            "NC.6.NS.4",
+            "NC.6.NS.5",
+            "NC.6.NS.6",
+            "NC.6.NS.7",
+            "NC.6.NS.8",
+            "NC.6.NS.9"
+          ],
+          "topics": [
+            "fraction division",
+            "multi-digit computation",
+            "factors and multiples",
+            "rational numbers"
+          ]
+        },
+        {
+          "id": "geometry",
+          "standards": [
+            "NC.6.G.1",
+            "NC.6.G.2",
+            "NC.6.G.3",
+            "NC.6.G.4"
+          ],
+          "topics": [
+            "area",
+            "volume",
+            "coordinate plane",
+            "nets and surface area"
+          ]
+        }
+      ],
+      "source": "nc_standards_cache",
+      "source_url": "https://www.dpi.nc.gov/nc-6th-grade-math-unpacking-rev-june-2022-0/open"
+    },
+    "topics": [
+      "ratio concepts",
+      "unit rates",
+      "ratio reasoning",
+      "fraction division",
+      "multi-digit computation",
+      "factors and multiples",
+      "rational numbers",
+      "area",
+      "volume",
+      "coordinate plane",
+      "nets and surface area"
+    ],
+    "topics_source": "nc_standards_cache",
+    "week_start": "2026-08-31"
+  },
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": "5:6",
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.two_way_compare",
+          "id": "grade_6-q1",
+          "number": 1,
+          "prompt": "Question 1: A paint mix uses 5 cups of red paint and 6 cups of blue paint. Write the ratio of red to blue as 5:6.",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "ratio concepts",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9.0,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_6-q2",
+          "number": 2,
+          "prompt": "Question 2: A cyclist travels 36 miles in 4 hours at a constant rate. What is the unit rate in miles per hour?",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "unit rates",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "36/4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 20.0,
+          "cognitive_action": "compute",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.direct_compute",
+          "id": "grade_6-q3",
+          "number": 3,
+          "prompt": "Question 3: The ratio of yellow to green beads is 2:5. If there are 8 yellow beads, how many green beads are there?",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "ratio reasoning",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "8*5/2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2.5,
+          "cognitive_action": "classify",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.classify",
+          "id": "grade_6-q4",
+          "number": 4,
+          "prompt": "Question 4: Compute: 5/4 divided by 1/2.",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "fraction division",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "(5/4)/(1/2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1720,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.find_counterexample",
+          "id": "grade_6-q5",
+          "number": 5,
+          "prompt": "Question 5: Compute: 215 x 8.",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "multi-digit computation",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "215*8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "cognitive_action": "decide",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.decision_table",
+          "id": "grade_6-q6",
+          "number": 6,
+          "prompt": "Question 6: Find the greatest common factor of 24 and 39.",
+          "representation": "decision_table",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "factors and multiples",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "a": 24,
+              "b": 39
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 8,
+          "cognitive_action": "justify",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.justify_claim",
+          "id": "grade_6-q7",
+          "number": 7,
+          "prompt": "Question 7: Compute: -21 + 29.",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "rational numbers",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "-21+29"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 36,
+          "cognitive_action": "match",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.match_rule",
+          "id": "grade_6-q8",
+          "number": 8,
+          "prompt": "Question 8: A rectangle is 9 units long and 4 units wide. What is its area in square units?",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "area",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "length": 9,
+              "width": 4
+            },
+            "method": "rectangle_area"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 108,
+          "cognitive_action": "justify",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.justify_claim",
+          "id": "grade_6-q9",
+          "number": 9,
+          "prompt": "Question 9: A rectangular prism is 6 units by 6 units by 3 units. What is its volume in cubic units?",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "volume",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "6*6*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": -4,
+          "cognitive_action": "compute",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.direct_compute",
+          "id": "grade_6-q10",
+          "number": 10,
+          "prompt": "Question 10: Point P is at (-4, -1). What is the x-coordinate of P?",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "coordinate plane",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 130,
+          "cognitive_action": "solve_unknown",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.missing_value",
+          "id": "grade_6-q11",
+          "number": 11,
+          "prompt": "Question 11: A rectangular prism has length 4, width 5, and height 5. What is its surface area in square units?",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "nets and surface area",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "height": 5,
+              "length": 4,
+              "width": 5
+            },
+            "method": "rect_prism_surface_area"
+          }
+        },
+        {
+          "answer": "4:7",
+          "cognitive_action": "extend_pattern",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.sequence_pattern",
+          "id": "grade_6-q12",
+          "number": 12,
+          "prompt": "Question 12: A paint mix uses 4 cups of red paint and 7 cups of blue paint. Write the ratio of red to blue as 4:7.",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "ratio concepts",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 23.0,
+          "cognitive_action": "select_strategy",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.choose_operation",
+          "id": "grade_6-q13",
+          "number": 13,
+          "prompt": "Question 13: A cyclist travels 69 miles in 3 hours at a constant rate. What is the unit rate in miles per hour?",
+          "representation": "short_context",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "unit rates",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "69/3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12.0,
+          "cognitive_action": "satisfy_constraint",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.constraint_solve",
+          "id": "grade_6-q14",
+          "number": 14,
+          "prompt": "Question 14: The ratio of yellow to green beads is 2:4. If there are 6 yellow beads, how many green beads are there?",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "ratio reasoning",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "6*4/2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2.0,
+          "cognitive_action": "apply",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.measurement_context",
+          "id": "grade_6-q15",
+          "number": 15,
+          "prompt": "Question 15: Compute: 4/4 divided by 1/2.",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "fraction division",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "(4/4)/(1/2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2506,
+          "cognitive_action": "construct",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.construct_example",
+          "id": "grade_6-q16",
+          "number": 16,
+          "prompt": "Question 16: Compute: 358 x 7.",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "multi-digit computation",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "358*7"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 2,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reverse_reasoning",
+          "id": "grade_6-q17",
+          "number": 17,
+          "prompt": "Question 17: Find the greatest common factor of 26 and 42.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "factors and multiples",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "a": 26,
+              "b": 42
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 8,
+          "cognitive_action": "satisfy_constraint",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.constraint_solve",
+          "id": "grade_6-q18",
+          "number": 18,
+          "prompt": "Question 18: Compute: -32 + 40.",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "rational numbers",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "-32+40"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 40,
+          "cognitive_action": "justify",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.justify_claim",
+          "id": "grade_6-q19",
+          "number": 19,
+          "prompt": "Question 19: A rectangle is 8 units long and 5 units wide. What is its area in square units?",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "area",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "length": 8,
+              "width": 5
+            },
+            "method": "rectangle_area"
+          }
+        },
+        {
+          "answer": 100,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.compare_select",
+          "id": "grade_6-q20",
+          "number": 20,
+          "prompt": "Question 20: A rectangular prism is 5 units by 5 units by 4 units. What is its volume in cubic units?",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "volume",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "5*5*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": -4,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_representation",
+          "id": "grade_6-q21",
+          "number": 21,
+          "prompt": "Question 21: Point P is at (-4, 1). What is the x-coordinate of P?",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "coordinate plane",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 108,
+          "cognitive_action": "construct",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.construct_example",
+          "id": "grade_6-q22",
+          "number": 22,
+          "prompt": "Question 22: A rectangular prism has length 3, width 6, and height 4. What is its surface area in square units?",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "nets and surface area",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "height": 4,
+              "length": 3,
+              "width": 6
+            },
+            "method": "rect_prism_surface_area"
+          }
+        },
+        {
+          "answer": "3:3",
+          "cognitive_action": "translate",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.equivalent_form",
+          "id": "grade_6-q23",
+          "number": 23,
+          "prompt": "Question 23: A paint mix uses 3 cups of red paint and 3 cups of blue paint. Write the ratio of red to blue as 3:3.",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "ratio concepts",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 20.4,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.find_counterexample",
+          "id": "grade_6-q24",
+          "number": 24,
+          "prompt": "Question 24: A cyclist travels 102 miles in 5 hours at a constant rate. What is the unit rate in miles per hour?",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "unit rates",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "102/5"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 18.0,
+          "cognitive_action": "extend_pattern",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.sequence_pattern",
+          "id": "grade_6-q25",
+          "number": 25,
+          "prompt": "Question 25: The ratio of yellow to green beads is 2:3. If there are 12 yellow beads, how many green beads are there?",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "ratio reasoning",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "12*3/2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1.5,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.context_story",
+          "id": "grade_6-q26",
+          "number": 26,
+          "prompt": "Question 26: Compute: 3/4 divided by 1/2.",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "fraction division",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "(3/4)/(1/2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6012,
+          "cognitive_action": "compose_operations",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_step",
+          "id": "grade_6-q27",
+          "number": 27,
+          "prompt": "Question 27: Compute: 501 x 12.",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "multi-digit computation",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "501*12"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "cognitive_action": "locate",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.number_line",
+          "id": "grade_6-q28",
+          "number": 28,
+          "prompt": "Question 28: Find the greatest common factor of 18 and 30.",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "factors and multiples",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "a": 18,
+              "b": 30
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 8,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.two_way_compare",
+          "id": "grade_6-q29",
+          "number": 29,
+          "prompt": "Question 29: Compute: -43 + 51.",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "rational numbers",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "-43+51"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 42,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_6-q30",
+          "number": 30,
+          "prompt": "Question 30: A rectangle is 7 units long and 6 units wide. What is its area in square units?",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "area",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "length": 7,
+              "width": 6
+            },
+            "method": "rectangle_area"
+          }
+        },
+        {
+          "answer": 80,
+          "cognitive_action": "compute",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.direct_compute",
+          "id": "grade_6-q31",
+          "number": 31,
+          "prompt": "Question 31: A rectangular prism is 4 units by 4 units by 5 units. What is its volume in cubic units?",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "volume",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "4*4*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": -4,
+          "cognitive_action": "classify",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.classify",
+          "id": "grade_6-q32",
+          "number": 32,
+          "prompt": "Question 32: Point P is at (-4, 3). What is the x-coordinate of P?",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "coordinate plane",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 120,
+          "cognitive_action": "extend_pattern",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.sequence_pattern",
+          "id": "grade_6-q33",
+          "number": 33,
+          "prompt": "Question 33: A rectangular prism has length 6, width 2, and height 6. What is its surface area in square units?",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "nets and surface area",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "height": 6,
+              "length": 6,
+              "width": 2
+            },
+            "method": "rect_prism_surface_area"
+          }
+        },
+        {
+          "answer": "2:4",
+          "cognitive_action": "apply",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.measurement_context",
+          "id": "grade_6-q34",
+          "number": 34,
+          "prompt": "Question 34: A paint mix uses 2 cups of red paint and 4 cups of blue paint. Write the ratio of red to blue as 2:4.",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "ratio concepts",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 33.75,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.visual_grouping",
+          "id": "grade_6-q35",
+          "number": 35,
+          "prompt": "Question 35: A cyclist travels 135 miles in 4 hours at a constant rate. What is the unit rate in miles per hour?",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "unit rates",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "135/4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 25.0,
+          "cognitive_action": "decompose",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.compose_decompose",
+          "id": "grade_6-q36",
+          "number": 36,
+          "prompt": "Question 36: The ratio of yellow to green beads is 2:5. If there are 10 yellow beads, how many green beads are there?",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "ratio reasoning",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "10*5/2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.0,
+          "cognitive_action": "decide",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.decision_table",
+          "id": "grade_6-q37",
+          "number": 37,
+          "prompt": "Question 37: Compute: 6/4 divided by 1/2.",
+          "representation": "decision_table",
+          "response_type": "selection",
+          "section_id": "friday",
+          "skill": "fraction division",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "(6/4)/(1/2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7084,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.context_story",
+          "id": "grade_6-q38",
+          "number": 38,
+          "prompt": "Question 38: Compute: 644 x 11.",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "multi-digit computation",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "644*11"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1,
+          "cognitive_action": "estimate",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.estimate",
+          "id": "grade_6-q39",
+          "number": 39,
+          "prompt": "Question 39: Find the greatest common factor of 20 and 33.",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "factors and multiples",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "a": 20,
+              "b": 33
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 8,
+          "cognitive_action": "compute",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.direct_compute",
+          "id": "grade_6-q40",
+          "number": 40,
+          "prompt": "Question 40: Compute: -54 + 62.",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "rational numbers",
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903135147,
+          "verification": {
+            "inputs": {
+              "expression": "-54+62"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PENDING"
+  },
+  "worksheet": {
+    "grade": "Grade 6",
+    "grade_or_course": "grade_6",
+    "question_count": 40,
+    "title": "MTS - WEEKLY WORKSHEET",
+    "week_start": "2026-08-31"
+  }
+}

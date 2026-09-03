@@ -1,0 +1,1244 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 13,
+          "cognitive_action": "estimate",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.estimate",
+          "id": "grade_1-q1",
+          "number": 1,
+          "prompt": "Question 1: Which number is greater: 13 or 12? Write the greater number.",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "counting and number representation",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "13"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 14,
+          "cognitive_action": "solve_unknown",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.missing_value",
+          "id": "grade_1-q2",
+          "number": 2,
+          "prompt": "Question 2: Which number is greater: 14 or 13? Write the greater number.",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "compare/order numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "14"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 15,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.multi_representation",
+          "id": "grade_1-q3",
+          "number": 3,
+          "prompt": "Question 3: Which number is greater: 15 or 14? Write the greater number.",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "tens and ones",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "15"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 16,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.compare_select",
+          "id": "grade_1-q4",
+          "number": 4,
+          "prompt": "Question 4: Which number is greater: 16 or 15? Write the greater number.",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "compare/order numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "16"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 17,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.find_counterexample",
+          "id": "grade_1-q5",
+          "number": 5,
+          "prompt": "Question 5: Which number is greater: 17 or 16? Write the greater number.",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "number line",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "17"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 18,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_1-q6",
+          "number": 6,
+          "prompt": "Question 6: Which number is greater: 18 or 17? Write the greater number.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "addition/subtraction meaning",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "18"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 19,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_1-q7",
+          "number": 7,
+          "prompt": "Question 7: Which number is greater: 19 or 18? Write the greater number.",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "make-10 and fact families",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "19"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 20,
+          "cognitive_action": "retrieve",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.representation_read",
+          "id": "grade_1-q8",
+          "number": 8,
+          "prompt": "Question 8: Which number is greater: 20 or 19? Write the greater number.",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "tens and ones",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "20"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 21,
+          "cognitive_action": "order",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.sort_order",
+          "id": "grade_1-q9",
+          "number": 9,
+          "prompt": "Question 9: Which number is greater: 21 or 20? Write the greater number.",
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "section_id": "monday",
+          "skill": "unknowns",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "21"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 22,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.error_check",
+          "id": "grade_1-q10",
+          "number": 10,
+          "prompt": "Question 10: Which number is greater: 22 or 21? Write the greater number.",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "halves",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "22"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 23,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_1-q11",
+          "number": 11,
+          "prompt": "Question 11: Which number is greater: 23 or 22? Write the greater number.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "counting and number representation",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "23"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 24,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.table_complete",
+          "id": "grade_1-q12",
+          "number": 12,
+          "prompt": "Question 12: Which number is greater: 24 or 23? Write the greater number.",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "compare/order numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "24"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 25,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.visual_grouping",
+          "id": "grade_1-q13",
+          "number": 13,
+          "prompt": "Question 13: Which number is greater: 25 or 24? Write the greater number.",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "tens and ones",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "25"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 26,
+          "cognitive_action": "construct_equivalent",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.create_equivalent",
+          "id": "grade_1-q14",
+          "number": 14,
+          "prompt": "Question 14: Which number is greater: 26 or 25? Write the greater number.",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "compare/order numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "26"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 27,
+          "cognitive_action": "apply",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.measurement_context",
+          "id": "grade_1-q15",
+          "number": 15,
+          "prompt": "Question 15: Which number is greater: 27 or 26? Write the greater number.",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "number line",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "27"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 28,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.error_check",
+          "id": "grade_1-q16",
+          "number": 16,
+          "prompt": "Question 16: Which number is greater: 28 or 27? Write the greater number.",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "addition/subtraction meaning",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "28"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 29,
+          "cognitive_action": "extend_pattern",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.sequence_pattern",
+          "id": "grade_1-q17",
+          "number": 17,
+          "prompt": "Question 17: Which number is greater: 29 or 28? Write the greater number.",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "make-10 and fact families",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "29"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30,
+          "cognitive_action": "construct",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.construct_example",
+          "id": "grade_1-q18",
+          "number": 18,
+          "prompt": "Question 18: Which number is greater: 30 or 29? Write the greater number.",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "tens and ones",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "30"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 31,
+          "cognitive_action": "match",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.match_rule",
+          "id": "grade_1-q19",
+          "number": 19,
+          "prompt": "Question 19: Which number is greater: 31 or 30? Write the greater number.",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "unknowns",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "31"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 32,
+          "cognitive_action": "locate",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.number_line",
+          "id": "grade_1-q20",
+          "number": 20,
+          "prompt": "Question 20: Which number is greater: 32 or 31? Write the greater number.",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "halves",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "32"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 33,
+          "cognitive_action": "compose_operations",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.multi_step",
+          "id": "grade_1-q21",
+          "number": 21,
+          "prompt": "Question 21: Which number is greater: 33 or 32? Write the greater number.",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "counting and number representation",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "33"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 34,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reverse_reasoning",
+          "id": "grade_1-q22",
+          "number": 22,
+          "prompt": "Question 22: Which number is greater: 34 or 33? Write the greater number.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "compare/order numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "34"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 35,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.context_story",
+          "id": "grade_1-q23",
+          "number": 23,
+          "prompt": "Question 23: Which number is greater: 35 or 34? Write the greater number.",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "tens and ones",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "35"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 36,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_1-q24",
+          "number": 24,
+          "prompt": "Question 24: Which number is greater: 36 or 35? Write the greater number.",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "compare/order numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "36"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 37,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_1-q25",
+          "number": 25,
+          "prompt": "Question 25: Which number is greater: 37 or 36? Write the greater number.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "number line",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "37"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 38,
+          "cognitive_action": "solve_unknown",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.missing_value",
+          "id": "grade_1-q26",
+          "number": 26,
+          "prompt": "Question 26: Which number is greater: 38 or 37? Write the greater number.",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "addition/subtraction meaning",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "38"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 39,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.find_counterexample",
+          "id": "grade_1-q27",
+          "number": 27,
+          "prompt": "Question 27: Which number is greater: 39 or 38? Write the greater number.",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "make-10 and fact families",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "39"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 40,
+          "cognitive_action": "locate",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.number_line",
+          "id": "grade_1-q28",
+          "number": 28,
+          "prompt": "Question 28: Which number is greater: 40 or 39? Write the greater number.",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "tens and ones",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "40"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 41,
+          "cognitive_action": "decompose",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.compose_decompose",
+          "id": "grade_1-q29",
+          "number": 29,
+          "prompt": "Question 29: Which number is greater: 41 or 40? Write the greater number.",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "unknowns",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "41"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 42,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.visual_grouping",
+          "id": "grade_1-q30",
+          "number": 30,
+          "prompt": "Question 30: Which number is greater: 42 or 41? Write the greater number.",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "halves",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "42"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 43,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.multi_representation",
+          "id": "grade_1-q31",
+          "number": 31,
+          "prompt": "Question 31: Which number is greater: 43 or 42? Write the greater number.",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "counting and number representation",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "43"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 44,
+          "cognitive_action": "estimate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.estimate",
+          "id": "grade_1-q32",
+          "number": 32,
+          "prompt": "Question 32: Which number is greater: 44 or 43? Write the greater number.",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "compare/order numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "44"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 45,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.find_counterexample",
+          "id": "grade_1-q33",
+          "number": 33,
+          "prompt": "Question 33: Which number is greater: 45 or 44? Write the greater number.",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "tens and ones",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "45"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 46,
+          "cognitive_action": "apply",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.measurement_context",
+          "id": "grade_1-q34",
+          "number": 34,
+          "prompt": "Question 34: Which number is greater: 46 or 45? Write the greater number.",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "compare/order numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "46"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 47,
+          "cognitive_action": "retrieve",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.representation_read",
+          "id": "grade_1-q35",
+          "number": 35,
+          "prompt": "Question 35: Which number is greater: 47 or 46? Write the greater number.",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "number line",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "47"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 48,
+          "cognitive_action": "classify",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.classify",
+          "id": "grade_1-q36",
+          "number": 36,
+          "prompt": "Question 36: Which number is greater: 48 or 47? Write the greater number.",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "addition/subtraction meaning",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "48"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 49,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.visual_grouping",
+          "id": "grade_1-q37",
+          "number": 37,
+          "prompt": "Question 37: Which number is greater: 49 or 48? Write the greater number.",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "make-10 and fact families",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "49"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 50,
+          "cognitive_action": "justify",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.justify_claim",
+          "id": "grade_1-q38",
+          "number": 38,
+          "prompt": "Question 38: Which number is greater: 50 or 49? Write the greater number.",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "tens and ones",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "50"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 51,
+          "cognitive_action": "extend_pattern",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.sequence_pattern",
+          "id": "grade_1-q39",
+          "number": 39,
+          "prompt": "Question 39: Which number is greater: 51 or 50? Write the greater number.",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "unknowns",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "51"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 52,
+          "cognitive_action": "match",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.match_rule",
+          "id": "grade_1-q40",
+          "number": 40,
+          "prompt": "Question 40: Which number is greater: 52 or 51? Write the greater number.",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "halves",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "52"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 53,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.two_way_compare",
+          "id": "grade_1-q41",
+          "number": 41,
+          "prompt": "Question 41: Which number is greater: 53 or 52? Write the greater number.",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "counting and number representation",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "53"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 54,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.context_story",
+          "id": "grade_1-q42",
+          "number": 42,
+          "prompt": "Question 42: Which number is greater: 54 or 53? Write the greater number.",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "compare/order numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "54"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 55,
+          "cognitive_action": "estimate",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.estimate",
+          "id": "grade_1-q43",
+          "number": 43,
+          "prompt": "Question 43: Which number is greater: 55 or 54? Write the greater number.",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "tens and ones",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "55"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 56,
+          "cognitive_action": "retrieve",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.representation_read",
+          "id": "grade_1-q44",
+          "number": 44,
+          "prompt": "Question 44: Which number is greater: 56 or 55? Write the greater number.",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "compare/order numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "56"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 57,
+          "cognitive_action": "decompose",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.compose_decompose",
+          "id": "grade_1-q45",
+          "number": 45,
+          "prompt": "Question 45: Which number is greater: 57 or 56? Write the greater number.",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "number line",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "57"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 58,
+          "cognitive_action": "construct_equivalent",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.create_equivalent",
+          "id": "grade_1-q46",
+          "number": 46,
+          "prompt": "Question 46: Which number is greater: 58 or 57? Write the greater number.",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "addition/subtraction meaning",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "58"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 59,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.table_complete",
+          "id": "grade_1-q47",
+          "number": 47,
+          "prompt": "Question 47: Which number is greater: 59 or 58? Write the greater number.",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "make-10 and fact families",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "59"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 60,
+          "cognitive_action": "satisfy_constraint",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.constraint_solve",
+          "id": "grade_1-q48",
+          "number": 48,
+          "prompt": "Question 48: Which number is greater: 60 or 59? Write the greater number.",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "tens and ones",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "60"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 61,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.reverse_reasoning",
+          "id": "grade_1-q49",
+          "number": 49,
+          "prompt": "Question 49: Which number is greater: 61 or 60? Write the greater number.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "unknowns",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "61"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 62,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_1-q50",
+          "number": 50,
+          "prompt": "Question 50: Which number is greater: 62 or 61? Write the greater number.",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "halves",
+          "source_kind": "fallback",
+          "source_scope": "grade_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "62"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PASS"
+  },
+  "worksheet": {
+    "grade": "grade_1",
+    "grade_or_course": "grade_1",
+    "question_count": 50,
+    "title": "MTS - WEEKLY WORKSHEET SAMPLE",
+    "week_start": "2026-09-07"
+  }
+}

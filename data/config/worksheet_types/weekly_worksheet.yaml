@@ -1,0 +1,32 @@
+version: "1.0"
+worksheet_type_id: "weekly-worksheet"
+display_name: "Weekly Worksheet"
+status: "active"
+compatible_subjects: ["math"]
+sections:
+  - {id: "monday", title: "Foundation"}
+  - {id: "tuesday", title: "Discover"}
+  - {id: "wednesday", title: "Practice"}
+  - {id: "thursday", title: "Apply and Review"}
+  - {id: "friday", title: "Mastery"}
+grade_defaults:
+  grade_1: {questions_per_day: 10, questions_per_week: 50}
+  grade_4: {questions_per_day: 10, questions_per_week: 50}
+  grade_5: {questions_per_day: 10, questions_per_week: 50}
+  grade_6: {questions_per_day: 8, questions_per_week: 40}
+  grade_9_10: {questions_per_day: 5, questions_per_week: 25, grade_split: {math_1: 13, math_2: 12}, source_selector: {math_1: 9, math_2: 10}}
+duration_minutes: null
+template_selection:
+  template_manifest: "data/master/subjects/math/template_manifests/weekly-worksheet.json"
+  template_key_by_grade:
+    grade_1: "grade_1_class"
+    grade_4: "standard_class"
+    grade_5: "standard_class"
+    grade_6: "standard_class"
+    grade_9_10: "high_school_combined"
+validation:
+  require_verification: true
+  require_visual_qa: true
+extension_readiness:
+  regression_baseline: "tests/subjects/math/test_target_package_imports.py"
+  template_fallback: "false; dedicated Weekly Worksheet masters are registered."

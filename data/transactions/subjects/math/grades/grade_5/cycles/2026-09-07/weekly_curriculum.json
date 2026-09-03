@@ -1,0 +1,148 @@
+{
+  "scope_review": [
+    {
+      "cache_hit": false,
+      "grade_or_course": "grade_5",
+      "progressive_context": {
+        "grade": 5,
+        "official_ccs_pacing": false,
+        "source": "mts_progressive_backbone",
+        "units": {
+          "algebra_functions": {
+            "builds_from": [
+              "multiplicative comparison",
+              "factor relationships",
+              "number patterns"
+            ],
+            "key_concepts": [
+              "parentheses",
+              "order/structure of operations",
+              "numerical expressions",
+              "rules and patterns",
+              "coordinate patterns"
+            ],
+            "leads_to": [
+              "variables",
+              "algebraic expressions",
+              "properties"
+            ],
+            "progression": "Arithmetic expressions become the precursor to algebraic expressions.",
+            "unit_family": "Patterns, Algebra & Functions",
+            "unit_name": "Numerical Expressions & Coordinate Patterns"
+          },
+          "data_probability": {
+            "builds_from": [
+              "line plots",
+              "fractional data",
+              "interpretation"
+            ],
+            "key_concepts": [
+              "measurement data",
+              "fraction/decimal interpretation",
+              "graphs",
+              "multi-step applications"
+            ],
+            "leads_to": [
+              "statistical questions",
+              "distributions",
+              "center"
+            ],
+            "progression": "Data becomes another context for rational-number operations.",
+            "unit_family": "Data, Statistics & Probability",
+            "unit_name": "Fraction & Decimal Data"
+          },
+          "fractions_ratios": {
+            "builds_from": [
+              "equivalent fractions",
+              "compare fractions",
+              "add/subtract fractions"
+            ],
+            "key_concepts": [
+              "add/subtract unlike fractions",
+              "multiply fractions",
+              "fraction division foundations",
+              "fraction models",
+              "fractions \u2194 decimals"
+            ],
+            "leads_to": [
+              "ratio meaning",
+              "equivalent ratios",
+              "unit rates"
+            ],
+            "progression": "Students operate flexibly across fraction and decimal representations.",
+            "unit_family": "Fractions, Ratios & Proportional Reasoning",
+            "unit_name": "Fraction Operations"
+          },
+          "geometry_measurement": {
+            "builds_from": [
+              "angles",
+              "parallel/perpendicular lines",
+              "symmetry"
+            ],
+            "key_concepts": [
+              "volume formulas",
+              "composite solids",
+              "coordinate plane",
+              "ordered pairs",
+              "hierarchy of shapes"
+            ],
+            "leads_to": [
+              "polygon area",
+              "nets",
+              "surface area"
+            ],
+            "progression": "Students connect formulas, coordinates and spatial structure.",
+            "unit_family": "Geometry, Measurement & Trigonometry",
+            "unit_name": "Volume, Coordinate Geometry & Classification"
+          },
+          "modeling_connections": {
+            "builds_from": [
+              "multiplicative comparison",
+              "scaling intuition",
+              "factors/multiples"
+            ],
+            "key_concepts": [
+              "numerical",
+              "graphical",
+              "geometric",
+              "symbolic"
+            ],
+            "leads_to": [
+              "number \u2192 ratio",
+              "ratio \u2192 variable",
+              "variable \u2192 equation"
+            ],
+            "progression": "Students translate the same relationship across representations.",
+            "unit_family": "Advanced Modeling / Connections",
+            "unit_name": "Multiple Representations"
+          },
+          "number_operations": {
+            "builds_from": [
+              "large-number place value",
+              "rounding",
+              "multi-digit addition/subtraction"
+            ],
+            "key_concepts": [
+              "powers of 10",
+              "decimal place value",
+              "multi-digit multiplication",
+              "division",
+              "decimal operations",
+              "estimation"
+            ],
+            "leads_to": [
+              "fraction division",
+              "decimal fluency",
+              "factors and multiples"
+            ],
+            "progression": "The base-ten system extends from whole numbers to decimals.",
+            "unit_family": "Number Sense & Operations",
+            "unit_name": "Decimal & Whole-Number Operations"
+          }
+        }
+      },
+      "requires_web_resolution": true,
+      "week_start": "2026-09-07"
+    }
+  ]
+}

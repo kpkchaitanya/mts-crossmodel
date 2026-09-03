@@ -3,8 +3,8 @@ from pathlib import Path
 import sys
 
 REPO = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(REPO / "src" / "rendering"))
-import google_docs_adapter as adapter_module
+sys.path.insert(0, str(REPO / "src"))
+from mts.infrastructure.google_docs import google_docs_adapter as adapter_module
 
 
 class Request:

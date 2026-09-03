@@ -1,0 +1,19 @@
+{
+  "question_plan": "data/transactions/subjects/math/grades/grade_6/cycles/2026-08-31/batches/weekly_math_2026_08_31/worksheets/weekly-worksheet/question_plan-r1.json",
+  "references": [
+    {
+      "artifact_revision": "grade_6-questions-r2",
+      "grade_or_course": "grade_6",
+      "spec": "data/transactions/subjects/math/grades/grade_6/cycles/2026-08-31/batches/weekly_math_2026_08_31/worksheets/weekly-worksheet/specs/r3.json",
+      "verification_revision": "grade_6-verification-r2"
+    }
+  ],
+  "scope_review": "scope_review.json",
+  "spec_references": [
+    {
+      "artifact_revision": "grade_6-questions-r2",
+      "spec_path": "data/transactions/subjects/math/grades/grade_6/cycles/2026-08-31/batches/weekly_math_2026_08_31/worksheets/weekly-worksheet/specs/r3.json",
+      "worksheet_id": "grade_6"
+    }
+  ]
+}

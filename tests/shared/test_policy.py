@@ -1,14 +1,14 @@
-"""Focused tests for shared policy resolution."""
+"""Focused tests for effective config resolution."""
 from pathlib import Path
 import sys
 
 REPO = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(REPO / "src" / "runtime"))
-import policy
+sys.path.insert(0, str(REPO / "src"))
+from mts.setup_project.configure import EffectiveConfigError, resolve_effective_config
 
 
 def test_active_class_worksheet_resolves():
-    resolved = policy.resolve(
+    resolved = resolve_effective_config(
         {"subject": "math", "worksheet_type": "class-worksheet"},
         repository_root=REPO,
     )
@@ -21,7 +21,7 @@ def test_active_class_worksheet_resolves():
 
 
 def test_request_override_has_highest_precedence_and_snapshot_is_immutable():
-    resolved = policy.resolve(
+    resolved = resolve_effective_config(
         {
             "subject": "math",
             "worksheet_type": "class-worksheet",
@@ -36,11 +36,11 @@ def test_request_override_has_highest_precedence_and_snapshot_is_immutable():
     except TypeError:
         pass
     else:
-        raise AssertionError("Resolved policy must be immutable.")
+        raise AssertionError("Effective config must be immutable.")
 
 
 def test_active_weekly_worksheet_resolves_all_math_grades():
-    resolved = policy.resolve(
+    resolved = resolve_effective_config(
         {"subject": "math", "worksheet_type": "weekly-worksheet"},
         repository_root=REPO,
     )
@@ -52,12 +52,12 @@ def test_active_weekly_worksheet_resolves_all_math_grades():
     assert resolved["grade_defaults"]["grade_6"]["questions_per_week"] == 40
     assert resolved["grade_defaults"]["grade_9_10"]["questions_per_week"] == 25
     assert resolved["grade_defaults"]["grade_9_10"]["grade_split"] == {"math_1": 13, "math_2": 12}
-    assert resolved["template_selection"]["template_manifest"] == "subjects/math/config/template-manifests/weekly-worksheet.json"
+    assert resolved["template_selection"]["template_manifest"] == "data/master/subjects/math/template_manifests/weekly-worksheet.json"
     assert resolved["template_selection"]["template_registry_entry"]["template_fallback"] is False
 
 
 def test_weekly_counts_are_explicitly_derived_from_daily_count_and_sections():
-    resolved = policy.resolve(
+    resolved = resolve_effective_config(
         {"subject": "math", "worksheet_type": "weekly-worksheet"},
         repository_root=REPO,
     )
@@ -68,11 +68,11 @@ def test_weekly_counts_are_explicitly_derived_from_daily_count_and_sections():
 
 def test_draft_homework_type_is_rejected():
     try:
-        policy.resolve(
+        resolve_effective_config(
             {"subject": "math", "worksheet_type": "homework-4-day"},
             repository_root=REPO,
         )
-    except policy.PolicyError as error:
+    except EffectiveConfigError as error:
         assert "not active" in str(error)
     else:
         raise AssertionError("Draft Homework Worksheet Type must be rejected.")
@@ -80,11 +80,11 @@ def test_draft_homework_type_is_rejected():
 
 def test_draft_compact_unbranded_type_is_rejected():
     try:
-        policy.resolve(
+        resolve_effective_config(
             {"subject": "math", "worksheet_type": "compact-unbranded"},
             repository_root=REPO,
         )
-    except policy.PolicyError as error:
+    except EffectiveConfigError as error:
         assert "not active" in str(error)
     else:
         raise AssertionError("Draft Compact/Unbranded Worksheet Type must be rejected.")
@@ -97,8 +97,8 @@ def test_unknown_and_incompatible_requests_are_rejected():
         ({"subject": "math", "worksheet_type": "missing-type"}, "Configuration file not found"),
     ]:
         try:
-            policy.resolve(request, repository_root=REPO)
-        except policy.PolicyError as error:
+            resolve_effective_config(request, repository_root=REPO)
+        except EffectiveConfigError as error:
             assert expected in str(error)
         else:
             raise AssertionError(f"Request must be rejected: {request}")

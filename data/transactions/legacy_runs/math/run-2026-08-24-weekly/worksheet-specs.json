@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "run_id": "run-2026-08-24-weekly",
+  "subject": "math",
+  "worksheet_type": "weekly-worksheet",
+  "week_start": "2026-08-24",
+  "status": "pending_structured_question_completion",
+  "template_references": {
+    "manifest_path": "subjects/math/config/template-manifest.json",
+    "worksheet_template_id": "1ng3-EQmHRQfUftIEoQnyh7N43hzi1ViUjf44LTgPqo0",
+    "worksheet_template_url": "https://docs.google.com/document/d/1ng3-EQmHRQfUftIEoQnyh7N43hzi1ViUjf44LTgPqo0/edit",
+    "worksheet_revision_id": "3",
+    "answer_key_template_id": "1uBKm2dzzeqy3gwYRxDAG34HGFnTRXAqJJb1sLJViNIo",
+    "answer_key_template_url": "https://docs.google.com/document/d/1uBKm2dzzeqy3gwYRxDAG34HGFnTRXAqJJb1sLJViNIo/edit",
+    "answer_key_revision_id": "2"
+  },
+  "worksheets": [
+    {
+      "worksheet_id": "grade-1",
+      "grade": "Grade 1",
+      "question_count": 50,
+      "content_emphasis": ["counting", "comparing numbers", "addition", "subtraction", "unknowns", "story problems"],
+      "status": "complete_question_transcription",
+      "sections": [
+        {"id": "monday", "title": "Foundation", "question_numbers": [1,2,3,4,5,6,7,8,9,10]},
+        {"id": "tuesday", "title": "Discover", "question_numbers": [11,12,13,14,15,16,17,18,19,20]},
+        {"id": "wednesday", "title": "Practice", "question_numbers": [21,22,23,24,25,26,27,28,29,30]},
+        {"id": "thursday", "title": "Apply and Review", "question_numbers": [31,32,33,34,35,36,37,38,39,40]},
+        {"id": "friday", "title": "Mastery", "question_numbers": [41,42,43,44,45,46,47,48,49,50]}
+      ],
+      "questions_source": "gate-2-approved-question-sets.md",
+      "verification": {"status": "PASS", "independent_review": true}
+    },
+    {
+      "worksheet_id": "grade-4",
+      "grade": "Grade 4",
+      "question_count": 50,
+      "content_emphasis": ["Data and Graphs"],
+      "status": "incomplete_question_transcription",
+      "sections": [
+        {"id": "monday", "title": "Foundation", "question_numbers": [1,2,3,4,5,6,7,8,9,10]},
+        {"id": "tuesday", "title": "Discover", "question_numbers": [11,12,13,14,15,16,17,18,19,20]},
+        {"id": "wednesday", "title": "Practice", "question_numbers": [21,22,23,24,25,26,27,28,29,30]},
+        {"id": "thursday", "title": "Apply and Review", "question_numbers": [31,32,33,34,35,36,37,38,39,40]},
+        {"id": "friday", "title": "Mastery", "question_numbers": [41,42,43,44,45,46,47,48,49,50]}
+      ],
+      "questions_source": "gate-2-approved-question-sets.md",
+      "missing_detail": "Questions 1-10, 31-40, and portions of 41-50 were summarized in the persisted review transcript.",
+      "verification": {"status": "PENDING", "independent_review": false}
+    },
+    {
+      "worksheet_id": "grade-5",
+      "grade": "Grade 5",
+      "question_count": 50,
+      "content_emphasis": ["Basic Coordinate Geometry"],
+      "status": "complete_question_transcription",
+      "correction": "Question 49 is (-4, 3) without the contradictory first-quadrant restriction.",
+      "sections": [
+        {"id": "monday", "title": "Foundation", "question_numbers": [1,2,3,4,5,6,7,8,9,10]},
+        {"id": "tuesday", "title": "Discover", "question_numbers": [11,12,13,14,15,16,17,18,19,20]},
+        {"id": "wednesday", "title": "Practice", "question_numbers": [21,22,23,24,25,26,27,28,29,30]},
+        {"id": "thursday", "title": "Apply and Review", "question_numbers": [31,32,33,34,35,36,37,38,39,40]},
+        {"id": "friday", "title": "Mastery", "question_numbers": [41,42,43,44,45,46,47,48,49,50]}
+      ],
+      "questions_source": "gate-2-approved-question-sets.md",
+      "verification": {"status": "PASS", "independent_review": true}
+    },
+    {
+      "worksheet_id": "grade-6",
+      "grade": "Grade 6",
+      "question_count": 40,
+      "content_emphasis": ["Prime Factorization basics"],
+      "status": "complete_question_transcription",
+      "sections": [
+        {"id": "monday", "title": "Foundation", "question_numbers": [1,2,3,4,5,6,7,8]},
+        {"id": "tuesday", "title": "Discover", "question_numbers": [9,10,11,12,13,14,15,16]},
+        {"id": "wednesday", "title": "Practice", "question_numbers": [17,18,19,20,21,22,23,24]},
+        {"id": "thursday", "title": "Apply and Review", "question_numbers": [25,26,27,28,29,30,31,32]},
+        {"id": "friday", "title": "Mastery", "question_numbers": [33,34,35,36,37,38,39,40]}
+      ],
+      "questions_source": "gate-2-approved-question-sets.md",
+      "verification": {"status": "PASS", "independent_review": true}
+    },
+    {
+      "worksheet_id": "grades-9-10",
+      "grade": "Grades 9/10 combined",
+      "question_count": 50,
+      "grade_split": {"math_1": [1,25], "math_2": [26,50]},
+      "status": "complete_question_transcription",
+      "sections": [
+        {"id": "monday", "title": "Foundation", "question_numbers": [1,2,3,4,5,26,27,28,29,30]},
+        {"id": "tuesday", "title": "Discover", "question_numbers": [6,7,8,9,10,31,32,33,34,35]},
+        {"id": "wednesday", "title": "Practice", "question_numbers": [11,12,13,14,15,36,37,38,39,40]},
+        {"id": "thursday", "title": "Apply and Review", "question_numbers": [16,17,18,19,20,41,42,43,44,45]},
+        {"id": "friday", "title": "Mastery", "question_numbers": [21,22,23,24,25,46,47,48,49,50]}
+      ],
+      "correction": "Grade 9 Question 4 is x + 9 = 20.",
+      "questions_source": "gate-2-approved-question-sets.md",
+      "verification": {"status": "PASS", "independent_review": true}
+    }
+  ],
+  "rendering": {
+    "status": "blocked",
+    "reason": "This index records the approved question lineage and template references, but it is not itself the per-item Worksheet Spec required by the renderer.",
+    "required_before_rendering": "Complete Grade 4 transcription and persist per-question prompt, answer, skill, difficulty, and verification metadata."
+  }
+}

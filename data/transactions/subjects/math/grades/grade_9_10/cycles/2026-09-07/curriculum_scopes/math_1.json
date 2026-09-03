@@ -1,0 +1,144 @@
+{
+  "cache_hit": false,
+  "grade_or_course": "math_1",
+  "progressive_context": {
+    "grade": 9,
+    "official_ccs_pacing": false,
+    "source": "mts_progressive_backbone",
+    "units": {
+      "algebra_functions": {
+        "builds_from": [
+          "multi-step equations",
+          "slope",
+          "intercepts"
+        ],
+        "key_concepts": [
+          "equations",
+          "inequalities",
+          "systems",
+          "function notation",
+          "slope",
+          "sequences",
+          "transformations",
+          "modeling"
+        ],
+        "leads_to": [
+          "quadratic functions",
+          "factoring",
+          "quadratic equations"
+        ],
+        "progression": "Functions become the main language for relationships.",
+        "unit_family": "Patterns, Algebra & Functions",
+        "unit_name": "Linear & Exponential Functions"
+      },
+      "data_probability": {
+        "builds_from": [
+          "scatter plots",
+          "association",
+          "lines of fit"
+        ],
+        "key_concepts": [
+          "one-variable data",
+          "two-variable data",
+          "association",
+          "regression ideas",
+          "model interpretation"
+        ],
+        "leads_to": [
+          "compound events",
+          "independence",
+          "conditional probability"
+        ],
+        "progression": "Data analysis starts supporting predictive models.",
+        "unit_family": "Data, Statistics & Probability",
+        "unit_name": "Statistics & Regression Foundations"
+      },
+      "fractions_ratios": {
+        "builds_from": [
+          "slope",
+          "rate of change",
+          "dilation"
+        ],
+        "key_concepts": [
+          "constant rate",
+          "rate of change",
+          "linear vs exponential change",
+          "geometric sequences"
+        ],
+        "leads_to": [
+          "similar triangles",
+          "scale relationships",
+          "sine"
+        ],
+        "progression": "Rate reasoning broadens from proportional to linear and exponential growth.",
+        "unit_family": "Fractions, Ratios & Proportional Reasoning",
+        "unit_name": "Rates & Exponential Change"
+      },
+      "geometry_measurement": {
+        "builds_from": [
+          "translations",
+          "rotations",
+          "reflections"
+        ],
+        "key_concepts": [
+          "coordinate transformations",
+          "congruence",
+          "distance/slope connections",
+          "geometric reasoning"
+        ],
+        "leads_to": [
+          "Pythagorean relationships",
+          "right-triangle trigonometry",
+          "circle properties"
+        ],
+        "progression": "Coordinate methods connect algebra and geometry.",
+        "unit_family": "Geometry, Measurement & Trigonometry",
+        "unit_name": "Coordinate Geometry & Congruence"
+      },
+      "modeling_connections": {
+        "builds_from": [
+          "constant rate",
+          "slope",
+          "intercept"
+        ],
+        "key_concepts": [
+          "representation translation",
+          "model selection",
+          "interpretation",
+          "constraints"
+        ],
+        "leads_to": [
+          "nonlinear models",
+          "roots/intersections",
+          "geometric ratios"
+        ],
+        "progression": "Students view one relationship through multiple mathematical lenses.",
+        "unit_family": "Advanced Modeling / Connections",
+        "unit_name": "Equation \u2194 Table \u2194 Graph \u2194 Function"
+      },
+      "number_operations": {
+        "builds_from": [
+          "rational/irrational numbers",
+          "square and cube roots",
+          "exponent laws"
+        ],
+        "key_concepts": [
+          "expression structure",
+          "exponent rules",
+          "quantitative reasoning",
+          "formula manipulation"
+        ],
+        "leads_to": [
+          "radicals",
+          "rational exponents",
+          "polynomial operations"
+        ],
+        "progression": "Number operations become embedded tools for algebraic modeling.",
+        "unit_family": "Number Sense & Operations",
+        "unit_name": "Algebraic Quantities & Exponents"
+      }
+    }
+  },
+  "requires_web_resolution": true,
+  "week_start": "2026-09-07"
+}

@@ -1,0 +1,644 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 32,
+          "cognitive_action": "estimate",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.estimate",
+          "id": "grade_9_10-q1",
+          "number": 1,
+          "prompt": "Question 1: Evaluate x^2 - 4 when x = 6.",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "expression structure",
+          "source_kind": "fallback",
+          "source_scope": "math_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "6**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "solve_unknown",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.missing_value",
+          "id": "grade_9_10-q2",
+          "number": 2,
+          "prompt": "Question 2: Evaluate x^2 - 4 when x = 3.",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "exponent rules",
+          "source_kind": "fallback",
+          "source_scope": "math_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.multi_representation",
+          "id": "grade_9_10-q3",
+          "number": 3,
+          "prompt": "Question 3: Evaluate x^2 - 4 when x = 4.",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "quantitative reasoning",
+          "source_kind": "fallback",
+          "source_scope": "math_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "4**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 21,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.compare_select",
+          "id": "grade_9_10-q4",
+          "number": 4,
+          "prompt": "Question 4: Evaluate x^2 - 4 when x = 5.",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "exponent rules",
+          "source_kind": "fallback",
+          "source_scope": "math_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "5**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 32,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.find_counterexample",
+          "id": "grade_9_10-q5",
+          "number": 5,
+          "prompt": "Question 5: Evaluate x^2 - 4 when x = 6.",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "formula manipulation",
+          "source_kind": "fallback",
+          "source_scope": "math_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "6**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 5,
+          "cognitive_action": "solve_unknown",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.missing_value",
+          "id": "grade_9_10-q6",
+          "number": 6,
+          "prompt": "Question 6: Evaluate x^2 - 4 when x = 3.",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "expression structure",
+          "source_kind": "fallback",
+          "source_scope": "math_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "cognitive_action": "estimate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.estimate",
+          "id": "grade_9_10-q7",
+          "number": 7,
+          "prompt": "Question 7: Evaluate x^2 - 4 when x = 4.",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "exponent rules",
+          "source_kind": "fallback",
+          "source_scope": "math_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "4**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 21,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.two_way_compare",
+          "id": "grade_9_10-q8",
+          "number": 8,
+          "prompt": "Question 8: Evaluate x^2 - 4 when x = 5.",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "quantitative reasoning",
+          "source_kind": "fallback",
+          "source_scope": "math_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "5**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 32,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.table_complete",
+          "id": "grade_9_10-q9",
+          "number": 9,
+          "prompt": "Question 9: Evaluate x^2 - 4 when x = 6.",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "exponent rules",
+          "source_kind": "fallback",
+          "source_scope": "math_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "6**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_representation",
+          "id": "grade_9_10-q10",
+          "number": 10,
+          "prompt": "Question 10: Evaluate x^2 - 4 when x = 3.",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "formula manipulation",
+          "source_kind": "fallback",
+          "source_scope": "math_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 12,
+          "cognitive_action": "compose_operations",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.multi_step",
+          "id": "grade_9_10-q11",
+          "number": 11,
+          "prompt": "Question 11: Evaluate x^2 - 4 when x = 4.",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "expression structure",
+          "source_kind": "fallback",
+          "source_scope": "math_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "4**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 21,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.error_check",
+          "id": "grade_9_10-q12",
+          "number": 12,
+          "prompt": "Question 12: Evaluate x^2 - 4 when x = 5.",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "exponent rules",
+          "source_kind": "fallback",
+          "source_scope": "math_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "5**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 32,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reverse_reasoning",
+          "id": "grade_9_10-q13",
+          "number": 13,
+          "prompt": "Question 13: Evaluate x^2 - 4 when x = 6.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "quantitative reasoning",
+          "source_kind": "fallback",
+          "source_scope": "math_1",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "6**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "construct_equivalent",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.create_equivalent",
+          "id": "grade_9_10-q14",
+          "number": 14,
+          "prompt": "Question 14: Evaluate x^2 - 4 when x = 3.",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "exponent rules",
+          "source_kind": "fallback",
+          "source_scope": "math_2",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "cognitive_action": "solve_unknown",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.missing_value",
+          "id": "grade_9_10-q15",
+          "number": 15,
+          "prompt": "Question 15: Evaluate x^2 - 4 when x = 4.",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "formula manipulation",
+          "source_kind": "fallback",
+          "source_scope": "math_2",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "4**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 21,
+          "cognitive_action": "translate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.equivalent_form",
+          "id": "grade_9_10-q16",
+          "number": 16,
+          "prompt": "Question 16: Evaluate x^2 - 4 when x = 5.",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "expression structure",
+          "source_kind": "fallback",
+          "source_scope": "math_2",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "5**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 32,
+          "cognitive_action": "order",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.sort_order",
+          "id": "grade_9_10-q17",
+          "number": 17,
+          "prompt": "Question 17: Evaluate x^2 - 4 when x = 6.",
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "section_id": "thursday",
+          "skill": "exponent rules",
+          "source_kind": "fallback",
+          "source_scope": "math_2",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "6**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "construct",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.construct_example",
+          "id": "grade_9_10-q18",
+          "number": 18,
+          "prompt": "Question 18: Evaluate x^2 - 4 when x = 3.",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "quantitative reasoning",
+          "source_kind": "fallback",
+          "source_scope": "math_2",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "cognitive_action": "compose_operations",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_step",
+          "id": "grade_9_10-q19",
+          "number": 19,
+          "prompt": "Question 19: Evaluate x^2 - 4 when x = 4.",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "exponent rules",
+          "source_kind": "fallback",
+          "source_scope": "math_2",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "4**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 21,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_9_10-q20",
+          "number": 20,
+          "prompt": "Question 20: Evaluate x^2 - 4 when x = 5.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "formula manipulation",
+          "source_kind": "fallback",
+          "source_scope": "math_2",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "5**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 32,
+          "cognitive_action": "retrieve",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.representation_read",
+          "id": "grade_9_10-q21",
+          "number": 21,
+          "prompt": "Question 21: Evaluate x^2 - 4 when x = 6.",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "expression structure",
+          "source_kind": "fallback",
+          "source_scope": "math_2",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "6**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.visual_grouping",
+          "id": "grade_9_10-q22",
+          "number": 22,
+          "prompt": "Question 22: Evaluate x^2 - 4 when x = 3.",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "exponent rules",
+          "source_kind": "fallback",
+          "source_scope": "math_2",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.context_story",
+          "id": "grade_9_10-q23",
+          "number": 23,
+          "prompt": "Question 23: Evaluate x^2 - 4 when x = 4.",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "quantitative reasoning",
+          "source_kind": "fallback",
+          "source_scope": "math_2",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "4**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 21,
+          "cognitive_action": "match",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.match_rule",
+          "id": "grade_9_10-q24",
+          "number": 24,
+          "prompt": "Question 24: Evaluate x^2 - 4 when x = 5.",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "section_id": "friday",
+          "skill": "exponent rules",
+          "source_kind": "fallback",
+          "source_scope": "math_2",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "5**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 32,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.reverse_reasoning",
+          "id": "grade_9_10-q25",
+          "number": 25,
+          "prompt": "Question 25: Evaluate x^2 - 4 when x = 6.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "formula manipulation",
+          "source_kind": "fallback",
+          "source_scope": "math_2",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "6**2-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PASS"
+  },
+  "worksheet": {
+    "grade": "grade_9_10",
+    "grade_or_course": "grade_9_10",
+    "question_count": 25,
+    "title": "MTS - WEEKLY WORKSHEET SAMPLE",
+    "week_start": "2026-09-07"
+  }
+}

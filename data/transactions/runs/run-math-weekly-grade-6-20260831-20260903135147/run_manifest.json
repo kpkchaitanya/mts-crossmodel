@@ -1,0 +1,115 @@
+{
+  "approvals": [
+    {
+      "approval_id": "approval-d3078eb6e4f543c08fd15b040f5a2958",
+      "artifact_revision": "grade_6-scope-r2",
+      "gate": "scope_review",
+      "notes": "User approved Curriculum Scope Review.",
+      "recorded_at": "2026-09-03T17:58:10.900655+00:00",
+      "reviewer": "user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-dd9167fe05c649fe9c20bf181e3f2a36",
+      "artifact_revision": "grade_6-questions-r1",
+      "gate": "question_review",
+      "invalidated_at": "2026-09-03T18:00:42.345321+00:00",
+      "invalidation_reason": "Corrected deterministic verification metadata for ratio-answer questions 1, 12, 23, and 34 in revision r2.",
+      "notes": "User approved Question Review.",
+      "recorded_at": "2026-09-03T17:59:01.970287+00:00",
+      "reviewer": "user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-441bb2bce0af4797b04c34248713d5d0",
+      "artifact_revision": "grade_6-questions-r2",
+      "gate": "question_review",
+      "notes": "User approved revised Question Review.",
+      "recorded_at": "2026-09-03T18:01:26.215488+00:00",
+      "reviewer": "user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-1b65c0c03b0d40a387a95a969d15bbf6",
+      "artifact_revision": "grade_6-verification-r2",
+      "gate": "verification_review",
+      "notes": "User approved Verification Review.",
+      "recorded_at": "2026-09-03T18:02:03.670548+00:00",
+      "reviewer": "user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-b15628c53edc43649b4bf5477cf5ab10",
+      "artifact_revision": "grade_6-render-r3",
+      "gate": "formatting_review",
+      "notes": "User approved Formatting Review for refreshed staging pair.",
+      "recorded_at": "2026-09-03T18:08:14.332717+00:00",
+      "reviewer": "user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-9a8e1c2ef4044e7888714b5203aee69c",
+      "artifact_revision": "grade_6-publish-r3",
+      "gate": "publish_approval",
+      "notes": "User approved publication and final delivery.",
+      "recorded_at": "2026-09-03T18:09:13.709947+00:00",
+      "reviewer": "user",
+      "status": "approved"
+    }
+  ],
+  "delivered_artifacts": "delivered-artifacts.json",
+  "formatting_qa_reference": "data/transactions/runs/run-math-weekly-grade-6-20260831-20260903135147/formatting-qa-r3.json",
+  "gates": {
+    "bypassed": [],
+    "mode": "all",
+    "requested_by": "configured_default"
+  },
+  "invalidations": [
+    {
+      "change": "question",
+      "invalidated_approval_ids": [
+        "approval-dd9167fe05c649fe9c20bf181e3f2a36"
+      ],
+      "reason": "Corrected deterministic verification metadata for ratio-answer questions 1, 12, 23, and 34 in revision r2.",
+      "recorded_at": "2026-09-03T18:00:42.345374+00:00"
+    }
+  ],
+  "publish_revision": "grade_6-publish-r3",
+  "published_artifacts": "published-artifacts.json",
+  "question_plan_reference": "data/transactions/subjects/math/grades/grade_6/cycles/2026-08-31/batches/weekly_math_2026_08_31/worksheets/weekly-worksheet/question_plan-r1.json",
+  "question_revision": "grade_6-questions-r2",
+  "render_revision": "grade_6-render-r3",
+  "render_spec_reference": "data/transactions/subjects/math/grades/grade_6/cycles/2026-08-31/batches/weekly_math_2026_08_31/worksheets/weekly-worksheet/specs/r3.json",
+  "rendered_artifacts": "rendered-artifacts.json",
+  "request": {
+    "deliver": "yes",
+    "difficulty": "medium_plus",
+    "diversity": "medium_plus",
+    "form_diversity": "high",
+    "gates": "all",
+    "grades": [
+      "grade_6"
+    ],
+    "instructional_week": 3,
+    "on_date": "2026-08-31",
+    "publish": "yes",
+    "subject": "math",
+    "topic_overrides": null,
+    "week": "current",
+    "worksheettype": "weekly"
+  },
+  "run_id": "run-math-weekly-grade-6-20260831-20260903135147",
+  "scope_revision": "grade_6-scope-r2",
+  "spec_references": [
+    {
+      "artifact_revision": "grade_6-questions-r2",
+      "spec_path": "data/transactions/subjects/math/grades/grade_6/cycles/2026-08-31/batches/weekly_math_2026_08_31/worksheets/weekly-worksheet/specs/r2.json",
+      "worksheet_id": "grade_6"
+    }
+  ],
+  "status": "delivered",
+  "subject": "math",
+  "variation_seed": 20260903135147,
+  "verification_reference": "data/transactions/subjects/math/grades/grade_6/cycles/2026-08-31/batches/weekly_math_2026_08_31/worksheets/weekly-worksheet/verification-r2.json",
+  "worksheet_type": "weekly-worksheet"
+}

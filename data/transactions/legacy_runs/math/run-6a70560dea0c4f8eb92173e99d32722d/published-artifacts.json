@@ -1,0 +1,101 @@
+{
+  "status": "published",
+  "destination_folder_id": "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS",
+  "pairs": {
+    "grade_1": {
+      "status": "published",
+      "student_worksheet": {
+        "id": "1F5BI0s8LmQBmDmD0bonlE1XL2KYesTSV2428T7GHFTA",
+        "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-31",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1F5BI0s8LmQBmDmD0bonlE1XL2KYesTSV2428T7GHFTA/edit?usp=drivesdk"
+      },
+      "answer_key": {
+        "id": "1UAp37aZpC2U5Iu8p0xrmDAFwQCsMIl7GKB935Gi8u8U",
+        "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-31_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1UAp37aZpC2U5Iu8p0xrmDAFwQCsMIl7GKB935Gi8u8U/edit?usp=drivesdk"
+      }
+    },
+    "grade_4": {
+      "status": "published",
+      "student_worksheet": {
+        "id": "1r99MmEEZQ8z5N0QrFkoW5EsUmzwNComiDpRa5csY9U0",
+        "name": "MTS-Math-4thGrade-WeeklyWorksheet-2026-08-31",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1r99MmEEZQ8z5N0QrFkoW5EsUmzwNComiDpRa5csY9U0/edit?usp=drivesdk"
+      },
+      "answer_key": {
+        "id": "14rJPv9QtAWzup9tHTgo5S8s6JD5PN8k2i-GgHulG_40",
+        "name": "MTS-Math-4thGrade-WeeklyWorksheet-2026-08-31_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/14rJPv9QtAWzup9tHTgo5S8s6JD5PN8k2i-GgHulG_40/edit?usp=drivesdk"
+      }
+    },
+    "grade_5": {
+      "status": "published",
+      "student_worksheet": {
+        "id": "1vjunhMY4m1ILikWdI6zdLCwUekZo_LE7LcWSCXEZJO8",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-31",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1vjunhMY4m1ILikWdI6zdLCwUekZo_LE7LcWSCXEZJO8/edit?usp=drivesdk"
+      },
+      "answer_key": {
+        "id": "1-bpDHfQEh6H3Mtc4CJi03dxLAumh5vtRcxryCp7eJcw",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-31_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1-bpDHfQEh6H3Mtc4CJi03dxLAumh5vtRcxryCp7eJcw/edit?usp=drivesdk"
+      }
+    },
+    "grade_6": {
+      "status": "published",
+      "student_worksheet": {
+        "id": "15rWvqVqQkLZsLyNF7qhD89MtzUG9wjqxI2M9PCYNRoE",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/15rWvqVqQkLZsLyNF7qhD89MtzUG9wjqxI2M9PCYNRoE/edit?usp=drivesdk"
+      },
+      "answer_key": {
+        "id": "1KzHBC-xpi7tdm9Sa5MOTz-mVIt0uc6Fnc34swdiZ54c",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1KzHBC-xpi7tdm9Sa5MOTz-mVIt0uc6Fnc34swdiZ54c/edit?usp=drivesdk"
+      }
+    },
+    "grade_9_10": {
+      "status": "published",
+      "student_worksheet": {
+        "id": "1BTqwxNoVUmIRv3qYqK7To7YkUTjnvJQTgWrZpTKzCO4",
+        "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-08-31",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1BTqwxNoVUmIRv3qYqK7To7YkUTjnvJQTgWrZpTKzCO4/edit?usp=drivesdk"
+      },
+      "answer_key": {
+        "id": "13eIeiSStXl56rEeCAcDJ5yBjVFnDkcznXbNX97EHe4A",
+        "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-08-31_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/13eIeiSStXl56rEeCAcDJ5yBjVFnDkcznXbNX97EHe4A/edit?usp=drivesdk"
+      }
+    }
+  }
+}

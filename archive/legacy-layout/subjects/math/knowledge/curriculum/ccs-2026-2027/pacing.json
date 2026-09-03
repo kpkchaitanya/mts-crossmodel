@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "district": "Cabarrus County Schools",
+  "school_year": "2026-2027",
+  "calendar": {
+    "type": "traditional",
+    "first_day": "2026-08-12",
+    "source": "https://www.cabarrus.k12.nc.us/58075_4",
+    "last_verified": "2026-08-24"
+  },
+  "confidence_values": ["confirmed", "strongly_inferred", "inferred"],
+  "weeks": {
+    "2026-08-17": {
+      "grade_1": {"current": ["NC.1.OA.6", "NC.1.OA.7", "NC.1.OA.8", "NC.1.OA.9"], "topics": ["addition/subtraction within 20", "unknowns and equations"], "spiral": ["counting", "compare numbers"], "confidence": "inferred"},
+      "grade_4": {"current": ["NC.4.OA.1", "NC.4.NBT.2", "NC.4.NBT.4"], "topics": ["multiplicative comparison", "place value", "multi-digit addition/subtraction"], "spiral": ["multiplication facts", "rounding"], "confidence": "inferred"},
+      "grade_5": {"current": ["NC.5.OA.2", "NC.5.OA.3", "NC.5.NBT.5"], "topics": ["numerical expressions", "patterns", "multi-digit multiplication"], "spiral": ["place value", "multi-digit operations"], "confidence": "inferred"},
+      "grade_6": {"current": ["NC.6.G.1", "NC.6.G.3", "NC.6.G.4"], "topics": ["area", "coordinate plane", "surface area"], "spiral": ["decimals", "fractions", "GCF/LCM"], "confidence": "inferred"},
+      "math_1": {"current": ["NC.M1.A-REI.1", "NC.M1.A-REI.3", "NC.M1.F-IF.1", "NC.M1.F-IF.2"], "topics": ["equations and inequalities", "function notation"], "spiral": ["expressions", "slope"], "confidence": "inferred"},
+      "math_2": {"current": ["NC.M2.N-RN.1", "NC.M2.N-RN.2", "NC.M2.G-CO.2", "NC.M2.G-CO.5"], "topics": ["rational exponents", "transformations"], "spiral": ["polynomials", "coordinate geometry"], "confidence": "inferred"}
+    },
+    "2026-08-24": {
+      "grade_1": {"current": ["NC.1.OA.1", "NC.1.OA.2", "NC.1.OA.6", "NC.1.OA.8"], "topics": ["addition/subtraction story problems", "fluency within 20", "unknowns"], "spiral": ["counting sequence", "compare numbers"], "confidence": "inferred"},
+      "grade_4": {"current": ["NC.4.NBT.1", "NC.4.NBT.2", "NC.4.NBT.4", "NC.4.OA.1"], "topics": ["place value", "compare multi-digit numbers", "addition/subtraction", "multiplicative comparison"], "spiral": ["multiplication facts", "rounding"], "confidence": "inferred"},
+      "grade_5": {"current": ["NC.5.OA.2", "NC.5.OA.3", "NC.5.NBT.1", "NC.5.NBT.5"], "topics": ["numerical expressions", "patterns", "place value", "whole-number multiplication"], "spiral": ["multi-digit addition/subtraction", "factors/multiples"], "confidence": "inferred"},
+      "grade_6": {"current": ["NC.6.RP.1", "NC.6.RP.3", "NC.6.NS.4"], "topics": ["ratio concepts", "ratio reasoning", "factors and multiples"], "spiral": ["area", "surface area", "fractions/decimals"], "confidence": "inferred"},
+      "math_1": {"current": ["NC.M1.A-REI.1", "NC.M1.A-REI.3", "NC.M1.A-CED.1", "NC.M1.F-IF.1", "NC.M1.F-IF.2"], "topics": ["equations/inequalities", "create equations", "functions"], "spiral": ["expression simplification", "slope"], "confidence": "inferred"},
+      "math_2": {"current": ["NC.M2.N-RN.1", "NC.M2.N-RN.2", "NC.M2.G-CO.2", "NC.M2.G-CO.5", "NC.M2.G-CO.6"], "topics": ["rational exponents/radicals", "transformations and congruence"], "spiral": ["polynomial operations", "quadratics"], "confidence": "inferred"}
+    }
+  },
+  "month_fallback": {
+    "2026-08": {
+      "grade_1": ["NC.1.OA", "NC.1.NBT"],
+      "grade_4": ["NC.4.NBT", "NC.4.OA"],
+      "grade_5": ["NC.5.OA", "NC.5.NBT"],
+      "grade_6": ["NC.6.RP", "NC.6.NS", "NC.6.G"],
+      "math_1": ["NC.M1.A-REI", "NC.M1.A-CED", "NC.M1.F-IF"],
+      "math_2": ["NC.M2.N-RN", "NC.M2.G-CO", "NC.M2.A-SSE"]
+    }
+  },
+  "pacing_basis": "Exact public CCS week-by-week math pacing was not located. Weekly mappings are MTS-inferred from the CCS calendar, NC standards, NC Check-In A grouping where applicable, and recent MTS resolved curriculum. Gate 1/confidence review remains mandatory unless explicitly overridden for a run."
+}

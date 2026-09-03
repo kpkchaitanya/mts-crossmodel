@@ -1,0 +1,175 @@
+﻿{
+    "gate_bypasses":  [
+                          {
+                              "artifact_revision":  "grade_1-r1",
+                              "bypass":  true,
+                              "gate":  "scope_review",
+                              "grade_or_course":  "grade_1",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.602554+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_1-r1",
+                              "bypass":  true,
+                              "gate":  "question_review",
+                              "grade_or_course":  "grade_1",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.603639+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_1-r1",
+                              "bypass":  true,
+                              "gate":  "verification_review",
+                              "grade_or_course":  "grade_1",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.604267+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_1-r1",
+                              "bypass":  true,
+                              "gate":  "formatting_review",
+                              "grade_or_course":  "grade_1",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.604940+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_1-r1",
+                              "bypass":  true,
+                              "gate":  "publish_approval",
+                              "grade_or_course":  "grade_1",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.605740+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_5-r1",
+                              "bypass":  true,
+                              "gate":  "scope_review",
+                              "grade_or_course":  "grade_5",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.616736+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_5-r1",
+                              "bypass":  true,
+                              "gate":  "question_review",
+                              "grade_or_course":  "grade_5",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.617020+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_5-r1",
+                              "bypass":  true,
+                              "gate":  "verification_review",
+                              "grade_or_course":  "grade_5",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.618418+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_5-r1",
+                              "bypass":  true,
+                              "gate":  "formatting_review",
+                              "grade_or_course":  "grade_5",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.619270+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_5-r1",
+                              "bypass":  true,
+                              "gate":  "publish_approval",
+                              "grade_or_course":  "grade_5",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.619789+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_9_10-r1",
+                              "bypass":  true,
+                              "gate":  "scope_review",
+                              "grade_or_course":  "grade_9_10",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.629717+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_9_10-r1",
+                              "bypass":  true,
+                              "gate":  "question_review",
+                              "grade_or_course":  "grade_9_10",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.630089+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_9_10-r1",
+                              "bypass":  true,
+                              "gate":  "verification_review",
+                              "grade_or_course":  "grade_9_10",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.630444+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_9_10-r1",
+                              "bypass":  true,
+                              "gate":  "formatting_review",
+                              "grade_or_course":  "grade_9_10",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.630815+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          },
+                          {
+                              "artifact_revision":  "grade_9_10-r1",
+                              "bypass":  true,
+                              "gate":  "publish_approval",
+                              "grade_or_course":  "grade_9_10",
+                              "notes":  "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+                              "recorded_at":  "2026-09-03T16:32:11.631141+00:00",
+                              "reviewer":  "current-user-instruction",
+                              "status":  "approved"
+                          }
+                      ],
+    "gates":  {
+                  "bypassed":  [
+                                   "scope_review",
+                                   "question_review",
+                                   "verification_review",
+                                   "formatting_review",
+                                   "publish_approval"
+                               ],
+                  "mode":  "bypass",
+                  "requested_by":  "current_user"
+              },
+    "published_artifacts":  "data/transactions/runs/run-2026-09-07-grades-1-5-9-10-publish-deliver/published-artifacts.json",
+    "qa_required":  true,
+    "rendered_artifacts":  "data/transactions/runs/run-2026-09-07-grades-1-5-9-10-publish-deliver/rendered-artifacts.json",
+    "run_id":  "run-2026-09-07-grades-1-5-9-10-publish-deliver",
+    "status":  "delivery_failed",
+    "subject":  "math",
+    "verification_required":  true,
+    "week_start":  "2026-09-07",
+    "worksheet_type":  "weekly-worksheet",
+    "delivery_failure":  "data/transactions/runs/run-2026-09-07-grades-1-5-9-10-publish-deliver/delivery-failure.json"
+}

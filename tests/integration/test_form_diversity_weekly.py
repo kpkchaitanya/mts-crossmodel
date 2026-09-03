@@ -3,9 +3,9 @@ from pathlib import Path
 import sys
 
 REPO = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(REPO / "subjects" / "math" / "src"))
+sys.path.insert(0, str(REPO / "src"))
 
-import subject_module
+from mts.subjects.math import subject_module
 
 
 def _authored_spec(plan):
@@ -31,7 +31,7 @@ def _authored_spec(plan):
 
 
 def test_grade_5_seeded_coordinate_geometry_plan_passes_form_diversity_qa():
-    math = subject_module.MathSubjectModule(REPO / "subjects" / "math")
+    math = subject_module.MathSubjectModule()
     sections = [{"id": day} for day in ("monday", "tuesday", "wednesday", "thursday", "friday")]
     plan = math.build_week_plan(
         sections,
@@ -63,7 +63,7 @@ def test_grade_5_seeded_coordinate_geometry_plan_passes_form_diversity_qa():
 
 
 def test_all_enabled_math_grades_receive_form_metadata_by_default():
-    math = subject_module.MathSubjectModule(REPO / "subjects" / "math")
+    math = subject_module.MathSubjectModule()
     sections = [{"id": day} for day in ("monday", "tuesday", "wednesday", "thursday", "friday")]
     grade_skills = {
         "grade_1": ["addition and subtraction within 20", "unknown-addend and unknown-subtrahend equations", "counting sequence"],

@@ -1,0 +1,1271 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 11,
+          "cognitive_action": "reverse_reason",
+          "difficulty": "low_plus",
+          "form_family": "generic.reverse_reasoning",
+          "number": 1,
+          "prompt": "Item 1: Start at 7. Count on 4. What number do you say?",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "skill": "Count on and count down using addition and subtraction",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7+4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "cognitive_action": "construct_equivalent",
+          "difficulty": "low_plus",
+          "form_family": "generic.create_equivalent",
+          "number": 2,
+          "prompt": "Item 2: Start at 9. Count down 1. What number do you say?",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "9-1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "cognitive_action": "evaluate_reasonableness",
+          "difficulty": "low_plus",
+          "form_family": "generic.reasonable_answer",
+          "number": 3,
+          "prompt": "Item 3: Solve: 10 + 2 = ___.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "skill": "addition and subtraction within 20",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "10+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 15,
+          "cognitive_action": "translate",
+          "difficulty": "medium",
+          "form_family": "generic.equivalent_form",
+          "number": 4,
+          "prompt": "Item 4: Find the missing number: ___ + 3 = 18.",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "skill": "unknown-addend and unknown-subtrahend equations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "18-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 16,
+          "cognitive_action": "interpret",
+          "difficulty": "medium",
+          "form_family": "generic.visual_grouping",
+          "number": 5,
+          "prompt": "Item 5: What number comes after 15?",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "skill": "counting sequence",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "15+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "cognitive_action": "construct",
+          "difficulty": "medium",
+          "form_family": "generic.construct_example",
+          "number": 6,
+          "prompt": "Item 6: Start at 7. Count down 1. What number do you say?",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7-1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "compare",
+          "difficulty": "medium",
+          "form_family": "generic.compare_select",
+          "number": 7,
+          "prompt": "Item 7: Start at 7. Count on 2. What number do you say?",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "skill": "Count on and count down using addition and subtraction",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "compose_operations",
+          "difficulty": "medium",
+          "form_family": "generic.multi_step",
+          "number": 8,
+          "prompt": "Item 8: Solve: 7 + 2 = ___.",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "skill": "addition and subtraction within 20",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "cognitive_action": "evaluate_reasonableness",
+          "difficulty": "medium",
+          "form_family": "generic.error_check",
+          "number": 9,
+          "prompt": "Item 9: Start at 9. Count on 4. What number do you say?",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "9+4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "cognitive_action": "locate",
+          "difficulty": "medium",
+          "form_family": "generic.number_line",
+          "number": 10,
+          "prompt": "Item 10: Find the missing number: ___ + 3 = 16.",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "skill": "unknown-addend and unknown-subtrahend equations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "16-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 7,
+          "cognitive_action": "construct",
+          "difficulty": "low_plus",
+          "form_family": "generic.construct_example",
+          "number": 11,
+          "prompt": "Item 11: Start at 5. Count on 2. What number do you say?",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "skill": "Count on and count down using addition and subtraction",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "5+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "cognitive_action": "model",
+          "difficulty": "medium",
+          "form_family": "generic.context_story",
+          "number": 12,
+          "prompt": "Item 12: Start at 9. Count down 3. What number do you say?",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "9-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 14,
+          "cognitive_action": "compute",
+          "difficulty": "medium",
+          "form_family": "generic.direct_compute",
+          "number": 13,
+          "prompt": "Item 13: Solve: 12 + 2 = ___.",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "addition and subtraction within 20",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "12+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "evaluate_reasonableness",
+          "difficulty": "medium",
+          "form_family": "generic.reasonable_answer",
+          "number": 14,
+          "prompt": "Item 14: Find the missing number: ___ + 7 = 12.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "skill": "unknown-addend and unknown-subtrahend equations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "12-7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 26,
+          "cognitive_action": "compare",
+          "difficulty": "medium",
+          "form_family": "generic.two_way_compare",
+          "number": 15,
+          "prompt": "Item 15: What number comes after 25?",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "skill": "counting sequence",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "25+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "cognitive_action": "select_strategy",
+          "difficulty": "medium",
+          "form_family": "generic.choose_operation",
+          "number": 16,
+          "prompt": "Item 16: Start at 7. Count down 3. What number do you say?",
+          "representation": "short_context",
+          "response_type": "selection",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "classify",
+          "difficulty": "medium",
+          "form_family": "generic.classify",
+          "number": 17,
+          "prompt": "Item 17: Start at 5. Count on 4. What number do you say?",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "skill": "Count on and count down using addition and subtraction",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "5+4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "cognitive_action": "justify",
+          "difficulty": "medium_plus",
+          "form_family": "generic.justify_claim",
+          "number": 18,
+          "prompt": "Item 18: Solve: 9 + 2 = ___.",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "skill": "addition and subtraction within 20",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "9+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "match",
+          "difficulty": "medium_plus",
+          "form_family": "generic.match_rule",
+          "number": 19,
+          "prompt": "Item 19: Start at 7. Count on 2. What number do you say?",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "cognitive_action": "retrieve",
+          "difficulty": "medium_plus",
+          "form_family": "generic.representation_read",
+          "number": 20,
+          "prompt": "Item 20: Find the missing number: ___ + 7 = 18.",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "skill": "unknown-addend and unknown-subtrahend equations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "18-7"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 13,
+          "cognitive_action": "interpret",
+          "difficulty": "medium",
+          "form_family": "generic.visual_grouping",
+          "number": 21,
+          "prompt": "Item 21: Start at 9. Count on 4. What number do you say?",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "skill": "Count on and count down using addition and subtraction",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "9+4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "cognitive_action": "invert_operation",
+          "difficulty": "medium",
+          "form_family": "generic.inverse_operation",
+          "number": 22,
+          "prompt": "Item 22: Start at 5. Count down 1. What number do you say?",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "5-1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "cognitive_action": "estimate",
+          "difficulty": "medium",
+          "form_family": "generic.estimate",
+          "number": 23,
+          "prompt": "Item 23: Solve: 6 + 2 = ___.",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "skill": "addition and subtraction within 20",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "6+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "decompose",
+          "difficulty": "medium",
+          "form_family": "generic.compose_decompose",
+          "number": 24,
+          "prompt": "Item 24: Find the missing number: ___ + 5 = 14.",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "skill": "unknown-addend and unknown-subtrahend equations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "14-5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 36,
+          "cognitive_action": "construct_equivalent",
+          "difficulty": "medium",
+          "form_family": "generic.create_equivalent",
+          "number": 25,
+          "prompt": "Item 25: What number comes after 35?",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "counting sequence",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "35+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "cognitive_action": "solve_unknown",
+          "difficulty": "medium_plus",
+          "form_family": "generic.missing_value",
+          "number": 26,
+          "prompt": "Item 26: Start at 9. Count down 1. What number do you say?",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "9-1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "cognitive_action": "evaluate_reasonableness",
+          "difficulty": "medium_plus",
+          "form_family": "generic.error_check",
+          "number": 27,
+          "prompt": "Item 27: Start at 9. Count on 2. What number do you say?",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "skill": "Count on and count down using addition and subtraction",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "9+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "cognitive_action": "satisfy_constraint",
+          "difficulty": "medium_plus",
+          "form_family": "generic.constraint_solve",
+          "number": 28,
+          "prompt": "Item 28: Solve: 11 + 2 = ___.",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "skill": "addition and subtraction within 20",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "11+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "compute",
+          "difficulty": "medium_plus",
+          "form_family": "generic.direct_compute",
+          "number": 29,
+          "prompt": "Item 29: Start at 5. Count on 4. What number do you say?",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "5+4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "cognitive_action": "classify",
+          "difficulty": "medium_plus",
+          "form_family": "generic.classify",
+          "number": 30,
+          "prompt": "Item 30: Find the missing number: ___ + 5 = 12.",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "skill": "unknown-addend and unknown-subtrahend equations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "12-5"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 9,
+          "cognitive_action": "estimate",
+          "difficulty": "medium",
+          "form_family": "generic.estimate",
+          "number": 31,
+          "prompt": "Item 31: Start at 7. Count on 2. What number do you say?",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "skill": "Count on and count down using addition and subtraction",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "cognitive_action": "locate",
+          "difficulty": "medium",
+          "form_family": "generic.number_line",
+          "number": 32,
+          "prompt": "Item 32: Start at 11. Count down 3. What number do you say?",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "11-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 10,
+          "cognitive_action": "classify",
+          "difficulty": "medium",
+          "form_family": "generic.classify",
+          "number": 33,
+          "prompt": "Item 33: Solve: 8 + 2 = ___.",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "skill": "addition and subtraction within 20",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "8+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "cognitive_action": "construct_equivalent",
+          "difficulty": "medium_plus",
+          "form_family": "generic.create_equivalent",
+          "number": 34,
+          "prompt": "Item 34: Find the missing number: ___ + 3 = 16.",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "unknown-addend and unknown-subtrahend equations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "16-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 46,
+          "cognitive_action": "apply",
+          "difficulty": "medium_plus",
+          "form_family": "generic.measurement_context",
+          "number": 35,
+          "prompt": "Item 35: What number comes after 45?",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "skill": "counting sequence",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "45+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "cognitive_action": "compare",
+          "difficulty": "medium_plus",
+          "form_family": "generic.compare_select",
+          "number": 36,
+          "prompt": "Item 36: Start at 9. Count down 3. What number do you say?",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "9-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "cognitive_action": "compare",
+          "difficulty": "medium_plus",
+          "form_family": "generic.two_way_compare",
+          "number": 37,
+          "prompt": "Item 37: Start at 7. Count on 4. What number do you say?",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "skill": "Count on and count down using addition and subtraction",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7+4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "cognitive_action": "order",
+          "difficulty": "medium_plus",
+          "form_family": "generic.sort_order",
+          "number": 38,
+          "prompt": "Item 38: Solve: 5 + 2 = ___.",
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "skill": "addition and subtraction within 20",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "5+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "cognitive_action": "compose_operations",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_step",
+          "number": 39,
+          "prompt": "Item 39: Start at 9. Count on 2. What number do you say?",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "9+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "cognitive_action": "decide",
+          "difficulty": "high",
+          "form_family": "generic.decision_table",
+          "number": 40,
+          "prompt": "Item 40: Find the missing number: ___ + 3 = 14.",
+          "representation": "decision_table",
+          "response_type": "selection",
+          "skill": "unknown-addend and unknown-subtrahend equations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "14-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 9,
+          "cognitive_action": "apply",
+          "difficulty": "medium",
+          "form_family": "generic.measurement_context",
+          "number": 41,
+          "prompt": "Item 41: Start at 5. Count on 4. What number do you say?",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "skill": "Count on and count down using addition and subtraction",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "5+4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "cognitive_action": "translate",
+          "difficulty": "medium_plus",
+          "form_family": "generic.equivalent_form",
+          "number": 42,
+          "prompt": "Item 42: Start at 7. Count down 1. What number do you say?",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7-1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "cognitive_action": "model",
+          "difficulty": "medium_plus",
+          "form_family": "generic.context_story",
+          "number": 43,
+          "prompt": "Item 43: Solve: 10 + 2 = ___.",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "skill": "addition and subtraction within 20",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "10+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "cognitive_action": "compose_operations",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_step",
+          "number": 44,
+          "prompt": "Item 44: Find the missing number: ___ + 7 = 18.",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "skill": "unknown-addend and unknown-subtrahend equations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "18-7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 56,
+          "cognitive_action": "retrieve",
+          "difficulty": "medium_plus",
+          "form_family": "generic.representation_read",
+          "number": 45,
+          "prompt": "Item 45: What number comes after 55?",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "skill": "counting sequence",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "55+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "cognitive_action": "estimate",
+          "difficulty": "medium_plus",
+          "form_family": "generic.estimate",
+          "number": 46,
+          "prompt": "Item 46: Start at 5. Count down 1. What number do you say?",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "5-1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "cognitive_action": "match",
+          "difficulty": "high",
+          "form_family": "generic.match_rule",
+          "number": 47,
+          "prompt": "Item 47: Start at 5. Count on 2. What number do you say?",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "skill": "Count on and count down using addition and subtraction",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "5+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "extend_pattern",
+          "difficulty": "high",
+          "form_family": "generic.sequence_pattern",
+          "number": 48,
+          "prompt": "Item 48: Solve: 7 + 2 = ___.",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "skill": "addition and subtraction within 20",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "cognitive_action": "decide",
+          "difficulty": "high",
+          "form_family": "generic.decision_table",
+          "number": 49,
+          "prompt": "Item 49: Start at 7. Count on 4. What number do you say?",
+          "representation": "decision_table",
+          "response_type": "selection",
+          "skill": "Count on and Count down using add and subtract",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7+4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "complete",
+          "difficulty": "high",
+          "form_family": "generic.table_complete",
+          "number": 50,
+          "prompt": "Item 50: Find the missing number: ___ + 7 = 16.",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "skill": "unknown-addend and unknown-subtrahend equations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "16-7"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PASS",
+    "summary": {
+      "deterministic_checked": 50,
+      "failures": [],
+      "questions": 50,
+      "reasoning_required": 0,
+      "results": [
+        {
+          "computed": 11,
+          "expected": 11,
+          "number": 1,
+          "status": "PASS"
+        },
+        {
+          "computed": 8,
+          "expected": 8,
+          "number": 2,
+          "status": "PASS"
+        },
+        {
+          "computed": 12,
+          "expected": 12,
+          "number": 3,
+          "status": "PASS"
+        },
+        {
+          "computed": 15,
+          "expected": 15,
+          "number": 4,
+          "status": "PASS"
+        },
+        {
+          "computed": 16,
+          "expected": 16,
+          "number": 5,
+          "status": "PASS"
+        },
+        {
+          "computed": 6,
+          "expected": 6,
+          "number": 6,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 7,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 8,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 9,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 10,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 11,
+          "status": "PASS"
+        },
+        {
+          "computed": 6,
+          "expected": 6,
+          "number": 12,
+          "status": "PASS"
+        },
+        {
+          "computed": 14,
+          "expected": 14,
+          "number": 13,
+          "status": "PASS"
+        },
+        {
+          "computed": 5,
+          "expected": 5,
+          "number": 14,
+          "status": "PASS"
+        },
+        {
+          "computed": 26,
+          "expected": 26,
+          "number": 15,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 16,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 17,
+          "status": "PASS"
+        },
+        {
+          "computed": 11,
+          "expected": 11,
+          "number": 18,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 19,
+          "status": "PASS"
+        },
+        {
+          "computed": 11,
+          "expected": 11,
+          "number": 20,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 21,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 22,
+          "status": "PASS"
+        },
+        {
+          "computed": 8,
+          "expected": 8,
+          "number": 23,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 24,
+          "status": "PASS"
+        },
+        {
+          "computed": 36,
+          "expected": 36,
+          "number": 25,
+          "status": "PASS"
+        },
+        {
+          "computed": 8,
+          "expected": 8,
+          "number": 26,
+          "status": "PASS"
+        },
+        {
+          "computed": 11,
+          "expected": 11,
+          "number": 27,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 28,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 29,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 30,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 31,
+          "status": "PASS"
+        },
+        {
+          "computed": 8,
+          "expected": 8,
+          "number": 32,
+          "status": "PASS"
+        },
+        {
+          "computed": 10,
+          "expected": 10,
+          "number": 33,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 34,
+          "status": "PASS"
+        },
+        {
+          "computed": 46,
+          "expected": 46,
+          "number": 35,
+          "status": "PASS"
+        },
+        {
+          "computed": 6,
+          "expected": 6,
+          "number": 36,
+          "status": "PASS"
+        },
+        {
+          "computed": 11,
+          "expected": 11,
+          "number": 37,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 38,
+          "status": "PASS"
+        },
+        {
+          "computed": 11,
+          "expected": 11,
+          "number": 39,
+          "status": "PASS"
+        },
+        {
+          "computed": 11,
+          "expected": 11,
+          "number": 40,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 41,
+          "status": "PASS"
+        },
+        {
+          "computed": 6,
+          "expected": 6,
+          "number": 42,
+          "status": "PASS"
+        },
+        {
+          "computed": 12,
+          "expected": 12,
+          "number": 43,
+          "status": "PASS"
+        },
+        {
+          "computed": 11,
+          "expected": 11,
+          "number": 44,
+          "status": "PASS"
+        },
+        {
+          "computed": 56,
+          "expected": 56,
+          "number": 45,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 46,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 47,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 48,
+          "status": "PASS"
+        },
+        {
+          "computed": 11,
+          "expected": 11,
+          "number": 49,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 50,
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "structure_errors": []
+    }
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_1",
+    "grade_display_name": "Grade 1",
+    "grade_or_course": "grade_1",
+    "question_count": 50,
+    "title": "MTS - WEEKLY MATH WORKSHEET",
+    "week_start": "2026-08-31"
+  }
+}

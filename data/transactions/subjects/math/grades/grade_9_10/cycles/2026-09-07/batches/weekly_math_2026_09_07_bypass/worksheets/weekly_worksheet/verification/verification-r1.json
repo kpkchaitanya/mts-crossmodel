@@ -1,0 +1,160 @@
+{
+  "deterministic_checked": 25,
+  "failures": [],
+  "questions": 25,
+  "reasoning_required": 0,
+  "results": [
+    {
+      "computed": 32,
+      "expected": 32,
+      "number": 1,
+      "status": "PASS"
+    },
+    {
+      "computed": 5,
+      "expected": 5,
+      "number": 2,
+      "status": "PASS"
+    },
+    {
+      "computed": 12,
+      "expected": 12,
+      "number": 3,
+      "status": "PASS"
+    },
+    {
+      "computed": 21,
+      "expected": 21,
+      "number": 4,
+      "status": "PASS"
+    },
+    {
+      "computed": 32,
+      "expected": 32,
+      "number": 5,
+      "status": "PASS"
+    },
+    {
+      "computed": 5,
+      "expected": 5,
+      "number": 6,
+      "status": "PASS"
+    },
+    {
+      "computed": 12,
+      "expected": 12,
+      "number": 7,
+      "status": "PASS"
+    },
+    {
+      "computed": 21,
+      "expected": 21,
+      "number": 8,
+      "status": "PASS"
+    },
+    {
+      "computed": 32,
+      "expected": 32,
+      "number": 9,
+      "status": "PASS"
+    },
+    {
+      "computed": 5,
+      "expected": 5,
+      "number": 10,
+      "status": "PASS"
+    },
+    {
+      "computed": 12,
+      "expected": 12,
+      "number": 11,
+      "status": "PASS"
+    },
+    {
+      "computed": 21,
+      "expected": 21,
+      "number": 12,
+      "status": "PASS"
+    },
+    {
+      "computed": 32,
+      "expected": 32,
+      "number": 13,
+      "status": "PASS"
+    },
+    {
+      "computed": 5,
+      "expected": 5,
+      "number": 14,
+      "status": "PASS"
+    },
+    {
+      "computed": 12,
+      "expected": 12,
+      "number": 15,
+      "status": "PASS"
+    },
+    {
+      "computed": 21,
+      "expected": 21,
+      "number": 16,
+      "status": "PASS"
+    },
+    {
+      "computed": 32,
+      "expected": 32,
+      "number": 17,
+      "status": "PASS"
+    },
+    {
+      "computed": 5,
+      "expected": 5,
+      "number": 18,
+      "status": "PASS"
+    },
+    {
+      "computed": 12,
+      "expected": 12,
+      "number": 19,
+      "status": "PASS"
+    },
+    {
+      "computed": 21,
+      "expected": 21,
+      "number": 20,
+      "status": "PASS"
+    },
+    {
+      "computed": 32,
+      "expected": 32,
+      "number": 21,
+      "status": "PASS"
+    },
+    {
+      "computed": 5,
+      "expected": 5,
+      "number": 22,
+      "status": "PASS"
+    },
+    {
+      "computed": 12,
+      "expected": 12,
+      "number": 23,
+      "status": "PASS"
+    },
+    {
+      "computed": 21,
+      "expected": 21,
+      "number": 24,
+      "status": "PASS"
+    },
+    {
+      "computed": 32,
+      "expected": 32,
+      "number": 25,
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS",
+  "structure_errors": []
+}

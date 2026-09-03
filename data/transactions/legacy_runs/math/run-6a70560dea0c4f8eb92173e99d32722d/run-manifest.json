@@ -1,0 +1,3696 @@
+{
+  "approvals": [
+    {
+      "approval_id": "approval-d08fe779856d4954a4a96c635ef50b08",
+      "artifact_revision": "scope-2026-08-31-r1",
+      "gate": "scope_review",
+      "notes": "User approved inferred default grade scope on 2026-08-30.",
+      "recorded_at": "2026-08-30T16:58:44.813736+00:00",
+      "reviewer": "current_user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-3d1e0e287ef94056bc04c0856b87868c",
+      "artifact_revision": "grade_1-questions-r1",
+      "gate": "question_review",
+      "notes": "User approved Question Review on 2026-08-30.",
+      "recorded_at": "2026-08-30T17:00:37.379255+00:00",
+      "reviewer": "current_user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-0ee247688e1d4e9fa2987ee91de444da",
+      "artifact_revision": "grade_4-questions-r1",
+      "gate": "question_review",
+      "notes": "User approved Question Review on 2026-08-30.",
+      "recorded_at": "2026-08-30T17:00:37.379738+00:00",
+      "reviewer": "current_user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-a26ff8fd51ff4858a23fa99005b502f5",
+      "artifact_revision": "grade_5-questions-r1",
+      "gate": "question_review",
+      "notes": "User approved Question Review on 2026-08-30.",
+      "recorded_at": "2026-08-30T17:00:37.380181+00:00",
+      "reviewer": "current_user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-4d7c884169de44cf91e12d0026f8a0e9",
+      "artifact_revision": "grade_6-questions-r1",
+      "gate": "question_review",
+      "notes": "User approved Question Review on 2026-08-30.",
+      "recorded_at": "2026-08-30T17:00:37.380615+00:00",
+      "reviewer": "current_user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-73cee4828b8440219883cee7ac6fe822",
+      "artifact_revision": "grade_9_10-questions-r1",
+      "gate": "question_review",
+      "notes": "User approved Question Review on 2026-08-30.",
+      "recorded_at": "2026-08-30T17:00:37.381054+00:00",
+      "reviewer": "current_user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-98ba06eeb9db408a8dc7e40d0f8e0281",
+      "artifact_revision": "verification-2026-08-31-r1",
+      "gate": "verification_review",
+      "notes": "User approved Verification Review on 2026-08-30.",
+      "recorded_at": "2026-08-30T17:03:04.423738+00:00",
+      "reviewer": "current_user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-51362efc72d44f50b72331bde21b847e",
+      "artifact_revision": "grade_1-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:34.883294+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-a31161d014bf4b13b22c0bca69e09a5d",
+      "artifact_revision": "grade_1-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:34.884185+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-2d0b59d0c9a84c5d97d84bc57709c964",
+      "artifact_revision": "grade_4-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:34.888915+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-fdf9b68ff87d4c9d872124629735dba3",
+      "artifact_revision": "grade_4-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:34.890044+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-d96134ae9b334a4d8ad067bd6848b35a",
+      "artifact_revision": "grade_5-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:34.891919+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-9e8bd71a7891477e887b735fa397200f",
+      "artifact_revision": "grade_5-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:34.892732+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-e9a630555e534cf9874b5f54b60e1deb",
+      "artifact_revision": "grade_6-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:34.896965+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-c775f13fb2214bb2866acdf2085d9051",
+      "artifact_revision": "grade_6-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:34.897826+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-a5a5768a786944e1af45fa18006d3deb",
+      "artifact_revision": "grade_9_10-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:34.899924+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-656a83cdfecc486fb164b853a4622fe3",
+      "artifact_revision": "grade_9_10-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:34.900747+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-e27eb122835748a7bec8d1acd2fea78a",
+      "artifact_revision": "scope-2026-08-31-r1",
+      "gate": "scope_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:34.901626+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-0a0dd1f34e214e68879ef9363a55d2bb",
+      "artifact_revision": "grade_1-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:56.209772+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-415f6efe52534e5d97f59f54d1c0bc05",
+      "artifact_revision": "grade_1-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:56.210651+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-d14d5d0ef6cf4f7a8b8ba116d6c88bbd",
+      "artifact_revision": "grade_4-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:56.213226+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-f00b5207bdc6402f9d49687a46ec7907",
+      "artifact_revision": "grade_4-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:56.215168+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-1ec6ba7fc2e04c14a9fdc8dc964c471b",
+      "artifact_revision": "grade_5-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:56.217082+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-e3d17ff136af497a971c51e63608008a",
+      "artifact_revision": "grade_5-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:56.217927+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-8bc7dc3518d24c9e9b663a885d775ec5",
+      "artifact_revision": "grade_6-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:56.220993+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-588279c6e239480c9690ed36b612bf76",
+      "artifact_revision": "grade_6-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:56.221875+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-f3d5000f302745379bca620aab97c93b",
+      "artifact_revision": "grade_9_10-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:56.223376+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-28b0d24e1b714c1aa14bd336d92b018f",
+      "artifact_revision": "grade_9_10-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:56.224240+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-6d3b75c87a38459aae07aba941246a29",
+      "artifact_revision": "scope-2026-08-31-r1",
+      "gate": "scope_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:11:56.225091+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-40ec457d50214fd1a823f6eadb9c6b01",
+      "artifact_revision": "grade_1-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:12:31.925104+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-852ba310403a47288be39e5f5870a4c9",
+      "artifact_revision": "grade_1-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:12:31.926152+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-3b08ac9dc6db4e62be53d25c9cd99e6b",
+      "artifact_revision": "grade_4-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:12:31.928554+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-fde2af52e20f4e8cbb6821aa814aed99",
+      "artifact_revision": "grade_4-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:12:31.930401+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-e75f20bd0f874a5395fe46219cb9fe3e",
+      "artifact_revision": "grade_5-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:12:31.932394+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-113f4c988e2f484a86c28a66f3ce5fea",
+      "artifact_revision": "grade_5-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:12:31.933317+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-f829b04c82aa4da4aba542a890b89559",
+      "artifact_revision": "grade_6-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:12:31.935083+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-f26d871346784966806f864ccb9c455c",
+      "artifact_revision": "grade_6-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:12:31.936292+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-89b51de19d544955b7a5cdd68b3843f6",
+      "artifact_revision": "grade_9_10-questions-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:12:31.938280+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-e99b100068ad4a2ca91a6b3f094a9313",
+      "artifact_revision": "grade_9_10-verification-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:12:31.939206+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-e2f7833621a64946a21837ae2f55fe5b",
+      "artifact_revision": "scope-2026-08-31-r1",
+      "gate": "scope_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:12:31.940110+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-75006fc15f4745a797d3c1d46735213c",
+      "artifact_revision": "grade_1-render-r3",
+      "gate": "formatting_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:12:42.530522+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-985dd49878fb416ca68e295600b607b2",
+      "artifact_revision": "grade_4-render-r3",
+      "gate": "formatting_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:12:51.511682+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-5e5a0ba39eff4f69a52e7c884117e925",
+      "artifact_revision": "grade_5-render-r3",
+      "gate": "formatting_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:13:01.421265+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-8e1961ea4a814b99a207d1b145f5fa47",
+      "artifact_revision": "grade_6-render-r3",
+      "gate": "formatting_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:13:11.358746+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-7536acee540d44919699ca6162464d95",
+      "artifact_revision": "grade_9_10-render-r3",
+      "gate": "formatting_review",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:13:19.814242+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-dc6ce447e67240f1a02a4b9beccb9ece",
+      "artifact_revision": "batch-2026-08-31-r3",
+      "gate": "publish_approval",
+      "notes": "Explicit current-user instruction: go ahead with all the gates and publish.",
+      "recorded_at": "2026-08-30T17:13:19.820564+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_kind": "student_worksheet",
+      "document": {
+        "id": "1F5BI0s8LmQBmDmD0bonlE1XL2KYesTSV2428T7GHFTA",
+        "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-31",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1F5BI0s8LmQBmDmD0bonlE1XL2KYesTSV2428T7GHFTA/edit?usp=drivesdk"
+      },
+      "status": "published",
+      "worksheet_id": "grade_1"
+    },
+    {
+      "artifact_kind": "answer_key",
+      "document": {
+        "id": "1UAp37aZpC2U5Iu8p0xrmDAFwQCsMIl7GKB935Gi8u8U",
+        "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-31_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1UAp37aZpC2U5Iu8p0xrmDAFwQCsMIl7GKB935Gi8u8U/edit?usp=drivesdk"
+      },
+      "status": "published",
+      "worksheet_id": "grade_1"
+    },
+    {
+      "artifact_kind": "student_worksheet",
+      "document": {
+        "id": "1r99MmEEZQ8z5N0QrFkoW5EsUmzwNComiDpRa5csY9U0",
+        "name": "MTS-Math-4thGrade-WeeklyWorksheet-2026-08-31",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1r99MmEEZQ8z5N0QrFkoW5EsUmzwNComiDpRa5csY9U0/edit?usp=drivesdk"
+      },
+      "status": "published",
+      "worksheet_id": "grade_4"
+    },
+    {
+      "artifact_kind": "answer_key",
+      "document": {
+        "id": "14rJPv9QtAWzup9tHTgo5S8s6JD5PN8k2i-GgHulG_40",
+        "name": "MTS-Math-4thGrade-WeeklyWorksheet-2026-08-31_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/14rJPv9QtAWzup9tHTgo5S8s6JD5PN8k2i-GgHulG_40/edit?usp=drivesdk"
+      },
+      "status": "published",
+      "worksheet_id": "grade_4"
+    },
+    {
+      "artifact_kind": "student_worksheet",
+      "document": {
+        "id": "1vjunhMY4m1ILikWdI6zdLCwUekZo_LE7LcWSCXEZJO8",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-31",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1vjunhMY4m1ILikWdI6zdLCwUekZo_LE7LcWSCXEZJO8/edit?usp=drivesdk"
+      },
+      "status": "published",
+      "worksheet_id": "grade_5"
+    },
+    {
+      "artifact_kind": "answer_key",
+      "document": {
+        "id": "1-bpDHfQEh6H3Mtc4CJi03dxLAumh5vtRcxryCp7eJcw",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-31_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1-bpDHfQEh6H3Mtc4CJi03dxLAumh5vtRcxryCp7eJcw/edit?usp=drivesdk"
+      },
+      "status": "published",
+      "worksheet_id": "grade_5"
+    },
+    {
+      "artifact_kind": "student_worksheet",
+      "document": {
+        "id": "15rWvqVqQkLZsLyNF7qhD89MtzUG9wjqxI2M9PCYNRoE",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/15rWvqVqQkLZsLyNF7qhD89MtzUG9wjqxI2M9PCYNRoE/edit?usp=drivesdk"
+      },
+      "status": "published",
+      "worksheet_id": "grade_6"
+    },
+    {
+      "artifact_kind": "answer_key",
+      "document": {
+        "id": "1KzHBC-xpi7tdm9Sa5MOTz-mVIt0uc6Fnc34swdiZ54c",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1KzHBC-xpi7tdm9Sa5MOTz-mVIt0uc6Fnc34swdiZ54c/edit?usp=drivesdk"
+      },
+      "status": "published",
+      "worksheet_id": "grade_6"
+    },
+    {
+      "artifact_kind": "student_worksheet",
+      "document": {
+        "id": "1BTqwxNoVUmIRv3qYqK7To7YkUTjnvJQTgWrZpTKzCO4",
+        "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-08-31",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1BTqwxNoVUmIRv3qYqK7To7YkUTjnvJQTgWrZpTKzCO4/edit?usp=drivesdk"
+      },
+      "status": "published",
+      "worksheet_id": "grade_9_10"
+    },
+    {
+      "artifact_kind": "answer_key",
+      "document": {
+        "id": "13eIeiSStXl56rEeCAcDJ5yBjVFnDkcznXbNX97EHe4A",
+        "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-08-31_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/13eIeiSStXl56rEeCAcDJ5yBjVFnDkcznXbNX97EHe4A/edit?usp=drivesdk"
+      },
+      "status": "published",
+      "worksheet_id": "grade_9_10"
+    }
+  ],
+  "checkpoints": [],
+  "formatting_qa": {
+    "results": {
+      "grade_1": {
+        "answer_key_content_blocks": 61,
+        "status": "PASS",
+        "student_content_blocks": 68,
+        "text_qa": {
+          "answer_key": {
+            "checks": {
+              "all_question_numbers_present": true,
+              "answer_key_label": true,
+              "grade_present": true,
+              "no_extra_numbered_slots": true,
+              "no_pending_approval_label": true,
+              "no_unresolved_placeholders": true,
+              "rendered_text_nonempty": true,
+              "title_present": true
+            },
+            "failed_checks": [],
+            "status": "PASS"
+          },
+          "student_worksheet": {
+            "checks": {
+              "all_question_numbers_present": true,
+              "grade_present": true,
+              "no_extra_numbered_slots": true,
+              "no_pending_approval_label": true,
+              "no_unresolved_placeholders": true,
+              "rendered_text_nonempty": true,
+              "title_present": true
+            },
+            "failed_checks": [],
+            "status": "PASS"
+          }
+        }
+      },
+      "grade_4": {
+        "answer_key_content_blocks": 61,
+        "status": "PASS",
+        "student_content_blocks": 68,
+        "text_qa": {
+          "answer_key": {
+            "checks": {
+              "all_question_numbers_present": true,
+              "answer_key_label": true,
+              "grade_present": true,
+              "no_extra_numbered_slots": true,
+              "no_pending_approval_label": true,
+              "no_unresolved_placeholders": true,
+              "rendered_text_nonempty": true,
+              "title_present": true
+            },
+            "failed_checks": [],
+            "status": "PASS"
+          },
+          "student_worksheet": {
+            "checks": {
+              "all_question_numbers_present": true,
+              "grade_present": true,
+              "no_extra_numbered_slots": true,
+              "no_pending_approval_label": true,
+              "no_unresolved_placeholders": true,
+              "rendered_text_nonempty": true,
+              "title_present": true
+            },
+            "failed_checks": [],
+            "status": "PASS"
+          }
+        }
+      },
+      "grade_5": {
+        "answer_key_content_blocks": 61,
+        "status": "PASS",
+        "student_content_blocks": 68,
+        "text_qa": {
+          "answer_key": {
+            "checks": {
+              "all_question_numbers_present": true,
+              "answer_key_label": true,
+              "grade_present": true,
+              "no_extra_numbered_slots": true,
+              "no_pending_approval_label": true,
+              "no_unresolved_placeholders": true,
+              "rendered_text_nonempty": true,
+              "title_present": true
+            },
+            "failed_checks": [],
+            "status": "PASS"
+          },
+          "student_worksheet": {
+            "checks": {
+              "all_question_numbers_present": true,
+              "grade_present": true,
+              "no_extra_numbered_slots": true,
+              "no_pending_approval_label": true,
+              "no_unresolved_placeholders": true,
+              "rendered_text_nonempty": true,
+              "title_present": true
+            },
+            "failed_checks": [],
+            "status": "PASS"
+          }
+        }
+      },
+      "grade_6": {
+        "answer_key_content_blocks": 51,
+        "status": "PASS",
+        "student_content_blocks": 58,
+        "text_qa": {
+          "answer_key": {
+            "checks": {
+              "all_question_numbers_present": true,
+              "answer_key_label": true,
+              "grade_present": true,
+              "no_extra_numbered_slots": true,
+              "no_pending_approval_label": true,
+              "no_unresolved_placeholders": true,
+              "rendered_text_nonempty": true,
+              "title_present": true
+            },
+            "failed_checks": [],
+            "status": "PASS"
+          },
+          "student_worksheet": {
+            "checks": {
+              "all_question_numbers_present": true,
+              "grade_present": true,
+              "no_extra_numbered_slots": true,
+              "no_pending_approval_label": true,
+              "no_unresolved_placeholders": true,
+              "rendered_text_nonempty": true,
+              "title_present": true
+            },
+            "failed_checks": [],
+            "status": "PASS"
+          }
+        }
+      },
+      "grade_9_10": {
+        "answer_key_content_blocks": 36,
+        "status": "PASS",
+        "student_content_blocks": 43,
+        "text_qa": {
+          "answer_key": {
+            "checks": {
+              "all_question_numbers_present": true,
+              "answer_key_label": true,
+              "grade_present": true,
+              "no_extra_numbered_slots": true,
+              "no_pending_approval_label": true,
+              "no_unresolved_placeholders": true,
+              "rendered_text_nonempty": true,
+              "title_present": true
+            },
+            "failed_checks": [],
+            "status": "PASS"
+          },
+          "student_worksheet": {
+            "checks": {
+              "all_question_numbers_present": true,
+              "grade_present": true,
+              "no_extra_numbered_slots": true,
+              "no_pending_approval_label": true,
+              "no_unresolved_placeholders": true,
+              "rendered_text_nonempty": true,
+              "title_present": true
+            },
+            "failed_checks": [],
+            "status": "PASS"
+          }
+        }
+      }
+    },
+    "revision": "render-2026-08-31-r3"
+  },
+  "gates": {
+    "bypassed": [
+      "scope_review",
+      "question_review",
+      "verification_review",
+      "formatting_review",
+      "publish_approval"
+    ],
+    "mode": "bypass_all",
+    "requested_by": "current_user"
+  },
+  "manifest_version": "1.0",
+  "policy_fingerprint": "246a44247bff4292a0fc1ea5a5b4f665512ed0cbd96e91e87407b32fced46e41",
+  "policy_snapshot_path": "resolved-policy.json",
+  "publication": {
+    "destination_folder_id": "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS",
+    "pairs": {
+      "grade_1": {
+        "answer_key": {
+          "id": "1UAp37aZpC2U5Iu8p0xrmDAFwQCsMIl7GKB935Gi8u8U",
+          "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-31_KEY",
+          "parents": [
+            "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1UAp37aZpC2U5Iu8p0xrmDAFwQCsMIl7GKB935Gi8u8U/edit?usp=drivesdk"
+        },
+        "status": "published",
+        "student_worksheet": {
+          "id": "1F5BI0s8LmQBmDmD0bonlE1XL2KYesTSV2428T7GHFTA",
+          "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-31",
+          "parents": [
+            "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1F5BI0s8LmQBmDmD0bonlE1XL2KYesTSV2428T7GHFTA/edit?usp=drivesdk"
+        }
+      },
+      "grade_4": {
+        "answer_key": {
+          "id": "14rJPv9QtAWzup9tHTgo5S8s6JD5PN8k2i-GgHulG_40",
+          "name": "MTS-Math-4thGrade-WeeklyWorksheet-2026-08-31_KEY",
+          "parents": [
+            "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/14rJPv9QtAWzup9tHTgo5S8s6JD5PN8k2i-GgHulG_40/edit?usp=drivesdk"
+        },
+        "status": "published",
+        "student_worksheet": {
+          "id": "1r99MmEEZQ8z5N0QrFkoW5EsUmzwNComiDpRa5csY9U0",
+          "name": "MTS-Math-4thGrade-WeeklyWorksheet-2026-08-31",
+          "parents": [
+            "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1r99MmEEZQ8z5N0QrFkoW5EsUmzwNComiDpRa5csY9U0/edit?usp=drivesdk"
+        }
+      },
+      "grade_5": {
+        "answer_key": {
+          "id": "1-bpDHfQEh6H3Mtc4CJi03dxLAumh5vtRcxryCp7eJcw",
+          "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-31_KEY",
+          "parents": [
+            "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1-bpDHfQEh6H3Mtc4CJi03dxLAumh5vtRcxryCp7eJcw/edit?usp=drivesdk"
+        },
+        "status": "published",
+        "student_worksheet": {
+          "id": "1vjunhMY4m1ILikWdI6zdLCwUekZo_LE7LcWSCXEZJO8",
+          "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-31",
+          "parents": [
+            "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1vjunhMY4m1ILikWdI6zdLCwUekZo_LE7LcWSCXEZJO8/edit?usp=drivesdk"
+        }
+      },
+      "grade_6": {
+        "answer_key": {
+          "id": "1KzHBC-xpi7tdm9Sa5MOTz-mVIt0uc6Fnc34swdiZ54c",
+          "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31_KEY",
+          "parents": [
+            "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1KzHBC-xpi7tdm9Sa5MOTz-mVIt0uc6Fnc34swdiZ54c/edit?usp=drivesdk"
+        },
+        "status": "published",
+        "student_worksheet": {
+          "id": "15rWvqVqQkLZsLyNF7qhD89MtzUG9wjqxI2M9PCYNRoE",
+          "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31",
+          "parents": [
+            "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/15rWvqVqQkLZsLyNF7qhD89MtzUG9wjqxI2M9PCYNRoE/edit?usp=drivesdk"
+        }
+      },
+      "grade_9_10": {
+        "answer_key": {
+          "id": "13eIeiSStXl56rEeCAcDJ5yBjVFnDkcznXbNX97EHe4A",
+          "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-08-31_KEY",
+          "parents": [
+            "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/13eIeiSStXl56rEeCAcDJ5yBjVFnDkcznXbNX97EHe4A/edit?usp=drivesdk"
+        },
+        "status": "published",
+        "student_worksheet": {
+          "id": "1BTqwxNoVUmIRv3qYqK7To7YkUTjnvJQTgWrZpTKzCO4",
+          "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-08-31",
+          "parents": [
+            "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1BTqwxNoVUmIRv3qYqK7To7YkUTjnvJQTgWrZpTKzCO4/edit?usp=drivesdk"
+        }
+      }
+    },
+    "status": "published"
+  },
+  "publish": {
+    "requested": "yes",
+    "resolved": true
+  },
+  "question_design": {
+    "difficulty": "medium_plus",
+    "diversity": "medium_plus"
+  },
+  "question_plan": {
+    "difficulty": "medium_plus",
+    "diversity": "medium_plus",
+    "plans": {
+      "grade_1": {
+        "friday": [
+          {
+            "day": "friday",
+            "difficulty": "medium",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 1
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 2,
+            "topic_override": true
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "addition and subtraction within 20",
+            "slot": 3
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "unknown-addend and unknown-subtrahend equations",
+            "slot": 4
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "counting sequence",
+            "slot": 5
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 6,
+            "topic_override": true
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 7
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "addition and subtraction within 20",
+            "slot": 8
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 9,
+            "topic_override": true
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "unknown-addend and unknown-subtrahend equations",
+            "slot": 10
+          }
+        ],
+        "monday": [
+          {
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 1
+          },
+          {
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 2,
+            "topic_override": true
+          },
+          {
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "addition and subtraction within 20",
+            "slot": 3
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "unknown-addend and unknown-subtrahend equations",
+            "slot": 4
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "counting sequence",
+            "slot": 5
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 6,
+            "topic_override": true
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 7
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "addition and subtraction within 20",
+            "slot": 8
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 9,
+            "topic_override": true
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "unknown-addend and unknown-subtrahend equations",
+            "slot": 10
+          }
+        ],
+        "thursday": [
+          {
+            "day": "thursday",
+            "difficulty": "medium",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 1
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 2,
+            "topic_override": true
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium",
+            "skill": "addition and subtraction within 20",
+            "slot": 3
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "unknown-addend and unknown-subtrahend equations",
+            "slot": 4
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "counting sequence",
+            "slot": 5
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 6,
+            "topic_override": true
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 7
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "addition and subtraction within 20",
+            "slot": 8
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 9,
+            "topic_override": true
+          },
+          {
+            "day": "thursday",
+            "difficulty": "high",
+            "skill": "unknown-addend and unknown-subtrahend equations",
+            "slot": 10
+          }
+        ],
+        "tuesday": [
+          {
+            "day": "tuesday",
+            "difficulty": "low_plus",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 1
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 2,
+            "topic_override": true
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "addition and subtraction within 20",
+            "slot": 3
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "unknown-addend and unknown-subtrahend equations",
+            "slot": 4
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "counting sequence",
+            "slot": 5
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 6,
+            "topic_override": true
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 7
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium_plus",
+            "skill": "addition and subtraction within 20",
+            "slot": 8
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium_plus",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 9,
+            "topic_override": true
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium_plus",
+            "skill": "unknown-addend and unknown-subtrahend equations",
+            "slot": 10
+          }
+        ],
+        "wednesday": [
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 1
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 2,
+            "topic_override": true
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "addition and subtraction within 20",
+            "slot": 3
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "unknown-addend and unknown-subtrahend equations",
+            "slot": 4
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "counting sequence",
+            "slot": 5
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 6,
+            "topic_override": true
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 7
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "addition and subtraction within 20",
+            "slot": 8
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "Count on and count down using addition and subtraction",
+            "slot": 9,
+            "topic_override": true
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "unknown-addend and unknown-subtrahend equations",
+            "slot": 10
+          }
+        ]
+      },
+      "grade_4": {
+        "friday": [
+          {
+            "day": "friday",
+            "difficulty": "medium",
+            "skill": "data and graphing basics",
+            "slot": 1
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "multi-digit place value",
+            "slot": 2
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "data and graphing basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "compare multi-digit numbers",
+            "slot": 4
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "multiplication facts",
+            "slot": 5
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "addition and subtraction",
+            "slot": 6
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "data and graphing basics",
+            "slot": 7
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "data and graphing basics",
+            "slot": 8,
+            "topic_override": true
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "multi-digit place value",
+            "slot": 9
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "rounding",
+            "slot": 10
+          }
+        ],
+        "monday": [
+          {
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "data and graphing basics",
+            "slot": 1
+          },
+          {
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "multi-digit place value",
+            "slot": 2
+          },
+          {
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "data and graphing basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "compare multi-digit numbers",
+            "slot": 4
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "multiplication facts",
+            "slot": 5
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "addition and subtraction",
+            "slot": 6
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "data and graphing basics",
+            "slot": 7
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "data and graphing basics",
+            "slot": 8,
+            "topic_override": true
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "multi-digit place value",
+            "slot": 9
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "rounding",
+            "slot": 10
+          }
+        ],
+        "thursday": [
+          {
+            "day": "thursday",
+            "difficulty": "medium",
+            "skill": "data and graphing basics",
+            "slot": 1
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium",
+            "skill": "multi-digit place value",
+            "slot": 2
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium",
+            "skill": "data and graphing basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "compare multi-digit numbers",
+            "slot": 4
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "multiplication facts",
+            "slot": 5
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "addition and subtraction",
+            "slot": 6
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "data and graphing basics",
+            "slot": 7
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "data and graphing basics",
+            "slot": 8,
+            "topic_override": true
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "multi-digit place value",
+            "slot": 9
+          },
+          {
+            "day": "thursday",
+            "difficulty": "high",
+            "skill": "rounding",
+            "slot": 10
+          }
+        ],
+        "tuesday": [
+          {
+            "day": "tuesday",
+            "difficulty": "low_plus",
+            "skill": "data and graphing basics",
+            "slot": 1
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "multi-digit place value",
+            "slot": 2
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "data and graphing basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "compare multi-digit numbers",
+            "slot": 4
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "multiplication facts",
+            "slot": 5
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "addition and subtraction",
+            "slot": 6
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "data and graphing basics",
+            "slot": 7
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium_plus",
+            "skill": "data and graphing basics",
+            "slot": 8,
+            "topic_override": true
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium_plus",
+            "skill": "multi-digit place value",
+            "slot": 9
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium_plus",
+            "skill": "rounding",
+            "slot": 10
+          }
+        ],
+        "wednesday": [
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "data and graphing basics",
+            "slot": 1
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "multi-digit place value",
+            "slot": 2
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "data and graphing basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "compare multi-digit numbers",
+            "slot": 4
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "multiplication facts",
+            "slot": 5
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "addition and subtraction",
+            "slot": 6
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "data and graphing basics",
+            "slot": 7
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "data and graphing basics",
+            "slot": 8,
+            "topic_override": true
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "multi-digit place value",
+            "slot": 9
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "rounding",
+            "slot": 10
+          }
+        ]
+      },
+      "grade_5": {
+        "friday": [
+          {
+            "day": "friday",
+            "difficulty": "medium",
+            "skill": "coordinate geometry basics",
+            "slot": 1
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "numerical expressions",
+            "slot": 2
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "coordinate geometry basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "patterns",
+            "slot": 4
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "place value",
+            "slot": 5
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "whole-number multiplication",
+            "slot": 6
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "coordinate geometry basics",
+            "slot": 7
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "coordinate geometry basics",
+            "slot": 8,
+            "topic_override": true
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "numerical expressions",
+            "slot": 9
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "multi-digit operations",
+            "slot": 10
+          }
+        ],
+        "monday": [
+          {
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "coordinate geometry basics",
+            "slot": 1
+          },
+          {
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "numerical expressions",
+            "slot": 2
+          },
+          {
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "coordinate geometry basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "patterns",
+            "slot": 4
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "place value",
+            "slot": 5
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "whole-number multiplication",
+            "slot": 6
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "coordinate geometry basics",
+            "slot": 7
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "coordinate geometry basics",
+            "slot": 8,
+            "topic_override": true
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "numerical expressions",
+            "slot": 9
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "multi-digit operations",
+            "slot": 10
+          }
+        ],
+        "thursday": [
+          {
+            "day": "thursday",
+            "difficulty": "medium",
+            "skill": "coordinate geometry basics",
+            "slot": 1
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium",
+            "skill": "numerical expressions",
+            "slot": 2
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium",
+            "skill": "coordinate geometry basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "patterns",
+            "slot": 4
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "place value",
+            "slot": 5
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "whole-number multiplication",
+            "slot": 6
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "coordinate geometry basics",
+            "slot": 7
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "coordinate geometry basics",
+            "slot": 8,
+            "topic_override": true
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "numerical expressions",
+            "slot": 9
+          },
+          {
+            "day": "thursday",
+            "difficulty": "high",
+            "skill": "multi-digit operations",
+            "slot": 10
+          }
+        ],
+        "tuesday": [
+          {
+            "day": "tuesday",
+            "difficulty": "low_plus",
+            "skill": "coordinate geometry basics",
+            "slot": 1
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "numerical expressions",
+            "slot": 2
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "coordinate geometry basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "patterns",
+            "slot": 4
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "place value",
+            "slot": 5
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "whole-number multiplication",
+            "slot": 6
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "coordinate geometry basics",
+            "slot": 7
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium_plus",
+            "skill": "coordinate geometry basics",
+            "slot": 8,
+            "topic_override": true
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium_plus",
+            "skill": "numerical expressions",
+            "slot": 9
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium_plus",
+            "skill": "multi-digit operations",
+            "slot": 10
+          }
+        ],
+        "wednesday": [
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "coordinate geometry basics",
+            "slot": 1
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "numerical expressions",
+            "slot": 2
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "coordinate geometry basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "patterns",
+            "slot": 4
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "place value",
+            "slot": 5
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "whole-number multiplication",
+            "slot": 6
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "coordinate geometry basics",
+            "slot": 7
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "coordinate geometry basics",
+            "slot": 8,
+            "topic_override": true
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "numerical expressions",
+            "slot": 9
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "multi-digit operations",
+            "slot": 10
+          }
+        ]
+      },
+      "grade_6": {
+        "friday": [
+          {
+            "day": "friday",
+            "difficulty": "medium",
+            "skill": "prime factorization basics",
+            "slot": 1
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "factor pairs and multiples",
+            "slot": 2
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "prime factorization basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "ratio concepts",
+            "slot": 4
+          },
+          {
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "fractions and decimals",
+            "slot": 5
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "ratio reasoning",
+            "slot": 6
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "prime factorization basics",
+            "slot": 7,
+            "topic_override": true
+          },
+          {
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "prime factorization basics",
+            "slot": 8
+          }
+        ],
+        "monday": [
+          {
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "prime factorization basics",
+            "slot": 1
+          },
+          {
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "factor pairs and multiples",
+            "slot": 2
+          },
+          {
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "prime factorization basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "ratio concepts",
+            "slot": 4
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "fractions and decimals",
+            "slot": 5
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "ratio reasoning",
+            "slot": 6
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "prime factorization basics",
+            "slot": 7,
+            "topic_override": true
+          },
+          {
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "prime factorization basics",
+            "slot": 8
+          }
+        ],
+        "thursday": [
+          {
+            "day": "thursday",
+            "difficulty": "medium",
+            "skill": "prime factorization basics",
+            "slot": 1
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium",
+            "skill": "factor pairs and multiples",
+            "slot": 2
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "prime factorization basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "ratio concepts",
+            "slot": 4
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "fractions and decimals",
+            "slot": 5
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "ratio reasoning",
+            "slot": 6
+          },
+          {
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "prime factorization basics",
+            "slot": 7,
+            "topic_override": true
+          },
+          {
+            "day": "thursday",
+            "difficulty": "high",
+            "skill": "prime factorization basics",
+            "slot": 8
+          }
+        ],
+        "tuesday": [
+          {
+            "day": "tuesday",
+            "difficulty": "low_plus",
+            "skill": "prime factorization basics",
+            "slot": 1
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "factor pairs and multiples",
+            "slot": 2
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "prime factorization basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "ratio concepts",
+            "slot": 4
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "fractions and decimals",
+            "slot": 5
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "ratio reasoning",
+            "slot": 6
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium_plus",
+            "skill": "prime factorization basics",
+            "slot": 7,
+            "topic_override": true
+          },
+          {
+            "day": "tuesday",
+            "difficulty": "medium_plus",
+            "skill": "prime factorization basics",
+            "slot": 8
+          }
+        ],
+        "wednesday": [
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "prime factorization basics",
+            "slot": 1
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "factor pairs and multiples",
+            "slot": 2
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "prime factorization basics",
+            "slot": 3,
+            "topic_override": true
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "ratio concepts",
+            "slot": 4
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "fractions and decimals",
+            "slot": 5
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "ratio reasoning",
+            "slot": 6
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "prime factorization basics",
+            "slot": 7,
+            "topic_override": true
+          },
+          {
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "prime factorization basics",
+            "slot": 8
+          }
+        ]
+      },
+      "grade_9_10": {
+        "friday": [
+          {
+            "course": "math_2",
+            "day": "friday",
+            "difficulty": "medium",
+            "skill": "solve linear equations and inequalities",
+            "slot": 1
+          },
+          {
+            "course": "math_2",
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "create equations from contexts",
+            "slot": 2
+          },
+          {
+            "course": "math_2",
+            "day": "friday",
+            "difficulty": "medium_plus",
+            "skill": "function notation and evaluation",
+            "slot": 3
+          },
+          {
+            "course": "math_2",
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "simplify expressions",
+            "slot": 4
+          },
+          {
+            "course": "math_2",
+            "day": "friday",
+            "difficulty": "high",
+            "skill": "rational exponents and radicals",
+            "slot": 5
+          }
+        ],
+        "monday": [
+          {
+            "course": "math_1",
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "solve linear equations and inequalities",
+            "slot": 1
+          },
+          {
+            "course": "math_1",
+            "day": "monday",
+            "difficulty": "low_plus",
+            "skill": "create equations from contexts",
+            "slot": 2
+          },
+          {
+            "course": "math_1",
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "function notation and evaluation",
+            "slot": 3
+          },
+          {
+            "course": "math_1",
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "simplify expressions",
+            "slot": 4
+          },
+          {
+            "course": "math_1",
+            "day": "monday",
+            "difficulty": "medium",
+            "skill": "rational exponents and radicals",
+            "slot": 5
+          }
+        ],
+        "thursday": [
+          {
+            "course": "math_2",
+            "day": "thursday",
+            "difficulty": "medium",
+            "skill": "solve linear equations and inequalities",
+            "slot": 1
+          },
+          {
+            "course": "math_2",
+            "day": "thursday",
+            "difficulty": "medium",
+            "skill": "create equations from contexts",
+            "slot": 2
+          },
+          {
+            "course": "math_2",
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "function notation and evaluation",
+            "slot": 3
+          },
+          {
+            "course": "math_2",
+            "day": "thursday",
+            "difficulty": "medium_plus",
+            "skill": "simplify expressions",
+            "slot": 4
+          },
+          {
+            "course": "math_2",
+            "day": "thursday",
+            "difficulty": "high",
+            "skill": "rational exponents and radicals",
+            "slot": 5
+          }
+        ],
+        "tuesday": [
+          {
+            "course": "math_1",
+            "day": "tuesday",
+            "difficulty": "low_plus",
+            "skill": "solve linear equations and inequalities",
+            "slot": 1
+          },
+          {
+            "course": "math_1",
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "create equations from contexts",
+            "slot": 2
+          },
+          {
+            "course": "math_1",
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "function notation and evaluation",
+            "slot": 3
+          },
+          {
+            "course": "math_1",
+            "day": "tuesday",
+            "difficulty": "medium",
+            "skill": "simplify expressions",
+            "slot": 4
+          },
+          {
+            "course": "math_1",
+            "day": "tuesday",
+            "difficulty": "medium_plus",
+            "skill": "rational exponents and radicals",
+            "slot": 5
+          }
+        ],
+        "wednesday": [
+          {
+            "course": "math_1",
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "solve linear equations and inequalities",
+            "slot": 1
+          },
+          {
+            "course": "math_1",
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "create equations from contexts",
+            "slot": 2
+          },
+          {
+            "course": "math_1",
+            "day": "wednesday",
+            "difficulty": "medium",
+            "skill": "function notation and evaluation",
+            "slot": 3
+          },
+          {
+            "course": "math_2",
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "simplify expressions",
+            "slot": 4
+          },
+          {
+            "course": "math_2",
+            "day": "wednesday",
+            "difficulty": "medium_plus",
+            "skill": "rational exponents and radicals",
+            "slot": 5
+          }
+        ]
+      }
+    },
+    "revision": "question-plan-2026-08-31-r1"
+  },
+  "request": {
+    "subject": "math",
+    "worksheet_type": "weekly-worksheet"
+  },
+  "request_fingerprint": "6a88803fbcc6a544440d23d8bd017b814cea7bae00cec3a5f89335ff3159a107",
+  "run_id": "run-6a70560dea0c4f8eb92173e99d32722d",
+  "spec_references": [
+    {
+      "fingerprint": "c9c1d6c14b9798fafbe9180a856b909f89d562debb91343cf2d7297bc5adcb3a",
+      "revision": "questions-r3",
+      "spec_path": "math/run-6a70560dea0c4f8eb92173e99d32722d/specs/grade_1/questions-r3.json",
+      "worksheet_id": "grade_1"
+    },
+    {
+      "fingerprint": "2d43ea3fa87a327523568df86299b8c7b03d8f79ba695850db191e4d1ad99633",
+      "revision": "questions-r3",
+      "spec_path": "math/run-6a70560dea0c4f8eb92173e99d32722d/specs/grade_4/questions-r3.json",
+      "worksheet_id": "grade_4"
+    },
+    {
+      "fingerprint": "c2357f45c0860f3293399e842110b07d751ec34a3e0b6e83aea5a5be20010d5f",
+      "revision": "questions-r3",
+      "spec_path": "math/run-6a70560dea0c4f8eb92173e99d32722d/specs/grade_5/questions-r3.json",
+      "worksheet_id": "grade_5"
+    },
+    {
+      "fingerprint": "c16f06cf3c165e20973a847a2de7a301674d90e89203e1c5e12fc91aed820e01",
+      "revision": "questions-r3",
+      "spec_path": "math/run-6a70560dea0c4f8eb92173e99d32722d/specs/grade_6/questions-r3.json",
+      "worksheet_id": "grade_6"
+    },
+    {
+      "fingerprint": "4df4bf307be5e0184f1d24c98cf2398360d7b954a1a019c9325eacdafa0bb948",
+      "revision": "questions-r3",
+      "spec_path": "math/run-6a70560dea0c4f8eb92173e99d32722d/specs/grade_9_10/questions-r3.json",
+      "worksheet_id": "grade_9_10"
+    }
+  ],
+  "started_at": "2026-08-30T16:52:52.825571+00:00",
+  "status": "published",
+  "subject": "math",
+  "telemetry": {
+    "token_usage": null
+  },
+  "topic_overrides": {
+    "grade_1": [
+      {
+        "kind": "percent",
+        "topic": "Count on and Count down using add and subtract",
+        "value": 33.0
+      }
+    ],
+    "grade_4": [
+      {
+        "kind": "percent",
+        "topic": "data and graphing basics",
+        "value": 20.0
+      }
+    ],
+    "grade_5": [
+      {
+        "kind": "percent",
+        "topic": "coordinate geometry basics",
+        "value": 20.0
+      }
+    ],
+    "grade_6": [
+      {
+        "kind": "percent",
+        "topic": "prime factorization basics",
+        "value": 20.0
+      }
+    ]
+  },
+  "verification": {
+    "results": {
+      "grade_1": {
+        "deterministic_checked": 50,
+        "failures": [],
+        "questions": 50,
+        "reasoning_required": 0,
+        "results": [
+          {
+            "computed": 11,
+            "expected": 11,
+            "number": 1,
+            "status": "PASS"
+          },
+          {
+            "computed": 8,
+            "expected": 8,
+            "number": 2,
+            "status": "PASS"
+          },
+          {
+            "computed": 12,
+            "expected": 12,
+            "number": 3,
+            "status": "PASS"
+          },
+          {
+            "computed": 15,
+            "expected": 15,
+            "number": 4,
+            "status": "PASS"
+          },
+          {
+            "computed": 16,
+            "expected": 16,
+            "number": 5,
+            "status": "PASS"
+          },
+          {
+            "computed": 6,
+            "expected": 6,
+            "number": 6,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 7,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 8,
+            "status": "PASS"
+          },
+          {
+            "computed": 13,
+            "expected": 13,
+            "number": 9,
+            "status": "PASS"
+          },
+          {
+            "computed": 13,
+            "expected": 13,
+            "number": 10,
+            "status": "PASS"
+          },
+          {
+            "computed": 7,
+            "expected": 7,
+            "number": 11,
+            "status": "PASS"
+          },
+          {
+            "computed": 6,
+            "expected": 6,
+            "number": 12,
+            "status": "PASS"
+          },
+          {
+            "computed": 14,
+            "expected": 14,
+            "number": 13,
+            "status": "PASS"
+          },
+          {
+            "computed": 5,
+            "expected": 5,
+            "number": 14,
+            "status": "PASS"
+          },
+          {
+            "computed": 26,
+            "expected": 26,
+            "number": 15,
+            "status": "PASS"
+          },
+          {
+            "computed": 4,
+            "expected": 4,
+            "number": 16,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 17,
+            "status": "PASS"
+          },
+          {
+            "computed": 11,
+            "expected": 11,
+            "number": 18,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 19,
+            "status": "PASS"
+          },
+          {
+            "computed": 11,
+            "expected": 11,
+            "number": 20,
+            "status": "PASS"
+          },
+          {
+            "computed": 13,
+            "expected": 13,
+            "number": 21,
+            "status": "PASS"
+          },
+          {
+            "computed": 4,
+            "expected": 4,
+            "number": 22,
+            "status": "PASS"
+          },
+          {
+            "computed": 8,
+            "expected": 8,
+            "number": 23,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 24,
+            "status": "PASS"
+          },
+          {
+            "computed": 36,
+            "expected": 36,
+            "number": 25,
+            "status": "PASS"
+          },
+          {
+            "computed": 8,
+            "expected": 8,
+            "number": 26,
+            "status": "PASS"
+          },
+          {
+            "computed": 11,
+            "expected": 11,
+            "number": 27,
+            "status": "PASS"
+          },
+          {
+            "computed": 13,
+            "expected": 13,
+            "number": 28,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 29,
+            "status": "PASS"
+          },
+          {
+            "computed": 7,
+            "expected": 7,
+            "number": 30,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 31,
+            "status": "PASS"
+          },
+          {
+            "computed": 8,
+            "expected": 8,
+            "number": 32,
+            "status": "PASS"
+          },
+          {
+            "computed": 10,
+            "expected": 10,
+            "number": 33,
+            "status": "PASS"
+          },
+          {
+            "computed": 13,
+            "expected": 13,
+            "number": 34,
+            "status": "PASS"
+          },
+          {
+            "computed": 46,
+            "expected": 46,
+            "number": 35,
+            "status": "PASS"
+          },
+          {
+            "computed": 6,
+            "expected": 6,
+            "number": 36,
+            "status": "PASS"
+          },
+          {
+            "computed": 11,
+            "expected": 11,
+            "number": 37,
+            "status": "PASS"
+          },
+          {
+            "computed": 7,
+            "expected": 7,
+            "number": 38,
+            "status": "PASS"
+          },
+          {
+            "computed": 11,
+            "expected": 11,
+            "number": 39,
+            "status": "PASS"
+          },
+          {
+            "computed": 11,
+            "expected": 11,
+            "number": 40,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 41,
+            "status": "PASS"
+          },
+          {
+            "computed": 6,
+            "expected": 6,
+            "number": 42,
+            "status": "PASS"
+          },
+          {
+            "computed": 12,
+            "expected": 12,
+            "number": 43,
+            "status": "PASS"
+          },
+          {
+            "computed": 11,
+            "expected": 11,
+            "number": 44,
+            "status": "PASS"
+          },
+          {
+            "computed": 56,
+            "expected": 56,
+            "number": 45,
+            "status": "PASS"
+          },
+          {
+            "computed": 4,
+            "expected": 4,
+            "number": 46,
+            "status": "PASS"
+          },
+          {
+            "computed": 7,
+            "expected": 7,
+            "number": 47,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 48,
+            "status": "PASS"
+          },
+          {
+            "computed": 11,
+            "expected": 11,
+            "number": 49,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 50,
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS",
+        "structure_errors": []
+      },
+      "grade_4": {
+        "deterministic_checked": 50,
+        "failures": [],
+        "questions": 50,
+        "reasoning_required": 0,
+        "results": [
+          {
+            "computed": 19,
+            "expected": 19,
+            "number": 1,
+            "status": "PASS"
+          },
+          {
+            "computed": 3000,
+            "expected": 3000,
+            "number": 2,
+            "status": "PASS"
+          },
+          {
+            "computed": 19,
+            "expected": 19,
+            "number": 3,
+            "status": "PASS"
+          },
+          {
+            "computed": 4260,
+            "expected": 4260,
+            "number": 4,
+            "status": "PASS"
+          },
+          {
+            "computed": 24,
+            "expected": 24,
+            "number": 5,
+            "status": "PASS"
+          },
+          {
+            "computed": 948,
+            "expected": 948,
+            "number": 6,
+            "status": "PASS"
+          },
+          {
+            "computed": 23,
+            "expected": 23,
+            "number": 7,
+            "status": "PASS"
+          },
+          {
+            "computed": 25,
+            "expected": 25,
+            "number": 8,
+            "status": "PASS"
+          },
+          {
+            "computed": 3000,
+            "expected": 3000,
+            "number": 9,
+            "status": "PASS"
+          },
+          {
+            "computed": 1400,
+            "expected": 1400,
+            "number": 10,
+            "status": "PASS"
+          },
+          {
+            "computed": 27,
+            "expected": 27,
+            "number": 11,
+            "status": "PASS"
+          },
+          {
+            "computed": 3000,
+            "expected": 3000,
+            "number": 12,
+            "status": "PASS"
+          },
+          {
+            "computed": 31,
+            "expected": 31,
+            "number": 13,
+            "status": "PASS"
+          },
+          {
+            "computed": 4360,
+            "expected": 4360,
+            "number": 14,
+            "status": "PASS"
+          },
+          {
+            "computed": 48,
+            "expected": 48,
+            "number": 15,
+            "status": "PASS"
+          },
+          {
+            "computed": 1008,
+            "expected": 1008,
+            "number": 16,
+            "status": "PASS"
+          },
+          {
+            "computed": 35,
+            "expected": 35,
+            "number": 17,
+            "status": "PASS"
+          },
+          {
+            "computed": 33,
+            "expected": 33,
+            "number": 18,
+            "status": "PASS"
+          },
+          {
+            "computed": 3000,
+            "expected": 3000,
+            "number": 19,
+            "status": "PASS"
+          },
+          {
+            "computed": 1500,
+            "expected": 1500,
+            "number": 20,
+            "status": "PASS"
+          },
+          {
+            "computed": 39,
+            "expected": 39,
+            "number": 21,
+            "status": "PASS"
+          },
+          {
+            "computed": 3000,
+            "expected": 3000,
+            "number": 22,
+            "status": "PASS"
+          },
+          {
+            "computed": 39,
+            "expected": 39,
+            "number": 23,
+            "status": "PASS"
+          },
+          {
+            "computed": 4460,
+            "expected": 4460,
+            "number": 24,
+            "status": "PASS"
+          },
+          {
+            "computed": 36,
+            "expected": 36,
+            "number": 25,
+            "status": "PASS"
+          },
+          {
+            "computed": 1068,
+            "expected": 1068,
+            "number": 26,
+            "status": "PASS"
+          },
+          {
+            "computed": 43,
+            "expected": 43,
+            "number": 27,
+            "status": "PASS"
+          },
+          {
+            "computed": 45,
+            "expected": 45,
+            "number": 28,
+            "status": "PASS"
+          },
+          {
+            "computed": 3000,
+            "expected": 3000,
+            "number": 29,
+            "status": "PASS"
+          },
+          {
+            "computed": 1600,
+            "expected": 1600,
+            "number": 30,
+            "status": "PASS"
+          },
+          {
+            "computed": 47,
+            "expected": 47,
+            "number": 31,
+            "status": "PASS"
+          },
+          {
+            "computed": 3000,
+            "expected": 3000,
+            "number": 32,
+            "status": "PASS"
+          },
+          {
+            "computed": 51,
+            "expected": 51,
+            "number": 33,
+            "status": "PASS"
+          },
+          {
+            "computed": 4560,
+            "expected": 4560,
+            "number": 34,
+            "status": "PASS"
+          },
+          {
+            "computed": 24,
+            "expected": 24,
+            "number": 35,
+            "status": "PASS"
+          },
+          {
+            "computed": 1128,
+            "expected": 1128,
+            "number": 36,
+            "status": "PASS"
+          },
+          {
+            "computed": 55,
+            "expected": 55,
+            "number": 37,
+            "status": "PASS"
+          },
+          {
+            "computed": 53,
+            "expected": 53,
+            "number": 38,
+            "status": "PASS"
+          },
+          {
+            "computed": 3000,
+            "expected": 3000,
+            "number": 39,
+            "status": "PASS"
+          },
+          {
+            "computed": 1700,
+            "expected": 1700,
+            "number": 40,
+            "status": "PASS"
+          },
+          {
+            "computed": 59,
+            "expected": 59,
+            "number": 41,
+            "status": "PASS"
+          },
+          {
+            "computed": 3000,
+            "expected": 3000,
+            "number": 42,
+            "status": "PASS"
+          },
+          {
+            "computed": 59,
+            "expected": 59,
+            "number": 43,
+            "status": "PASS"
+          },
+          {
+            "computed": 4660,
+            "expected": 4660,
+            "number": 44,
+            "status": "PASS"
+          },
+          {
+            "computed": 48,
+            "expected": 48,
+            "number": 45,
+            "status": "PASS"
+          },
+          {
+            "computed": 1188,
+            "expected": 1188,
+            "number": 46,
+            "status": "PASS"
+          },
+          {
+            "computed": 63,
+            "expected": 63,
+            "number": 47,
+            "status": "PASS"
+          },
+          {
+            "computed": 65,
+            "expected": 65,
+            "number": 48,
+            "status": "PASS"
+          },
+          {
+            "computed": 3000,
+            "expected": 3000,
+            "number": 49,
+            "status": "PASS"
+          },
+          {
+            "computed": 1800,
+            "expected": 1800,
+            "number": 50,
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS",
+        "structure_errors": []
+      },
+      "grade_5": {
+        "deterministic_checked": 50,
+        "failures": [],
+        "questions": 50,
+        "reasoning_required": 0,
+        "results": [
+          {
+            "computed": 5,
+            "expected": 5,
+            "number": 1,
+            "status": "PASS"
+          },
+          {
+            "computed": 42,
+            "expected": 42,
+            "number": 2,
+            "status": "PASS"
+          },
+          {
+            "computed": 7,
+            "expected": 7,
+            "number": 3,
+            "status": "PASS"
+          },
+          {
+            "computed": 25,
+            "expected": 25,
+            "number": 4,
+            "status": "PASS"
+          },
+          {
+            "computed": 60000,
+            "expected": 60000,
+            "number": 5,
+            "status": "PASS"
+          },
+          {
+            "computed": 180,
+            "expected": 180,
+            "number": 6,
+            "status": "PASS"
+          },
+          {
+            "computed": 4,
+            "expected": 4,
+            "number": 7,
+            "status": "PASS"
+          },
+          {
+            "computed": 5,
+            "expected": 5,
+            "number": 8,
+            "status": "PASS"
+          },
+          {
+            "computed": 36,
+            "expected": 36,
+            "number": 9,
+            "status": "PASS"
+          },
+          {
+            "computed": 3452,
+            "expected": 3452,
+            "number": 10,
+            "status": "PASS"
+          },
+          {
+            "computed": 8,
+            "expected": 8,
+            "number": 11,
+            "status": "PASS"
+          },
+          {
+            "computed": 56,
+            "expected": 56,
+            "number": 12,
+            "status": "PASS"
+          },
+          {
+            "computed": 3,
+            "expected": 3,
+            "number": 13,
+            "status": "PASS"
+          },
+          {
+            "computed": 29,
+            "expected": 29,
+            "number": 14,
+            "status": "PASS"
+          },
+          {
+            "computed": 60000,
+            "expected": 60000,
+            "number": 15,
+            "status": "PASS"
+          },
+          {
+            "computed": 270,
+            "expected": 270,
+            "number": 16,
+            "status": "PASS"
+          },
+          {
+            "computed": 7,
+            "expected": 7,
+            "number": 17,
+            "status": "PASS"
+          },
+          {
+            "computed": 8,
+            "expected": 8,
+            "number": 18,
+            "status": "PASS"
+          },
+          {
+            "computed": 28,
+            "expected": 28,
+            "number": 19,
+            "status": "PASS"
+          },
+          {
+            "computed": 3662,
+            "expected": 3662,
+            "number": 20,
+            "status": "PASS"
+          },
+          {
+            "computed": 4,
+            "expected": 4,
+            "number": 21,
+            "status": "PASS"
+          },
+          {
+            "computed": 42,
+            "expected": 42,
+            "number": 22,
+            "status": "PASS"
+          },
+          {
+            "computed": 6,
+            "expected": 6,
+            "number": 23,
+            "status": "PASS"
+          },
+          {
+            "computed": 45,
+            "expected": 45,
+            "number": 24,
+            "status": "PASS"
+          },
+          {
+            "computed": 60000,
+            "expected": 60000,
+            "number": 25,
+            "status": "PASS"
+          },
+          {
+            "computed": 360,
+            "expected": 360,
+            "number": 26,
+            "status": "PASS"
+          },
+          {
+            "computed": 3,
+            "expected": 3,
+            "number": 27,
+            "status": "PASS"
+          },
+          {
+            "computed": 4,
+            "expected": 4,
+            "number": 28,
+            "status": "PASS"
+          },
+          {
+            "computed": 36,
+            "expected": 36,
+            "number": 29,
+            "status": "PASS"
+          },
+          {
+            "computed": 3872,
+            "expected": 3872,
+            "number": 30,
+            "status": "PASS"
+          },
+          {
+            "computed": 7,
+            "expected": 7,
+            "number": 31,
+            "status": "PASS"
+          },
+          {
+            "computed": 56,
+            "expected": 56,
+            "number": 32,
+            "status": "PASS"
+          },
+          {
+            "computed": 2,
+            "expected": 2,
+            "number": 33,
+            "status": "PASS"
+          },
+          {
+            "computed": 49,
+            "expected": 49,
+            "number": 34,
+            "status": "PASS"
+          },
+          {
+            "computed": 60000,
+            "expected": 60000,
+            "number": 35,
+            "status": "PASS"
+          },
+          {
+            "computed": 450,
+            "expected": 450,
+            "number": 36,
+            "status": "PASS"
+          },
+          {
+            "computed": 6,
+            "expected": 6,
+            "number": 37,
+            "status": "PASS"
+          },
+          {
+            "computed": 7,
+            "expected": 7,
+            "number": 38,
+            "status": "PASS"
+          },
+          {
+            "computed": 28,
+            "expected": 28,
+            "number": 39,
+            "status": "PASS"
+          },
+          {
+            "computed": 4082,
+            "expected": 4082,
+            "number": 40,
+            "status": "PASS"
+          },
+          {
+            "computed": 3,
+            "expected": 3,
+            "number": 41,
+            "status": "PASS"
+          },
+          {
+            "computed": 42,
+            "expected": 42,
+            "number": 42,
+            "status": "PASS"
+          },
+          {
+            "computed": 5,
+            "expected": 5,
+            "number": 43,
+            "status": "PASS"
+          },
+          {
+            "computed": 65,
+            "expected": 65,
+            "number": 44,
+            "status": "PASS"
+          },
+          {
+            "computed": 60000,
+            "expected": 60000,
+            "number": 45,
+            "status": "PASS"
+          },
+          {
+            "computed": 540,
+            "expected": 540,
+            "number": 46,
+            "status": "PASS"
+          },
+          {
+            "computed": 2,
+            "expected": 2,
+            "number": 47,
+            "status": "PASS"
+          },
+          {
+            "computed": 3,
+            "expected": 3,
+            "number": 48,
+            "status": "PASS"
+          },
+          {
+            "computed": 36,
+            "expected": 36,
+            "number": 49,
+            "status": "PASS"
+          },
+          {
+            "computed": 4292,
+            "expected": 4292,
+            "number": 50,
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS",
+        "structure_errors": []
+      },
+      "grade_6": {
+        "deterministic_checked": 40,
+        "failures": [],
+        "questions": 40,
+        "reasoning_required": 0,
+        "results": [
+          {
+            "computed": 18,
+            "expected": 18,
+            "number": 1,
+            "status": "PASS"
+          },
+          {
+            "computed": 10,
+            "expected": 10,
+            "number": 2,
+            "status": "PASS"
+          },
+          {
+            "computed": 30,
+            "expected": 30,
+            "number": 3,
+            "status": "PASS"
+          },
+          {
+            "computed": 7,
+            "expected": 7,
+            "number": 4,
+            "status": "PASS"
+          },
+          {
+            "computed": 1.0,
+            "expected": 1.0,
+            "number": 5,
+            "status": "PASS"
+          },
+          {
+            "computed": 30.0,
+            "expected": 30.0,
+            "number": 6,
+            "status": "PASS"
+          },
+          {
+            "computed": 30,
+            "expected": 30,
+            "number": 7,
+            "status": "PASS"
+          },
+          {
+            "computed": 20,
+            "expected": 20,
+            "number": 8,
+            "status": "PASS"
+          },
+          {
+            "computed": 18,
+            "expected": 18,
+            "number": 9,
+            "status": "PASS"
+          },
+          {
+            "computed": 8,
+            "expected": 8,
+            "number": 10,
+            "status": "PASS"
+          },
+          {
+            "computed": 30,
+            "expected": 30,
+            "number": 11,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 12,
+            "status": "PASS"
+          },
+          {
+            "computed": 1.8,
+            "expected": 1.8,
+            "number": 13,
+            "status": "PASS"
+          },
+          {
+            "computed": 20.0,
+            "expected": 20.0,
+            "number": 14,
+            "status": "PASS"
+          },
+          {
+            "computed": 30,
+            "expected": 30,
+            "number": 15,
+            "status": "PASS"
+          },
+          {
+            "computed": 20,
+            "expected": 20,
+            "number": 16,
+            "status": "PASS"
+          },
+          {
+            "computed": 18,
+            "expected": 18,
+            "number": 17,
+            "status": "PASS"
+          },
+          {
+            "computed": 6,
+            "expected": 6,
+            "number": 18,
+            "status": "PASS"
+          },
+          {
+            "computed": 30,
+            "expected": 30,
+            "number": 19,
+            "status": "PASS"
+          },
+          {
+            "computed": 8,
+            "expected": 8,
+            "number": 20,
+            "status": "PASS"
+          },
+          {
+            "computed": 2.6,
+            "expected": 2.6,
+            "number": 21,
+            "status": "PASS"
+          },
+          {
+            "computed": 12.0,
+            "expected": 12.0,
+            "number": 22,
+            "status": "PASS"
+          },
+          {
+            "computed": 30,
+            "expected": 30,
+            "number": 23,
+            "status": "PASS"
+          },
+          {
+            "computed": 20,
+            "expected": 20,
+            "number": 24,
+            "status": "PASS"
+          },
+          {
+            "computed": 18,
+            "expected": 18,
+            "number": 25,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 26,
+            "status": "PASS"
+          },
+          {
+            "computed": 30,
+            "expected": 30,
+            "number": 27,
+            "status": "PASS"
+          },
+          {
+            "computed": 7,
+            "expected": 7,
+            "number": 28,
+            "status": "PASS"
+          },
+          {
+            "computed": 3.4,
+            "expected": 3.4,
+            "number": 29,
+            "status": "PASS"
+          },
+          {
+            "computed": 30.0,
+            "expected": 30.0,
+            "number": 30,
+            "status": "PASS"
+          },
+          {
+            "computed": 30,
+            "expected": 30,
+            "number": 31,
+            "status": "PASS"
+          },
+          {
+            "computed": 20,
+            "expected": 20,
+            "number": 32,
+            "status": "PASS"
+          },
+          {
+            "computed": 18,
+            "expected": 18,
+            "number": 33,
+            "status": "PASS"
+          },
+          {
+            "computed": 7,
+            "expected": 7,
+            "number": 34,
+            "status": "PASS"
+          },
+          {
+            "computed": 30,
+            "expected": 30,
+            "number": 35,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 36,
+            "status": "PASS"
+          },
+          {
+            "computed": 4.2,
+            "expected": 4.2,
+            "number": 37,
+            "status": "PASS"
+          },
+          {
+            "computed": 20.0,
+            "expected": 20.0,
+            "number": 38,
+            "status": "PASS"
+          },
+          {
+            "computed": 30,
+            "expected": 30,
+            "number": 39,
+            "status": "PASS"
+          },
+          {
+            "computed": 20,
+            "expected": 20,
+            "number": 40,
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS",
+        "structure_errors": []
+      },
+      "grade_9_10": {
+        "deterministic_checked": 25,
+        "failures": [],
+        "questions": 25,
+        "reasoning_required": 0,
+        "results": [
+          {
+            "computed": 5,
+            "expected": 5,
+            "number": 1,
+            "status": "PASS"
+          },
+          {
+            "computed": 24,
+            "expected": 24,
+            "number": 2,
+            "status": "PASS"
+          },
+          {
+            "computed": 19,
+            "expected": 19,
+            "number": 3,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 4,
+            "status": "PASS"
+          },
+          {
+            "computed": 27,
+            "expected": 27,
+            "number": 5,
+            "status": "PASS"
+          },
+          {
+            "computed": 3,
+            "expected": 3,
+            "number": 6,
+            "status": "PASS"
+          },
+          {
+            "computed": 32,
+            "expected": 32,
+            "number": 7,
+            "status": "PASS"
+          },
+          {
+            "computed": 17,
+            "expected": 17,
+            "number": 8,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 9,
+            "status": "PASS"
+          },
+          {
+            "computed": 4,
+            "expected": 4,
+            "number": 10,
+            "status": "PASS"
+          },
+          {
+            "computed": 8,
+            "expected": 8,
+            "number": 11,
+            "status": "PASS"
+          },
+          {
+            "computed": 40,
+            "expected": 40,
+            "number": 12,
+            "status": "PASS"
+          },
+          {
+            "computed": 15,
+            "expected": 15,
+            "number": 13,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 14,
+            "status": "PASS"
+          },
+          {
+            "computed": 64,
+            "expected": 64,
+            "number": 15,
+            "status": "PASS"
+          },
+          {
+            "computed": 6,
+            "expected": 6,
+            "number": 16,
+            "status": "PASS"
+          },
+          {
+            "computed": 48,
+            "expected": 48,
+            "number": 17,
+            "status": "PASS"
+          },
+          {
+            "computed": 13,
+            "expected": 13,
+            "number": 18,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 19,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 20,
+            "status": "PASS"
+          },
+          {
+            "computed": 4,
+            "expected": 4,
+            "number": 21,
+            "status": "PASS"
+          },
+          {
+            "computed": 24,
+            "expected": 24,
+            "number": 22,
+            "status": "PASS"
+          },
+          {
+            "computed": 11,
+            "expected": 11,
+            "number": 23,
+            "status": "PASS"
+          },
+          {
+            "computed": 9,
+            "expected": 9,
+            "number": 24,
+            "status": "PASS"
+          },
+          {
+            "computed": 8,
+            "expected": 8,
+            "number": 25,
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS",
+        "structure_errors": []
+      }
+    },
+    "revision": "verification-2026-08-31-r3"
+  },
+  "worksheet_type": "weekly-worksheet"
+}

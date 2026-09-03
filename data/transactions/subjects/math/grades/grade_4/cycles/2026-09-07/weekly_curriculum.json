@@ -1,0 +1,151 @@
+{
+  "scope_review": [
+    {
+      "cache_hit": false,
+      "grade_or_course": "grade_4",
+      "progressive_context": {
+        "grade": 4,
+        "official_ccs_pacing": false,
+        "source": "mts_progressive_backbone",
+        "units": {
+          "algebra_functions": {
+            "builds_from": [
+              "properties of multiplication",
+              "missing factors",
+              "equations"
+            ],
+            "key_concepts": [
+              "multiplicative comparison",
+              "factor relationships",
+              "number patterns",
+              "generalized arithmetic relationships"
+            ],
+            "leads_to": [
+              "parentheses",
+              "order/structure of operations",
+              "numerical expressions"
+            ],
+            "progression": "Students begin expressing relationships multiplicatively rather than only additively.",
+            "unit_family": "Patterns, Algebra & Functions",
+            "unit_name": "Multiplicative Relationships & Patterns"
+          },
+          "data_probability": {
+            "builds_from": [
+              "bar graphs",
+              "line plots",
+              "measurement data"
+            ],
+            "key_concepts": [
+              "line plots",
+              "fractional data",
+              "interpretation",
+              "operations on measurement data"
+            ],
+            "leads_to": [
+              "measurement data",
+              "fraction/decimal interpretation",
+              "graphs"
+            ],
+            "progression": "Fractions are applied to real measurements and data.",
+            "unit_family": "Data, Statistics & Probability",
+            "unit_name": "Fractional Measurement Data"
+          },
+          "fractions_ratios": {
+            "builds_from": [
+              "unit fractions",
+              "fractions on number lines",
+              "equivalence foundations"
+            ],
+            "key_concepts": [
+              "equivalent fractions",
+              "compare fractions",
+              "add/subtract fractions",
+              "mixed numbers",
+              "fraction \u00d7 whole number",
+              "fraction-decimal connections"
+            ],
+            "leads_to": [
+              "add/subtract unlike fractions",
+              "multiply fractions",
+              "fraction division foundations"
+            ],
+            "progression": "Fraction magnitude and equivalence become tools for operations.",
+            "unit_family": "Fractions, Ratios & Proportional Reasoning",
+            "unit_name": "Fraction Equivalence & Operations"
+          },
+          "geometry_measurement": {
+            "builds_from": [
+              "rectangular area",
+              "perimeter",
+              "elapsed time"
+            ],
+            "key_concepts": [
+              "angles",
+              "parallel/perpendicular lines",
+              "symmetry",
+              "measurement conversion",
+              "area/perimeter",
+              "shape classification"
+            ],
+            "leads_to": [
+              "volume formulas",
+              "composite solids",
+              "coordinate plane"
+            ],
+            "progression": "Geometric properties become measurable and classifiable.",
+            "unit_family": "Geometry, Measurement & Trigonometry",
+            "unit_name": "Angles, Lines, Symmetry & Measurement"
+          },
+          "modeling_connections": {
+            "builds_from": [
+              "equal groups",
+              "arrays",
+              "area"
+            ],
+            "key_concepts": [
+              "multiplicative comparison",
+              "scaling intuition",
+              "factors/multiples",
+              "measurement conversion"
+            ],
+            "leads_to": [
+              "numerical",
+              "graphical",
+              "geometric"
+            ],
+            "progression": "Multiplicative structure starts preparing students for ratios and scale.",
+            "unit_family": "Advanced Modeling / Connections",
+            "unit_name": "Bridge to Proportional Reasoning"
+          },
+          "number_operations": {
+            "builds_from": [
+              "multiplication facts",
+              "division meaning",
+              "inverse relationship"
+            ],
+            "key_concepts": [
+              "large-number place value",
+              "rounding",
+              "multi-digit addition/subtraction",
+              "multiplication",
+              "division",
+              "factors",
+              "multiples",
+              "prime/composite"
+            ],
+            "leads_to": [
+              "powers of 10",
+              "decimal place value",
+              "multi-digit multiplication"
+            ],
+            "progression": "Whole-number computation becomes more general and structurally organized.",
+            "unit_family": "Number Sense & Operations",
+            "unit_name": "Multi-Digit Arithmetic & Number Structure"
+          }
+        }
+      },
+      "requires_web_resolution": true,
+      "week_start": "2026-09-07"
+    }
+  ]
+}

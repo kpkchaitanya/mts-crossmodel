@@ -1,0 +1,465 @@
+{
+  "gate": "scope_review",
+  "status": "pending",
+  "subject": "math",
+  "worksheet_type": "weekly-worksheet",
+  "on_date": "2026-08-31",
+  "worksheet_plans": [
+    {
+      "grade_or_course": "grade_6",
+      "curriculum_scopes": [
+        {
+          "week_start": "2026-08-31",
+          "current": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "topics": [
+            "ratio concepts",
+            "unit rates",
+            "ratio reasoning",
+            "fraction division",
+            "multi-digit computation",
+            "factors and multiples",
+            "rational numbers",
+            "area",
+            "volume",
+            "coordinate plane",
+            "nets and surface area"
+          ],
+          "spiral": [],
+          "confidence": "inferred",
+          "source": "month_cache",
+          "cache_hit": true,
+          "requires_weekly_resolution": true,
+          "progressive_context": {
+            "grade": 6,
+            "units": {
+              "number_operations": {
+                "unit_family": "Number Sense & Operations",
+                "unit_name": "Rational Number System",
+                "key_concepts": [
+                  "fraction division",
+                  "decimal fluency",
+                  "factors and multiples",
+                  "positive/negative numbers",
+                  "absolute value",
+                  "coordinate numbers"
+                ],
+                "progression": "The number system expands to signed rational numbers and more abstract operations.",
+                "builds_from": [
+                  "powers of 10",
+                  "decimal place value",
+                  "multi-digit multiplication"
+                ],
+                "leads_to": [
+                  "positive/negative fractions and decimals",
+                  "addition/subtraction",
+                  "multiplication/division"
+                ]
+              },
+              "fractions_ratios": {
+                "unit_family": "Fractions, Ratios & Proportional Reasoning",
+                "unit_name": "Ratios & Rates",
+                "key_concepts": [
+                  "ratio meaning",
+                  "equivalent ratios",
+                  "unit rates",
+                  "ratio tables",
+                  "percent foundations"
+                ],
+                "progression": "Multiplicative comparison becomes formal ratio and rate reasoning.",
+                "builds_from": [
+                  "add/subtract unlike fractions",
+                  "multiply fractions",
+                  "fraction division foundations"
+                ],
+                "leads_to": [
+                  "unit rate",
+                  "proportional relationships",
+                  "constant of proportionality"
+                ]
+              },
+              "algebra_functions": {
+                "unit_family": "Patterns, Algebra & Functions",
+                "unit_name": "Variables, Expressions, Equations & Inequalities",
+                "key_concepts": [
+                  "variables",
+                  "algebraic expressions",
+                  "properties",
+                  "one-variable equations",
+                  "inequalities"
+                ],
+                "progression": "Arithmetic relationships are generalized symbolically.",
+                "builds_from": [
+                  "parentheses",
+                  "order/structure of operations",
+                  "numerical expressions"
+                ],
+                "leads_to": [
+                  "equivalent expressions",
+                  "distributive property",
+                  "multi-step equations"
+                ]
+              },
+              "geometry_measurement": {
+                "unit_family": "Geometry, Measurement & Trigonometry",
+                "unit_name": "Area, Surface Area, Volume & Coordinates",
+                "key_concepts": [
+                  "polygon area",
+                  "nets",
+                  "surface area",
+                  "volume",
+                  "coordinate geometry"
+                ],
+                "progression": "Geometry uses formulas and coordinates as algebraic tools.",
+                "builds_from": [
+                  "volume formulas",
+                  "composite solids",
+                  "coordinate plane"
+                ],
+                "leads_to": [
+                  "scale drawings",
+                  "angle relationships",
+                  "circles"
+                ]
+              },
+              "data_probability": {
+                "unit_family": "Data, Statistics & Probability",
+                "unit_name": "Statistical Distributions",
+                "key_concepts": [
+                  "statistical questions",
+                  "distributions",
+                  "center",
+                  "variability",
+                  "data displays"
+                ],
+                "progression": "Statistics becomes a formal study of distributions rather than just graphs.",
+                "builds_from": [
+                  "measurement data",
+                  "fraction/decimal interpretation",
+                  "graphs"
+                ],
+                "leads_to": [
+                  "sampling",
+                  "populations",
+                  "variability"
+                ]
+              },
+              "modeling_connections": {
+                "unit_family": "Advanced Modeling / Connections",
+                "unit_name": "Generalization of Arithmetic",
+                "key_concepts": [
+                  "number \u2192 ratio",
+                  "ratio \u2192 variable",
+                  "variable \u2192 equation"
+                ],
+                "progression": "Students transition from computing quantities to representing relationships.",
+                "builds_from": [
+                  "numerical",
+                  "graphical",
+                  "geometric"
+                ],
+                "leads_to": [
+                  "proportional models",
+                  "percent models",
+                  "scale models"
+                ]
+              }
+            },
+            "source": "mts_progressive_backbone",
+            "official_ccs_pacing": false
+          },
+          "standards_context": {
+            "source": "nc_standards_cache",
+            "source_url": "https://www.dpi.nc.gov/nc-6th-grade-math-unpacking-rev-june-2022-0/open",
+            "domains": [
+              {
+                "id": "ratios",
+                "standards": [
+                  "NC.6.RP.1",
+                  "NC.6.RP.2",
+                  "NC.6.RP.3",
+                  "NC.6.RP.4"
+                ],
+                "topics": [
+                  "ratio concepts",
+                  "unit rates",
+                  "ratio reasoning"
+                ]
+              },
+              {
+                "id": "number_system",
+                "standards": [
+                  "NC.6.NS.1",
+                  "NC.6.NS.2",
+                  "NC.6.NS.3",
+                  "NC.6.NS.4",
+                  "NC.6.NS.5",
+                  "NC.6.NS.6",
+                  "NC.6.NS.7",
+                  "NC.6.NS.8",
+                  "NC.6.NS.9"
+                ],
+                "topics": [
+                  "fraction division",
+                  "multi-digit computation",
+                  "factors and multiples",
+                  "rational numbers"
+                ]
+              },
+              {
+                "id": "geometry",
+                "standards": [
+                  "NC.6.G.1",
+                  "NC.6.G.2",
+                  "NC.6.G.3",
+                  "NC.6.G.4"
+                ],
+                "topics": [
+                  "area",
+                  "volume",
+                  "coordinate plane",
+                  "nets and surface area"
+                ]
+              }
+            ]
+          },
+          "topics_source": "nc_standards_cache",
+          "grade_or_course": "grade_6"
+        }
+      ],
+      "plan": {
+        "subject": "math",
+        "grade_or_course": "grade_6",
+        "grade_display_name": "Grade 6",
+        "worksheet_type": "weekly-worksheet",
+        "questions_per_week": 40,
+        "duration_minutes": null,
+        "curriculum_scope": {
+          "week_start": "2026-08-31",
+          "current": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "topics": [
+            "ratio concepts",
+            "unit rates",
+            "ratio reasoning",
+            "fraction division",
+            "multi-digit computation",
+            "factors and multiples",
+            "rational numbers",
+            "area",
+            "volume",
+            "coordinate plane",
+            "nets and surface area"
+          ],
+          "spiral": [],
+          "confidence": "inferred",
+          "source": "month_cache",
+          "cache_hit": true,
+          "requires_weekly_resolution": true,
+          "progressive_context": {
+            "grade": 6,
+            "units": {
+              "number_operations": {
+                "unit_family": "Number Sense & Operations",
+                "unit_name": "Rational Number System",
+                "key_concepts": [
+                  "fraction division",
+                  "decimal fluency",
+                  "factors and multiples",
+                  "positive/negative numbers",
+                  "absolute value",
+                  "coordinate numbers"
+                ],
+                "progression": "The number system expands to signed rational numbers and more abstract operations.",
+                "builds_from": [
+                  "powers of 10",
+                  "decimal place value",
+                  "multi-digit multiplication"
+                ],
+                "leads_to": [
+                  "positive/negative fractions and decimals",
+                  "addition/subtraction",
+                  "multiplication/division"
+                ]
+              },
+              "fractions_ratios": {
+                "unit_family": "Fractions, Ratios & Proportional Reasoning",
+                "unit_name": "Ratios & Rates",
+                "key_concepts": [
+                  "ratio meaning",
+                  "equivalent ratios",
+                  "unit rates",
+                  "ratio tables",
+                  "percent foundations"
+                ],
+                "progression": "Multiplicative comparison becomes formal ratio and rate reasoning.",
+                "builds_from": [
+                  "add/subtract unlike fractions",
+                  "multiply fractions",
+                  "fraction division foundations"
+                ],
+                "leads_to": [
+                  "unit rate",
+                  "proportional relationships",
+                  "constant of proportionality"
+                ]
+              },
+              "algebra_functions": {
+                "unit_family": "Patterns, Algebra & Functions",
+                "unit_name": "Variables, Expressions, Equations & Inequalities",
+                "key_concepts": [
+                  "variables",
+                  "algebraic expressions",
+                  "properties",
+                  "one-variable equations",
+                  "inequalities"
+                ],
+                "progression": "Arithmetic relationships are generalized symbolically.",
+                "builds_from": [
+                  "parentheses",
+                  "order/structure of operations",
+                  "numerical expressions"
+                ],
+                "leads_to": [
+                  "equivalent expressions",
+                  "distributive property",
+                  "multi-step equations"
+                ]
+              },
+              "geometry_measurement": {
+                "unit_family": "Geometry, Measurement & Trigonometry",
+                "unit_name": "Area, Surface Area, Volume & Coordinates",
+                "key_concepts": [
+                  "polygon area",
+                  "nets",
+                  "surface area",
+                  "volume",
+                  "coordinate geometry"
+                ],
+                "progression": "Geometry uses formulas and coordinates as algebraic tools.",
+                "builds_from": [
+                  "volume formulas",
+                  "composite solids",
+                  "coordinate plane"
+                ],
+                "leads_to": [
+                  "scale drawings",
+                  "angle relationships",
+                  "circles"
+                ]
+              },
+              "data_probability": {
+                "unit_family": "Data, Statistics & Probability",
+                "unit_name": "Statistical Distributions",
+                "key_concepts": [
+                  "statistical questions",
+                  "distributions",
+                  "center",
+                  "variability",
+                  "data displays"
+                ],
+                "progression": "Statistics becomes a formal study of distributions rather than just graphs.",
+                "builds_from": [
+                  "measurement data",
+                  "fraction/decimal interpretation",
+                  "graphs"
+                ],
+                "leads_to": [
+                  "sampling",
+                  "populations",
+                  "variability"
+                ]
+              },
+              "modeling_connections": {
+                "unit_family": "Advanced Modeling / Connections",
+                "unit_name": "Generalization of Arithmetic",
+                "key_concepts": [
+                  "number \u2192 ratio",
+                  "ratio \u2192 variable",
+                  "variable \u2192 equation"
+                ],
+                "progression": "Students transition from computing quantities to representing relationships.",
+                "builds_from": [
+                  "numerical",
+                  "graphical",
+                  "geometric"
+                ],
+                "leads_to": [
+                  "proportional models",
+                  "percent models",
+                  "scale models"
+                ]
+              }
+            },
+            "source": "mts_progressive_backbone",
+            "official_ccs_pacing": false
+          },
+          "standards_context": {
+            "source": "nc_standards_cache",
+            "source_url": "https://www.dpi.nc.gov/nc-6th-grade-math-unpacking-rev-june-2022-0/open",
+            "domains": [
+              {
+                "id": "ratios",
+                "standards": [
+                  "NC.6.RP.1",
+                  "NC.6.RP.2",
+                  "NC.6.RP.3",
+                  "NC.6.RP.4"
+                ],
+                "topics": [
+                  "ratio concepts",
+                  "unit rates",
+                  "ratio reasoning"
+                ]
+              },
+              {
+                "id": "number_system",
+                "standards": [
+                  "NC.6.NS.1",
+                  "NC.6.NS.2",
+                  "NC.6.NS.3",
+                  "NC.6.NS.4",
+                  "NC.6.NS.5",
+                  "NC.6.NS.6",
+                  "NC.6.NS.7",
+                  "NC.6.NS.8",
+                  "NC.6.NS.9"
+                ],
+                "topics": [
+                  "fraction division",
+                  "multi-digit computation",
+                  "factors and multiples",
+                  "rational numbers"
+                ]
+              },
+              {
+                "id": "geometry",
+                "standards": [
+                  "NC.6.G.1",
+                  "NC.6.G.2",
+                  "NC.6.G.3",
+                  "NC.6.G.4"
+                ],
+                "topics": [
+                  "area",
+                  "volume",
+                  "coordinate plane",
+                  "nets and surface area"
+                ]
+              }
+            ]
+          },
+          "topics_source": "nc_standards_cache",
+          "grade_or_course": "grade_6"
+        },
+        "questions_per_day": 8
+      }
+    }
+  ]
+}

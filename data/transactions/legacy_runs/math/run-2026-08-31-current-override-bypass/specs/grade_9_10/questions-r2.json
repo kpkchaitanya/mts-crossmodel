@@ -1,0 +1,681 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 5,
+          "cognitive_action": "reverse_reason",
+          "course": "math_1",
+          "difficulty": "low_plus",
+          "form_family": "generic.reverse_reasoning",
+          "number": 1,
+          "prompt": "Item 1: Solve for x: 3x + 4 = 19.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "skill": "solve linear equations and inequalities",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 24,
+          "cognitive_action": "construct_equivalent",
+          "course": "math_1",
+          "difficulty": "low_plus",
+          "form_family": "generic.create_equivalent",
+          "number": 2,
+          "prompt": "Item 2: Tickets cost $8 each. What is the cost of 3 tickets?",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "create equations from contexts",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "8*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 19,
+          "cognitive_action": "evaluate_reasonableness",
+          "course": "math_1",
+          "difficulty": "medium",
+          "form_family": "generic.reasonable_answer",
+          "number": 3,
+          "prompt": "Item 3: If f(x) = 2x + 5, find f(7).",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "skill": "function notation and evaluation",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*7+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "cognitive_action": "translate",
+          "course": "math_1",
+          "difficulty": "medium",
+          "form_family": "generic.equivalent_form",
+          "number": 4,
+          "prompt": "Item 4: A line rises 4 units and runs 1 unit. What is its slope?",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "skill": "slope",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "cognitive_action": "interpret",
+          "course": "math_1",
+          "difficulty": "medium",
+          "form_family": "generic.visual_grouping",
+          "number": 5,
+          "prompt": "Item 5: Evaluate 4x - 3 when x = 4.",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "skill": "simplify expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4*4-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 3,
+          "cognitive_action": "construct",
+          "course": "math_1",
+          "difficulty": "low_plus",
+          "form_family": "generic.construct_example",
+          "number": 6,
+          "prompt": "Item 6: Solve for x: 3x + 4 = 13.",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "skill": "solve linear equations and inequalities",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 32,
+          "cognitive_action": "compare",
+          "course": "math_1",
+          "difficulty": "medium",
+          "form_family": "generic.compare_select",
+          "number": 7,
+          "prompt": "Item 7: Tickets cost $8 each. What is the cost of 4 tickets?",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "skill": "create equations from contexts",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "8*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 17,
+          "cognitive_action": "solve_unknown",
+          "course": "math_1",
+          "difficulty": "medium",
+          "form_family": "generic.missing_value",
+          "number": 8,
+          "prompt": "Item 8: If f(x) = 2x + 5, find f(6).",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "skill": "function notation and evaluation",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*6+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "compute",
+          "course": "math_1",
+          "difficulty": "medium",
+          "form_family": "generic.direct_compute",
+          "number": 9,
+          "prompt": "Item 9: A line rises 5 units and runs 1 unit. What is its slope?",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "slope",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "cognitive_action": "connect_representations",
+          "course": "math_1",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_representation",
+          "number": 10,
+          "prompt": "Item 10: Evaluate 4x - 3 when x = 4.",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "skill": "simplify expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4*4-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 8,
+          "cognitive_action": "satisfy_constraint",
+          "course": "math_1",
+          "difficulty": "medium",
+          "form_family": "generic.constraint_solve",
+          "number": 11,
+          "prompt": "Item 11: Solve for x: 3x + 4 = 28.",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "skill": "solve linear equations and inequalities",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 40,
+          "cognitive_action": "decide",
+          "course": "math_1",
+          "difficulty": "medium",
+          "form_family": "generic.decision_table",
+          "number": 12,
+          "prompt": "Item 12: Tickets cost $8 each. What is the cost of 5 tickets?",
+          "representation": "decision_table",
+          "response_type": "selection",
+          "skill": "create equations from contexts",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "8*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 15,
+          "cognitive_action": "compute",
+          "course": "math_1",
+          "difficulty": "medium",
+          "form_family": "generic.direct_compute",
+          "number": 13,
+          "prompt": "Item 13: If f(x) = 2x + 5, find f(5).",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "function notation and evaluation",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*5+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2,
+          "cognitive_action": "interpret",
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "form_family": "generic.visual_grouping",
+          "number": 14,
+          "prompt": "Item 14: A line rises 2 units and runs 1 unit. What is its slope?",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "skill": "slope",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "cognitive_action": "locate",
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "form_family": "generic.number_line",
+          "number": 15,
+          "prompt": "Item 15: Evaluate 4x - 3 when x = 4.",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "skill": "simplify expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4*4-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 6,
+          "cognitive_action": "complete",
+          "course": "math_2",
+          "difficulty": "medium",
+          "form_family": "generic.table_complete",
+          "number": 16,
+          "prompt": "Item 16: Solve for x: 3x + 4 = 22.",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "skill": "solve linear equations and inequalities",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 48,
+          "cognitive_action": "select_strategy",
+          "course": "math_2",
+          "difficulty": "medium",
+          "form_family": "generic.choose_operation",
+          "number": 17,
+          "prompt": "Item 17: Tickets cost $8 each. What is the cost of 6 tickets?",
+          "representation": "short_context",
+          "response_type": "selection",
+          "skill": "create equations from contexts",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "8*6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "cognitive_action": "classify",
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "form_family": "generic.classify",
+          "number": 18,
+          "prompt": "Item 18: If f(x) = 2x + 5, find f(4).",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "skill": "function notation and evaluation",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*4+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "cognitive_action": "invert_operation",
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "form_family": "generic.inverse_operation",
+          "number": 19,
+          "prompt": "Item 19: A line rises 3 units and runs 1 unit. What is its slope?",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "skill": "slope",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "cognitive_action": "translate",
+          "course": "math_2",
+          "difficulty": "high",
+          "form_family": "generic.equivalent_form",
+          "number": 20,
+          "prompt": "Item 20: Evaluate 4x - 3 when x = 4.",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "skill": "simplify expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4*4-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 4,
+          "cognitive_action": "justify",
+          "course": "math_2",
+          "difficulty": "medium",
+          "form_family": "generic.justify_claim",
+          "number": 21,
+          "prompt": "Item 21: Solve for x: 3x + 4 = 16.",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "skill": "solve linear equations and inequalities",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 24,
+          "cognitive_action": "analyze_exception",
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "form_family": "generic.find_counterexample",
+          "number": 22,
+          "prompt": "Item 22: Tickets cost $8 each. What is the cost of 3 tickets?",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "skill": "create equations from contexts",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "8*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "cognitive_action": "invert_operation",
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "form_family": "generic.inverse_operation",
+          "number": 23,
+          "prompt": "Item 23: If f(x) = 2x + 5, find f(3).",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "skill": "function notation and evaluation",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*3+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "cognitive_action": "decompose",
+          "course": "math_2",
+          "difficulty": "high",
+          "form_family": "generic.compose_decompose",
+          "number": 24,
+          "prompt": "Item 24: A line rises 4 units and runs 1 unit. What is its slope?",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "skill": "slope",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "cognitive_action": "construct_equivalent",
+          "course": "math_2",
+          "difficulty": "high",
+          "form_family": "generic.create_equivalent",
+          "number": 25,
+          "prompt": "Item 25: Evaluate 4x - 3 when x = 4.",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "simplify expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4*4-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PASS",
+    "summary": {
+      "deterministic_checked": 25,
+      "failures": [],
+      "questions": 25,
+      "reasoning_required": 0,
+      "results": [
+        {
+          "computed": 5,
+          "expected": 5,
+          "number": 1,
+          "status": "PASS"
+        },
+        {
+          "computed": 24,
+          "expected": 24,
+          "number": 2,
+          "status": "PASS"
+        },
+        {
+          "computed": 19,
+          "expected": 19,
+          "number": 3,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 4,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 5,
+          "status": "PASS"
+        },
+        {
+          "computed": 3,
+          "expected": 3,
+          "number": 6,
+          "status": "PASS"
+        },
+        {
+          "computed": 32,
+          "expected": 32,
+          "number": 7,
+          "status": "PASS"
+        },
+        {
+          "computed": 17,
+          "expected": 17,
+          "number": 8,
+          "status": "PASS"
+        },
+        {
+          "computed": 5,
+          "expected": 5,
+          "number": 9,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 10,
+          "status": "PASS"
+        },
+        {
+          "computed": 8,
+          "expected": 8,
+          "number": 11,
+          "status": "PASS"
+        },
+        {
+          "computed": 40,
+          "expected": 40,
+          "number": 12,
+          "status": "PASS"
+        },
+        {
+          "computed": 15,
+          "expected": 15,
+          "number": 13,
+          "status": "PASS"
+        },
+        {
+          "computed": 2,
+          "expected": 2,
+          "number": 14,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 15,
+          "status": "PASS"
+        },
+        {
+          "computed": 6,
+          "expected": 6,
+          "number": 16,
+          "status": "PASS"
+        },
+        {
+          "computed": 48,
+          "expected": 48,
+          "number": 17,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 18,
+          "status": "PASS"
+        },
+        {
+          "computed": 3,
+          "expected": 3,
+          "number": 19,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 20,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 21,
+          "status": "PASS"
+        },
+        {
+          "computed": 24,
+          "expected": 24,
+          "number": 22,
+          "status": "PASS"
+        },
+        {
+          "computed": 11,
+          "expected": 11,
+          "number": 23,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 24,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 25,
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "structure_errors": []
+    }
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_9_10",
+    "grade_display_name": "Grades 9 and 10 Combined",
+    "grade_or_course": "grade_9_10",
+    "question_count": 25,
+    "title": "MTS - WEEKLY MATH WORKSHEET",
+    "week_start": "2026-08-31"
+  }
+}

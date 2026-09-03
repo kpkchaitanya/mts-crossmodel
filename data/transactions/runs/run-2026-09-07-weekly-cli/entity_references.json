@@ -1,0 +1,34 @@
+{
+  "references": [
+    {
+      "grade_or_course": "grade_1",
+      "spec": "data/transactions/subjects/math/grades/grade_1/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/specs/r1.json",
+      "verification": "data/transactions/subjects/math/grades/grade_1/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/verification/verification-r1.json",
+      "worksheet_root": "data/transactions/subjects/math/grades/grade_1/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet"
+    },
+    {
+      "grade_or_course": "grade_4",
+      "spec": "data/transactions/subjects/math/grades/grade_4/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/specs/r1.json",
+      "verification": "data/transactions/subjects/math/grades/grade_4/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/verification/verification-r1.json",
+      "worksheet_root": "data/transactions/subjects/math/grades/grade_4/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet"
+    },
+    {
+      "grade_or_course": "grade_5",
+      "spec": "data/transactions/subjects/math/grades/grade_5/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/specs/r1.json",
+      "verification": "data/transactions/subjects/math/grades/grade_5/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/verification/verification-r1.json",
+      "worksheet_root": "data/transactions/subjects/math/grades/grade_5/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet"
+    },
+    {
+      "grade_or_course": "grade_6",
+      "spec": "data/transactions/subjects/math/grades/grade_6/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/specs/r1.json",
+      "verification": "data/transactions/subjects/math/grades/grade_6/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/verification/verification-r1.json",
+      "worksheet_root": "data/transactions/subjects/math/grades/grade_6/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet"
+    },
+    {
+      "grade_or_course": "grade_9_10",
+      "spec": "data/transactions/subjects/math/grades/grade_9_10/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/specs/r1.json",
+      "verification": "data/transactions/subjects/math/grades/grade_9_10/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/verification/verification-r1.json",
+      "worksheet_root": "data/transactions/subjects/math/grades/grade_9_10/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet"
+    }
+  ]
+}

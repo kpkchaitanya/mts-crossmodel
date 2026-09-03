@@ -1,0 +1,123 @@
+{
+  "scope_review": [
+    {
+      "cache_hit": false,
+      "grade_or_course": "grade_1",
+      "progressive_context": {
+        "grade": 1,
+        "official_ccs_pacing": false,
+        "source": "mts_progressive_backbone",
+        "units": {
+          "algebra_functions": {
+            "builds_from": [],
+            "key_concepts": [
+              "equality",
+              "missing numbers",
+              "true/false equations",
+              "repeating and growing patterns"
+            ],
+            "leads_to": [
+              "number patterns",
+              "addition/subtraction relationships",
+              "rule-based sequences"
+            ],
+            "progression": "Unknown quantities and patterns prepare students to generalize relationships.",
+            "unit_family": "Patterns, Algebra & Functions",
+            "unit_name": "Early Algebraic Thinking"
+          },
+          "data_probability": {
+            "builds_from": [],
+            "key_concepts": [
+              "sort and classify",
+              "count categories",
+              "picture representations",
+              "compare category counts"
+            ],
+            "leads_to": [
+              "picture graphs",
+              "bar graphs",
+              "tables"
+            ],
+            "progression": "Data begins as organizing and comparing concrete objects.",
+            "unit_family": "Data, Statistics & Probability",
+            "unit_name": "Organize and Compare Data"
+          },
+          "fractions_ratios": {
+            "builds_from": [],
+            "key_concepts": [
+              "halves",
+              "fourths",
+              "equal shares",
+              "partition shapes"
+            ],
+            "leads_to": [
+              "equal groups",
+              "arrays",
+              "repeated addition"
+            ],
+            "progression": "Visual sharing introduces equal parts and fractional thinking.",
+            "unit_family": "Fractions, Ratios & Proportional Reasoning",
+            "unit_name": "Equal Parts Foundations"
+          },
+          "geometry_measurement": {
+            "builds_from": [],
+            "key_concepts": [
+              "compare lengths",
+              "2D/3D shapes",
+              "shape attributes",
+              "compose/decompose shapes",
+              "basic time concepts"
+            ],
+            "leads_to": [
+              "standard length units",
+              "clocks",
+              "coins"
+            ],
+            "progression": "Students move from visual recognition to measurable and structural attributes.",
+            "unit_family": "Geometry, Measurement & Trigonometry",
+            "unit_name": "Shapes & Measurement Foundations"
+          },
+          "modeling_connections": {
+            "builds_from": [],
+            "key_concepts": [
+              "joining/separating stories",
+              "sharing",
+              "measuring",
+              "comparing"
+            ],
+            "leads_to": [
+              "money",
+              "measurement",
+              "arrays"
+            ],
+            "progression": "Arithmetic is grounded in everyday situations rather than isolated computation.",
+            "unit_family": "Advanced Modeling / Connections",
+            "unit_name": "Everyday Quantities"
+          },
+          "number_operations": {
+            "builds_from": [],
+            "key_concepts": [
+              "counting and number representation",
+              "compare/order numbers",
+              "tens and ones",
+              "number line",
+              "addition/subtraction meaning",
+              "make-10 and fact families",
+              "unknowns"
+            ],
+            "leads_to": [
+              "ones/tens/hundreds",
+              "compare/order",
+              "skip counting"
+            ],
+            "progression": "Concrete quantities become numbers; operations describe joining, separating and comparing.",
+            "unit_family": "Number Sense & Operations",
+            "unit_name": "Number Sense & Addition/Subtraction"
+          }
+        }
+      },
+      "requires_web_resolution": true,
+      "week_start": "2026-09-07"
+    }
+  ]
+}

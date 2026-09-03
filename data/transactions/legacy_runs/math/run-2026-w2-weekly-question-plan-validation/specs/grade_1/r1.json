@@ -1,0 +1,692 @@
+{
+  "curriculum": {
+    "week_start": "2026-08-24"
+  },
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 3,
+          "difficulty": "low_plus",
+          "number": 1,
+          "prompt": "Start at 5 and count back 2. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "5-2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 10,
+          "difficulty": "low_plus",
+          "number": 2,
+          "prompt": "There are 4 birds. 6 more join them. How many birds now?",
+          "skill": "addition/subtraction story problems",
+          "verification": {
+            "inputs": {
+              "expression": "4+6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "low_plus",
+          "number": 3,
+          "prompt": "Start at 9 and count on 3. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "9+3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "medium",
+          "number": 4,
+          "prompt": "Find the sum: 6 + 3",
+          "skill": "fluency within 20",
+          "verification": {
+            "inputs": {
+              "expression": "6+3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "medium",
+          "number": 5,
+          "prompt": "Start at 13 and count back 1. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "13-1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "difficulty": "medium",
+          "number": 6,
+          "prompt": "Start at 2 and count on 2. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "2+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "difficulty": "medium",
+          "number": 7,
+          "prompt": "3 + ? = 8. What number goes in the blank?",
+          "skill": "unknowns",
+          "verification": {
+            "inputs": {
+              "expression": "8-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "difficulty": "medium",
+          "number": 8,
+          "prompt": "Start at 6 and count back 3. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "6-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "medium",
+          "number": 9,
+          "prompt": "What number comes right after 7?",
+          "skill": "counting sequence",
+          "verification": {
+            "inputs": {
+              "expression": "7+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "difficulty": "medium",
+          "number": 10,
+          "prompt": "Start at 10 and count on 1. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "10+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 12,
+          "difficulty": "low_plus",
+          "number": 11,
+          "prompt": "Start at 14 and count back 2. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "14-2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 18,
+          "difficulty": "medium",
+          "number": 12,
+          "prompt": "There are 7 birds. 11 more join them. How many birds now?",
+          "skill": "addition/subtraction story problems",
+          "verification": {
+            "inputs": {
+              "expression": "7+11"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "medium",
+          "number": 13,
+          "prompt": "Start at 3 and count on 3. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "3+3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 15,
+          "difficulty": "medium",
+          "number": 14,
+          "prompt": "Find the sum: 10 + 5",
+          "skill": "fluency within 20",
+          "verification": {
+            "inputs": {
+              "expression": "10+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "medium",
+          "number": 15,
+          "prompt": "Start at 7 and count back 1. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "7-1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "difficulty": "medium",
+          "number": 16,
+          "prompt": "Start at 11 and count on 2. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "11+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "medium",
+          "number": 17,
+          "prompt": "5 + ? = 11. What number goes in the blank?",
+          "skill": "unknowns",
+          "verification": {
+            "inputs": {
+              "expression": "11-5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "medium_plus",
+          "number": 18,
+          "prompt": "Start at 15 and count back 3. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "15-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 14,
+          "difficulty": "medium_plus",
+          "number": 19,
+          "prompt": "What number comes right after 13?",
+          "skill": "counting sequence",
+          "verification": {
+            "inputs": {
+              "expression": "13+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "difficulty": "medium_plus",
+          "number": 20,
+          "prompt": "Start at 4 and count on 1. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "4+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 6,
+          "difficulty": "medium",
+          "number": 21,
+          "prompt": "Start at 8 and count back 2. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "8-2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "medium",
+          "number": 22,
+          "prompt": "There are 10 birds. 2 more join them. How many birds now?",
+          "skill": "addition/subtraction story problems",
+          "verification": {
+            "inputs": {
+              "expression": "10+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 15,
+          "difficulty": "medium",
+          "number": 23,
+          "prompt": "Start at 12 and count on 3. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "12+3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 21,
+          "difficulty": "medium",
+          "number": 24,
+          "prompt": "Find the sum: 14 + 7",
+          "skill": "fluency within 20",
+          "verification": {
+            "inputs": {
+              "expression": "14+7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 0,
+          "difficulty": "medium",
+          "number": 25,
+          "prompt": "Start at 1 and count back 1. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "1-1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "difficulty": "medium_plus",
+          "number": 26,
+          "prompt": "Start at 5 and count on 2. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "5+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "difficulty": "medium_plus",
+          "number": 27,
+          "prompt": "7 + ? = 14. What number goes in the blank?",
+          "skill": "unknowns",
+          "verification": {
+            "inputs": {
+              "expression": "14-7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "medium_plus",
+          "number": 28,
+          "prompt": "Start at 9 and count back 3. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "9-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2,
+          "difficulty": "medium_plus",
+          "number": 29,
+          "prompt": "What number comes right after 1?",
+          "skill": "counting sequence",
+          "verification": {
+            "inputs": {
+              "expression": "1+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 14,
+          "difficulty": "medium_plus",
+          "number": 30,
+          "prompt": "Start at 13 and count on 1. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "13+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 0,
+          "difficulty": "medium",
+          "number": 31,
+          "prompt": "Start at 2 and count back 2. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "2-2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 20,
+          "difficulty": "medium",
+          "number": 32,
+          "prompt": "There are 13 birds. 7 more join them. How many birds now?",
+          "skill": "addition/subtraction story problems",
+          "verification": {
+            "inputs": {
+              "expression": "13+7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "medium",
+          "number": 33,
+          "prompt": "Start at 6 and count on 3. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "6+3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "difficulty": "medium_plus",
+          "number": 34,
+          "prompt": "Find the sum: 2 + 1",
+          "skill": "fluency within 20",
+          "verification": {
+            "inputs": {
+              "expression": "2+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "medium_plus",
+          "number": 35,
+          "prompt": "Start at 10 and count back 1. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "10-1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 16,
+          "difficulty": "medium_plus",
+          "number": 36,
+          "prompt": "Start at 14 and count on 2. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "14+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "medium_plus",
+          "number": 37,
+          "prompt": "9 + ? = 17. What number goes in the blank?",
+          "skill": "unknowns",
+          "verification": {
+            "inputs": {
+              "expression": "17-9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 0,
+          "difficulty": "medium_plus",
+          "number": 38,
+          "prompt": "Start at 3 and count back 3. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "3-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "medium_plus",
+          "number": 39,
+          "prompt": "What number comes right after 7?",
+          "skill": "counting sequence",
+          "verification": {
+            "inputs": {
+              "expression": "7+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "high",
+          "number": 40,
+          "prompt": "Start at 7 and count on 1. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "7+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 9,
+          "difficulty": "medium",
+          "number": 41,
+          "prompt": "Start at 11 and count back 2. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "11-2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 26,
+          "difficulty": "medium_plus",
+          "number": 42,
+          "prompt": "There are 16 birds. 10 more join them. How many birds now?",
+          "skill": "addition/subtraction story problems",
+          "verification": {
+            "inputs": {
+              "expression": "16+10"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 18,
+          "difficulty": "medium_plus",
+          "number": 43,
+          "prompt": "Start at 15 and count on 3. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "15+3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "difficulty": "medium_plus",
+          "number": 44,
+          "prompt": "Find the sum: 6 + 1",
+          "skill": "fluency within 20",
+          "verification": {
+            "inputs": {
+              "expression": "6+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "difficulty": "medium_plus",
+          "number": 45,
+          "prompt": "Start at 4 and count back 1. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "4-1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 10,
+          "difficulty": "medium_plus",
+          "number": 46,
+          "prompt": "Start at 8 and count on 2. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "8+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "high",
+          "number": 47,
+          "prompt": "11 + ? = 20. What number goes in the blank?",
+          "skill": "unknowns",
+          "verification": {
+            "inputs": {
+              "expression": "20-11"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "high",
+          "number": 48,
+          "prompt": "Start at 12 and count back 3. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "12-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 14,
+          "difficulty": "high",
+          "number": 49,
+          "prompt": "What number comes right after 13?",
+          "skill": "counting sequence",
+          "verification": {
+            "inputs": {
+              "expression": "13+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2,
+          "difficulty": "high",
+          "number": 50,
+          "prompt": "Start at 1 and count on 1. What number do you reach?",
+          "skill": "Count on and Count down using add and subtract",
+          "verification": {
+            "inputs": {
+              "expression": "1+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "status": "PENDING"
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_1",
+    "question_count": 50,
+    "title": "MTS - WEEKLY WORKSHEET",
+    "week_start": "2026-08-24"
+  }
+}

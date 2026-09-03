@@ -1,0 +1,554 @@
+{
+  "sections": [
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 5,
+          "course": "math_2",
+          "difficulty": "medium",
+          "number": 1,
+          "prompt": "Solve for x: 3x + 4 = 19.",
+          "skill": "solve linear equations and inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 24,
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "number": 2,
+          "prompt": "Tickets cost $8 each. What is the cost of 3 tickets?",
+          "skill": "create equations from contexts",
+          "verification": {
+            "inputs": {
+              "expression": "8*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 19,
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "number": 3,
+          "prompt": "If f(x) = 2x + 5, find f(7).",
+          "skill": "function notation and evaluation",
+          "verification": {
+            "inputs": {
+              "expression": "2*7+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "course": "math_2",
+          "difficulty": "high",
+          "number": 4,
+          "prompt": "Evaluate 4x - 3 when x = 3.",
+          "skill": "simplify expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*3-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 27,
+          "course": "math_2",
+          "difficulty": "high",
+          "number": 5,
+          "prompt": "Evaluate: 3^3.",
+          "skill": "rational exponents and radicals",
+          "verification": {
+            "inputs": {
+              "expression": "3**3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Friday"
+    },
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 3,
+          "course": "math_1",
+          "difficulty": "low_plus",
+          "number": 6,
+          "prompt": "Solve for x: 3x + 4 = 13.",
+          "skill": "solve linear equations and inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 32,
+          "course": "math_1",
+          "difficulty": "low_plus",
+          "number": 7,
+          "prompt": "Tickets cost $8 each. What is the cost of 4 tickets?",
+          "skill": "create equations from contexts",
+          "verification": {
+            "inputs": {
+              "expression": "8*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 17,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 8,
+          "prompt": "If f(x) = 2x + 5, find f(6).",
+          "skill": "function notation and evaluation",
+          "verification": {
+            "inputs": {
+              "expression": "2*6+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 9,
+          "prompt": "Evaluate 4x - 3 when x = 3.",
+          "skill": "simplify expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*3-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 10,
+          "prompt": "Evaluate: 2^2.",
+          "skill": "rational exponents and radicals",
+          "verification": {
+            "inputs": {
+              "expression": "2**2"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Monday"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 8,
+          "course": "math_2",
+          "difficulty": "medium",
+          "number": 11,
+          "prompt": "Solve for x: 3x + 4 = 28.",
+          "skill": "solve linear equations and inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 40,
+          "course": "math_2",
+          "difficulty": "medium",
+          "number": 12,
+          "prompt": "Tickets cost $8 each. What is the cost of 5 tickets?",
+          "skill": "create equations from contexts",
+          "verification": {
+            "inputs": {
+              "expression": "8*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 15,
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "number": 13,
+          "prompt": "If f(x) = 2x + 5, find f(5).",
+          "skill": "function notation and evaluation",
+          "verification": {
+            "inputs": {
+              "expression": "2*5+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "number": 14,
+          "prompt": "Evaluate 4x - 3 when x = 3.",
+          "skill": "simplify expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*3-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 64,
+          "course": "math_2",
+          "difficulty": "high",
+          "number": 15,
+          "prompt": "Evaluate: 4^3.",
+          "skill": "rational exponents and radicals",
+          "verification": {
+            "inputs": {
+              "expression": "4**3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Thursday"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 6,
+          "course": "math_1",
+          "difficulty": "low_plus",
+          "number": 16,
+          "prompt": "Solve for x: 3x + 4 = 22.",
+          "skill": "solve linear equations and inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 48,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 17,
+          "prompt": "Tickets cost $8 each. What is the cost of 6 tickets?",
+          "skill": "create equations from contexts",
+          "verification": {
+            "inputs": {
+              "expression": "8*6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 18,
+          "prompt": "If f(x) = 2x + 5, find f(4).",
+          "skill": "function notation and evaluation",
+          "verification": {
+            "inputs": {
+              "expression": "2*4+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 19,
+          "prompt": "Evaluate 4x - 3 when x = 3.",
+          "skill": "simplify expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*3-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "course": "math_1",
+          "difficulty": "medium_plus",
+          "number": 20,
+          "prompt": "Evaluate: 3^2.",
+          "skill": "rational exponents and radicals",
+          "verification": {
+            "inputs": {
+              "expression": "3**2"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Tuesday"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 4,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 21,
+          "prompt": "Solve for x: 3x + 4 = 16.",
+          "skill": "solve linear equations and inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 24,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 22,
+          "prompt": "Tickets cost $8 each. What is the cost of 3 tickets?",
+          "skill": "create equations from contexts",
+          "verification": {
+            "inputs": {
+              "expression": "8*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 23,
+          "prompt": "If f(x) = 2x + 5, find f(3).",
+          "skill": "function notation and evaluation",
+          "verification": {
+            "inputs": {
+              "expression": "2*3+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "number": 24,
+          "prompt": "Evaluate 4x - 3 when x = 3.",
+          "skill": "simplify expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*3-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "number": 25,
+          "prompt": "Evaluate: 2^3.",
+          "skill": "rational exponents and radicals",
+          "verification": {
+            "inputs": {
+              "expression": "2**3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Wednesday"
+    }
+  ],
+  "verification": {
+    "status": "PASS",
+    "summary": {
+      "deterministic_checked": 25,
+      "failures": [],
+      "questions": 25,
+      "reasoning_required": 0,
+      "results": [
+        {
+          "computed": 5,
+          "expected": 5,
+          "number": 1,
+          "status": "PASS"
+        },
+        {
+          "computed": 24,
+          "expected": 24,
+          "number": 2,
+          "status": "PASS"
+        },
+        {
+          "computed": 19,
+          "expected": 19,
+          "number": 3,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 4,
+          "status": "PASS"
+        },
+        {
+          "computed": 27,
+          "expected": 27,
+          "number": 5,
+          "status": "PASS"
+        },
+        {
+          "computed": 3,
+          "expected": 3,
+          "number": 6,
+          "status": "PASS"
+        },
+        {
+          "computed": 32,
+          "expected": 32,
+          "number": 7,
+          "status": "PASS"
+        },
+        {
+          "computed": 17,
+          "expected": 17,
+          "number": 8,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 9,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 10,
+          "status": "PASS"
+        },
+        {
+          "computed": 8,
+          "expected": 8,
+          "number": 11,
+          "status": "PASS"
+        },
+        {
+          "computed": 40,
+          "expected": 40,
+          "number": 12,
+          "status": "PASS"
+        },
+        {
+          "computed": 15,
+          "expected": 15,
+          "number": 13,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 14,
+          "status": "PASS"
+        },
+        {
+          "computed": 64,
+          "expected": 64,
+          "number": 15,
+          "status": "PASS"
+        },
+        {
+          "computed": 6,
+          "expected": 6,
+          "number": 16,
+          "status": "PASS"
+        },
+        {
+          "computed": 48,
+          "expected": 48,
+          "number": 17,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 18,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 19,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 20,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 21,
+          "status": "PASS"
+        },
+        {
+          "computed": 24,
+          "expected": 24,
+          "number": 22,
+          "status": "PASS"
+        },
+        {
+          "computed": 11,
+          "expected": 11,
+          "number": 23,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 24,
+          "status": "PASS"
+        },
+        {
+          "computed": 8,
+          "expected": 8,
+          "number": 25,
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "structure_errors": []
+    }
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_9_10",
+    "question_count": 25,
+    "title": "MTS - WEEKLY MATH WORKSHEET",
+    "week_start": "2026-08-31"
+  }
+}

@@ -1,0 +1,510 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "slots": [
+        {
+          "day": "monday",
+          "slot": 1,
+          "skill": "ratio concepts",
+          "difficulty": "low_plus",
+          "topic_override": false,
+          "form_family": "generic.two_way_compare",
+          "cognitive_action": "compare",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "monday",
+          "slot": 2,
+          "skill": "unit rates",
+          "difficulty": "low_plus",
+          "topic_override": false,
+          "form_family": "generic.inverse_operation",
+          "cognitive_action": "invert_operation",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "monday",
+          "slot": 3,
+          "skill": "ratio reasoning",
+          "difficulty": "low_plus",
+          "topic_override": false,
+          "form_family": "generic.direct_compute",
+          "cognitive_action": "compute",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "monday",
+          "slot": 4,
+          "skill": "fraction division",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.classify",
+          "cognitive_action": "classify",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "monday",
+          "slot": 5,
+          "skill": "multi-digit computation",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.find_counterexample",
+          "cognitive_action": "analyze_exception",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "monday",
+          "slot": 6,
+          "skill": "factors and multiples",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.decision_table",
+          "cognitive_action": "decide",
+          "representation": "decision_table",
+          "response_type": "selection",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "monday",
+          "slot": 7,
+          "skill": "rational numbers",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.justify_claim",
+          "cognitive_action": "justify",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "monday",
+          "slot": 8,
+          "skill": "area",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.match_rule",
+          "cognitive_action": "match",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "variation_seed": 20260903135147
+        }
+      ]
+    },
+    {
+      "id": "tuesday",
+      "slots": [
+        {
+          "day": "tuesday",
+          "slot": 1,
+          "skill": "volume",
+          "difficulty": "low_plus",
+          "topic_override": false,
+          "form_family": "generic.justify_claim",
+          "cognitive_action": "justify",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "tuesday",
+          "slot": 2,
+          "skill": "coordinate plane",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.direct_compute",
+          "cognitive_action": "compute",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "tuesday",
+          "slot": 3,
+          "skill": "nets and surface area",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.missing_value",
+          "cognitive_action": "solve_unknown",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "tuesday",
+          "slot": 4,
+          "skill": "ratio concepts",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.sequence_pattern",
+          "cognitive_action": "extend_pattern",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "tuesday",
+          "slot": 5,
+          "skill": "unit rates",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.choose_operation",
+          "cognitive_action": "select_strategy",
+          "representation": "short_context",
+          "response_type": "selection",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "tuesday",
+          "slot": 6,
+          "skill": "ratio reasoning",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.constraint_solve",
+          "cognitive_action": "satisfy_constraint",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "tuesday",
+          "slot": 7,
+          "skill": "fraction division",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.measurement_context",
+          "cognitive_action": "apply",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "tuesday",
+          "slot": 8,
+          "skill": "multi-digit computation",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.construct_example",
+          "cognitive_action": "construct",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        }
+      ]
+    },
+    {
+      "id": "wednesday",
+      "slots": [
+        {
+          "day": "wednesday",
+          "slot": 1,
+          "skill": "factors and multiples",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.reverse_reasoning",
+          "cognitive_action": "reverse_reason",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "wednesday",
+          "slot": 2,
+          "skill": "rational numbers",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.constraint_solve",
+          "cognitive_action": "satisfy_constraint",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "wednesday",
+          "slot": 3,
+          "skill": "area",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.justify_claim",
+          "cognitive_action": "justify",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "wednesday",
+          "slot": 4,
+          "skill": "volume",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.compare_select",
+          "cognitive_action": "compare",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "wednesday",
+          "slot": 5,
+          "skill": "coordinate plane",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.multi_representation",
+          "cognitive_action": "connect_representations",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "wednesday",
+          "slot": 6,
+          "skill": "nets and surface area",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.construct_example",
+          "cognitive_action": "construct",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "wednesday",
+          "slot": 7,
+          "skill": "ratio concepts",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.equivalent_form",
+          "cognitive_action": "translate",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "wednesday",
+          "slot": 8,
+          "skill": "unit rates",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.find_counterexample",
+          "cognitive_action": "analyze_exception",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        }
+      ]
+    },
+    {
+      "id": "thursday",
+      "slots": [
+        {
+          "day": "thursday",
+          "slot": 1,
+          "skill": "ratio reasoning",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.sequence_pattern",
+          "cognitive_action": "extend_pattern",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "thursday",
+          "slot": 2,
+          "skill": "fraction division",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.context_story",
+          "cognitive_action": "model",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "thursday",
+          "slot": 3,
+          "skill": "multi-digit computation",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.multi_step",
+          "cognitive_action": "compose_operations",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "thursday",
+          "slot": 4,
+          "skill": "factors and multiples",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.number_line",
+          "cognitive_action": "locate",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "thursday",
+          "slot": 5,
+          "skill": "rational numbers",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.two_way_compare",
+          "cognitive_action": "compare",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "thursday",
+          "slot": 6,
+          "skill": "area",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.inverse_operation",
+          "cognitive_action": "invert_operation",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "thursday",
+          "slot": 7,
+          "skill": "volume",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.direct_compute",
+          "cognitive_action": "compute",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "thursday",
+          "slot": 8,
+          "skill": "coordinate plane",
+          "difficulty": "high",
+          "topic_override": false,
+          "form_family": "generic.classify",
+          "cognitive_action": "classify",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "variation_seed": 20260903135147
+        }
+      ]
+    },
+    {
+      "id": "friday",
+      "slots": [
+        {
+          "day": "friday",
+          "slot": 1,
+          "skill": "nets and surface area",
+          "difficulty": "medium",
+          "topic_override": false,
+          "form_family": "generic.sequence_pattern",
+          "cognitive_action": "extend_pattern",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "friday",
+          "slot": 2,
+          "skill": "ratio concepts",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.measurement_context",
+          "cognitive_action": "apply",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "friday",
+          "slot": 3,
+          "skill": "unit rates",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.visual_grouping",
+          "cognitive_action": "interpret",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "friday",
+          "slot": 4,
+          "skill": "ratio reasoning",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.compose_decompose",
+          "cognitive_action": "decompose",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "friday",
+          "slot": 5,
+          "skill": "fraction division",
+          "difficulty": "medium_plus",
+          "topic_override": false,
+          "form_family": "generic.decision_table",
+          "cognitive_action": "decide",
+          "representation": "decision_table",
+          "response_type": "selection",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "friday",
+          "slot": 6,
+          "skill": "multi-digit computation",
+          "difficulty": "high",
+          "topic_override": false,
+          "form_family": "generic.context_story",
+          "cognitive_action": "model",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "friday",
+          "slot": 7,
+          "skill": "factors and multiples",
+          "difficulty": "high",
+          "topic_override": false,
+          "form_family": "generic.estimate",
+          "cognitive_action": "estimate",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        },
+        {
+          "day": "friday",
+          "slot": 8,
+          "skill": "rational numbers",
+          "difficulty": "high",
+          "topic_override": false,
+          "form_family": "generic.direct_compute",
+          "cognitive_action": "compute",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "variation_seed": 20260903135147
+        }
+      ]
+    }
+  ],
+  "variation_seed": 20260903135147
+}

@@ -1,0 +1,349 @@
+{
+  "approvals": [
+    {
+      "approval_id": "approval-cbe3071c3af345d7844271e791b53be7",
+      "artifact_revision": "grades-9-10-scope-r1",
+      "gate": "scope_review",
+      "notes": null,
+      "recorded_at": "2026-08-28T18:45:33.149042+00:00",
+      "reviewer": "user-authorized-auto-run",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-6e96bde2e58e4229ba7e4bdecf52493a",
+      "artifact_revision": "grades-9-10-questions-r1",
+      "gate": "question_review",
+      "notes": null,
+      "recorded_at": "2026-08-28T18:45:33.149159+00:00",
+      "reviewer": "user-authorized-auto-run",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-00be31aad4254435899d4e85dd1fa77c",
+      "artifact_revision": "grades-9-10-verification-r1",
+      "gate": "verification_review",
+      "notes": "Verifier PASS: 6 deterministic, 44 reasoning-required.",
+      "recorded_at": "2026-08-28T18:45:33.149254+00:00",
+      "reviewer": "user-authorized-auto-run",
+      "status": "approved"
+    },
+    {
+      "approval_id": "auto-grades-9-10-formatting",
+      "artifact_revision": "grades-9-10-render-r1",
+      "gate": "formatting_review",
+      "notes": "Automated PDF/layout QA passed.",
+      "reviewer": "user-authorized-auto-run",
+      "status": "approved"
+    },
+    {
+      "approval_id": "auto-grades-9-10-publish",
+      "artifact_revision": "grades-9-10-final-qa-r1",
+      "gate": "publish_approval",
+      "notes": "User authorized automatic approval and publication.",
+      "reviewer": "user-authorized-auto-run",
+      "status": "approved"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_kind": "student_worksheet",
+      "document": {
+        "id": "1y0VkiZOxUJHHmw315wOzCyR_voI9V5T6hZcmddlz6Xo",
+        "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-08-24",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1y0VkiZOxUJHHmw315wOzCyR_voI9V5T6hZcmddlz6Xo/edit?usp=drivesdk"
+      },
+      "status": "published"
+    },
+    {
+      "artifact_kind": "answer_key",
+      "document": {
+        "id": "1nT24Alz75uMyeVnvVJkx4nofVXj7iGSkjCZ6H_nfnNc",
+        "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1nT24Alz75uMyeVnvVJkx4nofVXj7iGSkjCZ6H_nfnNc/edit?usp=drivesdk"
+      },
+      "status": "published"
+    }
+  ],
+  "checkpoints": [],
+  "manifest_version": "1.0",
+  "policy_fingerprint": "e3eefc2cfdf269537545e2bc402004f1c711c5edb0cbe25110b35adc2aa77013",
+  "policy_snapshot_path": "resolved-policy.json",
+  "publication": {
+    "answer_key_url": "https://docs.google.com/document/d/1nT24Alz75uMyeVnvVJkx4nofVXj7iGSkjCZ6H_nfnNc/edit?usp=drivesdk",
+    "destination_folder_id": "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS",
+    "status": "superseded",
+    "worksheet_url": "https://docs.google.com/document/d/1y0VkiZOxUJHHmw315wOzCyR_voI9V5T6hZcmddlz6Xo/edit?usp=drivesdk",
+    "count_model_correction": "This historical run used the superseded interpretation of 5 questions per course per day. Current configuration defines 5 combined questions per day and 25 per week with a 13/12 split."
+  },
+  "qa": {
+    "blank_pages": 0,
+    "grade_split": {
+      "math_1": 25,
+      "math_2": 25
+    },
+    "pages": 2,
+    "pdf_layout": "PASS",
+    "placeholders": false,
+    "populated_questions": 50,
+    "questions_per_day_per_course": 5,
+    "readback": "PASS",
+    "unused_slots_per_day": 0
+  },
+  "request": {
+    "grade_ids": [
+      "grade_9_10"
+    ],
+    "subject": "math",
+    "week_start": "2026-08-24",
+    "worksheet_type": "weekly-worksheet"
+  },
+  "request_fingerprint": "5631fb2fa9be0528a9bf3d8fec62bc30c0a6c37019adfa995a9c2c35f16bd6ac",
+  "run_id": "run-2026-08-24-grades-9-10-weekly",
+  "spec_references": [
+    {
+      "fingerprint": "d9b05dfc91e2cd23635ae8eda4fde4fe9ff6b4343477d41d732e75b26d3c2534",
+      "revision": "r1",
+      "spec_path": "math/run-2026-08-24-grades-9-10-weekly/specs/grades-9-10/r1.json",
+      "worksheet_id": "grades-9-10"
+    }
+  ],
+  "started_at": "2026-08-28T18:45:33.142271+00:00",
+  "status": "superseded",
+  "subject": "math",
+  "telemetry": {
+    "token_usage": null
+  },
+  "verification": {
+    "deterministic_checked": 6,
+    "failures": [],
+    "questions": 50,
+    "reasoning_required": 44,
+    "results": [
+      {
+        "criterion": "Verify 3x + 5x = 8x by combining coefficients",
+        "number": 1,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "criterion": "Verify 7a - 2a = 5a, +4 remains",
+        "number": 2,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "computed": 17,
+        "expected": 17,
+        "number": 3,
+        "status": "PASS"
+      },
+      {
+        "computed": 11,
+        "expected": 11,
+        "number": 4,
+        "status": "PASS"
+      },
+      {
+        "computed": 7.0,
+        "expected": 7,
+        "number": 5,
+        "status": "PASS"
+      },
+      {
+        "computed": 5.0,
+        "expected": 5,
+        "number": 6,
+        "status": "PASS"
+      },
+      {
+        "computed": 5.0,
+        "expected": 5,
+        "number": 7,
+        "status": "PASS"
+      },
+      {
+        "computed": 5.0,
+        "expected": 5,
+        "number": 8,
+        "status": "PASS"
+      },
+      {
+        "criterion": "Verify 'twice a number' is 2x, 'seven more' is +7, 'is 25' gives equation",
+        "number": 9,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "criterion": "Verify $4 base + $2 per mile m gives C(m) = 4 + 2m",
+        "number": 10,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 11,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 12,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 13,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 14,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 15,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 16,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 17,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 18,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 19,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 20,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 21,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 22,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 23,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 24,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 25,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 26,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 27,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 28,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 29,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 30,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 31,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 32,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 33,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 34,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 35,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 36,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 37,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 38,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 39,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 40,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 41,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 42,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 43,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 44,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 45,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 46,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 47,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 48,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 49,
+        "status": "REASONING_REQUIRED"
+      },
+      {
+        "number": 50,
+        "status": "REASONING_REQUIRED"
+      }
+    ],
+    "status": "PASS",
+    "structure_errors": []
+  },
+  "worksheet_type": "weekly-worksheet"
+}

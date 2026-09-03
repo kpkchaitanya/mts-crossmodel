@@ -1,0 +1,1004 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 3,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.error_check",
+          "id": "grade_6-q1",
+          "number": 1,
+          "prompt": "Question 1: Point Q is at (3, 5). What is its x-coordinate?",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "fraction division",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "cognitive_action": "satisfy_constraint",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.constraint_solve",
+          "id": "grade_6-q2",
+          "number": 2,
+          "prompt": "Question 2: Point Q is at (4, 6). What is its x-coordinate?",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "decimal fluency",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "select_strategy",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.choose_operation",
+          "id": "grade_6-q3",
+          "number": 3,
+          "prompt": "Question 3: Point Q is at (5, 2). What is its x-coordinate?",
+          "representation": "short_context",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "factors and multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 0,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.multi_representation",
+          "id": "grade_6-q4",
+          "number": 4,
+          "prompt": "Question 4: Point Q is at (0, 3). What is its x-coordinate?",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "decimal fluency",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "0"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1,
+          "cognitive_action": "order",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.sort_order",
+          "id": "grade_6-q5",
+          "number": 5,
+          "prompt": "Question 5: Point Q is at (1, 4). What is its x-coordinate?",
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "section_id": "monday",
+          "skill": "positive/negative numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.context_story",
+          "id": "grade_6-q6",
+          "number": 6,
+          "prompt": "Question 6: Point Q is at (2, 5). What is its x-coordinate?",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "absolute value",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "cognitive_action": "translate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.equivalent_form",
+          "id": "grade_6-q7",
+          "number": 7,
+          "prompt": "Question 7: Point Q is at (3, 6). What is its x-coordinate?",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "coordinate numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "cognitive_action": "decompose",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.compose_decompose",
+          "id": "grade_6-q8",
+          "number": 8,
+          "prompt": "Question 8: Point Q is at (4, 2). What is its x-coordinate?",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "factors and multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 5,
+          "cognitive_action": "locate",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.number_line",
+          "id": "grade_6-q9",
+          "number": 9,
+          "prompt": "Question 9: Point Q is at (5, 3). What is its x-coordinate?",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "fraction division",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 0,
+          "cognitive_action": "compose_operations",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.multi_step",
+          "id": "grade_6-q10",
+          "number": 10,
+          "prompt": "Question 10: Point Q is at (0, 4). What is its x-coordinate?",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "decimal fluency",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "0"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1,
+          "cognitive_action": "justify",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.justify_claim",
+          "id": "grade_6-q11",
+          "number": 11,
+          "prompt": "Question 11: Point Q is at (1, 5). What is its x-coordinate?",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "factors and multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2,
+          "cognitive_action": "translate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.equivalent_form",
+          "id": "grade_6-q12",
+          "number": 12,
+          "prompt": "Question 12: Point Q is at (2, 6). What is its x-coordinate?",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "decimal fluency",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.table_complete",
+          "id": "grade_6-q13",
+          "number": 13,
+          "prompt": "Question 13: Point Q is at (3, 2). What is its x-coordinate?",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "positive/negative numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_6-q14",
+          "number": 14,
+          "prompt": "Question 14: Point Q is at (4, 3). What is its x-coordinate?",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "absolute value",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "retrieve",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.representation_read",
+          "id": "grade_6-q15",
+          "number": 15,
+          "prompt": "Question 15: Point Q is at (5, 4). What is its x-coordinate?",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "coordinate numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 0,
+          "cognitive_action": "extend_pattern",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.sequence_pattern",
+          "id": "grade_6-q16",
+          "number": 16,
+          "prompt": "Question 16: Point Q is at (0, 5). What is its x-coordinate?",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "factors and multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "0"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 1,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.multi_representation",
+          "id": "grade_6-q17",
+          "number": 17,
+          "prompt": "Question 17: Point Q is at (1, 6). What is its x-coordinate?",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "fraction division",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2,
+          "cognitive_action": "locate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.number_line",
+          "id": "grade_6-q18",
+          "number": 18,
+          "prompt": "Question 18: Point Q is at (2, 2). What is its x-coordinate?",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "decimal fluency",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "cognitive_action": "compute",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.direct_compute",
+          "id": "grade_6-q19",
+          "number": 19,
+          "prompt": "Question 19: Point Q is at (3, 3). What is its x-coordinate?",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "factors and multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "cognitive_action": "estimate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.estimate",
+          "id": "grade_6-q20",
+          "number": 20,
+          "prompt": "Question 20: Point Q is at (4, 4). What is its x-coordinate?",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "decimal fluency",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "classify",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.classify",
+          "id": "grade_6-q21",
+          "number": 21,
+          "prompt": "Question 21: Point Q is at (5, 5). What is its x-coordinate?",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "positive/negative numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 0,
+          "cognitive_action": "justify",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.justify_claim",
+          "id": "grade_6-q22",
+          "number": 22,
+          "prompt": "Question 22: Point Q is at (0, 6). What is its x-coordinate?",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "absolute value",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "0"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.compare_select",
+          "id": "grade_6-q23",
+          "number": 23,
+          "prompt": "Question 23: Point Q is at (1, 2). What is its x-coordinate?",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "coordinate numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.table_complete",
+          "id": "grade_6-q24",
+          "number": 24,
+          "prompt": "Question 24: Point Q is at (2, 3). What is its x-coordinate?",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "factors and multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "2"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 3,
+          "cognitive_action": "classify",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.classify",
+          "id": "grade_6-q25",
+          "number": 25,
+          "prompt": "Question 25: Point Q is at (3, 4). What is its x-coordinate?",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "fraction division",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.compare_select",
+          "id": "grade_6-q26",
+          "number": 26,
+          "prompt": "Question 26: Point Q is at (4, 5). What is its x-coordinate?",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "decimal fluency",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_representation",
+          "id": "grade_6-q27",
+          "number": 27,
+          "prompt": "Question 27: Point Q is at (5, 6). What is its x-coordinate?",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "factors and multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 0,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.table_complete",
+          "id": "grade_6-q28",
+          "number": 28,
+          "prompt": "Question 28: Point Q is at (0, 2). What is its x-coordinate?",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "decimal fluency",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "0"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1,
+          "cognitive_action": "decompose",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.compose_decompose",
+          "id": "grade_6-q29",
+          "number": 29,
+          "prompt": "Question 29: Point Q is at (1, 3). What is its x-coordinate?",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "positive/negative numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2,
+          "cognitive_action": "translate",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.equivalent_form",
+          "id": "grade_6-q30",
+          "number": 30,
+          "prompt": "Question 30: Point Q is at (2, 4). What is its x-coordinate?",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "absolute value",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "cognitive_action": "order",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.sort_order",
+          "id": "grade_6-q31",
+          "number": 31,
+          "prompt": "Question 31: Point Q is at (3, 5). What is its x-coordinate?",
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "section_id": "thursday",
+          "skill": "coordinate numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "cognitive_action": "compose_operations",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.multi_step",
+          "id": "grade_6-q32",
+          "number": 32,
+          "prompt": "Question 32: Point Q is at (4, 6). What is its x-coordinate?",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "factors and multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 5,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_6-q33",
+          "number": 33,
+          "prompt": "Question 33: Point Q is at (5, 2). What is its x-coordinate?",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "friday",
+          "skill": "fraction division",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 0,
+          "cognitive_action": "decide",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.decision_table",
+          "id": "grade_6-q34",
+          "number": 34,
+          "prompt": "Question 34: Point Q is at (0, 3). What is its x-coordinate?",
+          "representation": "decision_table",
+          "response_type": "selection",
+          "section_id": "friday",
+          "skill": "decimal fluency",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "0"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_6-q35",
+          "number": 35,
+          "prompt": "Question 35: Point Q is at (1, 4). What is its x-coordinate?",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "factors and multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2,
+          "cognitive_action": "decompose",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.compose_decompose",
+          "id": "grade_6-q36",
+          "number": 36,
+          "prompt": "Question 36: Point Q is at (2, 5). What is its x-coordinate?",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "decimal fluency",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.visual_grouping",
+          "id": "grade_6-q37",
+          "number": 37,
+          "prompt": "Question 37: Point Q is at (3, 6). What is its x-coordinate?",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "positive/negative numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.two_way_compare",
+          "id": "grade_6-q38",
+          "number": 38,
+          "prompt": "Question 38: Point Q is at (4, 2). What is its x-coordinate?",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "absolute value",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.context_story",
+          "id": "grade_6-q39",
+          "number": 39,
+          "prompt": "Question 39: Point Q is at (5, 3). What is its x-coordinate?",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "coordinate numbers",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 0,
+          "cognitive_action": "match",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.match_rule",
+          "id": "grade_6-q40",
+          "number": 40,
+          "prompt": "Question 40: Point Q is at (0, 4). What is its x-coordinate?",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "section_id": "friday",
+          "skill": "factors and multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_6",
+          "standards": [],
+          "variation_seed": 20260903174650,
+          "verification": {
+            "inputs": {
+              "expression": "0"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PASS"
+  },
+  "worksheet": {
+    "grade": "grade_6",
+    "grade_or_course": "grade_6",
+    "question_count": 40,
+    "title": "MTS - WEEKLY WORKSHEET SAMPLE",
+    "week_start": "2026-09-07"
+  }
+}

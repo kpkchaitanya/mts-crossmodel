@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "scope": "P0 early-year standards seed for enabled MTS grades/courses",
+  "last_verified": "2026-08-24",
+  "grades": {
+    "grade_1": {
+      "source": "https://www.dpi.nc.gov/nc-1st-grade-math-unpacking-rev-june-2022/open",
+      "domains": {
+        "operations_algebraic_thinking": {
+          "standards": ["NC.1.OA.1", "NC.1.OA.2", "NC.1.OA.3", "NC.1.OA.4", "NC.1.OA.6", "NC.1.OA.7", "NC.1.OA.8", "NC.1.OA.9"],
+          "topics": ["represent and solve addition/subtraction problems", "properties of operations", "add and subtract within 20", "analyze equations within 20"]
+        },
+        "number_base_ten": {
+          "standards": ["NC.1.NBT.1", "NC.1.NBT.2", "NC.1.NBT.3", "NC.1.NBT.4", "NC.1.NBT.5", "NC.1.NBT.6", "NC.1.NBT.7"],
+          "topics": ["counting sequence", "place value", "compare two-digit numbers", "place-value addition/subtraction"]
+        }
+      }
+    },
+    "grade_4": {
+      "source": "https://www.dpi.nc.gov/nc-4th-grade-math-unpacking-rev-june-2022/open",
+      "domains": {
+        "operations_algebraic_thinking": {
+          "standards": ["NC.4.OA.1", "NC.4.OA.3", "NC.4.OA.4", "NC.4.OA.5"],
+          "topics": ["multiplicative comparison", "multi-step four-operation problems", "factors and multiples", "patterns"]
+        },
+        "number_base_ten": {
+          "standards": ["NC.4.NBT.1", "NC.4.NBT.2", "NC.4.NBT.4", "NC.4.NBT.5", "NC.4.NBT.6", "NC.4.NBT.7"],
+          "topics": ["multi-digit place value", "compare multi-digit numbers", "multi-digit arithmetic"]
+        }
+      }
+    },
+    "grade_5": {
+      "source": "https://www.dpi.nc.gov/nc-5th-grade-math-unpacking-rev-june-2022/open",
+      "domains": {
+        "operations_algebraic_thinking": {
+          "standards": ["NC.5.OA.2", "NC.5.OA.3"],
+          "topics": ["write and interpret numerical expressions", "analyze patterns and relationships"]
+        },
+        "number_base_ten": {
+          "standards": ["NC.5.NBT.1", "NC.5.NBT.3", "NC.5.NBT.5", "NC.5.NBT.6", "NC.5.NBT.7"],
+          "topics": ["place value", "multi-digit whole-number operations", "decimal operations"]
+        },
+        "measurement_geometry": {
+          "standards": ["NC.5.MD.4", "NC.5.MD.5", "NC.5.G.1", "NC.5.G.3"],
+          "topics": ["volume", "coordinate plane", "classify quadrilaterals"]
+        }
+      }
+    },
+    "grade_6": {
+      "source": "https://www.dpi.nc.gov/nc-6th-grade-math-unpacking-rev-june-2022-0/open",
+      "domains": {
+        "ratios": {
+          "standards": ["NC.6.RP.1", "NC.6.RP.2", "NC.6.RP.3", "NC.6.RP.4"],
+          "topics": ["ratio concepts", "unit rates", "ratio reasoning"]
+        },
+        "number_system": {
+          "standards": ["NC.6.NS.1", "NC.6.NS.2", "NC.6.NS.3", "NC.6.NS.4", "NC.6.NS.5", "NC.6.NS.6", "NC.6.NS.7", "NC.6.NS.8", "NC.6.NS.9"],
+          "topics": ["fraction division", "multi-digit computation", "factors and multiples", "rational numbers"]
+        },
+        "geometry": {
+          "standards": ["NC.6.G.1", "NC.6.G.2", "NC.6.G.3", "NC.6.G.4"],
+          "topics": ["area", "volume", "coordinate plane", "nets and surface area"]
+        }
+      }
+    },
+    "math_1": {
+      "source": "https://www.dpi.nc.gov/nc-math-1-unpacking-rev-june-2022/open",
+      "domains": {
+        "algebra": {
+          "standards": ["NC.M1.A-SSE.1a", "NC.M1.A-SSE.1b", "NC.M1.A-CED.1", "NC.M1.A-CED.2", "NC.M1.A-REI.1", "NC.M1.A-REI.3", "NC.M1.A-REI.5", "NC.M1.A-REI.6"],
+          "topics": ["expression structure", "create equations", "solve equations and inequalities", "systems"]
+        },
+        "functions": {
+          "standards": ["NC.M1.F-IF.1", "NC.M1.F-IF.2", "NC.M1.F-IF.3", "NC.M1.F-IF.4", "NC.M1.F-IF.5", "NC.M1.F-IF.6"],
+          "topics": ["function concept and notation", "evaluate functions", "sequences", "interpret functions"]
+        }
+      }
+    },
+    "math_2": {
+      "source": "https://www.dpi.nc.gov/nc-math-2-unpacking-rev-june-2022/open",
+      "domains": {
+        "number": {
+          "standards": ["NC.M2.N-RN.1", "NC.M2.N-RN.2", "NC.M2.N-RN.3", "NC.M2.N-CN.1"],
+          "topics": ["rational exponents", "radicals", "rational and irrational numbers", "complex number i"]
+        },
+        "geometry": {
+          "standards": ["NC.M2.G-CO.2", "NC.M2.G-CO.3", "NC.M2.G-CO.4", "NC.M2.G-CO.5", "NC.M2.G-CO.6", "NC.M2.G-CO.7", "NC.M2.G-CO.8"],
+          "topics": ["transformations", "rigid motions", "congruence"]
+        },
+        "algebra": {
+          "standards": ["NC.M2.A-SSE.1a", "NC.M2.A-SSE.1b", "NC.M2.A-APR.1", "NC.M2.A-REI.4a", "NC.M2.A-REI.4b"],
+          "topics": ["expression structure", "polynomials", "quadratic equations"]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "cache_hit": false,
+  "grade_or_course": "math_2",
+  "progressive_context": {
+    "grade": 10,
+    "official_ccs_pacing": false,
+    "source": "mts_progressive_backbone",
+    "units": {
+      "algebra_functions": {
+        "builds_from": [
+          "equations",
+          "inequalities",
+          "systems"
+        ],
+        "key_concepts": [
+          "quadratic functions",
+          "factoring",
+          "quadratic equations",
+          "roots",
+          "vertex",
+          "transformations",
+          "polynomial structure"
+        ],
+        "leads_to": [
+          "higher-degree polynomials",
+          "rational functions",
+          "exponential/log functions"
+        ],
+        "progression": "Students move from linear to nonlinear function behavior.",
+        "unit_family": "Patterns, Algebra & Functions",
+        "unit_name": "Quadratic & Polynomial Foundations"
+      },
+      "data_probability": {
+        "builds_from": [
+          "one-variable data",
+          "two-variable data",
+          "association"
+        ],
+        "key_concepts": [
+          "compound events",
+          "independence",
+          "conditional probability",
+          "counting foundations"
+        ],
+        "leads_to": [
+          "sampling",
+          "distributions",
+          "inference"
+        ],
+        "progression": "Probability becomes structured around conditions and multiple events.",
+        "unit_family": "Data, Statistics & Probability",
+        "unit_name": "Compound & Conditional Probability"
+      },
+      "fractions_ratios": {
+        "builds_from": [
+          "constant rate",
+          "rate of change",
+          "linear vs exponential change"
+        ],
+        "key_concepts": [
+          "similar triangles",
+          "scale relationships",
+          "sine",
+          "cosine",
+          "tangent"
+        ],
+        "leads_to": [
+          "exponential growth/decay",
+          "logarithms",
+          "inverse relationships"
+        ],
+        "progression": "Proportional geometry becomes trigonometry.",
+        "unit_family": "Fractions, Ratios & Proportional Reasoning",
+        "unit_name": "Similarity & Trigonometric Ratios"
+      },
+      "geometry_measurement": {
+        "builds_from": [
+          "coordinate transformations",
+          "congruence",
+          "distance/slope connections"
+        ],
+        "key_concepts": [
+          "Pythagorean relationships",
+          "right-triangle trigonometry",
+          "circle properties",
+          "coordinate geometry"
+        ],
+        "leads_to": [
+          "unit circle",
+          "radians",
+          "trig graphs"
+        ],
+        "progression": "Geometry and algebra combine through similarity, trigonometry and analytic methods.",
+        "unit_family": "Geometry, Measurement & Trigonometry",
+        "unit_name": "Similarity, Right-Triangle Trig & Circles"
+      },
+      "modeling_connections": {
+        "builds_from": [
+          "representation translation",
+          "model selection",
+          "interpretation"
+        ],
+        "key_concepts": [
+          "nonlinear models",
+          "roots/intersections",
+          "geometric ratios",
+          "applications"
+        ],
+        "leads_to": [
+          "polynomial",
+          "rational",
+          "exponential"
+        ],
+        "progression": "Two major transitions occur: nonlinear functions and formal trigonometric reasoning.",
+        "unit_family": "Advanced Modeling / Connections",
+        "unit_name": "Linear \u2192 Quadratic; Similarity \u2192 Trigonometry"
+      },
+      "number_operations": {
+        "builds_from": [
+          "expression structure",
+          "exponent rules",
+          "quantitative reasoning"
+        ],
+        "key_concepts": [
+          "radicals",
+          "rational exponents",
+          "polynomial operations",
+          "algebraic simplification"
+        ],
+        "leads_to": [
+          "complex numbers",
+          "advanced algebraic manipulation",
+          "domain restrictions"
+        ],
+        "progression": "The algebraic number toolkit expands to support nonlinear functions.",
+        "unit_family": "Number Sense & Operations",
+        "unit_name": "Radicals, Rational Exponents & Polynomial Arithmetic"
+      }
+    }
+  },
+  "requires_web_resolution": true,
+  "week_start": "2026-09-07"
+}

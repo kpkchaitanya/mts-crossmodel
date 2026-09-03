@@ -1,0 +1,144 @@
+{
+  "artifacts": {
+    "derive_worksheet_and_key_from_same_spec": true,
+    "worksheet_spec_required": true
+  },
+  "compatible_subjects": [
+    "math"
+  ],
+  "curriculum": {
+    "confidence_labels": [
+      "confirmed",
+      "strongly_inferred",
+      "inferred"
+    ],
+    "progressive_backbone": "subjects/math/knowledge/curriculum/progressive/progressive-math-backbone.json"
+  },
+  "display_name": "Weekly Worksheet",
+  "duration_minutes": null,
+  "extension_readiness": {
+    "regression_baseline": "subjects/math/tests/test_subject_module.py",
+    "template_fallback": "false; dedicated Weekly Worksheet masters are registered."
+  },
+  "formatting": {
+    "editable_google_docs": true,
+    "minimize_excess_whitespace": true,
+    "print_friendly": true,
+    "visual_qa_required": true
+  },
+  "governance": {
+    "instruction_precedence": [
+      "current_user",
+      "constitution",
+      "config",
+      "requirements",
+      "design"
+    ]
+  },
+  "grade_defaults": {
+    "grade_1": {
+      "questions_per_day": 10,
+      "questions_per_week": 50
+    },
+    "grade_4": {
+      "questions_per_day": 10,
+      "questions_per_week": 50
+    },
+    "grade_5": {
+      "questions_per_day": 10,
+      "questions_per_week": 50
+    },
+    "grade_6": {
+      "questions_per_day": 8,
+      "questions_per_week": 40
+    },
+    "grade_9_10": {
+      "grade_split": {
+        "math_1": 13,
+        "math_2": 12
+      },
+      "questions_per_day": 5,
+      "questions_per_week": 25
+    }
+  },
+  "mode": {
+    "default": "human_supervised"
+  },
+  "project": {
+    "name": "MTS Testing System",
+    "timezone": "America/New_York"
+  },
+  "publishing": {
+    "outputs_root": "outputs",
+    "require_configured_final_gate": true,
+    "staging_root": "outputs-copilot",
+    "target": "outputs/math"
+  },
+  "request": {
+    "subject": "math",
+    "worksheet_type": "weekly-worksheet"
+  },
+  "run_overrides": {},
+  "sections": [
+    {
+      "id": "monday",
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "title": "Mastery"
+    }
+  ],
+  "status": "active",
+  "subject": "math",
+  "telemetry": {
+    "runs_root": "runs",
+    "unavailable_authoritative_values": null
+  },
+  "template_selection": {
+    "template_key_by_grade": {
+      "grade_1": "grade_1_class",
+      "grade_4": "standard_class",
+      "grade_5": "standard_class",
+      "grade_6": "standard_class",
+      "grade_9_10": "high_school_combined"
+    },
+    "template_manifest": "subjects/math/config/template-manifests/weekly-worksheet.json",
+    "template_registry": "templates/by-worksheet-type/template-manifest.json",
+    "template_registry_entry": {
+      "manifest_path": "../../subjects/math/config/template-manifests/weekly-worksheet.json",
+      "status": "active",
+      "subject": "math",
+      "template_fallback": false,
+      "worksheet_type_id": "weekly-worksheet"
+    }
+  },
+  "validation": {
+    "require_verification": true,
+    "require_visual_qa": true
+  },
+  "verification": {
+    "block_render_on_required_failure": true,
+    "check_notation_and_diagrams": true,
+    "check_pattern_uniqueness": true,
+    "check_sufficient_information": true,
+    "check_unintended_answers": true,
+    "recompute_every_answer": true,
+    "reverify_after_edits": true,
+    "verify_every_item": true
+  },
+  "version": "1.0",
+  "worksheet_type_id": "weekly-worksheet"
+}

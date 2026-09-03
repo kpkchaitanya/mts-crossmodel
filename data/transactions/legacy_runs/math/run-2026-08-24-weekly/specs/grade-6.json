@@ -1,0 +1,57 @@
+{
+  "worksheet":{"grade":"Grade 6","week_start":"2026-08-24","question_count":40,"duration_minutes":15},
+  "curriculum":{"current":["NC.6.RP.1","NC.6.RP.3","NC.6.NS.4"],"spiral":["area","surface area","fractions/decimals"],"confidence":"inferred"},
+  "sections":[
+    {"id":"monday","title":"Foundation","questions":[
+      {"number":1,"prompt":"List all the factors of 24.","answer":[1,2,3,4,6,8,12,24],"skill":"factors","difficulty":"easy"},
+      {"number":2,"prompt":"List the first five multiples of 7.","answer":[7,14,21,28,35],"skill":"multiples","difficulty":"easy"},
+      {"number":3,"prompt":"Is 29 prime or composite?","answer":"prime","skill":"prime classification","difficulty":"easy"},
+      {"number":4,"prompt":"Is 36 prime or composite?","answer":"composite","skill":"prime classification","difficulty":"easy"},
+      {"number":5,"prompt":"Write the factor pair of 18 that includes 3.","answer":[3,6],"skill":"factor pairs","difficulty":"easy"},
+      {"number":6,"prompt":"Find the greatest common factor of 18 and 30.","answer":6,"skill":"GCF","difficulty":"medium"},
+      {"number":7,"prompt":"Find the least common multiple of 4 and 6.","answer":12,"skill":"LCM","difficulty":"medium"},
+      {"number":8,"prompt":"Write the ratio of 3 red counters to 5 blue counters.","answer":"3:5","skill":"ratios","difficulty":"easy"}
+    ]},
+    {"id":"tuesday","title":"Discover","questions":[
+      {"number":9,"prompt":"Simplify the ratio 12:18.","answer":"2:3","skill":"ratios","difficulty":"medium"},
+      {"number":10,"prompt":"A recipe uses 2 cups of rice for every 3 cups of vegetables. How many cups of rice are needed for 6 cups of vegetables?","answer":4,"skill":"ratio reasoning","difficulty":"medium"},
+      {"number":11,"prompt":"What is the smallest prime number?","answer":2,"skill":"prime numbers","difficulty":"easy"},
+      {"number":12,"prompt":"Write the prime factorization of 12.","answer":"2 x 2 x 3","skill":"prime factorization","difficulty":"easy"},
+      {"number":13,"prompt":"Write the prime factorization of 18.","answer":"2 x 3 x 3","skill":"prime factorization","difficulty":"easy"},
+      {"number":14,"prompt":"Write the prime factorization of 20.","answer":"2 x 2 x 5","skill":"prime factorization","difficulty":"easy"},
+      {"number":15,"prompt":"Write the prime factorization of 24.","answer":"2 x 2 x 2 x 3","skill":"prime factorization","difficulty":"medium"},
+      {"number":16,"prompt":"Complete the factor tree for 30: 30 = 3 x ___.","answer":10,"skill":"factor trees","difficulty":"easy"}
+    ]},
+    {"id":"wednesday","title":"Practice","questions":[
+      {"number":17,"prompt":"Complete the factor tree for 42: 42 = 6 x ___, then write the remaining composite factor as prime factors.","answer":"7; 6 = 2 x 3","skill":"factor trees","difficulty":"medium"},
+      {"number":18,"prompt":"Which number is prime: 21, 23, or 27?","answer":23,"skill":"prime classification","difficulty":"easy"},
+      {"number":19,"prompt":"Which number has the prime factorization 2 x 2 x 3 x 5?","answer":60,"skill":"prime factorization","difficulty":"medium"},
+      {"number":20,"prompt":"Explain why 1 is not a prime number.","answer":"A prime number has exactly two positive factors, and 1 has only one.","skill":"prime definitions","difficulty":"medium"},
+      {"number":21,"prompt":"Write the prime factorization of 36.","answer":"2 x 2 x 3 x 3","skill":"prime factorization","difficulty":"medium"},
+      {"number":22,"prompt":"Write the prime factorization of 45.","answer":"3 x 3 x 5","skill":"prime factorization","difficulty":"medium"},
+      {"number":23,"prompt":"Write the prime factorization of 56.","answer":"2 x 2 x 2 x 7","skill":"prime factorization","difficulty":"medium"},
+      {"number":24,"prompt":"Write the prime factorization of 72.","answer":"2 x 2 x 2 x 3 x 3","skill":"prime factorization","difficulty":"medium"}
+    ]},
+    {"id":"thursday","title":"Apply and Review","questions":[
+      {"number":25,"prompt":"Use prime factorization to find the GCF of 24 and 36.","answer":12,"skill":"GCF by prime factorization","difficulty":"medium"},
+      {"number":26,"prompt":"Use prime factorization to find the GCF of 30 and 45.","answer":15,"skill":"GCF by prime factorization","difficulty":"medium"},
+      {"number":27,"prompt":"Use prime factorization to find the LCM of 6 and 8.","answer":24,"skill":"LCM by prime factorization","difficulty":"medium"},
+      {"number":28,"prompt":"Use prime factorization to find the LCM of 12 and 15.","answer":60,"skill":"LCM by prime factorization","difficulty":"medium"},
+      {"number":29,"prompt":"A student says the prime factorization of 48 is 2 x 24. Is this complete? Explain.","answer":"No. 24 is not prime; the complete factorization is 2 x 2 x 2 x 2 x 3.","skill":"factorization reasoning","difficulty":"medium"},
+      {"number":30,"prompt":"A student writes 2 x 2 x 3 x 3 as the prime factorization of 36. Is the student correct? Explain.","answer":"Yes, all factors are prime and their product is 36.","skill":"factorization reasoning","difficulty":"medium"},
+      {"number":31,"prompt":"Two bells ring every 8 minutes and every 12 minutes. If they ring together now, after how many minutes will they ring together again?","answer":24,"skill":"LCM application","difficulty":"medium"},
+      {"number":32,"prompt":"Two buses arrive every 15 minutes and every 20 minutes. After how many minutes will they arrive together?","answer":60,"skill":"LCM application","difficulty":"medium"}
+    ]},
+    {"id":"friday","title":"Mastery","questions":[
+      {"number":33,"prompt":"A teacher has 24 pencils and 36 erasers. She wants identical supply kits with no items left over. What is the greatest number of kits?","answer":12,"skill":"GCF application","difficulty":"medium"},
+      {"number":34,"prompt":"How many pencils and how many erasers will be in each kit from Question 33?","answer":"2 pencils and 3 erasers","skill":"GCF application","difficulty":"medium"},
+      {"number":35,"prompt":"A number has prime factorization 2 x 2 x 2 x 5. What is the number?","answer":40,"skill":"prime factorization","difficulty":"easy"},
+      {"number":36,"prompt":"A number has prime factorization 3 x 3 x 7. What is the number?","answer":63,"skill":"prime factorization","difficulty":"easy"},
+      {"number":37,"prompt":"Find the missing factor: 2^2 x 3 x ___ = 60.","answer":5,"skill":"prime factorization","difficulty":"medium"},
+      {"number":38,"prompt":"A rectangular garden has a length of 18 meters and a width of 12 meters. Find its area.","answer":"216 square meters","skill":"area","difficulty":"easy"},
+      {"number":39,"prompt":"A recipe calls for 3/4 cup of flour. How much flour is needed for 4 batches?","answer":"3 cups","skill":"fraction multiplication","difficulty":"medium"},
+      {"number":40,"prompt":"A class has 18 students in one group and 24 students in another group. What is the ratio of the first group to the second group in simplest form?","answer":"3:4","skill":"ratios","difficulty":"medium"}
+    ]}
+  ],
+  "verification":{"status":"PASS","checked":40,"failed":0,"ambiguous":0}
+}

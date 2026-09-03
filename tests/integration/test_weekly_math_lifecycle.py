@@ -4,16 +4,13 @@ import sys
 import tempfile
 
 REPO = Path(__file__).resolve().parents[2]
-MATH = REPO / "subjects" / "math"
-sys.path.insert(0, str(REPO / "src" / "runtime"))
-sys.path.insert(0, str(REPO / "src" / "rendering"))
-sys.path.insert(0, str(MATH / "src"))
-import gates
-import google_docs_adapter
-import policy
-import run_repository
-import subject_module
-import weekly_workflow
+sys.path.insert(0, str(REPO / "src"))
+from mts.infrastructure.google_docs import google_docs_adapter
+from mts.setup_project.configure import resolve_effective_config
+from mts.subjects.math import subject_module, weekly_workflow
+from mts.workflow_management import gates
+from mts.workflow_management.run_loader import RunLoader
+from mts.workflow_management.run_writer import RunWriter
 
 
 class Request:
@@ -118,25 +115,28 @@ def projection(spec, *, answer_key=False):
     return "\n".join(lines)
 
 
-def approve(repository, manifest, gate, revision):
+def approve(writer, manifest, gate, revision):
     updated = gates.record_approval(manifest, gate=gate, artifact_revision=revision, status="approved", reviewer="teacher")
-    repository.save_manifest(updated)
+    writer.write_manifest(updated)
     return updated
 
 
 def test_all_weekly_math_plans_reach_publish_approval_readiness():
     request = {"subject": "math", "worksheet_type": "weekly-worksheet"}
-    resolved_policy = policy.resolve(request, repository_root=REPO)
-    math = subject_module.MathSubjectModule(MATH)
-    workflow = weekly_workflow.prepare_scope_review(resolved_policy, on_date="2026-08-24", subject_module=math)
+    effective_config = resolve_effective_config(request, repository_root=REPO)
+    math = subject_module.MathSubjectModule()
+    workflow = weekly_workflow.prepare_scope_review(effective_config, on_date="2026-08-24", subject_module=math)
     drive = FakeDrive()
     docs = FakeDocs()
     adapter = google_docs_adapter.GoogleDocsAdapter(drive, docs)
 
     with tempfile.TemporaryDirectory() as temporary_directory:
-        repository = run_repository.RunRepository(Path(temporary_directory) / "runs")
-        manifest = repository.create_or_resume(request, resolved_policy, run_id="run-weekly-math-e2e")
-        manifest = approve(repository, manifest, "scope_review", "weekly-scope-r1")
+        writer = RunWriter(Path(temporary_directory) / "data")
+        loader = RunLoader(Path(temporary_directory) / "data")
+        writer.write_effective_config("run-weekly-math-e2e", effective_config)
+        manifest = {"run_id": "run-weekly-math-e2e", "subject": "math", "worksheet_type": "weekly-worksheet", "status": "initialized", "approvals": []}
+        writer.write_manifest(manifest)
+        manifest = approve(writer, manifest, "scope_review", "weekly-scope-r1")
         assert gates.require_approval(manifest, gate="scope_review", artifact_revision="weekly-scope-r1") == "worksheet_prepared"
 
         validated_artifacts = []
@@ -149,14 +149,14 @@ def test_all_weekly_math_plans_reach_publish_approval_readiness():
                 assert sum(plan_entry["plan"]["grade_split"].values()) == count
             spec = math.build_spec(plan_entry["plan"], {"spec": candidate_spec(grade, count)})
             assert [section["id"] for section in spec["sections"]] == ["monday", "tuesday", "wednesday", "thursday", "friday"]
-            manifest = approve(repository, manifest, "question_review", f"{grade}-questions-r1")
+            manifest = approve(writer, manifest, "question_review", f"{grade}-questions-r1")
             assert gates.require_approval(manifest, gate="question_review", artifact_revision=f"{grade}-questions-r1") == "verification_in_progress"
 
             verification = math.verify_spec(spec)
             assert verification["status"] == "PASS"
             assert verification["questions"] == count
             spec["verification"]["status"] = "PASS"
-            manifest = approve(repository, manifest, "verification_review", f"{grade}-verification-r1")
+            manifest = approve(writer, manifest, "verification_review", f"{grade}-verification-r1")
             assert gates.require_approval(manifest, gate="verification_review", artifact_revision=f"{grade}-verification-r1") == "render_ready"
 
             rendered = adapter.render_pair(
@@ -177,13 +177,13 @@ def test_all_weekly_math_plans_reach_publish_approval_readiness():
             for artifact in rendered.values():
                 artifact["status"] = "validated"
                 validated_artifacts.append(artifact)
-            manifest = approve(repository, manifest, "formatting_review", f"{grade}-render-r1")
+            manifest = approve(writer, manifest, "formatting_review", f"{grade}-render-r1")
             assert gates.require_approval(manifest, gate="formatting_review", artifact_revision=f"{grade}-render-r1") == "publish_approval_pending"
 
         manifest["artifacts"] = validated_artifacts
         manifest["status"] = "publish_approval_pending"
-        repository.save_manifest(manifest)
-        persisted = repository.create_or_resume(request, resolved_policy, run_id="run-weekly-math-e2e")
+        writer.write_manifest(manifest)
+        persisted = loader.load_manifest("run-weekly-math-e2e")
         assert len(persisted["artifacts"]) == 10
         assert len(drive.file_service.copy_calls) == 10
         assert drive.file_service.update_calls == []

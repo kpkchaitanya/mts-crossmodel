@@ -1,0 +1,17 @@
+{
+  "curriculum_scope": {
+    "grade_or_course": "grade_9_10",
+    "week_start": "2026-09-07"
+  },
+  "duration_minutes": null,
+  "grade_display_name": "Grades 9 and 10 Combined",
+  "grade_or_course": "grade_9_10",
+  "grade_split": {
+    "math_1": 13,
+    "math_2": 12
+  },
+  "questions_per_day": 5,
+  "questions_per_week": 25,
+  "subject": "math",
+  "worksheet_type": "weekly-worksheet"
+}

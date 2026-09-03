@@ -1,0 +1,126 @@
+{
+  "status": "rendered_to_staging",
+  "staging_folder": "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL",
+  "artifacts": [
+    {
+      "worksheet_id": "grade_1",
+      "worksheet": {
+        "id": "1aibPWredlcLFYR1dMZydVNEqxLAECFzhWMQ73gbkhIU",
+        "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-09-07",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1aibPWredlcLFYR1dMZydVNEqxLAECFzhWMQ73gbkhIU/edit?usp=drivesdk"
+      },
+      "answer_key": {
+        "id": "1_6080x37MR9nNENn39cmUQTcJIbCIUNKjzKSK8TJ-9U",
+        "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-09-07_KEY",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1_6080x37MR9nNENn39cmUQTcJIbCIUNKjzKSK8TJ-9U/edit?usp=drivesdk"
+      },
+      "status": "rendered",
+      "template_ids": {
+        "worksheet": "1am6MWISljNdj6rytAUDN-ulRozi1XIH4H0R0-VDEAqo",
+        "answer_key": "1aqfc31qO8LxuSx319hfakJouHsalMQ09WgFpMt_8S3Y"
+      }
+    },
+    {
+      "worksheet_id": "grade_4",
+      "worksheet": {
+        "id": "1awDUnWrigTV7s_GtcYuCYBSAwWr7oHPvC36OZZEqRk4",
+        "name": "MTS-Math-4thGrade-WeeklyWorksheet-2026-09-07",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1awDUnWrigTV7s_GtcYuCYBSAwWr7oHPvC36OZZEqRk4/edit?usp=drivesdk"
+      },
+      "answer_key": {
+        "id": "14wNxWoh4DNPQsf8HlXzDyeBn_agGka5ZoZIo31sUL6Y",
+        "name": "MTS-Math-4thGrade-WeeklyWorksheet-2026-09-07_KEY",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/14wNxWoh4DNPQsf8HlXzDyeBn_agGka5ZoZIo31sUL6Y/edit?usp=drivesdk"
+      },
+      "status": "rendered",
+      "template_ids": {
+        "worksheet": "1am6MWISljNdj6rytAUDN-ulRozi1XIH4H0R0-VDEAqo",
+        "answer_key": "1aqfc31qO8LxuSx319hfakJouHsalMQ09WgFpMt_8S3Y"
+      }
+    },
+    {
+      "worksheet_id": "grade_5",
+      "worksheet": {
+        "id": "198ZjMYeyduqfQ80LCx46XZ3qlP0wYf2P_mMMf9i1Jyg",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-09-07",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/198ZjMYeyduqfQ80LCx46XZ3qlP0wYf2P_mMMf9i1Jyg/edit?usp=drivesdk"
+      },
+      "answer_key": {
+        "id": "1rzk5bnruVNlgQaeGo8YInZxkJoHsKAQqylozkBSKgX0",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-09-07_KEY",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1rzk5bnruVNlgQaeGo8YInZxkJoHsKAQqylozkBSKgX0/edit?usp=drivesdk"
+      },
+      "status": "rendered",
+      "template_ids": {
+        "worksheet": "1am6MWISljNdj6rytAUDN-ulRozi1XIH4H0R0-VDEAqo",
+        "answer_key": "1aqfc31qO8LxuSx319hfakJouHsalMQ09WgFpMt_8S3Y"
+      }
+    },
+    {
+      "worksheet_id": "grade_6",
+      "worksheet": {
+        "id": "1VnS2wdWrdejju1PAYEVFQMRG-5HAPmFv6BP2J7FdMm8",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-09-07",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1VnS2wdWrdejju1PAYEVFQMRG-5HAPmFv6BP2J7FdMm8/edit?usp=drivesdk"
+      },
+      "answer_key": {
+        "id": "1YVn5zbaVkMnv7OTnYcz2ooj5Ad-HLw8qUklQ7wpUD3s",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-09-07_KEY",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1YVn5zbaVkMnv7OTnYcz2ooj5Ad-HLw8qUklQ7wpUD3s/edit?usp=drivesdk"
+      },
+      "status": "rendered",
+      "template_ids": {
+        "worksheet": "1am6MWISljNdj6rytAUDN-ulRozi1XIH4H0R0-VDEAqo",
+        "answer_key": "1aqfc31qO8LxuSx319hfakJouHsalMQ09WgFpMt_8S3Y"
+      }
+    },
+    {
+      "worksheet_id": "grade_9_10",
+      "worksheet": {
+        "id": "1aD0xF7Eo2MIknEhO7iJjeC-66aCXf9ZmjtGlWshaNPQ",
+        "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-09-07",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1aD0xF7Eo2MIknEhO7iJjeC-66aCXf9ZmjtGlWshaNPQ/edit?usp=drivesdk"
+      },
+      "answer_key": {
+        "id": "1VVHYRfAMV52Q_H3Jr_Dqx2gEtXFZqX8XopE07K84wZg",
+        "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-09-07_KEY",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1VVHYRfAMV52Q_H3Jr_Dqx2gEtXFZqX8XopE07K84wZg/edit?usp=drivesdk"
+      },
+      "status": "rendered",
+      "template_ids": {
+        "worksheet": "1am6MWISljNdj6rytAUDN-ulRozi1XIH4H0R0-VDEAqo",
+        "answer_key": "1aqfc31qO8LxuSx319hfakJouHsalMQ09WgFpMt_8S3Y"
+      }
+    }
+  ]
+}

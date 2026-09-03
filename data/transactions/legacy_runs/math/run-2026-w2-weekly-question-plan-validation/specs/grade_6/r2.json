@@ -1,0 +1,600 @@
+{
+  "curriculum": {
+    "week_start": "2026-08-24"
+  },
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 9.0,
+          "difficulty": "low_plus",
+          "number": 1,
+          "prompt": "A recipe uses 3 cups of flour for every 5 cups of sugar. If you use 15 cups of sugar, how many cups of flour are needed?",
+          "skill": "ratio concepts",
+          "verification": {
+            "inputs": {
+              "expression": "(3/5)*15"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "low_plus",
+          "number": 2,
+          "prompt": "Simplify the ratio 12:18 by finding the GCF used to reduce it.",
+          "skill": "ratio reasoning",
+          "verification": {
+            "inputs": {
+              "a": 12,
+              "b": 18
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": [
+            17
+          ],
+          "difficulty": "low_plus",
+          "number": 3,
+          "prompt": "Write the prime factorization of 17.",
+          "skill": "prime factorization",
+          "verification": {
+            "criterion": "trial-division prime factorization is complete and correct",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 1,
+          "difficulty": "medium",
+          "number": 4,
+          "prompt": "Find the greatest common factor of 10 and 13.",
+          "skill": "factors and multiples",
+          "verification": {
+            "inputs": {
+              "a": 10,
+              "b": 13
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 24.5,
+          "difficulty": "medium",
+          "number": 5,
+          "prompt": "Find the area of a triangle with base 7 and height 7.",
+          "skill": "area",
+          "verification": {
+            "inputs": {
+              "base": 7,
+              "height": 7
+            },
+            "method": "triangle_area"
+          }
+        },
+        {
+          "answer": 16.0,
+          "difficulty": "medium",
+          "number": 6,
+          "prompt": "A recipe uses 4 cups of flour for every 3 cups of sugar. If you use 12 cups of sugar, how many cups of flour are needed?",
+          "skill": "ratio concepts",
+          "verification": {
+            "inputs": {
+              "expression": "(4/3)*12"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            2,
+            11
+          ],
+          "difficulty": "medium",
+          "number": 7,
+          "prompt": "Write the prime factorization of 22.",
+          "skill": "prime factorization",
+          "verification": {
+            "criterion": "trial-division prime factorization is complete and correct",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "medium",
+          "number": 8,
+          "prompt": "Simplify the ratio 16:24 by finding the GCF used to reduce it.",
+          "skill": "ratio reasoning",
+          "verification": {
+            "inputs": {
+              "a": 16,
+              "b": 24
+            },
+            "method": "gcf"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 15.0,
+          "difficulty": "low_plus",
+          "number": 9,
+          "prompt": "A recipe uses 5 cups of flour for every 6 cups of sugar. If you use 18 cups of sugar, how many cups of flour are needed?",
+          "skill": "ratio concepts",
+          "verification": {
+            "inputs": {
+              "expression": "(5/6)*18"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 10,
+          "difficulty": "medium",
+          "number": 10,
+          "prompt": "Simplify the ratio 20:30 by finding the GCF used to reduce it.",
+          "skill": "ratio reasoning",
+          "verification": {
+            "inputs": {
+              "a": 20,
+              "b": 30
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": [
+            3,
+            3,
+            3
+          ],
+          "difficulty": "medium",
+          "number": 11,
+          "prompt": "Write the prime factorization of 27.",
+          "skill": "prime factorization",
+          "verification": {
+            "criterion": "trial-division prime factorization is complete and correct",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 140,
+          "difficulty": "medium",
+          "number": 12,
+          "prompt": "Find the least common multiple of 14 and 20.",
+          "skill": "factors and multiples",
+          "verification": {
+            "inputs": {
+              "a": 14,
+              "b": 20
+            },
+            "method": "lcm"
+          }
+        },
+        {
+          "answer": 24.5,
+          "difficulty": "medium",
+          "number": 13,
+          "prompt": "Find the area of a triangle with base 7 and height 7.",
+          "skill": "area",
+          "verification": {
+            "inputs": {
+              "base": 7,
+              "height": 7
+            },
+            "method": "triangle_area"
+          }
+        },
+        {
+          "answer": 24.0,
+          "difficulty": "medium",
+          "number": 14,
+          "prompt": "A recipe uses 6 cups of flour for every 4 cups of sugar. If you use 16 cups of sugar, how many cups of flour are needed?",
+          "skill": "ratio concepts",
+          "verification": {
+            "inputs": {
+              "expression": "(6/4)*16"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "difficulty": "medium_plus",
+          "number": 15,
+          "prompt": "Write the prime factorization of 32.",
+          "skill": "prime factorization",
+          "verification": {
+            "criterion": "trial-division prime factorization is complete and correct",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "medium_plus",
+          "number": 16,
+          "prompt": "Simplify the ratio 24:36 by finding the GCF used to reduce it.",
+          "skill": "ratio reasoning",
+          "verification": {
+            "inputs": {
+              "a": 24,
+              "b": 36
+            },
+            "method": "gcf"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 8.0,
+          "difficulty": "medium",
+          "number": 17,
+          "prompt": "A recipe uses 2 cups of flour for every 2 cups of sugar. If you use 8 cups of sugar, how many cups of flour are needed?",
+          "skill": "ratio concepts",
+          "verification": {
+            "inputs": {
+              "expression": "(2/2)*8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 14,
+          "difficulty": "medium",
+          "number": 18,
+          "prompt": "Simplify the ratio 28:42 by finding the GCF used to reduce it.",
+          "skill": "ratio reasoning",
+          "verification": {
+            "inputs": {
+              "a": 28,
+              "b": 42
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": [
+            37
+          ],
+          "difficulty": "medium",
+          "number": 19,
+          "prompt": "Write the prime factorization of 37.",
+          "skill": "prime factorization",
+          "verification": {
+            "criterion": "trial-division prime factorization is complete and correct",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "medium",
+          "number": 20,
+          "prompt": "Find the greatest common factor of 18 and 27.",
+          "skill": "factors and multiples",
+          "verification": {
+            "inputs": {
+              "a": 18,
+              "b": 27
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 32.0,
+          "difficulty": "medium_plus",
+          "number": 21,
+          "prompt": "Find the area of a triangle with base 8 and height 8.",
+          "skill": "area",
+          "verification": {
+            "inputs": {
+              "base": 8,
+              "height": 8
+            },
+            "method": "triangle_area"
+          }
+        },
+        {
+          "answer": 18.0,
+          "difficulty": "medium_plus",
+          "number": 22,
+          "prompt": "A recipe uses 3 cups of flour for every 5 cups of sugar. If you use 30 cups of sugar, how many cups of flour are needed?",
+          "skill": "ratio concepts",
+          "verification": {
+            "inputs": {
+              "expression": "(3/5)*30"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            2,
+            3,
+            7
+          ],
+          "difficulty": "medium_plus",
+          "number": 23,
+          "prompt": "Write the prime factorization of 42.",
+          "skill": "prime factorization",
+          "verification": {
+            "criterion": "trial-division prime factorization is complete and correct",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 4,
+          "difficulty": "medium_plus",
+          "number": 24,
+          "prompt": "Simplify the ratio 8:12 by finding the GCF used to reduce it.",
+          "skill": "ratio reasoning",
+          "verification": {
+            "inputs": {
+              "a": 8,
+              "b": 12
+            },
+            "method": "gcf"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 16.0,
+          "difficulty": "medium",
+          "number": 25,
+          "prompt": "A recipe uses 4 cups of flour for every 3 cups of sugar. If you use 12 cups of sugar, how many cups of flour are needed?",
+          "skill": "ratio concepts",
+          "verification": {
+            "inputs": {
+              "expression": "(4/3)*12"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "medium",
+          "number": 26,
+          "prompt": "Simplify the ratio 12:18 by finding the GCF used to reduce it.",
+          "skill": "ratio reasoning",
+          "verification": {
+            "inputs": {
+              "a": 12,
+              "b": 18
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": [
+            47
+          ],
+          "difficulty": "medium_plus",
+          "number": 27,
+          "prompt": "Write the prime factorization of 47.",
+          "skill": "prime factorization",
+          "verification": {
+            "criterion": "trial-division prime factorization is complete and correct",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 374,
+          "difficulty": "medium_plus",
+          "number": 28,
+          "prompt": "Find the least common multiple of 22 and 34.",
+          "skill": "factors and multiples",
+          "verification": {
+            "inputs": {
+              "a": 22,
+              "b": 34
+            },
+            "method": "lcm"
+          }
+        },
+        {
+          "answer": 32.0,
+          "difficulty": "medium_plus",
+          "number": 29,
+          "prompt": "Find the area of a triangle with base 8 and height 8.",
+          "skill": "area",
+          "verification": {
+            "inputs": {
+              "base": 8,
+              "height": 8
+            },
+            "method": "triangle_area"
+          }
+        },
+        {
+          "answer": 30.0,
+          "difficulty": "medium_plus",
+          "number": 30,
+          "prompt": "A recipe uses 5 cups of flour for every 6 cups of sugar. If you use 36 cups of sugar, how many cups of flour are needed?",
+          "skill": "ratio concepts",
+          "verification": {
+            "inputs": {
+              "expression": "(5/6)*36"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            2,
+            2,
+            13
+          ],
+          "difficulty": "medium_plus",
+          "number": 31,
+          "prompt": "Write the prime factorization of 52.",
+          "skill": "prime factorization",
+          "verification": {
+            "criterion": "trial-division prime factorization is complete and correct",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "high",
+          "number": 32,
+          "prompt": "Simplify the ratio 16:24 by finding the GCF used to reduce it.",
+          "skill": "ratio reasoning",
+          "verification": {
+            "inputs": {
+              "a": 16,
+              "b": 24
+            },
+            "method": "gcf"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 24.0,
+          "difficulty": "medium",
+          "number": 33,
+          "prompt": "A recipe uses 6 cups of flour for every 4 cups of sugar. If you use 16 cups of sugar, how many cups of flour are needed?",
+          "skill": "ratio concepts",
+          "verification": {
+            "inputs": {
+              "expression": "(6/4)*16"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 10,
+          "difficulty": "medium_plus",
+          "number": 34,
+          "prompt": "Simplify the ratio 20:30 by finding the GCF used to reduce it.",
+          "skill": "ratio reasoning",
+          "verification": {
+            "inputs": {
+              "a": 20,
+              "b": 30
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": [
+            3,
+            19
+          ],
+          "difficulty": "medium_plus",
+          "number": 35,
+          "prompt": "Write the prime factorization of 57.",
+          "skill": "prime factorization",
+          "verification": {
+            "criterion": "trial-division prime factorization is complete and correct",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 1,
+          "difficulty": "medium_plus",
+          "number": 36,
+          "prompt": "Find the greatest common factor of 26 and 41.",
+          "skill": "factors and multiples",
+          "verification": {
+            "inputs": {
+              "a": 26,
+              "b": 41
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 32.0,
+          "difficulty": "medium_plus",
+          "number": 37,
+          "prompt": "Find the area of a triangle with base 8 and height 8.",
+          "skill": "area",
+          "verification": {
+            "inputs": {
+              "base": 8,
+              "height": 8
+            },
+            "method": "triangle_area"
+          }
+        },
+        {
+          "answer": 14.0,
+          "difficulty": "high",
+          "number": 38,
+          "prompt": "A recipe uses 2 cups of flour for every 2 cups of sugar. If you use 14 cups of sugar, how many cups of flour are needed?",
+          "skill": "ratio concepts",
+          "verification": {
+            "inputs": {
+              "expression": "(2/2)*14"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            2,
+            31
+          ],
+          "difficulty": "high",
+          "number": 39,
+          "prompt": "Write the prime factorization of 62.",
+          "skill": "prime factorization",
+          "verification": {
+            "criterion": "trial-division prime factorization is complete and correct",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "high",
+          "number": 40,
+          "prompt": "Simplify the ratio 24:36 by finding the GCF used to reduce it.",
+          "skill": "ratio reasoning",
+          "verification": {
+            "inputs": {
+              "a": 24,
+              "b": 36
+            },
+            "method": "gcf"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PENDING"
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "Grade 6",
+    "question_count": 40,
+    "title": "MTS - WEEKLY WORKSHEET",
+    "week_start": "2026-08-24"
+  }
+}

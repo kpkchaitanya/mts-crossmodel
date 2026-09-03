@@ -1,0 +1,588 @@
+{
+  "curriculum": {
+    "week_number": 2,
+    "week_start": "2026-08-24"
+  },
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 12,
+          "difficulty": "medium",
+          "number": 1,
+          "prompt": "A recipe ratio scales by this factor: 3*4. Find the product.",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "3*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30,
+          "difficulty": "medium",
+          "number": 2,
+          "prompt": "A recipe ratio scales by this factor: 5*6. Find the product.",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "5*6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 18,
+          "difficulty": "medium",
+          "number": 3,
+          "prompt": "A recipe ratio scales by this factor: 2*9. Find the product.",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "2*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 21,
+          "difficulty": "medium",
+          "number": 4,
+          "prompt": "A recipe ratio scales by this factor: 7*3. Find the product.",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "7*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 32,
+          "difficulty": "medium",
+          "number": 5,
+          "prompt": "A recipe ratio scales by this factor: 4*8. Find the product.",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "4*8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30,
+          "difficulty": "medium",
+          "number": 6,
+          "prompt": "A recipe ratio scales by this factor: 6*5. Find the product.",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "6*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 18,
+          "difficulty": "medium",
+          "number": 7,
+          "prompt": "A recipe ratio scales by this factor: 9*2. Find the product.",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "9*2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 21,
+          "difficulty": "medium",
+          "number": 8,
+          "prompt": "A recipe ratio scales by this factor: 3*7. Find the product.",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "3*7"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 32,
+          "difficulty": "medium",
+          "number": 9,
+          "prompt": "A recipe ratio scales by this factor: 8*4. Find the product.",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "8*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 45,
+          "difficulty": "medium",
+          "number": 10,
+          "prompt": "A recipe ratio scales by this factor: 5*9. Find the product.",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "5*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "medium",
+          "number": 11,
+          "prompt": "Find the GCF of 12 and 18.",
+          "skill": "gcf",
+          "verification": {
+            "inputs": {
+              "a": 12,
+              "b": 18
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "medium",
+          "number": 12,
+          "prompt": "Find the GCF of 24 and 36.",
+          "skill": "gcf",
+          "verification": {
+            "inputs": {
+              "a": 24,
+              "b": 36
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "medium",
+          "number": 13,
+          "prompt": "Find the GCF of 16 and 40.",
+          "skill": "gcf",
+          "verification": {
+            "inputs": {
+              "a": 16,
+              "b": 40
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 15,
+          "difficulty": "medium",
+          "number": 14,
+          "prompt": "Find the GCF of 30 and 45.",
+          "skill": "gcf",
+          "verification": {
+            "inputs": {
+              "a": 30,
+              "b": 45
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "medium",
+          "number": 15,
+          "prompt": "Find the GCF of 18 and 27.",
+          "skill": "gcf",
+          "verification": {
+            "inputs": {
+              "a": 18,
+              "b": 27
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 4,
+          "difficulty": "medium",
+          "number": 16,
+          "prompt": "Find the GCF of 20 and 32.",
+          "skill": "gcf",
+          "verification": {
+            "inputs": {
+              "a": 20,
+              "b": 32
+            },
+            "method": "gcf"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 7,
+          "difficulty": "medium",
+          "number": 17,
+          "prompt": "Find the GCF of 14 and 21.",
+          "skill": "gcf",
+          "verification": {
+            "inputs": {
+              "a": 14,
+              "b": 21
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 14,
+          "difficulty": "medium",
+          "number": 18,
+          "prompt": "Find the GCF of 28 and 42.",
+          "skill": "gcf",
+          "verification": {
+            "inputs": {
+              "a": 28,
+              "b": 42
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 5,
+          "difficulty": "medium",
+          "number": 19,
+          "prompt": "Find the GCF of 15 and 25.",
+          "skill": "gcf",
+          "verification": {
+            "inputs": {
+              "a": 15,
+              "b": 25
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "medium",
+          "number": 20,
+          "prompt": "Find the GCF of 36 and 48.",
+          "skill": "gcf",
+          "verification": {
+            "inputs": {
+              "a": 36,
+              "b": 48
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "medium",
+          "number": 21,
+          "prompt": "Find the LCM of 4 and 6.",
+          "skill": "lcm",
+          "verification": {
+            "inputs": {
+              "a": 4,
+              "b": 6
+            },
+            "method": "lcm"
+          }
+        },
+        {
+          "answer": 24,
+          "difficulty": "medium",
+          "number": 22,
+          "prompt": "Find the LCM of 3 and 8.",
+          "skill": "lcm",
+          "verification": {
+            "inputs": {
+              "a": 3,
+              "b": 8
+            },
+            "method": "lcm"
+          }
+        },
+        {
+          "answer": 30,
+          "difficulty": "medium",
+          "number": 23,
+          "prompt": "Find the LCM of 5 and 6.",
+          "skill": "lcm",
+          "verification": {
+            "inputs": {
+              "a": 5,
+              "b": 6
+            },
+            "method": "lcm"
+          }
+        },
+        {
+          "answer": 18,
+          "difficulty": "medium",
+          "number": 24,
+          "prompt": "Find the LCM of 6 and 9.",
+          "skill": "lcm",
+          "verification": {
+            "inputs": {
+              "a": 6,
+              "b": 9
+            },
+            "method": "lcm"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 20,
+          "difficulty": "medium",
+          "number": 25,
+          "prompt": "Find the LCM of 4 and 10.",
+          "skill": "lcm",
+          "verification": {
+            "inputs": {
+              "a": 4,
+              "b": 10
+            },
+            "method": "lcm"
+          }
+        },
+        {
+          "answer": 15,
+          "difficulty": "medium",
+          "number": 26,
+          "prompt": "Find the LCM of 3 and 5.",
+          "skill": "lcm",
+          "verification": {
+            "inputs": {
+              "a": 3,
+              "b": 5
+            },
+            "method": "lcm"
+          }
+        },
+        {
+          "answer": 24,
+          "difficulty": "medium",
+          "number": 27,
+          "prompt": "Find the LCM of 6 and 8.",
+          "skill": "lcm",
+          "verification": {
+            "inputs": {
+              "a": 6,
+              "b": 8
+            },
+            "method": "lcm"
+          }
+        },
+        {
+          "answer": 36,
+          "difficulty": "medium",
+          "number": 28,
+          "prompt": "Find the LCM of 9 and 12.",
+          "skill": "lcm",
+          "verification": {
+            "inputs": {
+              "a": 9,
+              "b": 12
+            },
+            "method": "lcm"
+          }
+        },
+        {
+          "answer": 20,
+          "difficulty": "medium",
+          "number": 29,
+          "prompt": "Find the LCM of 4 and 5.",
+          "skill": "lcm",
+          "verification": {
+            "inputs": {
+              "a": 4,
+              "b": 5
+            },
+            "method": "lcm"
+          }
+        },
+        {
+          "answer": 21,
+          "difficulty": "medium",
+          "number": 30,
+          "prompt": "Find the LCM of 7 and 3.",
+          "skill": "lcm",
+          "verification": {
+            "inputs": {
+              "a": 7,
+              "b": 3
+            },
+            "method": "lcm"
+          }
+        },
+        {
+          "answer": 4.0,
+          "difficulty": "medium",
+          "number": 31,
+          "prompt": "Simplify the ratio expressed as a quotient: 12/3",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "12/3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.0,
+          "difficulty": "medium",
+          "number": 32,
+          "prompt": "Simplify the ratio expressed as a quotient: 18/6",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "18/6"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 3.0,
+          "difficulty": "medium",
+          "number": 33,
+          "prompt": "Simplify the ratio expressed as a quotient: 24/8",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "24/8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.0,
+          "difficulty": "medium",
+          "number": 34,
+          "prompt": "Simplify the ratio expressed as a quotient: 9/3",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "9/3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.0,
+          "difficulty": "medium",
+          "number": 35,
+          "prompt": "Simplify the ratio expressed as a quotient: 21/7",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "21/7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4.0,
+          "difficulty": "medium",
+          "number": 36,
+          "prompt": "Simplify the ratio expressed as a quotient: 16/4",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "16/4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.0,
+          "difficulty": "medium",
+          "number": 37,
+          "prompt": "Simplify the ratio expressed as a quotient: 27/9",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "27/9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5.0,
+          "difficulty": "medium",
+          "number": 38,
+          "prompt": "Simplify the ratio expressed as a quotient: 30/6",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "30/6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4.0,
+          "difficulty": "medium",
+          "number": 39,
+          "prompt": "Simplify the ratio expressed as a quotient: 36/9",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "36/9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.0,
+          "difficulty": "medium",
+          "number": 40,
+          "prompt": "Simplify the ratio expressed as a quotient: 15/5",
+          "skill": "ratio_reasoning",
+          "verification": {
+            "inputs": {
+              "expression": "15/5"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PASS"
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_6",
+    "question_count": 40,
+    "title": "MTS - WEEKLY WORKSHEET",
+    "week_start": "2026-08-24"
+  }
+}

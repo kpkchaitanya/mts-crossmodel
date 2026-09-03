@@ -1,0 +1,319 @@
+{
+  "approvals": [
+    {
+      "approval_id": "approval-feea3e61093e4376b0883ec07c94e695",
+      "artifact_revision": "scope-r1",
+      "gate": "scope_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.333045+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-9d0fa7d63c794da9820457ad764dedd3",
+      "artifact_revision": "grade_1-questions-r1",
+      "gate": "question_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.338147+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-26adb6d2f9f140bdb44cf22bd5a66f88",
+      "artifact_revision": "grade_1-verification-r1",
+      "gate": "verification_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.340623+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-0fa3abedb36d41558450c988ba5e4c93",
+      "artifact_revision": "grade_1-render-r1",
+      "gate": "formatting_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.345327+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-befbf6454eb04888a1c9b15f1a81621a",
+      "artifact_revision": "grade_4-questions-r1",
+      "gate": "question_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.349328+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-b53599a7f4534ac587ce18b11fb09188",
+      "artifact_revision": "grade_4-verification-r1",
+      "gate": "verification_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.350972+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-ff54736c04bb4ebaa3cd58dfa1cc0bca",
+      "artifact_revision": "grade_4-render-r1",
+      "gate": "formatting_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.353241+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-19d5ae92185e49e39aba27fd5ec1c455",
+      "artifact_revision": "grade_5-questions-r1",
+      "gate": "question_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.357119+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-729ab23c2921431ca39133fe328393d0",
+      "artifact_revision": "grade_5-verification-r1",
+      "gate": "verification_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.358700+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-dd08a49f0f4f447c8a04cb8f70965d1e",
+      "artifact_revision": "grade_5-render-r1",
+      "gate": "formatting_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.360863+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-e5c2b0976ca240328b305d7283d2defd",
+      "artifact_revision": "grade_6-questions-r1",
+      "gate": "question_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.364284+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-f97522a351da4165b670f93f93a13c40",
+      "artifact_revision": "grade_6-verification-r1",
+      "gate": "verification_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.365708+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-a83e24ad79f541209777c7e1e9c5f891",
+      "artifact_revision": "grade_6-render-r1",
+      "gate": "formatting_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.367556+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-9eae07a99c20435f9f3a4f402fb75eb6",
+      "artifact_revision": "grade_9_10-questions-r1",
+      "gate": "question_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.370067+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-1ed421e3d91a453b8c660321316afb27",
+      "artifact_revision": "grade_9_10-verification-r1",
+      "gate": "verification_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.370919+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-5c1a3b89ca3f4bd2b3c4de4d7736f6cc",
+      "artifact_revision": "grade_9_10-render-r1",
+      "gate": "formatting_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.373188+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-fbdac85c2e374a7e827dd2fc4bfbf031",
+      "artifact_revision": "batch-r1",
+      "gate": "publish_approval",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T20:08:45.375783+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    }
+  ],
+  "artifacts": [
+    {
+      "answer_key": {
+        "id": "1tgPxhvkbVdESqxNUwD5fbmYFLQFREcH-dOWP6VKPO64",
+        "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "webViewLink": "https://docs.google.com/document/d/1tgPxhvkbVdESqxNUwD5fbmYFLQFREcH-dOWP6VKPO64/edit"
+      },
+      "grade": "grade_1",
+      "worksheet": {
+        "id": "10sfIVor3W94iuo6L95yq-r9wLDyKIwN15sLr8bAmUG4",
+        "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-24",
+        "webViewLink": "https://docs.google.com/document/d/10sfIVor3W94iuo6L95yq-r9wLDyKIwN15sLr8bAmUG4/edit"
+      }
+    },
+    {
+      "answer_key": {
+        "id": "1TqOuUvPFVZ3BLWtfJajtf3MweWv8MT_iZ0ulHaTB4Uc",
+        "name": "MTS-Math-4thGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "webViewLink": "https://docs.google.com/document/d/1TqOuUvPFVZ3BLWtfJajtf3MweWv8MT_iZ0ulHaTB4Uc/edit"
+      },
+      "grade": "grade_4",
+      "worksheet": {
+        "id": "1aHe5E1BYYhRrl7NSHW4XncDZOCCR_l52SG-Y9CCghvw",
+        "name": "MTS-Math-4thGrade-WeeklyWorksheet-2026-08-24",
+        "webViewLink": "https://docs.google.com/document/d/1aHe5E1BYYhRrl7NSHW4XncDZOCCR_l52SG-Y9CCghvw/edit"
+      }
+    },
+    {
+      "answer_key": {
+        "id": "1hDAlglMX5rp29AFzYn7zOGv59cOEjrYxHbUeWtBM6Uw",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "webViewLink": "https://docs.google.com/document/d/1hDAlglMX5rp29AFzYn7zOGv59cOEjrYxHbUeWtBM6Uw/edit"
+      },
+      "grade": "grade_5",
+      "worksheet": {
+        "id": "1uhhg8vM5fq_FkdB04tOe_nSezEA5-ytMzYUMQRnFv2g",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24",
+        "webViewLink": "https://docs.google.com/document/d/1uhhg8vM5fq_FkdB04tOe_nSezEA5-ytMzYUMQRnFv2g/edit"
+      }
+    },
+    {
+      "answer_key": {
+        "id": "1MJvtbzb5KYAK7pRP0a2-eEoSpuj64m3PwaUiKsU56og",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "webViewLink": "https://docs.google.com/document/d/1MJvtbzb5KYAK7pRP0a2-eEoSpuj64m3PwaUiKsU56og/edit"
+      },
+      "grade": "grade_6",
+      "worksheet": {
+        "id": "1d-9NMQbAkRSjlzv4ek-CsIvofZQfYE9ms7_de3KmUoY",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-24",
+        "webViewLink": "https://docs.google.com/document/d/1d-9NMQbAkRSjlzv4ek-CsIvofZQfYE9ms7_de3KmUoY/edit"
+      }
+    },
+    {
+      "answer_key": {
+        "id": "1JB-FH7qxAhasbiTeOpaL-5hZYlEyCfFT0uu8VD4wvZI",
+        "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "webViewLink": "https://docs.google.com/document/d/1JB-FH7qxAhasbiTeOpaL-5hZYlEyCfFT0uu8VD4wvZI/edit"
+      },
+      "grade": "grade_9_10",
+      "worksheet": {
+        "id": "1VZX1X77K_CFIpA6aItOb54r3vBm2XDq9bCIPgHuQ44w",
+        "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-08-24",
+        "webViewLink": "https://docs.google.com/document/d/1VZX1X77K_CFIpA6aItOb54r3vBm2XDq9bCIPgHuQ44w/edit"
+      }
+    }
+  ],
+  "checkpoints": [],
+  "gates": {
+    "bypassed": [
+      "scope_review",
+      "question_review",
+      "verification_review",
+      "formatting_review",
+      "publish_approval"
+    ],
+    "mode": "bypass_all",
+    "requested_by": "current_user"
+  },
+  "manifest_version": "1.0",
+  "policy_fingerprint": "f3d207527df71905be49323679464aada0610c3bc43afcbbafe67f58c72774ef",
+  "policy_snapshot_path": "resolved-policy.json",
+  "publish": {
+    "destination": "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS",
+    "mode": "yes",
+    "requested_by": "current_user"
+  },
+  "request": {
+    "subject": "math",
+    "worksheet_type": "weekly-worksheet"
+  },
+  "request_fingerprint": "6a88803fbcc6a544440d23d8bd017b814cea7bae00cec3a5f89335ff3159a107",
+  "run_id": "run-2026-w2-weekly-bypass-all",
+  "spec_references": [
+    {
+      "fingerprint": "df082e4e14a8f684968794f48c02e70aa2041e65bc6b2ccd15940fa3feab1aca",
+      "revision": "r1",
+      "spec_path": "math/run-2026-w2-weekly-bypass-all/specs/grade_1/r1.json",
+      "worksheet_id": "grade_1"
+    },
+    {
+      "fingerprint": "a21f0ea80413d750508667fca6d9996a17e162f157732431fdf54b6acb9c29ed",
+      "revision": "r1",
+      "spec_path": "math/run-2026-w2-weekly-bypass-all/specs/grade_4/r1.json",
+      "worksheet_id": "grade_4"
+    },
+    {
+      "fingerprint": "c188cb2e9e542f229cd73e8978415183871194e8ec3d73fbcc558ef68877821c",
+      "revision": "r1",
+      "spec_path": "math/run-2026-w2-weekly-bypass-all/specs/grade_5/r1.json",
+      "worksheet_id": "grade_5"
+    },
+    {
+      "fingerprint": "b898aa2f635860d316abe9a961be7d76cb37df4bb54efd6f2e92f3ddf9407ad5",
+      "revision": "r1",
+      "spec_path": "math/run-2026-w2-weekly-bypass-all/specs/grade_6/r1.json",
+      "worksheet_id": "grade_6"
+    },
+    {
+      "fingerprint": "60000ba94c36e9581f4a619c3c3566b328145aa9261cfcf574e4f3786296f9c6",
+      "revision": "r1",
+      "spec_path": "math/run-2026-w2-weekly-bypass-all/specs/grade_9_10/r1.json",
+      "worksheet_id": "grade_9_10"
+    },
+    {
+      "fingerprint": "2105af20ea734124198f6871d5c89c17916d77a3039cb21600c8ee5f2387ccaa",
+      "revision": "r2",
+      "spec_path": "math/run-2026-w2-weekly-bypass-all/specs/grade_1/r2.json",
+      "worksheet_id": "grade_1"
+    },
+    {
+      "fingerprint": "0293b95aad8e039576622ae2ecbdcbb5e042f7aaea26bb4ee82e4db6cfe1b3ca",
+      "revision": "r2",
+      "spec_path": "math/run-2026-w2-weekly-bypass-all/specs/grade_4/r2.json",
+      "worksheet_id": "grade_4"
+    },
+    {
+      "fingerprint": "6b51c3c5129f5aff86c8dc6b3525219f0ab1dba7876b4a0f5715d4d0fdd8035f",
+      "revision": "r2",
+      "spec_path": "math/run-2026-w2-weekly-bypass-all/specs/grade_5/r2.json",
+      "worksheet_id": "grade_5"
+    },
+    {
+      "fingerprint": "34fec463cba23fc92f270171edd3376b6dfe2adf92885f35b81d00eb0919c1ed",
+      "revision": "r2",
+      "spec_path": "math/run-2026-w2-weekly-bypass-all/specs/grade_6/r2.json",
+      "worksheet_id": "grade_6"
+    },
+    {
+      "fingerprint": "eeb90ddbaa711842f9b6a660285038f0cea3d841c111d88a47206486653faa2b",
+      "revision": "r2",
+      "spec_path": "math/run-2026-w2-weekly-bypass-all/specs/grade_9_10/r2.json",
+      "worksheet_id": "grade_9_10"
+    }
+  ],
+  "started_at": "2026-08-28T20:08:45.324034+00:00",
+  "status": "published",
+  "subject": "math",
+  "telemetry": {
+    "token_usage": null
+  },
+  "worksheet_type": "weekly-worksheet"
+}

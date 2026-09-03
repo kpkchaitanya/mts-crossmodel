@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "subject": "math",
+  "grades_and_courses": [
+    {"id": "grade_1", "display_name": "Grade 1", "enabled": true},
+    {"id": "grade_4", "display_name": "Grade 4", "enabled": true},
+    {"id": "grade_5", "display_name": "Grade 5", "enabled": true},
+    {"id": "grade_6", "display_name": "Grade 6", "enabled": true},
+    {
+      "id": "grade_9_10",
+      "display_name": "Grades 9 and 10 Combined",
+      "enabled": true,
+      "curriculum_scopes": ["math_1", "math_2"],
+      "rendering_split": {"math_1": 13, "math_2": 12}
+    }
+  ]
+}

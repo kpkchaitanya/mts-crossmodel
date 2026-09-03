@@ -1,0 +1,112 @@
+{
+  "status": "delivered",
+  "audience": "parents",
+  "week_of": "2026-09-07",
+  "week_folder_name": "Week_2026-09-07",
+  "mode": "copy",
+  "source_artifacts": "data/transactions/runs/run-2026-09-07-grades-1-5-9-10-publish-deliver/published-artifacts.json",
+  "grades": {
+    "grade_1": {
+      "parent_folder_id": "1na4xEkS4mYB97qwjNZRdQ6q3RG3xk3Q9",
+      "week_folder": {
+        "id": "13jXerre7pc-5pDrTzKvqYhUIEptrWPc0",
+        "name": "Week_2026-09-07",
+        "webViewLink": "https://drive.google.com/drive/folders/13jXerre7pc-5pDrTzKvqYhUIEptrWPc0",
+        "created": true
+      },
+      "status": "delivered",
+      "mode": "copy",
+      "destination_id": "13jXerre7pc-5pDrTzKvqYhUIEptrWPc0",
+      "student_worksheet": {
+        "source_document_id": "1Rp2Ejygx4p8gh7JUQZ862rbTAO5FpkLcfgdqRoZxahw",
+        "document": {
+          "id": "10Y1WYyQiI9k-q6yPv5zi_1-lcGsUgwL5afwAB9VGirg",
+          "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-09-07",
+          "parents": [
+            "13jXerre7pc-5pDrTzKvqYhUIEptrWPc0"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/10Y1WYyQiI9k-q6yPv5zi_1-lcGsUgwL5afwAB9VGirg/edit?usp=drivesdk"
+        }
+      },
+      "answer_key": {
+        "source_document_id": "183LkdpruhyS1I-Ufiu8_Az8LoLpEH4WEdqHQDbopjbw",
+        "document": {
+          "id": "1hRzm2itAFOiP36e_91W3kBtq9_GIYWxYOBAQFX8wuZ0",
+          "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-09-07_KEY",
+          "parents": [
+            "13jXerre7pc-5pDrTzKvqYhUIEptrWPc0"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1hRzm2itAFOiP36e_91W3kBtq9_GIYWxYOBAQFX8wuZ0/edit?usp=drivesdk"
+        }
+      }
+    },
+    "grade_5": {
+      "parent_folder_id": "130VEomHbyC2-oyANo49W73dfDSi1VU5p",
+      "week_folder": {
+        "id": "1RKZNOHGa6dlEE_X7kEuZgudz_DVTQm6H",
+        "name": "Week_2026-09-07",
+        "webViewLink": "https://drive.google.com/drive/folders/1RKZNOHGa6dlEE_X7kEuZgudz_DVTQm6H",
+        "created": true
+      },
+      "status": "delivered",
+      "mode": "copy",
+      "destination_id": "1RKZNOHGa6dlEE_X7kEuZgudz_DVTQm6H",
+      "student_worksheet": {
+        "source_document_id": "1V1_pibTf7FKtNlrlwxAxZ2z0WiB-_aFQpRs4_F2RUIM",
+        "document": {
+          "id": "1ZZpKMK7kA4xvcdGAQoGrxIWYlOU_J8GN4nhMGDZRKEo",
+          "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-09-07",
+          "parents": [
+            "1RKZNOHGa6dlEE_X7kEuZgudz_DVTQm6H"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1ZZpKMK7kA4xvcdGAQoGrxIWYlOU_J8GN4nhMGDZRKEo/edit?usp=drivesdk"
+        }
+      },
+      "answer_key": {
+        "source_document_id": "1FFp6ms5JzUpny2vmGZZ4WfDMrYmYxnjNy9ypJvI0sSc",
+        "document": {
+          "id": "1Hv0kWc_VeotFLV1tWJDwojLeZn4hs0YfKIr2Hb9nqrg",
+          "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-09-07_KEY",
+          "parents": [
+            "1RKZNOHGa6dlEE_X7kEuZgudz_DVTQm6H"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1Hv0kWc_VeotFLV1tWJDwojLeZn4hs0YfKIr2Hb9nqrg/edit?usp=drivesdk"
+        }
+      }
+    },
+    "grade_9_10": {
+      "parent_folder_id": "1RSSV84MDP8vHq7UwVm9GYH-36ZvGh1Cc",
+      "week_folder": {
+        "id": "1id8Qer4Pgc5kKkfNThbyRmXF22sfcUaR",
+        "name": "Week_2026-09-07",
+        "webViewLink": "https://drive.google.com/drive/folders/1id8Qer4Pgc5kKkfNThbyRmXF22sfcUaR",
+        "created": true
+      },
+      "status": "delivered",
+      "mode": "copy",
+      "destination_id": "1id8Qer4Pgc5kKkfNThbyRmXF22sfcUaR",
+      "student_worksheet": {
+        "source_document_id": "1Owke9eqX8vbqffrvIFfPncCmzCfpDu_6aQsSMIPY6-w",
+        "document": {
+          "id": "1hW3FsnYmrkChbXB0dqvUO4bmJhi8G438ncfVRm6Cym4",
+          "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-09-07",
+          "parents": [
+            "1id8Qer4Pgc5kKkfNThbyRmXF22sfcUaR"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1hW3FsnYmrkChbXB0dqvUO4bmJhi8G438ncfVRm6Cym4/edit?usp=drivesdk"
+        }
+      },
+      "answer_key": {
+        "source_document_id": "1KEjWhJUGmf5M0aIvKGryhbpwnm0oTCC-aJAvZtL4sRo",
+        "document": {
+          "id": "1J8Qd-aZpcfoZ5iQzYEDU2vGWH5IXq62Ik2JG9iW1uCo",
+          "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-09-07_KEY",
+          "parents": [
+            "1id8Qer4Pgc5kKkfNThbyRmXF22sfcUaR"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1J8Qd-aZpcfoZ5iQzYEDU2vGWH5IXq62Ik2JG9iW1uCo/edit?usp=drivesdk"
+        }
+      }
+    }
+  }
+}

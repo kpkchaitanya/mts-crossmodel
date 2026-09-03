@@ -1,0 +1,67 @@
+{
+  "worksheet":{"grade":"Grades 9 & 10 Combined","week_start":"2026-08-24","question_count":50,"duration_minutes":20,"grade_split":{"math_1":25,"math_2":25}},
+  "curriculum":{"current":["NC.M1.A-REI.3","NC.M1.F-IF.1","NC.M2.N-RN.2","NC.M2.G-CO.2"],"spiral":["linear equations","functions","exponents","transformations"],"confidence":"inferred"},
+  "sections":[
+    {"id":"monday","title":"Grade 9: Expressions and Equations","questions":[
+      {"number":1,"prompt":"Simplify: 3x + 5x.","answer":"8x","skill":"combining like terms","difficulty":"easy","grade":9,"verification":{"method":"reasoning_review","criterion":"Verify 3x + 5x = 8x by combining coefficients"}},
+      {"number":2,"prompt":"Simplify: 7a - 2a + 4.","answer":"5a + 4","skill":"combining like terms","difficulty":"easy","grade":9,"verification":{"method":"reasoning_review","criterion":"Verify 7a - 2a = 5a, +4 remains"}},
+      {"number":3,"prompt":"Evaluate 2x + 7 when x = 5.","answer":17,"skill":"evaluating expressions","difficulty":"easy","grade":9,"verification":{"method":"linear_eval","inputs":{"m":2,"x":5,"b":7}}},
+      {"number":4,"prompt":"Solve: x + 9 = 20.","answer":11,"skill":"solving equations","difficulty":"easy","grade":9,"verification":{"method":"arithmetic_expression","inputs":{"expression":"20 - 9"}}},
+      {"number":5,"prompt":"Solve: 4x = 28.","answer":7,"skill":"solving equations","difficulty":"easy","grade":9,"verification":{"method":"arithmetic_expression","inputs":{"expression":"28 / 4"}}},
+      {"number":6,"prompt":"Solve: 3x + 4 = 19.","answer":5,"skill":"solving two-step equations","difficulty":"medium","grade":9,"verification":{"method":"arithmetic_expression","inputs":{"expression":"(19 - 4) / 3"}}},
+      {"number":7,"prompt":"Solve: 5x - 7 = 18.","answer":5,"skill":"solving two-step equations","difficulty":"medium","grade":9,"verification":{"method":"arithmetic_expression","inputs":{"expression":"(18 + 7) / 5"}}},
+      {"number":8,"prompt":"Solve: 2(x + 3) = 16.","answer":5,"skill":"solving equations with parentheses","difficulty":"medium","grade":9,"verification":{"method":"arithmetic_expression","inputs":{"expression":"(16 / 2) - 3"}}},
+      {"number":9,"prompt":"Write an equation: Seven more than twice a number is 25.","answer":"2x + 7 = 25","skill":"translating to algebra","difficulty":"medium","grade":9,"verification":{"method":"reasoning_review","criterion":"Verify 'twice a number' is 2x, 'seven more' is +7, 'is 25' gives equation"}},
+      {"number":10,"prompt":"A taxi charges $4 plus $2 per mile. Write a function C(m) for the cost.","answer":"C(m) = 4 + 2m or C(m) = 2m + 4","skill":"function modeling","difficulty":"medium","grade":9,"verification":{"method":"reasoning_review","criterion":"Verify $4 base + $2 per mile m gives C(m) = 4 + 2m"}}
+    ]},
+    {"id":"tuesday","title":"Grade 9: Linear Functions and Inequalities","questions":[
+      {"number":11,"prompt":"Solve: 2x + 5 = 3x - 2.","answer":7,"skill":"solving linear equations","difficulty":"medium","grade":9},
+      {"number":12,"prompt":"Solve: 4(x - 1) = 2x + 10.","answer":7,"skill":"solving linear equations","difficulty":"medium","grade":9},
+      {"number":13,"prompt":"Solve and graph: x + 3 > 7.","answer":"x > 4","skill":"solving inequalities","difficulty":"medium","grade":9},
+      {"number":14,"prompt":"Solve and graph: 2x - 5 ≤ 9.","answer":"x ≤ 7","skill":"solving inequalities","difficulty":"medium","grade":9},
+      {"number":15,"prompt":"Evaluate f(x) = 3x - 2 when x = 4.","answer":10,"skill":"evaluating functions","difficulty":"easy","grade":9},
+      {"number":16,"prompt":"Evaluate g(x) = x^2 + 1 when x = 3.","answer":10,"skill":"evaluating functions","difficulty":"easy","grade":9},
+      {"number":17,"prompt":"Is the relation {(1,2), (2,3), (3,4)} a function?","answer":"Yes","skill":"function identification","difficulty":"easy","grade":9},
+      {"number":18,"prompt":"Is the relation {(1,2), (1,3), (2,4)} a function?","answer":"No","skill":"function identification","difficulty":"medium","grade":9},
+      {"number":19,"prompt":"What is the slope of the line y = 4x + 7?","answer":4,"skill":"identifying slope","difficulty":"easy","grade":9},
+      {"number":20,"prompt":"What is the y-intercept of the line y = 3x - 5?","answer":-5,"skill":"identifying y-intercept","difficulty":"easy","grade":9}
+    ]},
+    {"id":"wednesday","title":"Grade 9: Applications and Slope","questions":[
+      {"number":21,"prompt":"A phone plan costs $30 plus $0.10 per text. Write an equation for the monthly cost C with t texts.","answer":"C = 30 + 0.10t","skill":"linear modeling","difficulty":"medium","grade":9},
+      {"number":22,"prompt":"How much does the plan cost with 200 texts?","answer":"$50","skill":"evaluating linear models","difficulty":"medium","grade":9},
+      {"number":23,"prompt":"A student has $45 and spends $3 per notebook. Write an inequality for buying at least 10 notebooks.","answer":"45 - 3n ≥ 3(10) or equivalent","skill":"inequality modeling","difficulty":"medium","grade":9},
+      {"number":24,"prompt":"Find the slope of the line through (0, 3) and (2, 11).","answer":4,"skill":"calculating slope","difficulty":"medium","grade":9},
+      {"number":25,"prompt":"Explain what a slope of 5 means in the context of a car traveling 5 miles every hour.","answer":"OPEN_RESPONSE: The slope represents the rate of change; for every 1 hour, the car travels 5 miles.","skill":"slope interpretation","difficulty":"medium","grade":9},
+      {"number":26,"prompt":"Evaluate: 2^4.","answer":16,"skill":"exponents","difficulty":"easy","grade":10},
+      {"number":27,"prompt":"Evaluate: 3^3.","answer":27,"skill":"exponents","difficulty":"easy","grade":10},
+      {"number":28,"prompt":"Simplify: x^3 · x^2.","answer":"x^5","skill":"exponent rules","difficulty":"easy","grade":10},
+      {"number":29,"prompt":"Simplify: x^6 ÷ x^2.","answer":"x^4","skill":"exponent rules","difficulty":"easy","grade":10},
+      {"number":30,"prompt":"Evaluate: sqrt(49).","answer":7,"skill":"square roots","difficulty":"easy","grade":10}
+    ]},
+    {"id":"thursday","title":"Grade 10: Radicals and Equations","questions":[
+      {"number":31,"prompt":"Write sqrt(x) using a rational exponent.","answer":"x^(1/2)","skill":"rational exponents","difficulty":"medium","grade":10},
+      {"number":32,"prompt":"Write x^(1/3) using a radical.","answer":"cube root of x","skill":"rational exponents","difficulty":"medium","grade":10},
+      {"number":33,"prompt":"Evaluate: 16^(1/2).","answer":4,"skill":"rational exponents","difficulty":"easy","grade":10},
+      {"number":34,"prompt":"Evaluate: 8^(1/3).","answer":2,"skill":"rational exponents","difficulty":"medium","grade":10},
+      {"number":35,"prompt":"Simplify sqrt(36x^2) for positive x.","answer":"6x","skill":"simplifying radicals","difficulty":"medium","grade":10},
+      {"number":36,"prompt":"Simplify: sqrt(50).","answer":"5*sqrt(2)","skill":"simplifying radicals","difficulty":"medium","grade":10},
+      {"number":37,"prompt":"Simplify: sqrt(72).","answer":"6*sqrt(2)","skill":"simplifying radicals","difficulty":"medium","grade":10},
+      {"number":38,"prompt":"Simplify: 2*sqrt(3) + 5*sqrt(3).","answer":"7*sqrt(3)","skill":"combining radicals","difficulty":"medium","grade":10},
+      {"number":39,"prompt":"Solve: x^2 = 81.","answer":"x = 9 or x = -9","skill":"solving quadratic equations","difficulty":"medium","grade":10},
+      {"number":40,"prompt":"Solve: (x - 4)^2 = 25.","answer":"x = 9 or x = -1","skill":"solving quadratic equations","difficulty":"medium","grade":10}
+    ]},
+    {"id":"friday","title":"Grade 10: Transformations and Applications","questions":[
+      {"number":41,"prompt":"Translate point (3, 2) right 4 units and up 1 unit. What are the new coordinates?","answer":"(7, 3)","skill":"translations","difficulty":"easy","grade":10},
+      {"number":42,"prompt":"Reflect point (5, 3) across the x-axis. What are the new coordinates?","answer":"(5, -3)","skill":"reflections","difficulty":"easy","grade":10},
+      {"number":43,"prompt":"A triangle has vertices at (0, 0), (4, 0), and (0, 3). What is its area?","answer":"6 square units","skill":"triangle area","difficulty":"medium","grade":10},
+      {"number":44,"prompt":"Describe the transformation from y = x^2 to y = x^2 + 3.","answer":"vertical shift up 3 units","skill":"quadratic transformations","difficulty":"medium","grade":10},
+      {"number":45,"prompt":"Describe the transformation from y = x^2 to y = (x - 2)^2.","answer":"horizontal shift right 2 units","skill":"quadratic transformations","difficulty":"medium","grade":10},
+      {"number":46,"prompt":"Solve: sqrt(x + 5) = 4.","answer":11,"skill":"solving radical equations","difficulty":"medium","grade":10},
+      {"number":47,"prompt":"The area of a square is 64 square units. What is the side length?","answer":"8 units","skill":"square roots application","difficulty":"easy","grade":10},
+      {"number":48,"prompt":"Simplify: 2*sqrt(12) + sqrt(27).","answer":"7*sqrt(3)","skill":"simplifying radicals","difficulty":"medium","grade":10},
+      {"number":49,"prompt":"Apply a dilation with scale factor 3 to point (2, -1). What are the new coordinates?","answer":"(6, -3)","skill":"dilations","difficulty":"medium","grade":10},
+      {"number":50,"prompt":"Explain why reflecting a point across the x-axis does not change the distance from the point to the x-axis.","answer":"OPEN_RESPONSE: Reflection preserves distances; the point moves to the opposite side but remains the same distance from the axis.","skill":"transformation reasoning","difficulty":"medium","grade":10}
+    ]}
+  ],
+  "verification":{"status":"PENDING","checked":0,"failed":0,"ambiguous":0,"note":"Draft questions created from approved scope. Questions 1-25 are Grade 9, Questions 26-50 are Grade 10. Question 4 uses corrected wording. Independent verification required before rendering."}
+}

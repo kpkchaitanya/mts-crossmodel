@@ -1,0 +1,316 @@
+{
+  "worksheet": {
+    "grade": "Grades 9 & 10 Combined",
+    "week_start": "2026-08-24",
+    "question_count": 25,
+    "duration_minutes": 20,
+    "grade_split": {
+      "math_1": 13,
+      "math_2": 12
+    }
+  },
+  "curriculum": {
+    "current": [
+      "NC.M1.A-REI.3",
+      "NC.M1.F-IF.1",
+      "NC.M2.N-RN.2",
+      "NC.M2.G-CO.2"
+    ],
+    "spiral": [
+      "linear equations",
+      "functions",
+      "exponents",
+      "transformations"
+    ],
+    "confidence": "inferred"
+  },
+  "sections": [
+    {
+      "id": "monday",
+      "title": "Foundation",
+      "questions": [
+        {
+          "number": 1,
+          "prompt": "Simplify: 3x + 5x.",
+          "answer": "8x",
+          "skill": "combining like terms",
+          "difficulty": "easy",
+          "grade": 9,
+          "verification": {
+            "method": "reasoning_review",
+            "criterion": "Verify 3x + 5x = 8x by combining coefficients"
+          }
+        },
+        {
+          "number": 2,
+          "prompt": "Simplify: 7a - 2a + 4.",
+          "answer": "5a + 4",
+          "skill": "combining like terms",
+          "difficulty": "easy",
+          "grade": 9,
+          "verification": {
+            "method": "reasoning_review",
+            "criterion": "Verify 7a - 2a = 5a, +4 remains"
+          }
+        },
+        {
+          "number": 3,
+          "prompt": "Evaluate 2x + 7 when x = 5.",
+          "answer": 17,
+          "skill": "evaluating expressions",
+          "difficulty": "easy",
+          "grade": 9,
+          "verification": {
+            "method": "linear_eval",
+            "inputs": {
+              "m": 2,
+              "x": 5,
+              "b": 7
+            }
+          }
+        },
+        {
+          "number": 4,
+          "prompt": "Solve: x + 9 = 20.",
+          "answer": 11,
+          "skill": "solving equations",
+          "difficulty": "easy",
+          "grade": 9,
+          "verification": {
+            "method": "arithmetic_expression",
+            "inputs": {
+              "expression": "20 - 9"
+            }
+          }
+        },
+        {
+          "number": 5,
+          "prompt": "Solve: 4x = 28.",
+          "answer": 7,
+          "skill": "solving equations",
+          "difficulty": "easy",
+          "grade": 9,
+          "verification": {
+            "method": "arithmetic_expression",
+            "inputs": {
+              "expression": "28 / 4"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "tuesday",
+      "title": "Discover",
+      "questions": [
+        {
+          "number": 6,
+          "prompt": "Solve: 3x + 4 = 19.",
+          "answer": 5,
+          "skill": "solving two-step equations",
+          "difficulty": "medium",
+          "grade": 9,
+          "verification": {
+            "method": "arithmetic_expression",
+            "inputs": {
+              "expression": "(19 - 4) / 3"
+            }
+          }
+        },
+        {
+          "number": 7,
+          "prompt": "Solve: 5x - 7 = 18.",
+          "answer": 5,
+          "skill": "solving two-step equations",
+          "difficulty": "medium",
+          "grade": 9,
+          "verification": {
+            "method": "arithmetic_expression",
+            "inputs": {
+              "expression": "(18 + 7) / 5"
+            }
+          }
+        },
+        {
+          "number": 8,
+          "prompt": "Solve: 2(x + 3) = 16.",
+          "answer": 5,
+          "skill": "solving equations with parentheses",
+          "difficulty": "medium",
+          "grade": 9,
+          "verification": {
+            "method": "arithmetic_expression",
+            "inputs": {
+              "expression": "(16 / 2) - 3"
+            }
+          }
+        },
+        {
+          "number": 9,
+          "prompt": "Write an equation: Seven more than twice a number is 25.",
+          "answer": "2x + 7 = 25",
+          "skill": "translating to algebra",
+          "difficulty": "medium",
+          "grade": 9,
+          "verification": {
+            "method": "reasoning_review",
+            "criterion": "Verify 'twice a number' is 2x, 'seven more' is +7, 'is 25' gives equation"
+          }
+        },
+        {
+          "number": 10,
+          "prompt": "A taxi charges $4 plus $2 per mile. Write a function C(m) for the cost.",
+          "answer": "C(m) = 4 + 2m or C(m) = 2m + 4",
+          "skill": "function modeling",
+          "difficulty": "medium",
+          "grade": 9,
+          "verification": {
+            "method": "reasoning_review",
+            "criterion": "Verify $4 base + $2 per mile m gives C(m) = 4 + 2m"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wednesday",
+      "title": "Practice",
+      "questions": [
+        {
+          "number": 11,
+          "prompt": "Solve: 2x + 5 = 3x - 2.",
+          "answer": 7,
+          "skill": "solving linear equations",
+          "difficulty": "medium",
+          "grade": 9
+        },
+        {
+          "number": 12,
+          "prompt": "Solve: 4(x - 1) = 2x + 10.",
+          "answer": 7,
+          "skill": "solving linear equations",
+          "difficulty": "medium",
+          "grade": 9
+        },
+        {
+          "number": 13,
+          "prompt": "Solve and graph: x + 3 > 7.",
+          "answer": "x > 4",
+          "skill": "solving inequalities",
+          "difficulty": "medium",
+          "grade": 9
+        },
+        {
+          "number": 14,
+          "prompt": "Evaluate: 2^4.",
+          "answer": 16,
+          "skill": "exponents",
+          "difficulty": "easy",
+          "grade": 10
+        },
+        {
+          "number": 15,
+          "prompt": "Evaluate: 3^3.",
+          "answer": 27,
+          "skill": "exponents",
+          "difficulty": "easy",
+          "grade": 10
+        }
+      ]
+    },
+    {
+      "id": "thursday",
+      "title": "Apply and Review",
+      "questions": [
+        {
+          "number": 16,
+          "prompt": "Simplify: x^3 \u00b7 x^2.",
+          "answer": "x^5",
+          "skill": "exponent rules",
+          "difficulty": "easy",
+          "grade": 10
+        },
+        {
+          "number": 17,
+          "prompt": "Simplify: x^6 \u00f7 x^2.",
+          "answer": "x^4",
+          "skill": "exponent rules",
+          "difficulty": "easy",
+          "grade": 10
+        },
+        {
+          "number": 18,
+          "prompt": "Evaluate: sqrt(49).",
+          "answer": 7,
+          "skill": "square roots",
+          "difficulty": "easy",
+          "grade": 10
+        },
+        {
+          "number": 19,
+          "prompt": "Write sqrt(x) using a rational exponent.",
+          "answer": "x^(1/2)",
+          "skill": "rational exponents",
+          "difficulty": "medium",
+          "grade": 10
+        },
+        {
+          "number": 20,
+          "prompt": "Write x^(1/3) using a radical.",
+          "answer": "cube root of x",
+          "skill": "rational exponents",
+          "difficulty": "medium",
+          "grade": 10
+        }
+      ]
+    },
+    {
+      "id": "friday",
+      "title": "Mastery",
+      "questions": [
+        {
+          "number": 21,
+          "prompt": "Evaluate: 16^(1/2).",
+          "answer": 4,
+          "skill": "rational exponents",
+          "difficulty": "easy",
+          "grade": 10
+        },
+        {
+          "number": 22,
+          "prompt": "Evaluate: 8^(1/3).",
+          "answer": 2,
+          "skill": "rational exponents",
+          "difficulty": "medium",
+          "grade": 10
+        },
+        {
+          "number": 23,
+          "prompt": "Simplify sqrt(36x^2) for positive x.",
+          "answer": "6x",
+          "skill": "simplifying radicals",
+          "difficulty": "medium",
+          "grade": 10
+        },
+        {
+          "number": 24,
+          "prompt": "Simplify: sqrt(50).",
+          "answer": "5*sqrt(2)",
+          "skill": "simplifying radicals",
+          "difficulty": "medium",
+          "grade": 10
+        },
+        {
+          "number": 25,
+          "prompt": "Simplify: sqrt(72).",
+          "answer": "6*sqrt(2)",
+          "skill": "simplifying radicals",
+          "difficulty": "medium",
+          "grade": 10
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "status": "PENDING"
+  }
+}

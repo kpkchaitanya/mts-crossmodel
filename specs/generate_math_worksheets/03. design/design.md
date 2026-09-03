@@ -252,30 +252,35 @@ selection policy; it does not change the shared count, validation, distribution,
 
 1. Resolve **Subject + Worksheet Type**.
 2. Load the selected grade/course configuration.
-3. Derive `questions_per_week` from `questions_per_day x configured sections`.
-4. Apply an optional configured split.
-5. Select source questions using `source_selector`.
-6. Validate the selected total.
-7. Distribute questions across configured sections.
-8. Assign local document slots.
-9. Create one canonical Worksheet Spec.
+3. Resolve or load the grade/course **Yearly Curriculum** and progressive context.
+4. Resolve the **Weekly Curriculum** for the requested Instructional Cycle, preserving source provenance and confidence.
+5. Derive `questions_per_week` from `questions_per_day x configured sections`.
+6. Apply an optional configured split.
+7. Build and persist a Worksheet Plan from the Weekly Curriculum and Worksheet Type configuration.
+8. Build and persist a Question Plan from the Worksheet Plan and Weekly Curriculum.
+9. Validate the planned total, section distribution, curriculum references, and slot metadata.
+10. Author questions from the Question Plan and verify that each authored Question preserves its planned slot.
+11. Create one canonical Worksheet Spec.
 
 ```mermaid
 flowchart LR
   REQ[User Request] --> ROUTE[1. Resolve Subject + Worksheet Type]
   ROUTE --> TYPE[Worksheet Type Configuration]
   TYPE --> GRADE[2. Load Grade/Course Configuration]
-  GRADE --> COUNTS[3. Derive Weekly Count<br/>daily count x sections]
-  GRADE --> SPLIT[4. Apply Optional Split]
-  KNOW[Subject Knowledge<br/>source questions] --> SELECT[5. Select with source_selector]
-  SPLIT --> SELECT
-  COUNTS --> SELECT
-  SELECT --> VALIDATE[6. Validate Selected Total]
-  VALIDATE --> DISTRIBUTE[7. Distribute Across Sections]
-  DISTRIBUTE --> SLOTS[8. Assign Local Document Slots]
-  SLOTS --> SPEC[9. Canonical Worksheet Spec]
+  KNOW[Yearly Curriculum<br/>progression + standards] --> WEEKLY[3-4. Resolve Weekly Curriculum]
+  GRADE --> COUNTS[5. Derive Weekly Count<br/>daily count x sections]
+  GRADE --> SPLIT[6. Apply Optional Split]
+  WEEKLY --> WPLAN[7. Worksheet Plan]
+  TYPE --> WPLAN
+  WPLAN --> QPLAN[8. Question Plan]
+  WEEKLY --> QPLAN
+  SPLIT --> QPLAN
+  COUNTS --> QPLAN
+  QPLAN --> VALIDATE[9. Validate Plan]
+  VALIDATE --> AUTHOR[10. Author Questions From Plan]
+  AUTHOR --> SPEC[11. Canonical Worksheet Spec]
   ECFG[Effective Config] --> ROUTE
-  CURRICULUM[Resolved Curriculum Scope] --> SPEC
+  ECFG --> QPLAN
 ```
 
 The flow has explicit ownership boundaries:
@@ -286,16 +291,52 @@ The flow has explicit ownership boundaries:
 | Grade/course defaults | Worksheet Type configuration | `grade_defaults` |
 | Daily/weekly arithmetic | Shared runtime | Deterministic count validation |
 | Optional distribution split | Worksheet Type configuration | `grade_split` and `source_selector` |
-| Source-question meaning and selection | Subject module | Subject knowledge and subject-specific selection policy |
-| Count and section reconciliation | Shared runtime | Blueprint/Spec preparation validation |
+| Yearly-to-weekly curriculum resolution | Subject module | Yearly Curriculum, progressive context, source evidence, fallback rules, confidence labels |
+| Source-question meaning and selection | Subject module | Weekly Curriculum and subject-specific selection policy |
+| Worksheet Plan persistence | Shared worksheet capability | `worksheet_plan.json` under the Worksheet transaction record |
+| Question Plan persistence | Shared worksheet capability over subject module | `question_plan.json` under the Worksheet transaction record |
+| Count, section, and curriculum-reference reconciliation | Shared runtime | Blueprint/Question Plan/Spec preparation validation |
 | Local document slot assignment | Renderer | Template placeholder/layout contract |
 | Canonical content record | Shared Spec lifecycle | Immutable Worksheet Spec revision |
 
 The preparation rules and pass/fail visualization are provided in **Appendix A - Spec Preparation
 Validation Rules**. The builder must apply those rules before creating the Spec and stop with a
-reported mismatch when any rule fails.
+reported mismatch when any rule fails. It must not bypass `worksheet_plan.json` or `question_plan.json`
+by directly constructing generic Questions.
 
-#### 3.5.2 Count Semantics
+#### 3.5.2 Curriculum-To-Question-Plan Contract
+
+Question planning is curriculum-driven, not merely count-driven. The source chain is:
+
+```text
+Yearly Curriculum -> Weekly Curriculum -> Worksheet Plan -> Question Plan -> Authored Questions -> Worksheet Spec
+```
+
+The Weekly Curriculum record supplies the instructional basis for the Question Plan:
+
+- `current` standards or standard groups.
+- `topics` used as `primary_skills` when present.
+- `spiral` used as `spiral_skills` when present.
+- `confidence`, `source`, `cache_hit`, fallback basis, and progressive context.
+- Grade/course-specific scope references; combined Grades 9/10 must preserve independent `math_1` and `math_2` scope records.
+
+The Question Plan must persist one slot for every intended question. Each planned slot records:
+
+- section/day id and local slot number.
+- global question number.
+- skill/topic selected from Weekly Curriculum or an explicit topic override.
+- source kind (`current`, `spiral`, `topic_override`, or `fallback`).
+- source scope id or grade/course id.
+- standards where known.
+- planned difficulty.
+- form-family metadata when Form Diversity applies.
+
+Authored Questions may vary values, context, and wording, but they must preserve the planned slot's
+skill/topic, difficulty, source reference, standard references, and form metadata. A Spec builder must
+reject an authored Question set that is missing a plan, has a count/section mismatch, or changes planned
+slot metadata without an explicit new Question Plan revision.
+
+#### 3.5.3 Count Semantics
 
 Counts are configuration values, not agent assumptions:
 
@@ -366,6 +407,8 @@ each of a day's slots (100% of that day's questions) is decided.
 | `difficulty` | `/generate-worksheet` `difficulty` parameter | `medium_plus` (`data/config/project/base.yaml` `question_design.difficulty.default`) |
 | `diversity` | `/generate-worksheet` `diversity` parameter | `medium_plus` (`data/config/project/base.yaml` `question_design.diversity.default`) |
 | `topic_overrides` | `/generate-worksheet` `topic_overrides` parameter, parsed by `question_plan.parse_topic_overrides`, sliced to the grade being planned | none |
+| `source_scope` | The resolved Weekly Curriculum scope for the grade/course, including confidence/provenance and Yearly Curriculum/progressive context | required |
+| `standards` | The Weekly Curriculum `current` standards or fallback standard groups for the planned slot | required when available |
 
 #### How 100% of a day's slots are decided — three layers, in order
 
@@ -467,7 +510,7 @@ skill goes where) are recomputed fresh per day from the same `topic_overrides`/`
 
 `MathSubjectModule.build_week_plan(...)` resolves all inputs above into one slot-by-slot plan
 (`{day_id: [{slot, skill, difficulty}, ...]}`) before authoring; `check_diversity_and_progression(spec)`
-validates the authored result before it is persisted (see `subjects/math/skills/weekly-worksheet-execution-runbook.md`
+validates the authored result before it is persisted (see `skills/math/weekly-worksheet-execution-runbook.md`
 step 8a/8d).
 
 #### Form Diversity

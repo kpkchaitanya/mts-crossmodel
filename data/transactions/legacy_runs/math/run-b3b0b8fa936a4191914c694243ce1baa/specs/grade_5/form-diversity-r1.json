@@ -1,0 +1,749 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 15,
+          "difficulty": "low_plus",
+          "number": 1,
+          "prompt": "Evaluate: 3 x (2 + 3).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "3*(2+3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 19,
+          "difficulty": "low_plus",
+          "number": 2,
+          "prompt": "The pattern is 7, 11, 15, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "7+3*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            2,
+            12
+          ],
+          "cognitive_action": "transform",
+          "difficulty": "low_plus",
+          "form_family": "coordinate.translate_point",
+          "number": 3,
+          "prompt": "Move point D from (1, 10) 1 units right and 2 units up. Write the new ordered pair.",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 1803843805,
+          "verification": {
+            "criterion": "Add the horizontal and vertical moves to the matching coordinates.",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 60000,
+          "difficulty": "medium",
+          "number": 4,
+          "prompt": "What is the value of the digit 6 in 60404?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1895,
+          "difficulty": "medium",
+          "number": 5,
+          "prompt": "Solve: 2500 - 605 = ___.",
+          "skill": "multi-digit addition/subtraction",
+          "verification": {
+            "inputs": {
+              "expression": "2500-605"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 180,
+          "difficulty": "medium",
+          "number": 6,
+          "prompt": "Solve: 18 x 10 = ___.",
+          "skill": "whole-number multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "18*10"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 99,
+          "difficulty": "medium",
+          "number": 7,
+          "prompt": "Evaluate: 9 x (8 + 3).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "9*(8+3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "retrieve",
+          "difficulty": "medium",
+          "form_family": "coordinate.read_component",
+          "number": 8,
+          "prompt": "Point I is at (2, 9). What is the y-coordinate?",
+          "representation": "ordered_pair",
+          "response_type": "numeric_answer",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 1803843805,
+          "verification": {
+            "inputs": {
+              "expression": "9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 47,
+          "difficulty": "medium",
+          "number": 9,
+          "prompt": "The pattern is 14, 25, 36, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "14+3*11"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 16,
+          "difficulty": "medium",
+          "number": 10,
+          "prompt": "Find the greatest common factor of 32 and 48.",
+          "skill": "factors/multiples",
+          "verification": {
+            "inputs": {
+              "expression": "16"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Monday"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 195,
+          "difficulty": "low_plus",
+          "number": 11,
+          "prompt": "Evaluate: 13 x (12 + 3).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "13*(12+3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 59,
+          "difficulty": "medium",
+          "number": 12,
+          "prompt": "The pattern is 17, 31, 45, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "17+3*14"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            3,
+            8
+          ],
+          "cognitive_action": "translate",
+          "difficulty": "medium",
+          "form_family": "coordinate.verbal_location",
+          "number": 13,
+          "prompt": "A point is 3 units right of the y-axis and 8 units above the x-axis. Write its ordered pair.",
+          "representation": "verbal_context",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 1803843805,
+          "verification": {
+            "criterion": "The horizontal distance is x and the vertical distance is y.",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 60000,
+          "difficulty": "medium",
+          "number": 14,
+          "prompt": "What is the value of the digit 6 in 61404?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1985,
+          "difficulty": "medium",
+          "number": 15,
+          "prompt": "Solve: 2600 - 615 = ___.",
+          "skill": "multi-digit addition/subtraction",
+          "verification": {
+            "inputs": {
+              "expression": "2600-615"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 560,
+          "difficulty": "medium",
+          "number": 16,
+          "prompt": "Solve: 28 x 20 = ___.",
+          "skill": "whole-number multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "28*20"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 399,
+          "difficulty": "medium",
+          "number": 17,
+          "prompt": "Evaluate: 19 x (18 + 3).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "19*(18+3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": "y-axis",
+          "cognitive_action": "compare",
+          "difficulty": "medium_plus",
+          "form_family": "coordinate.axis_proximity",
+          "number": 18,
+          "prompt": "Point S is at (4, 7). Is it closer to the x-axis or the y-axis?",
+          "representation": "ordered_pair",
+          "response_type": "selection",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 1803843805,
+          "verification": {
+            "criterion": "Compare the point's distances from each axis.",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 87,
+          "difficulty": "medium_plus",
+          "number": 19,
+          "prompt": "The pattern is 24, 45, 66, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "24+3*21"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 26,
+          "difficulty": "medium_plus",
+          "number": 20,
+          "prompt": "Find the greatest common factor of 52 and 78.",
+          "skill": "factors/multiples",
+          "verification": {
+            "inputs": {
+              "expression": "26"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Tuesday"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 575,
+          "difficulty": "medium",
+          "number": 21,
+          "prompt": "Evaluate: 23 x (22 + 3).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "23*(22+3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 99,
+          "difficulty": "medium",
+          "number": 22,
+          "prompt": "The pattern is 27, 51, 75, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "27+3*24"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            5,
+            6
+          ],
+          "cognitive_action": "construct",
+          "difficulty": "medium",
+          "form_family": "coordinate.write_ordered_pair",
+          "number": 23,
+          "prompt": "Write the ordered pair for point D, which is 5 units right of the y-axis and 6 units above the x-axis.",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 1803843805,
+          "verification": {
+            "criterion": "The coordinates are (x, y).",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 60000,
+          "difficulty": "medium",
+          "number": 24,
+          "prompt": "What is the value of the digit 6 in 62404?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2075,
+          "difficulty": "medium",
+          "number": 25,
+          "prompt": "Solve: 2700 - 625 = ___.",
+          "skill": "multi-digit addition/subtraction",
+          "verification": {
+            "inputs": {
+              "expression": "2700-625"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1140,
+          "difficulty": "medium_plus",
+          "number": 26,
+          "prompt": "Solve: 38 x 30 = ___.",
+          "skill": "whole-number multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "38*30"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 899,
+          "difficulty": "medium_plus",
+          "number": 27,
+          "prompt": "Evaluate: 29 x (28 + 3).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "29*(28+3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            6,
+            5
+          ],
+          "cognitive_action": "translate",
+          "difficulty": "medium_plus",
+          "form_family": "coordinate.verbal_location",
+          "number": 28,
+          "prompt": "A point is 6 units right of the y-axis and 5 units above the x-axis. Write its ordered pair.",
+          "representation": "verbal_context",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 1803843805,
+          "verification": {
+            "criterion": "The horizontal distance is x and the vertical distance is y.",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 127,
+          "difficulty": "medium_plus",
+          "number": 29,
+          "prompt": "The pattern is 34, 65, 96, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "34+3*31"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 36,
+          "difficulty": "medium_plus",
+          "number": 30,
+          "prompt": "Find the greatest common factor of 72 and 108.",
+          "skill": "factors/multiples",
+          "verification": {
+            "inputs": {
+              "expression": "36"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Wednesday"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 1155,
+          "difficulty": "medium",
+          "number": 31,
+          "prompt": "Evaluate: 33 x (32 + 3).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "33*(32+3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 139,
+          "difficulty": "medium",
+          "number": 32,
+          "prompt": "The pattern is 37, 71, 105, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "37+3*34"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            8,
+            6
+          ],
+          "cognitive_action": "transform",
+          "difficulty": "medium",
+          "form_family": "coordinate.translate_point",
+          "number": 33,
+          "prompt": "Move point N from (7, 4) 1 units right and 2 units up. Write the new ordered pair.",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 1803843805,
+          "verification": {
+            "criterion": "Add the horizontal and vertical moves to the matching coordinates.",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 60000,
+          "difficulty": "medium_plus",
+          "number": 34,
+          "prompt": "What is the value of the digit 6 in 63404?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2165,
+          "difficulty": "medium_plus",
+          "number": 35,
+          "prompt": "Solve: 2800 - 635 = ___.",
+          "skill": "multi-digit addition/subtraction",
+          "verification": {
+            "inputs": {
+              "expression": "2800-635"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1920,
+          "difficulty": "medium_plus",
+          "number": 36,
+          "prompt": "Solve: 48 x 40 = ___.",
+          "skill": "whole-number multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "48*40"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1599,
+          "difficulty": "medium_plus",
+          "number": 37,
+          "prompt": "Evaluate: 39 x (38 + 3).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "39*(38+3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            8,
+            3
+          ],
+          "cognitive_action": "construct",
+          "difficulty": "medium_plus",
+          "form_family": "coordinate.write_ordered_pair",
+          "number": 38,
+          "prompt": "Write the ordered pair for point S, which is 8 units right of the y-axis and 3 units above the x-axis.",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 1803843805,
+          "verification": {
+            "criterion": "The coordinates are (x, y).",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 167,
+          "difficulty": "medium_plus",
+          "number": 39,
+          "prompt": "The pattern is 44, 85, 126, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "44+3*41"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 46,
+          "difficulty": "high",
+          "number": 40,
+          "prompt": "Find the greatest common factor of 92 and 138.",
+          "skill": "factors/multiples",
+          "verification": {
+            "inputs": {
+              "expression": "46"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Thursday"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 1935,
+          "difficulty": "medium",
+          "number": 41,
+          "prompt": "Evaluate: 43 x (42 + 3).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "43*(42+3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 179,
+          "difficulty": "medium_plus",
+          "number": 42,
+          "prompt": "The pattern is 47, 91, 135, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "47+3*44"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            9,
+            2
+          ],
+          "cognitive_action": "construct",
+          "difficulty": "medium_plus",
+          "form_family": "coordinate.write_ordered_pair",
+          "number": 43,
+          "prompt": "Write the ordered pair for point D, which is 9 units right of the y-axis and 2 units above the x-axis.",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 1803843805,
+          "verification": {
+            "criterion": "The coordinates are (x, y).",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": 60000,
+          "difficulty": "medium_plus",
+          "number": 44,
+          "prompt": "What is the value of the digit 6 in 64404?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2255,
+          "difficulty": "medium_plus",
+          "number": 45,
+          "prompt": "Solve: 2900 - 645 = ___.",
+          "skill": "multi-digit addition/subtraction",
+          "verification": {
+            "inputs": {
+              "expression": "2900-645"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2900,
+          "difficulty": "medium_plus",
+          "number": 46,
+          "prompt": "Solve: 58 x 50 = ___.",
+          "skill": "whole-number multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "58*50"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2499,
+          "difficulty": "high",
+          "number": 47,
+          "prompt": "Evaluate: 49 x (48 + 3).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "49*(48+3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1,
+          "cognitive_action": "retrieve",
+          "difficulty": "high",
+          "form_family": "coordinate.read_component",
+          "number": 48,
+          "prompt": "Point I is at (10, 1). What is the y-coordinate?",
+          "representation": "ordered_pair",
+          "response_type": "numeric_answer",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 1803843805,
+          "verification": {
+            "inputs": {
+              "expression": "1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 207,
+          "difficulty": "high",
+          "number": 49,
+          "prompt": "The pattern is 54, 105, 156, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "54+3*51"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 56,
+          "difficulty": "high",
+          "number": 50,
+          "prompt": "Find the greatest common factor of 112 and 168.",
+          "skill": "factors/multiples",
+          "verification": {
+            "inputs": {
+              "expression": "56"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Friday"
+    }
+  ],
+  "verification": {
+    "status": "PENDING"
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_5",
+    "question_count": 50,
+    "title": "MTS - WEEKLY MATH WORKSHEET",
+    "week_start": "2026-08-24"
+  }
+}

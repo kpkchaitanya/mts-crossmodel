@@ -8,9 +8,7 @@ import argparse
 
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 REPO = Path(__file__).resolve().parents[1]
-DEFAULT_RUN_ROOT = REPO / "runs" / "math" / "run-2026-08-24-grade-6-weekly"
-STAGING_FOLDER = "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
-TEMPLATE_MANIFEST = REPO / "subjects" / "math" / "config" / "template-manifests" / "weekly-worksheet.json"
+DEFAULT_RUN_ROOT = REPO / "data" / "transactions" / "runs" / "run-2026-09-07-weekly-bypass-sample"
 OAUTH_TOKEN = Path(r"c:\Users\neeli\kpkDevelopment\mts-new\.secrets\oauth-token.json")
 
 
@@ -40,23 +38,34 @@ def grade_display_name(spec: dict) -> str:
     return str(worksheet.get("grade_display_name") or worksheet.get("grade") or worksheet["grade_or_course"])
 
 
+def display_question_prompt(question: dict) -> str:
+    """Return a student prompt without its canonical Question N storage prefix."""
+    number = question["number"]
+    return str(question["prompt"]).removeprefix(f"Question {number}: ")
+
+
+def answer_key_line(question: dict, *, decimal_places: int = 2) -> str:
+    """Return one concise numbered answer-key entry."""
+    return f"{question['number']}. {display_answer(question['answer'], decimal_places=decimal_places)}"
+
+
 def projection(spec: dict, answer_key: bool, *, decimal_places: int = 2) -> str:
     lines = [spec["worksheet"]["title"], grade_display_name(spec), f"Week of {spec['worksheet']['week_start']}", ""]
     for section in spec["sections"]:
         lines.extend([section.get("title", section["id"].title()), ""])
         for question in section["questions"]:
-            value = display_answer(question["answer"], decimal_places=decimal_places) if answer_key else question["prompt"]
-            lines.append(f"{question['number']}. {value}")
+            value = answer_key_line(question, decimal_places=decimal_places) if answer_key else f"{question['number']}. {display_question_prompt(question)}"
+            lines.append(value)
         lines.append("")
     if answer_key:
         lines.insert(0, "ANSWER KEY")
     return "\n".join(lines).strip() + "\n"
 
 
-def copy_document(drive, template_id: str, name: str) -> dict:
+def copy_document(drive, template_id: str, staging_folder: str, name: str) -> dict:
     return drive.files().copy(
         fileId=template_id,
-        body={"name": name, "parents": [STAGING_FOLDER]},
+        body={"name": name, "parents": [staging_folder]},
         fields="id,name,webViewLink,parents",
     ).execute()
 
@@ -101,10 +110,10 @@ def render_document(docs, document_id: str, content: str, spec: dict, answer_key
                 question = questions.get(number)
                 placeholder = f"{{{{{prefix}_{'A' if answer_key else 'Q'}{number}}}}}"
                 if question:
-                    value = display_answer(question["answer"], decimal_places=decimal_places) if answer_key else question["prompt"]
+                    value = display_answer(question["answer"], decimal_places=decimal_places) if answer_key else display_question_prompt(question)
                     rendered_value = f"{question['number']}. {value}"
                     if answer_key:
-                        values[f"{number}. Answer: {placeholder}"] = f"{question['number']}. Answer: {value}"
+                        values[f"{number}. Answer: {placeholder}"] = answer_key_line(question, decimal_places=decimal_places)
                     else:
                         values[f"{number}. {placeholder}"] = rendered_value
                     values[placeholder] = rendered_value
@@ -146,6 +155,30 @@ def name_for(worksheet_id: str, date: str) -> str:
     return f"{names[worksheet_id]}-{date}"
 
 
+def spec_paths_for_run(run_root: Path, worksheet_id: str | None = None) -> list[tuple[str, Path]]:
+    """Return worksheet IDs and Spec paths, preferring target entity references."""
+    references_path = run_root / "entity_references.json"
+    if references_path.is_file():
+        references = json.loads(references_path.read_text(encoding="utf-8")).get("references", [])
+        selected = []
+        normalized = worksheet_id.replace("-", "_") if worksheet_id else None
+        for reference in references:
+            grade = str(reference["grade_or_course"])
+            if normalized and grade != normalized:
+                continue
+            selected.append((grade, REPO / reference["spec"]))
+        return selected
+
+    specs_root = run_root / "specs"
+    if worksheet_id:
+        flat_path = specs_root / f"{worksheet_id}.json"
+        revision_paths = sorted((specs_root / worksheet_id).glob("*.json"))
+        paths = [flat_path] if flat_path.is_file() else revision_paths[-1:]
+    else:
+        paths = sorted(specs_root.glob("*.json"))
+    return [(worksheet_id or path.stem, path) for path in paths]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--run-root", type=Path, default=DEFAULT_RUN_ROOT)
@@ -153,7 +186,6 @@ def main() -> None:
     parser.add_argument("--date", default="2026-08-24")
     args = parser.parse_args()
     run_root = args.run_root if args.run_root.is_absolute() else REPO / args.run_root
-    specs_root = run_root / "specs"
     output = run_root / "rendered-artifacts.json"
     from google.auth.transport.requests import Request
     from google.oauth2.credentials import Credentials
@@ -165,34 +197,29 @@ def main() -> None:
     drive = build("drive", "v3", credentials=creds)
     docs = build("docs", "v1", credentials=creds)
     from sys import path as module_path
-    module_path.insert(0, str(REPO / "src" / "runtime"))
-    import policy
+    module_path.insert(0, str(REPO / "src"))
+    from mts.setup_project.configure import resolve_effective_config
 
-    resolved_policy = policy.resolve({"subject": "math", "worksheet_type": "weekly-worksheet"}, repository_root=REPO)
-    manifest_path = REPO / resolved_policy["template_selection"]["template_manifest"]
+    effective_config = resolve_effective_config({"subject": "math", "worksheet_type": "weekly-worksheet"}, repository_root=REPO)
+    manifest_path = REPO / effective_config["template_selection"]["template_manifest"]
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     worksheet_template = manifest["worksheet_template"]["id"]
     answer_key_template = manifest["answer_key_template"]["id"]
+    staging_folder = effective_config["publishing"]["staging"]["render_folder_id"]
     date = args.date
     results = []
-    if args.worksheet_id:
-        flat_path = specs_root / f"{args.worksheet_id}.json"
-        revision_paths = sorted((specs_root / args.worksheet_id).glob("*.json"))
-        spec_paths = [flat_path] if flat_path.is_file() else revision_paths[-1:]
-    else:
-        spec_paths = sorted(specs_root.glob("*.json"))
-    if args.worksheet_id == "grades-9-10":
-        grade_defaults = resolved_policy["grade_defaults"]["grade_9_10"]
-        expected_count = grade_defaults["questions_per_day"] * len(resolved_policy["sections"])
-        spec = json.loads(spec_paths[-1].read_text(encoding="utf-8")) if spec_paths else {}
+    spec_paths = spec_paths_for_run(run_root, args.worksheet_id)
+    if args.worksheet_id in {"grades-9-10", "grade_9_10"}:
+        grade_defaults = effective_config["grade_defaults"]["grade_9_10"]
+        expected_count = grade_defaults["questions_per_day"] * len(effective_config["sections"])
+        spec = json.loads(spec_paths[-1][1].read_text(encoding="utf-8")) if spec_paths else {}
         if spec.get("worksheet", {}).get("question_count") != expected_count:
             raise ValueError("Combined Grades 9/10 Weekly render requires 5 questions per day and 25 questions per week.")
-    for spec_path in spec_paths:
+    for worksheet_id, spec_path in spec_paths:
         spec = json.loads(spec_path.read_text(encoding="utf-8"))
-        worksheet_id = args.worksheet_id or spec_path.stem
         base_name = name_for(worksheet_id, date)
-        worksheet = copy_document(drive, worksheet_template, base_name)
-        key = copy_document(drive, answer_key_template, base_name + "_KEY")
+        worksheet = copy_document(drive, worksheet_template, staging_folder, base_name)
+        key = copy_document(drive, answer_key_template, staging_folder, base_name + "_KEY")
         render_document(docs, worksheet["id"], projection(spec, False), spec, False)
         render_document(docs, key["id"], projection(spec, True), spec, True)
         results.append({
@@ -206,7 +233,7 @@ def main() -> None:
         print(f"  worksheet=https://docs.google.com/document/d/{worksheet['id']}/edit")
         print(f"  answer_key=https://docs.google.com/document/d/{key['id']}/edit")
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps({"status": "rendered_to_staging", "staging_folder": STAGING_FOLDER, "artifacts": results}, indent=2) + "\n", encoding="utf-8")
+    output.write_text(json.dumps({"status": "rendered_to_staging", "staging_folder": staging_folder, "artifacts": results}, indent=2) + "\n", encoding="utf-8")
     print(f"RENDER_PASS {len(results)} pairs")
 
 

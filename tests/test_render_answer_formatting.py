@@ -38,3 +38,27 @@ def test_display_answer_leaves_ints_and_lists_readable():
 def test_grade_display_name_prefers_human_label_and_preserves_legacy_specs():
     assert render.grade_display_name({"worksheet": {"grade": "grade_5", "grade_display_name": "Grade 5"}}) == "Grade 5"
     assert render.grade_display_name({"worksheet": {"grade": "grade_5"}}) == "grade_5"
+
+
+def test_display_question_prompt_removes_canonical_storage_prefix():
+    assert render.display_question_prompt({"number": 12, "prompt": "Question 12: Solve: 3 + 4."}) == "Solve: 3 + 4."
+    assert render.display_question_prompt({"number": 12, "prompt": "Solve: 3 + 4."}) == "Solve: 3 + 4."
+
+
+def test_answer_key_line_uses_only_number_and_answer():
+    assert render.answer_key_line({"number": 12, "answer": 7}) == "12. 7"
+
+
+def test_spec_paths_for_run_prefers_target_entity_references(tmp_path):
+    run_root = tmp_path / "data" / "transactions" / "runs" / "run-test"
+    spec_path = render.REPO / "data" / "transactions" / "subjects" / "math" / "grades" / "grade_4" / "cycles" / "2026-09-07" / "batches" / "sample" / "worksheets" / "weekly_worksheet" / "specs" / "r1.json"
+    run_root.mkdir(parents=True)
+    (run_root / "entity_references.json").write_text(
+        '{"references": [{"grade_or_course": "grade_4", "spec": "'
+        + spec_path.relative_to(render.REPO).as_posix()
+        + '"}]}\n',
+        encoding="utf-8",
+    )
+
+    assert render.spec_paths_for_run(run_root) == [("grade_4", spec_path)]
+    assert render.spec_paths_for_run(run_root, "grade-4") == [("grade_4", spec_path)]

@@ -10,8 +10,8 @@ import yaml
 
 
 REPO = Path(__file__).resolve().parents[1]
-DEFAULT_CONFIG = REPO / "config" / "worksheet-types" / "weekly-worksheet.yaml"
-GRADE_CATALOG = REPO / "subjects" / "math" / "knowledge" / "grade-course-catalog.json"
+DEFAULT_CONFIG = REPO / "data" / "config" / "worksheet_types" / "weekly_worksheet.yaml"
+GRADE_CATALOG = REPO / "data" / "master" / "subjects" / "math" / "grade_course_catalog.json"
 
 
 def load_questions(source: Path) -> list[dict]:

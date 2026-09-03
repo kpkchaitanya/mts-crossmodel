@@ -1,0 +1,291 @@
+{
+  "scope_review": [
+    {
+      "cache_hit": false,
+      "grade_or_course": "math_1",
+      "progressive_context": {
+        "grade": 9,
+        "official_ccs_pacing": false,
+        "source": "mts_progressive_backbone",
+        "units": {
+          "algebra_functions": {
+            "builds_from": [
+              "multi-step equations",
+              "slope",
+              "intercepts"
+            ],
+            "key_concepts": [
+              "equations",
+              "inequalities",
+              "systems",
+              "function notation",
+              "slope",
+              "sequences",
+              "transformations",
+              "modeling"
+            ],
+            "leads_to": [
+              "quadratic functions",
+              "factoring",
+              "quadratic equations"
+            ],
+            "progression": "Functions become the main language for relationships.",
+            "unit_family": "Patterns, Algebra & Functions",
+            "unit_name": "Linear & Exponential Functions"
+          },
+          "data_probability": {
+            "builds_from": [
+              "scatter plots",
+              "association",
+              "lines of fit"
+            ],
+            "key_concepts": [
+              "one-variable data",
+              "two-variable data",
+              "association",
+              "regression ideas",
+              "model interpretation"
+            ],
+            "leads_to": [
+              "compound events",
+              "independence",
+              "conditional probability"
+            ],
+            "progression": "Data analysis starts supporting predictive models.",
+            "unit_family": "Data, Statistics & Probability",
+            "unit_name": "Statistics & Regression Foundations"
+          },
+          "fractions_ratios": {
+            "builds_from": [
+              "slope",
+              "rate of change",
+              "dilation"
+            ],
+            "key_concepts": [
+              "constant rate",
+              "rate of change",
+              "linear vs exponential change",
+              "geometric sequences"
+            ],
+            "leads_to": [
+              "similar triangles",
+              "scale relationships",
+              "sine"
+            ],
+            "progression": "Rate reasoning broadens from proportional to linear and exponential growth.",
+            "unit_family": "Fractions, Ratios & Proportional Reasoning",
+            "unit_name": "Rates & Exponential Change"
+          },
+          "geometry_measurement": {
+            "builds_from": [
+              "translations",
+              "rotations",
+              "reflections"
+            ],
+            "key_concepts": [
+              "coordinate transformations",
+              "congruence",
+              "distance/slope connections",
+              "geometric reasoning"
+            ],
+            "leads_to": [
+              "Pythagorean relationships",
+              "right-triangle trigonometry",
+              "circle properties"
+            ],
+            "progression": "Coordinate methods connect algebra and geometry.",
+            "unit_family": "Geometry, Measurement & Trigonometry",
+            "unit_name": "Coordinate Geometry & Congruence"
+          },
+          "modeling_connections": {
+            "builds_from": [
+              "constant rate",
+              "slope",
+              "intercept"
+            ],
+            "key_concepts": [
+              "representation translation",
+              "model selection",
+              "interpretation",
+              "constraints"
+            ],
+            "leads_to": [
+              "nonlinear models",
+              "roots/intersections",
+              "geometric ratios"
+            ],
+            "progression": "Students view one relationship through multiple mathematical lenses.",
+            "unit_family": "Advanced Modeling / Connections",
+            "unit_name": "Equation \u2194 Table \u2194 Graph \u2194 Function"
+          },
+          "number_operations": {
+            "builds_from": [
+              "rational/irrational numbers",
+              "square and cube roots",
+              "exponent laws"
+            ],
+            "key_concepts": [
+              "expression structure",
+              "exponent rules",
+              "quantitative reasoning",
+              "formula manipulation"
+            ],
+            "leads_to": [
+              "radicals",
+              "rational exponents",
+              "polynomial operations"
+            ],
+            "progression": "Number operations become embedded tools for algebraic modeling.",
+            "unit_family": "Number Sense & Operations",
+            "unit_name": "Algebraic Quantities & Exponents"
+          }
+        }
+      },
+      "requires_web_resolution": true,
+      "week_start": "2026-09-07"
+    },
+    {
+      "cache_hit": false,
+      "grade_or_course": "math_2",
+      "progressive_context": {
+        "grade": 10,
+        "official_ccs_pacing": false,
+        "source": "mts_progressive_backbone",
+        "units": {
+          "algebra_functions": {
+            "builds_from": [
+              "equations",
+              "inequalities",
+              "systems"
+            ],
+            "key_concepts": [
+              "quadratic functions",
+              "factoring",
+              "quadratic equations",
+              "roots",
+              "vertex",
+              "transformations",
+              "polynomial structure"
+            ],
+            "leads_to": [
+              "higher-degree polynomials",
+              "rational functions",
+              "exponential/log functions"
+            ],
+            "progression": "Students move from linear to nonlinear function behavior.",
+            "unit_family": "Patterns, Algebra & Functions",
+            "unit_name": "Quadratic & Polynomial Foundations"
+          },
+          "data_probability": {
+            "builds_from": [
+              "one-variable data",
+              "two-variable data",
+              "association"
+            ],
+            "key_concepts": [
+              "compound events",
+              "independence",
+              "conditional probability",
+              "counting foundations"
+            ],
+            "leads_to": [
+              "sampling",
+              "distributions",
+              "inference"
+            ],
+            "progression": "Probability becomes structured around conditions and multiple events.",
+            "unit_family": "Data, Statistics & Probability",
+            "unit_name": "Compound & Conditional Probability"
+          },
+          "fractions_ratios": {
+            "builds_from": [
+              "constant rate",
+              "rate of change",
+              "linear vs exponential change"
+            ],
+            "key_concepts": [
+              "similar triangles",
+              "scale relationships",
+              "sine",
+              "cosine",
+              "tangent"
+            ],
+            "leads_to": [
+              "exponential growth/decay",
+              "logarithms",
+              "inverse relationships"
+            ],
+            "progression": "Proportional geometry becomes trigonometry.",
+            "unit_family": "Fractions, Ratios & Proportional Reasoning",
+            "unit_name": "Similarity & Trigonometric Ratios"
+          },
+          "geometry_measurement": {
+            "builds_from": [
+              "coordinate transformations",
+              "congruence",
+              "distance/slope connections"
+            ],
+            "key_concepts": [
+              "Pythagorean relationships",
+              "right-triangle trigonometry",
+              "circle properties",
+              "coordinate geometry"
+            ],
+            "leads_to": [
+              "unit circle",
+              "radians",
+              "trig graphs"
+            ],
+            "progression": "Geometry and algebra combine through similarity, trigonometry and analytic methods.",
+            "unit_family": "Geometry, Measurement & Trigonometry",
+            "unit_name": "Similarity, Right-Triangle Trig & Circles"
+          },
+          "modeling_connections": {
+            "builds_from": [
+              "representation translation",
+              "model selection",
+              "interpretation"
+            ],
+            "key_concepts": [
+              "nonlinear models",
+              "roots/intersections",
+              "geometric ratios",
+              "applications"
+            ],
+            "leads_to": [
+              "polynomial",
+              "rational",
+              "exponential"
+            ],
+            "progression": "Two major transitions occur: nonlinear functions and formal trigonometric reasoning.",
+            "unit_family": "Advanced Modeling / Connections",
+            "unit_name": "Linear \u2192 Quadratic; Similarity \u2192 Trigonometry"
+          },
+          "number_operations": {
+            "builds_from": [
+              "expression structure",
+              "exponent rules",
+              "quantitative reasoning"
+            ],
+            "key_concepts": [
+              "radicals",
+              "rational exponents",
+              "polynomial operations",
+              "algebraic simplification"
+            ],
+            "leads_to": [
+              "complex numbers",
+              "advanced algebraic manipulation",
+              "domain restrictions"
+            ],
+            "progression": "The algebraic number toolkit expands to support nonlinear functions.",
+            "unit_family": "Number Sense & Operations",
+            "unit_name": "Radicals, Rational Exponents & Polynomial Arithmetic"
+          }
+        }
+      },
+      "requires_web_resolution": true,
+      "week_start": "2026-09-07"
+    }
+  ]
+}

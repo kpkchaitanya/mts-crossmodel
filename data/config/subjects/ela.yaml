@@ -1,0 +1,19 @@
+version: "1.0"
+subject: "ela"
+mode:
+  default: "auto"
+weekly_arc:
+  monday: "foundation"
+  tuesday: "discover"
+  wednesday: "practice"
+  thursday: "apply_and_review"
+  friday: "mastery"
+verification:
+  verify_passage_support: true
+  require_inference_evidence_note: true
+  verify_distractor_quality: true
+  verify_grammar_corrections: true
+  require_open_response_guidance: true
+publishing:
+  target: "outputs/ela"
+

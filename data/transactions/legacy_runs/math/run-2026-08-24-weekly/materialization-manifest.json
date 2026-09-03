@@ -1,0 +1,128 @@
+{
+  "manifest_version": "1.0",
+  "run_id": "run-2026-08-24-weekly",
+  "subject": "math",
+  "worksheet_type": "weekly-worksheet",
+  "week_start": "2026-08-24",
+  "status": "gate_4_formatting_review_pending",
+  "gate_1": "approved",
+  "gate_2": "approved",
+  "gate_3": "approved_at_content_review",
+  "publication_authorized": false,
+  "question_count": 240,
+  "worksheets": [
+    {
+      "worksheet_id": "grade-1",
+      "grade_or_course": "grade_1",
+      "question_count": 50,
+      "structured_spec_status": "materialized_verified",
+      "template_key": "grade_1_class",
+      "spec_file": "specs/grade-1.json"
+    },
+    {
+      "worksheet_id": "grade-4",
+      "grade_or_course": "grade_4",
+      "question_count": 50,
+      "structured_spec_status": "materialized_pending_verification",
+      "template_key": "standard_class",
+      "content_emphasis": "Data and Graphs",
+      "spec_file": "specs/grade-4.json"
+    },
+    {
+      "worksheet_id": "grade-5",
+      "grade_or_course": "grade_5",
+      "question_count": 50,
+      "structured_spec_status": "materialized_pending_verification",
+      "template_key": "standard_class",
+      "content_emphasis": "Basic Coordinate Geometry",
+      "spec_file": "specs/grade-5.json"
+    },
+    {
+      "worksheet_id": "grade-6",
+      "grade_or_course": "grade_6",
+      "question_count": 40,
+      "structured_spec_status": "materialized_verified",
+      "template_key": "standard_class",
+      "content_emphasis": "Prime Factorization basics",
+      "spec_file": "specs/grade-6.json"
+    },
+    {
+      "worksheet_id": "grades-9-10",
+      "grade_or_course": "grade_9_10",
+      "question_count": 50,
+      "grade_split": {
+        "math_1": 25,
+        "math_2": 25
+      },
+      "structured_spec_status": "materialized_pending_verification",
+      "template_key": "high_school_combined",
+      "spec_file": "specs/grades-9-10.json"
+    }
+  ],
+  "template_references": {
+    "manifest_path": "subjects/math/config/template-manifest.json",
+    "worksheet_template": {
+      "id": "1ng3-EQmHRQfUftIEoQnyh7N43hzi1ViUjf44LTgPqo0",
+      "url": "https://docs.google.com/document/d/1ng3-EQmHRQfUftIEoQnyh7N43hzi1ViUjf44LTgPqo0/edit",
+      "revision_id": "3"
+    },
+    "answer_key_template": {
+      "id": "1uBKm2dzzeqy3gwYRxDAG34HGFnTRXAqJJb1sLJViNIo",
+      "url": "https://docs.google.com/document/d/1uBKm2dzzeqy3gwYRxDAG34HGFnTRXAqJJb1sLJViNIo/edit",
+      "revision_id": "2"
+    }
+  },
+  "rendered_artifacts": [
+    {
+      "worksheet_id": "grade-1",
+      "status": "rendered_to_staging_qa_pass",
+      "worksheet_url": "https://docs.google.com/document/d/1tquYQJjAjDTzcVskwFtq3eFUZZnSxGIhqi_ScnFhKrQ/edit",
+      "answer_key_url": "https://docs.google.com/document/d/1I7E6K_Wwx2iiJi5uWCFOKuuCjpsQQsKYBIczqQbZd2g/edit"
+    },
+    {
+      "worksheet_id": "grade-4",
+      "status": "rendered_to_staging_qa_pass",
+      "worksheet_url": "https://docs.google.com/document/d/1nAEQhUvZlQ9jVnAYSKGBN1TtpfsT4kOJAR364ebWalg/edit",
+      "answer_key_url": "https://docs.google.com/document/d/1iZYzRui7-a2esk8_BPzsnVWQBhUOWKIyy2AuMn3CJpo/edit"
+    },
+    {
+      "worksheet_id": "grade-5",
+      "status": "rendered_to_staging_qa_pass",
+      "worksheet_url": "https://docs.google.com/document/d/1AnZsqO2Z6Z9Cz-tFBlJXwVaxnQBziB-1SNl4VfWWv_w/edit",
+      "answer_key_url": "https://docs.google.com/document/d/1yyPMaZ3vVpzixmQlWdB8qxeqiPVMUaDyksQ2kaEmNU8/edit"
+    },
+    {
+      "worksheet_id": "grade-6",
+      "status": "rendered_to_staging_qa_pass",
+      "worksheet_url": "https://docs.google.com/document/d/19zKjlvHxelorwrQ2SPFMsvL1QHBTB7rT7vTx5MW59C0/edit",
+      "answer_key_url": "https://docs.google.com/document/d/1c35O7b83rbQhDMlFYB_-0sYYJlLS6aQcYzZ3NQ0kCNI/edit"
+    },
+    {
+      "worksheet_id": "grades-9-10",
+      "status": "rendered_to_staging_qa_pass",
+      "worksheet_url": "https://docs.google.com/document/d/1Rd0kEChVCqhl4BMTVPVNdYIzDNE3Us1TBSh7snmjfgc/edit",
+      "answer_key_url": "https://docs.google.com/document/d/1lx_Nb-imsq_Nh9q2pGWrlCORQF-DHgywhBZ1jeGfe8Q/edit"
+    }
+  ],
+  "review_artifact": "gate-2-approved-question-sets.md",
+  "qa": {
+    "readback": "PASS",
+    "question_and_answer_counts_match_specs": true,
+    "numbering_contiguous": true,
+    "placeholders_remaining": false,
+    "pdf_export": "PASS",
+    "pdf_blank_pages": false,
+    "pdf_numbered_item_counts": {
+      "grade-1": 50,
+      "grade-4": 50,
+      "grade-5": 50,
+      "grade-6": 40,
+      "grades-9-10": 50
+    },
+    "automated_layout_signal": "PASS",
+    "human_visual_review": "PENDING"
+  },
+  "blocking_reason": "Automated content and PDF layout checks pass. Human Gate 4 formatting review and final QA remain pending; publication is not authorized.",
+  "required_next_step": "Review the staged worksheet/key pairs for visual formatting, spacing, wrapping, section balance, and editability at Gate 4.",
+  "curriculum_confidence": "inferred"
+}

@@ -1,0 +1,1244 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 2,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_4-q1",
+          "number": 1,
+          "prompt": "Sample question 1 for large-number place value: find 1 + 1.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "large-number place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "1+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.table_complete",
+          "id": "grade_4-q2",
+          "number": 2,
+          "prompt": "Sample question 2 for rounding: find 2 + 1.",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "2+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "cognitive_action": "extend_pattern",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.sequence_pattern",
+          "id": "grade_4-q3",
+          "number": 3,
+          "prompt": "Sample question 3 for multi-digit addition/subtraction: find 3 + 1.",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "3+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "retrieve",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.representation_read",
+          "id": "grade_4-q4",
+          "number": 4,
+          "prompt": "Sample question 4 for rounding: find 4 + 1.",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "4+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "cognitive_action": "decompose",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.compose_decompose",
+          "id": "grade_4-q5",
+          "number": 5,
+          "prompt": "Sample question 5 for multiplication: find 5 + 1.",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "5+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.visual_grouping",
+          "id": "grade_4-q6",
+          "number": 6,
+          "prompt": "Sample question 6 for division: find 6 + 1.",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "6+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_4-q7",
+          "number": 7,
+          "prompt": "Sample question 7 for factors: find 7 + 1.",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "factors",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "7+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.two_way_compare",
+          "id": "grade_4-q8",
+          "number": 8,
+          "prompt": "Sample question 8 for multi-digit addition/subtraction: find 8 + 1.",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "8+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 10,
+          "cognitive_action": "construct",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.construct_example",
+          "id": "grade_4-q9",
+          "number": 9,
+          "prompt": "Sample question 9 for multiples: find 9 + 1.",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "9+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "cognitive_action": "locate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.number_line",
+          "id": "grade_4-q10",
+          "number": 10,
+          "prompt": "Sample question 10 for prime/composite: find 10 + 1.",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "prime/composite",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "10+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 12,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.reverse_reasoning",
+          "id": "grade_4-q11",
+          "number": 11,
+          "prompt": "Sample question 11 for large-number place value: find 11 + 1.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "large-number place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "11+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.compare_select",
+          "id": "grade_4-q12",
+          "number": 12,
+          "prompt": "Sample question 12 for rounding: find 12 + 1.",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "12+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 14,
+          "cognitive_action": "locate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.number_line",
+          "id": "grade_4-q13",
+          "number": 13,
+          "prompt": "Sample question 13 for multi-digit addition/subtraction: find 13 + 1.",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "13+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 15,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.context_story",
+          "id": "grade_4-q14",
+          "number": 14,
+          "prompt": "Sample question 14 for rounding: find 14 + 1.",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "14+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 16,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.two_way_compare",
+          "id": "grade_4-q15",
+          "number": 15,
+          "prompt": "Sample question 15 for multiplication: find 15 + 1.",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "15+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 17,
+          "cognitive_action": "translate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.equivalent_form",
+          "id": "grade_4-q16",
+          "number": 16,
+          "prompt": "Sample question 16 for division: find 16 + 1.",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "16+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 18,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_4-q17",
+          "number": 17,
+          "prompt": "Sample question 17 for factors: find 17 + 1.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "factors",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "17+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 19,
+          "cognitive_action": "satisfy_constraint",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.constraint_solve",
+          "id": "grade_4-q18",
+          "number": 18,
+          "prompt": "Sample question 18 for multi-digit addition/subtraction: find 18 + 1.",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "18+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 20,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_representation",
+          "id": "grade_4-q19",
+          "number": 19,
+          "prompt": "Sample question 19 for multiples: find 19 + 1.",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "19+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 21,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.table_complete",
+          "id": "grade_4-q20",
+          "number": 20,
+          "prompt": "Sample question 20 for prime/composite: find 20 + 1.",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "prime/composite",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "20+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 22,
+          "cognitive_action": "solve_unknown",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.missing_value",
+          "id": "grade_4-q21",
+          "number": 21,
+          "prompt": "Sample question 21 for large-number place value: find 21 + 1.",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "large-number place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "21+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 23,
+          "cognitive_action": "select_strategy",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.choose_operation",
+          "id": "grade_4-q22",
+          "number": 22,
+          "prompt": "Sample question 22 for rounding: find 22 + 1.",
+          "representation": "short_context",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "22+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 24,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_4-q23",
+          "number": 23,
+          "prompt": "Sample question 23 for multi-digit addition/subtraction: find 23 + 1.",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "23+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 25,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_4-q24",
+          "number": 24,
+          "prompt": "Sample question 24 for rounding: find 24 + 1.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "24+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 26,
+          "cognitive_action": "extend_pattern",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.sequence_pattern",
+          "id": "grade_4-q25",
+          "number": 25,
+          "prompt": "Sample question 25 for multiplication: find 25 + 1.",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "25+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 27,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.compare_select",
+          "id": "grade_4-q26",
+          "number": 26,
+          "prompt": "Sample question 26 for division: find 26 + 1.",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "26+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 28,
+          "cognitive_action": "justify",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.justify_claim",
+          "id": "grade_4-q27",
+          "number": 27,
+          "prompt": "Sample question 27 for factors: find 27 + 1.",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "factors",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "27+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 29,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.context_story",
+          "id": "grade_4-q28",
+          "number": 28,
+          "prompt": "Sample question 28 for multi-digit addition/subtraction: find 28 + 1.",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "28+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.error_check",
+          "id": "grade_4-q29",
+          "number": 29,
+          "prompt": "Sample question 29 for multiples: find 29 + 1.",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "29+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 31,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.reverse_reasoning",
+          "id": "grade_4-q30",
+          "number": 30,
+          "prompt": "Sample question 30 for prime/composite: find 30 + 1.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "prime/composite",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "30+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 32,
+          "cognitive_action": "justify",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.justify_claim",
+          "id": "grade_4-q31",
+          "number": 31,
+          "prompt": "Sample question 31 for large-number place value: find 31 + 1.",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "large-number place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "31+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 33,
+          "cognitive_action": "construct",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.construct_example",
+          "id": "grade_4-q32",
+          "number": 32,
+          "prompt": "Sample question 32 for rounding: find 32 + 1.",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "32+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 34,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.find_counterexample",
+          "id": "grade_4-q33",
+          "number": 33,
+          "prompt": "Sample question 33 for multi-digit addition/subtraction: find 33 + 1.",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "33+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 35,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.visual_grouping",
+          "id": "grade_4-q34",
+          "number": 34,
+          "prompt": "Sample question 34 for rounding: find 34 + 1.",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "34+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 36,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_representation",
+          "id": "grade_4-q35",
+          "number": 35,
+          "prompt": "Sample question 35 for multiplication: find 35 + 1.",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "35+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 37,
+          "cognitive_action": "decide",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.decision_table",
+          "id": "grade_4-q36",
+          "number": 36,
+          "prompt": "Sample question 36 for division: find 36 + 1.",
+          "representation": "decision_table",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "36+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 38,
+          "cognitive_action": "order",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.sort_order",
+          "id": "grade_4-q37",
+          "number": 37,
+          "prompt": "Sample question 37 for factors: find 37 + 1.",
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "section_id": "thursday",
+          "skill": "factors",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "37+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 39,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_4-q38",
+          "number": 38,
+          "prompt": "Sample question 38 for multi-digit addition/subtraction: find 38 + 1.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "38+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 40,
+          "cognitive_action": "compute",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.direct_compute",
+          "id": "grade_4-q39",
+          "number": 39,
+          "prompt": "Sample question 39 for multiples: find 39 + 1.",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "39+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 41,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.two_way_compare",
+          "id": "grade_4-q40",
+          "number": 40,
+          "prompt": "Sample question 40 for prime/composite: find 40 + 1.",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "prime/composite",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "40+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 42,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.two_way_compare",
+          "id": "grade_4-q41",
+          "number": 41,
+          "prompt": "Sample question 41 for large-number place value: find 41 + 1.",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "large-number place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "41+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 43,
+          "cognitive_action": "compute",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.direct_compute",
+          "id": "grade_4-q42",
+          "number": 42,
+          "prompt": "Sample question 42 for rounding: find 42 + 1.",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "42+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 44,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.error_check",
+          "id": "grade_4-q43",
+          "number": 43,
+          "prompt": "Sample question 43 for multi-digit addition/subtraction: find 43 + 1.",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "section_id": "friday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "43+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 45,
+          "cognitive_action": "solve_unknown",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.missing_value",
+          "id": "grade_4-q44",
+          "number": 44,
+          "prompt": "Sample question 44 for rounding: find 44 + 1.",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "44+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 46,
+          "cognitive_action": "select_strategy",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.choose_operation",
+          "id": "grade_4-q45",
+          "number": 45,
+          "prompt": "Sample question 45 for multiplication: find 45 + 1.",
+          "representation": "short_context",
+          "response_type": "selection",
+          "section_id": "friday",
+          "skill": "multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "45+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 47,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_representation",
+          "id": "grade_4-q46",
+          "number": 46,
+          "prompt": "Sample question 46 for division: find 46 + 1.",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "46+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 48,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.reverse_reasoning",
+          "id": "grade_4-q47",
+          "number": 47,
+          "prompt": "Sample question 47 for factors: find 47 + 1.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "factors",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "47+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 49,
+          "cognitive_action": "order",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.sort_order",
+          "id": "grade_4-q48",
+          "number": 48,
+          "prompt": "Sample question 48 for multi-digit addition/subtraction: find 48 + 1.",
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "section_id": "friday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "48+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 50,
+          "cognitive_action": "locate",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.number_line",
+          "id": "grade_4-q49",
+          "number": 49,
+          "prompt": "Sample question 49 for multiples: find 49 + 1.",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "49+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 51,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.context_story",
+          "id": "grade_4-q50",
+          "number": 50,
+          "prompt": "Sample question 50 for prime/composite: find 50 + 1.",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "prime/composite",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903173530,
+          "verification": {
+            "inputs": {
+              "expression": "50+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PASS"
+  },
+  "worksheet": {
+    "grade": "grade_4",
+    "grade_or_course": "grade_4",
+    "question_count": 50,
+    "title": "MTS - WEEKLY WORKSHEET SAMPLE",
+    "week_start": "2026-09-07"
+  }
+}

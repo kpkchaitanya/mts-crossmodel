@@ -1,0 +1,398 @@
+{
+  "curriculum": {
+    "week_number": 2,
+    "week_start": "2026-08-24"
+  },
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 13,
+          "difficulty": "medium",
+          "number": 1,
+          "prompt": "Given f(x) = 2x + 3, find f(5).",
+          "skill": "linear_function_notation",
+          "verification": {
+            "inputs": {
+              "b": 3,
+              "m": 2,
+              "x": 5
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 11,
+          "difficulty": "medium",
+          "number": 2,
+          "prompt": "Given f(x) = 3x + -1, find f(4).",
+          "skill": "linear_function_notation",
+          "verification": {
+            "inputs": {
+              "b": -1,
+              "m": 3,
+              "x": 4
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": -1,
+          "difficulty": "medium",
+          "number": 3,
+          "prompt": "Given f(x) = -2x + 5, find f(3).",
+          "skill": "linear_function_notation",
+          "verification": {
+            "inputs": {
+              "b": 5,
+              "m": -2,
+              "x": 3
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 24,
+          "difficulty": "medium",
+          "number": 4,
+          "prompt": "Given f(x) = 4x + 0, find f(6).",
+          "skill": "linear_function_notation",
+          "verification": {
+            "inputs": {
+              "b": 0,
+              "m": 4,
+              "x": 6
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "medium",
+          "number": 5,
+          "prompt": "Given f(x) = 1x + 7, find f(2).",
+          "skill": "linear_function_notation",
+          "verification": {
+            "inputs": {
+              "b": 7,
+              "m": 1,
+              "x": 2
+            },
+            "method": "linear_eval"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 13,
+          "difficulty": "medium",
+          "number": 6,
+          "prompt": "Given f(x) = 5x + -2, find f(3).",
+          "skill": "linear_function_notation",
+          "verification": {
+            "inputs": {
+              "b": -2,
+              "m": 5,
+              "x": 3
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": -11,
+          "difficulty": "medium",
+          "number": 7,
+          "prompt": "Given f(x) = -3x + 4, find f(5).",
+          "skill": "linear_function_notation",
+          "verification": {
+            "inputs": {
+              "b": 4,
+              "m": -3,
+              "x": 5
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 11,
+          "difficulty": "medium",
+          "number": 8,
+          "prompt": "Given f(x) = 2x + -5, find f(8).",
+          "skill": "linear_function_notation",
+          "verification": {
+            "inputs": {
+              "b": -5,
+              "m": 2,
+              "x": 8
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 7,
+          "difficulty": "medium",
+          "number": 9,
+          "prompt": "Given f(x) = 6x + 1, find f(1).",
+          "skill": "linear_function_notation",
+          "verification": {
+            "inputs": {
+              "b": 1,
+              "m": 6,
+              "x": 1
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 3,
+          "difficulty": "medium",
+          "number": 10,
+          "prompt": "Given f(x) = 3x + 3, find f(0).",
+          "skill": "linear_function_notation",
+          "verification": {
+            "inputs": {
+              "b": 3,
+              "m": 3,
+              "x": 0
+            },
+            "method": "linear_eval"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 2,
+          "difficulty": "medium",
+          "number": 11,
+          "prompt": "Given f(x) = -1x + 6, find f(4).",
+          "skill": "linear_function_notation",
+          "verification": {
+            "inputs": {
+              "b": 6,
+              "m": -1,
+              "x": 4
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 25,
+          "difficulty": "medium",
+          "number": 12,
+          "prompt": "Given f(x) = 4x + -3, find f(7).",
+          "skill": "linear_function_notation",
+          "verification": {
+            "inputs": {
+              "b": -3,
+              "m": 4,
+              "x": 7
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "medium",
+          "number": 13,
+          "prompt": "Given f(x) = 7x + -6, find f(2).",
+          "skill": "linear_function_notation",
+          "verification": {
+            "inputs": {
+              "b": -6,
+              "m": 7,
+              "x": 2
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 2.0,
+          "difficulty": "medium",
+          "number": 14,
+          "prompt": "Evaluate using rational exponents: 8**(1/3)",
+          "skill": "rational_exponents",
+          "verification": {
+            "inputs": {
+              "expression": "8**(1/3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.0,
+          "difficulty": "medium",
+          "number": 15,
+          "prompt": "Evaluate using rational exponents: 27**(1/3)",
+          "skill": "rational_exponents",
+          "verification": {
+            "inputs": {
+              "expression": "27**(1/3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 4.0,
+          "difficulty": "medium",
+          "number": 16,
+          "prompt": "Evaluate using rational exponents: 16**(1/2)",
+          "skill": "rational_exponents",
+          "verification": {
+            "inputs": {
+              "expression": "16**(1/2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.9999999999999996,
+          "difficulty": "medium",
+          "number": 17,
+          "prompt": "Evaluate using rational exponents: 64**(1/3)",
+          "skill": "rational_exponents",
+          "verification": {
+            "inputs": {
+              "expression": "64**(1/3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5.0,
+          "difficulty": "medium",
+          "number": 18,
+          "prompt": "Evaluate using rational exponents: 25**(1/2)",
+          "skill": "rational_exponents",
+          "verification": {
+            "inputs": {
+              "expression": "25**(1/2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.0,
+          "difficulty": "medium",
+          "number": 19,
+          "prompt": "Evaluate using rational exponents: 9**(1/2)",
+          "skill": "rational_exponents",
+          "verification": {
+            "inputs": {
+              "expression": "9**(1/2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4.999999999999999,
+          "difficulty": "medium",
+          "number": 20,
+          "prompt": "Evaluate using rational exponents: 125**(1/3)",
+          "skill": "rational_exponents",
+          "verification": {
+            "inputs": {
+              "expression": "125**(1/3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 6.0,
+          "difficulty": "medium",
+          "number": 21,
+          "prompt": "Evaluate using rational exponents: 36**(1/2)",
+          "skill": "rational_exponents",
+          "verification": {
+            "inputs": {
+              "expression": "36**(1/2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            -3,
+            4
+          ],
+          "difficulty": "medium",
+          "number": 22,
+          "prompt": "Reflect (3, 4) over the y-axis.",
+          "skill": "transformations",
+          "verification": {
+            "criterion": "coordinate transformation rule applied correctly",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": [
+            -2,
+            -5
+          ],
+          "difficulty": "medium",
+          "number": 23,
+          "prompt": "Reflect (-2, 5) over the x-axis.",
+          "skill": "transformations",
+          "verification": {
+            "criterion": "coordinate transformation rule applied correctly",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": [
+            5,
+            -1
+          ],
+          "difficulty": "medium",
+          "number": 24,
+          "prompt": "Translate (1, 2) by (4, -3).",
+          "skill": "transformations",
+          "verification": {
+            "criterion": "coordinate transformation rule applied correctly",
+            "method": "reasoning_review"
+          }
+        },
+        {
+          "answer": [
+            -1,
+            5
+          ],
+          "difficulty": "medium",
+          "number": 25,
+          "prompt": "Translate (-3, -1) by (2, 6).",
+          "skill": "transformations",
+          "verification": {
+            "criterion": "coordinate transformation rule applied correctly",
+            "method": "reasoning_review"
+          }
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "status": "PENDING"
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_9_10",
+    "question_count": 25,
+    "title": "MTS - WEEKLY WORKSHEET",
+    "week_start": "2026-08-24"
+  }
+}

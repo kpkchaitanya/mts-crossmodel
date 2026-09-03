@@ -1,22 +1,24 @@
-"""Integration check for Policy Resolver, Run Repository, and Gate Controller."""
+"""Integration check for Effective Config Resolver, Run Loader/Writer, and Gate Controller."""
 from pathlib import Path
 import sys
 import tempfile
 
 REPO = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(REPO / "src" / "runtime"))
-import gates
-import policy
-import run_repository
+sys.path.insert(0, str(REPO / "src"))
+from mts.setup_project.configure import resolve_effective_config
+from mts.workflow_management import gates
+from mts.workflow_management.run_writer import RunWriter
 
 
 def test_math_class_run_scope_review_and_invalidation():
     request = {"subject": "math", "worksheet_type": "class-worksheet"}
-    resolved_policy = policy.resolve(request, repository_root=REPO)
+    effective_config = resolve_effective_config(request, repository_root=REPO)
 
     with tempfile.TemporaryDirectory() as temporary_directory:
-        repository = run_repository.RunRepository(Path(temporary_directory) / "runs")
-        manifest = repository.create_or_resume(request, resolved_policy, run_id="run-integration-001")
+        writer = RunWriter(Path(temporary_directory) / "data")
+        writer.write_effective_config("run-integration-001", effective_config)
+        manifest = {"run_id": "run-integration-001", "subject": "math", "worksheet_type": "class-worksheet", "status": "initialized", "approvals": []}
+        writer.write_manifest(manifest)
         approved = gates.record_approval(
             manifest,
             gate="scope_review",
@@ -36,6 +38,7 @@ def test_math_class_run_scope_review_and_invalidation():
             reason="Grade 6 weekly curriculum changed.",
         )
         assert invalidated["status"] == "scope_invalidated"
+        writer.write_manifest(invalidated)
         try:
             gates.require_approval(
                 invalidated,

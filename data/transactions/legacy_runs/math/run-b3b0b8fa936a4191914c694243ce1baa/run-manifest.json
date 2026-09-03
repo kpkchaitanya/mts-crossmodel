@@ -1,0 +1,995 @@
+{
+  "approvals": [
+    {
+      "approval_id": "approval-328edc7d60404d73a4db77bf90a8ca7b",
+      "artifact_revision": "scope-2026-08-24-r1",
+      "gate": "scope_review",
+      "notes": "Explicit current-user instruction: All Gates Bypassed.",
+      "recorded_at": "2026-08-30T21:45:18.496023+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-12a9d42b3e8c4c738f65c65509dd0720",
+      "artifact_revision": "scope-2026-08-24-r1",
+      "gate": "scope_review",
+      "notes": "Explicit current-user instruction: All Gates Bypassed.",
+      "recorded_at": "2026-08-30T21:45:44.443066+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-63ee20888d814137b173b610f32d1610",
+      "artifact_revision": "grade_5-form-diversity-r3",
+      "gate": "question_review",
+      "notes": "Explicit current-user instruction: All Gates Bypassed.",
+      "recorded_at": "2026-08-30T21:45:57.418376+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-d2af446a5f44423fb0a55621e5972879",
+      "artifact_revision": "grade_5-form-diversity-r3",
+      "gate": "verification_review",
+      "notes": "Explicit current-user instruction: All Gates Bypassed.",
+      "recorded_at": "2026-08-30T21:45:57.418596+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-90c5894469e641909cb2284aa718e836",
+      "artifact_revision": "grade_5-form-diversity-r3",
+      "gate": "formatting_review",
+      "notes": "Explicit current-user instruction: All Gates Bypassed.",
+      "recorded_at": "2026-08-30T21:47:17.843904+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-d8d425322b68467d85c461dbb125a786",
+      "artifact_revision": "grade_5-form-diversity-r3",
+      "gate": "publish_approval",
+      "notes": "Explicit current-user instruction: All Gates Bypassed.",
+      "recorded_at": "2026-08-30T21:47:17.844351+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_kind": "student_worksheet",
+      "document": {
+        "id": "1JzLCnauoKuBS56nQiMDCpwTygbq5ITnmcLbS0msAZRA",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1JzLCnauoKuBS56nQiMDCpwTygbq5ITnmcLbS0msAZRA/edit?usp=drivesdk"
+      },
+      "status": "validated",
+      "worksheet_id": "grade_5"
+    },
+    {
+      "artifact_kind": "answer_key",
+      "document": {
+        "id": "1ONHVq9dy38_i6sjPe0WNb36rYmlBUMtf96fhHTl9BhI",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1ONHVq9dy38_i6sjPe0WNb36rYmlBUMtf96fhHTl9BhI/edit?usp=drivesdk"
+      },
+      "status": "validated",
+      "worksheet_id": "grade_5"
+    }
+  ],
+  "checkpoints": [],
+  "corrections": [
+    {
+      "invalidates": [
+        "formatting_review",
+        "publish_approval"
+      ],
+      "reason": "Render Grade 5 instead of machine identifier grade_5.",
+      "revision": "form-diversity-r4",
+      "type": "display_metadata"
+    }
+  ],
+  "deliver": {
+    "requested": "yes",
+    "resolved": true
+  },
+  "delivery": {
+    "record": {
+      "answer_key": {
+        "document": {
+          "id": "1orYyucJYEf9Z4nyipKpFq5reHnISPnYXypbxnPOxEco",
+          "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24_KEY",
+          "parents": [
+            "1O_WUC7txmWC81aF_w-i3uko-6fl0K_A4"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1orYyucJYEf9Z4nyipKpFq5reHnISPnYXypbxnPOxEco/edit?usp=drivesdk"
+        },
+        "source_document_id": "14YMuGltnMevhtmRURUlD1Rw4839G0SqBMJP19DDfJmU"
+      },
+      "destination_id": "1O_WUC7txmWC81aF_w-i3uko-6fl0K_A4",
+      "mode": "copy",
+      "status": "delivered",
+      "student_worksheet": {
+        "document": {
+          "id": "1Uy8FxgADxP67gkivetiajAvS6J5eyVhuiEJFgOWGZz4",
+          "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24",
+          "parents": [
+            "1O_WUC7txmWC81aF_w-i3uko-6fl0K_A4"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1Uy8FxgADxP67gkivetiajAvS6J5eyVhuiEJFgOWGZz4/edit?usp=drivesdk"
+        },
+        "source_document_id": "1uKBxLFAkCJkjegb-LsUWHXHUcsQbptb2k1NqyeqtrrY"
+      }
+    },
+    "status": "delivered",
+    "week_folder": {
+      "created": true,
+      "id": "1O_WUC7txmWC81aF_w-i3uko-6fl0K_A4",
+      "name": "Week_2026-08-24",
+      "webViewLink": "https://drive.google.com/drive/folders/1O_WUC7txmWC81aF_w-i3uko-6fl0K_A4"
+    }
+  },
+  "form_diversity_report": {
+    "failures": [],
+    "level": "high",
+    "sections": [
+      {
+        "form_families": {
+          "coordinate.read_component": 1,
+          "coordinate.translate_point": 1
+        },
+        "profiled_skills": [
+          "coordinate geometry basics"
+        ],
+        "section": "monday"
+      },
+      {
+        "form_families": {
+          "coordinate.axis_proximity": 1,
+          "coordinate.verbal_location": 1
+        },
+        "profiled_skills": [
+          "coordinate geometry basics"
+        ],
+        "section": "tuesday"
+      },
+      {
+        "form_families": {
+          "coordinate.verbal_location": 1,
+          "coordinate.write_ordered_pair": 1
+        },
+        "profiled_skills": [
+          "coordinate geometry basics"
+        ],
+        "section": "wednesday"
+      },
+      {
+        "form_families": {
+          "coordinate.translate_point": 1,
+          "coordinate.write_ordered_pair": 1
+        },
+        "profiled_skills": [
+          "coordinate geometry basics"
+        ],
+        "section": "thursday"
+      },
+      {
+        "form_families": {
+          "coordinate.read_component": 1,
+          "coordinate.write_ordered_pair": 1
+        },
+        "profiled_skills": [
+          "coordinate geometry basics"
+        ],
+        "section": "friday"
+      }
+    ],
+    "status": "PASS"
+  },
+  "formatting_qa": {
+    "answer_key_content_blocks": 61,
+    "revision": "form-diversity-r4",
+    "status": "PASS",
+    "student_content_blocks": 68,
+    "text_qa": {
+      "answer_key": {
+        "checks": {
+          "all_question_numbers_present": true,
+          "answer_key_label": true,
+          "grade_present": true,
+          "no_extra_numbered_slots": true,
+          "no_pending_approval_label": true,
+          "no_unresolved_placeholders": true,
+          "rendered_text_nonempty": true,
+          "title_present": true
+        },
+        "failed_checks": [],
+        "status": "PASS"
+      },
+      "student_worksheet": {
+        "checks": {
+          "all_question_numbers_present": true,
+          "grade_present": true,
+          "no_extra_numbered_slots": true,
+          "no_pending_approval_label": true,
+          "no_unresolved_placeholders": true,
+          "rendered_text_nonempty": true,
+          "title_present": true
+        },
+        "failed_checks": [],
+        "status": "PASS"
+      }
+    }
+  },
+  "gates": {
+    "bypassed": [
+      "scope_review",
+      "question_review",
+      "verification_review",
+      "formatting_review",
+      "publish_approval"
+    ],
+    "mode": "bypass_all",
+    "requested_by": "current_user"
+  },
+  "manifest_version": "1.0",
+  "policy_fingerprint": "b93aff4538ac2a09c2f666e87b6b6082e628eff7c2a91fee79df91c1daae5d39",
+  "policy_snapshot_path": "resolved-policy.json",
+  "publication": {
+    "destination_folder_id": "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS",
+    "pair": {
+      "answer_key": {
+        "id": "14YMuGltnMevhtmRURUlD1Rw4839G0SqBMJP19DDfJmU",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/14YMuGltnMevhtmRURUlD1Rw4839G0SqBMJP19DDfJmU/edit?usp=drivesdk"
+      },
+      "status": "published",
+      "student_worksheet": {
+        "id": "1uKBxLFAkCJkjegb-LsUWHXHUcsQbptb2k1NqyeqtrrY",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1uKBxLFAkCJkjegb-LsUWHXHUcsQbptb2k1NqyeqtrrY/edit?usp=drivesdk"
+      }
+    },
+    "status": "published"
+  },
+  "publish": {
+    "requested": "yes",
+    "resolved": true
+  },
+  "question_design": {
+    "difficulty": "medium_plus",
+    "diversity": "medium_plus",
+    "form_diversity": "high",
+    "variation_seed": 1803843805
+  },
+  "question_plan": {
+    "friday": [
+      {
+        "day": "friday",
+        "difficulty": "medium",
+        "skill": "numerical expressions",
+        "slot": 1
+      },
+      {
+        "day": "friday",
+        "difficulty": "medium_plus",
+        "skill": "patterns",
+        "slot": 2
+      },
+      {
+        "cognitive_action": "construct",
+        "day": "friday",
+        "difficulty": "medium_plus",
+        "form_family": "coordinate.write_ordered_pair",
+        "representation": "coordinate_plane",
+        "response_type": "ordered_pair",
+        "skill": "coordinate geometry basics",
+        "slot": 3,
+        "topic_override": true,
+        "variation_seed": 1803843805
+      },
+      {
+        "day": "friday",
+        "difficulty": "medium_plus",
+        "skill": "place value",
+        "slot": 4
+      },
+      {
+        "day": "friday",
+        "difficulty": "medium_plus",
+        "skill": "multi-digit addition/subtraction",
+        "slot": 5
+      },
+      {
+        "day": "friday",
+        "difficulty": "medium_plus",
+        "skill": "whole-number multiplication",
+        "slot": 6
+      },
+      {
+        "day": "friday",
+        "difficulty": "high",
+        "skill": "numerical expressions",
+        "slot": 7
+      },
+      {
+        "cognitive_action": "retrieve",
+        "day": "friday",
+        "difficulty": "high",
+        "form_family": "coordinate.read_component",
+        "representation": "ordered_pair",
+        "response_type": "numeric_answer",
+        "skill": "coordinate geometry basics",
+        "slot": 8,
+        "topic_override": true,
+        "variation_seed": 1803843805
+      },
+      {
+        "day": "friday",
+        "difficulty": "high",
+        "skill": "patterns",
+        "slot": 9
+      },
+      {
+        "day": "friday",
+        "difficulty": "high",
+        "skill": "factors/multiples",
+        "slot": 10
+      }
+    ],
+    "monday": [
+      {
+        "day": "monday",
+        "difficulty": "low_plus",
+        "skill": "numerical expressions",
+        "slot": 1
+      },
+      {
+        "day": "monday",
+        "difficulty": "low_plus",
+        "skill": "patterns",
+        "slot": 2
+      },
+      {
+        "cognitive_action": "transform",
+        "day": "monday",
+        "difficulty": "low_plus",
+        "form_family": "coordinate.translate_point",
+        "representation": "coordinate_plane",
+        "response_type": "ordered_pair",
+        "skill": "coordinate geometry basics",
+        "slot": 3,
+        "topic_override": true,
+        "variation_seed": 1803843805
+      },
+      {
+        "day": "monday",
+        "difficulty": "medium",
+        "skill": "place value",
+        "slot": 4
+      },
+      {
+        "day": "monday",
+        "difficulty": "medium",
+        "skill": "multi-digit addition/subtraction",
+        "slot": 5
+      },
+      {
+        "day": "monday",
+        "difficulty": "medium",
+        "skill": "whole-number multiplication",
+        "slot": 6
+      },
+      {
+        "day": "monday",
+        "difficulty": "medium",
+        "skill": "numerical expressions",
+        "slot": 7
+      },
+      {
+        "cognitive_action": "retrieve",
+        "day": "monday",
+        "difficulty": "medium",
+        "form_family": "coordinate.read_component",
+        "representation": "ordered_pair",
+        "response_type": "numeric_answer",
+        "skill": "coordinate geometry basics",
+        "slot": 8,
+        "topic_override": true,
+        "variation_seed": 1803843805
+      },
+      {
+        "day": "monday",
+        "difficulty": "medium",
+        "skill": "patterns",
+        "slot": 9
+      },
+      {
+        "day": "monday",
+        "difficulty": "medium",
+        "skill": "factors/multiples",
+        "slot": 10
+      }
+    ],
+    "thursday": [
+      {
+        "day": "thursday",
+        "difficulty": "medium",
+        "skill": "numerical expressions",
+        "slot": 1
+      },
+      {
+        "day": "thursday",
+        "difficulty": "medium",
+        "skill": "patterns",
+        "slot": 2
+      },
+      {
+        "cognitive_action": "transform",
+        "day": "thursday",
+        "difficulty": "medium",
+        "form_family": "coordinate.translate_point",
+        "representation": "coordinate_plane",
+        "response_type": "ordered_pair",
+        "skill": "coordinate geometry basics",
+        "slot": 3,
+        "topic_override": true,
+        "variation_seed": 1803843805
+      },
+      {
+        "day": "thursday",
+        "difficulty": "medium_plus",
+        "skill": "place value",
+        "slot": 4
+      },
+      {
+        "day": "thursday",
+        "difficulty": "medium_plus",
+        "skill": "multi-digit addition/subtraction",
+        "slot": 5
+      },
+      {
+        "day": "thursday",
+        "difficulty": "medium_plus",
+        "skill": "whole-number multiplication",
+        "slot": 6
+      },
+      {
+        "day": "thursday",
+        "difficulty": "medium_plus",
+        "skill": "numerical expressions",
+        "slot": 7
+      },
+      {
+        "cognitive_action": "construct",
+        "day": "thursday",
+        "difficulty": "medium_plus",
+        "form_family": "coordinate.write_ordered_pair",
+        "representation": "coordinate_plane",
+        "response_type": "ordered_pair",
+        "skill": "coordinate geometry basics",
+        "slot": 8,
+        "topic_override": true,
+        "variation_seed": 1803843805
+      },
+      {
+        "day": "thursday",
+        "difficulty": "medium_plus",
+        "skill": "patterns",
+        "slot": 9
+      },
+      {
+        "day": "thursday",
+        "difficulty": "high",
+        "skill": "factors/multiples",
+        "slot": 10
+      }
+    ],
+    "tuesday": [
+      {
+        "day": "tuesday",
+        "difficulty": "low_plus",
+        "skill": "numerical expressions",
+        "slot": 1
+      },
+      {
+        "day": "tuesday",
+        "difficulty": "medium",
+        "skill": "patterns",
+        "slot": 2
+      },
+      {
+        "cognitive_action": "translate",
+        "day": "tuesday",
+        "difficulty": "medium",
+        "form_family": "coordinate.verbal_location",
+        "representation": "verbal_context",
+        "response_type": "ordered_pair",
+        "skill": "coordinate geometry basics",
+        "slot": 3,
+        "topic_override": true,
+        "variation_seed": 1803843805
+      },
+      {
+        "day": "tuesday",
+        "difficulty": "medium",
+        "skill": "place value",
+        "slot": 4
+      },
+      {
+        "day": "tuesday",
+        "difficulty": "medium",
+        "skill": "multi-digit addition/subtraction",
+        "slot": 5
+      },
+      {
+        "day": "tuesday",
+        "difficulty": "medium",
+        "skill": "whole-number multiplication",
+        "slot": 6
+      },
+      {
+        "day": "tuesday",
+        "difficulty": "medium",
+        "skill": "numerical expressions",
+        "slot": 7
+      },
+      {
+        "cognitive_action": "compare",
+        "day": "tuesday",
+        "difficulty": "medium_plus",
+        "form_family": "coordinate.axis_proximity",
+        "representation": "ordered_pair",
+        "response_type": "selection",
+        "skill": "coordinate geometry basics",
+        "slot": 8,
+        "topic_override": true,
+        "variation_seed": 1803843805
+      },
+      {
+        "day": "tuesday",
+        "difficulty": "medium_plus",
+        "skill": "patterns",
+        "slot": 9
+      },
+      {
+        "day": "tuesday",
+        "difficulty": "medium_plus",
+        "skill": "factors/multiples",
+        "slot": 10
+      }
+    ],
+    "wednesday": [
+      {
+        "day": "wednesday",
+        "difficulty": "medium",
+        "skill": "numerical expressions",
+        "slot": 1
+      },
+      {
+        "day": "wednesday",
+        "difficulty": "medium",
+        "skill": "patterns",
+        "slot": 2
+      },
+      {
+        "cognitive_action": "construct",
+        "day": "wednesday",
+        "difficulty": "medium",
+        "form_family": "coordinate.write_ordered_pair",
+        "representation": "coordinate_plane",
+        "response_type": "ordered_pair",
+        "skill": "coordinate geometry basics",
+        "slot": 3,
+        "topic_override": true,
+        "variation_seed": 1803843805
+      },
+      {
+        "day": "wednesday",
+        "difficulty": "medium",
+        "skill": "place value",
+        "slot": 4
+      },
+      {
+        "day": "wednesday",
+        "difficulty": "medium",
+        "skill": "multi-digit addition/subtraction",
+        "slot": 5
+      },
+      {
+        "day": "wednesday",
+        "difficulty": "medium_plus",
+        "skill": "whole-number multiplication",
+        "slot": 6
+      },
+      {
+        "day": "wednesday",
+        "difficulty": "medium_plus",
+        "skill": "numerical expressions",
+        "slot": 7
+      },
+      {
+        "cognitive_action": "translate",
+        "day": "wednesday",
+        "difficulty": "medium_plus",
+        "form_family": "coordinate.verbal_location",
+        "representation": "verbal_context",
+        "response_type": "ordered_pair",
+        "skill": "coordinate geometry basics",
+        "slot": 8,
+        "topic_override": true,
+        "variation_seed": 1803843805
+      },
+      {
+        "day": "wednesday",
+        "difficulty": "medium_plus",
+        "skill": "patterns",
+        "slot": 9
+      },
+      {
+        "day": "wednesday",
+        "difficulty": "medium_plus",
+        "skill": "factors/multiples",
+        "slot": 10
+      }
+    ]
+  },
+  "request": {
+    "deliver": "yes",
+    "difficulty": "medium_plus",
+    "diversity": "medium_plus",
+    "form_diversity": "high",
+    "grade_ids": [
+      "grade_5"
+    ],
+    "on_date": "2026-08-24",
+    "publish": "yes",
+    "subject": "math",
+    "topic_overrides": "grade_5:20%:coordinate geometry basics",
+    "worksheet_type": "weekly-worksheet"
+  },
+  "request_fingerprint": "527b67534aab7171919f18b1d5ff946a05ea10b79b18c55d8e6b3361dc4de0c8",
+  "run_id": "run-b3b0b8fa936a4191914c694243ce1baa",
+  "spec_references": [
+    {
+      "fingerprint": "56804073bf6bc2366441415ac11fb78a98f11ef1ddcd814e95d653a1ceee713b",
+      "revision": "form-diversity-r4",
+      "spec_path": "math/run-b3b0b8fa936a4191914c694243ce1baa/specs/grade_5/form-diversity-r4.json",
+      "worksheet_id": "grade_5"
+    }
+  ],
+  "started_at": "2026-08-30T21:43:23.694862+00:00",
+  "status": "validation_complete",
+  "subject": "math",
+  "telemetry": {
+    "token_usage": null
+  },
+  "topic_overrides": {
+    "grade_5": [
+      {
+        "kind": "percent",
+        "topic": "coordinate geometry basics",
+        "value": 20.0
+      }
+    ]
+  },
+  "verification": {
+    "manual_coordinate_review": "PASS",
+    "result": {
+      "deterministic_checked": 42,
+      "failures": [],
+      "questions": 50,
+      "reasoning_required": 8,
+      "results": [
+        {
+          "computed": 15,
+          "expected": 15,
+          "number": 1,
+          "status": "PASS"
+        },
+        {
+          "computed": 19,
+          "expected": 19,
+          "number": 2,
+          "status": "PASS"
+        },
+        {
+          "criterion": "Add the horizontal and vertical moves to the matching coordinates.",
+          "number": 3,
+          "status": "REASONING_REQUIRED"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 4,
+          "status": "PASS"
+        },
+        {
+          "computed": 1895,
+          "expected": 1895,
+          "number": 5,
+          "status": "PASS"
+        },
+        {
+          "computed": 180,
+          "expected": 180,
+          "number": 6,
+          "status": "PASS"
+        },
+        {
+          "computed": 99,
+          "expected": 99,
+          "number": 7,
+          "status": "PASS"
+        },
+        {
+          "computed": 2,
+          "expected": 2,
+          "number": 8,
+          "status": "PASS"
+        },
+        {
+          "computed": 47,
+          "expected": 47,
+          "number": 9,
+          "status": "PASS"
+        },
+        {
+          "computed": 16,
+          "expected": 16,
+          "number": 10,
+          "status": "PASS"
+        },
+        {
+          "computed": 195,
+          "expected": 195,
+          "number": 11,
+          "status": "PASS"
+        },
+        {
+          "computed": 59,
+          "expected": 59,
+          "number": 12,
+          "status": "PASS"
+        },
+        {
+          "criterion": "The horizontal distance is x and the vertical distance is y.",
+          "number": 13,
+          "status": "REASONING_REQUIRED"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 14,
+          "status": "PASS"
+        },
+        {
+          "computed": 1985,
+          "expected": 1985,
+          "number": 15,
+          "status": "PASS"
+        },
+        {
+          "computed": 560,
+          "expected": 560,
+          "number": 16,
+          "status": "PASS"
+        },
+        {
+          "computed": 399,
+          "expected": 399,
+          "number": 17,
+          "status": "PASS"
+        },
+        {
+          "criterion": "Compare the point's distances from each axis.",
+          "number": 18,
+          "status": "REASONING_REQUIRED"
+        },
+        {
+          "computed": 87,
+          "expected": 87,
+          "number": 19,
+          "status": "PASS"
+        },
+        {
+          "computed": 26,
+          "expected": 26,
+          "number": 20,
+          "status": "PASS"
+        },
+        {
+          "computed": 575,
+          "expected": 575,
+          "number": 21,
+          "status": "PASS"
+        },
+        {
+          "computed": 99,
+          "expected": 99,
+          "number": 22,
+          "status": "PASS"
+        },
+        {
+          "criterion": "The coordinates are (x, y).",
+          "number": 23,
+          "status": "REASONING_REQUIRED"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 24,
+          "status": "PASS"
+        },
+        {
+          "computed": 2075,
+          "expected": 2075,
+          "number": 25,
+          "status": "PASS"
+        },
+        {
+          "computed": 1140,
+          "expected": 1140,
+          "number": 26,
+          "status": "PASS"
+        },
+        {
+          "computed": 899,
+          "expected": 899,
+          "number": 27,
+          "status": "PASS"
+        },
+        {
+          "criterion": "The horizontal distance is x and the vertical distance is y.",
+          "number": 28,
+          "status": "REASONING_REQUIRED"
+        },
+        {
+          "computed": 127,
+          "expected": 127,
+          "number": 29,
+          "status": "PASS"
+        },
+        {
+          "computed": 36,
+          "expected": 36,
+          "number": 30,
+          "status": "PASS"
+        },
+        {
+          "computed": 1155,
+          "expected": 1155,
+          "number": 31,
+          "status": "PASS"
+        },
+        {
+          "computed": 139,
+          "expected": 139,
+          "number": 32,
+          "status": "PASS"
+        },
+        {
+          "criterion": "Add the horizontal and vertical moves to the matching coordinates.",
+          "number": 33,
+          "status": "REASONING_REQUIRED"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 34,
+          "status": "PASS"
+        },
+        {
+          "computed": 2165,
+          "expected": 2165,
+          "number": 35,
+          "status": "PASS"
+        },
+        {
+          "computed": 1920,
+          "expected": 1920,
+          "number": 36,
+          "status": "PASS"
+        },
+        {
+          "computed": 1599,
+          "expected": 1599,
+          "number": 37,
+          "status": "PASS"
+        },
+        {
+          "criterion": "The coordinates are (x, y).",
+          "number": 38,
+          "status": "REASONING_REQUIRED"
+        },
+        {
+          "computed": 167,
+          "expected": 167,
+          "number": 39,
+          "status": "PASS"
+        },
+        {
+          "computed": 46,
+          "expected": 46,
+          "number": 40,
+          "status": "PASS"
+        },
+        {
+          "computed": 1935,
+          "expected": 1935,
+          "number": 41,
+          "status": "PASS"
+        },
+        {
+          "computed": 179,
+          "expected": 179,
+          "number": 42,
+          "status": "PASS"
+        },
+        {
+          "criterion": "The coordinates are (x, y).",
+          "number": 43,
+          "status": "REASONING_REQUIRED"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 44,
+          "status": "PASS"
+        },
+        {
+          "computed": 2255,
+          "expected": 2255,
+          "number": 45,
+          "status": "PASS"
+        },
+        {
+          "computed": 2900,
+          "expected": 2900,
+          "number": 46,
+          "status": "PASS"
+        },
+        {
+          "computed": 2499,
+          "expected": 2499,
+          "number": 47,
+          "status": "PASS"
+        },
+        {
+          "computed": 5,
+          "expected": 5,
+          "number": 48,
+          "status": "PASS"
+        },
+        {
+          "computed": 207,
+          "expected": 207,
+          "number": 49,
+          "status": "PASS"
+        },
+        {
+          "computed": 56,
+          "expected": 56,
+          "number": 50,
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "structure_errors": []
+    },
+    "revision": "form-diversity-r3"
+  },
+  "worksheet_type": "weekly-worksheet"
+}

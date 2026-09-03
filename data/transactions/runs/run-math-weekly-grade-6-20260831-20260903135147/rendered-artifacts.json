@@ -1,0 +1,67 @@
+{
+  "status": "validated",
+  "staging_folder": "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL",
+  "artifacts": [
+    {
+      "worksheet_id": "grade_6",
+      "worksheet": {
+        "id": "1A0G4RA-468mC45HYo9gCd0p9zfUNoFfnC0thJPOzAHw",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1A0G4RA-468mC45HYo9gCd0p9zfUNoFfnC0thJPOzAHw/edit?usp=drivesdk",
+        "status": "validated"
+      },
+      "answer_key": {
+        "id": "12XaNAbJGlMYn4Kiv0Fncs_ib4RmvRR80qaj8iJtEkME",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31_KEY",
+        "parents": [
+          "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/12XaNAbJGlMYn4Kiv0Fncs_ib4RmvRR80qaj8iJtEkME/edit?usp=drivesdk",
+        "status": "validated"
+      },
+      "status": "rendered",
+      "template_ids": {
+        "worksheet": "1am6MWISljNdj6rytAUDN-ulRozi1XIH4H0R0-VDEAqo",
+        "answer_key": "1aqfc31qO8LxuSx319hfakJouHsalMQ09WgFpMt_8S3Y"
+      },
+      "qa": {
+        "student_worksheet": {
+          "status": "PASS",
+          "checks": {
+            "rendered_text_nonempty": true,
+            "grade_present": true,
+            "all_question_numbers_present": true,
+            "no_unresolved_placeholders": true,
+            "no_pending_approval_label": true,
+            "title_present": true,
+            "no_extra_numbered_slots": true
+          },
+          "failed_checks": []
+        },
+        "answer_key": {
+          "status": "PASS",
+          "checks": {
+            "rendered_text_nonempty": true,
+            "grade_present": true,
+            "all_question_numbers_present": true,
+            "no_unresolved_placeholders": true,
+            "no_pending_approval_label": true,
+            "title_present": true,
+            "answer_key_label": true,
+            "no_extra_numbered_slots": true
+          },
+          "failed_checks": []
+        }
+      },
+      "inspection": {
+        "student_content_blocks": 58,
+        "answer_key_content_blocks": 51,
+        "student_characters": 2996,
+        "answer_key_characters": 432
+      }
+    }
+  ]
+}

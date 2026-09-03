@@ -1,0 +1,76 @@
+{
+  "worksheet": {
+    "grade": "Grade 1",
+    "week_start": "2026-08-24",
+    "question_count": 50,
+    "duration_minutes": 15
+  },
+  "curriculum": {
+    "current": ["NC.1.OA.1", "NC.1.OA.2", "NC.1.OA.6", "NC.1.OA.8"],
+    "spiral": ["counting sequence", "compare numbers"],
+    "confidence": "inferred"
+  },
+  "sections": [
+    {"id":"monday","title":"Foundation","questions":[
+      {"number":1,"prompt":"Count by ones from 1 to 20.","answer":"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20","skill":"counting","difficulty":"easy"},
+      {"number":2,"prompt":"What number comes after 7?","answer":8,"skill":"counting","difficulty":"easy"},
+      {"number":3,"prompt":"What number comes before 12?","answer":11,"skill":"counting","difficulty":"easy"},
+      {"number":4,"prompt":"Write the number that has 5 ones.","answer":5,"skill":"place value","difficulty":"easy"},
+      {"number":5,"prompt":"Write the number that has 1 ten and 4 ones.","answer":14,"skill":"place value","difficulty":"easy"},
+      {"number":6,"prompt":"Compare using <, >, or =: 8 ___ 6.","answer":">","skill":"comparing numbers","difficulty":"easy"},
+      {"number":7,"prompt":"Compare using <, >, or =: 13 ___ 13.","answer":"=","skill":"comparing numbers","difficulty":"easy"},
+      {"number":8,"prompt":"How many objects are in a group of 9 stars?","answer":9,"skill":"counting","difficulty":"easy"},
+      {"number":9,"prompt":"What number is 1 more than 10?","answer":11,"skill":"counting","difficulty":"easy"},
+      {"number":10,"prompt":"What number is 1 less than 15?","answer":14,"skill":"counting","difficulty":"easy"}
+    ]},
+    {"id":"tuesday","title":"Discover","questions":[
+      {"number":11,"prompt":"Add: 3 + 2.","answer":5,"skill":"addition","difficulty":"easy"},
+      {"number":12,"prompt":"Add: 5 + 4.","answer":9,"skill":"addition","difficulty":"easy"},
+      {"number":13,"prompt":"Add: 7 + 1.","answer":8,"skill":"addition","difficulty":"easy"},
+      {"number":14,"prompt":"Add: 6 + 3.","answer":9,"skill":"addition","difficulty":"easy"},
+      {"number":15,"prompt":"Add: 8 + 2.","answer":10,"skill":"addition","difficulty":"easy"},
+      {"number":16,"prompt":"Complete: 4 + ___ = 9.","answer":5,"skill":"unknowns in addition","difficulty":"easy"},
+      {"number":17,"prompt":"Complete: ___ + 3 = 8.","answer":5,"skill":"unknowns in addition","difficulty":"easy"},
+      {"number":18,"prompt":"Complete: 10 = 6 + ___.","answer":4,"skill":"unknowns in addition","difficulty":"easy"},
+      {"number":19,"prompt":"Mia has 4 crayons. Her teacher gives her 3 more. How many crayons does Mia have now?","answer":7,"skill":"addition word problem","difficulty":"easy"},
+      {"number":20,"prompt":"There are 5 birds in a tree. 2 more birds arrive. How many birds are in the tree now?","answer":7,"skill":"addition word problem","difficulty":"easy"}
+    ]},
+    {"id":"wednesday","title":"Practice","questions":[
+      {"number":21,"prompt":"Subtract: 7 - 2.","answer":5,"skill":"subtraction","difficulty":"easy"},
+      {"number":22,"prompt":"Subtract: 9 - 4.","answer":5,"skill":"subtraction","difficulty":"easy"},
+      {"number":23,"prompt":"Subtract: 10 - 3.","answer":7,"skill":"subtraction","difficulty":"easy"},
+      {"number":24,"prompt":"Subtract: 8 - 5.","answer":3,"skill":"subtraction","difficulty":"easy"},
+      {"number":25,"prompt":"Subtract: 6 - 1.","answer":5,"skill":"subtraction","difficulty":"easy"},
+      {"number":26,"prompt":"Complete: 9 - ___ = 5.","answer":4,"skill":"unknowns in subtraction","difficulty":"easy"},
+      {"number":27,"prompt":"Complete: ___ - 2 = 6.","answer":8,"skill":"unknowns in subtraction","difficulty":"easy"},
+      {"number":28,"prompt":"Complete: 10 - 7 = ___.","answer":3,"skill":"subtraction","difficulty":"easy"},
+      {"number":29,"prompt":"Leo has 8 blocks. He gives 3 blocks to his sister. How many blocks does Leo have left?","answer":5,"skill":"subtraction word problem","difficulty":"easy"},
+      {"number":30,"prompt":"There are 10 apples. A child eats 2 apples. How many apples remain?","answer":8,"skill":"subtraction word problem","difficulty":"easy"}
+    ]},
+    {"id":"thursday","title":"Apply and Review","questions":[
+      {"number":31,"prompt":"Count by twos: 2, 4, 6, ___, ___.","answer":"8, 10","skill":"counting by twos","difficulty":"easy"},
+      {"number":32,"prompt":"Count by fives: 5, 10, ___, 20.","answer":15,"skill":"counting by fives","difficulty":"easy"},
+      {"number":33,"prompt":"Which number is greater: 14 or 9?","answer":14,"skill":"comparing numbers","difficulty":"easy"},
+      {"number":34,"prompt":"Which number is less: 7 or 11?","answer":7,"skill":"comparing numbers","difficulty":"easy"},
+      {"number":35,"prompt":"Draw or describe a group that has 6 objects.","answer":"Any group containing exactly 6 objects.","skill":"counting","difficulty":"easy"},
+      {"number":36,"prompt":"A bus has 6 children. Then 4 more children get on. How many children are on the bus?","answer":10,"skill":"addition word problem","difficulty":"medium"},
+      {"number":37,"prompt":"A box has 9 balls. Two balls roll away. How many balls are left?","answer":7,"skill":"subtraction word problem","difficulty":"medium"},
+      {"number":38,"prompt":"Sam has 5 red stickers and 5 blue stickers. How many stickers does Sam have?","answer":10,"skill":"addition word problem","difficulty":"medium"},
+      {"number":39,"prompt":"There are 7 ducks in a pond. There are 3 fewer fish than ducks. How many fish are there?","answer":4,"skill":"comparison word problem","difficulty":"medium"},
+      {"number":40,"prompt":"Nora has 10 beads. She uses 4 beads. How many beads does she have left?","answer":6,"skill":"subtraction word problem","difficulty":"medium"}
+    ]},
+    {"id":"friday","title":"Mastery","questions":[
+      {"number":41,"prompt":"Find the missing number: 7 + ___ = 10.","answer":3,"skill":"unknowns in addition","difficulty":"easy"},
+      {"number":42,"prompt":"Find the missing number: ___ + 4 = 11.","answer":7,"skill":"unknowns in addition","difficulty":"medium"},
+      {"number":43,"prompt":"Find the missing number: 12 - ___ = 8.","answer":4,"skill":"unknowns in subtraction","difficulty":"medium"},
+      {"number":44,"prompt":"Find the missing number: ___ - 3 = 6.","answer":9,"skill":"unknowns in subtraction","difficulty":"medium"},
+      {"number":45,"prompt":"Ben has 6 toy cars. Ava has 2 more toy cars than Ben. How many toy cars does Ava have?","answer":8,"skill":"comparison word problem","difficulty":"medium"},
+      {"number":46,"prompt":"There are 12 students in a room. Four students leave. How many students remain?","answer":8,"skill":"subtraction word problem","difficulty":"medium"},
+      {"number":47,"prompt":"Which equation matches this story: A child has 3 apples and gets 5 more?","answer":"3 + 5 = 8","skill":"representing addition","difficulty":"medium"},
+      {"number":48,"prompt":"Explain how you know that 9 is greater than 6.","answer":"For example, 9 is three more than 6; answers using a number line or counting are acceptable.","skill":"comparing numbers","difficulty":"challenge"},
+      {"number":49,"prompt":"Make a number sentence that equals 10.","answer":"Any valid number sentence equal to 10, such as 6 + 4 = 10.","skill":"number sense","difficulty":"challenge"},
+      {"number":50,"prompt":"Write or draw a story for the equation 5 + 4 = 9.","answer":"Any valid addition story representing 5 + 4 = 9.","skill":"addition modeling","difficulty":"challenge"}
+    ]}
+  ],
+  "verification": {"status":"PASS","checked":50,"failed":0,"ambiguous":0}
+}

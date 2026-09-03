@@ -1,0 +1,1244 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 3263,
+          "cognitive_action": "estimate",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.estimate",
+          "id": "grade_5-q1",
+          "number": 1,
+          "prompt": "Question 1: Solve: 2560 + 703 = ___.",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "powers of 10",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2560+703"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3284,
+          "cognitive_action": "solve_unknown",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.missing_value",
+          "id": "grade_5-q2",
+          "number": 2,
+          "prompt": "Question 2: Solve: 2580 + 704 = ___.",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "decimal place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2580+704"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3305,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.multi_representation",
+          "id": "grade_5-q3",
+          "number": 3,
+          "prompt": "Question 3: Solve: 2600 + 705 = ___.",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "multi-digit multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2600+705"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3326,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.compare_select",
+          "id": "grade_5-q4",
+          "number": 4,
+          "prompt": "Question 4: Solve: 2620 + 706 = ___.",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "decimal place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2620+706"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3347,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.find_counterexample",
+          "id": "grade_5-q5",
+          "number": 5,
+          "prompt": "Question 5: Solve: 2640 + 707 = ___.",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2640+707"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3368,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_5-q6",
+          "number": 6,
+          "prompt": "Question 6: Solve: 2660 + 708 = ___.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "decimal operations",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2660+708"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3389,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_5-q7",
+          "number": 7,
+          "prompt": "Question 7: Solve: 2680 + 709 = ___.",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "estimation",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2680+709"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3410,
+          "cognitive_action": "retrieve",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.representation_read",
+          "id": "grade_5-q8",
+          "number": 8,
+          "prompt": "Question 8: Solve: 2700 + 710 = ___.",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "multi-digit multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2700+710"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3431,
+          "cognitive_action": "order",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.sort_order",
+          "id": "grade_5-q9",
+          "number": 9,
+          "prompt": "Question 9: Solve: 2720 + 711 = ___.",
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "section_id": "monday",
+          "skill": "add/subtract unlike fractions",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2720+711"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3452,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.error_check",
+          "id": "grade_5-q10",
+          "number": 10,
+          "prompt": "Question 10: Solve: 2740 + 712 = ___.",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "multiply fractions",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2740+712"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 3473,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_5-q11",
+          "number": 11,
+          "prompt": "Question 11: Solve: 2760 + 713 = ___.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "powers of 10",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2760+713"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3494,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.table_complete",
+          "id": "grade_5-q12",
+          "number": 12,
+          "prompt": "Question 12: Solve: 2780 + 714 = ___.",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "decimal place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2780+714"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3515,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.visual_grouping",
+          "id": "grade_5-q13",
+          "number": 13,
+          "prompt": "Question 13: Solve: 2800 + 715 = ___.",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "multi-digit multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2800+715"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3536,
+          "cognitive_action": "construct_equivalent",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.create_equivalent",
+          "id": "grade_5-q14",
+          "number": 14,
+          "prompt": "Question 14: Solve: 2820 + 716 = ___.",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "decimal place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2820+716"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3557,
+          "cognitive_action": "apply",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.measurement_context",
+          "id": "grade_5-q15",
+          "number": 15,
+          "prompt": "Question 15: Solve: 2840 + 717 = ___.",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2840+717"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3578,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.error_check",
+          "id": "grade_5-q16",
+          "number": 16,
+          "prompt": "Question 16: Solve: 2860 + 718 = ___.",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "decimal operations",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2860+718"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3599,
+          "cognitive_action": "extend_pattern",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.sequence_pattern",
+          "id": "grade_5-q17",
+          "number": 17,
+          "prompt": "Question 17: Solve: 2880 + 719 = ___.",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "estimation",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2880+719"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3620,
+          "cognitive_action": "construct",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.construct_example",
+          "id": "grade_5-q18",
+          "number": 18,
+          "prompt": "Question 18: Solve: 2900 + 720 = ___.",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "multi-digit multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2900+720"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3641,
+          "cognitive_action": "match",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.match_rule",
+          "id": "grade_5-q19",
+          "number": 19,
+          "prompt": "Question 19: Solve: 2920 + 721 = ___.",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "add/subtract unlike fractions",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2920+721"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3662,
+          "cognitive_action": "locate",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.number_line",
+          "id": "grade_5-q20",
+          "number": 20,
+          "prompt": "Question 20: Solve: 2940 + 722 = ___.",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "multiply fractions",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2940+722"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 3683,
+          "cognitive_action": "compose_operations",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.multi_step",
+          "id": "grade_5-q21",
+          "number": 21,
+          "prompt": "Question 21: Solve: 2960 + 723 = ___.",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "powers of 10",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2960+723"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3704,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reverse_reasoning",
+          "id": "grade_5-q22",
+          "number": 22,
+          "prompt": "Question 22: Solve: 2980 + 724 = ___.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "decimal place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "2980+724"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3725,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.context_story",
+          "id": "grade_5-q23",
+          "number": 23,
+          "prompt": "Question 23: Solve: 3000 + 725 = ___.",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "multi-digit multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3000+725"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3746,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_5-q24",
+          "number": 24,
+          "prompt": "Question 24: Solve: 3020 + 726 = ___.",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "decimal place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3020+726"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3767,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_5-q25",
+          "number": 25,
+          "prompt": "Question 25: Solve: 3040 + 727 = ___.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3040+727"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3788,
+          "cognitive_action": "solve_unknown",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.missing_value",
+          "id": "grade_5-q26",
+          "number": 26,
+          "prompt": "Question 26: Solve: 3060 + 728 = ___.",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "decimal operations",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3060+728"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3809,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.find_counterexample",
+          "id": "grade_5-q27",
+          "number": 27,
+          "prompt": "Question 27: Solve: 3080 + 729 = ___.",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "estimation",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3080+729"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3830,
+          "cognitive_action": "locate",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.number_line",
+          "id": "grade_5-q28",
+          "number": 28,
+          "prompt": "Question 28: Solve: 3100 + 730 = ___.",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "multi-digit multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3100+730"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3851,
+          "cognitive_action": "decompose",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.compose_decompose",
+          "id": "grade_5-q29",
+          "number": 29,
+          "prompt": "Question 29: Solve: 3120 + 731 = ___.",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "add/subtract unlike fractions",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3120+731"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3872,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.visual_grouping",
+          "id": "grade_5-q30",
+          "number": 30,
+          "prompt": "Question 30: Solve: 3140 + 732 = ___.",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "multiply fractions",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3140+732"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 3893,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.multi_representation",
+          "id": "grade_5-q31",
+          "number": 31,
+          "prompt": "Question 31: Solve: 3160 + 733 = ___.",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "powers of 10",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3160+733"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3914,
+          "cognitive_action": "estimate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.estimate",
+          "id": "grade_5-q32",
+          "number": 32,
+          "prompt": "Question 32: Solve: 3180 + 734 = ___.",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "decimal place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3180+734"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3935,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.find_counterexample",
+          "id": "grade_5-q33",
+          "number": 33,
+          "prompt": "Question 33: Solve: 3200 + 735 = ___.",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "multi-digit multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3200+735"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3956,
+          "cognitive_action": "apply",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.measurement_context",
+          "id": "grade_5-q34",
+          "number": 34,
+          "prompt": "Question 34: Solve: 3220 + 736 = ___.",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "decimal place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3220+736"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3977,
+          "cognitive_action": "retrieve",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.representation_read",
+          "id": "grade_5-q35",
+          "number": 35,
+          "prompt": "Question 35: Solve: 3240 + 737 = ___.",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3240+737"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3998,
+          "cognitive_action": "classify",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.classify",
+          "id": "grade_5-q36",
+          "number": 36,
+          "prompt": "Question 36: Solve: 3260 + 738 = ___.",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "decimal operations",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3260+738"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4019,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.visual_grouping",
+          "id": "grade_5-q37",
+          "number": 37,
+          "prompt": "Question 37: Solve: 3280 + 739 = ___.",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "estimation",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3280+739"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4040,
+          "cognitive_action": "justify",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.justify_claim",
+          "id": "grade_5-q38",
+          "number": 38,
+          "prompt": "Question 38: Solve: 3300 + 740 = ___.",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "multi-digit multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3300+740"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4061,
+          "cognitive_action": "extend_pattern",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.sequence_pattern",
+          "id": "grade_5-q39",
+          "number": 39,
+          "prompt": "Question 39: Solve: 3320 + 741 = ___.",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "add/subtract unlike fractions",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3320+741"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4082,
+          "cognitive_action": "match",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.match_rule",
+          "id": "grade_5-q40",
+          "number": 40,
+          "prompt": "Question 40: Solve: 3340 + 742 = ___.",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "multiply fractions",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3340+742"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 4103,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.two_way_compare",
+          "id": "grade_5-q41",
+          "number": 41,
+          "prompt": "Question 41: Solve: 3360 + 743 = ___.",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "powers of 10",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3360+743"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4124,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.context_story",
+          "id": "grade_5-q42",
+          "number": 42,
+          "prompt": "Question 42: Solve: 3380 + 744 = ___.",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "decimal place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3380+744"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4145,
+          "cognitive_action": "estimate",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.estimate",
+          "id": "grade_5-q43",
+          "number": 43,
+          "prompt": "Question 43: Solve: 3400 + 745 = ___.",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "multi-digit multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3400+745"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4166,
+          "cognitive_action": "retrieve",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.representation_read",
+          "id": "grade_5-q44",
+          "number": 44,
+          "prompt": "Question 44: Solve: 3420 + 746 = ___.",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "decimal place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3420+746"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4187,
+          "cognitive_action": "decompose",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.compose_decompose",
+          "id": "grade_5-q45",
+          "number": 45,
+          "prompt": "Question 45: Solve: 3440 + 747 = ___.",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3440+747"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4208,
+          "cognitive_action": "construct_equivalent",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.create_equivalent",
+          "id": "grade_5-q46",
+          "number": 46,
+          "prompt": "Question 46: Solve: 3460 + 748 = ___.",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "decimal operations",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3460+748"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4229,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.table_complete",
+          "id": "grade_5-q47",
+          "number": 47,
+          "prompt": "Question 47: Solve: 3480 + 749 = ___.",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "estimation",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3480+749"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4250,
+          "cognitive_action": "satisfy_constraint",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.constraint_solve",
+          "id": "grade_5-q48",
+          "number": 48,
+          "prompt": "Question 48: Solve: 3500 + 750 = ___.",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "multi-digit multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3500+750"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4271,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.reverse_reasoning",
+          "id": "grade_5-q49",
+          "number": 49,
+          "prompt": "Question 49: Solve: 3520 + 751 = ___.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "add/subtract unlike fractions",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3520+751"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4292,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_5-q50",
+          "number": 50,
+          "prompt": "Question 50: Solve: 3540 + 752 = ___.",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "multiply fractions",
+          "source_kind": "fallback",
+          "source_scope": "grade_5",
+          "standards": [],
+          "variation_seed": 20260903174651,
+          "verification": {
+            "inputs": {
+              "expression": "3540+752"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PASS"
+  },
+  "worksheet": {
+    "grade": "grade_5",
+    "grade_or_course": "grade_5",
+    "question_count": 50,
+    "title": "MTS - WEEKLY WORKSHEET SAMPLE",
+    "week_start": "2026-09-07"
+  }
+}
