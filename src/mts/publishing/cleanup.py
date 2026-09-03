@@ -103,66 +103,64 @@ def run_cleanup(
     targets = resolve_targets(request, effective_config)
 
     target_records: list[dict[str, Any]] = []
+    planned_by_target: list[tuple[Mapping[str, Any], dict[str, Any], list[dict[str, Any]]]] = []
     for target in targets:
         try:
-            target_records.append(
-                _cleanup_one(
-                    target,
-                    adapter,
-                    settings=settings,
-                    scope=scope,
-                    archive_folder_name=archive_folder_name,
-                    folder_date=request.get("folder_date"),
-                    week_folder_pattern=week_folder_pattern,
-                    dry_run=dry_run,
-                    confirm=confirm,
-                )
+            effective_folder = resolve_effective_folder(
+                target,
+                adapter,
+                archive_folder_name=archive_folder_name,
+                folder_date=request.get("folder_date"),
+                week_folder_pattern=week_folder_pattern,
             )
+            planned = plan_cleanup(
+                adapter, effective_folder["id"], scope=scope, archive_folder_name=archive_folder_name
+            )
+            planned_by_target.append((target, effective_folder, planned))
         except Exception as error:  # recorded per target so one failure cannot hide the rest
             target_records.append(
                 _record(target, {"id": target["folder_id"]}, [], [], status="failed", error=str(error))
             )
+
+    total_planned = sum(len(planned) for _, _, planned in planned_by_target)
+    confirmation_error: str | None = None
+    if not dry_run:
+        try:
+            # One check against the whole plan: a mismatch deletes nothing anywhere.
+            check_confirmation(total_planned, confirm, settings)
+        except CleanupError as error:
+            confirmation_error = str(error)
+
+    for target, effective_folder, planned in planned_by_target:
+        if not planned:
+            target_records.append(_record(target, effective_folder, [], [], status="no_op"))
+        elif dry_run:
+            target_records.append(_record(target, effective_folder, [], planned, status="dry_run"))
+        elif confirmation_error:
+            target_records.append(
+                _record(target, effective_folder, [], planned, status="failed", error=confirmation_error)
+            )
+        else:
+            target_records.append(_trash_planned(target, effective_folder, planned, adapter))
 
     return {
         "utility": "cleanup_folder",
         "dry_run": dry_run,
         "status": overall_status(target_records, applied_status="cleaned"),
         "scope": scope,
+        "planned_total": total_planned,
         "request": dict(request),
         "archive_folder_name": archive_folder_name,
         "targets": target_records,
     }
 
 
-def _cleanup_one(
+def _trash_planned(
     target: Mapping[str, Any],
+    effective_folder: Mapping[str, Any],
+    planned: Sequence[Mapping[str, Any]],
     adapter: Any,
-    *,
-    settings: Mapping[str, Any],
-    scope: str,
-    archive_folder_name: str,
-    folder_date: str | None,
-    week_folder_pattern: str | None,
-    dry_run: bool,
-    confirm: int | None,
 ) -> dict[str, Any]:
-    effective_folder = resolve_effective_folder(
-        target,
-        adapter,
-        archive_folder_name=archive_folder_name,
-        folder_date=folder_date,
-        week_folder_pattern=week_folder_pattern,
-    )
-    planned = plan_cleanup(
-        adapter, effective_folder["id"], scope=scope, archive_folder_name=archive_folder_name
-    )
-    if not planned:
-        return _record(target, effective_folder, [], [], status="no_op")
-    if dry_run:
-        return _record(target, effective_folder, [], planned, status="dry_run")
-
-    check_confirmation(len(planned), confirm, settings)
-
     deleted: list[dict[str, Any]] = []
     for index, item in enumerate(planned):
         try:

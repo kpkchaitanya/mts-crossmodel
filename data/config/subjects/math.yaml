@@ -20,4 +20,16 @@ publishing:
       grade_5: {folder_id: "130VEomHbyC2-oyANo49W73dfDSi1VU5p", label: "5th Grade"}
       grade_6: {folder_id: "10tSM2SwAxzGkzuYT47vNCo16K9TtPZre", label: "6th Grade"}
       grade_9_10: {folder_id: "1RSSV84MDP8vHq7UwVm9GYH-36ZvGh1Cc", label: "9/10 Grade"}
+# Single definition of rendered document names. Rendering writes these names and folder-anchored
+# delivery reads them back, so the two must never drift apart.
+naming:
+  weekly:
+    document_name_pattern: "{{PREFIX}}-{{WEEK_OF}}"
+    answer_key_suffix: "_KEY"
+    prefix_by_grade:
+      grade_1: "MTS-Math-1stGrade-WeeklyWorksheet"
+      grade_4: "MTS-Math-4thGrade-WeeklyWorksheet"
+      grade_5: "MTS-Math-5thGrade-WeeklyWorksheet"
+      grade_6: "MTS-Math-6thGrade-WeeklyWorksheet"
+      grade_9_10: "MTS-Math-9th_10thGrade-WeeklyWorksheet"
 

@@ -31,8 +31,15 @@ Where this document extends a contract in `design.md`, it says so explicitly and
    - [3.7 Configuration Contract](#37-configuration-contract)
    - [3.8 Command And CLI Surface](#38-command-and-cli-surface)
    - [3.9 Evidence And Failure Modes](#39-evidence-and-failure-modes)
-4. [Test Design](#4-test-design)
-5. [Implementation Sequence](#5-implementation-sequence)
+4. [Utility: Deliver Worksheets](#4-utility-deliver-worksheets)
+   - [4.1 Requirement](#41-requirement)
+   - [4.2 Relationship To The Workflow](#42-relationship-to-the-workflow)
+   - [4.3 Pairing Contract](#43-pairing-contract)
+   - [4.4 Naming Contract](#44-naming-contract)
+   - [4.5 Delivery Contract](#45-delivery-contract)
+   - [4.6 Command And CLI Surface](#46-command-and-cli-surface)
+5. [Test Design](#5-test-design)
+6. [Implementation Sequence](#6-implementation-sequence)
 
 ## 1. Purpose And Scope
 
@@ -431,7 +438,100 @@ and `undeleted` per target and per scope group. In-pipeline invocations would wr
 Rollback: restore the files from Drive Trash. This is the whole reason §3.4 rule 1 forbids permanent
 deletion.
 
-## 4. Test Design
+## 4. Utility: Deliver Worksheets
+
+### 4.1 Requirement
+
+Run Final Delivery on demand, outside a generate run: take the approved worksheet/answer-key pairs
+sitting in staging and copy them into `Week_<WEEK_OF>` under each grade's audience-facing folder.
+
+This introduces no new distribution semantics. `design.md` §3.9 remains the authoritative Staging And
+Final Delivery Contract, and every rule there applies unchanged. This section covers only what a
+standalone, folder-anchored entry point adds.
+
+### 4.2 Relationship To The Workflow
+
+The generate-worksheet workflow already delivers, by shelling out to `deliver_weekly_worksheets.py`
+with a run root. That path is run-anchored: it reads exact document IDs recorded at publish time.
+
+The utility is folder-anchored: its default source is the staging folder itself. Both paths resolve
+the week, the week folder name, and the per-grade destinations through the **same** functions in
+`src/mts/publishing/deliver.py`. A second copy of that logic would let the workflow and the utility
+disagree about where a week's worksheets belong, which is exactly the failure this consolidation
+prevents.
+
+### 4.3 Pairing Contract
+
+Delivery must know, per grade, which document is the student worksheet and which is the answer key.
+That mapping has two possible sources, and the more exact one wins:
+
+| Source | Used when | Basis |
+|---|---|---|
+| Run root | a run root is supplied | `published-artifacts.json` states grade, role, and document ID as recorded facts |
+| Staging names | otherwise | document names matched against the configured naming pattern |
+
+Rules:
+
+1. A run root is preferred whenever available, because it requires no inference and is unaffected by
+   whatever else happens to be sitting in staging.
+2. Name matching **never guesses**. Two documents matching one expected name is `ambiguous_name`; a
+   worksheet without its answer key is `incomplete_pair`. In both cases the grade is skipped and the
+   issue is reported. Delivering the wrong document to an audience is worse than delivering nothing.
+3. Files matching no expected name — manual `Copy of …` duplicates, other subjects' artifacts, stray
+   uploads — are reported as `unmatched_files` and never delivered.
+4. The resolved week is part of the expected name, so documents from another week cannot be delivered
+   into this week's folder by accident.
+5. A grade with no deliverable pair is skipped and recorded, so a partially staged week still delivers
+   every grade that is ready; waiting for a late grade would withhold worksheets that are already
+   approved. `on_missing: fail` is available for runs that must be all-or-nothing.
+
+### 4.4 Naming Contract
+
+Name-based pairing is only sound if the names were produced by the same definition it reads. The
+grade-to-document-name mapping is therefore subject configuration, not a constant inside a script:
+
+```yaml
+naming:
+  weekly:
+    document_name_pattern: "{{PREFIX}}-{{WEEK_OF}}"
+    answer_key_suffix: "_KEY"
+    prefix_by_grade:
+      grade_6: "MTS-Math-6thGrade-WeeklyWorksheet"
+```
+
+Rendering writes these names and delivery reads them back, so both must resolve the same
+configuration. Every grade in `final_delivery.destinations_by_grade` must have a `prefix_by_grade`
+entry; a delivered grade with no naming entry is a configuration error, not a runtime surprise.
+
+### 4.5 Delivery Contract
+
+Inherited unchanged from `design.md` §3.9: one `Week_<WEEK_OF>` folder per grade destination, reused
+rather than duplicated; `mode: copy` by default so staging survives as the audit trail;
+`deliver_answer_key` controls whether the key accompanies the worksheet; content is never modified.
+
+Added by the utility:
+
+1. Per-grade failure isolation. One grade's failure — a rate limit, a permission error — is recorded
+   against that grade and does not prevent the remaining grades from being delivered.
+2. A dry run resolves the week, pairs every grade, and reports all issues **without** creating a week
+   folder or copying anything.
+
+### 4.6 Command And CLI Surface
+
+Slash command `commands/deliver-worksheets.md`, structurally identical to the other utilities:
+dry-run first, present the plan and the issues, stop, and apply only on an explicit new instruction.
+
+| Parameter | Values | Default |
+|---|---|---|
+| `week` | `current`, a week number, or an ISO date | `current` |
+| `grades` | `all`, or a grade list | `all` |
+| `run` | a run root | none (staging names) |
+| `source_folder` | a Drive folder ID | `publishing.staging.approved_folder_id` |
+| `mode` | `copy`, `move` | `final_delivery.mode` |
+| `on_missing` | `skip`, `fail` | `skip` |
+| `dry_run` | `yes`, `no` | `yes` |
+
+## 5. Test Design
 
 Extends `design.md` §8. All behavior tests use the existing fake-Drive pattern in
 `tests/integration/test_google_docs_adapter.py`; no test performs live Drive I/O.
@@ -453,7 +553,7 @@ Extends `design.md` §8. All behavior tests use the existing fake-Drive pattern 
 6. **Shared-resolution test**: archive and cleanup resolve the identical effective folder for the same
    request, which is what §3.2 requires and what prevents the two dry runs from diverging.
 
-## 5. Implementation Sequence
+## 6. Implementation Sequence
 
 1. Adapter primitives (§2.5) with their tests.
 2. `publishing.archive` configuration block (§2.6).

@@ -67,6 +67,11 @@ reviewer name.
    g. Verify deterministically: `verification = math.verify_spec(spec)`. Manually recompute/reason through anything flagged `REASONING_REQUIRED`; never treat the generated answer as its own proof. Set `spec["verification"]["status"] = verification["status"]`.
    h. **Gate 3 (`verification_review`)**: present the verification summary unless bypassed, then record approval the same way as steps 6/8f.
    i. Render: `adapter = google_docs_adapter.GoogleDocsAdapter(drive_client, docs_client)`; `rendered = adapter.render_pair(spec, {"student_template_id": ..., "answer_key_template_id": ...}, staging_folder_id, {"student_worksheet": <name>, "answer_key": <name>}, {"student_worksheet": <projection text>, "answer_key": <projection text with answers>})`. `render_pair` raises unless `spec["verification"]["status"] == "PASS"`. In Copilot context this always targets the `outputs-copilot/` staging Drive folder, never a final destination.
+
+   Document names are **not** free choice. Derive both from configuration:
+   `student, key = mts.publishing.deliver.document_names(effective_config["naming"]["weekly"], grade_id, week_of)`.
+   Folder-anchored Final Delivery pairs staged documents back to grades by these names, so an ad-hoc
+   name renders a worksheet undeliverable until it is renamed.
    j. QA the rendered text: `qa = math.validate_subject_output({"student_worksheet": <rendered student text>, "answer_key": <rendered key text>}, spec)`; both must report `status == "PASS"`. This is required regardless of gate bypass.
    k. **Gate 4 (`formatting_review`)**: present QA results unless bypassed, then record approval.
 9. After all plans reach `formatting_review` approval, set `manifest["status"] = "publish_approval_pending"` and `RunWriter.write_manifest(manifest)`.

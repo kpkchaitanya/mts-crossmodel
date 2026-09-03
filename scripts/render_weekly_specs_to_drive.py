@@ -144,15 +144,9 @@ def render_document(docs, document_id: str, content: str, spec: dict, answer_key
     docs.documents().batchUpdate(documentId=document_id, body={"requests": requests}).execute()
 
 
-def name_for(worksheet_id: str, date: str) -> str:
-    names = {
-        "grade_1": "MTS-Math-1stGrade-WeeklyWorksheet",
-        "grade_4": "MTS-Math-4thGrade-WeeklyWorksheet",
-        "grade_5": "MTS-Math-5thGrade-WeeklyWorksheet",
-        "grade_6": "MTS-Math-6thGrade-WeeklyWorksheet",
-        "grade_9_10": "MTS-Math-9th_10thGrade-WeeklyWorksheet",
-    }
-    return f"{names[worksheet_id]}-{date}"
+def name_for(naming: dict, worksheet_id: str, date: str) -> str:
+    prefix = naming["prefix_by_grade"][worksheet_id]
+    return naming["document_name_pattern"].replace("{{PREFIX}}", prefix).replace("{{WEEK_OF}}", date)
 
 
 def spec_paths_for_run(run_root: Path, worksheet_id: str | None = None) -> list[tuple[str, Path]]:
@@ -206,6 +200,7 @@ def main() -> None:
     worksheet_template = manifest["worksheet_template"]["id"]
     answer_key_template = manifest["answer_key_template"]["id"]
     staging_folder = effective_config["publishing"]["staging"]["render_folder_id"]
+    naming = effective_config["naming"]["weekly"]
     date = args.date
     results = []
     spec_paths = spec_paths_for_run(run_root, args.worksheet_id)
@@ -217,9 +212,9 @@ def main() -> None:
             raise ValueError("Combined Grades 9/10 Weekly render requires 5 questions per day and 25 questions per week.")
     for worksheet_id, spec_path in spec_paths:
         spec = json.loads(spec_path.read_text(encoding="utf-8"))
-        base_name = name_for(worksheet_id, date)
+        base_name = name_for(naming, worksheet_id, date)
         worksheet = copy_document(drive, worksheet_template, staging_folder, base_name)
-        key = copy_document(drive, answer_key_template, staging_folder, base_name + "_KEY")
+        key = copy_document(drive, answer_key_template, staging_folder, base_name + naming["answer_key_suffix"])
         render_document(docs, worksheet["id"], projection(spec, False), spec, False)
         render_document(docs, key["id"], projection(spec, True), spec, True)
         results.append({

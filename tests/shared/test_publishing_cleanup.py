@@ -115,6 +115,43 @@ def test_a_stale_confirmation_count_refuses_and_deletes_nothing():
     assert adapter.trashed == []
 
 
+def test_the_confirmation_count_covers_every_target_not_one_at_a_time():
+    """The CLI reports one total, so one total must authorize the whole plan."""
+    adapter = CleanupAdapter(
+        files={"parent-1": [], "parent-6": [], "week-1": [file_entry("a", "A")], "week-6": [file_entry("b", "B"), file_entry("c", "C")]},
+        folders={
+            "parent-1": [folder_entry("week-1", "Week_2026-08-31")],
+            "parent-6": [folder_entry("week-6", "Week_2026-08-31")],
+        },
+    )
+    request = {"folder": "publish", "folder_date": "latest"}
+    assert cleanup.run_cleanup(request, CONFIG, adapter, dry_run=True)["planned_total"] == 3
+
+    per_target = cleanup.run_cleanup(request, CONFIG, adapter, dry_run=False, confirm=1)
+    assert per_target["status"] == "failed"
+    assert adapter.trashed == []
+
+    total = cleanup.run_cleanup(request, CONFIG, adapter, dry_run=False, confirm=3)
+    assert total["status"] == "cleaned"
+    assert sorted(adapter.trashed) == ["a", "b", "c"]
+
+
+def test_a_confirmation_mismatch_deletes_nothing_in_any_target():
+    adapter = CleanupAdapter(
+        files={"parent-1": [], "parent-6": [], "week-1": [file_entry("a", "A")], "week-6": [file_entry("b", "B")]},
+        folders={
+            "parent-1": [folder_entry("week-1", "Week_2026-08-31")],
+            "parent-6": [folder_entry("week-6", "Week_2026-08-31")],
+        },
+    )
+    record = cleanup.run_cleanup({"folder": "publish"}, CONFIG, adapter, dry_run=False, confirm=99)
+
+    assert adapter.trashed == []
+    assert {target["status"] for target in record["targets"]} == {"failed"}
+    # The resolved week folder stays visible in a failure record.
+    assert record["targets"][0]["effective_folder"]["name"] == "Week_2026-08-31"
+
+
 def test_cleanup_is_disabled_by_default_in_shipped_configuration():
     disabled = {"publishing": {**CONFIG["publishing"], "cleanup": {**CONFIG["publishing"]["cleanup"], "enabled": False}}}
     with pytest.raises(cleanup.CleanupError, match="disabled"):

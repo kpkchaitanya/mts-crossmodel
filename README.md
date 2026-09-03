@@ -173,6 +173,14 @@ canonical `outputs/<subject>/`.
       <td style="border: 1px solid #6b7280;">Planned; output policy active</td>
     </tr>
     <tr>
+      <td style="border: 1px solid #6b7280;">Deliver Worksheets (DEL)</td>
+      <td style="border: 1px solid #6b7280;"><code>/deliver-worksheets</code></td>
+      <td style="border: 1px solid #6b7280;">Standalone Final Delivery; copies approved pairs from staging into <code>Week_&lt;WEEK_OF&gt;</code> under each grade's audience folder. Pairs from a run root when given, otherwise by staged document name; ambiguous or incomplete matches are refused, never guessed. See <code>commands/deliver-worksheets.md</code>.</td>
+      <td style="border: 1px solid #6b7280;"><code>/deliver-worksheets week=2026-08-31 grades=grade_6</code></td>
+      <td style="border: 1px solid #6b7280;">Active; shares the workflow's delivery policy</td>
+      <td style="border: 1px solid #6b7280;">Active once ELA naming and destinations are configured</td>
+    </tr>
+    <tr>
       <td style="border: 1px solid #6b7280;">Archive Folder (ARC)</td>
       <td style="border: 1px solid #6b7280;"><code>/archive-folder</code></td>
       <td style="border: 1px solid #6b7280;">Publishing utility; moves a folder's previous set of loose files into its <code>Archive</code> child folder, in folder mode or in the latest/dated child of a parent folder. Dry run by default. See <code>commands/archive-folder.md</code>.</td>

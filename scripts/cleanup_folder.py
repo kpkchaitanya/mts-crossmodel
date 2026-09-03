@@ -42,7 +42,7 @@ def report(record: dict) -> None:
             print(f"    trashed [{item['group']}] {item['name']}")
         for item in target["undeleted"]:
             print(f"    pending [{item['group']}] {item['name']}")
-    total = sum(len(target["undeleted"]) for target in record["targets"])
+    total = record.get("planned_total", 0)
     if record["dry_run"] and total:
         print(f"To apply: re-run with --apply --confirm {total}")
 
