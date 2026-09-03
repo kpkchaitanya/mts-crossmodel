@@ -126,7 +126,7 @@ A rejection, expired approval, or changed source revision blocks the associated 
 
 | Changed input | Invalidates | Preserves |
 |---|---|---|
-| User override or resolved policy | Affected scope, Worksheet preparation, questions, and downstream evidence | Unaffected Worksheets and independent Batch members |
+| User override or effective config | Affected scope, Worksheet preparation, questions, and downstream evidence | Unaffected Worksheets and independent Batch members |
 | Curriculum scope | Affected Worksheet questions, verification, render, validation, and publication | Batch membership and unaffected grade/course scopes |
 | Question or answer | That Question verification and affected Worksheet verification/render/validation/publication | Curriculum approval and unrelated Worksheets |
 | Template revision | Affected template cache, rendered artifacts, validation, and publication | Approved scope, questions, and verification |
@@ -140,10 +140,10 @@ A rejection, expired approval, or changed source revision blocks the associated 
 ```mermaid
 flowchart LR
   subgraph CORE[Shared Core]
-    POL[Policy Resolver]
-    RUN[Run Repository]
+    POL[Effective Config Resolver]
+    RUN[Run Loader/Writer]
     GATE[Gate Controller]
-    SPEC[Spec Repository]
+    SPEC[Spec Loader/Writer]
   end
   subgraph SUBJECT[Subject Module]
     CUR[Curriculum Resolver]
@@ -176,25 +176,25 @@ flowchart LR
   RUN --> DIST
 ```
 
-The C3 components are independently testable. Subject modules invoke shared core interfaces; delivery services never make curriculum or gate-policy decisions.
+The C3 components are independently testable. Subject modules invoke shared core interfaces; delivery services never make curriculum or gate/config decisions.
 
 ### 3.2 C4 Implementation Mapping
 
 | C3 component | M5 module/file target | Main implementation responsibility |
 |---|---|---|
-| Policy Resolver | `src/runtime/policy.py` | Merge base, subject, Worksheet Type, and run-override configuration into an immutable snapshot. |
-| Run Repository | `src/runtime/run_repository.py` | Create, validate, checkpoint, resume, and persist Run Manifests. |
-| Gate Controller | `src/runtime/gates.py` | Enforce revision-scoped Gate 1-5 approvals and legal state transitions. |
-| Spec Repository | `src/runtime/spec_repository.py` | Validate and persist immutable Worksheet Spec revisions before Gate 2; return a reference and fingerprint for the Run Manifest. |
-| Curriculum Resolver | `subjects/<subject>/src/curriculum.py` | Resolve subject scope from knowledge, cache, and source-fallback policy. |
-| Blueprint Planner | `subjects/<subject>/src/blueprint.py` | Apply Worksheet Type rules to the approved subject scope. |
-| Spec Builder | `subjects/<subject>/src/generation.py` | Build the ordered Worksheet Spec from the approved blueprint. |
-| Subject Verifier | `subjects/<subject>/src/verification.py` | Provide deterministic checks and required reasoning-review results. |
-| Template Service | `src/rendering/template_service.py` | Resolve the shared registry entry, selected subject/type manifest, template pair, and revision/cache state. |
-| Google Docs Adapter | `src/rendering/google_docs_adapter.py` | Copy masters, render projections, and inspect resulting documents. |
-| Validation Service | `src/verification/validation_service.py` | Run shared content QA and combine subject/type-specific validation. |
-| Publication Service | `src/verification/publication_service.py` | Publish approved artifact pairs and verify naming/destination. |
-| Final Delivery Service | `scripts/deliver_weekly_worksheets.py` over `src/rendering/google_docs_adapter.py` | Resolve the per-grade audience destination, ensure the week folder, and distribute the published pair. |
+| Effective Config Resolver | `src/mts/setup_project/configure.py` and `src/mts/infrastructure/configuration/config_resolver.py` | Merge base, subject, Worksheet Type, and run-override configuration into an immutable effective config snapshot. |
+| Run Loader/Writer | `src/mts/workflow_management/run_loader.py` and `src/mts/workflow_management/run_writer.py` | Create, validate, checkpoint, resume, and persist Run Manifests. |
+| Gate Controller | `src/mts/workflow_management/gates.py` | Enforce revision-scoped Gate 1-5 approvals and legal state transitions. |
+| Spec Loader/Writer | `src/mts/worksheets/spec_loader.py` and `src/mts/worksheets/spec_writer.py` | Validate and persist immutable Worksheet Spec revisions before Gate 2; return a reference and fingerprint for the Run Manifest. |
+| Curriculum Resolver | `src/mts/curriculum/resolve_weekly.py` over `src/mts/subjects/<subject>/curriculum.py` | Resolve subject scope from knowledge, cache, and source-fallback policy. |
+| Blueprint Planner | `src/mts/worksheets/prepare_worksheet.py` | Apply Worksheet Type rules to the approved subject scope. |
+| Spec Builder | `src/mts/worksheets/generate.py` over `src/mts/subjects/<subject>/generation.py` | Build the ordered Worksheet Spec from the approved blueprint and subject-specific authoring plan. |
+| Subject Verifier | `src/mts/subjects/<subject>/verification.py` | Provide deterministic checks and required reasoning-review results. |
+| Template Service | `src/mts/template_management/template_registry.py` and `src/mts/template_management/template_manifest_loader.py` | Resolve the shared registry entry, selected subject/type manifest, template pair, and revision/cache state. |
+| Google Docs Adapter | `src/mts/infrastructure/google_docs/google_docs_adapter.py` | Copy masters, render projections, and inspect resulting documents. |
+| Validation Service | `src/mts/verification/validate.py` | Run shared content QA and combine subject/type-specific validation. |
+| Publication Service | `src/mts/publishing/publish.py` | Publish approved artifact pairs and verify naming/destination. |
+| Final Delivery Service | `src/mts/publishing/deliver.py` over `src/mts/infrastructure/google_docs/google_docs_adapter.py` | Resolve the per-grade audience destination, ensure the week folder, and distribute the published pair. |
 
 No M5 file may combine subject semantics, shared gate control, and Google API I/O. That separation is the C4 enforcement of the M3 boundaries.
 
@@ -202,10 +202,10 @@ No M5 file may combine subject semantics, shared gate control, and Google API I/
 
 | Interface | Input | Output | Failure behavior |
 |---|---|---|---|
-| `PolicyResolver.resolve` | Request, base config, subject config, Worksheet Type config, run overrides | Immutable policy snapshot | Reject unknown/invalid override. |
-| `RunRepository.create_or_resume` | Request identity and policy snapshot | Run Manifest checkpoint | Reject incompatible resume revision. |
+| `EffectiveConfigResolver.resolve` | Request, base config, subject config, Worksheet Type config, run overrides | Immutable effective config snapshot | Reject unknown/invalid override. |
+| `RunLoader.load_or_none` / `RunWriter.create_or_update` | Request identity and effective config snapshot | Run Manifest checkpoint | Reject incompatible resume revision. |
 | `GateController.require_approval` | Gate, artifact revision, manifest | Approval or blocked state | Fail closed when approval is absent/rejected/stale. |
-| `SpecRepository.write_revision` | Validated Spec and parent revision | Immutable Spec reference | Reject schema/lineage failure. Gate 2 cannot transition until every planned Worksheet has a persisted reference. |
+| `SpecWriter.write_revision` | Validated Spec and parent revision | Immutable Spec reference | Reject schema/lineage failure. Gate 2 cannot transition until every planned Worksheet has a persisted reference. |
 | `TemplateService.resolve` | Subject, Worksheet Type, grade/course, template selection | Template pair and revision metadata | Resolve the shared registry to the subject/type manifest; reject unregistered, fallback-disallowed, or stale-uninspected templates. |
 | `Renderer.render_pair` | Verified Spec reference, template pair, destination | Two staging Render Artifacts | Reject non-passing verification or master-write request. |
 | `Validator.validate_pair` | Render artifacts and Spec reference | Content and visual QA record | Block final approval on any required QA failure. |
@@ -218,11 +218,11 @@ No M5 file may combine subject semantics, shared gate control, and Google API I/
 Every subject module implements:
 
 ```text
-resolve_curriculum(request, knowledge, policy) -> ResolvedScope
-prepare_blueprint(scope, worksheet_type, policy) -> WorksheetPlan
+resolve_curriculum(request, knowledge, effective_config) -> ResolvedScope
+prepare_blueprint(scope, worksheet_type, effective_config) -> WorksheetPlan
 build_spec(plan, approved_inputs) -> WorksheetSpec
-verify_spec(spec, policy) -> VerificationResult
-review_guidance(spec, policy) -> HumanOrAIReviewInstructions
+verify_spec(spec, effective_config) -> VerificationResult
+review_guidance(spec, effective_config) -> HumanOrAIReviewInstructions
 render_requirements(spec, worksheet_type) -> SubjectRenderRequirements
 validate_subject_output(artifacts, spec) -> SubjectValidationResult
 ```
@@ -274,7 +274,7 @@ flowchart LR
   VALIDATE --> DISTRIBUTE[7. Distribute Across Sections]
   DISTRIBUTE --> SLOTS[8. Assign Local Document Slots]
   SLOTS --> SPEC[9. Canonical Worksheet Spec]
-  POLICY[Subject Policy] --> ROUTE
+  ECFG[Effective Config] --> ROUTE
   CURRICULUM[Resolved Curriculum Scope] --> SPEC
 ```
 
@@ -282,7 +282,7 @@ The flow has explicit ownership boundaries:
 
 | Flow responsibility | Owner | Source or mechanism |
 |---|---|---|
-| Subject and Worksheet Type routing | Shared runtime | Policy Resolver and active template registry |
+| Subject and Worksheet Type routing | Shared runtime | Effective Config Resolver and active template registry |
 | Grade/course defaults | Worksheet Type configuration | `grade_defaults` |
 | Daily/weekly arithmetic | Shared runtime | Deterministic count validation |
 | Optional distribution split | Worksheet Type configuration | `grade_split` and `source_selector` |
@@ -313,7 +313,7 @@ SAT/ACT Worksheet Types define their approved scope only after their respective 
 
 ### 3.6 Google Docs/Drive Adapter Contract
 
-The adapter separates external I/O from workflow policy:
+The adapter separates external I/O from workflow decisions:
 
 1. `copy_master(template_id, destination, name)` must create a new document; it may never update a master.
 2. `render_document(copy_id, projection)` consumes a projection generated from the verified Spec revision.
@@ -330,7 +330,7 @@ populate only the configured count, remove unused numbered placeholder paragraph
 the final student and answer-key documents contain no empty numbered rows or unresolved placeholders.
 
 Numeric answer-key display is rounded via `display_answer(value, decimal_places, noise_threshold)`
-(`scripts/render_weekly_specs_to_drive.py`), defaulting to `config/base.yaml`
+(`src/mts/publishing/format.py`), defaulting to `data/config/project/base.yaml`
 `formatting.answer_decimal_places` (`2`). Rounding only applies **when relevant**: a float is shown
 as-is if its raw value already has `noise_threshold` (default `3`) decimal digits or fewer — a clean,
 intentional value like `0.125` or `9.0` is never truncated or padded. Only floats with *more* raw
@@ -351,7 +351,7 @@ this; use the corrected check.
 ### 3.7 Question Diversity, Difficulty, and Topic-Override Planning
 
 Question authoring (the actual prompts/numbers) is agent-owned, but its *shape* is planned and
-validated by deterministic code (`subjects/math/src/question_plan.py`), not left to authoring
+validated by deterministic code (`src/mts/subjects/math/question_plan.py`), not left to authoring
 judgment alone. This section is the full reference for that planning: every input, and exactly how
 each of a day's slots (100% of that day's questions) is decided.
 
@@ -359,12 +359,12 @@ each of a day's slots (100% of that day's questions) is decided.
 
 | Input | Where it comes from | Default |
 |---|---|---|
-| `sections` | The worksheet type's day list, e.g. `["monday", ..., "friday"]` (`config/worksheet-types/weekly-worksheet.yaml` `sections`) | required |
-| `slots_per_day` | The grade's `questions_per_day` for the resolved worksheet type (`config/worksheet-types/weekly-worksheet.yaml` `grade_defaults.<grade>.questions_per_day`) | required |
+| `sections` | The worksheet type's day list, e.g. `["monday", ..., "friday"]` (`data/config/worksheet_types/weekly_worksheet.yaml` `sections`) | required |
+| `slots_per_day` | The grade's `questions_per_day` for the resolved worksheet type (`data/config/worksheet_types/weekly_worksheet.yaml` `grade_defaults.<grade>.questions_per_day`) | required |
 | `primary_skills` | The resolved curriculum scope's *current*-week topics for that grade (`weekly_pacing_cache` `topics`, via `MathSubjectModule.resolve_curriculum`) | required, non-empty |
 | `spiral_skills` | The resolved curriculum scope's *spiral*-review topics for that grade (`weekly_pacing_cache` `spiral`) | optional (`None`/`[]` disables spiral injection) |
-| `difficulty` | `/generate-worksheet` `difficulty` parameter | `medium_plus` (`config/base.yaml` `question_design.difficulty.default`) |
-| `diversity` | `/generate-worksheet` `diversity` parameter | `medium_plus` (`config/base.yaml` `question_design.diversity.default`) |
+| `difficulty` | `/generate-worksheet` `difficulty` parameter | `medium_plus` (`data/config/project/base.yaml` `question_design.difficulty.default`) |
+| `diversity` | `/generate-worksheet` `diversity` parameter | `medium_plus` (`data/config/project/base.yaml` `question_design.diversity.default`) |
 | `topic_overrides` | `/generate-worksheet` `topic_overrides` parameter, parsed by `question_plan.parse_topic_overrides`, sliced to the grade being planned | none |
 
 #### How 100% of a day's slots are decided — three layers, in order
@@ -505,7 +505,7 @@ day/difficulty never coincidentally produce identical numbers.
 ### 3.8 Notation and Text-Formatting Contract
 
 Worksheet prompts must never leak raw code syntax (`25**(1/2)`, `x^2`, `*`, `/`, `>=`) to students.
-`subjects/math/src/notation.py` is the single source for Grade 1-12 display formatting:
+`src/mts/subjects/math/notation.py` is the single source for Grade 1-12 display formatting:
 
 | Category | Provided by | Typical grade band |
 |---|---|---|
@@ -527,8 +527,8 @@ Distribution has two distinct phases. Confusing them is what this contract preve
 
 | Phase | Purpose | Location | Audience |
 |---|---|---|---|
-| Staging | Render, correct, verify, QA, and hold approved artifacts | `config/base.yaml` `publishing.staging.render_folder_id`, then `.approved_folder_id` (mirrored by `outputs-copilot/`) | Authoring and review only |
-| Final Delivery | Distribute an approved, unmodified pair | `Week_<WEEK_OF>` under `config/<subject>.yaml` `publishing.final_delivery.destinations_by_grade.<grade>.folder_id` | Parents/students |
+| Staging | Render, correct, verify, QA, and hold approved artifacts | `data/config/project/base.yaml` `publishing.staging.render_folder_id`, then `.approved_folder_id` (mirrored by `outputs-copilot/`) | Authoring and review only |
+| Final Delivery | Distribute an approved, unmodified pair | `Week_<WEEK_OF>` under `data/config/subjects/<subject>.yaml` `publishing.final_delivery.destinations_by_grade.<grade>.folder_id` | Parents/students |
 
 Rules:
 
@@ -538,7 +538,7 @@ Rules:
 3. Destinations are configuration, resolved per grade. A grade with no configured destination is a
    fail-closed error, never a fallback to a shared folder.
 4. `WEEK_OF` is the ISO Monday of the delivered instructional week, resolved against
-   `config/base.yaml` `calendar.week_1_start`. The folder name comes from
+  `data/config/project/base.yaml` `calendar.week_1_start`. The folder name comes from
    `final_delivery.week_folder_pattern`, so the audience-facing naming stays configurable.
 5. Delivery is idempotent: `reuse_existing_week_folder` requires resolving an existing week folder
    rather than creating a second one, so a re-delivery corrects a week in place.
@@ -582,7 +582,7 @@ erDiagram
   PROJECT {
     string project_id PK
     string project_name
-    string policy_revision
+    string config_revision
   }
   SUBJECT {
     string subject_id PK
@@ -693,29 +693,29 @@ erDiagram
 
 ## 5. Data Classification, Ownership, And Contracts
 
-The root `schemas/` directory owns shared contracts. `subjects/<subject>/schemas/` may add subject-specific definitions and must compose with, not replace, shared contracts. Existing P0 schemas remain compatibility inputs until M5 migration replaces them with versioned contracts.
+The root `schemas/` directory owns shared contracts. `schemas/subjects/<subject>/` may add subject-specific definitions and must compose with, not replace, shared contracts. Existing P0 schemas remain compatibility inputs until M5 migration replaces them with versioned contracts.
 
 ### 5.1 Data Classification And Ownership
 
 | Data class | Answers | Created/changed by | Reuse rule | Primary locations |
 |---|---|---|---|---|
-| Configuration | How should the system behave? | Approved configuration change or current-run override | Reusable defaults; a run override is never persisted unless explicitly approved. | `config/`, `subjects/<subject>/config/` |
-| Master data and knowledge | What stable, approved facts does the system know? | Curriculum/template/source management | Reusable across Runs; changes are versioned with source provenance. | `subjects/<subject>/knowledge/`, `templates/by-worksheet-type/` |
-| Transaction and run data | What happened for this request, cycle, Batch, Worksheet, and Run? | A specific worksheet-generation Run | Never reused as a default; changed records create a new revision or Run evidence record. | `runs/<subject>/<run_id>/` |
+| Configuration | How should the system behave? | Approved configuration change or current-run override | Reusable defaults; a run override is never persisted unless explicitly approved. | `data/config/` |
+| Master data and knowledge | What stable, approved facts does the system know? | Curriculum/template/source management | Reusable across Runs; changes are versioned with source provenance. | `data/master/` |
+| Transaction and run data | What happened for this request, cycle, Batch, Worksheet, and Run? | A specific worksheet-generation Run | Never reused as a default; changed records create a new revision or Run evidence record. | `data/transactions/` |
 
 Configuration contains variable behavior: enabled subjects/grades, Worksheet Type rules, gates, counts, duration, naming, destinations, cache thresholds, school-year week numbering (`calendar.week_1_start`), question-authoring defaults (`question_design.difficulty`/`.diversity`), and answer-display formatting (`formatting.answer_decimal_places`). It must not contain historical curriculum evidence, question content, gate approvals, or Run results.
 
 Master data and knowledge contains versioned reusable facts: subject/grade catalog entries, standards, yearly progression, curriculum sources, approved template metadata, template revisions, layout contracts, and approved fallback relationships. A template manifest is master data because it describes an approved, versioned external asset; a Worksheet Type configuration selects a template but does not redefine the template's inspected structure.
 
-Transaction and run data contains event-specific records: request, effective policy snapshot, Instructional Cycle, resolved Weekly Curriculum, Batch, Worksheet Spec revision, verification results, approvals, render artifacts, QA results, publication record, and telemetry. It must reference configuration and master-data revisions rather than copy them as new sources of truth.
+Transaction and run data contains event-specific records: request, effective config snapshot, Instructional Cycle, resolved Weekly Curriculum, Batch, Worksheet Spec revision, verification results, approvals, render artifacts, QA results, publication record, and telemetry. It must reference configuration and master-data revisions rather than copy them as new sources of truth.
 
 ```mermaid
 flowchart LR
-    CFG[Configuration\nrules and defaults] --> POL[Resolved Policy Snapshot]
+    CFG[Configuration\nrules and defaults] --> ECFG[Effective Config Snapshot]
     KNOW[Master Data and Knowledge\ncurriculum, standards, templates] --> SCOPE[Resolved Curriculum Scope]
-    REQ[User Request] --> POL
+    REQ[User Request] --> ECFG
     REQ --> SCOPE
-    POL --> RUN[Transaction and Run Data\ncycle, Batch, Spec, approvals, QA, artifacts]
+    ECFG --> RUN[Transaction and Run Data\ncycle, Batch, Spec, approvals, QA, artifacts]
     SCOPE --> RUN
 ```
 
@@ -732,12 +732,16 @@ Before shared runtime implementation, M5 Data Foundation may create and validate
 ### 5.3 Configuration File Contracts
 
 ```text
-config/
-  base.yaml                              # Shared defaults and lifecycle settings
-  math.yaml                              # Math enablement and subject defaults
-  ela.yaml                               # ELA enablement and subject defaults
-  worksheet-types/
-    <worksheet-type>.yaml                # Counts, sections, duration, scoring, template selection, validation
+data/config/
+  project/
+    base.yaml                            # Shared defaults and lifecycle settings
+  subjects/
+    math.yaml                            # Math enablement and subject defaults
+    ela.yaml                             # ELA enablement and subject defaults
+  worksheet_types/
+    <worksheet_type>.yaml                # Counts, sections, duration, scoring, template selection, validation
+  workflow/                              # Gate, resume, and telemetry defaults
+  publishing/                            # Staging, publication, and delivery defaults
 ```
 
 A Worksheet Type file is configuration because its behavior is intentionally changeable. It selects a
@@ -747,28 +751,31 @@ answer-key IDs, live revisions, inspected layout, and cache state. A Worksheet T
 that inspected structure. Class and Weekly Math use separate manifests; a fallback is explicit in
 the registry and is not implied by a missing manifest.
 
-Distribution locations are configuration for the same reason. `base.yaml` owns audience-neutral
+Distribution locations are configuration for the same reason. `data/config/project/base.yaml` owns audience-neutral
 distribution behavior (`publishing.staging`, `publishing.final_delivery` mode, week-folder pattern,
-reuse, answer-key policy); `<subject>.yaml` owns the per-grade audience destinations
+reuse, answer-key policy); `data/config/subjects/<subject>.yaml` owns the per-grade audience destinations
 (`publishing.final_delivery.destinations_by_grade`), because which folder a grade's families watch is
 a subject-scoped fact. No destination ID may be embedded in a script or adapter.
 
 ### 5.4 Master Data And Knowledge Contracts
 
 ```text
-subjects/
-  <subject>/
-    knowledge/
-      grade-course-catalog.json          # Supported grades/courses
-      yearly-curriculum.json             # Progression, prerequisites, approximate sequence
-      standards.json                     # Authoritative standards cache
-      curriculum-sources.json            # Source authority, freshness, provenance
-templates/
-  by-worksheet-type/
-    template-manifest.json               # Shared subject/Worksheet Type registry and routing
-subjects/
-  <subject>/config/template-manifests/
-    <worksheet-type>.json                # Subject/type master IDs, revisions, layout, cache state
+data/master/
+  subjects/
+    <subject>/
+      subject.yaml                       # Subject identity, version, and supported behavior summary
+      curriculum_sources.json            # Source authority, freshness, provenance
+      question_form_compatibility.json   # Subject form compatibility where applicable
+      grades/
+        <grade_or_course>/
+          grade.yaml                     # Supported grade/course metadata
+          yearly_curriculum.json         # Progression, prerequisites, approximate sequence
+          standards.json                 # Authoritative standards cache
+      template_manifests/
+        <worksheet_type>.json            # Subject/type master IDs, revisions, layout, cache state
+  templates/
+    registry.json                        # Shared subject/Worksheet Type registry and routing
+    manifests/                           # Shared template metadata when not subject-specific
 ```
 
 Master Data changes require a version/revision update and invalidate only dependent Transaction/Run Data under the Section 2.2 invalidation contract.
@@ -776,18 +783,34 @@ Master Data changes require a version/revision update and invalidate only depend
 ### 5.5 Transaction And Run Data Contracts
 
 ```text
-runs/
-  <subject>/<run_id>/
-    run-manifest.json                    # Run state and cross-record references
-    resolved-policy.json                 # Immutable effective configuration snapshot
-    curriculum/<scope_id>.json           # Resolved scope and provenance
-    batches/<batch_id>.json              # Expected Worksheet set
-    specs/<spec_id>-r<revision>.json     # Immutable Worksheet Spec revision
-    verification/<spec_id>-r<revision>.json
-    approvals/<gate>-<revision>.json
-    qa/<artifact_id>.json
-    artifacts/<artifact_id>.json
-    publication/<publication_id>.json
+data/transactions/
+  subjects/
+    <subject>/
+      grades/
+        <grade_or_course>/
+          cycles/
+            <cycle_id>/
+              cycle.json                 # Instructional Cycle record
+              weekly_curriculum.json     # Resolved scope and provenance
+              batches/
+                <batch_id>/
+                  batch.json             # Expected Worksheet set
+                  worksheets/
+                    <worksheet_type>/
+                      worksheet.json
+                      specs/r<revision>.json
+                      verification/<result_id>.json
+                      approvals/<gate>-<revision>.json
+                      qa/<artifact_id>.json
+                      artifacts/<artifact_id>.json
+                      publication/<publication_id>.json
+                      delivery/<delivery_id>.json
+  runs/
+    <run_id>/
+      run_manifest.json                  # Technical execution state and cross-record references
+      effective_config.json              # Immutable effective config snapshot
+      entity_references.json             # Links to subject/grade/cycle/batch/worksheet records
+      telemetry.json
 ```
 
 Transaction records are append-only evidence wherever possible. A correction creates a revision record and preserves the previous record for auditability; it does not overwrite a prior approved Worksheet Spec, approval, verification result, or publication record.
@@ -809,12 +832,12 @@ A `Question` is immutable within a Spec revision. Editing creates a new Workshee
 
 ### 5.7 Run Manifest
 
-`schemas/run-manifest.schema.json` will define the single Run record under `runs/<subject>/<run_id>/run-manifest.json`.
+`schemas/run-manifest.schema.json` will define the single Run record under `data/transactions/runs/<run_id>/run_manifest.json`.
 
 | Field group | Required fields | Purpose |
 |---|---|---|
 | Identity | `manifest_version`, `run_id`, `subject`, `worksheet_type`, `status`, `started_at` | Identifies and classifies the execution. |
-| Request and policy | `request`, `resolved_policy`, `policy_revision`, `overrides` | Records user intent and nonpersistent effective configuration. |
+| Request and effective config | `request`, `effective_config`, `effective_config_revision`, `overrides` | Records user intent and nonpersistent effective configuration. |
 | Scope and Batch | `instructional_cycle`, `weekly_curricula[]`, `batch`, `worksheets[]` | Links independent Worksheet/assessment members. |
 | State and approvals | `stages`, `checkpoints`, `approvals[]`, `invalidations[]` | Enables legal resume and revision-scoped gates. |
 | Evidence | `verification`, `qa`, `artifacts[]`, `publication` | Retains evidence without duplicating Spec content. |
@@ -828,8 +851,8 @@ Each enabled extension registers two independent definitions:
 
 | Contract | Location | Required declaration |
 |---|---|---|
-| Subject module | `subjects/<subject>/` | Subject ID, supported grades/courses, knowledge sources, generation guidance, verifier, render/QA additions, tests. |
-| Worksheet Type | `config/worksheet-types/<type>.yaml` | Type ID, compatible subjects, sections, counts, duration, scoring, template selection, validation rules, tests. |
+| Subject module | `src/mts/subjects/<subject>/` plus `data/config/subjects/<subject>.yaml` and `data/master/subjects/<subject>/` | Subject ID, supported grades/courses, knowledge sources, generation guidance, verifier, render/QA additions, tests. |
+| Worksheet Type | `data/config/worksheet_types/<type>.yaml` | Type ID, compatible subjects, sections, counts, duration, scoring, template selection, validation rules, tests. |
 
 A Worksheet Type can be compatible with multiple subjects. A Worksheet Type does not define curriculum facts or subject reasoning rules. A subject module does not override shared gate, evidence, or publication behavior.
 
@@ -843,14 +866,14 @@ A Worksheet Type can be compatible with multiple subjects. A Worksheet Type does
 | Interpret incomplete curriculum evidence and generate/review non-deterministic content | AI | Subject skill/workflow input-output contract | Spec lineage and reasoning-review record |
 | Compute answers, validate schemas, enforce state, naming, and pair integrity | Software | Shared core and subject verifier code | Unit/integration test and Run Manifest result |
 | Maintain standards, curriculum sources, templates, and examples | Knowledge owner | Versioned knowledge/template records | Source/template revision reference |
-| Set counts, duration, gates, destinations, and Worksheet Type rules | Configuration owner | YAML schema and Policy Resolver | Resolved policy snapshot |
+| Set counts, duration, gates, destinations, and Worksheet Type rules | Configuration owner | YAML schema and Effective Config Resolver | Effective config snapshot |
 
 ### 6.2 Detailed Technology Boundaries
 
 | Concern | Technology boundary | Rule |
 |---|---|---|
 | Deterministic domain and lifecycle logic | Python | Must be independently unit-testable and have no direct Google API dependency. |
-| Changeable policy | YAML plus schema validation | Must be resolved once into the Run policy snapshot; code must not embed per-type counts or IDs. |
+| Changeable configuration | YAML plus schema validation | Must be resolved once into the Run effective config snapshot; code must not embed per-type counts or IDs. |
 | Interchange/persistence contracts | JSON and JSON Schema | Worksheet Specs and Run Manifests are versioned, validated records. |
 | External documents | Google Docs/Drive adapter | Only adapter modules import Google client libraries. |
 | Secrets | Environment or local untracked secret references | Credentials are never persisted in Specs, Run Manifests, or generated artifacts. |
@@ -859,63 +882,145 @@ A Worksheet Type can be compatible with multiple subjects. A Worksheet Type does
 ## 7. File And Ownership Design
 
 ```text
-config/
-  base.yaml                              # Shared lifecycle and platform defaults
-  math.yaml                              # Math subject-wide policy and defaults
-  ela.yaml                               # ELA subject-wide policy and defaults
-  worksheet-types/
-    weekly-worksheet.yaml                # Weekly sections, counts, and template selection
-    class-worksheet.yaml                 # Single-sheet class counts and template selection
-    sat.yaml                              # SAT Worksheet Type rules and profile
-    sat-mini.yaml                         # SAT Mini Worksheet Type rules and profile
-    act.yaml                              # ACT Worksheet Type rules and profile
-    act-mini.yaml                         # ACT Mini Worksheet Type rules and profile
-schemas/
-  worksheet-spec.schema.json             # Canonical worksheet content and verification contract
-  run-manifest.schema.json               # Run state, approvals, artifacts, and telemetry contract
-  definitions/
-    approval.schema.json                 # Revision-scoped human gate decision
-    verification-result.schema.json      # Per-question and aggregate verification evidence
-    render-artifact.schema.json          # Copied worksheet/key document record
-    publication-record.schema.json       # Final paired publication result
 src/
-  runtime/
-    policy.py                            # Resolve immutable Subject + Worksheet Type policy
-    run_repository.py                    # Persist and resume Run Manifests
-    gates.py                             # Enforce approvals and dependency invalidation
-    spec_repository.py                   # Persist immutable Worksheet Spec revisions
-  rendering/
-    template_service.py                  # Resolve template registry and revision metadata
-    google_docs_adapter.py               # Copy, render, inspect, publish, and deliver Google Docs
-  verification/
-    validation_service.py                # Run content and visual QA validation
-    publication_service.py               # Publish validated worksheet/key pairs
-subjects/
-  math/                                  # Math knowledge, module, templates, and tests
-  ela/                                   # ELA knowledge, module, templates, and tests
-runs/
-  <subject>/<run_id>/                    # Durable evidence for one execution attempt
-    run-manifest.json                    # Run identity, state, approvals, and references
-    specs/<spec_id>-r<revision>.json     # Immutable canonical Worksheet Spec revision
-    qa/                                   # Content, visual, and release QA evidence
-    artifacts/                            # Rendered and published artifact records
-    delivered-artifacts.json              # Final Delivery record for the batch
+  mts/
+    setup_project/                       # SP
+      model.py
+      rules.py
+      configure.py
+    curriculum/                          # SYC + RWC
+      model.py
+      rules.py
+      setup_yearly.py
+      resolve_weekly.py
+      curriculum_loader.py
+      weekly_curriculum_writer.py
+    instructional_cycles/                # PIC
+      model.py
+      rules.py
+      prepare.py
+      cycle_loader.py
+      cycle_writer.py
+    worksheets/                          # PB + PW + GW
+      model.py
+      rules.py
+      prepare_batch.py
+      prepare_worksheet.py
+      generate.py
+      worksheet_type_loader.py
+      batch_writer.py
+      worksheet_writer.py
+      spec_loader.py
+      spec_writer.py
+    verification/                        # VW + VAL
+      model.py
+      rules.py
+      verify.py
+      validate.py
+      verification_writer.py
+      qa_writer.py
+    publishing/                          # FW + PUB + DEL
+      model.py
+      rules.py
+      format.py
+      publish.py
+      deliver.py
+      artifact_writer.py
+      publication_writer.py
+      delivery_writer.py
+    template_management/                 # MT
+      model.py
+      rules.py
+      template_registry.py
+      template_manifest_loader.py
+      template_inspection_writer.py
+    workflow_management/                 # MW
+      model.py
+      rules.py
+      gates.py
+      approvals.py
+      invalidation.py
+      run_loader.py
+      run_writer.py
+      approval_writer.py
+      telemetry_writer.py
+    subjects/
+      math/
+        curriculum.py
+        generation.py
+        verification.py
+        validation.py
+        notation.py
+        question_plan.py
+      ela/
+        curriculum.py
+        generation.py
+        verification.py
+        validation.py
+    infrastructure/
+      configuration/
+        yaml_loader.py
+        config_resolver.py
+      file_system/
+        json_loader.py
+        atomic_writer.py
+      google_docs/
+        google_docs_adapter.py
+        drive_client.py
+        docs_client.py
 tests/
-  shared/                                # Cross-subject runtime and contract tests
-  math/                                  # Math subject and curriculum tests
-  ela/                                   # ELA subject and curriculum tests
-  profiles/                              # Worksheet Type profile tests
-  integration/                           # Cross-component lifecycle tests
-  golden-examples/                       # Protected expected behavior examples
+  setup_project/
+  curriculum/
+  instructional_cycles/
+  worksheets/
+  verification/
+  publishing/
+  template_management/
+  workflow_management/
+  subjects/
+    math/
+    ela/
+  infrastructure/
+  integration/
+  fixtures/
+data/
+  config/
+    project/base.yaml
+    subjects/<subject>.yaml
+    worksheet_types/<worksheet_type>.yaml
+    workflow/
+    publishing/
+  master/
+    subjects/<subject>/grades/<grade_or_course>/
+    subjects/<subject>/template_manifests/
+    templates/registry.json
+    templates/manifests/
+  transactions/
+    subjects/<subject>/grades/<grade_or_course>/cycles/<cycle_id>/batches/<batch_id>/worksheets/<worksheet_type>/
+    runs/<run_id>/
+schemas/
+  shared/
+  subjects/<subject>/
+  transactions/
 ```
 
-This is a target structure for M5 migration. Existing P0 files remain in place until their replacement is implemented and regression-tested.
+This is the target structure for M5 migration. Existing P0 files remain in place until their replacement is implemented and regression-tested. The old `subjects/` root is retired after migration because it mixes code, tests, data, commands, skills, schemas, templates, and documentation in one tree.
+
+Naming rules:
+
+1. Python packages and files use `snake_case`; human-facing markdown commands may keep kebab-case names.
+2. `model.py` defines the code shape of the capability's entities; `rules.py` defines invariants that must always hold.
+3. `*_loader.py` reads configuration, master data, reference data, or already-written transaction data for resume/review.
+4. `*_writer.py` writes transaction records, generated Specs, approvals, QA evidence, artifacts, publication records, delivery records, and telemetry. Writers must reject overwriting immutable records.
+5. Subject packages contain executable subject behavior only. Subject facts, grade lists, standards, template IDs, and curriculum sources belong in `data/config` or `data/master`.
+6. Infrastructure packages isolate technical adapters and file/API mechanics from Functional Area decisions.
 
 ## 8. Test Design
 
 | Test layer | Contract under test | Required fixtures |
 |---|---|---|
-| Unit | Policy resolution, schemas, gate transitions, invalidation, deterministic Math methods | Valid/invalid requests, approval revisions, edited Spec revisions |
+| Unit | Effective config resolution, schemas, gate transitions, invalidation, deterministic Math methods | Valid/invalid requests, approval revisions, edited Spec revisions |
+| Capability | Functional Area capability packages such as `curriculum`, `worksheets`, `verification`, and `publishing` | Data loaders/writers, rules, and use-case fixtures per capability |
 | Subject | Math deterministic/reasoning checks; ELA language checks | Grade/course scope and question examples per subject |
 | Profile | Weekly, Class, Homework, Compact, Speed Math, SAT/ACT profiles | Valid and invalid blueprint/count/time/score configurations |
 | Integration | Spec -> verification -> copied-template render -> QA -> approved paired publication -> per-grade Final Delivery | Mock Google Docs/Drive and a verified Spec fixture |
@@ -927,14 +1032,16 @@ Each fitness function in M3 must map to at least one test fixture or a documente
 ## 9. M5 Implementation Sequence
 
 1. Add shared contract definitions and schema validation while preserving P0 compatibility.
-2. Implement policy snapshots, Run Manifest persistence, gate controller, and revision/invalidation mechanics.
-3. Extract Math P0 helpers behind the Subject Module interface and preserve all existing Math tests.
-4. Migrate Google Docs/Drive render and publishing scripts from `mts-new` behind adapters with mocked integration tests.
-5. Add configuration-driven Final Delivery of published pairs into per-grade, per-week audience folders, with idempotent folder resolution and a persisted Delivery Record.
-6. Add Worksheet Type registration and migrate existing Math Worksheet Types into type definitions.
-7. Build the ELA extension package with approved ELA M1/M2 scope, knowledge, templates, verifier, and tests.
-8. Add SAT, SAT Mini, ACT, and ACT Mini only after their profile requirements, scoring/validation rules, fixtures, and templates are approved.
-9. Run the full Math regression gate and extension-isolation tests before replacing legacy workflow paths.
+2. Establish the target `src/mts`, `tests`, and `data` layout with compatibility loaders/writers before moving production paths.
+3. Implement effective config snapshots, Run Manifest persistence, gate controller, and revision/invalidation mechanics under `workflow_management`.
+4. Extract Math P0 helpers behind the Subject Module interface under `src/mts/subjects/math` and move Math tests under `tests/subjects/math`.
+5. Migrate configuration, master knowledge, template metadata, and transaction records into `data/config`, `data/master`, and `data/transactions` with path-reference tests.
+6. Migrate Google Docs/Drive render and publishing scripts from `mts-new` behind adapters with mocked integration tests.
+7. Add configuration-driven Final Delivery of published pairs into per-grade, per-week audience folders, with idempotent folder resolution and a persisted Delivery Record.
+8. Add Worksheet Type registration and migrate existing Math Worksheet Types into type definitions.
+9. Build the ELA extension package with approved ELA M1/M2 scope, knowledge, templates, verifier, and tests.
+10. Add SAT, SAT Mini, ACT, and ACT Mini only after their profile requirements, scoring/validation rules, fixtures, and templates are approved.
+11. Run the full Math regression gate and extension-isolation tests before replacing legacy workflow paths and retiring the old `subjects/`, `config/`, `templates/`, and `runs/` roots.
 
 ## 10. M4 Review Checklist
 

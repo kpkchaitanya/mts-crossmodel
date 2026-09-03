@@ -42,14 +42,14 @@ flowchart LR
   GDT --> OUT
 ```
 
-The system boundary is the governed worksheet-production workflow. Curriculum sources and Google Docs/Drive are external systems; AI harnesses invoke the canonical workflow but do not own requirements, state transitions, or approval policy. Subject and assessment modules supply their own curriculum, generation, verification, and layout rules through shared contracts.
+The system boundary is the governed worksheet-production workflow. Curriculum sources and Google Docs/Drive are external systems; AI harnesses invoke the canonical workflow but do not own requirements, state transitions, or approval rules. Subject and assessment modules supply their own curriculum, generation, verification, and layout rules through shared contracts.
 
 ### 2.2 C2 Container View
 
 ```mermaid
 flowchart LR
   subgraph PRE[Preparation]
-    POL[Policy and Run Controller]
+    POL[Effective Config and Run Controller]
     CUR[Subject Curriculum Service]
     PLAN[Batch and Worksheet Planner]
   end
@@ -92,24 +92,43 @@ Container responsibilities:
 
 | Container | Components | Responsibility |
 |---|---|---|
-| Preparation | Policy and Run Controller, Subject Curriculum Service, Batch and Worksheet Planner | Resolve approved run context, subject scope, and expected Worksheet set. |
+| Preparation | Effective Config and Run Controller, Subject Curriculum Service, Batch and Worksheet Planner | Resolve approved run context, subject scope, and expected Worksheet set. |
 | Generation and Verification | Worksheet Spec Generator, Subject Verification Service, Gate State Controller | Generate canonical content, establish subject-specific correctness, and enforce approval transitions. |
 | Delivery | Template Lifecycle Service, Google Docs Render Adapter, Validation Service, Google Drive Publication Adapter | Render copied templates, prove artifact quality, and publish approved pairs. |
-| Canonical Data and Run Evidence | Subject Knowledge, Configuration, Worksheet Spec, Run Manifest | Provides durable facts and variable policy, owns canonical content, and retains lifecycle evidence. |
+| Canonical Data and Run Evidence | Subject Knowledge, Configuration, Worksheet Spec, Run Manifest | Provides durable facts and variable configuration, owns canonical content, and retains lifecycle evidence. |
 
 | Component | Functional Areas | Responsibility |
 |---|---|---|
-| Project Policy Resolver | SP | Resolves configuration defaults and current-run overrides into an immutable policy snapshot. |
+| Effective Config Resolver | SP | Resolves configuration defaults and current-run overrides into an immutable effective config snapshot. |
 | Curriculum Service | SYC, PIC, RWC | Reads yearly curriculum and local evidence, resolves weekly scope, records source confidence and freshness. |
 | Batch Coordinator | PB, PW | Builds the expected Worksheet set and a per-Worksheet preparation plan. |
-| Worksheet Spec Generator | GW | Uses approved scope and policy to create one canonical structured Worksheet Spec. |
+| Worksheet Spec Generator | GW | Uses approved scope and effective config to create one canonical structured Worksheet Spec. |
 | Math Verification Service | VW | Performs deterministic recomputation where supported and records required reasoning-review outcomes. |
 | Gate State Controller | MW | Enforces persisted approval transitions and dependency invalidation. |
 | Template Lifecycle Service | MT | Resolves registered masters, revision state, cache validity, and controlled template promotion. |
 | Render Adapter | FW | Copies approved templates and renders student/key documents from the same verified Worksheet Spec. |
 | Validation Service | VAL | Performs content QA and records visual/layout QA evidence. |
 | Publication Adapter | PUB | Publishes only approved paired artifacts and confirms destination/naming. |
-| Run Repository And Telemetry | MW | Persists run state, artifacts, approvals, invalidations, retries, and authoritative metrics. |
+| Run Loader/Writer And Telemetry | MW | Loads resumable run state and writes artifacts, approvals, invalidations, retries, and authoritative metrics. |
+
+### 2.3 Repository Organization Architecture
+
+Repository structure follows two primary organizing axes:
+
+1. **Functional Area capability axis for source and tests.** Executable workflow behavior is grouped by the requirement Functional Areas it serves. Closely coupled areas may share one capability package when they operate on the same entity lifecycle: `curriculum` covers SYC and RWC, `worksheets` covers PB/PW/GW, `verification` covers VW/VAL, and `publishing` covers FW/PUB/DEL.
+2. **Entity hierarchy axis for durable data.** Configuration, reusable master knowledge, and transaction evidence live under `data/`, with transaction evidence organized as `Subject -> Grade/Course -> Cycle -> Batch -> Worksheet`. Run records remain technical execution indexes that reference entity records; they are not the canonical instructional history.
+
+Subject-specific executable behavior is a peer capability under `src/mts/subjects/<subject>/`, not a mixed repository root. A subject package may contain algorithms, notation, validation, and verification behavior, but subject configuration, curriculum facts, standards, template IDs, and run evidence live under `data/`.
+
+This organization replaces the prior `subjects/<subject>/` catch-all structure, which mixed source, tests, configuration, knowledge, schemas, templates, commands, and documentation. The target architecture is easier to maintain because a maintainer can locate behavior by Functional Area and locate evidence by the domain entity path.
+
+The placement rules are:
+
+1. All executable application source lives under `src/mts/`.
+2. All automated tests live under `tests/` and mirror the source capability or subject specialization they protect.
+3. All operational data lives under `data/config`, `data/master`, or `data/transactions`.
+4. Shared schemas remain under `schemas/`; they are contracts, not operational data.
+5. Commands, workflows, skills, specs, and docs remain thin reviewable artifacts outside `src/` and must point to canonical behavior rather than duplicate it.
 
 ### Subject And Assessment Extension Contract
 
@@ -149,12 +168,13 @@ revisions, inspected layout, and cache state.
 ### Ownership and derivation
 
 ```text
-Project policy + subject knowledge + cycle request + Worksheet Type
+Project config + subject knowledge + cycle request + Worksheet Type
   -> resolved scope -> batch -> Worksheet Spec
   -> verification -> render artifacts -> validation -> approved publication pair
 
 Run Manifest references revisions and evidence; it is not a second source
-of questions, answers, curriculum scope, Worksheet Type, or policy.
+of questions, answers, curriculum scope, Worksheet Type, or effective config. The canonical
+transaction path for instructional evidence is `data/transactions/subjects/<subject>/grades/<grade>/cycles/<cycle>/batches/<batch>/worksheets/<worksheet_type>/`.
 ```
 
 ```mermaid
@@ -187,10 +207,12 @@ The existing shared Worksheet Spec and Run Manifest schemas are intentionally cr
 | Human approval integrity | Gate State Controller persists and validates each enabled transition. |
 | Curriculum integrity | Curriculum Service retains source, freshness, confidence, and cache/fallback basis. |
 | Template fidelity | Render Adapter copies masters only; Template Lifecycle Service resolves the subject/type manifest and tracks revisions. |
-| Recoverability | Run Repository records checkpoints and dependency invalidation to resume only valid work. |
+| Recoverability | Run loaders/writers record checkpoints and dependency invalidation to resume only valid work. |
 | Reviewability | Summary, structured artifacts, and evidence-on-demand are retained for consequential decisions. |
-| Portability | Model/harness adapters invoke canonical workflows and contracts rather than duplicating policy. |
-| Observability | Run manifests record timing, tool calls, cache state, retries, approvals, verification, and outputs. |
+| Maintainability | Source and tests are organized by Functional Area capability and subject specialization; durable records are organized by the Subject -> Grade/Course -> Cycle -> Batch -> Worksheet entity hierarchy. |
+| Information ownership | Configuration, master knowledge, transaction evidence, schemas, executable source, commands, workflows, and skills each have one canonical placement and reference one another by ID, revision, or path. |
+| Portability | Model/harness adapters invoke canonical workflows and contracts rather than duplicating governing rules. |
+| Observability | Run manifests record timing, tool calls, cache state, retries, approvals, verification, outputs, and links to the affected entity records. |
 
 The executable fitness functions are defined in `fitness-functions.md`.
 
@@ -201,12 +223,12 @@ The proposed initial stack is deliberately small:
 | Need | Technology | Rationale |
 |---|---|---|
 | Deterministic services and adapters | Python standard library plus narrowly scoped Google API dependencies | Existing Math runtime is Python and deterministic subject logic is straightforward to test. |
-| Human-editable policy | YAML | Existing configuration uses YAML and requirements demand changeable defaults. |
+| Human-editable configuration | YAML | Existing configuration uses YAML and requirements demand changeable defaults. |
 | Interchange and validation contracts | JSON and JSON Schema | Existing Worksheet Spec and Run Manifest contracts are JSON-based. |
 | Knowledge and design artifacts | Markdown and structured curriculum files | Supports reviewability, provenance, and version control. |
 | Render/publish platform | Google Docs and Google Drive | Required current document and publication platform. |
 | Automated checks | pytest-compatible Python tests | Supports deterministic unit and integration tests with low technology diversity. |
-| Persisted run state | Versioned JSON files under `runs/` | Meets initial resumability/audit needs without introducing a database prematurely. |
+| Persisted run state | Versioned JSON files under `data/transactions/` | Meets initial resumability/audit needs without introducing a database prematurely while keeping run indexes separate from instructional entity records. |
 
 A database, web application, queue, or additional orchestration framework is out of scope unless a documented requirement cannot be met by this stack.
 
@@ -223,10 +245,11 @@ A database, web application, queue, or additional orchestration framework is out
 
 1. **Shared core plus subject modules:** subject modules own subject semantics; shared components own cross-subject lifecycle mechanics.
 2. **Canonical Worksheet Spec:** it is the single source for all question/answer content; outputs are projections, never independent content stores.
-3. **File-based run manifests first:** use versioned structured files until demonstrated multi-user, concurrent, query, or transaction needs require a data store.
+3. **File-based transaction records first:** use versioned structured files under `data/transactions/` until demonstrated multi-user, concurrent, query, or transaction needs require a data store.
 4. **Adapter boundary for Google:** all Google Docs/Drive interactions are isolated behind render/publication interfaces.
 5. **Testable quality attributes:** critical NFRs require executable fitness functions whenever practical; manual visual QA remains explicit where automation cannot replace it.
 6. **Additive extension model:** ELA and new Worksheet Types such as SAT, SAT Mini, ACT, and ACT Mini plug into the shared core through configuration and subject/type contracts; they do not fork the lifecycle.
+7. **Functional Area source and entity data axes:** source is organized by Functional Area capability and subject specialization, while durable records are organized by Subject, Grade/Course, Cycle, Batch, and Worksheet under `data/`.
 
 These decisions should become ADRs after M3 approval only if they remain architecturally significant and stable.
 
@@ -242,11 +265,11 @@ M4 design must define:
 
 ## 9. Responsibility Matrix
 
-This matrix applies the Human / AI / Software actor model and the Knowledge / Config / Command / Workflow / Skill / Code placement model. It prevents deterministic policy from drifting into prompts.
+This matrix applies the Human / AI / Software actor model and the Knowledge / Config / Command / Workflow / Skill / Code placement model. It prevents deterministic rules and effective configuration from drifting into prompts.
 
 | Functional Area | Human | AI | Software | Primary Placement |
 |---|---|---|---|---|
-| SP - Setup Project | Approves policy and persistent changes | Explains options | Resolves snapshots and validates configuration | Config, Code |
+| SP - Setup Project | Approves configuration and persistent changes | Explains options | Resolves effective config snapshots and validates configuration | Config, Code |
 | SYC - Setup Yearly Curriculum | Approves source/progression changes | Interprets source gaps | Validates records and dependency invalidation | Knowledge, Code |
 | PIC - Prepare Instructional Cycle | Chooses cycle intent and exceptions | Interprets special request context | Calculates dates and records calendar context | Workflow, Config, Code |
 | RWC - Resolve Weekly Curriculum | Approves Gate 1 scope | Synthesizes evidence when needed | Reads caches, applies source/freshness fallback rules, records provenance | Knowledge, Config, Code, Skill |
@@ -267,7 +290,7 @@ This matrix applies the Human / AI / Software actor model and the Knowledge / Co
 3. A changeable count, threshold, template registration, destination, or feature flag belongs in Config.
 4. Curriculum facts, source metadata, examples, and template structure belong in Knowledge.
 5. Work sequencing and state eligibility belong in Workflow; AI reasoning inputs, outputs, and review instructions belong in Skills.
-6. Commands are thin invocation surfaces and must not duplicate requirements, policy, or implementation rules.
+6. Commands are thin invocation surfaces and must not duplicate requirements, configuration, or implementation rules.
 
 ## 10. Fitness Functions
 
@@ -284,18 +307,19 @@ Fitness functions translate critical non-functional requirements into repeatable
 | FF-07 | Template fidelity and master protection | NFR-008, NFR-014 | Template Lifecycle Service tracks revisions; Render Adapter copies masters and limits invalidation to affected templates. | Rendering never updates a master template; a changed template revision invalidates only affected render/cache state. | Adapter mock tests, template manifest, and Run Manifest. | Automated |
 | FF-08 | Performance and fallback safety | NFR-009, NFR-010 | Cache-first curriculum resolution and template revision guards avoid repeated external research or full inspection while triggering fallback when confidence/freshness is insufficient. | A valid cache/revision avoids expensive refresh; cache miss, stale/changed source, insufficient confidence, contradiction, or explicit freshness request triggers the configured fallback. | Cache behavior tests and Run telemetry. | Automated |
 | FF-09 | Resumability | NFR-011 | Run Manifests persist valid checkpoints, approvals, artifacts, and dependency invalidation state. | Resume only from the latest valid checkpoint and never reuse state invalidated by a changed Question, scope, or template revision. | Run-manifest fixtures and resume/invalidation tests. | Automated |
-| FF-10 | Maintainability | NFR-012 | Canonical requirements/design/skills define stable policy; commands and adapters remain thin. | Reject an adapter or command that duplicates governing policy instead of referencing its canonical source. | Adapter review checklist and documentation lint. | Automated plus Manual review |
+| FF-10 | Maintainability | NFR-012 | Canonical requirements/design/skills define stable behavior; source and tests are organized by Functional Area capability and subject specialization; commands and adapters remain thin. | Reject an adapter, command, script, or package layout that duplicates governing configuration or behavior, places executable source outside `src/mts`, places tests outside `tests`, or mixes source, tests, configuration, master data, and transaction evidence in one subject tree. | Adapter/layout review checklist and documentation lint. | Automated plus Manual review |
 | FF-11 | Portability | NFR-013 | Shared contracts and thin adapters isolate harness-specific invocation from canonical workflow behavior. | Equivalent canonical inputs produce equivalent validation decisions across supported harness adapters. | Cross-harness fixture test and adapter contract review. | Automated plus Manual review |
-| FF-12 | Observability | NFR-015 | Run Manifests record timing, tool calls, cache state, retries, approvals, verification, and artifact outcomes. | A completed or failed Run contains all required diagnostic fields; token usage is null when authoritative data is unavailable. | Run-manifest schema and integration test. | Automated |
+| FF-12 | Observability | NFR-015 | Run Manifests record timing, tool calls, cache state, retries, approvals, verification, artifact outcomes, and references to affected Subject, Grade/Course, Cycle, Batch, Worksheet, and artifact records. | A completed or failed Run contains all required diagnostic fields, links to affected entity records, and token usage is null when authoritative data is unavailable. | Run-manifest schema and integration test. | Automated |
 | FF-13 | Batch scalability | NFR-017 | Batch Coordinator isolates per-Worksheet curriculum scope, verification, artifacts, and invalidation. | Regenerating or correcting one Worksheet does not modify, invalidate, or publish unrelated Worksheets in the same Batch. | Batch-isolation integration test. | Automated |
 | FF-14 | Deterministic naming and publication-pair integrity | NFR-018 | Publication Adapter validates Gate 5, configured names, destinations, and paired artifacts before publication. | Reject publication unless Gate 5 approval exists and both correctly named artifacts are present at the intended destination. | Publication integration test and publish record. | Automated |
-| FF-15 | Backward compatibility and behavior preservation | NFR-019, NFR-020 | Regression fixtures preserve supported Worksheet Types and established Math generation behavior during migration. | Every supported Worksheet Type has a regression fixture; a migration fails when a protected behavior changes without approved requirement/design evidence. | Regression suite and change review record. | Automated plus Manual review |
-| FF-16 | Responsibility placement | NFR-022, NFR-023 | The responsibility matrix separates Human approval, AI reasoning, and deterministic Software work across Knowledge, Config, Command, Workflow, Skill, and Code. | Reject a design that assigns repeatable deterministic logic, authorization, or approval solely to a prompt, skill, or AI response. | Architecture review checklist and implementation review. | Manual review |
-| FF-17 | Executable quality evidence | NFR-024 | Critical NFRs have automated fitness functions whenever practical; manual evidence is explicit where automation cannot safely replace human review. | Each critical quality attribute has a named strategy, fitness function, retained evidence, and declared execution mode. | This section, test results, manifests, and QA records. | Automated plus Manual review |
+| FF-15 | Backward compatibility and behavior preservation | NFR-019, NFR-020 | Regression fixtures preserve supported Worksheet Types and established Math generation behavior during migration, and legacy roots are retired only after replacement paths pass. | Every supported Worksheet Type has a regression fixture; a migration fails when a protected behavior changes without approved requirement/design evidence or when an old path is removed before its replacement source, tests, and data path are validated. | Regression suite, path-reference tests, and change review record. | Automated plus Manual review |
+| FF-16 | Responsibility placement and lifecycle traceability | NFR-022, NFR-023 | The responsibility matrix separates Human approval, AI reasoning, deterministic Software work, Knowledge, Config, transaction evidence, Command, Workflow, Skill, and Code while preserving Functional Area and entity-hierarchy traceability. | Reject a design that assigns repeatable deterministic logic, authorization, or approval solely to a prompt, skill, or AI response; hard-codes durable facts in source; or stores runtime evidence outside the Subject -> Grade/Course -> Cycle -> Batch -> Worksheet hierarchy without a Run index reference. | Architecture review checklist, implementation review, and data-layout check. | Manual review plus Automated checks where practical |
+| FF-17 | Executable quality evidence | NFR-024 | Critical NFRs have automated fitness functions whenever practical; manual evidence is explicit where automation cannot safely replace human review. | Each critical quality attribute and repository organization invariant has a named strategy, fitness function, retained evidence, and declared execution mode. | This section, test results, manifests, QA records, and structure-validation results. | Automated plus Manual review |
+| FF-18 | Subject and Worksheet Type extensibility | NFR-025 | Subject executable behavior is additive under `src/mts/subjects/<subject>`; subject configuration and master knowledge are additive under `data/config` and `data/master`; shared lifecycle code remains unchanged unless a cross-cutting requirement approves it. | Reject a new subject or Worksheet Type that requires forking shared gate, publication-pair, data ownership, or run-evidence behavior, or that stores subject facts in executable source instead of configuration/master data. | Extension registration tests and architecture review record. | Automated plus Manual review |
 
 ### Minimum M4 Test Plan
 
-1. Unit tests for all deterministic Math verifier methods, Worksheet Spec validation, policy resolution, and gate transitions.
+1. Unit tests for all deterministic Math verifier methods, Worksheet Spec validation, effective config resolution, and gate transitions.
 2. Fixture-driven tests for curriculum cache hits, fallback conditions, confidence labels, and Grade 9/10 split handling.
 3. Mocked integration tests for template-copy rendering and paired Google Drive publication behavior.
 4. Run-manifest tests for resume and invalidation after Question, curriculum, and template changes.

@@ -28,7 +28,7 @@ For this product, those standards require that:
 
 - Consequential artifacts use a reviewable progression of visual summary, concise structured source, and detail on demand where it improves comprehension.
 - Human approval and accountability, AI generation and reasoning, and deterministic software responsibilities remain explicit and separated.
-- Deterministic worksheet behavior is implemented in code; variable policy is configuration; curriculum facts and templates are maintained as knowledge; AI reasoning is reserved for generation, interpretation, and ambiguity review.
+- Deterministic worksheet behavior is implemented in code; variable behavior is configuration; curriculum facts and templates are maintained as knowledge; AI reasoning is reserved for generation, interpretation, and ambiguity review.
 - Product decisions remain traceable from intent through requirements, design, implementation, verification, and run evidence.
 
 **What are the most important user actions?**

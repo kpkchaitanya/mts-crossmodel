@@ -9,8 +9,8 @@ Implement one bounded module at a time. Every module must have a focused validat
 
 ```mermaid
 flowchart LR
-    D[Data Foundation] --> P[Policy Resolver]
-    P --> R[Run Repository]
+    D[Data Foundation] --> P[Effective Config Resolver]
+    P --> R[Run Loader/Writer]
     R --> G[Gate Controller]
     G --> I1[Shared Runtime Integration]
     I1 --> M[Math Module Adapter]
@@ -32,10 +32,10 @@ flowchart LR
 | M3 | Architecture | Complete | C1/C2, C3 boundary decisions, information architecture, responsibility and fitness-function design reviewed. |
 | M4 | Detailed system design | Complete | State machine, C3/C4 mapping, ERD, data classes, contracts, and test design reviewed. |
 | M5.0 | Data Foundation | Complete | Worksheet Type data, Math master-data indexes, transaction-evidence schemas, and Math regression gate pass. |
-| M5.1 | Policy Resolver | Complete | Focused tests validate active Class resolution, override precedence, immutability, and draft/unknown/incompatible rejection. |
-| M5.2 | Run Repository | Complete | Focused tests validate new manifest/policy persistence, compatible resume/checkpointing, and mismatched request/policy rejection. |
+| M5.1 | Effective Config Resolver | Complete | Focused tests validate active Class resolution, override precedence, immutability, and draft/unknown/incompatible rejection. |
+| M5.2 | Run Loader/Writer | Complete | Focused tests validate new manifest/effective config persistence, compatible resume/checkpointing, and mismatched request/effective config rejection. |
 | M5.3 | Gate Controller | Complete | Focused tests validate revision-scoped approvals, fail-closed rejection, and dependent invalidation. |
-| M5.4 | Shared Runtime Integration | Complete | Shared Math Class fixture passes policy, Run, Scope Review, and scope invalidation; Math migration gate remains green. |
+| M5.4 | Shared Runtime Integration | Complete | Shared Math Class fixture passes effective config, Run, Scope Review, and scope invalidation; Math migration gate remains green. |
 | M5.5 | Math Subject Module Adapter | Complete | Adapter delegates existing P0 curriculum, verification, template/QA behavior while preserving candidate Spec generation as AI-owned. |
 | M5.6 | Google Docs/Drive Adapters | Complete | Mocked tests validate master copying, rendering, inspection, paired publication, and fail-closed behavior. |
 | M5.7 | Math Class End-to-End Integration | Complete | Staging-only Class Worksheet lifecycle reaches Publish Approval readiness without live publication. |
@@ -59,13 +59,13 @@ flowchart LR
 - [x] Validate new data files parse and referenced paths resolve.
 - [x] Run `python tests/math/validate_migration.py`: 3/3 suites and 14 checks pass.
 
-### M5.1 Policy Resolver - Complete
+### M5.1 Effective Config Resolver - Complete
 
 Entry condition: M5.0 complete.
 
-- [x] Create `src/runtime/policy.py`.
+- [x] Create `src/runtime/policy.py` as the legacy implementation, superseded by target `src/mts/setup_project/configure.py` and `src/mts/infrastructure/configuration/config_resolver.py`.
 - [x] Load base, subject, and Worksheet Type YAML configuration.
-- [x] Resolve approved current-run overrides into an immutable policy snapshot.
+- [x] Resolve approved current-run overrides into an immutable effective config snapshot.
 - [x] Reject unknown subjects, unknown Worksheet Types, incompatible subject/type combinations, and invalid overrides.
 - [x] Reject `draft` and `disabled` Worksheet Types for production execution.
 - [x] Add focused unit tests for precedence and failure paths.
@@ -73,18 +73,18 @@ Entry condition: M5.0 complete.
 Focused validation:
 
 ```text
-Class Worksheet + Math resolves to an active immutable policy snapshot.
-Weekly Worksheet resolves to an active Math policy; production readiness is verified separately by M5.7a/b.
+Class Worksheet + Math resolves to an active immutable effective config snapshot.
+Weekly Worksheet resolves to an active Math effective config; production readiness is verified separately by M5.7a/b.
 ```
 
 Integration checkpoint: none. Do not modify Run persistence or gates in this slice.
 
-### M5.2 Run Repository - Complete
+### M5.2 Run Loader/Writer - Complete
 
 Entry condition: M5.1 passes focused tests.
 
-- [x] Create `src/runtime/run_repository.py`.
-- [x] Create `runs/<subject>/<run_id>/run-manifest.json` and resolved-policy snapshot paths.
+- [x] Create `src/runtime/run_repository.py` as the legacy implementation, superseded by target `src/mts/workflow_management/run_loader.py` and `src/mts/workflow_management/run_writer.py`.
+- [x] Create legacy `runs/<subject>/<run_id>/run-manifest.json` and resolved config snapshot paths; target migration writes `data/transactions/runs/<run_id>/run_manifest.json` and `effective_config.json`.
 - [x] Persist new Run checkpoints using IDs/revisions instead of copying Worksheet Spec questions/answers.
 - [x] Resume only when request identity and upstream revisions remain compatible.
 - [x] Add focused new/resume/incompatible-resume tests.
@@ -92,12 +92,12 @@ Entry condition: M5.1 passes focused tests.
 Focused validation:
 
 ```text
-A new Math Class Worksheet Run creates its manifest and policy snapshot.
+A new Math Class Worksheet Run creates its manifest and effective config snapshot.
 A compatible request resumes its latest valid checkpoint.
-A changed policy or scope revision rejects the prior checkpoint.
+A changed effective config or scope revision rejects the prior checkpoint.
 ```
 
-Integration checkpoint: Policy Resolver + Run Repository.
+Integration checkpoint: Effective Config Resolver + Run Loader/Writer.
 
 ### M5.3 Gate Controller - Complete
 
@@ -116,14 +116,14 @@ A valid approval permits only its matching transition and artifact revision.
 Changing a Question invalidates verification and downstream approval/evidence.
 ```
 
-Integration checkpoint: Policy Resolver + Run Repository + Gate Controller.
+Integration checkpoint: Effective Config Resolver + Run Loader/Writer + Gate Controller.
 
 ### M5.4 Shared Runtime Integration - Complete
 
 Entry condition: M5.1 through M5.3 pass focused tests.
 
 - [x] Create shared integration fixtures for an active Math Class Worksheet request.
-- [x] Verify resolved policy, manifest checkpoint, gate decision, and invalidation evidence work together.
+- [x] Verify effective config, manifest checkpoint, gate decision, and invalidation evidence work together.
 - [x] Run the existing Math migration gate.
 
 Focused validation:
@@ -156,7 +156,7 @@ Entry condition: M5.5 complete.
 
 Entry condition: M5.6 complete.
 
-- [x] Execute a staging-only Math Class Worksheet lifecycle: policy -> Run -> scope -> Spec -> verify -> render -> QA -> Publish Approval readiness.
+- [x] Execute a staging-only Math Class Worksheet lifecycle: effective config -> Run -> scope -> Spec -> verify -> render -> QA -> Publish Approval readiness.
 - [x] Retain generated evidence as an isolated temporary-run fixture with mocked Google Docs/Drive services.
 - [x] Run all shared, Math, and migration regression tests.
 
@@ -196,13 +196,13 @@ Entry condition: M5.7 complete.
 - [x] Activate Math Weekly Worksheet for Grade 1, Grades 4-5, Grade 6, and combined Grades 9/10.
 - [x] Set weekly counts to Grade 1/4/5 = 50, Grade 6 = 40, and Grades 9/10 = 25 each (50 combined).
 - [x] Register existing approved Class Worksheet templates as the Math Weekly Worksheet fallback.
-- [x] Add focused Math Weekly Worksheet policy coverage and run the Math migration gate.
+- [x] Add focused Math Weekly Worksheet effective config coverage and run the Math migration gate.
 - [x] Complete M5.7a/b staging workflow and lifecycle validation for Weekly Worksheet.
 - [x] Register 4-Day Homework as a draft Math Worksheet Type with its four instructional sections and explicit activation blockers.
 - [x] Register Compact/Unbranded Worksheet as a draft Math Worksheet Type with explicit user-defined count/page constraints and activation blockers.
 - [ ] Migrate remaining existing Math Worksheet Types into `config/worksheet-types/` one type at a time.
 - [ ] Add a regression fixture for each remaining active type.
-- [ ] Approve 4-Day Homework counts, duration/continuity rules, template policy, and regression fixtures before activation.
+- [ ] Approve 4-Day Homework counts, duration/continuity rules, template rules, and regression fixtures before activation.
 - [ ] Approve Compact/Unbranded count/page constraints, readability rules, unbranded templates, and regression fixtures before activation.
 - [x] Register dedicated Weekly Worksheet templates and route Weekly Math to their subject/type manifest.
 
@@ -228,8 +228,8 @@ Unblock each Worksheet Type independently only after its requirements, timing/sc
 | Date | Slice | Status update | Validation |
 |---|---|---|---|
 | 2026-08-27 | M5.0 Data Foundation | Complete | New JSON files parsed; references resolve; Math migration gate passed 3/3 suites and 14 checks. |
-| 2026-08-27 | M5.1 Policy Resolver | Complete | `python tests/shared/test_policy.py` passed 4/4 focused tests. |
-| 2026-08-27 | M5.2 Run Repository | Complete | `python tests/shared/test_run_repository.py` passed 3/3 focused tests. |
+| 2026-08-27 | M5.1 Effective Config Resolver | Complete | `python tests/shared/test_policy.py` passed 4/4 focused tests. |
+| 2026-08-27 | M5.2 Run Loader/Writer | Complete | `python tests/shared/test_run_repository.py` passed 3/3 focused tests. |
 | 2026-08-27 | M5.3 Gate Controller | Complete | `python tests/shared/test_gates.py` passed 4/4 focused tests. |
 | 2026-08-27 | M5.4 Shared Runtime Integration | Complete | `python tests/integration/test_shared_runtime.py` passed 1/1; Math migration gate passed 3/3 suites and 14 checks. |
 | 2026-08-27 | M5.5 Math Subject Module Adapter | Complete | `python subjects/math/tests/test_subject_module.py` passed 4/4; Math migration gate passed 3/3 suites and 14 checks. |
@@ -241,4 +241,4 @@ Unblock each Worksheet Type independently only after its requirements, timing/sc
 | 2026-08-27 | M5.7a Weekly Math Workflow Orchestrator | Complete | `python subjects/math/tests/test_weekly_workflow.py` passed 3/3; Math migration gate passed 3/3 suites and 14 checks. |
 | 2026-08-27 | M5.7b Weekly Math Staging Integration | Complete | `python tests/integration/test_weekly_math_lifecycle.py` passed 1/1 with five Plans, five-day candidate Specs, and 240 fixture Questions; Math migration gate passed 3/3 suites and 14 checks. |
 | 2026-08-27 | M5.8 Worksheet Type Activation | In progress | Compact/Unbranded Worksheet registered as a draft; `python tests/shared/test_policy.py` passed 6/6 and Math migration gate passed 3/3 suites and 14 checks. |
-| 2026-08-28 | M5.8 Worksheet Type Activation | In progress | Dedicated Weekly Worksheet student/key masters registered in `subjects/math/config/template-manifests/weekly-worksheet.json`; renderer now consumes the manifest; policy and reconciliation tests pass. |
+| 2026-08-28 | M5.8 Worksheet Type Activation | In progress | Dedicated Weekly Worksheet student/key masters registered in `subjects/math/config/template-manifests/weekly-worksheet.json`; renderer now consumes the manifest; effective config and reconciliation tests pass. |

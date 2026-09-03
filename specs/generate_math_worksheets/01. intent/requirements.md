@@ -62,7 +62,7 @@ L0. Product
 `-- MTS Worksheet and Assessment Generation
     `-- L1. Full Scope Hierarchy
         |-- L2.1 Area: SP - Setup Project
-        |   |-- L3 Capabilities: Project context, subject modules, supported grades, Worksheet Types, Worksheet Type lifecycle status and compatibility, override policy, model/harness neutrality
+        |   |-- L3 Capabilities: Project context, subject modules, supported grades, Worksheet Types, Worksheet Type lifecycle status and compatibility, override rules, model/harness neutrality
         |   |-- L3 Most Important Capabilities: Default Weekly Worksheet while preserving existing types and supporting approved SAT/ACT Worksheet Types
         |   |-- L3 Slash Commands: Not yet registered
         |   `-- L3 Requirements And Acceptance
@@ -499,7 +499,7 @@ Publication completes **Staging**. Delivery is the separate **Final Delivery** s
 | FR-MW-022 | During a run, shared source code, configuration, master templates, and canonical workflow documents shall be treated as immutable operational infrastructure. |
 | FR-MW-023 | On an execution, verification, rendering, QA, authentication, or publication failure, the affected step shall stop before retrying or producing replacement artifacts, and the observed issue, supporting evidence, and affected artifact state shall be reported. |
 | FR-MW-024 | A change to shared code, configuration, templates, or canonical workflow documents during a run shall require explicit current-user approval, including the smallest proposed change and its gate-invalidation impact. An instruction to continue a run shall not by itself authorize such a change. |
-| FR-MW-025 | Run-local evidence may record commands, diagnostics, and QA results, but shall not alter the approved workflow, policy, or gate requirements. |
+| FR-MW-025 | Run-local evidence may record commands, diagnostics, and QA results, but shall not alter the approved workflow, effective config, or gate requirements. |
 
 ---
 
@@ -518,20 +518,20 @@ Publication completes **Staging**. Delivery is the separate **Final Delivery** s
 | NFR-009 | **Performance:** Valid caches and template revision guards shall reduce repeated expensive work without weakening correctness or QA. |
 | NFR-010 | **Fallback safety:** External research or full template reinspection shall be triggered when cache confidence/freshness is insufficient. |
 | NFR-011 | **Resumability:** Interrupted or reviewed workflows shall resume from the latest valid state instead of unnecessarily restarting. |
-| NFR-012 | **Maintainability:** Stable behavior shall live in canonical requirements/design/skills rather than duplicated prompts or adapters. |
+| NFR-012 | **Maintainability:** Stable behavior shall live in canonical requirements/design/skills and executable source shall be organized by Functional Area capability and subject specialization, not duplicated across prompts, adapters, scripts, or mixed-purpose folders. |
 | NFR-013 | **Portability:** Governing behavior shall remain model-neutral and harness-neutral. |
 | NFR-014 | **Master protection:** Master templates shall never be directly modified during generation. |
-| NFR-015 | **Observability:** Runs shall retain enough state and telemetry to diagnose failures, retries, cache use, approvals, and publication. |
+| NFR-015 | **Observability:** Runs shall retain enough state and telemetry to diagnose failures, retries, cache use, approvals, publication, and links to the affected Subject, Grade/Course, Cycle, Batch, Worksheet, and artifact records. |
 | NFR-016 | **Cache freshness:** Cache use shall never be treated as proof that inferred curriculum is official or current. |
 | NFR-017 | **Batch scalability:** Generating multiple grades/courses together shall not reduce verification, QA, or human-gate quality. |
 | NFR-018 | **Deterministic naming:** File names and worksheet/key pairing shall be predictable and configuration-driven. |
 | NFR-019 | **Backward compatibility:** Introducing Weekly Worksheet as the default shall not remove existing supported Worksheet Types. |
-| NFR-020 | **Behavior preservation:** Migration or optimization shall not be considered successful unless established worksheet-generation functionality remains regression-tested. |
+| NFR-020 | **Behavior preservation:** Migration or optimization shall not be considered successful unless established worksheet-generation functionality remains regression-tested and legacy mixed roots are not retired until replacement source, tests, and data paths pass their regression gate. |
 | NFR-021 | **Artifact reviewability:** Consequential product artifacts shall be concise, structured, traceable, and include a visual summary when relationships, flow, state, hierarchy, boundaries, comparison, or traceability cannot be understood efficiently from prose alone. |
-| NFR-022 | **Lifecycle traceability:** Requirements, architecture, design, implementation, verification evidence, and runtime evidence shall trace to the authoritative Product Idea and the Functional Areas they satisfy. |
-| NFR-023 | **Responsibility placement:** Human approval/accountability, AI interpretation/generation/reasoning, and deterministic software execution shall remain explicitly separated. Repeatable deterministic behavior shall not rely solely on prompts or AI reasoning. |
-| NFR-024 | **Executable quality evidence:** Critical quality attributes, including verification completeness, worksheet/key synchronization, gate enforcement, master-template protection, and publication-pair integrity, shall have automated fitness functions or documented manual verification evidence when automation is not practical. |
-| NFR-025 | **Subject and Worksheet Type extensibility:** New subject modules and Worksheet Types shall be additive and configured through approved knowledge, configuration, templates, verification rules, and tests without changing shared Run control, gate enforcement, artifact synchronization, template protection, publication-pair semantics, or run-evidence behavior unless an approved cross-cutting requirement requires the change. |
+| NFR-022 | **Lifecycle traceability:** Requirements, architecture, design, implementation, verification evidence, and runtime evidence shall trace to the authoritative Product Idea, the Functional Areas they satisfy, and the durable entity hierarchy from Subject to Worksheet when runtime records are involved. |
+| NFR-023 | **Responsibility placement:** Human approval/accountability, AI interpretation/generation/reasoning, deterministic software execution, configuration defaults, master knowledge, and transaction evidence shall remain explicitly separated. Repeatable deterministic behavior shall not rely solely on prompts or AI reasoning, and durable facts shall not be hard-coded in source. |
+| NFR-024 | **Executable quality evidence:** Critical quality attributes, including verification completeness, worksheet/key synchronization, gate enforcement, master-template protection, publication-pair integrity, and repository organization invariants, shall have automated fitness functions or documented manual verification evidence when automation is not practical. |
+| NFR-025 | **Subject and Worksheet Type extensibility:** New subject modules and Worksheet Types shall be additive through subject executable behavior, approved knowledge, configuration, templates, verification rules, and tests without changing shared Run control, gate enforcement, artifact synchronization, template protection, publication-pair semantics, data ownership, or run-evidence behavior unless an approved cross-cutting requirement requires the change. |
 | NFR-026 | **Delivery integrity:** Content reaching the audience shall be byte-identical to the approved published artifact; Final Delivery shall have no capability to alter worksheet or key content. |
 | NFR-027 | **Delivery repeatability:** Re-delivering the same instructional week shall converge on one audience-facing folder per grade/course per week rather than accumulating duplicates, so the audience is never presented with ambiguous versions. |
 
