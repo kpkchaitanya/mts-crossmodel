@@ -6,7 +6,7 @@
       "gate": "scope_review",
       "grade_or_course": "grade_1",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.038136+00:00",
+      "recorded_at": "2026-09-03T20:55:08.543912+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -16,7 +16,7 @@
       "gate": "question_review",
       "grade_or_course": "grade_1",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.038568+00:00",
+      "recorded_at": "2026-09-03T20:55:08.544646+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -26,7 +26,7 @@
       "gate": "verification_review",
       "grade_or_course": "grade_1",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.038911+00:00",
+      "recorded_at": "2026-09-03T20:55:08.545341+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -36,7 +36,7 @@
       "gate": "formatting_review",
       "grade_or_course": "grade_1",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.039473+00:00",
+      "recorded_at": "2026-09-03T20:55:08.545949+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -46,7 +46,7 @@
       "gate": "publish_approval",
       "grade_or_course": "grade_1",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.039981+00:00",
+      "recorded_at": "2026-09-03T20:55:08.546277+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -56,7 +56,7 @@
       "gate": "scope_review",
       "grade_or_course": "grade_5",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.062239+00:00",
+      "recorded_at": "2026-09-03T20:55:08.560905+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -66,7 +66,7 @@
       "gate": "question_review",
       "grade_or_course": "grade_5",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.063017+00:00",
+      "recorded_at": "2026-09-03T20:55:08.561536+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -76,7 +76,7 @@
       "gate": "verification_review",
       "grade_or_course": "grade_5",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.063393+00:00",
+      "recorded_at": "2026-09-03T20:55:08.561749+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -86,7 +86,7 @@
       "gate": "formatting_review",
       "grade_or_course": "grade_5",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.063847+00:00",
+      "recorded_at": "2026-09-03T20:55:08.561958+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -96,7 +96,7 @@
       "gate": "publish_approval",
       "grade_or_course": "grade_5",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.064645+00:00",
+      "recorded_at": "2026-09-03T20:55:08.562165+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -106,7 +106,7 @@
       "gate": "scope_review",
       "grade_or_course": "grade_9_10",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.079623+00:00",
+      "recorded_at": "2026-09-03T20:55:08.576494+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -116,7 +116,7 @@
       "gate": "question_review",
       "grade_or_course": "grade_9_10",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.079909+00:00",
+      "recorded_at": "2026-09-03T20:55:08.577060+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -126,7 +126,7 @@
       "gate": "verification_review",
       "grade_or_course": "grade_9_10",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.080149+00:00",
+      "recorded_at": "2026-09-03T20:55:08.577340+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -136,7 +136,7 @@
       "gate": "formatting_review",
       "grade_or_course": "grade_9_10",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.080384+00:00",
+      "recorded_at": "2026-09-03T20:55:08.577719+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -146,7 +146,7 @@
       "gate": "publish_approval",
       "grade_or_course": "grade_9_10",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:51.080606+00:00",
+      "recorded_at": "2026-09-03T20:55:08.578317+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     }
@@ -167,7 +167,7 @@
   "run_id": "run-test-generate-worksheet-confirmed-grades",
   "status": "publish_ready_sample",
   "subject": "math",
-  "variation_seed": 20260903174651,
+  "variation_seed": 20260903205508,
   "verification_required": true,
   "week_start": "2026-09-07",
   "worksheet_type": "weekly-worksheet"

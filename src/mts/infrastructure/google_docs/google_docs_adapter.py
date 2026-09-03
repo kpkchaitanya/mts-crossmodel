@@ -13,6 +13,7 @@ class GoogleDocsAdapter:
     """Copy, render, inspect, and publish worksheet document pairs through injected clients."""
 
     placeholder = "{{CONTENT}}"
+    folder_mime_type = "application/vnd.google-apps.folder"
 
     def __init__(self, drive: Any, docs: Any) -> None:
         self.drive = drive
@@ -132,6 +133,63 @@ class GoogleDocsAdapter:
         if not created.get("id"):
             raise GoogleDocsAdapterError("Google Drive did not return an ID for the created folder.")
         return {**created, "created": True}
+
+    def list_child_files(self, folder_id: str) -> list[dict[str, Any]]:
+        """Return non-trashed, non-folder direct children of `folder_id`."""
+        if not folder_id:
+            raise GoogleDocsAdapterError("folder_id is required.")
+        query = (
+            f"'{folder_id}' in parents"
+            f" and mimeType != '{self.folder_mime_type}' and trashed = false"
+        )
+        return self._list_all(query, order_by="createdTime desc")
+
+    def list_child_folders(self, folder_id: str) -> list[dict[str, Any]]:
+        """Return non-trashed direct child folders of `folder_id`, newest first."""
+        if not folder_id:
+            raise GoogleDocsAdapterError("folder_id is required.")
+        query = (
+            f"'{folder_id}' in parents"
+            f" and mimeType = '{self.folder_mime_type}' and trashed = false"
+        )
+        return self._list_all(query, order_by="createdTime desc")
+
+    def move_file(self, file_id: str, destination_id: str) -> dict[str, Any]:
+        """Re-parent one file, confirming the destination before reporting success."""
+        if not file_id or not destination_id:
+            raise GoogleDocsAdapterError("file_id and destination_id are required.")
+        metadata = self.drive.files().get(fileId=file_id, fields="id,name,parents,webViewLink").execute()
+        current_parents = metadata.get("parents", [])
+        if current_parents == [destination_id]:
+            return metadata
+        moved = self.drive.files().update(
+            fileId=file_id,
+            addParents=destination_id,
+            removeParents=",".join(current_parents),
+            fields="id,name,parents,webViewLink",
+        ).execute()
+        if destination_id not in moved.get("parents", []):
+            raise GoogleDocsAdapterError("Moved file is not in the requested destination.")
+        return moved
+
+    def _list_all(self, query: str, *, order_by: str | None = None) -> list[dict[str, Any]]:
+        results: list[dict[str, Any]] = []
+        page_token: str | None = None
+        while True:
+            parameters: dict[str, Any] = {
+                "q": query,
+                "fields": "nextPageToken, files(id,name,mimeType,createdTime,webViewLink)",
+                "pageSize": 1000,
+            }
+            if order_by:
+                parameters["orderBy"] = order_by
+            if page_token:
+                parameters["pageToken"] = page_token
+            response = self.drive.files().list(**parameters).execute()
+            results.extend(response.get("files", []))
+            page_token = response.get("nextPageToken")
+            if not page_token:
+                return results
 
     def deliver_pair(
         self,

@@ -14,13 +14,13 @@
       "slots": [
         {
           "cache_hit": false,
-          "cognitive_action": "estimate",
+          "cognitive_action": "evaluate_reasonableness",
           "confidence": "inferred",
           "difficulty": "low_plus",
-          "form_family": "generic.estimate",
+          "form_family": "generic.reasonable_answer",
           "number": 1,
-          "representation": "rounded_values",
-          "response_type": "numeric_answer",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
           "section_id": "monday",
           "section_title": "Foundation",
           "skill": "expression structure",
@@ -28,16 +28,16 @@
           "source_kind": "fallback",
           "source_scope": "math_1",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "solve_unknown",
+          "cognitive_action": "compute",
           "confidence": "inferred",
           "difficulty": "low_plus",
-          "form_family": "generic.missing_value",
+          "form_family": "generic.direct_compute",
           "number": 2,
-          "representation": "equation",
+          "representation": "symbolic_expression",
           "response_type": "numeric_answer",
           "section_id": "monday",
           "section_title": "Foundation",
@@ -46,16 +46,16 @@
           "source_kind": "fallback",
           "source_scope": "math_1",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "connect_representations",
+          "cognitive_action": "extend_pattern",
           "confidence": "inferred",
           "difficulty": "medium",
-          "form_family": "generic.multi_representation",
+          "form_family": "generic.sequence_pattern",
           "number": 3,
-          "representation": "mixed_numeric_visual",
+          "representation": "sequence",
           "response_type": "numeric_answer",
           "section_id": "monday",
           "section_title": "Foundation",
@@ -64,16 +64,16 @@
           "source_kind": "fallback",
           "source_scope": "math_1",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "compare",
+          "cognitive_action": "decide",
           "confidence": "inferred",
           "difficulty": "medium",
-          "form_family": "generic.compare_select",
+          "form_family": "generic.decision_table",
           "number": 4,
-          "representation": "numeric_or_verbal_choices",
+          "representation": "decision_table",
           "response_type": "selection",
           "section_id": "monday",
           "section_title": "Foundation",
@@ -82,16 +82,16 @@
           "source_kind": "fallback",
           "source_scope": "math_1",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "analyze_exception",
+          "cognitive_action": "interpret",
           "confidence": "inferred",
           "difficulty": "medium",
-          "form_family": "generic.find_counterexample",
+          "form_family": "generic.visual_grouping",
           "number": 5,
-          "representation": "numeric_condition",
+          "representation": "array_or_grouping",
           "response_type": "numeric_answer",
           "section_id": "monday",
           "section_title": "Foundation",
@@ -100,7 +100,7 @@
           "source_kind": "fallback",
           "source_scope": "math_1",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         }
       ],
       "title": "Foundation"
@@ -110,12 +110,12 @@
       "slots": [
         {
           "cache_hit": false,
-          "cognitive_action": "solve_unknown",
+          "cognitive_action": "estimate",
           "confidence": "inferred",
           "difficulty": "low_plus",
-          "form_family": "generic.missing_value",
+          "form_family": "generic.estimate",
           "number": 6,
-          "representation": "equation",
+          "representation": "rounded_values",
           "response_type": "numeric_answer",
           "section_id": "tuesday",
           "section_title": "Discover",
@@ -124,17 +124,17 @@
           "source_kind": "fallback",
           "source_scope": "math_1",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "estimate",
+          "cognitive_action": "evaluate_reasonableness",
           "confidence": "inferred",
           "difficulty": "medium",
-          "form_family": "generic.estimate",
+          "form_family": "generic.reasonable_answer",
           "number": 7,
-          "representation": "rounded_values",
-          "response_type": "numeric_answer",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
           "section_id": "tuesday",
           "section_title": "Discover",
           "skill": "exponent rules",
@@ -142,17 +142,17 @@
           "source_kind": "fallback",
           "source_scope": "math_1",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "compare",
+          "cognitive_action": "decide",
           "confidence": "inferred",
           "difficulty": "medium",
-          "form_family": "generic.two_way_compare",
+          "form_family": "generic.decision_table",
           "number": 8,
-          "representation": "two_value_context",
-          "response_type": "numeric_answer",
+          "representation": "decision_table",
+          "response_type": "selection",
           "section_id": "tuesday",
           "section_title": "Discover",
           "skill": "quantitative reasoning",
@@ -160,17 +160,17 @@
           "source_kind": "fallback",
           "source_scope": "math_1",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "complete",
+          "cognitive_action": "order",
           "confidence": "inferred",
           "difficulty": "medium",
-          "form_family": "generic.table_complete",
+          "form_family": "generic.sort_order",
           "number": 9,
-          "representation": "input_output_table",
-          "response_type": "numeric_answer",
+          "representation": "number_set",
+          "response_type": "ordered_list",
           "section_id": "tuesday",
           "section_title": "Discover",
           "skill": "exponent rules",
@@ -178,17 +178,17 @@
           "source_kind": "fallback",
           "source_scope": "math_1",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "connect_representations",
+          "cognitive_action": "evaluate_reasonableness",
           "confidence": "inferred",
           "difficulty": "medium_plus",
-          "form_family": "generic.multi_representation",
+          "form_family": "generic.error_check",
           "number": 10,
-          "representation": "mixed_numeric_visual",
-          "response_type": "numeric_answer",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
           "section_id": "tuesday",
           "section_title": "Discover",
           "skill": "formula manipulation",
@@ -196,7 +196,7 @@
           "source_kind": "fallback",
           "source_scope": "math_1",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         }
       ],
       "title": "Discover"
@@ -206,12 +206,12 @@
       "slots": [
         {
           "cache_hit": false,
-          "cognitive_action": "compose_operations",
+          "cognitive_action": "interpret",
           "confidence": "inferred",
           "difficulty": "medium",
-          "form_family": "generic.multi_step",
+          "form_family": "generic.visual_grouping",
           "number": 11,
-          "representation": "multi_step_context",
+          "representation": "array_or_grouping",
           "response_type": "numeric_answer",
           "section_id": "wednesday",
           "section_title": "Practice",
@@ -220,17 +220,17 @@
           "source_kind": "fallback",
           "source_scope": "math_1",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "evaluate_reasonableness",
+          "cognitive_action": "connect_representations",
           "confidence": "inferred",
           "difficulty": "medium",
-          "form_family": "generic.error_check",
+          "form_family": "generic.multi_representation",
           "number": 12,
-          "representation": "worked_example_or_claim",
-          "response_type": "selection",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
           "section_id": "wednesday",
           "section_title": "Practice",
           "skill": "exponent rules",
@@ -238,16 +238,16 @@
           "source_kind": "fallback",
           "source_scope": "math_1",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "reverse_reason",
+          "cognitive_action": "estimate",
           "confidence": "inferred",
           "difficulty": "medium",
-          "form_family": "generic.reverse_reasoning",
+          "form_family": "generic.estimate",
           "number": 13,
-          "representation": "equation_or_context",
+          "representation": "rounded_values",
           "response_type": "numeric_answer",
           "section_id": "wednesday",
           "section_title": "Practice",
@@ -256,16 +256,16 @@
           "source_kind": "fallback",
           "source_scope": "math_1",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "construct_equivalent",
+          "cognitive_action": "extend_pattern",
           "confidence": "inferred",
           "difficulty": "medium_plus",
-          "form_family": "generic.create_equivalent",
+          "form_family": "generic.sequence_pattern",
           "number": 14,
-          "representation": "numeric_or_symbolic_expression",
+          "representation": "sequence",
           "response_type": "numeric_answer",
           "section_id": "wednesday",
           "section_title": "Practice",
@@ -274,16 +274,16 @@
           "source_kind": "fallback",
           "source_scope": "math_2",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "solve_unknown",
+          "cognitive_action": "decompose",
           "confidence": "inferred",
           "difficulty": "medium_plus",
-          "form_family": "generic.missing_value",
+          "form_family": "generic.compose_decompose",
           "number": 15,
-          "representation": "equation",
+          "representation": "part_whole_numeric",
           "response_type": "numeric_answer",
           "section_id": "wednesday",
           "section_title": "Practice",
@@ -292,7 +292,7 @@
           "source_kind": "fallback",
           "source_scope": "math_2",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         }
       ],
       "title": "Practice"
@@ -302,12 +302,12 @@
       "slots": [
         {
           "cache_hit": false,
-          "cognitive_action": "translate",
+          "cognitive_action": "model",
           "confidence": "inferred",
           "difficulty": "medium",
-          "form_family": "generic.equivalent_form",
+          "form_family": "generic.context_story",
           "number": 16,
-          "representation": "equivalent_expression",
+          "representation": "word_problem",
           "response_type": "numeric_answer",
           "section_id": "thursday",
           "section_title": "Apply and Review",
@@ -316,17 +316,17 @@
           "source_kind": "fallback",
           "source_scope": "math_2",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "order",
+          "cognitive_action": "match",
           "confidence": "inferred",
           "difficulty": "medium",
-          "form_family": "generic.sort_order",
+          "form_family": "generic.match_rule",
           "number": 17,
-          "representation": "number_set",
-          "response_type": "ordered_list",
+          "representation": "rule_and_values",
+          "response_type": "selection",
           "section_id": "thursday",
           "section_title": "Apply and Review",
           "skill": "exponent rules",
@@ -334,16 +334,16 @@
           "source_kind": "fallback",
           "source_scope": "math_2",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "construct",
+          "cognitive_action": "interpret",
           "confidence": "inferred",
           "difficulty": "medium_plus",
-          "form_family": "generic.construct_example",
+          "form_family": "generic.visual_grouping",
           "number": 18,
-          "representation": "open_numeric_condition",
+          "representation": "array_or_grouping",
           "response_type": "numeric_answer",
           "section_id": "thursday",
           "section_title": "Apply and Review",
@@ -352,16 +352,16 @@
           "source_kind": "fallback",
           "source_scope": "math_2",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "compose_operations",
+          "cognitive_action": "analyze_exception",
           "confidence": "inferred",
           "difficulty": "medium_plus",
-          "form_family": "generic.multi_step",
+          "form_family": "generic.find_counterexample",
           "number": 19,
-          "representation": "multi_step_context",
+          "representation": "numeric_condition",
           "response_type": "numeric_answer",
           "section_id": "thursday",
           "section_title": "Apply and Review",
@@ -370,17 +370,17 @@
           "source_kind": "fallback",
           "source_scope": "math_2",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "evaluate_reasonableness",
+          "cognitive_action": "construct",
           "confidence": "inferred",
           "difficulty": "high",
-          "form_family": "generic.reasonable_answer",
+          "form_family": "generic.construct_example",
           "number": 20,
-          "representation": "answer_choice_context",
-          "response_type": "selection",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
           "section_id": "thursday",
           "section_title": "Apply and Review",
           "skill": "formula manipulation",
@@ -388,7 +388,7 @@
           "source_kind": "fallback",
           "source_scope": "math_2",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         }
       ],
       "title": "Apply and Review"
@@ -398,12 +398,12 @@
       "slots": [
         {
           "cache_hit": false,
-          "cognitive_action": "retrieve",
+          "cognitive_action": "solve_unknown",
           "confidence": "inferred",
           "difficulty": "medium",
-          "form_family": "generic.representation_read",
+          "form_family": "generic.missing_value",
           "number": 21,
-          "representation": "table_graph_or_diagram",
+          "representation": "equation",
           "response_type": "numeric_answer",
           "section_id": "friday",
           "section_title": "Mastery",
@@ -412,16 +412,16 @@
           "source_kind": "fallback",
           "source_scope": "math_2",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "interpret",
+          "cognitive_action": "construct_equivalent",
           "confidence": "inferred",
           "difficulty": "medium_plus",
-          "form_family": "generic.visual_grouping",
+          "form_family": "generic.create_equivalent",
           "number": 22,
-          "representation": "array_or_grouping",
+          "representation": "numeric_or_symbolic_expression",
           "response_type": "numeric_answer",
           "section_id": "friday",
           "section_title": "Mastery",
@@ -430,16 +430,16 @@
           "source_kind": "fallback",
           "source_scope": "math_2",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "model",
+          "cognitive_action": "complete",
           "confidence": "inferred",
           "difficulty": "medium_plus",
-          "form_family": "generic.context_story",
+          "form_family": "generic.table_complete",
           "number": 23,
-          "representation": "word_problem",
+          "representation": "input_output_table",
           "response_type": "numeric_answer",
           "section_id": "friday",
           "section_title": "Mastery",
@@ -448,17 +448,17 @@
           "source_kind": "fallback",
           "source_scope": "math_2",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "match",
+          "cognitive_action": "retrieve",
           "confidence": "inferred",
           "difficulty": "high",
-          "form_family": "generic.match_rule",
+          "form_family": "generic.representation_read",
           "number": 24,
-          "representation": "rule_and_values",
-          "response_type": "selection",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
           "section_id": "friday",
           "section_title": "Mastery",
           "skill": "exponent rules",
@@ -466,16 +466,16 @@
           "source_kind": "fallback",
           "source_scope": "math_2",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         },
         {
           "cache_hit": false,
-          "cognitive_action": "reverse_reason",
+          "cognitive_action": "compute",
           "confidence": "inferred",
           "difficulty": "high",
-          "form_family": "generic.reverse_reasoning",
+          "form_family": "generic.direct_compute",
           "number": 25,
-          "representation": "equation_or_context",
+          "representation": "symbolic_expression",
           "response_type": "numeric_answer",
           "section_id": "friday",
           "section_title": "Mastery",
@@ -484,13 +484,13 @@
           "source_kind": "fallback",
           "source_scope": "math_2",
           "standards": [],
-          "variation_seed": 20260903174651
+          "variation_seed": 20260903205508
         }
       ],
       "title": "Mastery"
     }
   ],
   "source_chain": "yearly_curriculum -> weekly_curriculum -> worksheet_plan -> question_plan -> worksheet_spec",
-  "variation_seed": 20260903174651,
+  "variation_seed": 20260903205508,
   "worksheet_type": "weekly-worksheet"
 }

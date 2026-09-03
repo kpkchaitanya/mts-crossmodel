@@ -6,7 +6,7 @@
       "gate": "scope_review",
       "grade_or_course": "grade_6",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:50.304418+00:00",
+      "recorded_at": "2026-09-03T20:55:07.935451+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -16,7 +16,7 @@
       "gate": "question_review",
       "grade_or_course": "grade_6",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:50.304877+00:00",
+      "recorded_at": "2026-09-03T20:55:07.936238+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -26,7 +26,7 @@
       "gate": "verification_review",
       "grade_or_course": "grade_6",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:50.305201+00:00",
+      "recorded_at": "2026-09-03T20:55:07.936513+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -36,7 +36,7 @@
       "gate": "formatting_review",
       "grade_or_course": "grade_6",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:50.305632+00:00",
+      "recorded_at": "2026-09-03T20:55:07.936728+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -46,7 +46,7 @@
       "gate": "publish_approval",
       "grade_or_course": "grade_6",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:46:50.306240+00:00",
+      "recorded_at": "2026-09-03T20:55:07.936947+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     }
@@ -67,7 +67,7 @@
   "run_id": "run-test-generate-real-questions",
   "status": "publish_ready_sample",
   "subject": "math",
-  "variation_seed": 20260903174650,
+  "variation_seed": 20260903205507,
   "verification_required": true,
   "week_start": "2026-09-07",
   "worksheet_type": "weekly-worksheet"

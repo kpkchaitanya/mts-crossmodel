@@ -173,6 +173,14 @@ canonical `outputs/<subject>/`.
       <td style="border: 1px solid #6b7280;">Planned; output policy active</td>
     </tr>
     <tr>
+      <td style="border: 1px solid #6b7280;">Archive Folder (ARC)</td>
+      <td style="border: 1px solid #6b7280;"><code>/archive-folder</code></td>
+      <td style="border: 1px solid #6b7280;">Publishing utility; moves a folder's previous set of loose files into its <code>Archive</code> child folder, in folder mode or in the latest/dated child of a parent folder. Dry run by default. See <code>commands/archive-folder.md</code>.</td>
+      <td style="border: 1px solid #6b7280;"><code>/archive-folder folder=publish foldertype=parent folderdate=latest</code></td>
+      <td style="border: 1px solid #6b7280;">Active; subject-agnostic utility</td>
+      <td style="border: 1px solid #6b7280;">Active; subject-agnostic utility</td>
+    </tr>
+    <tr>
       <td style="border: 1px solid #6b7280;">Manage Templates (MT)</td>
       <td style="border: 1px solid #6b7280;">Not yet registered</td>
       <td style="border: 1px solid #6b7280;">Maintain template registration, revision manifests, cache validity, fallback templates, and controlled template promotion.</td>

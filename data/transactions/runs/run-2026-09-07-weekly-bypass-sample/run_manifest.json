@@ -6,7 +6,7 @@
       "gate": "scope_review",
       "grade_or_course": "grade_1",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:30.963984+00:00",
+      "recorded_at": "2026-09-03T20:55:09.024143+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -16,7 +16,7 @@
       "gate": "question_review",
       "grade_or_course": "grade_1",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:30.964324+00:00",
+      "recorded_at": "2026-09-03T20:55:09.024673+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -26,7 +26,7 @@
       "gate": "verification_review",
       "grade_or_course": "grade_1",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:30.964704+00:00",
+      "recorded_at": "2026-09-03T20:55:09.025523+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -36,7 +36,7 @@
       "gate": "formatting_review",
       "grade_or_course": "grade_1",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:30.965010+00:00",
+      "recorded_at": "2026-09-03T20:55:09.026049+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -46,7 +46,7 @@
       "gate": "publish_approval",
       "grade_or_course": "grade_1",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:30.965561+00:00",
+      "recorded_at": "2026-09-03T20:55:09.026791+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -56,7 +56,7 @@
       "gate": "scope_review",
       "grade_or_course": "grade_4",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:30.980961+00:00",
+      "recorded_at": "2026-09-03T20:55:09.045911+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -66,7 +66,7 @@
       "gate": "question_review",
       "grade_or_course": "grade_4",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:30.981502+00:00",
+      "recorded_at": "2026-09-03T20:55:09.046598+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -76,7 +76,7 @@
       "gate": "verification_review",
       "grade_or_course": "grade_4",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:30.982051+00:00",
+      "recorded_at": "2026-09-03T20:55:09.047225+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -86,7 +86,7 @@
       "gate": "formatting_review",
       "grade_or_course": "grade_4",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:30.982706+00:00",
+      "recorded_at": "2026-09-03T20:55:09.048789+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -96,7 +96,7 @@
       "gate": "publish_approval",
       "grade_or_course": "grade_4",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:30.983051+00:00",
+      "recorded_at": "2026-09-03T20:55:09.049423+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -106,7 +106,7 @@
       "gate": "scope_review",
       "grade_or_course": "grade_5",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:30.999489+00:00",
+      "recorded_at": "2026-09-03T20:55:09.062544+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -116,7 +116,7 @@
       "gate": "question_review",
       "grade_or_course": "grade_5",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.001203+00:00",
+      "recorded_at": "2026-09-03T20:55:09.063247+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -126,7 +126,7 @@
       "gate": "verification_review",
       "grade_or_course": "grade_5",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.002414+00:00",
+      "recorded_at": "2026-09-03T20:55:09.063624+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -136,7 +136,7 @@
       "gate": "formatting_review",
       "grade_or_course": "grade_5",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.003101+00:00",
+      "recorded_at": "2026-09-03T20:55:09.064067+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -146,7 +146,7 @@
       "gate": "publish_approval",
       "grade_or_course": "grade_5",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.003893+00:00",
+      "recorded_at": "2026-09-03T20:55:09.065353+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -156,7 +156,7 @@
       "gate": "scope_review",
       "grade_or_course": "grade_6",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.016356+00:00",
+      "recorded_at": "2026-09-03T20:55:09.077049+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -166,7 +166,7 @@
       "gate": "question_review",
       "grade_or_course": "grade_6",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.017295+00:00",
+      "recorded_at": "2026-09-03T20:55:09.077330+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -176,7 +176,7 @@
       "gate": "verification_review",
       "grade_or_course": "grade_6",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.018293+00:00",
+      "recorded_at": "2026-09-03T20:55:09.077631+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -186,7 +186,7 @@
       "gate": "formatting_review",
       "grade_or_course": "grade_6",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.018823+00:00",
+      "recorded_at": "2026-09-03T20:55:09.077953+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -196,7 +196,7 @@
       "gate": "publish_approval",
       "grade_or_course": "grade_6",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.019318+00:00",
+      "recorded_at": "2026-09-03T20:55:09.078316+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -206,7 +206,7 @@
       "gate": "scope_review",
       "grade_or_course": "grade_9_10",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.029157+00:00",
+      "recorded_at": "2026-09-03T20:55:09.089384+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -216,7 +216,7 @@
       "gate": "question_review",
       "grade_or_course": "grade_9_10",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.029425+00:00",
+      "recorded_at": "2026-09-03T20:55:09.089664+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -226,7 +226,7 @@
       "gate": "verification_review",
       "grade_or_course": "grade_9_10",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.029689+00:00",
+      "recorded_at": "2026-09-03T20:55:09.089935+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -236,7 +236,7 @@
       "gate": "formatting_review",
       "grade_or_course": "grade_9_10",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.029920+00:00",
+      "recorded_at": "2026-09-03T20:55:09.090222+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     },
@@ -246,7 +246,7 @@
       "gate": "publish_approval",
       "grade_or_course": "grade_9_10",
       "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
-      "recorded_at": "2026-09-03T17:35:31.030184+00:00",
+      "recorded_at": "2026-09-03T20:55:09.090498+00:00",
       "reviewer": "current-user-instruction",
       "status": "approved"
     }
@@ -267,7 +267,7 @@
   "run_id": "run-2026-09-07-weekly-bypass-sample",
   "status": "publish_ready_sample",
   "subject": "math",
-  "variation_seed": 20260903173530,
+  "variation_seed": 20260903205508,
   "verification_required": true,
   "week_start": "2026-09-07",
   "worksheet_type": "weekly-worksheet"

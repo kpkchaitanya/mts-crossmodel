@@ -62,6 +62,24 @@ publishing:
     # copy keeps staging intact as the audit trail; move would empty staging on delivery.
     mode: "copy"
     deliver_answer_key: true
+  # Housekeeping utility: moves the previous set's loose files into an Archive child folder so a
+  # target folder presents only the current set. Never renders, edits, deletes, or approves anything.
+  archive:
+    enabled: true
+    archive_folder_name: "Archive"
+    # Presets reference canonical destination keys; folder IDs are never duplicated here.
+    targets:
+      staging:
+        folder_type: "folder"
+        source: "publishing.staging.approved_folder_id"
+      publish:
+        folder_type: "parent"
+        source: "publishing.final_delivery.destinations_by_grade"
+        default_folder_date: "latest"
+    # Automatic in-pipeline archiving; off until the hooks are separately designed and approved.
+    auto_archive:
+      before_render: false
+      before_delivery: false
 telemetry:
   runs_root: "runs"
   unavailable_authoritative_values: null

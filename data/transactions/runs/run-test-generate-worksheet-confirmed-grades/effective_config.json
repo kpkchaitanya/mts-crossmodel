@@ -126,6 +126,25 @@
     "timezone": "America/New_York"
   },
   "publishing": {
+    "archive": {
+      "archive_folder_name": "Archive",
+      "auto_archive": {
+        "before_delivery": false,
+        "before_render": false
+      },
+      "enabled": true,
+      "targets": {
+        "publish": {
+          "default_folder_date": "latest",
+          "folder_type": "parent",
+          "source": "publishing.final_delivery.destinations_by_grade"
+        },
+        "staging": {
+          "folder_type": "folder",
+          "source": "publishing.staging.approved_folder_id"
+        }
+      }
+    },
     "default_publish": true,
     "final_delivery": {
       "audience": "parents",
