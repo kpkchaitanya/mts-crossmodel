@@ -41,8 +41,6 @@ formatting:
   answer_rounding_noise_threshold: 3
 publishing:
   require_configured_final_gate: true
-  outputs_root: "outputs"
-  staging_root: "outputs-copilot"
   # Default for the /generate-worksheet `publish` parameter; explicit `publish=no` overrides per run.
   default_publish: true
   # Staging holds work-in-progress and post-Gate-5 approved artifacts; it is never the audience-facing
