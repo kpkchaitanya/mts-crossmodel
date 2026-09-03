@@ -172,6 +172,19 @@ class GoogleDocsAdapter:
             raise GoogleDocsAdapterError("Moved file is not in the requested destination.")
         return moved
 
+    def trash_file(self, file_id: str) -> dict[str, Any]:
+        """Move one file to Drive Trash; this adapter never permanently deletes."""
+        if not file_id:
+            raise GoogleDocsAdapterError("file_id is required.")
+        trashed = self.drive.files().update(
+            fileId=file_id,
+            body={"trashed": True},
+            fields="id,name,trashed,webViewLink",
+        ).execute()
+        if not trashed.get("trashed"):
+            raise GoogleDocsAdapterError("Drive did not report the file as trashed.")
+        return trashed
+
     def _list_all(self, query: str, *, order_by: str | None = None) -> list[dict[str, Any]]:
         results: list[dict[str, Any]] = []
         page_token: str | None = None

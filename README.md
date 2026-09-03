@@ -181,6 +181,14 @@ canonical `outputs/<subject>/`.
       <td style="border: 1px solid #6b7280;">Active; subject-agnostic utility</td>
     </tr>
     <tr>
+      <td style="border: 1px solid #6b7280;">Cleanup Folder (CLN)</td>
+      <td style="border: 1px solid #6b7280;"><code>/cleanup-folder</code></td>
+      <td style="border: 1px solid #6b7280;">Destructive companion to <code>/archive-folder</code>; trashes loose files, <code>Archive</code> contents, or both. Drive Trash only, never a permanent delete; never deletes folders. Requires a matching <code>--confirm</code> count and is gated by <code>publishing.cleanup.enabled</code>. See <code>commands/cleanup-folder.md</code>.</td>
+      <td style="border: 1px solid #6b7280;"><code>/cleanup-folder folder=staging scope=archive</code></td>
+      <td style="border: 1px solid #6b7280;">Active; subject-agnostic utility</td>
+      <td style="border: 1px solid #6b7280;">Active; subject-agnostic utility</td>
+    </tr>
+    <tr>
       <td style="border: 1px solid #6b7280;">Manage Templates (MT)</td>
       <td style="border: 1px solid #6b7280;">Not yet registered</td>
       <td style="border: 1px solid #6b7280;">Maintain template registration, revision manifests, cache validity, fallback templates, and controlled template promotion.</td>

@@ -24,6 +24,7 @@ class FakeFiles:
         self.updates = []
         self.folders = {}
         self.list_queries = []
+        self.trashed = []
         self._sequence = 0
 
     def _next_created_time(self):
@@ -96,8 +97,12 @@ class FakeFiles:
         folder_id = f"folder-{len(self.folders) + 1}"
         return Request(dict(self.add_folder(folder_id, body["name"], body["parents"][0])))
 
-    def update(self, *, fileId, addParents, removeParents, fields):
+    def update(self, *, fileId, fields, addParents=None, removeParents=None, body=None):
         document = self.documents[fileId]
+        if body and "trashed" in body:
+            document["trashed"] = body["trashed"]
+            self.trashed.append(fileId)
+            return Request(dict(document))
         document["parents"] = [addParents]
         self.updates.append({"file_id": fileId, "add_parents": addParents, "remove_parents": removeParents})
         return Request(dict(document))
@@ -313,6 +318,18 @@ def test_move_file_requires_both_ids():
         raise AssertionError("A missing destination must fail closed.")
 
 
+def test_trash_file_marks_the_file_trashed_and_never_deletes():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+    drive.file_service.add_file("doc-1", "Grade 6", "week-folder")
+
+    trashed = adapter.trash_file("doc-1")
+
+    assert trashed["trashed"] is True
+    assert drive.file_service.trashed == ["doc-1"]
+    assert not hasattr(drive.file_service, "deleted")
+
+
 def main():
     tests = [
         test_render_pair_copies_masters_and_replaces_placeholder,
@@ -326,6 +343,7 @@ def main():
         test_list_child_folders_returns_newest_first,
         test_move_file_reparents_and_is_a_no_op_when_already_in_destination,
         test_move_file_requires_both_ids,
+        test_trash_file_marks_the_file_trashed_and_never_deletes,
     ]
     for test in tests:
         test()

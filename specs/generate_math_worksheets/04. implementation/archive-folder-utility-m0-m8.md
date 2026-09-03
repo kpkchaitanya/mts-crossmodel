@@ -1,6 +1,6 @@
 # Archive Folder Utility - M0-M8 Feature Record
 
-Status: Complete through M7; M8 open
+Status: Archive complete through M7; M8 open. Cleanup implemented, live validation pending
 Owner: MTS Publishing
 Requested: 2026-09-03
 Change type: Enhancement (publishing utility)
@@ -199,3 +199,35 @@ Phases 1-6 complete; 128 tests pass. Validated live on 2026-09-03:
 
 Acceptance criteria 1-9 are demonstrated. Remaining decision (M8): whether to design the
 `auto_archive` pipeline hooks in utility-design section 2.8; both flags stay `false` until then.
+
+## Follow-on: Cleanup Folder utility
+
+Requested 2026-09-03. Same requirement as Archive Folder with a different terminal action: trash files
+instead of moving them into `Archive`. Canonical design: utility-design section 3.
+
+### Decisions
+
+- Deletion means **Drive Trash**, never `files.delete`. Permanent deletion is deliberately not
+  implemented, because Trash restoration is the utility's only rollback.
+- `scope` selects the target set: `files` (default, mirrors archive), `archive` (purge the `Archive`
+  child), or `both`. The default keeps an omitted `scope` behaving like archive.
+- Folders are never deleted, including an `Archive` folder that cleanup empties.
+- `publishing.cleanup.enabled` shipped `false` and was enabled on 2026-09-03 after review; it remains
+  the utility's kill switch.
+- An applying run requires `--confirm <count>` matching the plan **at apply time**. A mismatch refuses
+  and deletes nothing. This was motivated by observed behavior: staging contents changed twice within
+  minutes during Archive's validation, so a reviewed dry run does not guarantee a stable target.
+- Resolution is extracted and shared with archive rather than copied, so the two utilities can never
+  disagree about which folder a request means.
+
+### Status
+
+| Step | Status | Evidence / next action |
+|---|---|---|
+| Shared resolution extracted | Complete | `resolve_effective_folder`, `existing_archive_folder`, `overall_status` lifted out of `_archive_one`; full suite re-run unchanged. |
+| `trash_file` adapter primitive | Complete | Confirms the resulting `trashed` state; never calls `files.delete`. |
+| `publishing.cleanup` config | Complete | Ships `enabled: false`, `default_scope: files`, `require_confirmation: true`. |
+| `src/mts/publishing/cleanup.py` | Complete | Scope resolution, `run_cleanup`, confirmation guard, per-target failure isolation. |
+| CLI, command, prompt, README | Complete | `scripts/cleanup_folder.py`, `commands/cleanup-folder.md`, prompt entry point, README row. |
+| Tests | Complete | 16 cleanup tests including scope coverage, confirmation refusals, folder-safety, shared-resolution equivalence, and the no-logic-in-script guard. Full suite: 144 passing. |
+| Live validation | Partial | 2026-09-03: `scope=files` applied to staging and Grade 6 `Week_2026-08-31` with matching `--confirm 2`; 4 files trashed, re-run recorded a no-op, `Archive` folders untouched. `scope=archive`/`both` and the confirmation-mismatch refusal are covered by tests but not yet exercised live. |

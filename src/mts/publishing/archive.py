@@ -194,6 +194,55 @@ def build_target_record(
     return record
 
 
+def resolve_effective_folder(
+    target: Mapping[str, Any],
+    adapter: Any,
+    *,
+    archive_folder_name: str,
+    folder_date: str | None,
+    week_folder_pattern: str | None,
+) -> dict[str, Any]:
+    """Resolve one target to the single folder to act on. Shared by archive and cleanup."""
+    folder_id = target["folder_id"]
+    if target["folder_type"] != "parent":
+        return {"id": folder_id}
+    check_parent_has_no_loose_files(adapter.list_child_files(folder_id))
+    return select_effective_folder(
+        adapter.list_child_folders(folder_id),
+        folder_date=folder_date,
+        archive_folder_name=archive_folder_name,
+        week_folder_pattern=week_folder_pattern,
+    )
+
+
+def existing_archive_folder(adapter: Any, folder_id: str, archive_folder_name: str) -> dict[str, Any]:
+    """Report the archive folder without creating it, so a dry run mutates nothing."""
+    matches = [
+        folder for folder in adapter.list_child_folders(folder_id)
+        if folder.get("name") == archive_folder_name
+    ]
+    if len(matches) > 1:
+        raise ArchiveError(f"Ambiguous archive folder '{archive_folder_name}' under {folder_id}.")
+    if matches:
+        return {**matches[0], "created": False}
+    return {"id": None, "name": archive_folder_name, "created": False, "would_create": True}
+
+
+def week_folder_pattern_of(effective_config: Mapping[str, Any]) -> str | None:
+    return effective_config.get("publishing", {}).get("final_delivery", {}).get("week_folder_pattern")
+
+
+def overall_status(target_records: Sequence[Mapping[str, Any]], *, applied_status: str) -> str:
+    statuses = {record["status"] for record in target_records}
+    if "failed" in statuses:
+        return "failed"
+    if statuses == {"no_op"}:
+        return "no_op"
+    if "dry_run" in statuses:
+        return "dry_run"
+    return applied_status
+
+
 def run_archive(
     request: Mapping[str, Any],
     effective_config: Mapping[str, Any],
@@ -204,9 +253,7 @@ def run_archive(
     """Resolve, plan, and apply archiving for every target, returning one Archive Record."""
     settings = archive_settings(effective_config)
     archive_folder_name = settings["archive_folder_name"]
-    week_folder_pattern = (
-        effective_config.get("publishing", {}).get("final_delivery", {}).get("week_folder_pattern")
-    )
+    week_folder_pattern = week_folder_pattern_of(effective_config)
     targets = resolve_targets(request, effective_config)
 
     target_records: list[dict[str, Any]] = []
@@ -238,7 +285,7 @@ def run_archive(
     return {
         "utility": "archive_folder",
         "dry_run": dry_run,
-        "status": _overall_status(target_records),
+        "status": overall_status(target_records, applied_status="archived"),
         "request": dict(request),
         "archive_folder_name": archive_folder_name,
         "targets": target_records,
@@ -254,24 +301,20 @@ def _archive_one(
     week_folder_pattern: str | None,
     dry_run: bool,
 ) -> dict[str, Any]:
-    folder_id = target["folder_id"]
-    if target["folder_type"] == "parent":
-        check_parent_has_no_loose_files(adapter.list_child_files(folder_id))
-        effective_folder = select_effective_folder(
-            adapter.list_child_folders(folder_id),
-            folder_date=folder_date,
-            archive_folder_name=archive_folder_name,
-            week_folder_pattern=week_folder_pattern,
-        )
-    else:
-        effective_folder = {"id": folder_id}
+    effective_folder = resolve_effective_folder(
+        target,
+        adapter,
+        archive_folder_name=archive_folder_name,
+        folder_date=folder_date,
+        week_folder_pattern=week_folder_pattern,
+    )
 
     planned = plan_archive(adapter.list_child_files(effective_folder["id"]))
     if not planned:
         return build_target_record(
             target,
             effective_folder=effective_folder,
-            archive_folder=_existing_archive_folder(adapter, effective_folder["id"], archive_folder_name),
+            archive_folder=existing_archive_folder(adapter, effective_folder["id"], archive_folder_name),
             moved=[],
             unmoved=[],
             status="no_op",
@@ -281,7 +324,7 @@ def _archive_one(
         return build_target_record(
             target,
             effective_folder=effective_folder,
-            archive_folder=_existing_archive_folder(adapter, effective_folder["id"], archive_folder_name),
+            archive_folder=existing_archive_folder(adapter, effective_folder["id"], archive_folder_name),
             moved=[],
             unmoved=planned,
             status="dry_run",
@@ -313,39 +356,19 @@ def _archive_one(
     )
 
 
-def _existing_archive_folder(adapter: Any, folder_id: str, archive_folder_name: str) -> dict[str, Any]:
-    """Report the archive folder without creating it, so a dry run mutates nothing."""
-    matches = [
-        folder for folder in adapter.list_child_folders(folder_id)
-        if folder.get("name") == archive_folder_name
-    ]
-    if len(matches) > 1:
-        raise ArchiveError(f"Ambiguous archive folder '{archive_folder_name}' under {folder_id}.")
-    if matches:
-        return {**matches[0], "created": False}
-    return {"id": None, "name": archive_folder_name, "created": False, "would_create": True}
-
-
-def _overall_status(target_records: Sequence[Mapping[str, Any]]) -> str:
-    statuses = {record["status"] for record in target_records}
-    if "failed" in statuses:
-        return "failed"
-    if statuses == {"no_op"}:
-        return "no_op"
-    if "dry_run" in statuses:
-        return "dry_run"
-    return "archived"
-
-
 __all__ = [
     "ArchiveError",
     "archive_settings",
     "build_target_record",
     "check_parent_has_no_loose_files",
+    "existing_archive_folder",
+    "overall_status",
     "parse_folder_reference",
     "plan_archive",
+    "resolve_effective_folder",
     "resolve_folder_name_for_date",
     "resolve_targets",
     "run_archive",
     "select_effective_folder",
+    "week_folder_pattern_of",
 ]

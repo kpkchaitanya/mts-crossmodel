@@ -80,6 +80,22 @@ publishing:
     auto_archive:
       before_render: false
       before_delivery: false
+  # Destructive companion to archive: trashes files instead of moving them. Trash only, never a
+  # permanent delete, so a mistaken run stays recoverable from Drive Trash.
+  cleanup:
+    # Enabled 2026-09-03 after review. Setting this false is the kill switch for the whole utility.
+    enabled: true
+    default_scope: "files"
+    require_confirmation: true
+    # Presets reference the same canonical destination keys as publishing.archive.targets.
+    targets:
+      staging:
+        folder_type: "folder"
+        source: "publishing.staging.approved_folder_id"
+      publish:
+        folder_type: "parent"
+        source: "publishing.final_delivery.destinations_by_grade"
+        default_folder_date: "latest"
 telemetry:
   runs_root: "runs"
   unavailable_authoritative_values: null

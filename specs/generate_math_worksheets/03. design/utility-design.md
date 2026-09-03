@@ -21,8 +21,18 @@ Where this document extends a contract in `design.md`, it says so explicitly and
    - [2.8 Pipeline Integration (Future)](#28-pipeline-integration-future)
    - [2.9 Evidence And Idempotence](#29-evidence-and-idempotence)
    - [2.10 Failure Modes](#210-failure-modes)
-3. [Test Design](#3-test-design)
-4. [Implementation Sequence](#4-implementation-sequence)
+3. [Utility: Cleanup Folder](#3-utility-cleanup-folder)
+   - [3.1 Requirement](#31-requirement)
+   - [3.2 Shared Resolution](#32-shared-resolution)
+   - [3.3 Scope Contract](#33-scope-contract)
+   - [3.4 Deletion Contract](#34-deletion-contract)
+   - [3.5 Confirmation Contract](#35-confirmation-contract)
+   - [3.6 Adapter Extension](#36-adapter-extension)
+   - [3.7 Configuration Contract](#37-configuration-contract)
+   - [3.8 Command And CLI Surface](#38-command-and-cli-surface)
+   - [3.9 Evidence And Failure Modes](#39-evidence-and-failure-modes)
+4. [Test Design](#4-test-design)
+5. [Implementation Sequence](#5-implementation-sequence)
 
 ## 1. Purpose And Scope
 
@@ -265,7 +275,163 @@ human-invoked only.
 | Effective folder has no direct files | Success, recorded as a no-op |
 | Drive permission or transient failure mid-run | Record moved/unmoved split, report failure, allow safe re-run |
 
-## 3. Test Design
+## 3. Utility: Cleanup Folder
+
+### 3.1 Requirement
+
+Cleanup Folder is Archive Folder with a different terminal action: instead of moving the previous set
+into `Archive`, it deletes files. It exists so a folder — or an accumulated `Archive` — can be emptied
+without hand-clicking through Drive.
+
+It is the destructive member of this document, so it carries three safeguards Archive does not:
+disabled by default, an explicit scope choice, and a count confirmation (§3.5).
+
+### 3.2 Shared Resolution
+
+Cleanup **reuses** Archive's resolution contract (§2.3) unchanged: the same preset/ID/URL handling,
+the same per-grade expansion, the same Folder and Parent modes, and the same latest/ISO-date/literal
+child-folder selection. It resolves to exactly one effective folder per target, and Parent mode
+refuses a parent holding loose files for the same reason.
+
+This is a code requirement, not a documentation convenience. The resolution steps are extracted into a
+shared function used by both `run_archive` and `run_cleanup`. Neither utility may carry its own copy,
+because a divergence would mean the dry run a user reviewed for one utility no longer predicts the
+other's target.
+
+### 3.3 Scope Contract
+
+Cleanup adds one parameter Archive has no need for, because "delete" has more than one sensible
+object:
+
+| `scope` | Deletes | Purpose |
+|---|---|---|
+| `files` (default) | Loose files directly in the effective folder | Exact mirror of Archive's target set |
+| `archive` | Files directly inside the effective folder's `Archive` child | Purge accumulated archives |
+| `both` | Both sets, reported as two groups | Empty a folder completely |
+
+Rules:
+
+1. `files` is the default so an omitted `scope` behaves like Archive, which is the least surprising
+   reading of "clean up this folder".
+2. `archive` and `both` resolve the archive folder by the configured `archive_folder_name`, reusing
+   Archive's resolution and its ambiguity refusal. A missing `Archive` child contributes nothing and
+   is not an error, so `scope=both` still works on a never-archived folder.
+3. The record always reports which group each deleted file came from. A user approving a count must be
+   able to see what it was made of.
+4. Cleanup never descends past one level. It does not walk `Archive`'s sub-folders, and it does not
+   walk the effective folder's other sub-folders.
+
+### 3.4 Deletion Contract
+
+1. Deletion means **trash**, not permanent removal: the file is marked `trashed`, stays recoverable
+   from Drive Trash for the retention window, and can be restored without re-rendering.
+   Permanent deletion (`files.delete`) is deliberately **not implemented**. Adding it would remove the
+   only rollback this utility has.
+2. Only **files** are trashed. Folders are never deleted — including the effective folder, its
+   sub-folders, and the `Archive` folder itself, even when cleanup empties it. An empty folder is a
+   valid end state.
+3. An empty target set is a recorded success no-op, matching §2.4 rule 5.
+4. Cleanup is content-blind for the same reason Archive is: everything in the resolved set belongs to
+   the set being cleaned. It does not filter by name, type, or run association.
+5. Cleanup requires no gate, grants no approval, and never touches Spec, run, or evidence content.
+
+### 3.5 Confirmation Contract
+
+A dry run alone is not sufficient authorization for deletion, because the folder can change between
+the dry run and the apply. This has been observed in practice: staging contents changed twice within
+minutes during Archive's validation.
+
+1. An applying run must pass a confirmation count. The run proceeds only when the count equals the
+   number of files actually planned at apply time.
+2. A mismatch **refuses and deletes nothing**, reporting both counts. The correct response is a fresh
+   dry run, not a larger number.
+3. The confirmation is required in every applying run, including single-file ones. An exemption
+   threshold would be a rule users learn to route around.
+4. Dry runs never require a confirmation, so discovering the count is always free.
+
+### 3.6 Adapter Extension
+
+Extends the Google Docs/Drive Adapter Contract (`design.md` §3.6) with one further primitive,
+continuing §2.5:
+
+11. `trash_file(file_id)` marks one file trashed and confirms the resulting `trashed` state before
+    reporting success. It never calls `files.delete`.
+
+### 3.7 Configuration Contract
+
+Added under `publishing`, deliberately mirroring `publishing.archive` so the two read side by side:
+
+```yaml
+publishing:
+  cleanup:
+    # Kill switch for the whole utility; shipped false, enabled 2026-09-03 after review.
+    enabled: true
+    default_scope: "files"
+    require_confirmation: true
+    # Presets reference the same canonical destination keys as publishing.archive.targets.
+    targets:
+      staging:
+        folder_type: "folder"
+        source: "publishing.staging.approved_folder_id"
+      publish:
+        folder_type: "parent"
+        source: "publishing.final_delivery.destinations_by_grade"
+        default_folder_date: "latest"
+```
+
+Rules:
+
+1. `enabled` is the utility's kill switch, and it is the only one: setting it `false` stops cleanup
+   without touching code. It shipped `false` and was enabled deliberately after review, so turning the
+   utility on is a recorded configuration decision rather than an implementation side effect.
+2. `require_confirmation` has no opt-out parameter. Turning confirmation off is a configuration
+   decision with an audit trail, never a per-invocation flag.
+3. The archive folder name is read from `publishing.archive.archive_folder_name`. Cleanup does not
+   define a second one, or the two utilities could disagree about which folder is the archive.
+
+### 3.8 Command And CLI Surface
+
+Slash command `commands/cleanup-folder.md`, structurally identical to `commands/archive-folder.md`.
+
+| Parameter | Values | Default | Notes |
+|---|---|---|---|
+| `folder` | `staging`, `publish`, a Drive folder ID, or a Drive folder URL | required | Same presets as archive. |
+| `foldertype` | `folder`, `parent` | preset's `folder_type` | Required for a raw ID or URL. |
+| `folderdate` | `latest`, an ISO date, or a literal folder name | `latest` | Parent mode only. |
+| `grades` | `all`, or a grade list | `all` | `publish` preset only. |
+| `scope` | `files`, `archive`, `both` | `files` | See §3.3. |
+| `dry_run` | `yes`, `no` | `yes` | Applying additionally requires the confirmation count (§3.5). |
+
+CLI entry point:
+
+```powershell
+python scripts/cleanup_folder.py --folder staging --folder-type folder --dry-run
+python scripts/cleanup_folder.py --folder staging --folder-type folder --scope archive --apply --confirm 12
+```
+
+The command layer must present the dry-run plan and stop. It may not choose the confirmation count on
+the user's behalf from its own dry run; the count is the user's acknowledgement of a specific plan.
+
+### 3.9 Evidence And Failure Modes
+
+Cleanup emits a Cleanup Record with the same shape as the Archive Record (§2.9), reporting `deleted`
+and `undeleted` per target and per scope group. In-pipeline invocations would write
+`cleaned-artifacts.json`; there is no pipeline hook today and none is proposed.
+
+| Condition | Behavior |
+|---|---|
+| `publishing.cleanup.enabled` is false | Refuse; nothing is listed or deleted |
+| Confirmation count missing on an applying run | Refuse; report the planned count |
+| Confirmation count does not match the plan | Refuse, delete nothing, report both counts |
+| `scope=archive` with no `Archive` child | Success, recorded as a no-op |
+| Effective folder resolves but holds no files in scope | Success, recorded as a no-op |
+| Trash fails mid-run | Record deleted/undeleted split, report failure, allow safe re-run |
+| Any resolution failure | Identical to §2.10, since resolution is shared |
+
+Rollback: restore the files from Drive Trash. This is the whole reason §3.4 rule 1 forbids permanent
+deletion.
+
+## 4. Test Design
 
 Extends `design.md` §8. All behavior tests use the existing fake-Drive pattern in
 `tests/integration/test_google_docs_adapter.py`; no test performs live Drive I/O.
@@ -280,9 +446,14 @@ Extends `design.md` §8. All behavior tests use the existing fake-Drive pattern 
    a record matching the applied moves; parent-mode loose-file refusal; partial-failure record shape.
 4. **Contract test**: `scripts/archive_folder.py` contains no decision logic — every behavior assertion
    above passes against `run_archive(...)` directly, which is the guard that keeps the future pipeline
-   hook honest.
+   hook honest. The same assertion applies to `scripts/cleanup_folder.py` and `run_cleanup(...)`.
+5. **Cleanup tests**: each `scope` value's target set; `scope=archive` with no archive folder as a
+   no-op; folders never trashed, including an emptied `Archive`; confirmation missing, mismatched, and
+   matching; disabled-by-default refusal; partial-failure deleted/undeleted split.
+6. **Shared-resolution test**: archive and cleanup resolve the identical effective folder for the same
+   request, which is what §3.2 requires and what prevents the two dry runs from diverging.
 
-## 4. Implementation Sequence
+## 5. Implementation Sequence
 
 1. Adapter primitives (§2.5) with their tests.
 2. `publishing.archive` configuration block (§2.6).
@@ -294,3 +465,16 @@ Extends `design.md` §8. All behavior tests use the existing fake-Drive pattern 
    execute a real run.
 7. Pipeline hooks (§2.8) deferred; `auto_archive` stays `false` until separately designed and
    approved.
+
+Cleanup Folder, after Archive Folder is validated:
+
+8. Extract Archive's resolution steps into a shared function; re-run the full suite to prove archive
+   behavior is unchanged before anything new is added.
+9. `trash_file` adapter primitive (§3.6) with its tests.
+10. `publishing.cleanup` configuration block (§3.7), shipped `enabled: false`.
+11. `src/mts/publishing/cleanup.py`: scope resolution, `run_cleanup(...)`, and the confirmation guard,
+    with tests (§4.5, §4.6).
+12. `scripts/cleanup_folder.py` as a thin CLI, then `commands/cleanup-folder.md` and its prompt entry
+    point.
+13. Validate against a disposable folder first — never staging or a delivery folder — covering each
+    scope, the confirmation mismatch, and Drive Trash restoration.
