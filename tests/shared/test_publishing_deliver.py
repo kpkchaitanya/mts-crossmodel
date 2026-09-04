@@ -349,3 +349,53 @@ def test_the_shipped_math_configuration_defines_naming_for_every_delivered_grade
     naming = deliver.naming_settings(resolved)
     destinations = resolved["publishing"]["final_delivery"]["destinations_by_grade"]
     assert set(destinations) <= set(naming["prefix_by_grade"])
+
+
+def shared_destination_config():
+    """Project-scoped destinations include a grade this subject has no naming for."""
+    return {
+        **CONFIG,
+        "publishing": {
+            **CONFIG["publishing"],
+            "final_delivery": {
+                **CONFIG["publishing"]["final_delivery"],
+                "destinations_by_grade": {
+                    **CONFIG["publishing"]["final_delivery"]["destinations_by_grade"],
+                    "grade_9_10": {"folder_id": "parent-9-10", "label": "9/10 Grade"},
+                },
+            },
+        },
+    }
+
+
+def test_a_grade_this_subject_has_no_naming_for_is_skipped_under_all():
+    config = shared_destination_config()
+    adapter = FakeAdapter(files=staging_for())
+
+    record = deliver.run_deliver({"week": "2026-08-31"}, config, adapter, dry_run=True)
+
+    assert [issue["grade_id"] for issue in record["issues"] if issue["reason"] == "no_naming_for_subject"] == ["grade_9_10"]
+    assert "grade_9_10" not in {target["grade_id"] for target in record["targets"]}
+    assert {target["grade_id"] for target in record["targets"]} == {"grade_1", "grade_6"}
+
+
+def test_naming_a_grade_this_subject_does_not_produce_is_refused():
+    config = shared_destination_config()
+
+    with pytest.raises(deliver.DeliveryError):
+        deliver.run_deliver({"week": "2026-08-31", "grades": "grade_9_10"}, config, FakeAdapter(), dry_run=True)
+
+
+def test_the_shipped_configuration_shares_destinations_across_subjects():
+    from mts.setup_project.configure import resolve_distribution_config
+
+    math = resolve_distribution_config("math", repository_root=REPO)
+    ela = resolve_distribution_config("ela", repository_root=REPO)
+    math_destinations = math["publishing"]["final_delivery"]["destinations_by_grade"]
+    ela_destinations = ela["publishing"]["final_delivery"]["destinations_by_grade"]
+
+    assert {grade: entry["folder_id"] for grade, entry in math_destinations.items()} == {
+        grade: entry["folder_id"] for grade, entry in ela_destinations.items()
+    }
+    # ELA produces no 9/10, which must be a skip rather than a blocked delivery.
+    assert "grade_9_10" not in deliver.naming_settings(ela)["prefix_by_grade"]

@@ -16,6 +16,7 @@ Concrete CLI entry point:
 ```powershell
 .\.venv\Scripts\python.exe scripts/deliver_folder.py --week 2026-08-31 --dry-run
 .\.venv\Scripts\python.exe scripts/deliver_folder.py --week 2026-08-31 --grades grade_6 --apply
+.\.venv\Scripts\python.exe scripts/deliver_folder.py --subject ela --week 2026-09-07 --dry-run
 .\.venv\Scripts\python.exe scripts/deliver_folder.py --run-root data/transactions/runs/<run-id> --week current --apply
 ```
 
@@ -28,9 +29,24 @@ Concrete CLI entry point:
 | `run` (run root) | a run directory | none | When given, pairs come from that run's `published-artifacts.json`. See Pairing below. |
 | `source_folder` | a Drive folder ID | `publishing.staging.approved_folder_id` | Staging folder to pair from when no run root is given. |
 | `mode` | `copy`, `move` | `publishing.final_delivery.mode` (`copy`) | `copy` keeps staging as the audit trail. |
-| `subject` | a configured subject id (e.g. `math`) | the subject the command is running under | Must match; a mismatch is refused before any pairing or delivery. |
+| `subject` | a configured subject id (e.g. `math`, `ela`) | the subject the command is running under | Selects that subject's naming; delivery destinations are shared across subjects. |
 | `on_missing` | `skip`, `fail` | `skip` | `skip` delivers every grade that has a staged pair and records the rest; `fail` blocks the run when any requested grade is missing. |
 | `dry_run` | `yes`, `no` | `yes` | `yes` resolves and pairs without copying anything. |
+
+## Subjects and shared destinations
+
+`publishing.final_delivery.destinations_by_grade` is project-scoped: a destination is a grade's
+audience folder, not a subject's, so every subject delivers into the same per-grade parents and each
+grade's `Week_<WEEK_OF>` folder holds all of that grade's weekly material together. See
+[ADR-0002](<../specs/generate_math_worksheets/02. architecture/adr/0002-project-scoped-delivery-destinations.md>).
+
+Because that list covers every grade the programme serves, it can be broader than one subject's
+output. A grade the subject has no `naming.weekly` prefix for (ELA produces no 9/10) is **skipped and
+reported** as `no_naming_for_subject` under `grades=all`, and **refused** when named explicitly.
+
+Delivery never renders, so it resolves configuration from `base.yaml` plus the subject file only — no
+worksheet type, no template registry. A subject not yet approved for authoring can still distribute
+artifacts it already has.
 
 ## Pairing
 

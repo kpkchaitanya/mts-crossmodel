@@ -89,6 +89,25 @@ def document_names(naming: Mapping[str, Any], grade_id: str, week_of: str) -> tu
     return stem + extension, stem + naming["answer_key_suffix"] + extension
 
 
+def restrict_to_named_grades(
+    destinations: Sequence[Mapping[str, Any]], naming: Mapping[str, Any], grades: Any
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Drop destinations this subject has no document naming for.
+
+    Destinations are per-grade audience folders shared by every subject, so a subject that does not
+    produce a given grade (ELA has no 9/10) must not turn that grade into a run-wide failure. Under
+    `grades=all` it is skipped and reported; naming it explicitly is still a fail-closed error.
+    """
+    prefixes = naming.get("prefix_by_grade") or {}
+    unnamed = [item["grade_id"] for item in destinations if item["grade_id"] not in prefixes]
+    if not unnamed:
+        return [dict(item) for item in destinations], []
+    if grades not in (None, "", "all"):
+        raise DeliveryError(f"No configured document name prefix for: {', '.join(unnamed)}")
+    remaining = [dict(item) for item in destinations if item["grade_id"] in prefixes]
+    return remaining, [{"grade_id": grade_id, "reason": "no_naming_for_subject"} for grade_id in unnamed]
+
+
 def pair_from_run_root(run_root: Path) -> tuple[dict[str, dict[str, Any]], str]:
     """Read exact per-grade document pairs recorded by the run that produced them."""
     for filename in ("published-artifacts.json", "rendered-artifacts.json"):
@@ -231,6 +250,13 @@ def run_deliver(
         raise DeliveryError("mode must be 'copy' or 'move'.")
 
     issues: list[dict[str, Any]] = []
+    subject_naming = (effective_config.get("naming") or {}).get("weekly") or {}
+    if subject_naming.get("prefix_by_grade"):
+        destinations, naming_issues = restrict_to_named_grades(
+            destinations, subject_naming, request.get("grades")
+        )
+        issues.extend(naming_issues)
+
     if pairs is not None:
         pairs = {normalize_grade_id(grade_id): pair for grade_id, pair in pairs.items()}
         source = request.get("source_label", "provided")

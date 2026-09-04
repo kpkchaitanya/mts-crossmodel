@@ -547,11 +547,20 @@ naming:
 ```
 
 Rendering writes these names and delivery reads them back, so both must resolve the same
-configuration. Every grade in `final_delivery.destinations_by_grade` must have a `prefix_by_grade`
-entry; a delivered grade with no naming entry is a configuration error, not a runtime surprise.
+configuration.
+
+`final_delivery.destinations_by_grade` is project-scoped (ADR-0002): a destination is a grade's
+audience folder, shared by every subject, so the destination list is broader than any single subject's
+output. A destination grade with no `prefix_by_grade` entry for the subject in hand is therefore
+**skipped and reported** as `no_naming_for_subject` under `grades=all`, and **refused** when named
+explicitly — ELA produces no 9/10, and that must not fail an otherwise complete ELA delivery, while
+naming the grade directly stays fail-closed. `restrict_to_named_grades` is the single implementation;
+`print_jobs` calls it rather than repeating it.
+
+`file_extension` is optional and empty by default. A subject staged as files rather than Docs sets it
+so the answer-key suffix lands before the extension (`…-2026-09-07-KEY.pdf`).
 
 ### 4.5 Delivery Contract
-
 Inherited unchanged from `design.md` §3.9: one `Week_<WEEK_OF>` folder per grade destination, reused
 rather than duplicated; `mode: copy` by default so staging survives as the audit trail;
 `deliver_answer_key` controls whether the key accompanies the worksheet; content is never modified.

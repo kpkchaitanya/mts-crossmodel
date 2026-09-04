@@ -192,9 +192,22 @@ def run_print(
     archive_folder_name = effective_config.get("publishing", {}).get("archive", {}).get("archive_folder_name")
     week_folder_pattern = week_folder_pattern_of(effective_config)
     targets = resolve_targets({"folder": source, "grades": request.get("grades")}, effective_config)
+    # Destinations are shared per-grade folders; a grade this subject does not produce is not a failure.
+    targets, skipped_targets = _restrict_targets_to_named_grades(targets, naming, request.get("grades"))
 
     target_records: list[dict[str, Any]] = []
     planned: list[tuple[dict[str, Any], list[dict[str, Any]]]] = []
+    for target in skipped_targets:
+        target_records.append(
+            _record(
+                target,
+                {"id": target["folder_id"]},
+                [],
+                [],
+                status="no_op",
+                issues=[{"grade_id": target["grade_id"], "reason": "no_naming_for_subject"}],
+            )
+        )
     for target in targets:
         try:
             effective_folder = resolve_effective_folder(
@@ -252,6 +265,18 @@ def run_print(
         "request": dict(request),
         "targets": target_records,
     }
+
+
+def _restrict_targets_to_named_grades(
+    targets: Sequence[Mapping[str, Any]], naming: Mapping[str, Any], grades: Any
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Reuse delivery's rule so print and deliver agree on which grades a subject covers."""
+    graded = [target for target in targets if "grade_id" in target]
+    if not graded:
+        return [dict(target) for target in targets], []
+    kept, issues = deliver.restrict_to_named_grades(graded, naming, grades)
+    skipped_ids = {issue["grade_id"] for issue in issues}
+    return kept, [dict(target) for target in graded if target["grade_id"] in skipped_ids]
 
 
 def _print_jobs(record: dict[str, Any], jobs: Sequence[Mapping[str, Any]], adapter: Any, printer: Any) -> None:

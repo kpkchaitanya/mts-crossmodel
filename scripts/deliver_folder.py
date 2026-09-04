@@ -18,7 +18,7 @@ OAUTH_TOKEN = Path(r"c:\Users\neeli\kpkDevelopment\mts-new\.secrets\oauth-token.
 sys.path.insert(0, str(REPO / "src"))
 from mts.infrastructure.google_docs import google_docs_adapter  # noqa: E402
 from mts.publishing import deliver  # noqa: E402
-from mts.setup_project.configure import resolve_effective_config  # noqa: E402
+from mts.setup_project.configure import resolve_distribution_config  # noqa: E402
 
 
 def build_clients():
@@ -65,17 +65,14 @@ def main() -> None:
     parser.add_argument("--mode", choices=["copy", "move"], default=None)
     parser.add_argument("--on-missing", choices=["skip", "fail"], default=None, help="Default skip: deliver what is staged.")
     # Absent by default so it stays an optional guard; config loading falls back to DEFAULT_SUBJECT.
-    parser.add_argument("--subject", default=None, help="Guard: refuse if this does not match the loaded configuration's subject.")
-    parser.add_argument("--worksheet-type", default="weekly-worksheet")
+    parser.add_argument("--subject", default=None, help="Subject whose configuration and naming to use.")
     parser.add_argument("--report", type=Path, default=None, help="Optional path to write the Delivery Record.")
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--dry-run", dest="dry_run", action="store_true", default=True)
     group.add_argument("--apply", dest="dry_run", action="store_false", help="Perform the delivery. Run --dry-run first.")
     args = parser.parse_args()
 
-    effective_config = resolve_effective_config(
-        {"subject": args.subject or DEFAULT_SUBJECT, "worksheet_type": args.worksheet_type}, repository_root=REPO
-    )
+    effective_config = resolve_distribution_config(args.subject or DEFAULT_SUBJECT, repository_root=REPO)
     run_root = None
     if args.run_root:
         run_root = args.run_root if args.run_root.is_absolute() else REPO / args.run_root

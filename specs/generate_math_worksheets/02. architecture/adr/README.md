@@ -38,3 +38,4 @@ What this makes easy, what it makes harder, and what would trigger revisiting it
 | ADR | Title | Status |
 |---|---|---|
 | [0001](0001-print-paper-metrics-page-count-source.md) | Page-count source for print paper metrics | Accepted |
+| [0002](0002-project-scoped-delivery-destinations.md) | Final Delivery destinations are project-scoped, not subject-scoped | Accepted |
