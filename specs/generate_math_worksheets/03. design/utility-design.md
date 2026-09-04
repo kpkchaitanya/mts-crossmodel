@@ -47,8 +47,16 @@ Where this document extends a contract in `design.md`, it says so explicitly and
    - [5.6 Composition Contract](#56-composition-contract)
    - [5.7 Authoring Contract](#57-authoring-contract)
    - [5.8 Command And CLI Surface](#58-command-and-cli-surface)
-6. [Test Design](#6-test-design)
-7. [Implementation Sequence](#7-implementation-sequence)
+6. [Utility: Print Worksheets](#6-utility-print-worksheets)
+   - [6.1 Requirement](#61-requirement)
+   - [6.2 Shared Resolution And Pairing](#62-shared-resolution-and-pairing)
+   - [6.3 Copy Count Contract](#63-copy-count-contract)
+   - [6.4 Print Contract](#64-print-contract)
+   - [6.5 Configuration Contract](#65-configuration-contract)
+   - [6.6 Subject Neutrality](#66-subject-neutrality)
+   - [6.7 Command And CLI Surface](#67-command-and-cli-surface)
+7. [Test Design](#7-test-design)
+8. [Implementation Sequence](#8-implementation-sequence)
 
 ## 1. Purpose And Scope
 
@@ -717,7 +725,93 @@ python scripts/format_and_deliver.py --week 2026-09-07 --grades grade_4 --dry-ru
 python scripts/format_and_deliver.py --week 2026-09-07 --grades grade_4 --apply
 ```
 
-## 6. Test Design
+## 6. Utility: Print Worksheets
+
+### 6.1 Requirement
+
+Produce the physical class set. Given an instructional week, export each grade's approved worksheet
+and answer key to PDF and spool them to a local printer at that grade's class count. It is a
+distribution step: it never renders, edits, re-numbers, re-verifies, moves, or deletes anything, and
+the documents it reads stay exactly where they were.
+
+### 6.2 Shared Resolution And Pairing
+
+Printing defines no folder resolution and no pairing of its own:
+
+- Targets come from `archive.resolve_targets` with the same `staging` and `publish` presets
+  (§2.3), and the effective folder from the shared `archive.resolve_effective_folder`.
+- In `publish` (parent) mode the folder date is the **requested week**, never `latest`, so printing a
+  past week cannot silently pull the newest folder.
+- Grade/role pairing is `deliver.pair_from_staging` (§4.3). `ambiguous_name`, `incomplete_pair`, and
+  `unmatched_files` are reported and skipped, never resolved. Printing the wrong grade's key wastes
+  paper and, worse, hands a class the answers.
+
+### 6.3 Copy Count Contract
+
+The one decision this utility owns is how many copies of each document to print.
+
+- `publishing.printing.copies_by_grade` is subject-scoped, because class sizes are a property of the
+  subject's grade cohorts, not of the project.
+- A grade absent from `copies_by_grade` is **skipped and reported** under `grades=all`, and **refused**
+  when named explicitly. A new grade therefore never prints an unreviewed count.
+- `copies` accepts per-grade run overrides (`grade_5=6`, or `grade_5=6:2` to also override the key).
+  An override applies to that run only and is never persisted.
+- A count of `0` prints nothing for that role; it is a valid way to suppress a key.
+
+### 6.4 Print Contract
+
+1. Each document is exported once through `adapter.export_pdf` and handed to the printer backend with
+   its copy count; copies are a printer instruction, not repeated exports.
+2. Backends are external PDF viewers driven by a fixed argument list, never a shell string. SumatraPDF
+   prints silently with exact copy and duplex control; Acrobat is the no-install fallback and prints
+   one copy per invocation at the printer's default duplex.
+3. Applying requires `--confirm <total copies>` matching the plan **at apply time**, the same guard as
+   cleanup (§3.5). A dry run is not authorization: paper cannot be un-printed.
+4. A failure mid-target records what already printed and what did not, so a re-run can be scoped by
+   hand rather than reprinting the whole set.
+
+### 6.5 Configuration Contract
+
+`publishing.printing` in `base.yaml`: `enabled`, `printer_name`, `backend`, `backends.<name>.executable`,
+`duplex`, `default_source`, `require_confirmation`, `spool_dir`. `enabled: false` is the kill switch.
+The subject file contributes `publishing.printing.copies_by_grade` only.
+
+### 6.6 Subject Neutrality
+
+Printing resolves configuration through `resolve_distribution_config` — `base.yaml` merged with the
+subject file, with **no** worksheet-type compatibility check and **no** template-registry lookup. Both
+of those gate *authoring*: a subject whose templates and verification rules await approval must stay
+unable to generate worksheets, but that is no reason it cannot print artifacts it already has. Any
+utility that renders must keep using `resolve_effective_config`.
+
+Two staging shapes follow from this, and the adapter handles both in `export_pdf`: a Google Doc is
+exported to PDF, a file already stored as `application/pdf` is downloaded unchanged, and any other
+type fails closed rather than being silently converted. Where a subject stages files rather than Docs,
+`naming.weekly.file_extension` places the answer-key suffix before the extension so name pairing still
+works. Math omits the field and its names are unaffected.
+
+### 6.7 Command And CLI Surface
+
+| Parameter | Values | Default |
+|---|---|---|
+| `week` | `current`, a week number, or an ISO date | `current` |
+| `grades` | `all`, or a grade list | `all` |
+| `source` | `staging`, `publish` | `publishing.printing.default_source` |
+| `include` | `both`, `worksheet`, `key` | `both` |
+| `copies` | per-grade overrides | configured counts |
+| `printer` | a Windows printer name | `publishing.printing.printer_name` |
+| `subject` | a configured subject id | the subject in use |
+| `dry_run` | `yes`, `no` | `yes` |
+
+CLI entry point:
+
+```powershell
+python scripts/print_worksheets.py --week current --dry-run
+python scripts/print_worksheets.py --week current --apply --confirm 20
+python scripts/print_worksheets.py --subject ela --week 2026-09-07 --dry-run
+```
+
+## 7. Test Design
 
 Extends `design.md` §8. All behavior tests use the existing fake-Drive pattern in
 `tests/integration/test_google_docs_adapter.py`; no test performs live Drive I/O.
@@ -762,8 +856,19 @@ Extends `design.md` §8. All behavior tests use the existing fake-Drive pattern 
     the originals) are what gets delivered; a dry run reconstructs, renders, and delivers nothing; a
     failed rebuild is recorded and does not block other grades; a grade awaiting rebuild is reported
     `pending_rebuild`, not `missing pair`, since the dry run never claims a pair exists before it does.
+12. **Print Worksheets tests**: a dry run plans the configured class counts and spools nothing; an
+    apply exports each document once and passes its copy count through; a mismatched confirmation
+    prints nothing anywhere; `include=key`; a `copies` override replacing only the named counts; a
+    grade without configured counts skipped under `all` and refused when named; a missing pair reported
+    while the ready grade still prints; `source=publish` selecting the requested week folder rather than
+    the newest; a printer failure splitting printed from unprinted; `enabled: false` as a hard stop;
+    copy-override syntax validation; and the CLI holding no decision logic.
+13. **Subject-neutral distribution tests**: `resolve_distribution_config` serves a subject that
+    `resolve_effective_config` still refuses to author for, and carries no template selection; an
+    unknown subject is rejected; `export_pdf` exports a Google Doc, downloads a stored PDF, and refuses
+    any other type; a subject staged as PDFs pairs and prints on names carrying a file extension.
 
-## 7. Implementation Sequence
+## 8. Implementation Sequence
 
 1. Adapter primitives (§2.5) with their tests.
 2. `publishing.archive` configuration block (§2.6).

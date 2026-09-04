@@ -117,4 +117,23 @@ def resolve_effective_config(request: Mapping[str, Any], *, repository_root: str
 	return _freeze(effective)
 
 
-__all__ = ["EffectiveConfigError", "resolve_effective_config"]
+def resolve_distribution_config(subject: str, *, repository_root: str | Path) -> Mapping[str, Any]:
+	"""Resolve config for utilities that only move, copy, or print already-produced artifacts.
+
+	Deliberately skips the worksheet-type compatibility check and the template registry: both gate
+	*authoring*, and a subject whose templates and verification rules are not yet approved must stay
+	unable to generate worksheets while still being able to distribute the artifacts it already has.
+	"""
+	root = Path(repository_root)
+	if not isinstance(subject, str) or not subject:
+		raise EffectiveConfigError("A non-empty subject is required.")
+	base = _load_yaml(root / "data" / "config" / "project" / "base.yaml")
+	subject_config = _load_yaml(root / "data" / "config" / "subjects" / f"{subject}.yaml")
+	if subject_config.get("subject") != subject:
+		raise EffectiveConfigError(f"Subject configuration does not match request subject: {subject}")
+	effective = _merge(base, subject_config)
+	effective["request"] = {"subject": subject}
+	return _freeze(effective)
+
+
+__all__ = ["EffectiveConfigError", "resolve_distribution_config", "resolve_effective_config"]

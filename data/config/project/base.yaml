@@ -101,6 +101,24 @@ publishing:
         folder_type: "parent"
         source: "publishing.final_delivery.destinations_by_grade"
         default_folder_date: "latest"
+  # Local printing utility: exports approved documents to PDF and spools them to a physical printer
+  # with per-grade class counts. Never renders, edits, delivers, or approves anything.
+  printing:
+    enabled: true
+    printer_name: "Brother HL-L2380DW series Printer"
+    # sumatra prints silently with exact copy and duplex control; acrobat is the no-install fallback
+    # (one invocation per copy, printer default duplex).
+    backend: "sumatra"
+    backends:
+      sumatra:
+        executable: "tools/SumatraPDF.exe"
+      acrobat:
+        executable: "C:/Program Files/Adobe/Acrobat DC/Acrobat/Acrobat.exe"
+    duplex: "duplex_long"
+    default_source: "staging"
+    # Paper is not undoable: applying requires a copy total matching the plan at apply time.
+    require_confirmation: true
+    spool_dir: "outputs/print"
 telemetry:
   runs_root: "runs"
   unavailable_authoritative_values: null

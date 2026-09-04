@@ -25,6 +25,8 @@ class FakeFiles:
         self.folders = {}
         self.list_queries = []
         self.trashed = []
+        self.exports = []
+        self.downloads = []
         self._sequence = 0
 
     def _next_created_time(self):
@@ -69,6 +71,14 @@ class FakeFiles:
 
     def get(self, *, fileId, fields):
         return Request(dict(self.documents[fileId]))
+
+    def export(self, *, fileId, mimeType):
+        self.exports.append((fileId, mimeType))
+        return Request(b"%PDF exported")
+
+    def get_media(self, *, fileId):
+        self.downloads.append(fileId)
+        return Request(b"%PDF downloaded")
 
     def list(self, *, q, fields, pageSize, orderBy=None, pageToken=None):
         self.list_queries.append(q)
@@ -364,6 +374,31 @@ def test_stamp_document_rejects_a_property_over_the_drive_byte_limit():
         raise AssertionError("An oversized property must fail before reaching Drive.")
 
 
+def test_export_pdf_exports_a_google_doc_and_downloads_a_stored_pdf():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+    drive.file_service.add_file("doc-1", "Grade 4", "staging")
+    drive.file_service.add_file("pdf-1", "Grade 4.pdf", "staging", mime_type="application/pdf")
+
+    assert adapter.export_pdf("doc-1") == b"%PDF exported"
+    assert adapter.export_pdf("pdf-1") == b"%PDF downloaded"
+    assert drive.file_service.exports == [("doc-1", "application/pdf")]
+    assert drive.file_service.downloads == ["pdf-1"]
+
+
+def test_export_pdf_refuses_a_type_it_cannot_produce_a_pdf_from():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+    drive.file_service.add_file("sheet-1", "Roster", "staging", mime_type="application/vnd.google-apps.spreadsheet")
+
+    try:
+        adapter.export_pdf("sheet-1")
+    except adapter_module.GoogleDocsAdapterError as error:
+        assert "spreadsheet" in str(error)
+    else:
+        raise AssertionError("An unsupported type must fail closed rather than be converted.")
+
+
 def main():
     tests = [
         test_render_pair_copies_masters_and_replaces_placeholder,
@@ -381,6 +416,8 @@ def main():
         test_stamp_document_records_provenance_and_listings_return_it,
         test_stamp_document_requires_a_file_and_at_least_one_property,
         test_stamp_document_rejects_a_property_over_the_drive_byte_limit,
+        test_export_pdf_exports_a_google_doc_and_downloads_a_stored_pdf,
+        test_export_pdf_refuses_a_type_it_cannot_produce_a_pdf_from,
     ]
     for test in tests:
         test()

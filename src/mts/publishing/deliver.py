@@ -83,8 +83,10 @@ def document_names(naming: Mapping[str, Any], grade_id: str, week_of: str) -> tu
     prefix = naming["prefix_by_grade"].get(grade_id)
     if not prefix:
         raise DeliveryError(f"No configured document name prefix for {grade_id}.")
-    student = naming["document_name_pattern"].replace("{{PREFIX}}", prefix).replace("{{WEEK_OF}}", week_of)
-    return student, student + naming["answer_key_suffix"]
+    stem = naming["document_name_pattern"].replace("{{PREFIX}}", prefix).replace("{{WEEK_OF}}", week_of)
+    # The key suffix precedes the extension, so a subject staged as files still pairs by name.
+    extension = naming.get("file_extension", "")
+    return stem + extension, stem + naming["answer_key_suffix"] + extension
 
 
 def pair_from_run_root(run_root: Path) -> tuple[dict[str, dict[str, Any]], str]:

@@ -172,6 +172,28 @@ class GoogleDocsAdapter:
             raise GoogleDocsAdapterError("Moved file is not in the requested destination.")
         return moved
 
+    pdf_mime_type = "application/pdf"
+    google_doc_mime_type = "application/vnd.google-apps.document"
+
+    def export_pdf(self, file_id: str) -> bytes:
+        """Return one artifact as PDF bytes; this adapter never modifies the source file.
+
+        A Google Doc is exported; a file that is already a PDF is downloaded as-is. Any other type
+        fails closed rather than being silently converted.
+        """
+        if not file_id:
+            raise GoogleDocsAdapterError("file_id is required.")
+        mime_type = self.drive.files().get(fileId=file_id, fields="mimeType").execute().get("mimeType")
+        if mime_type == self.google_doc_mime_type:
+            content = self.drive.files().export(fileId=file_id, mimeType=self.pdf_mime_type).execute()
+        elif mime_type == self.pdf_mime_type:
+            content = self.drive.files().get_media(fileId=file_id).execute()
+        else:
+            raise GoogleDocsAdapterError(f"Cannot produce a PDF from {mime_type or 'an unknown type'}: {file_id}")
+        if not content:
+            raise GoogleDocsAdapterError(f"Drive returned no PDF content for {file_id}.")
+        return content
+
     def trash_file(self, file_id: str) -> dict[str, Any]:
         """Move one file to Drive Trash; this adapter never permanently deletes."""
         if not file_id:

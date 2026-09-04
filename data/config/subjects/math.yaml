@@ -20,6 +20,14 @@ publishing:
       grade_5: {folder_id: "130VEomHbyC2-oyANo49W73dfDSi1VU5p", label: "5th Grade"}
       grade_6: {folder_id: "10tSM2SwAxzGkzuYT47vNCo16K9TtPZre", label: "6th Grade"}
       grade_9_10: {folder_id: "1RSSV84MDP8vHq7UwVm9GYH-36ZvGh1Cc", label: "9/10 Grade"}
+  # Class counts for the local printing utility. A grade absent here is not printed by `grades=all`
+  # and is refused when named explicitly, so a new grade can never print an unreviewed count.
+  printing:
+    copies_by_grade:
+      grade_1: {student_worksheet: 5, answer_key: 1}
+      grade_4: {student_worksheet: 6, answer_key: 1}
+      grade_5: {student_worksheet: 4, answer_key: 1}
+      grade_6: {student_worksheet: 3, answer_key: 1}
 # Single definition of rendered document names. Rendering writes these names and folder-anchored
 # delivery reads them back, so the two must never drift apart.
 naming:

@@ -104,6 +104,35 @@ def test_unknown_and_incompatible_requests_are_rejected():
             raise AssertionError(f"Request must be rejected: {request}")
 
 
+def test_distribution_config_serves_a_subject_that_cannot_yet_author():
+    from mts.setup_project.configure import resolve_distribution_config
+
+    resolved = resolve_distribution_config("ela", repository_root=REPO)
+
+    assert resolved["subject"] == "ela"
+    assert resolved["naming"]["weekly"]["file_extension"] == ".pdf"
+    assert resolved["publishing"]["staging"]["approved_folder_id"]
+    # Distribution never renders, so it carries no template selection to render with.
+    assert "template_selection" not in resolved
+    try:
+        resolve_effective_config({"subject": "ela", "worksheet_type": "weekly-worksheet"}, repository_root=REPO)
+    except EffectiveConfigError as error:
+        assert "not compatible" in str(error)
+    else:
+        raise AssertionError("ELA authoring must stay blocked.")
+
+
+def test_distribution_config_rejects_an_unknown_subject():
+    from mts.setup_project.configure import resolve_distribution_config
+
+    try:
+        resolve_distribution_config("science", repository_root=REPO)
+    except EffectiveConfigError as error:
+        assert "Configuration file not found" in str(error)
+    else:
+        raise AssertionError("An unknown subject must be rejected.")
+
+
 def main():
     tests = [
         test_active_class_worksheet_resolves,

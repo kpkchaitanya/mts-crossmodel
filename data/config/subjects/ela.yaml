@@ -16,4 +16,24 @@ verification:
   require_open_response_guidance: true
 publishing:
   target: "outputs/ela"
+  # Class counts for the local printing utility. ELA is staged as finished PDFs rather than Google
+  # Docs; printing distributes them, and does not imply ELA generation is approved.
+  printing:
+    copies_by_grade:
+      grade_1: {student_worksheet: 5, answer_key: 1}
+      grade_4: {student_worksheet: 6, answer_key: 1}
+      grade_5: {student_worksheet: 4, answer_key: 1}
+      grade_6: {student_worksheet: 3, answer_key: 1}
+# Names of the staged ELA artifacts, read back by distribution utilities. The key suffix precedes
+# the file extension.
+naming:
+  weekly:
+    document_name_pattern: "{{PREFIX}}-{{WEEK_OF}}"
+    answer_key_suffix: "-KEY"
+    file_extension: ".pdf"
+    prefix_by_grade:
+      grade_1: "MTS-ELA-RC-1-WeeklyWorksheet"
+      grade_4: "MTS-ELA-RC-4-WeeklyWorksheet"
+      grade_5: "MTS-ELA-RC-5-WeeklyWorksheet"
+      grade_6: "MTS-ELA-RC-6-WeeklyWorksheet"
 

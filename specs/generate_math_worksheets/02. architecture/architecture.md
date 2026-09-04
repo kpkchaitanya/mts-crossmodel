@@ -253,6 +253,8 @@ A database, web application, queue, or additional orchestration framework is out
 
 These decisions should become ADRs after M3 approval only if they remain architecturally significant and stable.
 
+Decisions accepted after M3 are recorded as ADRs in [adr/](adr/README.md).
+
 ## 8. M4 Inputs
 
 M4 design must define:
