@@ -60,6 +60,13 @@ publishing:
     # copy keeps staging intact as the audit trail; move would empty staging on delivery.
     mode: "copy"
     deliver_answer_key: true
+  # Provenance recorded on each rendered document (Drive appProperties). Folder-anchored delivery
+  # reads it back to tell rendered artifacts from documents that appeared in staging some other way.
+  provenance:
+    enabled: true
+    # Report-only for now: existing staged documents predate stamping. Set true to refuse unstamped
+    # documents once every in-flight artifact has been rendered through the pipeline.
+    require_stamp_for_delivery: false
   # Housekeeping utility: moves the previous set's loose files into an Archive child folder so a
   # target folder presents only the current set. Never renders, edits, deletes, or approves anything.
   archive:

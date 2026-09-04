@@ -155,14 +155,20 @@ class MathSubjectModule:
 			"template_manifest": worksheet_type.get("template_selection", {}).get("template_manifest"),
 		}
 
-	def validate_subject_output(self, artifacts: Mapping[str, str], spec: Mapping[str, Any]) -> dict[str, Any]:
+	def validate_subject_output(
+		self,
+		artifacts: Mapping[str, str],
+		spec: Mapping[str, Any],
+		*,
+		numbering: str = "global",
+	) -> dict[str, Any]:
 		student_text = artifacts.get("student_worksheet")
 		answer_key_text = artifacts.get("answer_key")
 		if not isinstance(student_text, str) or not isinstance(answer_key_text, str):
 			raise MathSubjectError("Math output validation requires student_worksheet and answer_key text.")
 		return {
-			"student_worksheet": p0.targeted_text_qa_v2(student_text, deepcopy(dict(spec))),
-			"answer_key": p0.targeted_text_qa_v2(answer_key_text, deepcopy(dict(spec)), answer_key=True),
+			"student_worksheet": p0.targeted_text_qa_v2(student_text, deepcopy(dict(spec)), numbering=numbering),
+			"answer_key": p0.targeted_text_qa_v2(answer_key_text, deepcopy(dict(spec)), answer_key=True, numbering=numbering),
 		}
 
 	def _load_master_data(self) -> dict[str, Any]:

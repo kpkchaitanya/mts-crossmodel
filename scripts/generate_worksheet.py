@@ -442,15 +442,16 @@ def validate_spec_matches_question_plan(spec: Mapping[str, Any], question_plan: 
                 raise ValueError(f"Question {question.get('number')} does not preserve planned {field}.")
 
 
-def projection(spec: Mapping[str, Any], *, answer_key: bool = False) -> str:
+def projection(spec: Mapping[str, Any], *, answer_key: bool = False, numbering: str = "global") -> str:
     lines = [str(spec["worksheet"]["title"]), str(spec["worksheet"]["grade"]), f"Week of {spec['worksheet']['week_start']}"]
     if answer_key:
         lines.append("ANSWER KEY")
     for section in spec["sections"]:
         lines.append(str(section.get("title", section["id"])))
-        for question in section["questions"]:
+        for local_number, question in enumerate(section["questions"], start=1):
+            shown = local_number if numbering == "local" else question["number"]
             value = question["answer"] if answer_key else question["prompt"]
-            lines.append(f"{question['number']}. {value}")
+            lines.append(f"{shown}. {value}")
     return "\n".join(lines)
 
 
@@ -565,7 +566,15 @@ def generate_math_weekly(params: Mapping[str, str]) -> dict[str, Any]:
         if verification["status"] != "PASS":
             raise ValueError(f"Verification failed for {grade}: {verification}")
         spec["verification"]["status"] = "PASS"
-        qa = math.validate_subject_output({"student_worksheet": projection(spec), "answer_key": projection(spec, answer_key=True)}, spec)
+        numbering = effective_config.get("display_numbering", "global")
+        qa = math.validate_subject_output(
+            {
+                "student_worksheet": projection(spec, numbering=numbering),
+                "answer_key": projection(spec, answer_key=True, numbering=numbering),
+            },
+            spec,
+            numbering=numbering,
+        )
         if qa["student_worksheet"]["status"] != "PASS" or qa["answer_key"]["status"] != "PASS":
             raise ValueError(f"QA failed for {grade}: {qa}")
 

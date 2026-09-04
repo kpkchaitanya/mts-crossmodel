@@ -90,7 +90,7 @@ class FakeFiles:
 
     @staticmethod
     def _project(item, fields):
-        keys = ("id", "name", "mimeType", "createdTime", "webViewLink") if "createdTime" in fields else ("id", "name", "webViewLink")
+        keys = ("id", "name", "mimeType", "createdTime", "webViewLink", "appProperties") if "createdTime" in fields else ("id", "name", "webViewLink")
         return {key: item[key] for key in keys if key in item}
 
     def create(self, *, body, fields):
@@ -102,6 +102,9 @@ class FakeFiles:
         if body and "trashed" in body:
             document["trashed"] = body["trashed"]
             self.trashed.append(fileId)
+            return Request(dict(document))
+        if body and "appProperties" in body:
+            document.setdefault("appProperties", {}).update(body["appProperties"])
             return Request(dict(document))
         document["parents"] = [addParents]
         self.updates.append({"file_id": fileId, "add_parents": addParents, "remove_parents": removeParents})
@@ -330,6 +333,37 @@ def test_trash_file_marks_the_file_trashed_and_never_deletes():
     assert not hasattr(drive.file_service, "deleted")
 
 
+def test_stamp_document_records_provenance_and_listings_return_it():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+    drive.file_service.add_file("doc-1", "Grade 4", "staging")
+
+    adapter.stamp_document("doc-1", {"mts_run_id": "run-1", "mts_grade_id": "grade_4"})
+
+    listed = adapter.list_child_files("staging")
+    assert listed[0]["appProperties"]["mts_run_id"] == "run-1"
+
+
+def test_stamp_document_requires_a_file_and_at_least_one_property():
+    adapter = adapter_module.GoogleDocsAdapter(FakeDrive(), FakeDocs())
+    try:
+        adapter.stamp_document("doc-1", {})
+    except adapter_module.GoogleDocsAdapterError as error:
+        assert "property" in str(error)
+    else:
+        raise AssertionError("An empty provenance stamp must fail closed.")
+
+
+def test_stamp_document_rejects_a_property_over_the_drive_byte_limit():
+    adapter = adapter_module.GoogleDocsAdapter(FakeDrive(), FakeDocs())
+    try:
+        adapter.stamp_document("doc-1", {"mts_spec_path": "x" * 200})
+    except adapter_module.GoogleDocsAdapterError as error:
+        assert "124-byte limit" in str(error)
+    else:
+        raise AssertionError("An oversized property must fail before reaching Drive.")
+
+
 def main():
     tests = [
         test_render_pair_copies_masters_and_replaces_placeholder,
@@ -344,6 +378,9 @@ def main():
         test_move_file_reparents_and_is_a_no_op_when_already_in_destination,
         test_move_file_requires_both_ids,
         test_trash_file_marks_the_file_trashed_and_never_deletes,
+        test_stamp_document_records_provenance_and_listings_return_it,
+        test_stamp_document_requires_a_file_and_at_least_one_property,
+        test_stamp_document_rejects_a_property_over_the_drive_byte_limit,
     ]
     for test in tests:
         test()

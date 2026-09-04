@@ -44,17 +44,28 @@ def display_question_prompt(question: dict) -> str:
     return str(question["prompt"]).removeprefix(f"Question {number}: ")
 
 
-def answer_key_line(question: dict, *, decimal_places: int = 2) -> str:
+def answer_key_line(question: dict, *, decimal_places: int = 2, number: int | None = None) -> str:
     """Return one concise numbered answer-key entry."""
-    return f"{question['number']}. {display_answer(question['answer'], decimal_places=decimal_places)}"
+    shown = question["number"] if number is None else number
+    return f"{shown}. {display_answer(question['answer'], decimal_places=decimal_places)}"
 
 
-def projection(spec: dict, answer_key: bool, *, decimal_places: int = 2) -> str:
+def display_number(question: dict, local_number: int, numbering: str) -> int:
+    """Students see local per-day numbers; the Spec keeps global numbers for verification."""
+    return local_number if numbering == "local" else question["number"]
+
+
+def projection(spec: dict, answer_key: bool, *, decimal_places: int = 2, numbering: str = "local") -> str:
     lines = [spec["worksheet"]["title"], grade_display_name(spec), f"Week of {spec['worksheet']['week_start']}", ""]
     for section in spec["sections"]:
         lines.extend([section.get("title", section["id"].title()), ""])
-        for question in section["questions"]:
-            value = answer_key_line(question, decimal_places=decimal_places) if answer_key else f"{question['number']}. {display_question_prompt(question)}"
+        for local_number, question in enumerate(section["questions"], start=1):
+            shown = display_number(question, local_number, numbering)
+            value = (
+                answer_key_line(question, decimal_places=decimal_places, number=shown)
+                if answer_key
+                else f"{shown}. {display_question_prompt(question)}"
+            )
             lines.append(value)
         lines.append("")
     if answer_key:
@@ -94,7 +105,7 @@ def paragraph_ranges_containing(body: list[dict], placeholders: set[str]) -> dic
     return ranges
 
 
-def render_document(docs, document_id: str, content: str, spec: dict, answer_key: bool, *, decimal_places: int = 2) -> None:
+def render_document(docs, document_id: str, content: str, spec: dict, answer_key: bool, *, decimal_places: int = 2, numbering: str = "local") -> None:
     existing, body = document_text(docs, document_id)
     if "{{MON_Q1}}" in existing or "{{MON_A1}}" in existing:
         prefixes = {"monday": "MON", "tuesday": "TUE", "wednesday": "WED", "thursday": "THU", "friday": "FRI"}
@@ -110,10 +121,11 @@ def render_document(docs, document_id: str, content: str, spec: dict, answer_key
                 question = questions.get(number)
                 placeholder = f"{{{{{prefix}_{'A' if answer_key else 'Q'}{number}}}}}"
                 if question:
+                    shown = display_number(question, number, numbering)
                     value = display_answer(question["answer"], decimal_places=decimal_places) if answer_key else display_question_prompt(question)
-                    rendered_value = f"{question['number']}. {value}"
+                    rendered_value = f"{shown}. {value}"
                     if answer_key:
-                        values[f"{number}. Answer: {placeholder}"] = answer_key_line(question, decimal_places=decimal_places)
+                        values[f"{number}. Answer: {placeholder}"] = answer_key_line(question, decimal_places=decimal_places, number=shown)
                     else:
                         values[f"{number}. {placeholder}"] = rendered_value
                     values[placeholder] = rendered_value
@@ -201,6 +213,7 @@ def main() -> None:
     answer_key_template = manifest["answer_key_template"]["id"]
     staging_folder = effective_config["publishing"]["staging"]["render_folder_id"]
     naming = effective_config["naming"]["weekly"]
+    numbering = effective_config.get("display_numbering", "local")
     date = args.date
     results = []
     spec_paths = spec_paths_for_run(run_root, args.worksheet_id)
@@ -215,8 +228,25 @@ def main() -> None:
         base_name = name_for(naming, worksheet_id, date)
         worksheet = copy_document(drive, worksheet_template, staging_folder, base_name)
         key = copy_document(drive, answer_key_template, staging_folder, base_name + naming["answer_key_suffix"])
-        render_document(docs, worksheet["id"], projection(spec, False), spec, False)
-        render_document(docs, key["id"], projection(spec, True), spec, True)
+        render_document(docs, worksheet["id"], projection(spec, False, numbering=numbering), spec, False, numbering=numbering)
+        render_document(docs, key["id"], projection(spec, True, numbering=numbering), spec, True, numbering=numbering)
+        if effective_config["publishing"].get("provenance", {}).get("enabled"):
+            from mts.publishing import deliver as delivery_policy
+            from mts.infrastructure.google_docs import google_docs_adapter
+
+            stamper = google_docs_adapter.GoogleDocsAdapter(drive, docs)
+            for document, artifact_kind in ((worksheet, "student_worksheet"), (key, "answer_key")):
+                stamper.stamp_document(
+                    document["id"],
+                    delivery_policy.provenance_properties(
+                        run_id=run_root.name,
+                        spec_revision=spec_path.stem,
+                        grade_id=worksheet_id,
+                        week_of=date,
+                        worksheet_type="weekly-worksheet",
+                        artifact_kind=artifact_kind,
+                    ),
+                )
         results.append({
             "worksheet_id": worksheet_id,
             "worksheet": worksheet,

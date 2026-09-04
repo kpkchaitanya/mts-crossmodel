@@ -48,8 +48,11 @@ def report(record: dict) -> None:
                 print(f"    {role}={target[role]['document']['webViewLink']}")
     for issue in record["issues"]:
         print(f"  issue={issue['reason']} {issue.get('grade_id', '')}")
-        for entry in issue.get("documents", []) if isinstance(issue.get("documents"), list) else []:
-            print(f"    {entry['name']}")
+        entries = issue.get("documents")
+        if isinstance(entries, list):
+            for entry in entries:
+                detail = entry.get("name") or f"{entry.get('grade_id')} {entry.get('role')} {entry.get('problem')}"
+                print(f"    {detail}")
 
 
 def main() -> None:

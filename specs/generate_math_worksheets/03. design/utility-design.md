@@ -38,8 +38,17 @@ Where this document extends a contract in `design.md`, it says so explicitly and
    - [4.4 Naming Contract](#44-naming-contract)
    - [4.5 Delivery Contract](#45-delivery-contract)
    - [4.6 Command And CLI Surface](#46-command-and-cli-surface)
-5. [Test Design](#5-test-design)
-6. [Implementation Sequence](#6-implementation-sequence)
+5. [Utility: Format-And-Deliver Worksheets](#5-utility-format-and-deliver-worksheets)
+   - [5.1 Requirement](#51-requirement)
+   - [5.2 Provenance Contract](#52-provenance-contract)
+   - [5.3 Display Numbering Contract](#53-display-numbering-contract)
+   - [5.4 Classification Contract](#54-classification-contract)
+   - [5.5 Reconstruction Contract](#55-reconstruction-contract)
+   - [5.6 Composition Contract](#56-composition-contract)
+   - [5.7 Authoring Contract](#57-authoring-contract)
+   - [5.8 Command And CLI Surface](#58-command-and-cli-surface)
+6. [Test Design](#6-test-design)
+7. [Implementation Sequence](#7-implementation-sequence)
 
 ## 1. Purpose And Scope
 
@@ -531,7 +540,148 @@ dry-run first, present the plan and the issues, stop, and apply only on an expli
 | `on_missing` | `skip`, `fail` | `skip` |
 | `dry_run` | `yes`, `no` | `yes` |
 
-## 5. Test Design
+## 5. Utility: Format-And-Deliver Worksheets
+
+### 5.1 Requirement
+
+Take every loose file in staging, bring each up to pipeline standard, and deliver it — in one step,
+rather than requiring an operator to notice and separately repair a document that was never rendered
+through the pipeline.
+
+This utility exists because "format the way the workflow formats" turned out not to be a text
+operation. A rendered document's format is a function of **Spec + template**; a document authored
+directly into Drive has no Spec, so half that function's input is missing. The utility's real job is
+detecting that gap and closing it — reconstruction, not text repair.
+
+### 5.2 Provenance Contract
+
+Extends the Google Docs/Drive Adapter Contract (`design.md` §3.6) and §2.5/§3.6 of this document with
+one further primitive:
+
+12. `stamp_document(file_id, properties)` records provenance as Drive `appProperties` and confirms it
+    was written before reporting success. Properties stay short identifiers (`mts_run_id`,
+    `mts_spec_rev`, `mts_grade_id`, `mts_week_of`, `mts_wtype`, `mts_artifact_kind`) because Drive caps
+    each key+value pair at 124 bytes; a full path is rejected locally rather than failing as an opaque
+    403 from Drive.
+
+Every document the pipeline renders is stamped. `publishing.provenance.enabled` gates whether stamping
+and reporting happen at all; `require_stamp_for_delivery` gates whether an unstamped document blocks
+delivery of its grade or is merely reported. Both default to report-only (`enabled: true`,
+`require_stamp_for_delivery: false`) because existing staged documents predate stamping — turning on
+enforcement before every in-flight artifact is rendered through the pipeline would block legitimate
+delivery.
+
+A stamp naming a different grade or week than the document's own filename is reported as
+`provenance_mismatch`, distinct from `no_provenance`. A run root needs no stamp: the run record itself
+is the provenance, which is exactly why §4.3 rule 1 prefers it.
+
+### 5.3 Display Numbering Contract
+
+The Weekly Worksheet template's placeholder scheme is `<DAY>_<Q|A><LOCAL_NUMBER>` — per-day slots
+restarting at 1, not the Spec's continuous global numbering. `data/config/worksheet_types/weekly_worksheet.yaml`
+declares `display_numbering: "local"` so students see 1..10 each day; the Spec keeps global numbers
+for storage, ordering, and verification. This is a rendering and QA concern, not unique to this
+utility, and applies pipeline-wide:
+
+1. `render_weekly_specs_to_drive.py` renders local numbers into both the worksheet and the answer key
+   from the same per-day position, so the two always agree.
+2. `p0_runtime.targeted_text_qa_v2(..., numbering="local")` checks each local number appears once per
+   section that reaches it, replacing the prior global-numbering assumption that produced false
+   failures on Weekly renders (the gap recorded in `design.md` §3.6). `numbering="global"` remains
+   available for worksheet types that are actually numbered continuously.
+3. A reconstructed Spec (§5.5) round-trips through the same local numbering it was parsed from —
+   local-in, global-in-Spec, local-out — so re-rendering never silently renumbers a document a
+   student has already seen.
+
+### 5.4 Classification Contract
+
+Every staged pair is either:
+
+| Label | Meaning | Action |
+|---|---|---|
+| `conformant` | Carries provenance naming its own grade and week | Delivered as-is; never re-rendered |
+| `orphan` | No provenance, or provenance naming a different grade/week | Reconstructed and re-rendered (§5.5) before delivery |
+
+Classification reuses `deliver.unstamped_documents` (§5.2) unchanged — the same check delivery itself
+uses to report `missing_provenance` — so classification and the delivery gate can never disagree about
+which documents are trustworthy.
+
+### 5.5 Reconstruction Contract
+
+`src/mts/publishing/reconstruct.py` builds a Spec from an orphan pair's rendered text. Parsing is
+inference, so every ambiguity fails closed rather than being resolved:
+
+1. Numbered lines are grouped under the day heading that precedes them; a numbered line before any
+   heading, or a document with no headings at all, refuses.
+2. Local numbering within a day must be contiguous `1..n`; a gap refuses.
+3. The worksheet's sections must match the key's sections exactly, and each section's question count
+   must equal its answer count; any mismatch refuses, naming the section and both counts.
+4. Answers are carried over from the key, not recomputed. Numeric text is coerced to `int`/`float` so
+   downstream `display_answer` rounding behaves as it does for authored Specs; non-numeric answers
+   pass through unchanged.
+5. **Verification is not recomputed.** The reconstructed Spec's `verification.status` is `PASS` so
+   `render_pair` still functions, but `method: "inherited_from_source_document"`, `recomputed: false`,
+   and `source_documents` are recorded on the Spec and on every question, so an inherited answer can
+   never be mistaken for one independently verified per `design.md`'s verification contract. This is a
+   deliberate, explicit exception to `recompute_every_answer`, scoped to recovering pre-existing
+   documents that predate the provenance requirement — it is not a precedent for skipping verification
+   on newly authored content.
+6. The reconstructed Spec is persisted under the grade's transaction tree like any other Spec revision,
+   so it stops being an orphan: a future run can read, audit, or correct it.
+
+### 5.6 Composition Contract
+
+`src/mts/publishing/format_deliver.py` defines no delivery, naming, numbering, or reconstruction rule
+of its own — it sequences existing contracts:
+
+1. Pair staging by name (`deliver.pair_from_staging`, §4.3).
+2. Classify each pair (§5.4).
+3. For each `orphan`: reconstruct (§5.5) → persist the Spec → re-render from the registered template,
+   stamping the result (§5.2). The **re-rendered** documents are delivered, never the orphan
+   originals; the record names which documents a rebuild replaced.
+4. Deliver every resolved pair through `deliver.run_deliver` with the pairs supplied explicitly, so
+   week resolution, destination lookup, and the copy/move step are identical to §4's contract.
+
+Failure isolation: one grade's reconstruction or render failure is recorded against that grade with
+its error and does not block the others. A dry run classifies and reports without reconstructing,
+persisting, or delivering anything; a grade awaiting rebuild is reported `pending_rebuild`, distinct
+from `missing pair`, because the pair does not exist yet by design, not because nothing was found.
+
+### 5.7 Authoring Contract
+
+The root cause this utility exists to recover from: content authored directly into a Drive document,
+bypassing Spec persistence and rendering entirely. This is now prohibited, not merely worked around:
+
+1. Every document the pipeline produces must come from a persisted Spec revision, be named from
+   `naming.<worksheet_kind>` configuration (§4.4), and be stamped with provenance (§5.2).
+2. Authoring prompt or answer text straight into a Drive document is refused as a practice, not just
+   detected after the fact — stated directly in the Weekly execution runbook and in
+   `commands/generate-worksheet.md`.
+3. Format-and-deliver remains available as recovery for documents that predate this rule. It is not a
+   sanctioned second authoring path.
+
+### 5.8 Command And CLI Surface
+
+Slash command `commands/format-and-deliver-worksheets.md`, structurally identical to the other
+utilities: dry run first, present the classification and every action, stop, and apply only on an
+explicit new instruction.
+
+| Parameter | Values | Default |
+|---|---|---|
+| `week` | `current`, a week number, or an ISO date | `current` |
+| `grades` | `all`, or a grade list | `all` |
+| `source_folder` | a Drive folder ID | `publishing.staging.approved_folder_id` |
+| `batch_id` | a batch identifier for reconstructed Specs | `reconstructed_<week_of>` |
+| `dry_run` | `yes`, `no` | `yes` |
+
+CLI entry point:
+
+```powershell
+python scripts/format_and_deliver.py --week 2026-09-07 --grades grade_4 --dry-run
+python scripts/format_and_deliver.py --week 2026-09-07 --grades grade_4 --apply
+```
+
+## 6. Test Design
 
 Extends `design.md` §8. All behavior tests use the existing fake-Drive pattern in
 `tests/integration/test_google_docs_adapter.py`; no test performs live Drive I/O.
@@ -552,8 +702,32 @@ Extends `design.md` §8. All behavior tests use the existing fake-Drive pattern 
    matching; disabled-by-default refusal; partial-failure deleted/undeleted split.
 6. **Shared-resolution test**: archive and cleanup resolve the identical effective folder for the same
    request, which is what §3.2 requires and what prevents the two dry runs from diverging.
+7. **Deliver Worksheets tests**: week resolution (`current`/number/date); destination resolution and
+   unconfigured-grade refusal; document-name derivation from `naming` configuration; staging pairing
+   including `ambiguous_name`, `incomplete_pair`, `unmatched_files`, and a different week matching
+   nothing; run-root pairing bypassing name matching entirely; one grade's delivery failure not
+   blocking the others; `on_missing=skip` (default) delivering every ready grade versus
+   `on_missing=fail` blocking the run; the CLI holds no decision logic.
+8. **Provenance tests**: `stamp_document` records and returns properties; an oversized property is
+   refused locally before reaching Drive; `unstamped_documents` reports both `no_provenance` and
+   `provenance_mismatch`; a run root needs no stamp; `require_stamp_for_delivery` blocking versus
+   report-only.
+9. **Local numbering tests**: per-day numbers restart correctly in the worksheet; the answer key uses
+   the identical local numbers as the worksheet; `numbering="global"` remains available and unchanged;
+   QA accepts local numbering that global-mode QA would reject, and still fails a genuinely missing
+   day.
+10. **Reconstruction tests**: a pair reconstructs into globally-numbered sections; prompts and answers
+    pair in document order; numeric coercion and text-answer preservation; verification is recorded as
+    inherited, never as recomputed; a missing answer, a section present in only one document,
+    non-contiguous numbering, and a numbered line before any heading all fail closed; a reconstructed
+    Spec round-trips back through rendering to the same local numbering it was parsed from.
+11. **Format-and-deliver composition tests**: a stamped pair is classified `conformant` and delivered
+    unmodified; an unstamped pair is reconstructed, re-rendered, and the **re-rendered** documents (not
+    the originals) are what gets delivered; a dry run reconstructs, renders, and delivers nothing; a
+    failed rebuild is recorded and does not block other grades; a grade awaiting rebuild is reported
+    `pending_rebuild`, not `missing pair`, since the dry run never claims a pair exists before it does.
 
-## 6. Implementation Sequence
+## 7. Implementation Sequence
 
 1. Adapter primitives (§2.5) with their tests.
 2. `publishing.archive` configuration block (§2.6).
@@ -578,3 +752,32 @@ Cleanup Folder, after Archive Folder is validated:
     point.
 13. Validate against a disposable folder first — never staging or a delivery folder — covering each
     scope, the confirmation mismatch, and Drive Trash restoration.
+
+Deliver Worksheets:
+
+14. `src/mts/publishing/deliver.py`: week resolution, destination resolution, naming-based document
+    names, run-root and staging pairing, `run_deliver(...)`, with tests (§6.7).
+15. `scripts/deliver_folder.py`, `commands/deliver-worksheets.md`, prompt entry point, README row.
+16. Promote the grade→document-name mapping from a private constant in
+    `render_weekly_specs_to_drive.py` into subject `naming` configuration, so rendering and delivery
+    read the same definition.
+17. Validate `--dry-run` against the approved staging folder for a real week, review the resolved
+    pairing and any issues, then apply.
+
+Format-And-Deliver Worksheets, after Deliver Worksheets is validated:
+
+18. `stamp_document` adapter primitive (§5.2) with its byte-limit test; `publishing.provenance`
+    configuration, shipped report-only; wire stamping into the render path.
+19. `display_numbering: "local"` on the Weekly Worksheet type (§5.3); per-day-aware rendering in
+    `render_weekly_specs_to_drive.py`; `numbering`-aware `targeted_text_qa_v2`; thread the setting
+    through `validate_subject_output` and the generate pipeline's QA projection.
+20. `src/mts/publishing/reconstruct.py`: `reconstruct_spec(...)` with its fail-closed tests (§6.10).
+21. `src/mts/publishing/format_deliver.py`: `classify_pairs(...)` and `run_format_and_deliver(...)`,
+    composing §5.2–§5.5 and `deliver.run_deliver` with explicit pairs, with tests (§6.11).
+22. State the authoring contract (§5.7) in the Weekly execution runbook and
+    `commands/generate-worksheet.md`: no document without a persisted, named, stamped Spec.
+23. `scripts/format_and_deliver.py`, `commands/format-and-deliver-worksheets.md`, prompt entry point,
+    README row.
+24. Validate against a real orphan pair: dry run shows the correct classification, apply reconstructs
+    and delivers exactly that grade, and a stamped pair already in staging is confirmed `conformant`
+    and left unmodified.

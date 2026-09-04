@@ -1,0 +1,850 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": "Bar graph",
+          "confidence": "inferred",
+          "id": "grade_4-q1",
+          "number": 1,
+          "prompt": "Question 1: Which graph is best for comparing the number of students in several favorite-sport categories?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "Line graph",
+          "confidence": "inferred",
+          "id": "grade_4-q2",
+          "number": 2,
+          "prompt": "Question 2: Which graph is best for showing how temperature changes from Monday through Friday?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "Pictograph",
+          "confidence": "inferred",
+          "id": "grade_4-q3",
+          "number": 3,
+          "prompt": "Question 3: Which graph uses pictures or symbols to represent a fixed number of items?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "Line plot",
+          "confidence": "inferred",
+          "id": "grade_4-q4",
+          "number": 4,
+          "prompt": "Question 4: Which graph shows frequencies by placing X marks above values on a number line?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "Soccer",
+          "confidence": "inferred",
+          "id": "grade_4-q5",
+          "number": 5,
+          "prompt": "Question 5: BAR GRAPH: Which sport is most popular?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 6,
+          "confidence": "inferred",
+          "id": "grade_4-q6",
+          "number": 6,
+          "prompt": "Question 6: BAR GRAPH: How many students chose swimming?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 5,
+          "confidence": "inferred",
+          "id": "grade_4-q7",
+          "number": 7,
+          "prompt": "Question 7: BAR GRAPH: How many more chose soccer than tennis?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 22,
+          "confidence": "inferred",
+          "id": "grade_4-q8",
+          "number": 8,
+          "prompt": "Question 8: BAR GRAPH: How many students were surveyed in all?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "Friday",
+          "confidence": "inferred",
+          "id": "grade_4-q9",
+          "number": 9,
+          "prompt": "Question 9: LINE GRAPH: On which day was the temperature highest?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "72\u00b0F",
+          "confidence": "inferred",
+          "id": "grade_4-q10",
+          "number": 10,
+          "prompt": "Question 10: LINE GRAPH: What was the temperature on Tuesday?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": "11\u00b0F",
+          "confidence": "inferred",
+          "id": "grade_4-q11",
+          "number": 11,
+          "prompt": "Question 11: LINE GRAPH: How much did the temperature rise from Monday to Friday?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "Wednesday to Thursday",
+          "confidence": "inferred",
+          "id": "grade_4-q12",
+          "number": 12,
+          "prompt": "Question 12: LINE GRAPH: Between which consecutive days was the greatest increase?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 4,
+          "confidence": "inferred",
+          "id": "grade_4-q13",
+          "number": 13,
+          "prompt": "Question 13: LINE PLOT: What is the most common number of books read?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 3,
+          "confidence": "inferred",
+          "id": "grade_4-q14",
+          "number": 14,
+          "prompt": "Question 14: LINE PLOT: How many students read exactly 2 books?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 12,
+          "confidence": "inferred",
+          "id": "grade_4-q15",
+          "number": 15,
+          "prompt": "Question 15: LINE PLOT: How many students are represented?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 4,
+          "confidence": "inferred",
+          "id": "grade_4-q16",
+          "number": 16,
+          "prompt": "Question 16: LINE PLOT: What is the difference between the greatest and least values?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "15 books",
+          "confidence": "inferred",
+          "id": "grade_4-q17",
+          "number": 17,
+          "prompt": "Question 17: A pictograph key says \u2605 = 3 books. What do 5 stars represent?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 400000,
+          "confidence": "inferred",
+          "id": "grade_4-q18",
+          "number": 18,
+          "prompt": "Question 18: What is the value of the digit 4 in 482,716?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 700000,
+          "confidence": "inferred",
+          "id": "grade_4-q19",
+          "number": 19,
+          "prompt": "Question 19: What is the value of the digit 7 in 705,093?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 60000,
+          "confidence": "inferred",
+          "id": "grade_4-q20",
+          "number": 20,
+          "prompt": "Question 20: What is the value of the digit 6 in 364,982?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 900000,
+          "confidence": "inferred",
+          "id": "grade_4-q21",
+          "number": 21,
+          "prompt": "Question 21: What is the value of the digit 9 in 950,148?",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "600,000 + 8,000 + 300 + 4",
+          "confidence": "inferred",
+          "id": "grade_4-q22",
+          "number": 22,
+          "prompt": "Question 22: Write 608,304 in expanded form.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 348000,
+          "confidence": "inferred",
+          "id": "grade_4-q23",
+          "number": 23,
+          "prompt": "Question 23: Round 347,829 to the nearest thousand.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 650000,
+          "confidence": "inferred",
+          "id": "grade_4-q24",
+          "number": 24,
+          "prompt": "Question 24: Round 652,149 to the nearest ten thousand.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": ">",
+          "confidence": "inferred",
+          "id": "grade_4-q25",
+          "number": 25,
+          "prompt": "Question 25: Compare using <, >, or =: 508,901 ___ 508,091",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "80,952; 81,025; 81,205",
+          "confidence": "inferred",
+          "id": "grade_4-q26",
+          "number": 26,
+          "prompt": "Question 26: Order least to greatest: 81,205; 80,952; 81,025",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 6803,
+          "confidence": "inferred",
+          "id": "grade_4-q27",
+          "number": 27,
+          "prompt": "Question 27: 3,847 + 2,956 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 4322,
+          "confidence": "inferred",
+          "id": "grade_4-q28",
+          "number": 28,
+          "prompt": "Question 28: 9,000 - 4,678 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 74954,
+          "confidence": "inferred",
+          "id": "grade_4-q29",
+          "number": 29,
+          "prompt": "Question 29: 56,209 + 18,745 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 41646,
+          "confidence": "inferred",
+          "id": "grade_4-q30",
+          "number": 30,
+          "prompt": "Question 30: 70,300 - 28,654 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 6115,
+          "confidence": "inferred",
+          "id": "grade_4-q31",
+          "number": 31,
+          "prompt": "Question 31: 4,726 + 1,389 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 3215,
+          "confidence": "inferred",
+          "id": "grade_4-q32",
+          "number": 32,
+          "prompt": "Question 32: 10,000 - 6,785 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 21623,
+          "confidence": "inferred",
+          "id": "grade_4-q33",
+          "number": 33,
+          "prompt": "Question 33: A library had 18,675 books and bought 2,948 more. How many books now?",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 6264,
+          "confidence": "inferred",
+          "id": "grade_4-q34",
+          "number": 34,
+          "prompt": "Question 34: A stadium had 25,000 seats. If 18,736 were filled, how many were empty?",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "6 \u00d7 8 = 48",
+          "confidence": "inferred",
+          "id": "grade_4-q35",
+          "number": 35,
+          "prompt": "Question 35: Write a multiplication equation for \u201c6 times as many as 8.\u201d",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "28 inches",
+          "confidence": "inferred",
+          "id": "grade_4-q36",
+          "number": 36,
+          "prompt": "Question 36: A ribbon is 4 times as long as a 7-inch ribbon. How long is it?",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "1\u00d724, 2\u00d712, 3\u00d78, 4\u00d76",
+          "confidence": "inferred",
+          "id": "grade_4-q37",
+          "number": 37,
+          "prompt": "Question 37: List all factor pairs of 24.",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "Yes; 9 \u00d7 4 = 36",
+          "confidence": "inferred",
+          "id": "grade_4-q38",
+          "number": 38,
+          "prompt": "Question 38: Is 36 a multiple of 9? Explain.",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "96; multiply by 2",
+          "confidence": "inferred",
+          "id": "grade_4-q39",
+          "number": 39,
+          "prompt": "Question 39: Complete the pattern and state the rule: 6, 12, 24, 48, ____.",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 56,
+          "confidence": "inferred",
+          "id": "grade_4-q40",
+          "number": 40,
+          "prompt": "Question 40: A shop packs 8 pencils in each box. How many pencils are in 7 boxes?",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 8,
+          "confidence": "inferred",
+          "id": "grade_4-q41",
+          "number": 41,
+          "prompt": "Question 41: Find the missing factor: 9 \u00d7 ____ = 72",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 1000,
+          "confidence": "inferred",
+          "id": "grade_4-q42",
+          "number": 42,
+          "prompt": "Question 42: Estimate 397 + 612 by rounding each addend to the nearest hundred.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 761,
+          "confidence": "inferred",
+          "id": "grade_4-q43",
+          "number": 43,
+          "prompt": "Question 43: A school collected 1,275 cans Monday and 986 Tuesday. It donated 1,500. How many remained?",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "Sample: Books Read by Class",
+          "confidence": "inferred",
+          "id": "grade_4-q44",
+          "number": 44,
+          "prompt": "Question 44: Create a sensible graph title for data showing books read by four classes.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "Circle graph",
+          "confidence": "inferred",
+          "id": "grade_4-q45",
+          "number": 45,
+          "prompt": "Question 45: Which graph would you choose to show parts of a whole: bar graph, line graph, or circle graph?",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "It suggests a continuous change or trend between categories.",
+          "confidence": "inferred",
+          "id": "grade_4-q46",
+          "number": 46,
+          "prompt": "Question 46: Explain why a line graph is not ideal for unrelated categories.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "Line plot",
+          "confidence": "inferred",
+          "id": "grade_4-q47",
+          "number": 47,
+          "prompt": "Question 47: A table shows 4, 7, 7, 9, 12. Which graph could show how often each value occurs?",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 12,
+          "confidence": "inferred",
+          "id": "grade_4-q48",
+          "number": 48,
+          "prompt": "Question 48: A pictograph uses \u25cf = 4 votes. How many votes do 3 full symbols show?",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": "Multiply by 2; 80",
+          "confidence": "inferred",
+          "id": "grade_4-q49",
+          "number": 49,
+          "prompt": "Question 49: Find the rule and next number: 5, 10, 20, 40, ____.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        },
+        {
+          "answer": 21,
+          "confidence": "inferred",
+          "id": "grade_4-q50",
+          "number": 50,
+          "prompt": "Question 50: A class has 6 tables with 4 students at each. Then 3 students leave. How many remain?",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "method": "inherited_from_source_document",
+    "recomputed": false,
+    "source_documents": {
+      "answer_key": "1Del3CrQuOCIr3rsrJ6NhHR9-O1zkVzhhCGJTnsLRMRw",
+      "student_worksheet": "1ClyiyYvnWQU65AgXReGvhMB5ApFYN5J9V5jDDFwWds8"
+    },
+    "status": "PASS"
+  },
+  "worksheet": {
+    "grade": "grade_4",
+    "grade_or_course": "grade_4",
+    "question_count": 50,
+    "title": "MTS - Weekly Math Worksheet",
+    "week_start": "2026-09-07"
+  }
+}

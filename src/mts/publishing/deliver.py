@@ -158,6 +158,56 @@ def pair_from_staging(
     return pairs, issues
 
 
+def provenance_settings(effective_config: Mapping[str, Any]) -> Mapping[str, Any]:
+    return effective_config.get("publishing", {}).get("provenance") or {}
+
+
+def provenance_properties(
+    *,
+    run_id: str,
+    spec_revision: str,
+    grade_id: str,
+    week_of: str,
+    worksheet_type: str,
+    artifact_kind: str,
+) -> dict[str, str]:
+    """Provenance recorded on a rendered document; delivery reads these back.
+
+    Values stay short identifiers because Drive caps each key+value pair at 124 bytes. The run id
+    plus grade and revision locates the Spec without storing a full path.
+    """
+    return {
+        "mts_run_id": run_id,
+        "mts_spec_rev": spec_revision,
+        "mts_grade_id": grade_id,
+        "mts_week_of": week_of,
+        "mts_wtype": worksheet_type,
+        "mts_artifact_kind": artifact_kind,
+    }
+
+
+def unstamped_documents(
+    pairs: Mapping[str, Mapping[str, Any]], *, week_of: str
+) -> list[dict[str, Any]]:
+    """Report documents with no provenance, or provenance naming a different grade or week."""
+    findings: list[dict[str, Any]] = []
+    for grade_id, pair in pairs.items():
+        for role in ("student_worksheet", "answer_key"):
+            document = pair[role]
+            stamp = document.get("appProperties") or {}
+            if not stamp.get("mts_run_id"):
+                findings.append({"grade_id": grade_id, "role": role, "id": document["id"], "problem": "no_provenance"})
+            elif stamp.get("mts_grade_id") not in (None, grade_id) or stamp.get("mts_week_of") not in (None, week_of):
+                findings.append({
+                    "grade_id": grade_id,
+                    "role": role,
+                    "id": document["id"],
+                    "problem": "provenance_mismatch",
+                    "stamped": {"grade_id": stamp.get("mts_grade_id"), "week_of": stamp.get("mts_week_of")},
+                })
+    return findings
+
+
 def run_deliver(
     request: Mapping[str, Any],
     effective_config: Mapping[str, Any],
@@ -165,6 +215,7 @@ def run_deliver(
     *,
     dry_run: bool = True,
     run_root: Path | None = None,
+    pairs: Mapping[str, Mapping[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Deliver approved pairs into `Week_<WEEK_OF>` under each grade's destination folder."""
     settings = delivery_settings(effective_config)
@@ -175,19 +226,32 @@ def run_deliver(
     if mode not in {"copy", "move"}:
         raise DeliveryError("mode must be 'copy' or 'move'.")
 
-    if run_root is not None:
+    issues: list[dict[str, Any]] = []
+    if pairs is not None:
+        pairs = {normalize_grade_id(grade_id): pair for grade_id, pair in pairs.items()}
+        source = request.get("source_label", "provided")
+    elif run_root is not None:
         pairs, source = pair_from_run_root(run_root)
-        issues: list[dict[str, Any]] = []
     else:
         source_folder = request.get("source_folder_id") or effective_config["publishing"]["staging"]["approved_folder_id"]
         naming = naming_settings(effective_config)
-        pairs, issues = pair_from_staging(
+        pairs, staging_issues = pair_from_staging(
             adapter.list_child_files(source_folder),
             week_of=week_of,
             naming=naming,
             grade_ids=[destination["grade_id"] for destination in destinations],
         )
+        issues.extend(staging_issues)
         source = f"staging:{source_folder}"
+
+    provenance = provenance_settings(effective_config)
+    blocked_grades: set[str] = set()
+    if provenance.get("enabled") and run_root is None and pairs:
+        findings = unstamped_documents(pairs, week_of=week_of)
+        if findings:
+            issues.append({"reason": "missing_provenance", "documents": findings})
+            if provenance.get("require_stamp_for_delivery"):
+                blocked_grades = {finding["grade_id"] for finding in findings}
 
     on_missing = request.get("on_missing") or "skip"
     if on_missing not in {"skip", "fail"}:
@@ -195,6 +259,13 @@ def run_deliver(
     target_records: list[dict[str, Any]] = []
     for destination in destinations:
         grade_id = destination["grade_id"]
+        if grade_id in blocked_grades:
+            target_records.append({
+                **destination,
+                "status": "failed",
+                "error": f"{grade_id} has no verifiable provenance; delivery requires a stamped document.",
+            })
+            continue
         if grade_id not in pairs:
             # Deliver what is available; a missing grade blocks the run only when asked to.
             target_records.append({
@@ -259,8 +330,11 @@ __all__ = [
     "normalize_grade_id",
     "pair_from_run_root",
     "pair_from_staging",
+    "provenance_properties",
+    "provenance_settings",
     "resolve_destinations",
     "resolve_week_of",
     "run_deliver",
+    "unstamped_documents",
     "week_folder_name",
 ]

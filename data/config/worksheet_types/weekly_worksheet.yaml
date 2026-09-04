@@ -16,6 +16,9 @@ grade_defaults:
   grade_6: {questions_per_day: 8, questions_per_week: 40}
   grade_9_10: {questions_per_day: 5, questions_per_week: 25, grade_split: {math_1: 13, math_2: 12}, source_selector: {math_1: 9, math_2: 10}}
 duration_minutes: null
+# Students see 1..questions_per_day restarting each day, matching the template's
+# <DAY>_<Q|A><LOCAL_NUMBER> slots. Spec questions stay globally numbered for storage and verification.
+display_numbering: "local"
 template_selection:
   template_manifest: "data/master/subjects/math/template_manifests/weekly-worksheet.json"
   template_key_by_grade:

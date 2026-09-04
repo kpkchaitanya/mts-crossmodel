@@ -72,6 +72,14 @@ reviewer name.
    `student, key = mts.publishing.deliver.document_names(effective_config["naming"]["weekly"], grade_id, week_of)`.
    Folder-anchored Final Delivery pairs staged documents back to grades by these names, so an ad-hoc
    name renders a worksheet undeliverable until it is renamed.
+
+   **No document without a Spec.** Never author question or answer text straight into a Drive
+   document. Persist the Spec revision first, render from it, and stamp the result with
+   `adapter.stamp_document(id, mts.publishing.deliver.provenance_properties(...))`. An unstamped
+   document has no run, Spec, or verification behind it, cannot be regenerated or corrected by any
+   tool here, and is reported by delivery as `missing_provenance`. Recovering one requires
+   `/format-and-deliver-worksheets`, which reconstructs a Spec by parsing the document — inference
+   that the authoring step could have made unnecessary.
    j. QA the rendered text: `qa = math.validate_subject_output({"student_worksheet": <rendered student text>, "answer_key": <rendered key text>}, spec)`; both must report `status == "PASS"`. This is required regardless of gate bypass.
    k. **Gate 4 (`formatting_review`)**: present QA results unless bypassed, then record approval.
 9. After all plans reach `formatting_review` approval, set `manifest["status"] = "publish_approval_pending"` and `RunWriter.write_manifest(manifest)`.

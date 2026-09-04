@@ -1,0 +1,850 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 7,
+          "confidence": "inferred",
+          "id": "grade_5-q1",
+          "number": 1,
+          "prompt": "Question 1: Rule: multiply the input by 3, then add 1. Find the output for input 2.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 13,
+          "confidence": "inferred",
+          "id": "grade_5-q2",
+          "number": 2,
+          "prompt": "Question 2: Rule: multiply the input by 3, then add 1. Find the output for input 4.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 19,
+          "confidence": "inferred",
+          "id": "grade_5-q3",
+          "number": 3,
+          "prompt": "Question 3: Rule: multiply the input by 3, then add 1. Find the output for input 6.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 28,
+          "confidence": "inferred",
+          "id": "grade_5-q4",
+          "number": 4,
+          "prompt": "Question 4: Rule: multiply the input by 3, then add 1. Find the output for input 9.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 37,
+          "confidence": "inferred",
+          "id": "grade_5-q5",
+          "number": 5,
+          "prompt": "Question 5: Rule: multiply the input by 3, then add 1. Find the output for input 12.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 46,
+          "confidence": "inferred",
+          "id": "grade_5-q6",
+          "number": 6,
+          "prompt": "Question 6: Rule: multiply the input by 3, then add 1. Find the output for input 15.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 19,
+          "confidence": "inferred",
+          "id": "grade_5-q7",
+          "number": 7,
+          "prompt": "Question 7: For the rule y = 2x + 5, what is y when x = 7?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "(3, 12)",
+          "confidence": "inferred",
+          "id": "grade_5-q8",
+          "number": 8,
+          "prompt": "Question 8: For the rule y = 4x, which ordered pair belongs: (3, 7), (3, 12), or (12, 3)?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "8, 11, 15",
+          "confidence": "inferred",
+          "id": "grade_5-q9",
+          "number": 9,
+          "prompt": "Question 9: Complete the table for y = x + 6 when x = 2, 5, 9.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "Multiply by 3, then add 2 (y = 3x + 2)",
+          "confidence": "inferred",
+          "id": "grade_5-q10",
+          "number": 10,
+          "prompt": "Question 10: Inputs are 1, 2, 3, 4 and outputs are 5, 8, 11, 14. State the rule.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 4,
+          "confidence": "inferred",
+          "id": "grade_5-q11",
+          "number": 11,
+          "prompt": "Question 11: In the ordered pair (4, 9), which number is the input/x-coordinate?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "x-axis (horizontal axis)",
+          "confidence": "inferred",
+          "id": "grade_5-q12",
+          "number": 12,
+          "prompt": "Question 12: Plotting an input-output pair places input on which axis?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "Quadrant I",
+          "confidence": "inferred",
+          "id": "grade_5-q13",
+          "number": 13,
+          "prompt": "Question 13: Which quadrant contains (3, 5)?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "(6, 2)",
+          "confidence": "inferred",
+          "id": "grade_5-q14",
+          "number": 14,
+          "prompt": "Question 14: Start at the origin. Move 6 right and 2 up. Name the point.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "Vertically aligned",
+          "confidence": "inferred",
+          "id": "grade_5-q15",
+          "number": 15,
+          "prompt": "Question 15: Points A(2, 3) and B(2, 8) share the same x-coordinate. Are they vertically or horizontally aligned?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "(4, 10)",
+          "confidence": "inferred",
+          "id": "grade_5-q16",
+          "number": 16,
+          "prompt": "Question 16: A rule gives points (1,4), (2,6), (3,8). Predict the next point.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "Each input is x and its output is y, forming (x, y).",
+          "confidence": "inferred",
+          "id": "grade_5-q17",
+          "number": 17,
+          "prompt": "Question 17: Explain how an input-output table connects to points on a coordinate plane.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 72,
+          "confidence": "inferred",
+          "id": "grade_5-q18",
+          "number": 18,
+          "prompt": "Question 18: Evaluate: 6 \u00d7 (8 + 4).",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 24,
+          "confidence": "inferred",
+          "id": "grade_5-q19",
+          "number": 19,
+          "prompt": "Question 19: Evaluate: 45 \u2212 3 \u00d7 7.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "(5 + 3) \u00d7 4",
+          "confidence": "inferred",
+          "id": "grade_5-q20",
+          "number": 20,
+          "prompt": "Question 20: Insert parentheses to make 5 + 3 \u00d7 4 equal 32.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": "5n \u2212 8",
+          "confidence": "inferred",
+          "id": "grade_5-q21",
+          "number": 21,
+          "prompt": "Question 21: Write an expression for \u201c8 less than 5 times n.\u201d",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "27, 32",
+          "confidence": "inferred",
+          "id": "grade_5-q22",
+          "number": 22,
+          "prompt": "Question 22: Find the next two terms: 7, 12, 17, 22, ____, ____.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 10,
+          "confidence": "inferred",
+          "id": "grade_5-q23",
+          "number": 23,
+          "prompt": "Question 23: Pattern A adds 4 starting at 2; Pattern B adds 8 starting at 2. List the first common term after 2.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 7,
+          "confidence": "inferred",
+          "id": "grade_5-q24",
+          "number": 24,
+          "prompt": "Question 24: What is the value of 7 in 47.352?",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "0.3 (three tenths)",
+          "confidence": "inferred",
+          "id": "grade_5-q25",
+          "number": 25,
+          "prompt": "Question 25: What is the value of 3 in 8.364?",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "<",
+          "confidence": "inferred",
+          "id": "grade_5-q26",
+          "number": 26,
+          "prompt": "Question 26: Compare: 5.407 ___ 5.47",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 18.7,
+          "confidence": "inferred",
+          "id": "grade_5-q27",
+          "number": 27,
+          "prompt": "Question 27: Round 18.746 to the nearest tenth.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "6 + 0.2 + 0.005",
+          "confidence": "inferred",
+          "id": "grade_5-q28",
+          "number": 28,
+          "prompt": "Question 28: Write 6.205 in expanded form.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 20892,
+          "confidence": "inferred",
+          "id": "grade_5-q29",
+          "number": 29,
+          "prompt": "Question 29: 3,482 \u00d7 6 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 8645,
+          "confidence": "inferred",
+          "id": "grade_5-q30",
+          "number": 30,
+          "prompt": "Question 30: 247 \u00d7 35 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 114968,
+          "confidence": "inferred",
+          "id": "grade_5-q31",
+          "number": 31,
+          "prompt": "Question 31: 4,106 \u00d7 28 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 1728,
+          "confidence": "inferred",
+          "id": "grade_5-q32",
+          "number": 32,
+          "prompt": "Question 32: A theater has 36 rows with 48 seats each. How many seats?",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 8000,
+          "confidence": "inferred",
+          "id": "grade_5-q33",
+          "number": 33,
+          "prompt": "Question 33: Estimate 398 \u00d7 21 using 400 \u00d7 20.",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 2.55,
+          "confidence": "inferred",
+          "id": "grade_5-q34",
+          "number": 34,
+          "prompt": "Question 34: 0.7 + 1.85 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 3.52,
+          "confidence": "inferred",
+          "id": "grade_5-q35",
+          "number": 35,
+          "prompt": "Question 35: 4.2 \u2212 0.68 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 1.8,
+          "confidence": "inferred",
+          "id": "grade_5-q36",
+          "number": 36,
+          "prompt": "Question 36: 0.36 \u00d7 5 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "6.35 miles",
+          "confidence": "inferred",
+          "id": "grade_5-q37",
+          "number": 37,
+          "prompt": "Question 37: A runner travels 2.75 miles Monday and 3.6 miles Tuesday. Total?",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "4 units",
+          "confidence": "inferred",
+          "id": "grade_5-q38",
+          "number": 38,
+          "prompt": "Question 38: Point P is (7, 4). How far is P from the x-axis?",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "3 units",
+          "confidence": "inferred",
+          "id": "grade_5-q39",
+          "number": 39,
+          "prompt": "Question 39: Point Q is (3, 9). How far is Q from the y-axis?",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "15 square units",
+          "confidence": "inferred",
+          "id": "grade_5-q40",
+          "number": 40,
+          "prompt": "Question 40: A rectangle has vertices (1,1), (6,1), (6,4), (1,4). Find its area.",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": "A straight line",
+          "confidence": "inferred",
+          "id": "grade_5-q41",
+          "number": 41,
+          "prompt": "Question 41: A rule y = x + 2 creates points (1,3), (2,4), (3,5). What geometric pattern do the points form?",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "y = 5x",
+          "confidence": "inferred",
+          "id": "grade_5-q42",
+          "number": 42,
+          "prompt": "Question 42: Write a rule for: input 2\u2192output 10, 3\u219215, 4\u219220.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "y = 5x; its output increases by 5 per input step",
+          "confidence": "inferred",
+          "id": "grade_5-q43",
+          "number": 43,
+          "prompt": "Question 43: Which grows faster: y = 2x + 1 or y = 5x? Explain.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 2125,
+          "confidence": "inferred",
+          "id": "grade_5-q44",
+          "number": 44,
+          "prompt": "Question 44: A school buys 24 boxes of 125 pencils. It gives away 875 pencils. How many remain?",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 29,
+          "confidence": "inferred",
+          "id": "grade_5-q45",
+          "number": 45,
+          "prompt": "Question 45: Evaluate 3 \u00d7 (12 \u2212 5) + 8.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": 7,
+          "confidence": "inferred",
+          "id": "grade_5-q46",
+          "number": 46,
+          "prompt": "Question 46: A pattern follows y = 4x + 2. If output is 30, find the input.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "An expression has no equals sign; an equation states two quantities are equal.",
+          "confidence": "inferred",
+          "id": "grade_5-q47",
+          "number": 47,
+          "prompt": "Question 47: Explain the difference between an expression and an equation.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "(8, 21)",
+          "confidence": "inferred",
+          "id": "grade_5-q48",
+          "number": 48,
+          "prompt": "Question 48: Create an ordered pair from input 8 and output 21.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "Coordinate graph; it makes the trend/pattern visible.",
+          "confidence": "inferred",
+          "id": "grade_5-q49",
+          "number": 49,
+          "prompt": "Question 49: Graph choice: Which is better for showing how outputs change as inputs increase\u2014table or coordinate graph? Why?",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        },
+        {
+          "answer": "$22",
+          "confidence": "inferred",
+          "id": "grade_5-q50",
+          "number": 50,
+          "prompt": "Question 50: A taxi rule is cost = 3 \u00d7 miles + 4. Find the cost for 6 miles.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_5",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "method": "inherited_from_source_document",
+    "recomputed": false,
+    "source_documents": {
+      "answer_key": "1zdgfZYL5VuLqQ4HE7vDFNOYMb91JK_JrmbN5-TK251w",
+      "student_worksheet": "12pYiPXfhQMF5LC62gRklvaRF_X5Kvxyti9XP2kVOQCo"
+    },
+    "status": "PASS"
+  },
+  "worksheet": {
+    "grade": "grade_5",
+    "grade_or_course": "grade_5",
+    "question_count": 50,
+    "title": "MTS - Weekly Math Worksheet",
+    "week_start": "2026-09-07"
+  }
+}

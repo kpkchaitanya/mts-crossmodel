@@ -1,0 +1,12 @@
+{
+  "references": [
+    {
+      "grade_or_course": "grade_4",
+      "question_plan": "data/transactions/subjects/math/grades/grade_4/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/question_plan.json",
+      "spec": "data/transactions/subjects/math/grades/grade_4/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/specs/r1.json",
+      "verification": "data/transactions/subjects/math/grades/grade_4/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/verification/verification-r1.json",
+      "worksheet_plan": "data/transactions/subjects/math/grades/grade_4/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet/worksheet_plan.json",
+      "worksheet_root": "data/transactions/subjects/math/grades/grade_4/cycles/2026-09-07/batches/weekly_math_2026_09_07_bypass/worksheets/weekly_worksheet"
+    }
+  ]
+}

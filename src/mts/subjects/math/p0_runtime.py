@@ -286,11 +286,18 @@ def template_cache_valid(manifest: dict[str, Any], worksheet_revision: str, answ
     }
 
 
-def targeted_text_qa_v2(rendered_text: str, spec: dict[str, Any], *, answer_key: bool = False) -> dict[str, Any]:
+def targeted_text_qa_v2(
+    rendered_text: str,
+    spec: dict[str, Any],
+    *,
+    answer_key: bool = False,
+    numbering: str = "global",
+) -> dict[str, Any]:
     """Targeted post-render content QA using only rendered text and WorksheetSpec.
 
-    This intentionally does not replace visual/layout review where the MTS config
-    requires it; it removes redundant full-structure rereads for content checks.
+    `numbering="local"` expects each section to restart at 1, which is what the Weekly template's
+    per-day slots produce. This intentionally does not replace visual/layout review where the MTS
+    config requires it; it removes redundant full-structure rereads for content checks.
     """
     import re
 
@@ -302,22 +309,37 @@ def targeted_text_qa_v2(rendered_text: str, spec: dict[str, Any], *, answer_key:
     def numbered_line_present(n: int) -> bool:
         return bool(re.search(rf"(?m)^\s*{n}\.\s*", rendered_text))
 
+    def numbered_line_count(n: int) -> int:
+        return len(re.findall(rf"(?m)^\s*{n}\.\s*", rendered_text))
+
+    if numbering == "local":
+        sections = spec.get("sections", [])
+        per_section = [len(section.get("questions", [])) for section in sections]
+        widest = max(per_section) if per_section else 0
+        # Each local number must appear once per section that reaches it.
+        expected_counts = {
+            number: sum(1 for count in per_section if count >= number)
+            for number in range(1, widest + 1)
+        }
+        numbering_ok = all(numbered_line_count(number) >= expected for number, expected in expected_counts.items())
+        no_extra = not any(numbered_line_present(number) for number in range(widest + 1, widest + 6))
+    else:
+        numbering_ok = all(numbered_line_present(int(q["number"])) for q in qs)
+        expected_count = int(ws.get("question_count", len(qs)))
+        no_extra = not any(numbered_line_present(n) for n in range(expected_count + 1, 33))
+
     checks: dict[str, bool] = {
         "rendered_text_nonempty": bool(rendered_text.strip()),
         "grade_present": bool(grade) and grade.lower() in rendered_text.lower(),
-        "all_question_numbers_present": all(numbered_line_present(int(q["number"])) for q in qs),
+        "all_question_numbers_present": numbering_ok,
         "no_unresolved_placeholders": not any(x in rendered_text for x in ["{{", "}}", "<PLACEHOLDER>"]),
         "no_pending_approval_label": "PENDING-APPROVAL" not in rendered_text,
+        "no_extra_numbered_slots": no_extra,
     }
     if title:
         checks["title_present"] = title.lower() in rendered_text.lower()
     if answer_key:
         checks["answer_key_label"] = "ANSWER KEY" in rendered_text.upper()
-
-    expected_count = int(ws.get("question_count", len(qs)))
-    checks["no_extra_numbered_slots"] = not any(
-        numbered_line_present(n) for n in range(expected_count + 1, 33)
-    )
 
     return {
         "status": "PASS" if all(checks.values()) else "FAIL",

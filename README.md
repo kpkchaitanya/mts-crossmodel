@@ -181,6 +181,14 @@ canonical `outputs/<subject>/`.
       <td style="border: 1px solid #6b7280;">Active once ELA naming and destinations are configured</td>
     </tr>
     <tr>
+      <td style="border: 1px solid #6b7280;">Format-And-Deliver Worksheets (FAD)</td>
+      <td style="border: 1px solid #6b7280;"><code>/format-and-deliver-worksheets</code></td>
+      <td style="border: 1px solid #6b7280;">Classifies every staged pair as conformant (provenance-stamped) or orphan; reconstructs an orphan's Spec from its rendered text, re-renders from the registered template with local numbering, then delivers. Conformant pairs are delivered unmodified, never re-rendered. See <code>commands/format-and-deliver-worksheets.md</code>.</td>
+      <td style="border: 1px solid #6b7280;"><code>/format-and-deliver-worksheets week=2026-09-07 grades=grade_4</code></td>
+      <td style="border: 1px solid #6b7280;">Active; composes deliver-worksheets and reconstruction</td>
+      <td style="border: 1px solid #6b7280;">Active once ELA naming and templates are registered</td>
+    </tr>
+    <tr>
       <td style="border: 1px solid #6b7280;">Archive Folder (ARC)</td>
       <td style="border: 1px solid #6b7280;"><code>/archive-folder</code></td>
       <td style="border: 1px solid #6b7280;">Publishing utility; moves a folder's previous set of loose files into its <code>Archive</code> child folder, in folder mode or in the latest/dated child of a parent folder. Dry run by default. See <code>commands/archive-folder.md</code>.</td>

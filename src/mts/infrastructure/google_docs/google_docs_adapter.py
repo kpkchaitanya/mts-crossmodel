@@ -185,13 +185,40 @@ class GoogleDocsAdapter:
             raise GoogleDocsAdapterError("Drive did not report the file as trashed.")
         return trashed
 
+    property_byte_limit = 124
+
+    def stamp_document(self, file_id: str, properties: Mapping[str, str]) -> dict[str, Any]:
+        """Record provenance on a document so delivery can tell rendered artifacts from strays."""
+        if not file_id:
+            raise GoogleDocsAdapterError("file_id is required.")
+        if not properties:
+            raise GoogleDocsAdapterError("At least one provenance property is required.")
+        encoded = {key: str(value) for key, value in properties.items()}
+        # Drive counts key + value together; exceeding it returns an opaque 403.
+        oversized = [
+            key for key, value in encoded.items()
+            if len((key + value).encode("utf-8")) > self.property_byte_limit
+        ]
+        if oversized:
+            raise GoogleDocsAdapterError(
+                f"Provenance properties exceed Drive's {self.property_byte_limit}-byte limit: {', '.join(oversized)}"
+            )
+        stamped = self.drive.files().update(
+            fileId=file_id,
+            body={"appProperties": encoded},
+            fields="id,name,appProperties",
+        ).execute()
+        if not stamped.get("appProperties"):
+            raise GoogleDocsAdapterError("Drive did not record the provenance properties.")
+        return stamped
+
     def _list_all(self, query: str, *, order_by: str | None = None) -> list[dict[str, Any]]:
         results: list[dict[str, Any]] = []
         page_token: str | None = None
         while True:
             parameters: dict[str, Any] = {
                 "q": query,
-                "fields": "nextPageToken, files(id,name,mimeType,createdTime,webViewLink)",
+                "fields": "nextPageToken, files(id,name,mimeType,createdTime,webViewLink,appProperties)",
                 "pageSize": 1000,
             }
             if order_by:

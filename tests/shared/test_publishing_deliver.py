@@ -37,6 +37,12 @@ CONFIG = {
 }
 
 
+PROVENANCE_CONFIG = {
+    **CONFIG,
+    "publishing": {**CONFIG["publishing"], "provenance": {"enabled": True, "require_stamp_for_delivery": False}},
+}
+
+
 class FakeAdapter:
     def __init__(self, files=None, deliver_error_on=None):
         self.files = files or {}
@@ -244,6 +250,73 @@ def test_delivery_is_refused_when_disabled_or_given_an_unknown_mode():
         deliver.run_deliver({"week": "current"}, disabled, FakeAdapter(), dry_run=True)
     with pytest.raises(deliver.DeliveryError, match="mode must be"):
         deliver.run_deliver({"week": "current", "mode": "link"}, CONFIG, FakeAdapter(), dry_run=True)
+
+
+def stamped(document, grade_id, week="2026-08-31"):
+    return {**document, "appProperties": {"mts_run_id": "run-1", "mts_grade_id": grade_id, "mts_week_of": week}}
+
+
+def test_unstamped_staged_documents_are_reported_but_still_delivered_by_default():
+    adapter = FakeAdapter(files=staging_for())
+    record = deliver.run_deliver({"week": "2026-08-31"}, PROVENANCE_CONFIG, adapter, dry_run=False)
+
+    missing = [issue for issue in record["issues"] if issue["reason"] == "missing_provenance"][0]
+    assert {finding["problem"] for finding in missing["documents"]} == {"no_provenance"}
+    assert record["status"] == "delivered"
+
+
+def test_requiring_a_stamp_blocks_delivery_of_unstamped_documents():
+    config = {
+        **PROVENANCE_CONFIG,
+        "publishing": {
+            **PROVENANCE_CONFIG["publishing"],
+            "provenance": {"enabled": True, "require_stamp_for_delivery": True},
+        },
+    }
+    adapter = FakeAdapter(files=staging_for())
+    record = deliver.run_deliver({"week": "2026-08-31"}, config, adapter, dry_run=False)
+
+    assert record["status"] == "failed"
+    assert adapter.deliveries == []
+    assert "provenance" in record["targets"][0]["error"]
+
+
+def test_a_stamp_naming_another_grade_or_week_is_reported_as_a_mismatch():
+    files = {"staging-approved": [
+        stamped(doc("g6", "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31"), "grade_1"),
+        stamped(doc("g6k", "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31_KEY"), "grade_6"),
+    ]}
+    record = deliver.run_deliver(
+        {"week": "2026-08-31", "grades": "grade_6"}, PROVENANCE_CONFIG, FakeAdapter(files=files), dry_run=True
+    )
+
+    findings = [issue for issue in record["issues"] if issue["reason"] == "missing_provenance"][0]["documents"]
+    assert [finding["problem"] for finding in findings] == ["provenance_mismatch"]
+
+
+def test_a_run_root_needs_no_stamp_because_provenance_is_the_run_record(tmp_path):
+    (tmp_path / "published-artifacts.json").write_text(
+        '{"pairs": {"grade_6": {"student_worksheet": {"id": "x"}, "answer_key": {"id": "y"}}}}', encoding="utf-8"
+    )
+    adapter = FakeAdapter(files=staging_for())
+    record = deliver.run_deliver(
+        {"week": "2026-08-31", "grades": "grade_6"}, PROVENANCE_CONFIG, adapter, dry_run=False, run_root=tmp_path
+    )
+
+    assert record["issues"] == []
+    assert record["status"] == "delivered"
+
+
+def test_provenance_properties_carry_the_run_spec_grade_and_week():
+    properties = deliver.provenance_properties(
+        run_id="run-1", spec_revision="r1", grade_id="grade_4",
+        week_of="2026-09-07", worksheet_type="weekly-worksheet", artifact_kind="answer_key",
+    )
+    assert properties["mts_run_id"] == "run-1"
+    assert properties["mts_grade_id"] == "grade_4"
+    assert properties["mts_artifact_kind"] == "answer_key"
+    # Drive caps each key+value pair at 124 bytes.
+    assert all(len((key + value).encode("utf-8")) <= 124 for key, value in properties.items())
 
 
 def test_the_cli_script_holds_no_decision_logic():
