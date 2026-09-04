@@ -142,6 +142,31 @@ Resolution turns a request into exactly one *effective folder* per target, befor
    the wrong set.
 6. Resolution is reported before any mutation, in every mode.
 
+### 2.3a Content-Filter Contract
+
+Resolution decides *which folder*; this contract decides *which files inside it* — added so a folder
+that mixes multiple grades, subjects, or weeks (`staging` in particular) can be archived selectively
+instead of all-or-nothing.
+
+1. With none of `grades`, `subject`, or `week` given, archiving stays **content-blind**: every loose
+   file in the resolved folder is planned, exactly as it always has been (§2.4 rule 6 is the default,
+   not merely a fallback).
+2. `subject` and `week` always filter, in both Folder and Parent mode, because neither had any prior
+   meaning for this utility. `subject` must equal the subject the command is running under; a mismatch
+   is refused before anything is touched, not silently ignored. `week` resolves to an ISO Monday
+   (`archive.resolve_week_of`, the same implementation `deliver.py` re-exports) and matches files whose
+   name contains it.
+3. `grades` filters file names using `naming.<kind>.prefix_by_grade` — **except** inside a `publish`
+   (Parent-mode) target, where `grades` already selected which grade's delivery folder is the target.
+   It is not re-applied as a file filter there: doing so would silently exclude a legitimately-named
+   file that doesn't match the pattern exactly, changing the already-relied-upon behavior of archiving
+   everything in a grade's own delivery folder. In Folder mode (`staging`) and for a raw folder ID,
+   `grades` has no such prior meaning and filters normally.
+4. A requested grade with no configured naming prefix is a fail-closed error, matching resolution's
+   existing unconfigured-grade behavior.
+5. Every file excluded by a filter is reported as `filtered_out` in that target's record, distinct from
+   `moved`/`unmoved`, so a filtered dry run remains fully auditable — nothing disappears silently.
+
 ### 2.4 Archive Contract
 
 1. Only **files** directly in the effective folder are archived. Sub-folders are never moved, never
@@ -224,7 +249,7 @@ of near-aliases rather than silent acceptance.
 | `foldertype` | `folder`, `parent` | preset's `folder_type` | Required when `folder` is a raw ID or URL, since no preset supplies it. |
 | `folderdate` | `latest`, an ISO date, or a literal folder name | `latest` | Parent mode only. Refused in Folder mode rather than ignored. |
 | `grades` | `all` or a grade list | `all` | `publish` preset only; restricts the expanded target set. |
-| `dry_run` | `yes`, `no` | `yes` | Resolves and plans without moving anything. |
+| `dry_run` | `yes`, `no` | `no` | `yes` resolves and plans without moving anything; `no` performs the moves and is the CLI's own default. |
 
 CLI entry point:
 
@@ -233,10 +258,10 @@ python scripts/archive_folder.py --folder staging --folder-type folder --dry-run
 python scripts/archive_folder.py --folder publish --folder-type parent --folder-date latest
 ```
 
-Because the operation is destructive-in-effect (artifacts change location), `dry_run` defaults to
-`yes`, and the command must present the resolved effective folder and the file list for confirmation
-before a real run. The command layer never proceeds from a dry run to a real run without an explicit
-new instruction.
+The operation is destructive-in-effect (artifacts change location): while the CLI itself now defaults
+`dry_run` to `no`, the command layer must always resolve and present a `--dry-run` plan — the resolved
+effective folder and the file list — before invoking `--apply`, and never proceeds from that dry run
+to a real run without an explicit new instruction.
 
 ### 2.8 Pipeline Integration (Future)
 
@@ -493,6 +518,11 @@ Rules:
 5. A grade with no deliverable pair is skipped and recorded, so a partially staged week still delivers
    every grade that is ready; waiting for a late grade would withhold worksheets that are already
    approved. `on_missing: fail` is available for runs that must be all-or-nothing.
+6. `grades` and `week` are the two filters already inherent to pairing (§4.3 rules 2 and 4). `subject`
+   is a further guard: it must equal the subject the effective configuration was loaded for, and a
+   mismatch is refused (`check_subject_matches`, shared with `/archive-folder` and
+   `/format-and-deliver-worksheets` so all three utilities agree on what counts as a mismatch) before
+   any pairing or delivery happens.
 
 ### 4.4 Naming Contract
 
@@ -537,6 +567,7 @@ dry-run first, present the plan and the issues, stop, and apply only on an expli
 | `run` | a run root | none (staging names) |
 | `source_folder` | a Drive folder ID | `publishing.staging.approved_folder_id` |
 | `mode` | `copy`, `move` | `final_delivery.mode` |
+| `subject` | a configured subject id | the subject in use |
 | `on_missing` | `skip`, `fail` | `skip` |
 | `dry_run` | `yes`, `no` | `yes` |
 
@@ -670,9 +701,14 @@ explicit new instruction.
 |---|---|---|
 | `week` | `current`, a week number, or an ISO date | `current` |
 | `grades` | `all`, or a grade list | `all` |
+| `subject` | a configured subject id | the subject in use |
 | `source_folder` | a Drive folder ID | `publishing.staging.approved_folder_id` |
 | `batch_id` | a batch identifier for reconstructed Specs | `reconstructed_<week_of>` |
 | `dry_run` | `yes`, `no` | `yes` |
+
+`week`, `grades`, and `subject` are the same request fields `deliver.run_deliver` already resolves
+(\u00a74.3, \u00a74.6); format-and-deliver passes them straight through rather than re-filtering staging pairs
+itself, and the same `check_subject_matches` guard applies before anything is classified.
 
 CLI entry point:
 

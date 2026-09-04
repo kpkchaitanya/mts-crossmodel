@@ -1,7 +1,7 @@
 ---
 description: "Bring every staged pair to pipeline standard (reconstructing orphans) then deliver."
 agent: "agent"
-argument-hint: "[week=current|<n>|<iso-date>] [grades=all|<list>] [source_folder=<folder-id>] [batch_id=<id>] [dry_run=yes|no]"
+argument-hint: "[week=current|<n>|<iso-date>] [grades=all|<list>] [subject=<subject-id>] [source_folder=<folder-id>] [batch_id=<id>] [dry_run=yes|no]"
 ---
 
 # Command: Format-And-Deliver Worksheets
@@ -19,9 +19,10 @@ classification, reconstruction, and the mandatory dry-run-then-confirm sequence.
 
 ## Parameters
 
-Parse `week`, `grades`, `source_folder`, `batch_id`, and `dry_run` exactly as documented in
-`commands/format-and-deliver-worksheets.md`. Default `week` to `current`, `grades` to `all`,
-`batch_id` to `reconstructed_<week_of>`, and `dry_run` to `yes`.
+Parse `week`, `grades`, `subject`, `source_folder`, `batch_id`, and `dry_run` exactly as documented in
+`commands/format-and-deliver-worksheets.md`. Default `week` to `current`, `grades` to `all`, `subject`
+to the subject this invocation is already running under, `batch_id` to `reconstructed_<week_of>`, and
+`dry_run` to `yes`.
 
 ## Required sequence
 

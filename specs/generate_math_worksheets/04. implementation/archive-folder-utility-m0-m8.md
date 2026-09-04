@@ -36,7 +36,8 @@ Excluded from this change set:
 - Parent mode refuses when the parent contains loose files, rather than falling back to Folder mode.
 - An empty target folder is a recorded success no-op, which is what makes re-runs and the future
   automatic hook safe.
-- `dry_run` defaults to `yes`; the command never proceeds from a dry run to a real run without a new
+- The CLI's `dry_run` flag defaults to `no` (apply); the command layer must still always resolve and
+  present a dry run before invoking `--apply`, and never proceeds from it to a real run without a new
   explicit instruction.
 - The utility is gate-neutral: it introduces no gate, bypasses none, and grants no approval.
 
@@ -172,12 +173,13 @@ Open, defaulted for now and cheap to change before Phase 5:
 
 - Archive folder name defaults to `Archive` (`archive_folder_name`).
 - The `publish` preset defaults to `grades=all`.
-- `dry_run` defaults to `yes`.
+- The CLI's `dry_run` flag defaults to `no`; the command layer's mandatory dry-run-then-confirm
+  sequence is unaffected.
 
 Risks:
 
-- **Wrong folder archived in Parent mode.** Mitigated by dry-run default, the explicit resolved-target
-  echo, and refusal when the parent holds loose files.
+- **Wrong folder archived in Parent mode.** Mitigated by the command layer's mandatory dry run, the
+  explicit resolved-target echo, and refusal when the parent holds loose files.
 - **Latest-child selection is ambiguous** if week folders are created out of order. Mitigated by
   `createdTime desc` ordering plus the explicit ISO-date and literal-name options; a mismatch is a
   refusal, not a guess.

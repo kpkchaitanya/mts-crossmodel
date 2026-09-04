@@ -23,11 +23,15 @@ Concrete CLI entry point:
 
 | Parameter | Values | Default | Notes |
 |---|---|---|---|
-| `week` | `current`, an instructional week number, or an ISO date | `current` | Same resolution as `/deliver-worksheets`. |
-| `grades` | `all`, or a comma-separated grade list | `all` | A requested grade with no configured destination is a fail-closed error. |
+| `week` | `current`, an instructional week number, or an ISO date | `current` | Same resolution as `/deliver-worksheets`. Filters staging pairing to only documents naming this week. |
+| `grades` | `all`, or a comma-separated grade list | `all` | Filters staging pairing to only these grades' named documents. A requested grade with no configured destination is a fail-closed error. |
+| `subject` | a configured subject id (e.g. `math`) | the subject the command is running under | Must match the subject the command is running under; a mismatch is refused before anything is classified, reconstructed, or delivered. |
 | `source_folder` | a Drive folder ID | `publishing.staging.approved_folder_id` | Staging folder to pair from. |
 | `batch_id` | a batch identifier | `reconstructed_<week_of>` | Where a reconstructed Spec is persisted under the grade's transaction tree. |
 | `dry_run` | `yes`, `no` | `yes` | `yes` classifies and plans without reconstructing, rendering, or delivering anything. |
+
+`week`, `grades`, and `subject` are the same filters `/archive-folder` and `/deliver-worksheets` use,
+applied here to which staged pairs are even considered before classification.
 
 ## Classification
 

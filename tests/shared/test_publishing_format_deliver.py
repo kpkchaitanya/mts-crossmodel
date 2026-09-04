@@ -133,3 +133,19 @@ def test_the_record_names_the_documents_a_rebuild_replaced():
 
     assert record["actions"][0]["replaced"] == {"student_worksheet": "g6", "answer_key": "g6k"}
     assert record["actions"][0]["spec_path"].endswith("r1.json")
+
+
+def test_a_mismatched_subject_filter_fails_closed_before_reconstructing_anything():
+    adapter = FakeAdapter(files=staging())
+    recorder = Recorder()
+    with pytest.raises(format_deliver.delivery_policy.DeliveryError, match="does not match"):
+        format_deliver.run_format_and_deliver(
+            {"week": "2026-08-31", "grades": "grade_6", "subject": "ela"},
+            CONFIG,
+            adapter,
+            read_document_lines=recorder.read_lines,
+            persist_spec=recorder.persist,
+            render_pair=recorder.render,
+            dry_run=True,
+        )
+    assert recorder.persisted == [] and recorder.rendered == []

@@ -28,6 +28,7 @@ Concrete CLI entry point:
 | `run` (run root) | a run directory | none | When given, pairs come from that run's `published-artifacts.json`. See Pairing below. |
 | `source_folder` | a Drive folder ID | `publishing.staging.approved_folder_id` | Staging folder to pair from when no run root is given. |
 | `mode` | `copy`, `move` | `publishing.final_delivery.mode` (`copy`) | `copy` keeps staging as the audit trail. |
+| `subject` | a configured subject id (e.g. `math`) | the subject the command is running under | Must match; a mismatch is refused before any pairing or delivery. |
 | `on_missing` | `skip`, `fail` | `skip` | `skip` delivers every grade that has a staged pair and records the rest; `fail` blocks the run when any requested grade is missing. |
 | `dry_run` | `yes`, `no` | `yes` | `yes` resolves and pairs without copying anything. |
 

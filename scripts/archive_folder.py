@@ -43,30 +43,44 @@ def report(record: dict) -> None:
             print(f"    moved   {item['name']}")
         for item in target["unmoved"]:
             print(f"    pending {item['name']}")
+        for item in target.get("filtered_out", []):
+            print(f"    skipped (filter) {item['name']}")
 
 
-def main() -> None:
+DEFAULT_SUBJECT = "math"
+
+
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
     parser.add_argument("--folder", required=True, help="Preset name (staging, publish), Drive folder ID, or folder URL.")
     parser.add_argument("--folder-type", choices=["folder", "parent"], default=None)
     parser.add_argument("--folder-date", default=None, help="Parent mode only: 'latest', an ISO date, or a folder name.")
-    parser.add_argument("--grades", default=None, help="Comma-separated grade ids; default is every configured grade.")
-    parser.add_argument("--subject", default="math")
+    parser.add_argument("--grades", default=None, help="Filter: comma-separated grade ids; omit to archive every grade's files.")
+    parser.add_argument("--week", default=None, help="Filter: 'current', an instructional week number, or an ISO date; omit to archive every week's files.")
+    # Absent by default so it stays an optional *filter*; config loading falls back to DEFAULT_SUBJECT.
+    parser.add_argument("--subject", default=None, help="Filter: only this subject's named files; omit to archive every subject's files.")
     parser.add_argument("--worksheet-type", default="weekly-worksheet")
     parser.add_argument("--report", type=Path, default=None, help="Optional path to write the Archive Record.")
     group = parser.add_mutually_exclusive_group()
-    group.add_argument("--dry-run", dest="dry_run", action="store_true", default=True)
+    group.add_argument("--dry-run", dest="dry_run", action="store_true", default=False)
     group.add_argument("--apply", dest="dry_run", action="store_false", help="Perform the moves. Run --dry-run first.")
-    args = parser.parse_args()
+    return parser
+
+
+def main() -> None:
+    args = build_parser().parse_args()
 
     effective_config = resolve_effective_config(
-        {"subject": args.subject, "worksheet_type": args.worksheet_type}, repository_root=REPO
+        {"subject": args.subject or DEFAULT_SUBJECT, "worksheet_type": args.worksheet_type},
+        repository_root=REPO,
     )
     request = {
         "folder": args.folder,
         "folder_type": args.folder_type,
         "folder_date": args.folder_date,
         "grades": args.grades,
+        "subject": args.subject,
+        "week": args.week,
     }
 
     drive, docs = build_clients()

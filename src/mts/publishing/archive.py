@@ -40,6 +40,93 @@ def parse_folder_reference(value: str) -> str:
     return token
 
 
+def resolve_week_of(value: str, calendar: Mapping[str, Any]) -> str:
+    """Resolve 'current', an instructional week number, or a date to that week's ISO Monday.
+
+    Canonical implementation shared with `mts.publishing.deliver`, which re-exports this function
+    rather than defining its own, so the two utilities can never disagree about week resolution.
+    """
+    week_1_start = date.fromisoformat(str(calendar["week_1_start"]))
+    if value in (None, "", "current"):
+        today = date.today()
+        return date.fromordinal(today.toordinal() - today.weekday()).isoformat()
+    text = str(value)
+    if text.isdigit():
+        return date.fromordinal(week_1_start.toordinal() + 7 * (int(text) - 1)).isoformat()
+    parsed = date.fromisoformat(text)
+    return date.fromordinal(parsed.toordinal() - parsed.weekday()).isoformat()
+
+
+def naming_prefixes(effective_config: Mapping[str, Any], worksheet_kind: str = "weekly") -> Mapping[str, str]:
+    """Return the grade->document-name-prefix mapping used both to render and to filter files."""
+    naming = effective_config.get("naming", {}).get(worksheet_kind)
+    if not naming or not naming.get("prefix_by_grade"):
+        raise ArchiveError(f"naming.{worksheet_kind}.prefix_by_grade is not configured for this subject.")
+    return naming["prefix_by_grade"]
+
+
+def check_subject_matches(request: Mapping[str, Any], effective_config: Mapping[str, Any]) -> None:
+    """Fail closed if a request's `subject` filter disagrees with the loaded configuration.
+
+    Canonical implementation shared with `mts.publishing.deliver`, which re-exports this function.
+    """
+    subject = request.get("subject")
+    if subject and subject != effective_config.get("subject"):
+        raise ArchiveError(
+            f"subject filter '{subject}' does not match the loaded configuration's subject "
+            f"'{effective_config.get('subject')}'."
+        )
+
+
+def build_content_filter(
+    request: Mapping[str, Any], effective_config: Mapping[str, Any], *, apply_grade_filter: bool = True
+):
+    """Build an optional file-name filter from `grades`, `subject`, and `week` request fields.
+
+    Returns `None` when none apply, which preserves archive's default content-blind behavior: every
+    loose file in a resolved folder is archived, exactly as before this filter existed.
+
+    `apply_grade_filter=False` ignores `grades` here because it was already used to select *which*
+    target folder to archive (the `publish` preset's per-grade parent-mode targets); re-applying it as
+    a name filter inside that already-scoped folder would silently exclude legitimately-named files
+    and change archive's established content-blind behavior for that case. `subject` and `week` carry
+    no such prior meaning, so they always apply.
+    """
+    grades = request.get("grades") if apply_grade_filter else None
+    subject = request.get("subject")
+    week = request.get("week")
+    has_grade_filter = grades not in (None, "", "all")
+    has_subject_filter = bool(subject)
+    has_week_filter = bool(week)
+    if not (has_grade_filter or has_subject_filter or has_week_filter):
+        return None
+
+    wanted_prefixes: tuple[str, ...] | None = None
+    if has_grade_filter or has_subject_filter:
+        prefixes = naming_prefixes(effective_config)
+        if has_grade_filter:
+            grade_ids = [g.strip().replace("-", "_") for g in str(grades).split(",") if g.strip()]
+            missing = [grade_id for grade_id in grade_ids if grade_id not in prefixes]
+            if missing:
+                raise ArchiveError(f"No configured naming prefix for: {', '.join(missing)}")
+        else:
+            grade_ids = list(prefixes)  # subject filter alone matches any of that subject's grades
+        wanted_prefixes = tuple(prefixes[grade_id] for grade_id in grade_ids)
+
+    week_of: str | None = None
+    if has_week_filter:
+        week_of = resolve_week_of(week, effective_config.get("calendar", {}))
+
+    def matcher(name: str) -> bool:
+        if wanted_prefixes is not None and not name.startswith(wanted_prefixes):
+            return False
+        if week_of is not None and week_of not in name:
+            return False
+        return True
+
+    return matcher
+
+
 def resolve_targets(request: Mapping[str, Any], effective_config: Mapping[str, Any]) -> list[dict[str, Any]]:
     """Expand a request into one or more `(label, folder_id, folder_type)` targets."""
     settings = archive_settings(effective_config)
@@ -161,11 +248,18 @@ def check_parent_has_no_loose_files(child_files: Sequence[Mapping[str, Any]]) ->
         raise ArchiveError(f"Parent folder contains loose files; use folder mode explicitly. Found: {names}")
 
 
-def plan_archive(child_files: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
-    """Build the move plan; an empty listing yields an empty plan, which is a valid no-op."""
+def plan_archive(child_files: Sequence[Mapping[str, Any]], *, content_filter=None) -> list[dict[str, Any]]:
+    """Build the move plan; an empty listing yields an empty plan, which is a valid no-op.
+
+    `content_filter`, when given, restricts the plan to matching files only. With no filter, archiving
+    stays content-blind by default: every loose file is planned, exactly as before filters existed.
+    """
+    matched = child_files if content_filter is None else [
+        item for item in child_files if content_filter(item.get("name", ""))
+    ]
     return [
         {"id": item["id"], "name": item.get("name"), "webViewLink": item.get("webViewLink")}
-        for item in child_files
+        for item in matched
     ]
 
 
@@ -178,6 +272,7 @@ def build_target_record(
     unmoved: Sequence[Mapping[str, Any]],
     status: str,
     error: str | None = None,
+    filtered_out: Sequence[Mapping[str, Any]] = (),
 ) -> dict[str, Any]:
     record = {
         **{key: target[key] for key in ("label", "folder_id", "folder_type") if key in target},
@@ -186,6 +281,9 @@ def build_target_record(
         "archive_folder": dict(archive_folder) if archive_folder else None,
         "moved": [dict(item) for item in moved],
         "unmoved": [dict(item) for item in unmoved],
+        "filtered_out": [
+            {"id": item["id"], "name": item.get("name")} for item in filtered_out
+        ],
     }
     if "grade_id" in target:
         record["grade_id"] = target["grade_id"]
@@ -251,6 +349,7 @@ def run_archive(
     dry_run: bool = True,
 ) -> dict[str, Any]:
     """Resolve, plan, and apply archiving for every target, returning one Archive Record."""
+    check_subject_matches(request, effective_config)
     settings = archive_settings(effective_config)
     archive_folder_name = settings["archive_folder_name"]
     week_folder_pattern = week_folder_pattern_of(effective_config)
@@ -259,6 +358,9 @@ def run_archive(
     target_records: list[dict[str, Any]] = []
     for target in targets:
         try:
+            content_filter = build_content_filter(
+                request, effective_config, apply_grade_filter=target["folder_type"] == "folder"
+            )
             target_records.append(
                 _archive_one(
                     target,
@@ -267,6 +369,7 @@ def run_archive(
                     folder_date=request.get("folder_date"),
                     week_folder_pattern=week_folder_pattern,
                     dry_run=dry_run,
+                    content_filter=content_filter,
                 )
             )
         except Exception as error:  # recorded per target so one failure cannot hide the rest
@@ -300,6 +403,7 @@ def _archive_one(
     folder_date: str | None,
     week_folder_pattern: str | None,
     dry_run: bool,
+    content_filter=None,
 ) -> dict[str, Any]:
     effective_folder = resolve_effective_folder(
         target,
@@ -309,7 +413,15 @@ def _archive_one(
         week_folder_pattern=week_folder_pattern,
     )
 
-    planned = plan_archive(adapter.list_child_files(effective_folder["id"]))
+    all_files = adapter.list_child_files(effective_folder["id"])
+    if content_filter is None:
+        eligible, filtered_out = all_files, []
+    else:
+        eligible = [item for item in all_files if content_filter(item.get("name", ""))]
+        eligible_ids = {item["id"] for item in eligible}
+        filtered_out = [item for item in all_files if item["id"] not in eligible_ids]
+
+    planned = plan_archive(eligible)
     if not planned:
         return build_target_record(
             target,
@@ -318,6 +430,7 @@ def _archive_one(
             moved=[],
             unmoved=[],
             status="no_op",
+            filtered_out=filtered_out,
         )
 
     if dry_run:
@@ -328,6 +441,7 @@ def _archive_one(
             moved=[],
             unmoved=planned,
             status="dry_run",
+            filtered_out=filtered_out,
         )
 
     archive_folder = adapter.ensure_child_folder(effective_folder["id"], archive_folder_name)
@@ -344,6 +458,7 @@ def _archive_one(
                 unmoved=planned[index:],
                 status="failed",
                 error=str(error),
+                filtered_out=filtered_out,
             )
         moved.append({**item, "webViewLink": result.get("webViewLink", item.get("webViewLink"))})
     return build_target_record(
@@ -353,21 +468,26 @@ def _archive_one(
         moved=moved,
         unmoved=[],
         status="archived",
+        filtered_out=filtered_out,
     )
 
 
 __all__ = [
     "ArchiveError",
     "archive_settings",
+    "build_content_filter",
     "build_target_record",
     "check_parent_has_no_loose_files",
+    "check_subject_matches",
     "existing_archive_folder",
+    "naming_prefixes",
     "overall_status",
     "parse_folder_reference",
     "plan_archive",
     "resolve_effective_folder",
     "resolve_folder_name_for_date",
     "resolve_targets",
+    "resolve_week_of",
     "run_archive",
     "select_effective_folder",
     "week_folder_pattern_of",

@@ -19,6 +19,7 @@ NAMING = {
 }
 
 CONFIG = {
+    "subject": "math",
     "calendar": {"week_1_start": "2026-08-17"},
     "naming": {"weekly": NAMING},
     "publishing": {
@@ -317,6 +318,19 @@ def test_provenance_properties_carry_the_run_spec_grade_and_week():
     assert properties["mts_artifact_kind"] == "answer_key"
     # Drive caps each key+value pair at 124 bytes.
     assert all(len((key + value).encode("utf-8")) <= 124 for key, value in properties.items())
+
+
+def test_a_mismatched_subject_filter_fails_closed_before_pairing_or_delivering():
+    adapter = FakeAdapter(files=staging_for())
+    with pytest.raises(deliver.DeliveryError, match="does not match"):
+        deliver.run_deliver({"week": "2026-08-31", "subject": "ela"}, CONFIG, adapter, dry_run=True)
+    assert adapter.deliveries == []
+
+
+def test_a_matching_subject_filter_is_a_no_op_check():
+    adapter = FakeAdapter(files=staging_for())
+    record = deliver.run_deliver({"week": "2026-08-31", "subject": "math"}, CONFIG, adapter, dry_run=True)
+    assert record["status"] == "dry_run"
 
 
 def test_the_cli_script_holds_no_decision_logic():

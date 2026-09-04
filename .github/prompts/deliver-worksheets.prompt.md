@@ -1,7 +1,7 @@
 ---
 description: "Copy approved worksheet/answer-key pairs from staging into per-grade Week_<WEEK_OF> folders."
 agent: "agent"
-argument-hint: "[week=current|<n>|<iso-date>] [grades=all|<list>] [run=<run-id>] [source_folder=<folder-id>] [mode=copy|move] [on_missing=skip|fail] [dry_run=yes|no]"
+argument-hint: "[week=current|<n>|<iso-date>] [grades=all|<list>] [subject=<subject-id>] [run=<run-id>] [source_folder=<folder-id>] [mode=copy|move] [on_missing=skip|fail] [dry_run=yes|no]"
 ---
 
 # Command: Deliver Worksheets
@@ -19,9 +19,10 @@ resolution, pairing, and the mandatory dry-run-then-confirm sequence. Also read:
 
 ## Parameters
 
-Parse `week`, `grades`, `run`, `source_folder`, `mode`, `on_missing`, and `dry_run` exactly as
-documented in `commands/deliver-worksheets.md`. Default `week` to `current`, `grades` to `all`, `mode`
-to the configured `final_delivery.mode`, `on_missing` to `skip`, and `dry_run` to `yes`.
+Parse `week`, `grades`, `subject`, `run`, `source_folder`, `mode`, `on_missing`, and `dry_run` exactly
+as documented in `commands/deliver-worksheets.md`. Default `week` to `current`, `grades` to `all`,
+`subject` to the subject this invocation is already running under, `mode` to the configured
+`final_delivery.mode`, `on_missing` to `skip`, and `dry_run` to `yes`.
 
 ## Required sequence
 

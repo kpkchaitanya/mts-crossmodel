@@ -9,10 +9,12 @@ See `specs/generate_math_worksheets/03. design/utility-design.md` section 4.
 from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
-from datetime import date
 from pathlib import Path
 from typing import Any
 import json
+
+from mts.publishing import archive as archive_policy
+from mts.publishing.archive import resolve_week_of  # noqa: F401  (re-exported: single implementation)
 
 
 class DeliveryError(ValueError):
@@ -28,6 +30,18 @@ def delivery_settings(effective_config: Mapping[str, Any]) -> Mapping[str, Any]:
     return settings
 
 
+def check_subject_matches(request: Mapping[str, Any], effective_config: Mapping[str, Any]) -> None:
+    """Fail closed if a request's `subject` filter disagrees with the loaded configuration.
+
+    Reuses `archive.check_subject_matches`'s logic so the two utilities can never disagree about what
+    counts as a mismatch, while still raising `DeliveryError` for callers of this module.
+    """
+    try:
+        archive_policy.check_subject_matches(request, effective_config)
+    except archive_policy.ArchiveError as error:
+        raise DeliveryError(str(error)) from error
+
+
 def naming_settings(effective_config: Mapping[str, Any], worksheet_kind: str = "weekly") -> Mapping[str, Any]:
     naming = effective_config.get("naming", {}).get(worksheet_kind)
     if not naming or not naming.get("prefix_by_grade"):
@@ -37,19 +51,6 @@ def naming_settings(effective_config: Mapping[str, Any], worksheet_kind: str = "
 
 def normalize_grade_id(value: str) -> str:
     return str(value).strip().replace("-", "_")
-
-
-def resolve_week_of(value: str, calendar: Mapping[str, Any]) -> str:
-    """Resolve 'current', an instructional week number, or a date to that week's ISO Monday."""
-    week_1_start = date.fromisoformat(str(calendar["week_1_start"]))
-    if value in (None, "", "current"):
-        today = date.today()
-        return date.fromordinal(today.toordinal() - today.weekday()).isoformat()
-    text = str(value)
-    if text.isdigit():
-        return date.fromordinal(week_1_start.toordinal() + 7 * (int(text) - 1)).isoformat()
-    parsed = date.fromisoformat(text)
-    return date.fromordinal(parsed.toordinal() - parsed.weekday()).isoformat()
 
 
 def week_folder_name(week_of: str, settings: Mapping[str, Any]) -> str:
@@ -218,6 +219,7 @@ def run_deliver(
     pairs: Mapping[str, Mapping[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Deliver approved pairs into `Week_<WEEK_OF>` under each grade's destination folder."""
+    check_subject_matches(request, effective_config)
     settings = delivery_settings(effective_config)
     week_of = resolve_week_of(request.get("week"), effective_config["calendar"])
     folder_name = week_folder_name(week_of, settings)
@@ -324,6 +326,7 @@ def _overall_status(target_records: Sequence[Mapping[str, Any]]) -> str:
 
 __all__ = [
     "DeliveryError",
+    "check_subject_matches",
     "delivery_settings",
     "document_names",
     "naming_settings",

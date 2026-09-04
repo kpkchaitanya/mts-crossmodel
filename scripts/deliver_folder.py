@@ -12,6 +12,7 @@ import sys
 
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 REPO = Path(__file__).resolve().parents[1]
+DEFAULT_SUBJECT = "math"
 OAUTH_TOKEN = Path(r"c:\Users\neeli\kpkDevelopment\mts-new\.secrets\oauth-token.json")
 
 sys.path.insert(0, str(REPO / "src"))
@@ -63,7 +64,8 @@ def main() -> None:
     parser.add_argument("--source-folder", default=None, help="Staging folder ID; defaults to the approved staging folder.")
     parser.add_argument("--mode", choices=["copy", "move"], default=None)
     parser.add_argument("--on-missing", choices=["skip", "fail"], default=None, help="Default skip: deliver what is staged.")
-    parser.add_argument("--subject", default="math")
+    # Absent by default so it stays an optional guard; config loading falls back to DEFAULT_SUBJECT.
+    parser.add_argument("--subject", default=None, help="Guard: refuse if this does not match the loaded configuration's subject.")
     parser.add_argument("--worksheet-type", default="weekly-worksheet")
     parser.add_argument("--report", type=Path, default=None, help="Optional path to write the Delivery Record.")
     group = parser.add_mutually_exclusive_group()
@@ -72,7 +74,7 @@ def main() -> None:
     args = parser.parse_args()
 
     effective_config = resolve_effective_config(
-        {"subject": args.subject, "worksheet_type": args.worksheet_type}, repository_root=REPO
+        {"subject": args.subject or DEFAULT_SUBJECT, "worksheet_type": args.worksheet_type}, repository_root=REPO
     )
     run_root = None
     if args.run_root:
@@ -83,6 +85,7 @@ def main() -> None:
         "mode": args.mode,
         "on_missing": args.on_missing,
         "source_folder_id": args.source_folder,
+        "subject": args.subject,
     }
 
     drive, docs = build_clients()

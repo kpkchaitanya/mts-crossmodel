@@ -236,3 +236,109 @@ def test_the_cli_script_holds_no_decision_logic():
     assert source.count("run_archive(") == 1
     for leaked in ("in parents", "list_child_files", "list_child_folders", "ensure_child_folder", "move_file"):
         assert leaked not in source
+
+
+NAMED_CONFIG = {
+    "subject": "math",
+    "calendar": {"week_1_start": "2026-08-17"},
+    "naming": {"weekly": {"prefix_by_grade": {
+        "grade_1": "MTS-Math-1stGrade-WeeklyWorksheet",
+        "grade_6": "MTS-Math-6thGrade-WeeklyWorksheet",
+    }}},
+    **CONFIG,
+}
+
+
+def test_grades_filter_restricts_a_shared_folder_to_matching_files():
+    """The staging folder mixes every grade; grades must filter within it (folder mode)."""
+    adapter = FakeAdapter(files={"staging-approved": [
+        file_entry("g1", "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-31"),
+        file_entry("g6", "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31"),
+    ]})
+    record = archive.run_archive({"folder": "staging", "grades": "grade_6"}, NAMED_CONFIG, adapter, dry_run=False)
+
+    assert adapter.moves == [("g6", "archive-of-staging-approved")]
+    target = record["targets"][0]
+    assert [item["id"] for item in target["moved"]] == ["g6"]
+    assert [item["id"] for item in target["filtered_out"]] == ["g1"]
+
+
+def test_week_filter_matches_by_date_regardless_of_grade():
+    adapter = FakeAdapter(files={"staging-approved": [
+        file_entry("old", "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-24"),
+        file_entry("new", "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31"),
+    ]})
+    record = archive.run_archive({"folder": "staging", "week": "2026-08-31"}, NAMED_CONFIG, adapter, dry_run=False)
+
+    assert adapter.moves == [("new", "archive-of-staging-approved")]
+    assert [item["id"] for item in record["targets"][0]["filtered_out"]] == ["old"]
+
+
+def test_subject_filter_alone_matches_any_grade_of_that_subject():
+    adapter = FakeAdapter(files={"staging-approved": [
+        file_entry("g1", "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-31"),
+        file_entry("stray", "SomeOtherFile"),
+    ]})
+    record = archive.run_archive({"folder": "staging", "subject": "math"}, NAMED_CONFIG, adapter, dry_run=False)
+
+    assert adapter.moves == [("g1", "archive-of-staging-approved")]
+    assert [item["id"] for item in record["targets"][0]["filtered_out"]] == ["stray"]
+
+
+def test_a_mismatched_subject_fails_closed_before_touching_anything():
+    adapter = FakeAdapter(files={"staging-approved": [file_entry("g1", "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-31")]})
+    with pytest.raises(archive.ArchiveError, match="does not match"):
+        archive.run_archive({"folder": "staging", "subject": "ela"}, NAMED_CONFIG, adapter, dry_run=True)
+    assert adapter.moves == []
+
+
+def test_grades_filter_does_not_apply_a_second_time_inside_a_publish_target():
+    """grades already selected this target folder (parent mode); it must not also filter its files,
+    or an oddly-named-but-legitimate file in that grade's own delivery folder would be silently left."""
+    adapter = FakeAdapter(
+        files={"parent-6": [], "week-6": [file_entry("f1", "some-non-canonical-name")]},
+        folders={"parent-6": [folder_entry("week-6", "Week_2026-08-31")]},
+    )
+    record = archive.run_archive(
+        {"folder": "publish", "grades": "grade_6", "folder_date": "latest"}, NAMED_CONFIG, adapter, dry_run=False
+    )
+
+    assert adapter.moves == [("f1", "archive-of-week-6")]
+    assert record["targets"][0]["filtered_out"] == []
+
+
+def test_no_filters_given_preserves_the_original_content_blind_default():
+    adapter = FakeAdapter(files={"staging-approved": [file_entry("g1", "anything at all")]})
+    record = archive.run_archive({"folder": "staging"}, NAMED_CONFIG, adapter, dry_run=False)
+
+    assert adapter.moves == [("g1", "archive-of-staging-approved")]
+    assert record["targets"][0]["filtered_out"] == []
+
+
+def test_the_cli_leaves_every_filter_absent_by_default():
+    """A filter that defaults to a value is not optional: it would silently scope every run.
+
+    `--subject` also selects which config to load, so it is tempting to default it to a subject id;
+    doing so made unfiltered runs quietly skip other subjects' files.
+    """
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("archive_cli", REPO / "scripts" / "archive_folder.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+
+    parser = module.build_parser()
+    for filter_argument in ("grades", "subject", "week"):
+        assert parser.get_default(filter_argument) is None, f"--{filter_argument} must default to absent"
+
+    unfiltered = parser.parse_args(["--folder", "staging"])
+    assert (unfiltered.grades, unfiltered.subject, unfiltered.week) == (None, None, None)
+
+
+def test_an_unconfigured_grade_in_the_filter_fails_closed():
+    adapter = FakeAdapter(files={"staging-approved": []})
+    record = archive.run_archive({"folder": "staging", "grades": "grade_9_10"}, NAMED_CONFIG, adapter, dry_run=True)
+
+    assert record["status"] == "failed"
+    assert "No configured naming prefix" in record["targets"][0]["error"]
+    assert adapter.moves == []

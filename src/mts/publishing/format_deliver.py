@@ -43,6 +43,7 @@ def run_format_and_deliver(
     dry_run: bool = True,
 ) -> dict[str, Any]:
     """Reconstruct and re-render orphan pairs, then deliver every resolved pair."""
+    delivery_policy.check_subject_matches(request, effective_config)
     settings = delivery_policy.delivery_settings(effective_config)
     week_of = delivery_policy.resolve_week_of(request.get("week"), effective_config["calendar"])
     destinations = delivery_policy.resolve_destinations(settings, request.get("grades"))

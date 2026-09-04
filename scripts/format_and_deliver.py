@@ -13,6 +13,7 @@ import sys
 
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 REPO = Path(__file__).resolve().parents[1]
+DEFAULT_SUBJECT = "math"
 OAUTH_TOKEN = Path(r"c:\Users\neeli\kpkDevelopment\mts-new\.secrets\oauth-token.json")
 
 sys.path.insert(0, str(REPO / "src"))
@@ -77,7 +78,8 @@ def main() -> None:
     parser.add_argument("--week", default="current")
     parser.add_argument("--grades", default=None)
     parser.add_argument("--source-folder", default=None)
-    parser.add_argument("--subject", default="math")
+    # Absent by default so it stays an optional guard; config loading falls back to DEFAULT_SUBJECT.
+    parser.add_argument("--subject", default=None, help="Guard: refuse if this does not match the loaded configuration's subject.")
     parser.add_argument("--worksheet-type", default="weekly-worksheet")
     parser.add_argument("--batch-id", default=None, help="Batch folder for reconstructed Specs.")
     parser.add_argument("--report", type=Path, default=None)
@@ -86,8 +88,9 @@ def main() -> None:
     group.add_argument("--apply", dest="dry_run", action="store_false")
     args = parser.parse_args()
 
+    subject = args.subject or DEFAULT_SUBJECT
     effective_config = resolve_effective_config(
-        {"subject": args.subject, "worksheet_type": args.worksheet_type}, repository_root=REPO
+        {"subject": subject, "worksheet_type": args.worksheet_type}, repository_root=REPO
     )
     drive, docs = build_clients()
     adapter = google_docs_adapter.GoogleDocsAdapter(drive, docs)
@@ -103,7 +106,7 @@ def main() -> None:
     def persist_spec(grade_id: str, week_of: str, spec: dict) -> str:
         batch_id = args.batch_id or f"reconstructed_{week_of.replace('-', '_')}"
         path = (
-            REPO / "data" / "transactions" / "subjects" / args.subject / "grades" / grade_id
+            REPO / "data" / "transactions" / "subjects" / subject / "grades" / grade_id
             / "cycles" / week_of / "batches" / batch_id / "worksheets" / "weekly_worksheet" / "specs" / "r1.json"
         )
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -137,7 +140,7 @@ def main() -> None:
         return {"student_worksheet": worksheet, "answer_key": key}
 
     record = format_deliver.run_format_and_deliver(
-        {"week": args.week, "grades": args.grades, "source_folder_id": args.source_folder},
+        {"week": args.week, "grades": args.grades, "source_folder_id": args.source_folder, "subject": args.subject},
         effective_config,
         adapter,
         read_document_lines=read_document_lines,
