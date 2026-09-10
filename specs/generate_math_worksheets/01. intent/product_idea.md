@@ -5,7 +5,7 @@
 **Project name:** MTS Worksheet and Assessment Generation
 
 **One-sentence idea:**  
-A model-neutral, human-supervised worksheet production system that turns subject curriculum and a specific instructional cycle into curriculum-aligned, grade-appropriate, independently verified, template-consistent worksheet batches and answer keys, with Weekly Worksheet as the default Worksheet Type.
+A model-neutral, human-supervised worksheet production system that turns subject curriculum or an approved worksheet source into grade-appropriate, independently verified, template-consistent instructional and assessment materials, with Weekly Worksheet as the default Worksheet Type.
 
 **Who is this for?**
 - MTS curriculum owners and educators who define curriculum intent, instructional priorities, and quality expectations.
@@ -17,6 +17,45 @@ Worksheet-generation behavior has evolved across prompts, configuration, templat
 
 **What outcome should the user get?**  
 The user should be able to establish a project and yearly curriculum once, prepare an instructional cycle, resolve the actual weekly curriculum, define a worksheet batch, generate one or more worksheets, review and edit them through explicit human gates, independently verify every answer, render and validate the finished documents, and publish only approved worksheet/key pairs. The process should be resumable, repeatable, auditable, and portable across AI models and harnesses.
+
+## Product Vision And Scope
+
+MTS is a subject- and assessment-format-agnostic production system for creating trustworthy instructional worksheets and assessment practice materials. It should let an educator start with a subject, a learning goal, a source of instructional intent, and a delivery style, then produce reviewable student materials and synchronized answer keys without changing the shared generation, verification, formatting, and publishing lifecycle.
+
+### Supported subject tracks
+
+The product scope includes four subject tracks:
+
+- **Math** — computation, number sense, problem solving, reasoning, and grade/course-specific mathematical skills.
+- **ELA - Reading Comprehension (RC)** — comprehension, evidence, vocabulary in context, structure, and analysis of literary and informational texts.
+- **ELA - Writing** — grammar, usage, mechanics, sentence construction, revision, editing, and written expression.
+- **ELA - Vocabulary** — word meaning, morphology, context clues, usage, and academic vocabulary.
+
+Each subject track may have its own curriculum model, question patterns, source requirements, verification rules, templates, and grade/course configuration while sharing the same product lifecycle and human approval gates.
+
+### Worksheet style families
+
+**Worksheet Style** is the user-facing assessment or instructional purpose. In the implementation, each style is represented by a configured **Worksheet Type** with its own section structure, item counts, timing, scoring, template, and validation rules.
+
+- **Weekly** — recurring practice aligned to the instructional cycle, including progressive sections or days where appropriate.
+- **Class** — a focused in-class lesson, practice set, intervention activity, or exit assessment.
+- **Benchmark / EOG** — broader standards or end-of-grade coverage used for readiness checks and cumulative practice.
+- **Standardized Testing - SAT / ACT** — SAT, SAT Mini, ACT, and ACT Mini practice using the applicable test structure, timing, scoring, and item conventions.
+
+The shared lifecycle must support all styles without weakening subject-specific alignment, independent verification, worksheet/key synchronization, or human review.
+
+### Worksheet source families
+
+**Worksheet Source** identifies where the instructional intent, scope, examples, or assessment pattern originated. Sources are recorded with provenance, authority, freshness, and confidence:
+
+- **Curriculum based** — yearly curriculum, pacing plans, standards, skills, and approved instructional sequences.
+- **Test papers based** — supplied or approved prior papers, benchmark forms, EOG materials, SAT/ACT-style papers, and test blueprints.
+- **Books based** — approved textbooks, workbooks, teacher guides, and other print references.
+- **Websites based** — approved online references and educational resources, subject to source review and attribution.
+- **Topics Adhoc based** — an educator-selected topic or immediate instructional need not yet incorporated into the yearly curriculum.
+- **Warmup** — short opening practice, retrieval, fluency, or readiness activities.
+
+A worksheet may combine source families, but the selected sources and their confidence must remain visible in the run evidence. Source material informs generation; it does not bypass curriculum review, verification, or publishing gates.
 
 ## Methodology Alignment And Artifact Role
 
@@ -37,7 +76,7 @@ For this product, those standards require that:
 3. Prepare an Instructional Cycle such as a weekly cycle, review cycle, diagnostic cycle, exam-prep cycle, or special cycle.
 4. Resolve Weekly Curriculum from yearly progression, school calendar, district pacing evidence, standards, and source confidence.
 5. Prepare a Batch defining the grades/courses and worksheets to generate together.
-6. Prepare each Worksheet by selecting or accepting the default Worksheet Type, curriculum scope, counts, section structure, difficulty, content mix, template, and overrides.
+6. Prepare each Worksheet by selecting or accepting the default Worksheet Type, subject track, Worksheet Style, Worksheet Source, curriculum scope, counts, section structure, difficulty, content mix, template, and overrides.
 7. Review and approve curriculum scope at Gate 1.
 8. Review and edit generated questions at Gate 2.
 9. Review independent verification results at Gate 3.
@@ -47,14 +86,15 @@ For this product, those standards require that:
 13. Manage reusable templates and formatting profiles without editing master templates directly.
 
 **What should the first version include?**
-- Supported initial subject modules: Math and ELA. Math supports Grade 1, Grade 4, Grade 5, Grade 6, and combined Grades 9 & 10 unless configuration overrides the enabled set.
+- Supported initial subject tracks: Math, ELA - Reading Comprehension (RC), ELA - Writing, and ELA - Vocabulary. Math supports Grade 1, Grade 4, Grade 5, Grade 6, and combined Grades 9 & 10 unless configuration overrides the enabled set.
 - Batch generation for one, several, or all enabled grades/courses.
 - Functional Areas as the primary organizing model for requirements, design, workflows, configuration, and tests.
 - Core entity model covering Project, Subject, Yearly Curriculum, Instructional Cycle, Weekly Curriculum, Batch, Worksheet, Section/Day, Question, Answer, Student Worksheet Document, and Answer Key.
 - Supporting entities including Grade/Course, Worksheet Type, Standard, Skill/Concept, Curriculum Source, Template, Formatting Profile, Verification Result, Validation Result, Approval, Run, Output Artifact, and Destination.
 - Weekly Worksheet as the default `worksheet_type`.
-- Supported worksheet types: Weekly Worksheet, Class Worksheet, 4-Day Homework, Compact/Unbranded Worksheet, and Speed Math Worksheet.
-- Supported Worksheet Types include SAT, SAT Mini, ACT, and ACT Mini. Each type defines its sections, counts, timing, scoring, template selection, and validation rules while reusing the shared lifecycle.
+- Supported Worksheet Style families: Weekly, Class, Benchmark / EOG, and Standardized Testing - SAT / ACT.
+- Supported Worksheet Types include Weekly Worksheet, Class Worksheet, Benchmark Worksheet, EOG Worksheet, SAT, SAT Mini, ACT, and ACT Mini. Each type defines its sections, counts, timing, scoring, template selection, and validation rules while reusing the shared lifecycle.
+- Supported Worksheet Source families: Curriculum based, Test papers based, Books based, Websites based, Topics Adhoc based, and Warmup. Source provenance, authority, freshness, and confidence are retained with the resolved scope and run evidence.
 - Default Weekly Worksheet structure:
   - Monday — Foundation
   - Tuesday — Discover
@@ -67,7 +107,7 @@ For this product, those standards require that:
   - High School: 5 questions/day, 25/week
   - Counts remain configurable and may be overridden per run.
 - Natural pagination for Weekly Worksheets; readability and working space take precedence over forcing a fixed page count.
-- Yearly curriculum setup using standards, concept progression, approximate sequence, prerequisites, and source metadata.
+- Yearly curriculum setup using standards, concept progression, approximate sequence, prerequisites, subject-specific skills, and source metadata.
 - Weekly curriculum resolution using yearly curriculum, CCS pacing evidence, NC standards, school calendar, progressive context, source provenance, and confidence labels.
 - Cache-first curriculum resolution with controlled external fallback.
 - Default instructional mix of current curriculum, spiral review, and reasoning/challenge as configured.
@@ -124,7 +164,7 @@ For this product, those standards require that:
 - Exact regression baseline: semantic/content comparison only, or rendered visual comparison as well.
 - Deterministic verifier coverage for advanced algebra, geometry, puzzles, and non-numeric reasoning.
 - Whether publishing worksheet/key pairs must be transactional so partial publication cannot occur.
-- The grade/course, section, timing, scoring, template, and verification requirements for ELA, SAT, SAT Mini, ACT, and ACT Mini.
+- The grade/course, section, timing, scoring, template, content, and verification requirements for each ELA subject track, Benchmark / EOG, SAT, SAT Mini, ACT, and ACT Mini.
 - When the legacy repository can be retired after consolidated workflow validation.
 
 ---
@@ -202,10 +242,12 @@ Worksheet
 ### Supporting entities
 
 - **Grade / Course** — target instructional level, e.g. Grade 4 or Grades 9 & 10.
-- **Worksheet Type** — Weekly, Class, 4-Day Homework, Compact/Unbranded, Speed Math.
+- **Worksheet Style** — user-facing instructional or assessment purpose: Weekly, Class, Benchmark / EOG, or Standardized Testing - SAT / ACT.
+- **Worksheet Type** — concrete configured format within a style, such as Weekly Worksheet, Class Worksheet, Benchmark Worksheet, EOG Worksheet, SAT, SAT Mini, ACT, or ACT Mini.
 - **Standard** — external curriculum expectation such as an NC Standard Course of Study identifier.
 - **Skill / Concept** — instructional competency or mathematical idea.
-- **Curriculum Source** — district/state/source evidence with authority, freshness, and provenance.
+- **Worksheet Source** — approved origin family for instructional intent or assessment patterns: Curriculum based, Test papers based, Books based, Websites based, Topics Adhoc based, or Warmup.
+- **Curriculum Source** — curriculum-specific source evidence with authority, freshness, and provenance.
 - **Template** — approved master document structure copied for rendering.
 - **Formatting Profile** — reusable visual and print rules.
 - **Verification Result** — evidence that content/answers have been independently checked.
