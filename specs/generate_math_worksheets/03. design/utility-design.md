@@ -685,10 +685,10 @@ of its own — it sequences existing contracts:
 1. Pair staging by name (`deliver.pair_from_staging`, §4.3).
 2. Classify each pair (§5.4).
 3. For each `orphan`: reconstruct (§5.5) → persist the Spec → re-render from the registered template,
-   stamping the result (§5.2). The **re-rendered** documents are delivered, never the orphan
-   originals; the record names which documents a rebuild replaced.
-4. Deliver every resolved pair through `deliver.run_deliver` with the pairs supplied explicitly, so
-   week resolution, destination lookup, and the copy/move step are identical to §4's contract.
+   stamping the result (§5.2). The **re-rendered** documents are staged to the configured output
+   folder, never delivered to audience folders; the record names which documents a rebuild replaced.
+4. When `output_folder_id` is configured, stage every resolved pair in that folder and do not invoke
+   Final Delivery. Without it, retain the legacy `deliver.run_deliver` behavior.
 
 Failure isolation: one grade's reconstruction or render failure is recorded against that grade with
 its error and does not block the others. A dry run classifies and reports without reconstructing,
@@ -719,7 +719,8 @@ explicit new instruction.
 | `week` | `current`, a week number, or an ISO date | `current` |
 | `grades` | `all`, or a grade list | `all` |
 | `subject` | a configured subject id | the subject in use |
-| `source_folder` | a Drive folder ID | `publishing.staging.approved_folder_id` |
+| `source_folder` | a Drive folder ID | `publishing.format_and_deliver.source_folder_id` |
+| `output_folder` | a Drive folder ID | `publishing.format_and_deliver.output_folder_id` |
 | `batch_id` | a batch identifier for reconstructed Specs | `reconstructed_<week_of>` |
 | `dry_run` | `yes`, `no` | `yes` |
 

@@ -41,15 +41,12 @@ def build_clients():
 
 
 def paragraph_lines(elements) -> list[str]:
+    """Extract document paragraphs without treating table cells as section headings."""
     lines = []
     for element in elements:
         paragraph = element.get("paragraph")
         if paragraph:
             lines.append("".join(e.get("textRun", {}).get("content", "") for e in paragraph.get("elements", [])))
-        if "table" in element:
-            for row in element["table"]["tableRows"]:
-                for cell in row["tableCells"]:
-                    lines.extend(paragraph_lines(cell["content"]))
     return lines
 
 
@@ -68,9 +65,13 @@ def report(record: dict) -> None:
     for issue in record["issues"]:
         print(f"  issue={issue['reason']} {issue.get('grade_id', '')}")
     delivery = record["delivery"]
-    print(f"  delivery status={delivery['status']} folder={delivery['week_folder_name']}")
+    if delivery.get("output_folder_id"):
+        print(f"  output staging status={delivery['status']} folder={delivery['output_folder_id']}")
+    else:
+        print(f"  delivery status={delivery['status']} folder={delivery['week_folder_name']}")
     for target in delivery["targets"]:
-        print(f"    {target['label']} [{target['status']}]")
+        label = target.get("label", target.get("grade_id", target.get("role", "target")))
+        print(f"    {label} [{target['status']}]")
 
 
 def main() -> None:
@@ -78,6 +79,7 @@ def main() -> None:
     parser.add_argument("--week", default="current")
     parser.add_argument("--grades", default=None)
     parser.add_argument("--source-folder", default=None)
+    parser.add_argument("--output-folder", default=None, help="Folder receiving formatted pairs; skips parent-folder delivery when set.")
     # Absent by default so it stays an optional guard; config loading falls back to DEFAULT_SUBJECT.
     parser.add_argument("--subject", default=None, help="Guard: refuse if this does not match the loaded configuration's subject.")
     parser.add_argument("--worksheet-type", default="weekly-worksheet")
@@ -97,7 +99,20 @@ def main() -> None:
     manifest = json.loads((REPO / effective_config["template_selection"]["template_manifest"]).read_text(encoding="utf-8"))
     naming = effective_config["naming"]["weekly"]
     numbering = effective_config.get("display_numbering", "local")
-    staging_folder = effective_config["publishing"]["staging"]["render_folder_id"]
+    format_settings = effective_config["publishing"].get("format_and_deliver", {})
+    source_folder = args.source_folder or format_settings.get("source_folder_id")
+    output_folder = args.output_folder or format_settings.get("output_folder_id")
+    staging_folder = output_folder or effective_config["publishing"]["staging"]["render_folder_id"]
+
+    def stage_pair(pair: dict, destination_id: str) -> dict:
+        def copy(document: dict) -> dict:
+            return drive.files().copy(
+                fileId=document["id"],
+                body={"name": document["name"], "parents": [destination_id]},
+                fields="id,name,webViewLink,parents,appProperties",
+            ).execute()
+
+        return {"student_worksheet": copy(pair["student_worksheet"]), "answer_key": copy(pair["answer_key"])}
 
     def read_document_lines(document_id: str) -> list[str]:
         body = docs.documents().get(documentId=document_id).execute().get("body", {}).get("content", [])
@@ -140,12 +155,13 @@ def main() -> None:
         return {"student_worksheet": worksheet, "answer_key": key}
 
     record = format_deliver.run_format_and_deliver(
-        {"week": args.week, "grades": args.grades, "source_folder_id": args.source_folder, "subject": args.subject},
+        {"week": args.week, "grades": args.grades, "source_folder_id": source_folder, "output_folder_id": output_folder, "subject": args.subject},
         effective_config,
         adapter,
         read_document_lines=read_document_lines,
         persist_spec=persist_spec,
         render_pair=render_pair,
+        stage_pair=stage_pair,
         dry_run=args.dry_run,
     )
 

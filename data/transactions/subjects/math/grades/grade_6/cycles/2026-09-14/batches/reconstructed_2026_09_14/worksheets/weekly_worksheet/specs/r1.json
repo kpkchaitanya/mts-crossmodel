@@ -1,0 +1,690 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": "2\u00b3 \u00d7 3\u00b2",
+          "confidence": "inferred",
+          "id": "grade_6-q1",
+          "number": 1,
+          "prompt": "Question 1: Write 72 as a product of prime factors.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "2 \u00d7 3 \u00d7 5\u00b2",
+          "confidence": "inferred",
+          "id": "grade_6-q2",
+          "number": 2,
+          "prompt": "Question 2: Write 150 as a product of prime factors.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "2\u00b2 \u00d7 7\u00b2",
+          "confidence": "inferred",
+          "id": "grade_6-q3",
+          "number": 3,
+          "prompt": "Question 3: Write 196 as a product of prime factors.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "Yes. 126 = 2 \u00d7 3\u00b2 \u00d7 7, so it contains 3\u00b2 = 9 as a factor.",
+          "confidence": "inferred",
+          "id": "grade_6-q4",
+          "number": 4,
+          "prompt": "Question 4: Use prime factorization to determine whether 126 is divisible by 9.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": 18,
+          "confidence": "inferred",
+          "id": "grade_6-q5",
+          "number": 5,
+          "prompt": "Question 5: Find the GCF of 36 and 54. ______",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "3:4",
+          "confidence": "inferred",
+          "id": "grade_6-q6",
+          "number": 6,
+          "prompt": "Question 6: Write the ratio 18 red beads to 24 blue beads in simplest form.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "12 cups",
+          "confidence": "inferred",
+          "id": "grade_6-q7",
+          "number": 7,
+          "prompt": "Question 7: A recipe uses 4 cups of flour for 3 loaves. How many cups are needed for 9 loaves? ______",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "60 miles per hour",
+          "confidence": "inferred",
+          "id": "grade_6-q8",
+          "number": 8,
+          "prompt": "Question 8: A car travels 210 miles in 3.5 hours. Find the unit rate. ______",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 60,
+          "confidence": "inferred",
+          "id": "grade_6-q9",
+          "number": 9,
+          "prompt": "Question 9: Find the LCM of 12 and 20. ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": 72,
+          "confidence": "inferred",
+          "id": "grade_6-q10",
+          "number": 10,
+          "prompt": "Question 10: Find the LCM of 18 and 24. ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": 120,
+          "confidence": "inferred",
+          "id": "grade_6-q11",
+          "number": 11,
+          "prompt": "Question 11: Find the least number divisible by 8, 10, and 12. ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "120 seconds",
+          "confidence": "inferred",
+          "id": "grade_6-q12",
+          "number": 12,
+          "prompt": "Question 12: Two lights flash every 15 seconds and 24 seconds. If they flash together now, after how many seconds will they next flash together? ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": 35,
+          "confidence": "inferred",
+          "id": "grade_6-q13",
+          "number": 13,
+          "prompt": "Question 13: Complete the equivalent ratio: 7/9 = ______/45.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "15 notebooks for $21; $1.40 each compared with $1.50 each.",
+          "confidence": "inferred",
+          "id": "grade_6-q14",
+          "number": 14,
+          "prompt": "Question 14: Which is the better buy: 8 notebooks for $12 or 15 notebooks for $21? Show the unit prices.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "5/8",
+          "confidence": "inferred",
+          "id": "grade_6-q15",
+          "number": 15,
+          "prompt": "Question 15: Write 0.625 as a fraction in simplest form.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "\u22124, \u22123.5, 0, 1.2",
+          "confidence": "inferred",
+          "id": "grade_6-q16",
+          "number": 16,
+          "prompt": "Question 16: Order from least to greatest: \u22123.5, 1.2, \u22124, 0.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": "8/5",
+          "confidence": "inferred",
+          "id": "grade_6-q17",
+          "number": 17,
+          "prompt": "Question 17: Write the reciprocal of 5/8. ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "4/13",
+          "confidence": "inferred",
+          "id": "grade_6-q18",
+          "number": 18,
+          "prompt": "Question 18: Write the reciprocal of 3 1/4. ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "A reciprocal of 0 would require 1/0, which is undefined.",
+          "confidence": "inferred",
+          "id": "grade_6-q19",
+          "number": 19,
+          "prompt": "Question 19: Explain why 0 does not have a reciprocal.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "5/6",
+          "confidence": "inferred",
+          "id": "grade_6-q20",
+          "number": 20,
+          "prompt": "Question 20: Compute: 7/9 \u00f7 14/15. ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": 13.245,
+          "confidence": "inferred",
+          "id": "grade_6-q21",
+          "number": 21,
+          "prompt": "Question 21: Compute: 9.46 + 3.785. ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": 12.362,
+          "confidence": "inferred",
+          "id": "grade_6-q22",
+          "number": 22,
+          "prompt": "Question 22: Compute: 20 \u2212 7.638. ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "Quadrant II",
+          "confidence": "inferred",
+          "id": "grade_6-q23",
+          "number": 23,
+          "prompt": "Question 23: Point A is (\u22125, 2). In which quadrant is it?",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "(\u22124, \u22123)",
+          "confidence": "inferred",
+          "id": "grade_6-q24",
+          "number": 24,
+          "prompt": "Question 24: Reflect the point (4, \u22123) across the y-axis.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 4,
+          "confidence": "inferred",
+          "id": "grade_6-q25",
+          "number": 25,
+          "prompt": "Question 25: Compute: 3 1/2 \u00f7 7/8. ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": 12,
+          "confidence": "inferred",
+          "id": "grade_6-q26",
+          "number": 26,
+          "prompt": "Question 26: Compute: 16.8 \u00f7 1.4. ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "12 pieces",
+          "confidence": "inferred",
+          "id": "grade_6-q27",
+          "number": 27,
+          "prompt": "Question 27: A 7.2-meter ribbon is cut into 0.6-meter pieces. How many pieces are made? ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": 6.8,
+          "confidence": "inferred",
+          "id": "grade_6-q28",
+          "number": 28,
+          "prompt": "Question 28: Compute: 4.25 \u00d7 1.6. ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "11 units",
+          "confidence": "inferred",
+          "id": "grade_6-q29",
+          "number": 29,
+          "prompt": "Question 29: Find the horizontal distance between (\u22124, 6) and (7, 6). ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "120 cm\u00b3",
+          "confidence": "inferred",
+          "id": "grade_6-q30",
+          "number": 30,
+          "prompt": "Question 30: A rectangular prism measures 8 cm by 5 cm by 3 cm. Find its volume. ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "8 cm",
+          "confidence": "inferred",
+          "id": "grade_6-q31",
+          "number": 31,
+          "prompt": "Question 31: A prism has volume 216 cm\u00b3 and base area 27 cm\u00b2. Find its height. ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "$42",
+          "confidence": "inferred",
+          "id": "grade_6-q32",
+          "number": 32,
+          "prompt": "Question 32: A $60 item is discounted by 30%. Find the sale price. ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 0.324,
+          "confidence": "inferred",
+          "id": "grade_6-q33",
+          "number": 33,
+          "prompt": "Question 33: Compute: 0.72 \u00d7 0.45. ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": 9.02,
+          "confidence": "inferred",
+          "id": "grade_6-q34",
+          "number": 34,
+          "prompt": "Question 34: Compute: 3.608 \u00d7 2.5. ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": 1.02,
+          "confidence": "inferred",
+          "id": "grade_6-q35",
+          "number": 35,
+          "prompt": "Question 35: Compute: 12.75 \u00d7 0.08. ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "Sample estimate: 6.5 \u00d7 3.2 \u2248 20.8; exact product: 20.768.",
+          "confidence": "inferred",
+          "id": "grade_6-q36",
+          "number": 36,
+          "prompt": "Question 36: Estimate first, and then compute exactly: 6.49 \u00d7 3.2.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "25 girls",
+          "confidence": "inferred",
+          "id": "grade_6-q37",
+          "number": 37,
+          "prompt": "Question 37: A club has a boys-to-girls ratio of 3:5 and 40 members. How many members are girls? ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": 32,
+          "confidence": "inferred",
+          "id": "grade_6-q38",
+          "number": 38,
+          "prompt": "Question 38: Evaluate: 5(9 \u2212 4) + 7. ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "Since 2/3 is less than 1, more than one group fits into the original positive amount. Dividing by 2/3 is multiplying by 3/2.",
+          "confidence": "inferred",
+          "id": "grade_6-q39",
+          "number": 39,
+          "prompt": "Question 39: Explain why dividing by 2/3 gives a result greater than the original positive number.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        },
+        {
+          "answer": "8 complete batches",
+          "confidence": "inferred",
+          "id": "grade_6-q40",
+          "number": 40,
+          "prompt": "Question 40: A bakery needs 3/4 cup of sugar per batch. It has 6 cups. How many complete batches can it make? ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_6",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "method": "inherited_from_source_document",
+    "recomputed": false,
+    "source_documents": {
+      "answer_key": "1n_B_uQlQA8v3mg6eqgxaEoU6TxouC5YJViEwSV7uvrg",
+      "student_worksheet": "16An-pTLJW-Da6qnfBRYvUjY0lWooUN3sokt7rkwOTlI"
+    },
+    "status": "PASS"
+  },
+  "worksheet": {
+    "grade": "grade_6",
+    "grade_or_course": "grade_6",
+    "question_count": 40,
+    "title": "MTS - Weekly Math Worksheet",
+    "week_start": "2026-09-14"
+  }
+}

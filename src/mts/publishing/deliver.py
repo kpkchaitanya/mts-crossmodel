@@ -12,6 +12,7 @@ from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import Any
 import json
+import re
 
 from mts.publishing import archive as archive_policy
 from mts.publishing.archive import resolve_week_of  # noqa: F401  (re-exported: single implementation)
@@ -149,8 +150,14 @@ def pair_from_staging(
 
     for grade_id in grade_ids:
         student_name, key_name = document_names(naming, grade_id, week_of)
-        student = [item for item in files if item.get("name") == student_name]
-        answer_key = [item for item in files if item.get("name") == key_name]
+        student = [
+            item for item in files
+            if _matches_weekly_name(item.get("name"), grade_id, week_of, naming, answer_key=False)
+        ]
+        answer_key = [
+            item for item in files
+            if _matches_weekly_name(item.get("name"), grade_id, week_of, naming, answer_key=True)
+        ]
         ambiguous = {
             role: [item["id"] for item in found]
             for role, found in (("student_worksheet", student), ("answer_key", answer_key))
@@ -178,6 +185,44 @@ def pair_from_staging(
     if unmatched:
         issues.append({"reason": "unmatched_files", "documents": unmatched})
     return pairs, issues
+
+
+def _matches_weekly_name(
+    name: str | None,
+    grade_id: str,
+    week_of: str,
+    naming: Mapping[str, Any],
+    *,
+    answer_key: bool,
+) -> bool:
+    """Accept configured names plus harmless extension and grade-label variations."""
+    if not name:
+        return False
+    expected_student, expected_key = document_names(naming, grade_id, week_of)
+    if name in {expected_student, expected_key}:
+        return answer_key == (name == expected_key)
+
+    normalized = re.sub(r"[^a-z0-9]", "", name.lower())
+    normalized = re.sub(r"(?:docx|pdf)$", "", normalized)
+    if not normalized.startswith("mtsmath"):
+        return False
+    if answer_key != ("key" in normalized):
+        return False
+    if "math" not in normalized or "weeklyworksheet" not in normalized or week_of.replace("-", "") not in normalized:
+        return False
+    if answer_key and not normalized.endswith("key"):
+        return False
+    if not answer_key and normalized.endswith("key"):
+        return False
+
+    aliases = {
+        "grade_1": ("grade1", "1stgrade"),
+        "grade_4": ("grade4", "4thgrade"),
+        "grade_5": ("grade5", "5thgrade"),
+        "grade_6": ("grade6", "6thgrade"),
+        "grade_9_10": ("grade910", "9th10thgrade", "9th10grade"),
+    }
+    return any(alias in normalized for alias in aliases.get(grade_id, ()))
 
 
 def provenance_settings(effective_config: Mapping[str, Any]) -> Mapping[str, Any]:

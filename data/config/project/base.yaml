@@ -48,6 +48,9 @@ publishing:
   staging:
     render_folder_id: "1FUZ5hC4hpKEZwirG-p4bKpDlPiN8IBfL"
     approved_folder_id: "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+  format_and_deliver:
+    source_folder_id: "1Dn-UiONKHkSLehuNVjYlR4IkQw6S-A9I"
+    output_folder_id: "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
   final_delivery:
     enabled: true
     # Default for the /generate-worksheet `deliver` parameter; explicit `deliver=no` overrides per run.

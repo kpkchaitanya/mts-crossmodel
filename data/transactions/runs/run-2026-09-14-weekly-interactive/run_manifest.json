@@ -1,0 +1,128 @@
+{
+  "approvals": [
+    {
+      "approval_id": "approval-c4b00084ea6e4725bf5ac221fab00d10",
+      "artifact_revision": "scope-2026-09-14",
+      "gate": "scope_review",
+      "notes": null,
+      "recorded_at": "2026-09-10T19:20:43.348812+00:00",
+      "reviewer": "current-user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-5cc09919d0b84696be855535f6991a7b",
+      "artifact_revision": "questions-2026-09-14",
+      "gate": "question_review",
+      "notes": null,
+      "recorded_at": "2026-09-10T19:20:58.123425+00:00",
+      "reviewer": "current-user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-6275df034b7a4847ba0a0472ef04dc6f",
+      "artifact_revision": "verification-2026-09-14",
+      "gate": "verification_review",
+      "notes": null,
+      "recorded_at": "2026-09-10T19:21:11.375318+00:00",
+      "reviewer": "current-user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-e5ef079bf4b54ba49b37a1a452c33b85",
+      "artifact_revision": "formatting-2026-09-14",
+      "gate": "formatting_review",
+      "notes": null,
+      "recorded_at": "2026-09-10T19:27:06.249950+00:00",
+      "reviewer": "current-user",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-d7ac809aa53146ea9ebe7f224b9cfc46",
+      "artifact_revision": "publish-2026-09-14",
+      "gate": "publish_approval",
+      "notes": "Gate 5 approved for publication only; final delivery declined for this run.",
+      "recorded_at": "2026-09-10T19:27:37.081050+00:00",
+      "reviewer": "current-user",
+      "status": "approved"
+    }
+  ],
+  "deliver": false,
+  "delivery_status": "not_run_by_gate_5_decision",
+  "entity_references": [
+    {
+      "grade_or_course": "grade_1",
+      "spec": "data/transactions/subjects/math/grades/grade_1/cycles/2026-09-14/batches/weekly_math_2026_09_14_interactive/worksheets/weekly_worksheet/specs/r1.json",
+      "worksheet_root": "data/transactions/subjects/math/grades/grade_1/cycles/2026-09-14/batches/weekly_math_2026_09_14_interactive/worksheets/weekly_worksheet"
+    },
+    {
+      "grade_or_course": "grade_4",
+      "spec": "data/transactions/subjects/math/grades/grade_4/cycles/2026-09-14/batches/weekly_math_2026_09_14_interactive/worksheets/weekly_worksheet/specs/r1.json",
+      "worksheet_root": "data/transactions/subjects/math/grades/grade_4/cycles/2026-09-14/batches/weekly_math_2026_09_14_interactive/worksheets/weekly_worksheet"
+    },
+    {
+      "grade_or_course": "grade_5",
+      "spec": "data/transactions/subjects/math/grades/grade_5/cycles/2026-09-14/batches/weekly_math_2026_09_14_interactive/worksheets/weekly_worksheet/specs/r1.json",
+      "worksheet_root": "data/transactions/subjects/math/grades/grade_5/cycles/2026-09-14/batches/weekly_math_2026_09_14_interactive/worksheets/weekly_worksheet"
+    },
+    {
+      "grade_or_course": "grade_6",
+      "spec": "data/transactions/subjects/math/grades/grade_6/cycles/2026-09-14/batches/weekly_math_2026_09_14_interactive/worksheets/weekly_worksheet/specs/r1.json",
+      "worksheet_root": "data/transactions/subjects/math/grades/grade_6/cycles/2026-09-14/batches/weekly_math_2026_09_14_interactive/worksheets/weekly_worksheet"
+    },
+    {
+      "grade_or_course": "grade_9_10",
+      "spec": "data/transactions/subjects/math/grades/grade_9_10/cycles/2026-09-14/batches/weekly_math_2026_09_14_interactive/worksheets/weekly_worksheet/specs/r1.json",
+      "worksheet_root": "data/transactions/subjects/math/grades/grade_9_10/cycles/2026-09-14/batches/weekly_math_2026_09_14_interactive/worksheets/weekly_worksheet"
+    }
+  ],
+  "gates": {
+    "bypassed": [],
+    "mode": "interactive",
+    "requested_by": "current_user"
+  },
+  "publish": true,
+  "published_artifacts": "data/transactions/runs/run-2026-09-14-weekly-interactive/published-artifacts.json",
+  "qa_required": true,
+  "run_id": "run-2026-09-14-weekly-interactive",
+  "status": "published",
+  "subject": "math",
+  "topic_overrides": {
+    "grade_1": [
+      {
+        "kind": "percent",
+        "topic": "Count on and Count Down - below 20",
+        "value": 20.0
+      },
+      {
+        "kind": "percent",
+        "topic": "Count on and Count Down - below 30",
+        "value": 20.0
+      }
+    ],
+    "grade_4": [
+      {
+        "kind": "percent",
+        "topic": "Types of Graphing",
+        "value": 50.0
+      }
+    ],
+    "grade_5": [
+      {
+        "kind": "percent",
+        "topic": "Input and Output tables to lay foundations to functions, Coordinate Geometry relation to input, output",
+        "value": 50.0
+      }
+    ],
+    "grade_6": [
+      {
+        "kind": "percent",
+        "topic": "Prime Factorization, LCM, Reciprocals, Division, Multiplying Decimals",
+        "value": 50.0
+      }
+    ]
+  },
+  "variation_seed": 20260910192040,
+  "verification_required": true,
+  "week_start": "2026-09-14",
+  "worksheet_type": "weekly-worksheet"
+}

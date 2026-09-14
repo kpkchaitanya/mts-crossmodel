@@ -1,9 +1,8 @@
 # Command: Format-And-Deliver Worksheets
 
-Publishing utility. Takes every loose staged pair, brings each up to pipeline standard, and delivers
-it — in one step. A staged pair is either already conformant (rendered through the pipeline, so it
-carries provenance) or an orphan (authored straight into Drive, with no Spec of record); orphans are
-reconstructed into a Spec and re-rendered from the registered template before delivery.
+Publishing utility. Takes every pair in the configured pre-formatted input folder, brings each up to
+pipeline standard, and writes the resulting pairs to the configured approved staging output folder.
+It does not perform parent-folder Final Delivery.
 
 Canonical design: [utility-design.md](<../specs/generate_math_worksheets/03. design/utility-design.md>) section 5.
 
@@ -26,7 +25,8 @@ Concrete CLI entry point:
 | `week` | `current`, an instructional week number, or an ISO date | `current` | Same resolution as `/deliver-worksheets`. Filters staging pairing to only documents naming this week. |
 | `grades` | `all`, or a comma-separated grade list | `all` | Filters staging pairing to only these grades' named documents. A requested grade with no configured destination is a fail-closed error. |
 | `subject` | a configured subject id (e.g. `math`) | the subject the command is running under | Must match the subject the command is running under; a mismatch is refused before anything is classified, reconstructed, or delivered. |
-| `source_folder` | a Drive folder ID | `publishing.staging.approved_folder_id` | Staging folder to pair from. |
+| `source_folder` | a Drive folder ID | `publishing.format_and_deliver.source_folder_id` | Pre-formatted input folder to pair from. |
+| `output_folder` | a Drive folder ID | `publishing.format_and_deliver.output_folder_id` | Approved staging folder receiving formatted pairs. |
 | `batch_id` | a batch identifier | `reconstructed_<week_of>` | Where a reconstructed Spec is persisted under the grade's transaction tree. |
 | `dry_run` | `yes`, `no` | `yes` | `yes` classifies and plans without reconstructing, rendering, or delivering anything. |
 
@@ -63,9 +63,9 @@ Every staged pair is labeled from its documents' provenance (Drive `appPropertie
 3. Run with `--dry-run` first. Present the classification, the planned action per grade, and every
    pairing issue.
 4. Do not proceed to `--apply` without a new, explicit instruction.
-5. Report the resulting record: reconstruction actions (with the replaced document IDs and persisted
-   Spec path) plus the Delivery Record. One grade's reconstruction or delivery failure is recorded
-   against that grade and does not block the others.
+5. Report the resulting record: reconstruction actions, output-folder staging, replaced document IDs,
+   and persisted Spec paths. One grade's reconstruction failure is recorded against that grade and
+   does not block the others.
 
 ## Rollback
 

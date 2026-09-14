@@ -1,0 +1,850 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": "Bar graph",
+          "confidence": "inferred",
+          "id": "grade_4-q1",
+          "number": 1,
+          "prompt": "Question 1: Which graph is usually best for comparing amounts in unrelated categories: bar graph, line graph, or line plot?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Line graph",
+          "confidence": "inferred",
+          "id": "grade_4-q2",
+          "number": 2,
+          "prompt": "Question 2: Which graph is usually best for showing temperature changing across seven consecutive days?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Pictograph",
+          "confidence": "inferred",
+          "id": "grade_4-q3",
+          "number": 3,
+          "prompt": "Question 3: Which graph uses repeated pictures or symbols together with a key?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Line plot",
+          "confidence": "inferred",
+          "id": "grade_4-q4",
+          "number": 4,
+          "prompt": "Question 4: Which graph places X marks above values on a number line to show frequency?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Circle graph",
+          "confidence": "inferred",
+          "id": "grade_4-q5",
+          "number": 5,
+          "prompt": "Question 5: Which graph is commonly used to display parts of one whole as sectors?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": 60000,
+          "confidence": "inferred",
+          "id": "grade_4-q6",
+          "number": 6,
+          "prompt": "Question 6: What is the value of the digit 6 in 364,218? ______",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "500,000 + 7,000 + 30 + 6",
+          "confidence": "inferred",
+          "id": "grade_4-q7",
+          "number": 7,
+          "prompt": "Question 7: Write 507,036 in expanded form.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "<",
+          "confidence": "inferred",
+          "id": "grade_4-q8",
+          "number": 8,
+          "prompt": "Question 8: Compare using <, >, or =: 608,401 ______ 608,410.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": 473000,
+          "confidence": "inferred",
+          "id": "grade_4-q9",
+          "number": 9,
+          "prompt": "Question 9: Round 472,681 to the nearest thousand. ______",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "91,950; 92,015; 92,105",
+          "confidence": "inferred",
+          "id": "grade_4-q10",
+          "number": 10,
+          "prompt": "Question 10: Order from least to greatest: 92,105; 91,950; 92,015.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": "Bar graph",
+          "confidence": "inferred",
+          "id": "grade_4-q11",
+          "number": 11,
+          "prompt": "Question 11: Which type of graph would clearly compare the four clubs?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Sample: Students in After-School Clubs",
+          "confidence": "inferred",
+          "id": "grade_4-q12",
+          "number": 12,
+          "prompt": "Question 12: What title would accurately describe the graph?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "0, 2, 4, 6, 8, 10, 12, 14, 16",
+          "confidence": "inferred",
+          "id": "grade_4-q13",
+          "number": 13,
+          "prompt": "Question 13: If the vertical scale counts by 2, what labeled values should appear from 0 through 16?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "7 students",
+          "confidence": "inferred",
+          "id": "grade_4-q14",
+          "number": 14,
+          "prompt": "Question 14: How many more students chose Music than Chess? ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "45 students",
+          "confidence": "inferred",
+          "id": "grade_4-q15",
+          "number": 15,
+          "prompt": "Question 15: How many students chose these four clubs altogether? ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": 74225,
+          "confidence": "inferred",
+          "id": "grade_4-q16",
+          "number": 16,
+          "prompt": "Question 16: 48,736 + 25,489 = ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": 43215,
+          "confidence": "inferred",
+          "id": "grade_4-q17",
+          "number": 17,
+          "prompt": "Question 17: 90,000 \u2212 46,785 = ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": 9000,
+          "confidence": "inferred",
+          "id": "grade_4-q18",
+          "number": 18,
+          "prompt": "Question 18: Estimate 6,184 + 2,793 by rounding each addend to the nearest thousand.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "37,525 books",
+          "confidence": "inferred",
+          "id": "grade_4-q19",
+          "number": 19,
+          "prompt": "Question 19: A library had 32,650 books and purchased 4,875 more. How many books does it have now? ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "6,372 seats",
+          "confidence": "inferred",
+          "id": "grade_4-q20",
+          "number": 20,
+          "prompt": "Question 20: A stadium has 50,000 seats. If 43,628 are occupied, how many seats are empty? ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": "Line graph",
+          "confidence": "inferred",
+          "id": "grade_4-q21",
+          "number": 21,
+          "prompt": "Question 21: Which graph best shows the temperature changes across the week?",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Tuesday to Wednesday",
+          "confidence": "inferred",
+          "id": "grade_4-q22",
+          "number": 22,
+          "prompt": "Question 22: Between which consecutive days did the temperature decrease?",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Wednesday to Thursday",
+          "confidence": "inferred",
+          "id": "grade_4-q23",
+          "number": 23,
+          "prompt": "Question 23: Between which consecutive days was the greatest increase?",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "12\u00b0F",
+          "confidence": "inferred",
+          "id": "grade_4-q24",
+          "number": 24,
+          "prompt": "Question 24: How much warmer was Friday than Monday? ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Sample: The temperature was highest on Friday and generally increased during the week.",
+          "confidence": "inferred",
+          "id": "grade_4-q25",
+          "number": 25,
+          "prompt": "Question 25: Write one accurate conclusion supported by the data.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "7 \u00d7 6 = 42",
+          "confidence": "inferred",
+          "id": "grade_4-q26",
+          "number": 26,
+          "prompt": "Question 26: Write a multiplication equation for \u201c7 times as many as 6.\u201d",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "45 feet",
+          "confidence": "inferred",
+          "id": "grade_4-q27",
+          "number": 27,
+          "prompt": "Question 27: A rope is 5 times as long as a 9-foot rope. How long is it? ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "1 \u00d7 36, 2 \u00d7 18, 3 \u00d7 12, 4 \u00d7 9, 6 \u00d7 6",
+          "confidence": "inferred",
+          "id": "grade_4-q28",
+          "number": 28,
+          "prompt": "Question 28: List every factor pair of 36.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Yes; 6 \u00d7 9 = 54.",
+          "confidence": "inferred",
+          "id": "grade_4-q29",
+          "number": 29,
+          "prompt": "Question 29: Is 54 a multiple of 6? Explain using a multiplication equation.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "243; multiply by 3",
+          "confidence": "inferred",
+          "id": "grade_4-q30",
+          "number": 30,
+          "prompt": "Question 30: Complete the pattern and state the rule: 3, 9, 27, 81, ______.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": "A line plot with frequencies: 2\u21921, 3\u21922, 4\u21923, 5\u21922, 6\u21924.",
+          "confidence": "inferred",
+          "id": "grade_4-q31",
+          "number": 31,
+          "prompt": "Question 31: Create a line plot of the data.",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": 12,
+          "confidence": "inferred",
+          "id": "grade_4-q32",
+          "number": 32,
+          "prompt": "Question 32: How many observations should appear on the completed line plot? ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": 6,
+          "confidence": "inferred",
+          "id": "grade_4-q33",
+          "number": 33,
+          "prompt": "Question 33: What is the mode of the data? ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": 4,
+          "confidence": "inferred",
+          "id": "grade_4-q34",
+          "number": 34,
+          "prompt": "Question 34: What is the range of the data? ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": 6,
+          "confidence": "inferred",
+          "id": "grade_4-q35",
+          "number": 35,
+          "prompt": "Question 35: How many observations are greater than 4? ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": 16381,
+          "confidence": "inferred",
+          "id": "grade_4-q36",
+          "number": 36,
+          "prompt": "Question 36: 7,406 + 8,975 = ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": 6352,
+          "confidence": "inferred",
+          "id": "grade_4-q37",
+          "number": 37,
+          "prompt": "Question 37: 20,000 \u2212 13,648 = ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "1,443 cans",
+          "confidence": "inferred",
+          "id": "grade_4-q38",
+          "number": 38,
+          "prompt": "Question 38: A school collected 2,468 cans in Week 1 and 1,975 in Week 2. It donated 3,000 cans. How many cans remained? ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "53 students",
+          "confidence": "inferred",
+          "id": "grade_4-q39",
+          "number": 39,
+          "prompt": "Question 39: Six vans carry 8 students each. Five additional students ride with a teacher. How many students travel altogether? ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": 12,
+          "confidence": "inferred",
+          "id": "grade_4-q40",
+          "number": 40,
+          "prompt": "Question 40: Find the missing factor: 9 \u00d7 ______ = 108.",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": "Starting at 90 compresses the displayed scale and visually exaggerates small differences.",
+          "confidence": "inferred",
+          "id": "grade_4-q41",
+          "number": 41,
+          "prompt": "Question 41: A graph begins its vertical scale at 90 instead of 0. Explain how this could make a small difference look very large.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "26 votes",
+          "confidence": "inferred",
+          "id": "grade_4-q42",
+          "number": 42,
+          "prompt": "Question 42: A pictograph key says one star represents 4 votes. What do 6 full stars and one half-star represent? ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Flavors are separate categories, not a continuous sequence; a bar graph compares them without suggesting change between categories.",
+          "confidence": "inferred",
+          "id": "grade_4-q43",
+          "number": 43,
+          "prompt": "Question 43: A student uses a line graph for favorite ice-cream flavors. Explain why a bar graph would be more appropriate.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Sample title: Pages Read by Student; x-axis: Student; y-axis: Pages Read.",
+          "confidence": "inferred",
+          "id": "grade_4-q44",
+          "number": 44,
+          "prompt": "Question 44: Create a suitable graph title and axis labels for data showing the number of pages four students read.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Sample: Soccer received 6 more votes than basketball; swimming received 6 more votes than tennis.",
+          "confidence": "inferred",
+          "id": "grade_4-q45",
+          "number": 45,
+          "prompt": "Question 45: A bar graph shows 18 soccer votes, 12 basketball votes, 9 tennis votes, and 15 swimming votes. Write two comparison statements supported by the graph.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": 680000,
+          "confidence": "inferred",
+          "id": "grade_4-q46",
+          "number": 46,
+          "prompt": "Question 46: Round 684,249 to the nearest ten thousand. ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Prime; its only positive factors are 1 and 29.",
+          "confidence": "inferred",
+          "id": "grade_4-q47",
+          "number": 47,
+          "prompt": "Question 47: Determine whether 29 is prime or composite. Explain.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "12, 24, 36",
+          "confidence": "inferred",
+          "id": "grade_4-q48",
+          "number": 48,
+          "prompt": "Question 48: Find the first three common multiples of 4 and 6.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "68 markers",
+          "confidence": "inferred",
+          "id": "grade_4-q49",
+          "number": 49,
+          "prompt": "Question 49: A store packs 7 markers in each box. It fills 9 boxes and has 5 markers left. How many markers does it have altogether? ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        },
+        {
+          "answer": "Her estimate is too low when rounding to hundreds. A better estimate is 400 + 600 = 1,000; the exact sum is 1,005.",
+          "confidence": "inferred",
+          "id": "grade_4-q50",
+          "number": 50,
+          "prompt": "Question 50: Ella says 398 + 607 is about 900. Evaluate her estimate and give a better estimate using hundreds.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_4",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "method": "inherited_from_source_document",
+    "recomputed": false,
+    "source_documents": {
+      "answer_key": "1_-B5aG11sYw8u9xi7GN7PA7oICSymPPaW2-iJaicsFQ",
+      "student_worksheet": "18NQUmp1QCeeyRBPw06On4OsXMXOSkmp9M9yM-ZFvzBE"
+    },
+    "status": "PASS"
+  },
+  "worksheet": {
+    "grade": "grade_4",
+    "grade_or_course": "grade_4",
+    "question_count": 50,
+    "title": "MTS - Weekly Math Worksheet",
+    "week_start": "2026-09-14"
+  }
+}

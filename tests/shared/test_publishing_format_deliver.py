@@ -73,6 +73,45 @@ def run(adapter, recorder, dry_run=True, grades="grade_6"):
     )
 
 
+def test_configured_format_output_stages_conformant_pairs_without_final_delivery():
+    config = {
+        **CONFIG,
+        "publishing": {
+            **CONFIG["publishing"],
+            "format_and_deliver": {
+                "source_folder_id": "preformatted-input",
+                "output_folder_id": "staging-output",
+            },
+        },
+    }
+    adapter = FakeAdapter(files={"preformatted-input": staging(grade_6_stamped=True)["staging-approved"]})
+    recorder = Recorder()
+    staged = []
+
+    def stage_pair(pair, output_folder):
+        staged.append((pair["student_worksheet"]["id"], pair["answer_key"]["id"], output_folder))
+        return {
+            "student_worksheet": {"id": "staged-g6", "name": "worksheet"},
+            "answer_key": {"id": "staged-g6k", "name": "answer key"},
+        }
+
+    record = format_deliver.run_format_and_deliver(
+        {"week": "2026-08-31", "grades": "grade_6"},
+        config,
+        adapter,
+        read_document_lines=recorder.read_lines,
+        persist_spec=recorder.persist,
+        render_pair=recorder.render,
+        stage_pair=stage_pair,
+        dry_run=False,
+    )
+
+    assert record["status"] == "staged"
+    assert record["actions"] == [{"grade_id": "grade_6", "action": "stage_existing", "status": "ready"}]
+    assert staged == [("g6", "g6k", "staging-output")]
+    assert adapter.deliveries == []
+
+
 def test_a_stamped_pair_is_classified_conformant_and_delivered_as_is():
     adapter = FakeAdapter(files=staging(grade_6_stamped=True))
     recorder = Recorder()

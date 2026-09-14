@@ -117,6 +117,20 @@ def test_staging_pairing_matches_each_grade_by_name():
     assert issues == []
 
 
+def test_staging_pairing_accepts_grade_number_labels_and_document_extensions():
+    files = [
+        doc("g6", "MTS-Math-Grade6-WeeklyWorksheet-2026-08-31.docx"),
+        doc("g6k", "MTS-Math-Grade6-WeeklyWorksheet-2026-08-31_KEY.docx"),
+        doc("zip", "MTS-Math-WeeklyWorksheets-2026-08-31.zip"),
+    ]
+    pairs, issues = deliver.pair_from_staging(
+        files, week_of="2026-08-31", naming=NAMING, grade_ids=["grade_6"]
+    )
+    assert pairs["grade_6"]["student_worksheet"]["id"] == "g6"
+    assert pairs["grade_6"]["answer_key"]["id"] == "g6k"
+    assert issues == [{"reason": "unmatched_files", "documents": [{"id": "zip", "name": "MTS-Math-WeeklyWorksheets-2026-08-31.zip"}]}]
+
+
 def test_staging_pairing_refuses_a_duplicate_name_instead_of_choosing():
     files = staging_for(extra=[doc("g6-dupe", "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31")])["staging-approved"]
     pairs, issues = deliver.pair_from_staging(

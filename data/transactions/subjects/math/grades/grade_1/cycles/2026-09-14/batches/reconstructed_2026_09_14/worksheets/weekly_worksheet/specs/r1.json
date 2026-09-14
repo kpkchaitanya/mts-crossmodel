@@ -1,0 +1,850 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 10,
+          "confidence": "inferred",
+          "id": "grade_1-q1",
+          "number": 1,
+          "prompt": "Question 1: Start at 6. Count on by ones 4 times. Where do you land? ______",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 12,
+          "confidence": "inferred",
+          "id": "grade_1-q2",
+          "number": 2,
+          "prompt": "Question 2: Start at 17. Count down by ones 5 times. Where do you land? ______",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 27,
+          "confidence": "inferred",
+          "id": "grade_1-q3",
+          "number": 3,
+          "prompt": "Question 3: Start at 21. Count on by ones 6 times. Where do you land? ______",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 21,
+          "confidence": "inferred",
+          "id": "grade_1-q4",
+          "number": 4,
+          "prompt": "Question 4: Start at 28. Count down by ones 7 times. Where do you land? ______",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 15,
+          "confidence": "inferred",
+          "id": "grade_1-q5",
+          "number": 5,
+          "prompt": "Question 5: 8 + 7 = ______",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 7,
+          "confidence": "inferred",
+          "id": "grade_1-q6",
+          "number": 6,
+          "prompt": "Question 6: 16 \u2212 9 = ______",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 5,
+          "confidence": "inferred",
+          "id": "grade_1-q7",
+          "number": 7,
+          "prompt": "Question 7: Fill in the missing number: 9 + ______ = 14.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 15,
+          "confidence": "inferred",
+          "id": "grade_1-q8",
+          "number": 8,
+          "prompt": "Question 8: Circle the greater number: 15 or 12.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "1 ten and 8 ones",
+          "confidence": "inferred",
+          "id": "grade_1-q9",
+          "number": 9,
+          "prompt": "Question 9: Write 18 as tens and ones: ______ ten and ______ ones.",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "13 blocks",
+          "confidence": "inferred",
+          "id": "grade_1-q10",
+          "number": 10,
+          "prompt": "Question 10: Mia has 7 red blocks and 6 blue blocks. How many blocks does she have altogether? ______",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 16,
+          "confidence": "inferred",
+          "id": "grade_1-q11",
+          "number": 11,
+          "prompt": "Question 11: Start at 9. Count on by ones 7 times. Where do you land? ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 12,
+          "confidence": "inferred",
+          "id": "grade_1-q12",
+          "number": 12,
+          "prompt": "Question 12: Start at 18. Count down by ones 6 times. Where do you land? ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 28,
+          "confidence": "inferred",
+          "id": "grade_1-q13",
+          "number": 13,
+          "prompt": "Question 13: Start at 20. Count on by ones 8 times. Where do you land? ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 24,
+          "confidence": "inferred",
+          "id": "grade_1-q14",
+          "number": 14,
+          "prompt": "Question 14: Start at 29. Count down by ones 5 times. Where do you land? ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 4,
+          "confidence": "inferred",
+          "id": "grade_1-q15",
+          "number": 15,
+          "prompt": "Question 15: Complete the make-10 fact: 6 + ______ = 10.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 13,
+          "confidence": "inferred",
+          "id": "grade_1-q16",
+          "number": 16,
+          "prompt": "Question 16: Use make-10 to solve: 8 + 5 = ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 9,
+          "confidence": "inferred",
+          "id": "grade_1-q17",
+          "number": 17,
+          "prompt": "Question 17: Fill in the missing number: ______ + 7 = 16.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "17, 18",
+          "confidence": "inferred",
+          "id": "grade_1-q18",
+          "number": 18,
+          "prompt": "Question 18: Write the next two numbers: 14, 15, 16, ______, ______.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "13 < 17",
+          "confidence": "inferred",
+          "id": "grade_1-q19",
+          "number": 19,
+          "prompt": "Question 19: Which statement is true? 13 > 17, 13 < 17, or 13 = 17.",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "9 crayons",
+          "confidence": "inferred",
+          "id": "grade_1-q20",
+          "number": 20,
+          "prompt": "Question 20: Noah had 15 crayons. He gave away 6. How many crayons remain? ______",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 16,
+          "confidence": "inferred",
+          "id": "grade_1-q21",
+          "number": 21,
+          "prompt": "Question 21: Start at 7. Count on by ones 9 times. Where do you land? ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 11,
+          "confidence": "inferred",
+          "id": "grade_1-q22",
+          "number": 22,
+          "prompt": "Question 22: Start at 19. Count down by ones 8 times. Where do you land? ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 27,
+          "confidence": "inferred",
+          "id": "grade_1-q23",
+          "number": 23,
+          "prompt": "Question 23: Start at 22. Count on by ones 5 times. Where do you land? ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 18,
+          "confidence": "inferred",
+          "id": "grade_1-q24",
+          "number": 24,
+          "prompt": "Question 24: Start at 27. Count down by ones 9 times. Where do you land? ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 16,
+          "confidence": "inferred",
+          "id": "grade_1-q25",
+          "number": 25,
+          "prompt": "Question 25: 7 + 9 = ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 11,
+          "confidence": "inferred",
+          "id": "grade_1-q26",
+          "number": 26,
+          "prompt": "Question 26: 18 \u2212 7 = ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 7,
+          "confidence": "inferred",
+          "id": "grade_1-q27",
+          "number": 27,
+          "prompt": "Question 27: Fill in the missing number: 17 \u2212 ______ = 10.",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 20,
+          "confidence": "inferred",
+          "id": "grade_1-q28",
+          "number": 28,
+          "prompt": "Question 28: Write the number that is 1 more than 19. ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 29,
+          "confidence": "inferred",
+          "id": "grade_1-q29",
+          "number": 29,
+          "prompt": "Question 29: Write the number that is 1 less than 30. ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "16 birds",
+          "confidence": "inferred",
+          "id": "grade_1-q30",
+          "number": 30,
+          "prompt": "Question 30: There are 9 birds in a tree. Seven more arrive. How many birds are there now? ______",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 13,
+          "confidence": "inferred",
+          "id": "grade_1-q31",
+          "number": 31,
+          "prompt": "Question 31: Start at 5. Count on by ones 8 times. Where do you land? ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 9,
+          "confidence": "inferred",
+          "id": "grade_1-q32",
+          "number": 32,
+          "prompt": "Question 32: Start at 16. Count down by ones 7 times. Where do you land? ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 27,
+          "confidence": "inferred",
+          "id": "grade_1-q33",
+          "number": 33,
+          "prompt": "Question 33: Start at 23. Count on by ones 4 times. Where do you land? ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 20,
+          "confidence": "inferred",
+          "id": "grade_1-q34",
+          "number": 34,
+          "prompt": "Question 34: Start at 26. Count down by ones 6 times. Where do you land? ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "8; 6",
+          "confidence": "inferred",
+          "id": "grade_1-q35",
+          "number": 35,
+          "prompt": "Question 35: Complete the fact family: 6 + 8 = 14, 8 + 6 = 14, 14 \u2212 6 = ______, 14 \u2212 8 = ______.",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "4 and 6",
+          "confidence": "inferred",
+          "id": "grade_1-q36",
+          "number": 36,
+          "prompt": "Question 36: Which two numbers make 10? 3 and 6, 4 and 6, or 5 and 7.",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 17,
+          "confidence": "inferred",
+          "id": "grade_1-q37",
+          "number": 37,
+          "prompt": "Question 37: Fill in the missing number: ______ \u2212 5 = 12.",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 24,
+          "confidence": "inferred",
+          "id": "grade_1-q38",
+          "number": 38,
+          "prompt": "Question 38: A number has 2 tens and 4 ones. What is the number? ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "11, 15, 18",
+          "confidence": "inferred",
+          "id": "grade_1-q39",
+          "number": 39,
+          "prompt": "Question 39: Put in order from least to greatest: 18, 11, 15.",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "8 stickers",
+          "confidence": "inferred",
+          "id": "grade_1-q40",
+          "number": 40,
+          "prompt": "Question 40: Ava has 13 stickers. Ben has 5 fewer stickers than Ava. How many stickers does Ben have? ______",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 14,
+          "confidence": "inferred",
+          "id": "grade_1-q41",
+          "number": 41,
+          "prompt": "Question 41: Start at 8. Count on by ones 6 times. Where do you land? ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 6,
+          "confidence": "inferred",
+          "id": "grade_1-q42",
+          "number": 42,
+          "prompt": "Question 42: Start at 15. Count down by ones 9 times. Where do you land? ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 29,
+          "confidence": "inferred",
+          "id": "grade_1-q43",
+          "number": 43,
+          "prompt": "Question 43: Start at 24. Count on by ones 5 times. Where do you land? ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": 21,
+          "confidence": "inferred",
+          "id": "grade_1-q44",
+          "number": 44,
+          "prompt": "Question 44: Start at 29. Count down by ones 8 times. Where do you land? ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "Sample: 7 + 9 = 16 and 8 + 8 = 16.",
+          "confidence": "inferred",
+          "id": "grade_1-q45",
+          "number": 45,
+          "prompt": "Question 45: Find two different addition facts that equal 16.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "No. The correct sum is 17.",
+          "confidence": "inferred",
+          "id": "grade_1-q46",
+          "number": 46,
+          "prompt": "Question 46: Sam says 9 + 8 = 16. Is Sam correct? Explain or correct the answer.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "10, 12",
+          "confidence": "inferred",
+          "id": "grade_1-q47",
+          "number": 47,
+          "prompt": "Question 47: Complete the pattern: 4, 6, 8, ______, ______.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "12 \u2212 5 = 7",
+          "confidence": "inferred",
+          "id": "grade_1-q48",
+          "number": 48,
+          "prompt": "Question 48: Write an equation for this story: 12 frogs sat by a pond and 5 hopped away.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "9 shells",
+          "confidence": "inferred",
+          "id": "grade_1-q49",
+          "number": 49,
+          "prompt": "Question 49: Lily has 8 shells. How many more shells does she need to have 17? ______",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        },
+        {
+          "answer": "Sample: Start at 7 and count on 6 more numbers to reach 13.",
+          "confidence": "inferred",
+          "id": "grade_1-q50",
+          "number": 50,
+          "prompt": "Question 50: Explain how counting on can help you solve 7 + 6.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "method": "inherited_from_source_document",
+    "recomputed": false,
+    "source_documents": {
+      "answer_key": "1K5ytOUiFBEYeKOjGh6yDL36KxZyGAS60LSGgy4OK6Xw",
+      "student_worksheet": "1IJh_Eh4laUQ6zUjQVPtNk3UHjiL0d4qyPWlN0vRReUo"
+    },
+    "status": "PASS"
+  },
+  "worksheet": {
+    "grade": "grade_1",
+    "grade_or_course": "grade_1",
+    "question_count": 50,
+    "title": "MTS - Weekly Math Worksheet",
+    "week_start": "2026-09-14"
+  }
+}

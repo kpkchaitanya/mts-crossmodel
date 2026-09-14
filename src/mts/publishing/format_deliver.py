@@ -40,18 +40,18 @@ def run_format_and_deliver(
     read_document_lines: Callable[[str], Sequence[str]],
     persist_spec: Callable[[str, str, Mapping[str, Any]], str],
     render_pair: Callable[[Mapping[str, Any], str, str], Mapping[str, Any]],
+    stage_pair: Callable[[Mapping[str, Any], str], Mapping[str, Any]] | None = None,
     dry_run: bool = True,
 ) -> dict[str, Any]:
-    """Reconstruct and re-render orphan pairs, then deliver every resolved pair."""
+    """Format input pairs into an output folder, or deliver when no output is configured."""
     delivery_policy.check_subject_matches(request, effective_config)
     settings = delivery_policy.delivery_settings(effective_config)
     week_of = delivery_policy.resolve_week_of(request.get("week"), effective_config["calendar"])
     destinations = delivery_policy.resolve_destinations(settings, request.get("grades"))
     naming = delivery_policy.naming_settings(effective_config)
-    source_folder = (
-        request.get("source_folder_id")
-        or effective_config["publishing"]["staging"]["approved_folder_id"]
-    )
+    format_settings = effective_config["publishing"].get("format_and_deliver", {})
+    source_folder = request.get("source_folder_id") or format_settings.get("source_folder_id") or effective_config["publishing"]["staging"]["approved_folder_id"]
+    output_folder = request.get("output_folder_id") or format_settings.get("output_folder_id")
 
     staged_pairs, issues = delivery_policy.pair_from_staging(
         adapter.list_child_files(source_folder),
@@ -65,8 +65,13 @@ def run_format_and_deliver(
     delivered_pairs: dict[str, Mapping[str, Any]] = {}
     for grade_id, pair in staged_pairs.items():
         if classification[grade_id] == "conformant":
-            delivered_pairs[grade_id] = pair
-            actions.append({"grade_id": grade_id, "action": "deliver_existing", "status": "planned" if dry_run else "ready"})
+            if output_folder and not dry_run:
+                if stage_pair is None:
+                    raise FormatDeliverError("stage_pair is required when output_folder_id is configured.")
+                delivered_pairs[grade_id] = stage_pair(pair, output_folder)
+            elif not output_folder:
+                delivered_pairs[grade_id] = pair
+            actions.append({"grade_id": grade_id, "action": "stage_existing" if output_folder else "deliver_existing", "status": "planned" if dry_run else "ready"})
             continue
         if dry_run:
             actions.append({"grade_id": grade_id, "action": "reconstruct_and_rerender", "status": "planned"})
@@ -93,14 +98,21 @@ def run_format_and_deliver(
             "replaced": {role: pair[role]["id"] for role in ("student_worksheet", "answer_key")},
         })
 
-    delivery = delivery_policy.run_deliver(
-        {**request, "source_label": f"format_and_deliver:{source_folder}"},
-        effective_config,
-        adapter,
-        dry_run=dry_run,
-        pairs=delivered_pairs,
-    )
-    _mark_pending_rebuild(delivery, actions)
+    if output_folder:
+        delivery = {
+            "status": "staged" if not dry_run else "planned",
+            "output_folder_id": output_folder,
+            "targets": [{"grade_id": grade_id, "status": "ready" if not dry_run else "planned"} for grade_id in delivered_pairs],
+        }
+    else:
+        delivery = delivery_policy.run_deliver(
+            {**request, "source_label": f"format_and_deliver:{source_folder}"},
+            effective_config,
+            adapter,
+            dry_run=dry_run,
+            pairs=delivered_pairs,
+        )
+        _mark_pending_rebuild(delivery, actions)
 
     return {
         "utility": "format_and_deliver_worksheets",
