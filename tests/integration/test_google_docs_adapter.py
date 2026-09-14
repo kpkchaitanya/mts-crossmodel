@@ -161,6 +161,17 @@ def verified_spec():
     return {"verification": {"status": "PASS"}}
 
 
+def test_copy_file_copies_and_renames_into_the_requested_folder():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+
+    copied = adapter.copy_file("source-file", "target-folder", "Renamed Worksheet")
+
+    assert copied["name"] == "Renamed Worksheet"
+    assert copied["parents"] == ["target-folder"]
+    assert drive.file_service.copies[0]["template_id"] == "source-file"
+
+
 def test_render_pair_copies_masters_and_replaces_placeholder():
     drive = FakeDrive()
     docs = FakeDocs()

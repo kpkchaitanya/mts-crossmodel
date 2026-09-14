@@ -57,6 +57,7 @@ Where this document extends a contract in `design.md`, it says so explicitly and
    - [6.7 Command And CLI Surface](#67-command-and-cli-surface)
 7. [Test Design](#7-test-design)
 8. [Implementation Sequence](#8-implementation-sequence)
+9. [Utility: Duplicate Worksheet](#9-utility-duplicate-worksheet)
 
 ## 1. Purpose And Scope
 
@@ -932,3 +933,71 @@ Format-And-Deliver Worksheets, after Deliver Worksheets is validated:
 24. Validate against a real orphan pair: dry run shows the correct classification, apply reconstructs
     and delivers exactly that grade, and a stamped pair already in staging is confirmed `conformant`
     and left unmodified.
+
+## 9. Utility: Duplicate Worksheet
+
+### 9.1 Requirement And Scope
+
+Duplicate Worksheet copies exactly one existing student worksheet and answer-key pair and renames the
+copies from a configured target Subject, Worksheet Type, and grade. It is an artifact utility: it
+does not inspect or change document content, reconstruct or transform a Spec, render, verify, approve,
+publish, or deliver the copied pair.
+
+The source pair is resolved by the source subject's `naming.<worksheet_type>` configuration, source
+grade, and resolved instructional-week Monday. The two target names are derived independently from
+the target subject's corresponding naming configuration, target Worksheet Type, and target grade.
+The implementation honors `document_name_pattern`, `answer_key_suffix`, and `file_extension`; it does
+not embed subject- or grade-specific names in code.
+
+### 9.2 Folder And Copy Contract
+
+1. `source_folder` accepts a configured preset, raw Drive folder ID, or Drive folder URL and defaults
+   through `publishing.duplicate_worksheet.default_source_folder` (`staging`).
+2. `target_folder` accepts the same forms. When omitted, its resolved ID is the source folder ID, so
+   the renamed copies remain beside their source pair.
+3. Folder presets map to canonical configuration paths. They never repeat folder IDs.
+4. Pairing requires exactly one source worksheet and one source answer key. Missing or ambiguous
+   names fail closed.
+5. Either target name already present in the target folder blocks the entire operation before any
+   copy. Existing artifacts are never replaced.
+6. Apply copies both source files through the generic Drive `copy_file` primitive. Google Docs and
+   uploaded files such as PDFs use the same Drive operation.
+7. The utility does not modify or stamp provenance metadata. Any metadata Drive carries onto the
+   copy remains unchanged; the utility never claims that copied content was authored, verified, or
+   approved for the target identity.
+
+### 9.3 Configuration And Command Surface
+
+`publishing.duplicate_worksheet` in `data/config/project/base.yaml` owns the enabled flag, default
+Worksheet Type, default source-folder preset, and preset-to-config-path mappings. Subject files
+continue to own naming.
+Distribution configuration resolution is used because duplication moves existing artifacts and must
+not depend on authoring compatibility or template registration.
+
+| Parameter | Values | Default |
+|---|---|---|
+| `from_subject` | configured subject id | required |
+| `from_worksheettype` | configured naming kind | `weekly` |
+| `from_grade` | grade id | required |
+| `to_subject` | configured subject id | required |
+| `to_worksheettype` | configured naming kind | `weekly` |
+| `to_grade` | grade id | required |
+| `week` | `current`, instructional week number, or ISO date | `current` |
+| `source_folder` | configured preset, Drive folder ID, or Drive folder URL | configured `staging` preset |
+| `target_folder` | configured preset, Drive folder ID, or Drive folder URL | resolved source folder |
+| `dry_run` | `yes`, `no` | `no` |
+
+CLI entry point:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/duplicate_worksheet.py --from-subject math --from-grade grade_6 --to-subject ela --to-grade grade_6
+.\.venv\Scripts\python.exe scripts/duplicate_worksheet.py --from-subject math --from-grade grade_6 --to-subject math --to-grade grade_4 --source-folder staging --target-folder <folder-id> --dry-run
+```
+
+### 9.4 Evidence And Tests
+
+Every invocation returns a Duplicate Worksheet Record containing resolved subjects, Worksheet Types,
+grades, week, folder IDs, exact source pair, target names, mode, and copied file metadata when applied.
+Focused tests cover preset/ID/URL resolution, configurable cross-subject names and extensions,
+week-number resolution, separate folders, omitted-target same-folder behavior, dry-run non-mutation,
+apply copying both files, missing/ambiguous source pairs, target collisions, and CLI defaults.

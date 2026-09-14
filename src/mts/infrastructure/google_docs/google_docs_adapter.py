@@ -23,13 +23,19 @@ class GoogleDocsAdapter:
         """Copy a master document; this adapter never updates a master template."""
         if not template_id or not destination_id or not name:
             raise GoogleDocsAdapterError("template_id, destination_id, and name are required.")
+        return self.copy_file(template_id, destination_id, name)
+
+    def copy_file(self, file_id: str, destination_id: str, name: str) -> dict[str, Any]:
+        """Copy one Drive file into a destination folder under a new name."""
+        if not file_id or not destination_id or not name:
+            raise GoogleDocsAdapterError("file_id, destination_id, and name are required.")
         copied = self.drive.files().copy(
-            fileId=template_id,
+            fileId=file_id,
             body={"name": name, "parents": [destination_id]},
             fields="id,name,webViewLink",
         ).execute()
         if not copied.get("id"):
-            raise GoogleDocsAdapterError("Google Drive did not return an ID for the copied template.")
+            raise GoogleDocsAdapterError("Google Drive did not return an ID for the copied file.")
         return copied
 
     def render_document(self, document_id: str, projection: str) -> None:

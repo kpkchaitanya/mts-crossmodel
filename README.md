@@ -165,6 +165,14 @@ canonical `outputs/<subject>/`.
       <td style="border: 1px solid #6b7280;">Active; subject-agnostic utility</td>
     </tr>
     <tr>
+      <td style="border: 1px solid #6b7280;">Duplicate Worksheet (DUP)</td>
+      <td style="border: 1px solid #6b7280;"><code>/duplicate-worksheet</code></td>
+      <td style="border: 1px solid #6b7280;">Copies one existing worksheet/key pair and renames the copies from configurable target subject, Worksheet Type, grade, and week naming. Source defaults to staging; an omitted target folder leaves copies beside the source. See <code>commands/duplicate-worksheet.md</code>.</td>
+      <td style="border: 1px solid #6b7280;"><code>/duplicate-worksheet from_subject=math from_grade=grade_6 to_subject=ela to_grade=grade_6</code></td>
+      <td style="border: 1px solid #6b7280;">Active</td>
+      <td style="border: 1px solid #6b7280;">Active for existing artifacts with configured naming</td>
+    </tr>
+    <tr>
       <td style="border: 1px solid #6b7280;">Manage Templates (MT)</td>
       <td style="border: 1px solid #6b7280;">Not yet registered</td>
       <td style="border: 1px solid #6b7280;">Maintain template registration, revision manifests, cache validity, fallback templates, and controlled template promotion.</td>

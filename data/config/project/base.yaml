@@ -78,6 +78,16 @@ publishing:
     # Report-only for now: existing staged documents predate stamping. Set true to refuse unstamped
     # documents once every in-flight artifact has been rendered through the pipeline.
     require_stamp_for_delivery: false
+  # Artifact utility: copy and rename one existing worksheet/key pair without changing its content.
+  duplicate_worksheet:
+    enabled: true
+    default_worksheet_type: "weekly"
+    default_source_folder: "staging"
+    # Presets reference canonical folder keys; folder IDs are never duplicated here.
+    folders:
+      staging: "publishing.staging.approved_folder_id"
+      render: "publishing.staging.render_folder_id"
+      format_and_deliver: "publishing.format_and_deliver.output_folder_id"
   # Housekeeping utility: moves the previous set's loose files into an Archive child folder so a
   # target folder presents only the current set. Never renders, edits, deletes, or approves anything.
   archive:

@@ -204,11 +204,9 @@ def _matches_weekly_name(
 
     normalized = re.sub(r"[^a-z0-9]", "", name.lower())
     normalized = re.sub(r"(?:docx|pdf)$", "", normalized)
-    if not normalized.startswith("mtsmath"):
-        return False
     if answer_key != ("key" in normalized):
         return False
-    if "math" not in normalized or "weeklyworksheet" not in normalized or week_of.replace("-", "") not in normalized:
+    if "weeklyworksheet" not in normalized or week_of.replace("-", "") not in normalized:
         return False
     if answer_key and not normalized.endswith("key"):
         return False
@@ -222,6 +220,17 @@ def _matches_weekly_name(
         "grade_6": ("grade6", "6thgrade"),
         "grade_9_10": ("grade910", "9th10thgrade", "9th10grade"),
     }
+    expected_prefix = naming["prefix_by_grade"].get(grade_id)
+    if not expected_prefix:
+        return False
+    normalized_prefix = re.sub(r"[^a-z0-9]", "", expected_prefix.lower())
+    if normalized.startswith(normalized_prefix):
+        return True
+    configured_grade = normalized_prefix.rsplit("weeklyworksheet", 1)[0]
+    grade_number = {"grade_1": "1", "grade_4": "4", "grade_5": "5", "grade_6": "6", "grade_9_10": "910"}.get(grade_id)
+    subject_prefix = configured_grade.split(grade_number, 1)[0] if grade_number else configured_grade
+    if not normalized.startswith(subject_prefix):
+        return False
     return any(alias in normalized for alias in aliases.get(grade_id, ()))
 
 

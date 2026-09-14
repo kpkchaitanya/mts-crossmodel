@@ -411,5 +411,4 @@ def test_the_shipped_configuration_shares_destinations_across_subjects():
     assert {grade: entry["folder_id"] for grade, entry in math_destinations.items()} == {
         grade: entry["folder_id"] for grade, entry in ela_destinations.items()
     }
-    # ELA produces no 9/10, which must be a skip rather than a blocked delivery.
-    assert "grade_9_10" not in deliver.naming_settings(ela)["prefix_by_grade"]
+    assert "grade_9_10" in deliver.naming_settings(ela)["prefix_by_grade"]
