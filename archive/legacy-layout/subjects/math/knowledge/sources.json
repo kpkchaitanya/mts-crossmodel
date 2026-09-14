@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-08-24",
+  "sources": {
+    "ccs_2026_2027_calendar": {"url": "https://www.cabarrus.k12.nc.us/58075_4", "authority": "Cabarrus County Schools", "refresh": "annual_or_change", "last_verified": "2026-08-24"},
+    "nc_math_support": {"url": "https://www.dpi.nc.gov/districts-schools/classroom-resources/office-teaching-and-learning/standard-course-study/mathematics/standard-course-study-supporting-resources", "authority": "NC DPI", "refresh": "change_detection", "last_verified": "2026-08-24"},
+    "nc_grade_1": {"url": "https://www.dpi.nc.gov/nc-1st-grade-math-unpacking-rev-june-2022/open", "authority": "NC DPI", "last_verified": "2026-08-24"},
+    "nc_grade_4": {"url": "https://www.dpi.nc.gov/nc-4th-grade-math-unpacking-rev-june-2022/open", "authority": "NC DPI", "last_verified": "2026-08-24"},
+    "nc_grade_5": {"url": "https://www.dpi.nc.gov/nc-5th-grade-math-unpacking-rev-june-2022/open", "authority": "NC DPI", "last_verified": "2026-08-24"},
+    "nc_grade_6": {"url": "https://www.dpi.nc.gov/nc-6th-grade-math-unpacking-rev-june-2022-0/open", "authority": "NC DPI", "last_verified": "2026-08-24"},
+    "nc_math_1": {"url": "https://www.dpi.nc.gov/nc-math-1-unpacking-rev-june-2022/open", "authority": "NC DPI", "last_verified": "2026-08-24"},
+    "nc_math_2": {"url": "https://www.dpi.nc.gov/nc-math-2-unpacking-rev-june-2022/open", "authority": "NC DPI", "last_verified": "2026-08-24"},
+    "nc_checkins_3_8": {"url": "https://www.dpi.nc.gov/documents/accountability/testing/nccheckin/nc-check-ins-20-mathematics-grades-3-8-specifications", "authority": "NC DPI", "last_verified": "2026-08-24"}
+  }
+}

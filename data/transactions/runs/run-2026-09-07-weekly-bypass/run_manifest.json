@@ -1,0 +1,74 @@
+{
+  "gate_bypasses": [
+    {
+      "artifact_revision": "grade_4-r1",
+      "bypass": true,
+      "gate": "scope_review",
+      "grade_or_course": "grade_4",
+      "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+      "recorded_at": "2026-09-04T01:01:27.092582+00:00",
+      "reviewer": "current-user-instruction",
+      "status": "approved"
+    },
+    {
+      "artifact_revision": "grade_4-r1",
+      "bypass": true,
+      "gate": "question_review",
+      "grade_or_course": "grade_4",
+      "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+      "recorded_at": "2026-09-04T01:01:27.092991+00:00",
+      "reviewer": "current-user-instruction",
+      "status": "approved"
+    },
+    {
+      "artifact_revision": "grade_4-r1",
+      "bypass": true,
+      "gate": "verification_review",
+      "grade_or_course": "grade_4",
+      "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+      "recorded_at": "2026-09-04T01:01:27.093561+00:00",
+      "reviewer": "current-user-instruction",
+      "status": "approved"
+    },
+    {
+      "artifact_revision": "grade_4-r1",
+      "bypass": true,
+      "gate": "formatting_review",
+      "grade_or_course": "grade_4",
+      "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+      "recorded_at": "2026-09-04T01:01:27.093845+00:00",
+      "reviewer": "current-user-instruction",
+      "status": "approved"
+    },
+    {
+      "artifact_revision": "grade_4-r1",
+      "bypass": true,
+      "gate": "publish_approval",
+      "grade_or_course": "grade_4",
+      "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+      "recorded_at": "2026-09-04T01:01:27.094127+00:00",
+      "reviewer": "current-user-instruction",
+      "status": "approved"
+    }
+  ],
+  "gates": {
+    "bypassed": [
+      "scope_review",
+      "question_review",
+      "verification_review",
+      "formatting_review",
+      "publish_approval"
+    ],
+    "mode": "bypass",
+    "requested_by": "current_user"
+  },
+  "qa_required": true,
+  "question_plan_required": true,
+  "run_id": "run-2026-09-07-weekly-bypass",
+  "status": "publish_ready_sample",
+  "subject": "math",
+  "variation_seed": 20260904010127,
+  "verification_required": true,
+  "week_start": "2026-09-07",
+  "worksheet_type": "weekly-worksheet"
+}

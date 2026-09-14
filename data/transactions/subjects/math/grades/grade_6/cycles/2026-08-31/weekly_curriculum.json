@@ -1,0 +1,157 @@
+{
+  "scope_review": [
+    {
+      "cache_hit": true,
+      "confidence": "inferred",
+      "current": [
+        "NC.6.RP",
+        "NC.6.NS",
+        "NC.6.G"
+      ],
+      "grade_or_course": "grade_6",
+      "progressive_context": {
+        "grade": 6,
+        "official_ccs_pacing": false,
+        "source": "mts_progressive_backbone",
+        "units": {
+          "algebra_functions": {
+            "builds_from": [
+              "parentheses",
+              "order/structure of operations",
+              "numerical expressions"
+            ],
+            "key_concepts": [
+              "variables",
+              "algebraic expressions",
+              "properties",
+              "one-variable equations",
+              "inequalities"
+            ],
+            "leads_to": [
+              "equivalent expressions",
+              "distributive property",
+              "multi-step equations"
+            ],
+            "progression": "Arithmetic relationships are generalized symbolically.",
+            "unit_family": "Patterns, Algebra & Functions",
+            "unit_name": "Variables, Expressions, Equations & Inequalities"
+          },
+          "data_probability": {
+            "builds_from": [
+              "measurement data",
+              "fraction/decimal interpretation",
+              "graphs"
+            ],
+            "key_concepts": [
+              "statistical questions",
+              "distributions",
+              "center",
+              "variability",
+              "data displays"
+            ],
+            "leads_to": [
+              "sampling",
+              "populations",
+              "variability"
+            ],
+            "progression": "Statistics becomes a formal study of distributions rather than just graphs.",
+            "unit_family": "Data, Statistics & Probability",
+            "unit_name": "Statistical Distributions"
+          },
+          "fractions_ratios": {
+            "builds_from": [
+              "add/subtract unlike fractions",
+              "multiply fractions",
+              "fraction division foundations"
+            ],
+            "key_concepts": [
+              "ratio meaning",
+              "equivalent ratios",
+              "unit rates",
+              "ratio tables",
+              "percent foundations"
+            ],
+            "leads_to": [
+              "unit rate",
+              "proportional relationships",
+              "constant of proportionality"
+            ],
+            "progression": "Multiplicative comparison becomes formal ratio and rate reasoning.",
+            "unit_family": "Fractions, Ratios & Proportional Reasoning",
+            "unit_name": "Ratios & Rates"
+          },
+          "geometry_measurement": {
+            "builds_from": [
+              "volume formulas",
+              "composite solids",
+              "coordinate plane"
+            ],
+            "key_concepts": [
+              "polygon area",
+              "nets",
+              "surface area",
+              "volume",
+              "coordinate geometry"
+            ],
+            "leads_to": [
+              "scale drawings",
+              "angle relationships",
+              "circles"
+            ],
+            "progression": "Geometry uses formulas and coordinates as algebraic tools.",
+            "unit_family": "Geometry, Measurement & Trigonometry",
+            "unit_name": "Area, Surface Area, Volume & Coordinates"
+          },
+          "modeling_connections": {
+            "builds_from": [
+              "numerical",
+              "graphical",
+              "geometric"
+            ],
+            "key_concepts": [
+              "number \u2192 ratio",
+              "ratio \u2192 variable",
+              "variable \u2192 equation"
+            ],
+            "leads_to": [
+              "proportional models",
+              "percent models",
+              "scale models"
+            ],
+            "progression": "Students transition from computing quantities to representing relationships.",
+            "unit_family": "Advanced Modeling / Connections",
+            "unit_name": "Generalization of Arithmetic"
+          },
+          "number_operations": {
+            "builds_from": [
+              "powers of 10",
+              "decimal place value",
+              "multi-digit multiplication"
+            ],
+            "key_concepts": [
+              "fraction division",
+              "decimal fluency",
+              "factors and multiples",
+              "positive/negative numbers",
+              "absolute value",
+              "coordinate numbers"
+            ],
+            "leads_to": [
+              "positive/negative fractions and decimals",
+              "addition/subtraction",
+              "multiplication/division"
+            ],
+            "progression": "The number system expands to signed rational numbers and more abstract operations.",
+            "unit_family": "Number Sense & Operations",
+            "unit_name": "Rational Number System"
+          }
+        }
+      },
+      "requires_weekly_resolution": true,
+      "source": "month_cache",
+      "spiral": [],
+      "topics": [],
+      "week_start": "2026-08-31"
+    }
+  ]
+}

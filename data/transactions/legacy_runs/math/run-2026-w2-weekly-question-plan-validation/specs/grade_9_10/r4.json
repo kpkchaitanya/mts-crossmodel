@@ -1,0 +1,382 @@
+{
+  "curriculum": {
+    "week_start": "2026-08-24"
+  },
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 2.0,
+          "difficulty": "low_plus",
+          "number": 1,
+          "prompt": "Solve for x: 2x + 2 = 6",
+          "skill": "equations/inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "(6-2)/2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 23,
+          "difficulty": "low_plus",
+          "number": 2,
+          "prompt": "A tool rental costs $13 plus $2 per hour. Write an equation for the total cost after 5 hours, then find the total.",
+          "skill": "create equations",
+          "verification": {
+            "inputs": {
+              "expression": "13+2*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "difficulty": "medium",
+          "number": 3,
+          "prompt": "Given f(x) = 3x + (2), find f(1).",
+          "skill": "functions",
+          "verification": {
+            "inputs": {
+              "b": 2,
+              "m": 3,
+              "x": 1
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "medium",
+          "number": 4,
+          "prompt": "Simplify: 3(1) + 3",
+          "skill": "expression simplification",
+          "verification": {
+            "inputs": {
+              "expression": "3*1+3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.9999999999999996,
+          "difficulty": "medium",
+          "number": 5,
+          "prompt": "Evaluate: \u221b64",
+          "skill": "rational exponents/radicals",
+          "verification": {
+            "inputs": {
+              "expression": "64**(1/3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 4.0,
+          "difficulty": "low_plus",
+          "number": 6,
+          "prompt": "Solve for x: 2x + 9 = 17",
+          "skill": "equations/inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "(17-9)/2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 26,
+          "difficulty": "medium",
+          "number": 7,
+          "prompt": "A tool rental costs $20 plus $3 per hour. Write an equation for the total cost after 2 hours, then find the total.",
+          "skill": "create equations",
+          "verification": {
+            "inputs": {
+              "expression": "20+3*2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "medium",
+          "number": 8,
+          "prompt": "Given f(x) = 3x + (0), find f(2).",
+          "skill": "functions",
+          "verification": {
+            "inputs": {
+              "b": 0,
+              "m": 3,
+              "x": 2
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 27,
+          "difficulty": "medium",
+          "number": 9,
+          "prompt": "Simplify: 3(8) + 3",
+          "skill": "expression simplification",
+          "verification": {
+            "inputs": {
+              "expression": "3*8+3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.0,
+          "difficulty": "medium_plus",
+          "number": 10,
+          "prompt": "Evaluate: \u221b27",
+          "skill": "rational exponents/radicals",
+          "verification": {
+            "inputs": {
+              "expression": "27**(1/3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 6.0,
+          "difficulty": "medium",
+          "number": 11,
+          "prompt": "Solve for x: 3x + 7 = 25",
+          "skill": "equations/inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "(25-7)/3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 24,
+          "difficulty": "medium",
+          "number": 12,
+          "prompt": "A tool rental costs $12 plus $3 per hour. Write an equation for the total cost after 4 hours, then find the total.",
+          "skill": "create equations",
+          "verification": {
+            "inputs": {
+              "expression": "12+3*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "difficulty": "medium",
+          "number": 13,
+          "prompt": "Given f(x) = 3x + (-2), find f(3).",
+          "skill": "functions",
+          "verification": {
+            "inputs": {
+              "b": -2,
+              "m": 3,
+              "x": 3
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 27,
+          "difficulty": "medium_plus",
+          "number": 14,
+          "prompt": "Simplify: 4(6) + 3",
+          "skill": "expression simplification",
+          "verification": {
+            "inputs": {
+              "expression": "4*6+3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7.0,
+          "difficulty": "medium_plus",
+          "number": 15,
+          "prompt": "Evaluate: \u221a49",
+          "skill": "rational exponents/radicals",
+          "verification": {
+            "inputs": {
+              "expression": "49**(1/2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 3.0,
+          "difficulty": "medium",
+          "number": 16,
+          "prompt": "Solve for x: 3x + 5 = 14",
+          "skill": "equations/inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "(14-5)/3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 37,
+          "difficulty": "medium",
+          "number": 17,
+          "prompt": "A tool rental costs $19 plus $3 per hour. Write an equation for the total cost after 6 hours, then find the total.",
+          "skill": "create equations",
+          "verification": {
+            "inputs": {
+              "expression": "19+3*6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "medium_plus",
+          "number": 18,
+          "prompt": "Given f(x) = 4x + (-4), find f(4).",
+          "skill": "functions",
+          "verification": {
+            "inputs": {
+              "b": -4,
+              "m": 4,
+              "x": 4
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 19,
+          "difficulty": "medium_plus",
+          "number": 19,
+          "prompt": "Simplify: 4(4) + 3",
+          "skill": "expression simplification",
+          "verification": {
+            "inputs": {
+              "expression": "4*4+3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4.999999999999999,
+          "difficulty": "high",
+          "number": 20,
+          "prompt": "Evaluate: \u221b125",
+          "skill": "rational exponents/radicals",
+          "verification": {
+            "inputs": {
+              "expression": "125**(1/3)"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 5.0,
+          "difficulty": "medium",
+          "number": 21,
+          "prompt": "Solve for x: 3x + 3 = 18",
+          "skill": "equations/inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "(18-3)/3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 23,
+          "difficulty": "medium_plus",
+          "number": 22,
+          "prompt": "A tool rental costs $11 plus $4 per hour. Write an equation for the total cost after 3 hours, then find the total.",
+          "skill": "create equations",
+          "verification": {
+            "inputs": {
+              "expression": "11+4*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 23,
+          "difficulty": "medium_plus",
+          "number": 23,
+          "prompt": "Given f(x) = 4x + (3), find f(5).",
+          "skill": "functions",
+          "verification": {
+            "inputs": {
+              "b": 3,
+              "m": 4,
+              "x": 5
+            },
+            "method": "linear_eval"
+          }
+        },
+        {
+          "answer": 13,
+          "difficulty": "high",
+          "number": 24,
+          "prompt": "Simplify: 5(2) + 3",
+          "skill": "expression simplification",
+          "verification": {
+            "inputs": {
+              "expression": "5*2+3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5.0,
+          "difficulty": "high",
+          "number": 25,
+          "prompt": "Evaluate: \u221a25",
+          "skill": "rational exponents/radicals",
+          "verification": {
+            "inputs": {
+              "expression": "25**(1/2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PASS"
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "Grades 9-10",
+    "question_count": 25,
+    "title": "MTS - WEEKLY WORKSHEET",
+    "week_start": "2026-08-24"
+  }
+}

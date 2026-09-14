@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "entries": [
+    {
+      "worksheet_type_id": "class-worksheet",
+      "subject": "math",
+      "status": "active",
+      "manifest_path": "../subjects/math/template_manifests/class-worksheet.json"
+    },
+    {
+      "worksheet_type_id": "weekly-worksheet",
+      "subject": "math",
+      "status": "active",
+      "manifest_path": "../subjects/math/template_manifests/weekly-worksheet.json",
+      "template_fallback": false
+    },
+    {
+      "worksheet_type_id": "weekly-worksheet",
+      "subject": "ela",
+      "status": "draft",
+      "manifest_path": null,
+      "blockers": [
+        "ELA requirements, templates, and verification rules require approval before activation."
+      ]
+    },
+    {
+      "worksheet_type_id": "homework-4-day",
+      "subject": "math",
+      "status": "draft",
+      "manifest_path": null,
+      "blockers": [
+        "Homework template decision and regression fixtures are required before activation."
+      ]
+    },
+    {
+      "worksheet_type_id": "compact-unbranded",
+      "subject": "math",
+      "status": "draft",
+      "manifest_path": null,
+      "blockers": [
+        "Unbranded template registration and Compact/Unbranded regression fixtures are required before activation."
+      ]
+    }
+  ]
+}

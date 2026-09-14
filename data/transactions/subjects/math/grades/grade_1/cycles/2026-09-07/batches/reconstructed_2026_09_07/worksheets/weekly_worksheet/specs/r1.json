@@ -1,0 +1,850 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 10,
+          "confidence": "inferred",
+          "id": "grade_1-q1",
+          "number": 1,
+          "prompt": "Question 1: Count on 3 from 7: 7, ___, ___ \u2026 What number do you reach?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 16,
+          "confidence": "inferred",
+          "id": "grade_1-q2",
+          "number": 2,
+          "prompt": "Question 2: Count on 4 from 12: 12, ___, ___ \u2026 What number do you reach?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 16,
+          "confidence": "inferred",
+          "id": "grade_1-q3",
+          "number": 3,
+          "prompt": "Question 3: Count down 2 from 18. What number do you reach?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 14,
+          "confidence": "inferred",
+          "id": "grade_1-q4",
+          "number": 4,
+          "prompt": "Question 4: Count on 5 from 9: 9, ___, ___ \u2026 What number do you reach?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 10,
+          "confidence": "inferred",
+          "id": "grade_1-q5",
+          "number": 5,
+          "prompt": "Question 5: Count down 6 from 16. What number do you reach?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 11,
+          "confidence": "inferred",
+          "id": "grade_1-q6",
+          "number": 6,
+          "prompt": "Question 6: Count on 7 from 4: 4, ___, ___ \u2026 What number do you reach?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 16,
+          "confidence": "inferred",
+          "id": "grade_1-q7",
+          "number": 7,
+          "prompt": "Question 7: Count down 3 from 19. What number do you reach?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 19,
+          "confidence": "inferred",
+          "id": "grade_1-q8",
+          "number": 8,
+          "prompt": "Question 8: Count on 8 from 11: 11, ___, ___ \u2026 What number do you reach?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 10,
+          "confidence": "inferred",
+          "id": "grade_1-q9",
+          "number": 9,
+          "prompt": "Question 9: Count down 5 from 15. What number do you reach?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 12,
+          "confidence": "inferred",
+          "id": "grade_1-q10",
+          "number": 10,
+          "prompt": "Question 10: Count on 6 from 6: 6, ___, ___ \u2026 What number do you reach?",
+          "section_id": "monday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 10,
+          "confidence": "inferred",
+          "id": "grade_1-q11",
+          "number": 11,
+          "prompt": "Question 11: Count down 4 from 14. What number do you reach?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 17,
+          "confidence": "inferred",
+          "id": "grade_1-q12",
+          "number": 12,
+          "prompt": "Question 12: Count on 9 from 8: 8, ___, ___ \u2026 What number do you reach?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 10,
+          "confidence": "inferred",
+          "id": "grade_1-q13",
+          "number": 13,
+          "prompt": "Question 13: Count down 7 from 17. What number do you reach?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 11,
+          "confidence": "inferred",
+          "id": "grade_1-q14",
+          "number": 14,
+          "prompt": "Question 14: Count on 8 from 3: 3, ___, ___ \u2026 What number do you reach?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 7,
+          "confidence": "inferred",
+          "id": "grade_1-q15",
+          "number": 15,
+          "prompt": "Question 15: Count down 6 from 13. What number do you reach?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 26,
+          "confidence": "inferred",
+          "id": "grade_1-q16",
+          "number": 16,
+          "prompt": "Question 16: Count on 4 from 22: 22, ___, ___ \u2026 What number do you reach?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 25,
+          "confidence": "inferred",
+          "id": "grade_1-q17",
+          "number": 17,
+          "prompt": "Question 17: Count down 3 from 28. What number do you reach?",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 15,
+          "confidence": "inferred",
+          "id": "grade_1-q18",
+          "number": 18,
+          "prompt": "Question 18: 8 + 7 = ____",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 15,
+          "confidence": "inferred",
+          "id": "grade_1-q19",
+          "number": 19,
+          "prompt": "Question 19: 6 + 9 = ____",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 10,
+          "confidence": "inferred",
+          "id": "grade_1-q20",
+          "number": 20,
+          "prompt": "Question 20: 5 + 5 = ____",
+          "section_id": "tuesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 17,
+          "confidence": "inferred",
+          "id": "grade_1-q21",
+          "number": 21,
+          "prompt": "Question 21: 13 + 4 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 17,
+          "confidence": "inferred",
+          "id": "grade_1-q22",
+          "number": 22,
+          "prompt": "Question 22: 9 + 8 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 13,
+          "confidence": "inferred",
+          "id": "grade_1-q23",
+          "number": 23,
+          "prompt": "Question 23: 7 + 6 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 19,
+          "confidence": "inferred",
+          "id": "grade_1-q24",
+          "number": 24,
+          "prompt": "Question 24: 10 + 9 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 15,
+          "confidence": "inferred",
+          "id": "grade_1-q25",
+          "number": 25,
+          "prompt": "Question 25: 3 + 12 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 16,
+          "confidence": "inferred",
+          "id": "grade_1-q26",
+          "number": 26,
+          "prompt": "Question 26: 11 + 5 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 18,
+          "confidence": "inferred",
+          "id": "grade_1-q27",
+          "number": 27,
+          "prompt": "Question 27: 4 + 14 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 18,
+          "confidence": "inferred",
+          "id": "grade_1-q28",
+          "number": 28,
+          "prompt": "Question 28: 2 + 16 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 9,
+          "confidence": "inferred",
+          "id": "grade_1-q29",
+          "number": 29,
+          "prompt": "Question 29: 17 \u2212 8 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 8,
+          "confidence": "inferred",
+          "id": "grade_1-q30",
+          "number": 30,
+          "prompt": "Question 30: 14 \u2212 6 = ____",
+          "section_id": "wednesday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 10,
+          "confidence": "inferred",
+          "id": "grade_1-q31",
+          "number": 31,
+          "prompt": "Question 31: 19 \u2212 9 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 5,
+          "confidence": "inferred",
+          "id": "grade_1-q32",
+          "number": 32,
+          "prompt": "Question 32: 12 \u2212 7 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 11,
+          "confidence": "inferred",
+          "id": "grade_1-q33",
+          "number": 33,
+          "prompt": "Question 33: 16 \u2212 5 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 6,
+          "confidence": "inferred",
+          "id": "grade_1-q34",
+          "number": 34,
+          "prompt": "Question 34: 10 \u2212 4 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 11,
+          "confidence": "inferred",
+          "id": "grade_1-q35",
+          "number": 35,
+          "prompt": "Question 35: 18 \u2212 7 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 6,
+          "confidence": "inferred",
+          "id": "grade_1-q36",
+          "number": 36,
+          "prompt": "Question 36: 15 \u2212 9 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 8,
+          "confidence": "inferred",
+          "id": "grade_1-q37",
+          "number": 37,
+          "prompt": "Question 37: 13 \u2212 5 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 12,
+          "confidence": "inferred",
+          "id": "grade_1-q38",
+          "number": 38,
+          "prompt": "Question 38: 20 \u2212 8 = ____",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 6,
+          "confidence": "inferred",
+          "id": "grade_1-q39",
+          "number": 39,
+          "prompt": "Question 39: Fill in the missing number: 9 + ____ = 15",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 11,
+          "confidence": "inferred",
+          "id": "grade_1-q40",
+          "number": 40,
+          "prompt": "Question 40: Fill in the missing number: ____ + 7 = 18",
+          "section_id": "thursday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 6,
+          "confidence": "inferred",
+          "id": "grade_1-q41",
+          "number": 41,
+          "prompt": "Question 41: Fill in the missing number: 16 \u2212 ____ = 10",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 17,
+          "confidence": "inferred",
+          "id": "grade_1-q42",
+          "number": 42,
+          "prompt": "Question 42: Which is greater: 17 or 14?",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": "15, 16",
+          "confidence": "inferred",
+          "id": "grade_1-q43",
+          "number": 43,
+          "prompt": "Question 43: Write the next two numbers: 12, 13, 14, ____, ____",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 14,
+          "confidence": "inferred",
+          "id": "grade_1-q44",
+          "number": 44,
+          "prompt": "Question 44: Maya has 8 stickers and gets 6 more. How many stickers now?",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 11,
+          "confidence": "inferred",
+          "id": "grade_1-q45",
+          "number": 45,
+          "prompt": "Question 45: There are 18 birds. 7 fly away. How many remain?",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 17,
+          "confidence": "inferred",
+          "id": "grade_1-q46",
+          "number": 46,
+          "prompt": "Question 46: Sam is on 9. He counts on 8. Where does he land?",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 19,
+          "confidence": "inferred",
+          "id": "grade_1-q47",
+          "number": 47,
+          "prompt": "Question 47: Start at 25 and count down 6. Where do you land?",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": "Sample: 6 + 4 = 10",
+          "confidence": "inferred",
+          "id": "grade_1-q48",
+          "number": 48,
+          "prompt": "Question 48: Explain one way to make 10 using two numbers.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": "13 < 16",
+          "confidence": "inferred",
+          "id": "grade_1-q49",
+          "number": 49,
+          "prompt": "Question 49: Circle the true statement: 13 > 16, 13 < 16, or 13 = 16.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        },
+        {
+          "answer": 19,
+          "confidence": "inferred",
+          "id": "grade_1-q50",
+          "number": 50,
+          "prompt": "Question 50: Write a number that is 1 less than 20.",
+          "section_id": "friday",
+          "source_kind": "reconstructed",
+          "source_scope": "grade_1",
+          "standards": [],
+          "verification": {
+            "method": "inherited_from_source_document",
+            "recomputed": false,
+            "source_document_id": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "method": "inherited_from_source_document",
+    "recomputed": false,
+    "source_documents": {
+      "answer_key": "10vWA-2Q9LfOUnVhkkmPFuPe_2mDBdI87VNoHz8SL9HQ",
+      "student_worksheet": "1_VPC1hkHYLd6iL8imF_zuKQcDshrWnXibB-074JD6Jw"
+    },
+    "status": "PASS"
+  },
+  "worksheet": {
+    "grade": "grade_1",
+    "grade_or_course": "grade_1",
+    "question_count": 50,
+    "title": "MTS - Weekly Math Worksheet",
+    "week_start": "2026-09-07"
+  }
+}

@@ -1,0 +1,693 @@
+{
+  "curriculum": {
+    "week_number": 2,
+    "week_start": "2026-08-24"
+  },
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 3900,
+          "difficulty": "medium",
+          "number": 1,
+          "prompt": "Find the value: 2,314 + 1,586",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "2314+1586"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3455,
+          "difficulty": "medium",
+          "number": 2,
+          "prompt": "Find the value: 5,203 - 1,748",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "5203-1748"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6362,
+          "difficulty": "medium",
+          "number": 3,
+          "prompt": "Find the value: 3,467 + 2,895",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "3467+2895"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3643,
+          "difficulty": "medium",
+          "number": 4,
+          "prompt": "Find the value: 7,102 - 3,459",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "7102-3459"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8123,
+          "difficulty": "medium",
+          "number": 5,
+          "prompt": "Find the value: 4,215 + 3,908",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "4215+3908"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4173,
+          "difficulty": "medium",
+          "number": 6,
+          "prompt": "Find the value: 6,340 - 2,167",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "6340-2167"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6523,
+          "difficulty": "medium",
+          "number": 7,
+          "prompt": "Find the value: 1,987 + 4,536",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "1987+4536"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4378,
+          "difficulty": "medium",
+          "number": 8,
+          "prompt": "Find the value: 8,050 - 3,672",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "8050-3672"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6047,
+          "difficulty": "medium",
+          "number": 9,
+          "prompt": "Find the value: 2,468 + 3,579",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "2468+3579"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4243,
+          "difficulty": "medium",
+          "number": 10,
+          "prompt": "Find the value: 9,001 - 4,758",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "9001-4758"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 6111,
+          "difficulty": "medium",
+          "number": 11,
+          "prompt": "Find the value: 3,124 + 2,987",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "3124+2987"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4444,
+          "difficulty": "medium",
+          "number": 12,
+          "prompt": "Find the value: 6,789 - 2,345",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "6789-2345"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7110,
+          "difficulty": "medium",
+          "number": 13,
+          "prompt": "Find the value: 5,432 + 1,678",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "5432+1678"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4434,
+          "difficulty": "medium",
+          "number": 14,
+          "prompt": "Find the value: 7,890 - 3,456",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "7890-3456"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7457,
+          "difficulty": "medium",
+          "number": 15,
+          "prompt": "Find the value: 4,567 + 2,890",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "4567+2890"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3556,
+          "difficulty": "medium",
+          "number": 16,
+          "prompt": "Find the value: 8,123 - 4,567",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "8123-4567"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7777,
+          "difficulty": "medium",
+          "number": 17,
+          "prompt": "Find the value: 3,456 + 4,321",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "3456+4321"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4434,
+          "difficulty": "medium",
+          "number": 18,
+          "prompt": "Find the value: 6,543 - 2,109",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "6543-2109"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6443,
+          "difficulty": "medium",
+          "number": 19,
+          "prompt": "Find the value: 2,987 + 3,456",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "2987+3456"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3754,
+          "difficulty": "medium",
+          "number": 20,
+          "prompt": "Find the value: 9,432 - 5,678",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "9432-5678"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 42,
+          "difficulty": "medium",
+          "number": 21,
+          "prompt": "Find the value: 6 times as many as 7 (find 6*7)",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "6*7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 72,
+          "difficulty": "medium",
+          "number": 22,
+          "prompt": "Find the value: 8 times as many as 9 (find 8*9)",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "8*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 48,
+          "difficulty": "medium",
+          "number": 23,
+          "prompt": "Find the value: 4 times as many as 12 (find 4*12)",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "4*12"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 42,
+          "difficulty": "medium",
+          "number": 24,
+          "prompt": "Find the value: 7 times as many as 6 (find 7*6)",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "7*6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 45,
+          "difficulty": "medium",
+          "number": 25,
+          "prompt": "Find the value: 9 times as many as 5 (find 9*5)",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "9*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 42,
+          "difficulty": "medium",
+          "number": 26,
+          "prompt": "Find the value: 3 times as many as 14 (find 3*14)",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "3*14"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 65,
+          "difficulty": "medium",
+          "number": 27,
+          "prompt": "Find the value: 5 times as many as 13 (find 5*13)",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "5*13"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 56,
+          "difficulty": "medium",
+          "number": 28,
+          "prompt": "Find the value: 8 times as many as 7 (find 8*7)",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "8*7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 66,
+          "difficulty": "medium",
+          "number": 29,
+          "prompt": "Find the value: 6 times as many as 11 (find 6*11)",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "6*11"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 72,
+          "difficulty": "medium",
+          "number": 30,
+          "prompt": "Find the value: 9 times as many as 8 (find 9*8)",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "9*8"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 7894,
+          "difficulty": "medium",
+          "number": 31,
+          "prompt": "Find the value: 4,205 + 3,689",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "4205+3689"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4754,
+          "difficulty": "medium",
+          "number": 32,
+          "prompt": "Find the value: 7,340 - 2,586",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "7340-2586"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7134,
+          "difficulty": "medium",
+          "number": 33,
+          "prompt": "Find the value: 1,456 + 5,678",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "1456+5678"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2745,
+          "difficulty": "medium",
+          "number": 34,
+          "prompt": "Find the value: 6,201 - 3,456",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "6201-3456"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6346,
+          "difficulty": "medium",
+          "number": 35,
+          "prompt": "Find the value: 3,890 + 2,456",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "3890+2456"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4677,
+          "difficulty": "medium",
+          "number": 36,
+          "prompt": "Find the value: 8,567 - 3,890",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "8567-3890"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9134,
+          "difficulty": "medium",
+          "number": 37,
+          "prompt": "Find the value: 2,345 + 6,789",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "2345+6789"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5555,
+          "difficulty": "medium",
+          "number": 38,
+          "prompt": "Find the value: 9,876 - 4,321",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "9876-4321"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6912,
+          "difficulty": "medium",
+          "number": 39,
+          "prompt": "Find the value: 5,678 + 1,234",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "5678+1234"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4667,
+          "difficulty": "medium",
+          "number": 40,
+          "prompt": "Find the value: 7,654 - 2,987",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "7654-2987"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 7777,
+          "difficulty": "medium",
+          "number": 41,
+          "prompt": "Find the value: 4,321 + 3,456",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "4321+3456"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9134,
+          "difficulty": "medium",
+          "number": 42,
+          "prompt": "Find the value: 6,789 + 2,345",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "6789+2345"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5445,
+          "difficulty": "medium",
+          "number": 43,
+          "prompt": "Find the value: 8,901 - 3,456",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "8901-3456"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9134,
+          "difficulty": "medium",
+          "number": 44,
+          "prompt": "Find the value: 3,456 + 5,678",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "3456+5678"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3323,
+          "difficulty": "medium",
+          "number": 45,
+          "prompt": "Find the value: 7,890 - 4,567",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "7890-4567"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8259,
+          "difficulty": "medium",
+          "number": 46,
+          "prompt": "Find the value: 2,468 + 5,791",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "2468+5791"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4556,
+          "difficulty": "medium",
+          "number": 47,
+          "prompt": "Find the value: 9,123 - 4,567",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "9123-4567"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 45,
+          "difficulty": "medium",
+          "number": 48,
+          "prompt": "Find the value: 5 times as many as 9 (find 5*9)",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "5*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 48,
+          "difficulty": "medium",
+          "number": 49,
+          "prompt": "Find the value: 6 times as many as 8 (find 6*8)",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "6*8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7777,
+          "difficulty": "medium",
+          "number": 50,
+          "prompt": "Find the value: 4,567 + 3,210",
+          "skill": "place_value_multidigit_and_mult_comparison",
+          "verification": {
+            "inputs": {
+              "expression": "4567+3210"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "status": "PENDING"
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_4",
+    "question_count": 50,
+    "title": "MTS - WEEKLY WORKSHEET",
+    "week_start": "2026-08-24"
+  }
+}

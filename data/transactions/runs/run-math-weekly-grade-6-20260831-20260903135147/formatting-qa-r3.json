@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "qa": {
+    "student_worksheet": {
+      "status": "PASS",
+      "checks": {
+        "rendered_text_nonempty": true,
+        "grade_present": true,
+        "all_question_numbers_present": true,
+        "no_unresolved_placeholders": true,
+        "no_pending_approval_label": true,
+        "title_present": true,
+        "no_extra_numbered_slots": true
+      },
+      "failed_checks": []
+    },
+    "answer_key": {
+      "status": "PASS",
+      "checks": {
+        "rendered_text_nonempty": true,
+        "grade_present": true,
+        "all_question_numbers_present": true,
+        "no_unresolved_placeholders": true,
+        "no_pending_approval_label": true,
+        "title_present": true,
+        "answer_key_label": true,
+        "no_extra_numbered_slots": true
+      },
+      "failed_checks": []
+    }
+  },
+  "inspection": {
+    "student_content_blocks": 58,
+    "answer_key_content_blocks": 51,
+    "student_characters": 2996,
+    "answer_key_characters": 432
+  },
+  "answer_key_entry_labels": "absent",
+  "visual_qa": {
+    "status": "PASS",
+    "reviewed_at": "2026-09-03T18:07:24.124387+00:00",
+    "observations": [
+      "Student worksheet title, grade header, and weekday section headings render clearly.",
+      "Student worksheet question numbering is consecutive and has no duplicated Question N prefix.",
+      "Answer key retains a distinct answer-key heading and shows concise numbered entries without an Answer label per item.",
+      "No overlapping content or unresolved template placeholders were observed."
+    ]
+  }
+}

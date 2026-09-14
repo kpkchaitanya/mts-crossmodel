@@ -1,0 +1,1244 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 1300,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_4-q1",
+          "number": 1,
+          "prompt": "Question 1: Round 1270 to the nearest hundred.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "large-number place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1300"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1300,
+          "cognitive_action": "compute",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.direct_compute",
+          "id": "grade_4-q2",
+          "number": 2,
+          "prompt": "Question 2: Round 1280 to the nearest hundred.",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1300"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1300,
+          "cognitive_action": "extend_pattern",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.sequence_pattern",
+          "id": "grade_4-q3",
+          "number": 3,
+          "prompt": "Question 3: Round 1290 to the nearest hundred.",
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1300"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1300,
+          "cognitive_action": "decide",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.decision_table",
+          "id": "grade_4-q4",
+          "number": 4,
+          "prompt": "Question 4: Round 1300 to the nearest hundred.",
+          "representation": "decision_table",
+          "response_type": "selection",
+          "section_id": "monday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1300"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1300,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.visual_grouping",
+          "id": "grade_4-q5",
+          "number": 5,
+          "prompt": "Question 5: Round 1310 to the nearest hundred.",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1300"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1300,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_4-q6",
+          "number": 6,
+          "prompt": "Question 6: Round 1320 to the nearest hundred.",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1300"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1300,
+          "cognitive_action": "retrieve",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.representation_read",
+          "id": "grade_4-q7",
+          "number": 7,
+          "prompt": "Question 7: Round 1330 to the nearest hundred.",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "factors",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1300"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1300,
+          "cognitive_action": "translate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.equivalent_form",
+          "id": "grade_4-q8",
+          "number": 8,
+          "prompt": "Question 8: Round 1340 to the nearest hundred.",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1300"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1400,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.find_counterexample",
+          "id": "grade_4-q9",
+          "number": 9,
+          "prompt": "Question 9: Round 1350 to the nearest hundred.",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1400"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1400,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reverse_reasoning",
+          "id": "grade_4-q10",
+          "number": 10,
+          "prompt": "Question 10: Round 1360 to the nearest hundred.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "skill": "prime/composite",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1400"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 1400,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.error_check",
+          "id": "grade_4-q11",
+          "number": 11,
+          "prompt": "Question 11: Round 1370 to the nearest hundred.",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "large-number place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1400"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1400,
+          "cognitive_action": "retrieve",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.representation_read",
+          "id": "grade_4-q12",
+          "number": 12,
+          "prompt": "Question 12: Round 1380 to the nearest hundred.",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1400"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1400,
+          "cognitive_action": "decompose",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.compose_decompose",
+          "id": "grade_4-q13",
+          "number": 13,
+          "prompt": "Question 13: Round 1390 to the nearest hundred.",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1400"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1400,
+          "cognitive_action": "construct_equivalent",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.create_equivalent",
+          "id": "grade_4-q14",
+          "number": 14,
+          "prompt": "Question 14: Round 1400 to the nearest hundred.",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1400"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1400,
+          "cognitive_action": "match",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.match_rule",
+          "id": "grade_4-q15",
+          "number": 15,
+          "prompt": "Question 15: Round 1410 to the nearest hundred.",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1400"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1400,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.find_counterexample",
+          "id": "grade_4-q16",
+          "number": 16,
+          "prompt": "Question 16: Round 1420 to the nearest hundred.",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1400"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1400,
+          "cognitive_action": "construct",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.construct_example",
+          "id": "grade_4-q17",
+          "number": 17,
+          "prompt": "Question 17: Round 1430 to the nearest hundred.",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "factors",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1400"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1400,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.reverse_reasoning",
+          "id": "grade_4-q18",
+          "number": 18,
+          "prompt": "Question 18: Round 1440 to the nearest hundred.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1400"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1400,
+          "cognitive_action": "translate",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.equivalent_form",
+          "id": "grade_4-q19",
+          "number": 19,
+          "prompt": "Question 19: Round 1450 to the nearest hundred.",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "skill": "multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1400"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1500,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_4-q20",
+          "number": 20,
+          "prompt": "Question 20: Round 1460 to the nearest hundred.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "skill": "prime/composite",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1500"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 1500,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.context_story",
+          "id": "grade_4-q21",
+          "number": 21,
+          "prompt": "Question 21: Round 1470 to the nearest hundred.",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "large-number place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1500"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1500,
+          "cognitive_action": "order",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.sort_order",
+          "id": "grade_4-q22",
+          "number": 22,
+          "prompt": "Question 22: Round 1480 to the nearest hundred.",
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "section_id": "wednesday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1500"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1500,
+          "cognitive_action": "decide",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.decision_table",
+          "id": "grade_4-q23",
+          "number": 23,
+          "prompt": "Question 23: Round 1490 to the nearest hundred.",
+          "representation": "decision_table",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1500"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1500,
+          "cognitive_action": "solve_unknown",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.missing_value",
+          "id": "grade_4-q24",
+          "number": 24,
+          "prompt": "Question 24: Round 1500 to the nearest hundred.",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1500"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1500,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.table_complete",
+          "id": "grade_4-q25",
+          "number": 25,
+          "prompt": "Question 25: Round 1510 to the nearest hundred.",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1500"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1500,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.two_way_compare",
+          "id": "grade_4-q26",
+          "number": 26,
+          "prompt": "Question 26: Round 1520 to the nearest hundred.",
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1500"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1500,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_representation",
+          "id": "grade_4-q27",
+          "number": 27,
+          "prompt": "Question 27: Round 1530 to the nearest hundred.",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "factors",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1500"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1500,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.find_counterexample",
+          "id": "grade_4-q28",
+          "number": 28,
+          "prompt": "Question 28: Round 1540 to the nearest hundred.",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1500"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1600,
+          "cognitive_action": "retrieve",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.representation_read",
+          "id": "grade_4-q29",
+          "number": 29,
+          "prompt": "Question 29: Round 1550 to the nearest hundred.",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1600"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1600,
+          "cognitive_action": "construct_equivalent",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.create_equivalent",
+          "id": "grade_4-q30",
+          "number": 30,
+          "prompt": "Question 30: Round 1560 to the nearest hundred.",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "skill": "prime/composite",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1600"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 1600,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.inverse_operation",
+          "id": "grade_4-q31",
+          "number": 31,
+          "prompt": "Question 31: Round 1570 to the nearest hundred.",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "large-number place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1600"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1600,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.table_complete",
+          "id": "grade_4-q32",
+          "number": 32,
+          "prompt": "Question 32: Round 1580 to the nearest hundred.",
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1600"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1600,
+          "cognitive_action": "justify",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.justify_claim",
+          "id": "grade_4-q33",
+          "number": 33,
+          "prompt": "Question 33: Round 1590 to the nearest hundred.",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1600"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1600,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_representation",
+          "id": "grade_4-q34",
+          "number": 34,
+          "prompt": "Question 34: Round 1600 to the nearest hundred.",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1600"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1600,
+          "cognitive_action": "retrieve",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.representation_read",
+          "id": "grade_4-q35",
+          "number": 35,
+          "prompt": "Question 35: Round 1610 to the nearest hundred.",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1600"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1600,
+          "cognitive_action": "solve_unknown",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.missing_value",
+          "id": "grade_4-q36",
+          "number": 36,
+          "prompt": "Question 36: Round 1620 to the nearest hundred.",
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1600"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1600,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.reasonable_answer",
+          "id": "grade_4-q37",
+          "number": 37,
+          "prompt": "Question 37: Round 1630 to the nearest hundred.",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "factors",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1600"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1600,
+          "cognitive_action": "classify",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.classify",
+          "id": "grade_4-q38",
+          "number": 38,
+          "prompt": "Question 38: Round 1640 to the nearest hundred.",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1600"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1600,
+          "cognitive_action": "compute",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.direct_compute",
+          "id": "grade_4-q39",
+          "number": 39,
+          "prompt": "Question 39: Round 1650 to the nearest hundred.",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1600"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1700,
+          "cognitive_action": "estimate",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.estimate",
+          "id": "grade_4-q40",
+          "number": 40,
+          "prompt": "Question 40: Round 1660 to the nearest hundred.",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "skill": "prime/composite",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1700"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 1700,
+          "cognitive_action": "classify",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.classify",
+          "id": "grade_4-q41",
+          "number": 41,
+          "prompt": "Question 41: Round 1670 to the nearest hundred.",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "section_id": "friday",
+          "skill": "large-number place value",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1700"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1700,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.visual_grouping",
+          "id": "grade_4-q42",
+          "number": 42,
+          "prompt": "Question 42: Round 1680 to the nearest hundred.",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1700"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1700,
+          "cognitive_action": "estimate",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.estimate",
+          "id": "grade_4-q43",
+          "number": 43,
+          "prompt": "Question 43: Round 1690 to the nearest hundred.",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1700"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1700,
+          "cognitive_action": "compose_operations",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_step",
+          "id": "grade_4-q44",
+          "number": 44,
+          "prompt": "Question 44: Round 1700 to the nearest hundred.",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "rounding",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1700"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1700,
+          "cognitive_action": "justify",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.justify_claim",
+          "id": "grade_4-q45",
+          "number": 45,
+          "prompt": "Question 45: Round 1710 to the nearest hundred.",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "section_id": "friday",
+          "skill": "multiplication",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1700"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1700,
+          "cognitive_action": "translate",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.equivalent_form",
+          "id": "grade_4-q46",
+          "number": 46,
+          "prompt": "Question 46: Round 1720 to the nearest hundred.",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "division",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1700"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1700,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.reverse_reasoning",
+          "id": "grade_4-q47",
+          "number": 47,
+          "prompt": "Question 47: Round 1730 to the nearest hundred.",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "factors",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1700"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1700,
+          "cognitive_action": "compute",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.direct_compute",
+          "id": "grade_4-q48",
+          "number": 48,
+          "prompt": "Question 48: Round 1740 to the nearest hundred.",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "multi-digit addition/subtraction",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1700"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1800,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.multi_representation",
+          "id": "grade_4-q49",
+          "number": 49,
+          "prompt": "Question 49: Round 1750 to the nearest hundred.",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "multiples",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1800"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1800,
+          "cognitive_action": "decompose",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.compose_decompose",
+          "id": "grade_4-q50",
+          "number": 50,
+          "prompt": "Question 50: Round 1760 to the nearest hundred.",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "skill": "prime/composite",
+          "source_kind": "fallback",
+          "source_scope": "grade_4",
+          "standards": [],
+          "variation_seed": 20260903205508,
+          "verification": {
+            "inputs": {
+              "expression": "1800"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PASS"
+  },
+  "worksheet": {
+    "grade": "grade_4",
+    "grade_or_course": "grade_4",
+    "question_count": 50,
+    "title": "MTS - WEEKLY WORKSHEET SAMPLE",
+    "week_start": "2026-09-07"
+  }
+}

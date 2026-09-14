@@ -3,8 +3,8 @@ from pathlib import Path
 import sys
 
 REPO = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(REPO / "src" / "rendering"))
-import google_docs_adapter as adapter_module
+sys.path.insert(0, str(REPO / "src"))
+from mts.infrastructure.google_docs import google_docs_adapter as adapter_module
 
 
 class Request:
@@ -16,16 +16,55 @@ class Request:
 
 
 class FakeFiles:
+    FOLDER_MIME = "application/vnd.google-apps.folder"
+
     def __init__(self):
         self.documents = {}
         self.copies = []
         self.updates = []
         self.folders = {}
         self.list_queries = []
+        self.trashed = []
+        self.exports = []
+        self.downloads = []
+        self._sequence = 0
+
+    def _next_created_time(self):
+        self._sequence += 1
+        return f"2026-01-{self._sequence:02d}T00:00:00.000Z"
+
+    def add_file(self, file_id, name, parent_id, *, mime_type="application/vnd.google-apps.document"):
+        self.documents[file_id] = {
+            "id": file_id,
+            "name": name,
+            "parents": [parent_id],
+            "mimeType": mime_type,
+            "createdTime": self._next_created_time(),
+            "webViewLink": f"https://docs/{file_id}",
+        }
+        return self.documents[file_id]
+
+    def add_folder(self, folder_id, name, parent_id):
+        self.folders[folder_id] = {
+            "id": folder_id,
+            "name": name,
+            "parents": [parent_id],
+            "mimeType": self.FOLDER_MIME,
+            "createdTime": self._next_created_time(),
+            "webViewLink": f"https://drive/{folder_id}",
+        }
+        return self.folders[folder_id]
 
     def copy(self, *, fileId, body, fields):
         document_id = f"copy-{len(self.copies) + 1}"
-        document = {"id": document_id, "name": body["name"], "parents": body["parents"], "webViewLink": f"https://docs/{document_id}"}
+        document = {
+            "id": document_id,
+            "name": body["name"],
+            "parents": body["parents"],
+            "mimeType": "application/vnd.google-apps.document",
+            "createdTime": self._next_created_time(),
+            "webViewLink": f"https://docs/{document_id}",
+        }
         self.documents[document_id] = document
         self.copies.append({"template_id": fileId, **document})
         return Request(document)
@@ -33,22 +72,50 @@ class FakeFiles:
     def get(self, *, fileId, fields):
         return Request(dict(self.documents[fileId]))
 
-    def list(self, *, q, fields, pageSize):
+    def export(self, *, fileId, mimeType):
+        self.exports.append((fileId, mimeType))
+        return Request(b"%PDF exported")
+
+    def get_media(self, *, fileId):
+        self.downloads.append(fileId)
+        return Request(b"%PDF downloaded")
+
+    def list(self, *, q, fields, pageSize, orderBy=None, pageToken=None):
         self.list_queries.append(q)
-        matches = [
-            folder for folder in self.folders.values()
-            if f"name = '{folder['name']}'" in q and f"'{folder['parents'][0]}' in parents" in q
-        ]
-        return Request({"files": [{"id": f["id"], "name": f["name"], "webViewLink": f["webViewLink"]} for f in matches]})
+        matches = [item for item in (*self.documents.values(), *self.folders.values()) if self._matches(item, q)]
+        if orderBy == "createdTime desc":
+            matches.sort(key=lambda item: item["createdTime"], reverse=True)
+        return Request({"files": [self._project(item, fields) for item in matches]})
+
+    def _matches(self, item, q):
+        if f"'{item['parents'][0]}' in parents" not in q:
+            return False
+        if f"mimeType != '{self.FOLDER_MIME}'" in q and item["mimeType"] == self.FOLDER_MIME:
+            return False
+        if f"mimeType = '{self.FOLDER_MIME}'" in q and item["mimeType"] != self.FOLDER_MIME:
+            return False
+        if "name = '" in q and f"name = '{item['name']}'" not in q:
+            return False
+        return True
+
+    @staticmethod
+    def _project(item, fields):
+        keys = ("id", "name", "mimeType", "createdTime", "webViewLink", "appProperties") if "createdTime" in fields else ("id", "name", "webViewLink")
+        return {key: item[key] for key in keys if key in item}
 
     def create(self, *, body, fields):
         folder_id = f"folder-{len(self.folders) + 1}"
-        folder = {"id": folder_id, "name": body["name"], "parents": body["parents"], "webViewLink": f"https://drive/{folder_id}"}
-        self.folders[folder_id] = folder
-        return Request(dict(folder))
+        return Request(dict(self.add_folder(folder_id, body["name"], body["parents"][0])))
 
-    def update(self, *, fileId, addParents, removeParents, fields):
+    def update(self, *, fileId, fields, addParents=None, removeParents=None, body=None):
         document = self.documents[fileId]
+        if body and "trashed" in body:
+            document["trashed"] = body["trashed"]
+            self.trashed.append(fileId)
+            return Request(dict(document))
+        if body and "appProperties" in body:
+            document.setdefault("appProperties", {}).update(body["appProperties"])
+            return Request(dict(document))
         document["parents"] = [addParents]
         self.updates.append({"file_id": fileId, "add_parents": addParents, "remove_parents": removeParents})
         return Request(dict(document))
@@ -92,6 +159,17 @@ class FakeDocs:
 
 def verified_spec():
     return {"verification": {"status": "PASS"}}
+
+
+def test_copy_file_copies_and_renames_into_the_requested_folder():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+
+    copied = adapter.copy_file("source-file", "target-folder", "Renamed Worksheet")
+
+    assert copied["name"] == "Renamed Worksheet"
+    assert copied["parents"] == ["target-folder"]
+    assert drive.file_service.copies[0]["template_id"] == "source-file"
 
 
 def test_render_pair_copies_masters_and_replaces_placeholder():
@@ -214,11 +292,143 @@ def test_deliver_pair_rejects_unstaged_artifact_and_bad_mode():
         raise AssertionError("Incomplete artifact pair must not publish.")
 
 
+def test_list_child_files_excludes_folders_and_lists_only_direct_children():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+    drive.file_service.add_file("doc-1", "Grade 6", "week-folder")
+    drive.file_service.add_file("doc-2", "Grade 6_KEY", "week-folder")
+    drive.file_service.add_folder("archive-1", "Archive", "week-folder")
+    drive.file_service.add_file("doc-3", "Elsewhere", "other-folder")
+
+    listed = adapter.list_child_files("week-folder")
+
+    assert [item["id"] for item in listed] == ["doc-2", "doc-1"]
+    assert all("createdTime" in item for item in listed)
+    assert adapter.list_child_files("empty-folder") == []
+
+
+def test_list_child_folders_returns_newest_first():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+    drive.file_service.add_folder("week-1", "Week_2026-08-24", "grade-6-parent")
+    drive.file_service.add_folder("week-2", "Week_2026-08-31", "grade-6-parent")
+    drive.file_service.add_file("doc-1", "Loose", "grade-6-parent")
+
+    listed = adapter.list_child_folders("grade-6-parent")
+
+    assert [item["id"] for item in listed] == ["week-2", "week-1"]
+
+
+def test_move_file_reparents_and_is_a_no_op_when_already_in_destination():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+    drive.file_service.add_file("doc-1", "Grade 6", "week-folder")
+
+    moved = adapter.move_file("doc-1", "archive-1")
+    assert moved["parents"] == ["archive-1"]
+    assert drive.file_service.updates[-1]["remove_parents"] == "week-folder"
+
+    adapter.move_file("doc-1", "archive-1")
+    assert len(drive.file_service.updates) == 1
+
+
+def test_move_file_requires_both_ids():
+    adapter = adapter_module.GoogleDocsAdapter(FakeDrive(), FakeDocs())
+    try:
+        adapter.move_file("doc-1", "")
+    except adapter_module.GoogleDocsAdapterError as error:
+        assert "required" in str(error)
+    else:
+        raise AssertionError("A missing destination must fail closed.")
+
+
+def test_trash_file_marks_the_file_trashed_and_never_deletes():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+    drive.file_service.add_file("doc-1", "Grade 6", "week-folder")
+
+    trashed = adapter.trash_file("doc-1")
+
+    assert trashed["trashed"] is True
+    assert drive.file_service.trashed == ["doc-1"]
+    assert not hasattr(drive.file_service, "deleted")
+
+
+def test_stamp_document_records_provenance_and_listings_return_it():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+    drive.file_service.add_file("doc-1", "Grade 4", "staging")
+
+    adapter.stamp_document("doc-1", {"mts_run_id": "run-1", "mts_grade_id": "grade_4"})
+
+    listed = adapter.list_child_files("staging")
+    assert listed[0]["appProperties"]["mts_run_id"] == "run-1"
+
+
+def test_stamp_document_requires_a_file_and_at_least_one_property():
+    adapter = adapter_module.GoogleDocsAdapter(FakeDrive(), FakeDocs())
+    try:
+        adapter.stamp_document("doc-1", {})
+    except adapter_module.GoogleDocsAdapterError as error:
+        assert "property" in str(error)
+    else:
+        raise AssertionError("An empty provenance stamp must fail closed.")
+
+
+def test_stamp_document_rejects_a_property_over_the_drive_byte_limit():
+    adapter = adapter_module.GoogleDocsAdapter(FakeDrive(), FakeDocs())
+    try:
+        adapter.stamp_document("doc-1", {"mts_spec_path": "x" * 200})
+    except adapter_module.GoogleDocsAdapterError as error:
+        assert "124-byte limit" in str(error)
+    else:
+        raise AssertionError("An oversized property must fail before reaching Drive.")
+
+
+def test_export_pdf_exports_a_google_doc_and_downloads_a_stored_pdf():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+    drive.file_service.add_file("doc-1", "Grade 4", "staging")
+    drive.file_service.add_file("pdf-1", "Grade 4.pdf", "staging", mime_type="application/pdf")
+
+    assert adapter.export_pdf("doc-1") == b"%PDF exported"
+    assert adapter.export_pdf("pdf-1") == b"%PDF downloaded"
+    assert drive.file_service.exports == [("doc-1", "application/pdf")]
+    assert drive.file_service.downloads == ["pdf-1"]
+
+
+def test_export_pdf_refuses_a_type_it_cannot_produce_a_pdf_from():
+    drive = FakeDrive()
+    adapter = adapter_module.GoogleDocsAdapter(drive, FakeDocs())
+    drive.file_service.add_file("sheet-1", "Roster", "staging", mime_type="application/vnd.google-apps.spreadsheet")
+
+    try:
+        adapter.export_pdf("sheet-1")
+    except adapter_module.GoogleDocsAdapterError as error:
+        assert "spreadsheet" in str(error)
+    else:
+        raise AssertionError("An unsupported type must fail closed rather than be converted.")
+
+
 def main():
     tests = [
         test_render_pair_copies_masters_and_replaces_placeholder,
         test_publish_pair_moves_both_validated_artifacts_to_final_destination,
         test_unverified_spec_and_incomplete_pair_fail_closed,
+        test_ensure_child_folder_is_idempotent,
+        test_deliver_pair_copies_staged_documents_and_preserves_staging,
+        test_deliver_pair_can_skip_the_answer_key,
+        test_deliver_pair_rejects_unstaged_artifact_and_bad_mode,
+        test_list_child_files_excludes_folders_and_lists_only_direct_children,
+        test_list_child_folders_returns_newest_first,
+        test_move_file_reparents_and_is_a_no_op_when_already_in_destination,
+        test_move_file_requires_both_ids,
+        test_trash_file_marks_the_file_trashed_and_never_deletes,
+        test_stamp_document_records_provenance_and_listings_return_it,
+        test_stamp_document_requires_a_file_and_at_least_one_property,
+        test_stamp_document_rejects_a_property_over_the_drive_byte_limit,
+        test_export_pdf_exports_a_google_doc_and_downloads_a_stored_pdf,
+        test_export_pdf_refuses_a_type_it_cannot_produce_a_pdf_from,
     ]
     for test in tests:
         test()

@@ -1,0 +1,9 @@
+{
+  "artifact_revision": "grade_6-r1",
+  "bypass": true,
+  "gate": "scope_review",
+  "notes": "Interactive gate wait bypassed for this run only; verification and QA remain required.",
+  "recorded_at": "2026-09-03T17:38:32.721113+00:00",
+  "reviewer": "current-user-instruction",
+  "status": "approved"
+}

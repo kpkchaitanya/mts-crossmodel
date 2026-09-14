@@ -1,0 +1,22 @@
+version: "1.0"
+worksheet_type_id: "homework-4-day"
+display_name: "4-Day Homework"
+status: "draft"
+compatible_subjects: ["math"]
+sections:
+  - {id: "day_1", title: "Day 1 - Reinforce"}
+  - {id: "day_2", title: "Day 2 - Practice"}
+  - {id: "day_3", title: "Day 3 - Apply"}
+  - {id: "day_4", title: "Day 4 - Extend"}
+duration_minutes: null
+template_selection:
+  template_manifest: "subjects/math/config/template-manifest.json"
+validation:
+  require_verification: true
+  require_visual_qa: true
+extension_readiness:
+  blockers:
+    - "Approve grade/course question counts and expected page constraints."
+    - "Approve duration and assignment-continuity rules."
+    - "Approve a dedicated template or the Class Worksheet template fallback."
+    - "Add Homework regression fixtures before activation."

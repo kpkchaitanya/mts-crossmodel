@@ -1,0 +1,67 @@
+{
+  "worksheet":{"grade":"Grade 4","week_start":"2026-08-24","question_count":50,"duration_minutes":15},
+  "curriculum":{"current":["NC.4.NBT.1","NC.4.NBT.4","NC.4.MD.4"],"spiral":["place value","multi-digit operations","data and graphs"],"confidence":"inferred"},
+  "sections":[
+    {"id":"monday","title":"Foundation","questions":[
+      {"number":1,"prompt":"Write 5,742 in expanded form.","answer":"5,000 + 700 + 40 + 2","skill":"place value","difficulty":"easy","verification":{"method":"reasoning_review","criterion":"Verify expanded form representation matches place value structure"}},
+      {"number":2,"prompt":"Round 4,863 to the nearest hundred.","answer":4900,"skill":"rounding","difficulty":"easy","verification":{"method":"reasoning_review","criterion":"Verify rounding rule: 863 rounds to 900, so 4863 becomes 4900"}},
+      {"number":3,"prompt":"Add: 3,425 + 2,318.","answer":5743,"skill":"addition","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"3425 + 2318"}}},
+      {"number":4,"prompt":"Subtract: 6,014 - 2,587.","answer":3427,"skill":"subtraction","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"6014 - 2587"}}},
+      {"number":5,"prompt":"Estimate the sum of 482 + 319 by rounding to the nearest hundred.","answer":800,"skill":"estimation","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"500 + 300"}}},
+      {"number":6,"prompt":"A library has 2,145 books. It receives 1,872 more books. How many books does the library have now?","answer":4017,"skill":"addition word problem","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"2145 + 1872"}}},
+      {"number":7,"prompt":"A school has 3,500 students. 1,248 students ride the bus. How many students do not ride the bus?","answer":2252,"skill":"subtraction word problem","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"3500 - 1248"}}},
+      {"number":8,"prompt":"Compare using <, >, or =: 4,567 ___ 4,576.","answer":"<","skill":"place value comparison","difficulty":"easy","verification":{"method":"reasoning_review","criterion":"Verify 4567 < 4576 by place value comparison"}},
+      {"number":9,"prompt":"What is the value of the digit 7 in 7,329?","answer":7000,"skill":"place value","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"7 * 1000"}}},
+      {"number":10,"prompt":"A store has 428 apples and 365 oranges. How many pieces of fruit does the store have?","answer":793,"skill":"multi-step operations","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"428 + 365"}}}
+    ]},
+    {"id":"tuesday","title":"Data Analysis - Tables and Picture Graphs","questions":[
+      {"number":11,"prompt":"Use this table: Favorite Fruit - Apples: 8, Bananas: 5, Oranges: 7, Grapes: 10. Which fruit is most popular?","answer":"Grapes","skill":"data interpretation","difficulty":"easy","verification":{"method":"reasoning_review","criterion":"Verify Grapes has the highest count (10)"}},
+      {"number":12,"prompt":"Which fruit is the least popular?","answer":"Bananas","skill":"data interpretation","difficulty":"easy","verification":{"method":"reasoning_review","criterion":"Verify Bananas has the lowest count (5)"}},
+      {"number":13,"prompt":"How many students chose apples or oranges?","answer":15,"skill":"data addition","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"8 + 7"}}},
+      {"number":14,"prompt":"What is the difference between grapes and bananas?","answer":5,"skill":"data subtraction","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"10 - 5"}}},
+      {"number":15,"prompt":"How many total students were surveyed?","answer":30,"skill":"data totals","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"8 + 5 + 7 + 10"}}},
+      {"number":16,"prompt":"A picture graph shows books read. Each star = 2 books. Ana has 4 stars, Ben has 3 stars, Carlos has 5 stars, Dana has 2 stars. How many books did Ana read?","answer":8,"skill":"picture graph","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"4 * 2"}}},
+      {"number":17,"prompt":"How many books did Ben read?","answer":6,"skill":"picture graph","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"3 * 2"}}},
+      {"number":18,"prompt":"How many more books did Carlos read than Dana?","answer":6,"skill":"picture graph","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"5 * 2 - 2 * 2"}}},
+      {"number":19,"prompt":"How many books did all four students read together?","answer":28,"skill":"picture graph","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"4*2 + 3*2 + 5*2 + 2*2"}}},
+      {"number":20,"prompt":"Which student read exactly 6 books?","answer":"Ben","skill":"picture graph","difficulty":"easy","verification":{"method":"reasoning_review","criterion":"Verify Ben has 3 stars × 2 books/star = 6 books"}}
+    ]},
+    {"id":"wednesday","title":"Data Analysis - Bar Graphs and Tables","questions":[
+      {"number":21,"prompt":"Use this table: Library Visitors - Monday: 24, Tuesday: 31, Wednesday: 18, Thursday: 31, Friday: 26. Which day had the fewest visitors?","answer":"Wednesday","skill":"data interpretation","difficulty":"easy","verification":{"method":"reasoning_review","criterion":"Verify Wednesday has the lowest count (18)"}},
+      {"number":22,"prompt":"Which two days had equal visitors?","answer":"Tuesday and Thursday","skill":"data comparison","difficulty":"easy","verification":{"method":"reasoning_review","criterion":"Verify both Tuesday and Thursday have 31 visitors"}},
+      {"number":23,"prompt":"How many visitors came on Monday and Friday combined?","answer":50,"skill":"data addition","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"24 + 26"}}},
+      {"number":24,"prompt":"What is the difference between Tuesday's and Wednesday's visitors?","answer":13,"skill":"data subtraction","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"31 - 18"}}},
+      {"number":25,"prompt":"What is the total number of visitors for the week?","answer":130,"skill":"data totals","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"24 + 31 + 18 + 31 + 26"}}},
+      {"number":26,"prompt":"A bar graph shows transportation: Walking 12, Bus 9, Car 6, Bicycle 3. Which method is least used?","answer":"Bicycle","skill":"bar graph","difficulty":"easy","verification":{"method":"reasoning_review","criterion":"Verify Bicycle has the lowest count (3)"}},
+      {"number":27,"prompt":"How many more students walk than ride a bicycle?","answer":9,"skill":"bar graph","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"12 - 3"}}},
+      {"number":28,"prompt":"How many students travel by bus or car?","answer":15,"skill":"bar graph","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"9 + 6"}}},
+      {"number":29,"prompt":"A line plot shows test scores: 2, 2, 3, 3, 3, 4, 5. What is the mode?","answer":3,"skill":"line plot","difficulty":"medium","verification":{"method":"reasoning_review","criterion":"Verify 3 appears most frequently (3 times)"}},
+      {"number":30,"prompt":"What is the range of the test scores?","answer":3,"skill":"line plot","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"5 - 2"}}}
+    ]},
+    {"id":"thursday","title":"Practice and Application","questions":[
+      {"number":31,"prompt":"Three students read 124, 98, and 147 pages. Who read the most pages?","answer":"The student who read 147 pages","skill":"comparison","difficulty":"easy","verification":{"method":"reasoning_review","criterion":"Verify 147 is the maximum of 124, 98, 147"}},
+      {"number":32,"prompt":"Who read the fewest pages?","answer":"The student who read 98 pages","skill":"comparison","difficulty":"easy","verification":{"method":"reasoning_review","criterion":"Verify 98 is the minimum of 124, 98, 147"}},
+      {"number":33,"prompt":"How many pages did the first and third students read together?","answer":271,"skill":"addition","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"124 + 147"}}},
+      {"number":34,"prompt":"A pictograph shows plants: Each square = 4 plants. Garden A has 3 squares, Garden B has 5 squares. How many plants are in Garden A?","answer":12,"skill":"pictograph","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"3 * 4"}}},
+      {"number":35,"prompt":"How many plants are in Garden B?","answer":20,"skill":"pictograph","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"5 * 4"}}},
+      {"number":36,"prompt":"A student collects 15 rocks on Monday, 23 rocks on Tuesday, and 19 rocks on Wednesday. How many rocks were collected in all?","answer":57,"skill":"multi-step addition","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"15 + 23 + 19"}}},
+      {"number":37,"prompt":"Multiply: 6 × 47.","answer":282,"skill":"multiplication","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"6 * 47"}}},
+      {"number":38,"prompt":"Divide: 144 ÷ 12.","answer":12,"skill":"division","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"144 / 12"}}},
+      {"number":39,"prompt":"What is the value of the digit 5 in 25,489?","answer":5000,"skill":"place value","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"5 * 1000"}}},
+      {"number":40,"prompt":"Round 7,256 to the nearest thousand.","answer":7000,"skill":"rounding","difficulty":"easy","verification":{"method":"reasoning_review","criterion":"Verify 7256 rounds down to 7000 (256 < 500)"}}
+    ]},
+    {"id":"friday","title":"Mastery and Reasoning","questions":[
+      {"number":41,"prompt":"A survey shows favorite colors: Red 9, Blue 12, Green 7, Yellow 6. How many students were surveyed?","answer":34,"skill":"data totals","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"9 + 12 + 7 + 6"}}},
+      {"number":42,"prompt":"A bar graph shows book sales: Monday 45, Tuesday 52, Wednesday 38. Which day had the highest sales?","answer":"Tuesday","skill":"bar graph","difficulty":"easy","verification":{"method":"reasoning_review","criterion":"Verify Tuesday has the highest value (52)"}},
+      {"number":43,"prompt":"A line plot shows heights in inches: 48, 50, 50, 52, 52, 52, 54. What is the most common height?","answer":"52 inches","skill":"line plot mode","difficulty":"medium","verification":{"method":"reasoning_review","criterion":"Verify 52 appears most frequently (3 times)"}},
+      {"number":44,"prompt":"Multiply: 8 × 125.","answer":1000,"skill":"multiplication","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"8 * 125"}}},
+      {"number":45,"prompt":"Subtract: 5,000 - 2,847.","answer":2153,"skill":"subtraction","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"5000 - 2847"}}},
+      {"number":46,"prompt":"A farmer has 3,642 apples. He sells 1,758 apples. How many apples remain?","answer":1884,"skill":"word problem","difficulty":"medium","verification":{"method":"arithmetic_expression","inputs":{"expression":"3642 - 1758"}}},
+      {"number":47,"prompt":"Divide: 256 ÷ 8.","answer":32,"skill":"division","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"256 / 8"}}},
+      {"number":48,"prompt":"Explain how you would use a bar graph to compare data from different categories.","answer":"OPEN_RESPONSE: A bar graph shows different categories side by side so you can see which bars are taller or shorter and compare quantities easily.","skill":"data reasoning","difficulty":"medium","verification":{"method":"reasoning_review","criterion":"Open response: verify explanation includes visual comparison of bar heights"}},
+      {"number":49,"prompt":"Add: 4,567 + 3,298.","answer":7865,"skill":"addition","difficulty":"easy","verification":{"method":"arithmetic_expression","inputs":{"expression":"4567 + 3298"}}},
+      {"number":50,"prompt":"Create a simple table showing three types of fruit and the number of students who like each. Explain which fruit is most popular.","answer":"OPEN_RESPONSE: Student creates a table with three fruits and quantities, then identifies the fruit with the highest count.","skill":"data creation","difficulty":"medium","verification":{"method":"reasoning_review","criterion":"Open response: verify student creates table and identifies maximum value"}}
+    ]}
+  ],
+  "verification":{"status":"PASS","checked":33,"failed":0,"ambiguous":0,"reasoning_review":17,"note":"All questions independently verified. 33 deterministic checks passed, 17 reasoning review items documented. Q19 corrected (28 total books, not 30)."}
+}

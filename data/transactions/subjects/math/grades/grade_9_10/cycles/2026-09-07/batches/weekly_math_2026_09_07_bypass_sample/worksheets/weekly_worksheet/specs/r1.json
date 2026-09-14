@@ -1,0 +1,394 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 2,
+          "difficulty": "easy",
+          "id": "grade_9_10-q1",
+          "number": 1,
+          "prompt": "Sample question 1: find 1 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "1+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "difficulty": "easy",
+          "id": "grade_9_10-q2",
+          "number": 2,
+          "prompt": "Sample question 2: find 2 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "2+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "difficulty": "easy",
+          "id": "grade_9_10-q3",
+          "number": 3,
+          "prompt": "Sample question 3: find 3 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "3+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "difficulty": "easy",
+          "id": "grade_9_10-q4",
+          "number": 4,
+          "prompt": "Sample question 4: find 4 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "4+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "easy",
+          "id": "grade_9_10-q5",
+          "number": 5,
+          "prompt": "Sample question 5: find 5 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "5+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Monday"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 7,
+          "difficulty": "easy",
+          "id": "grade_9_10-q6",
+          "number": 6,
+          "prompt": "Sample question 6: find 6 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "6+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "easy",
+          "id": "grade_9_10-q7",
+          "number": 7,
+          "prompt": "Sample question 7: find 7 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "7+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "easy",
+          "id": "grade_9_10-q8",
+          "number": 8,
+          "prompt": "Sample question 8: find 8 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "8+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 10,
+          "difficulty": "easy",
+          "id": "grade_9_10-q9",
+          "number": 9,
+          "prompt": "Sample question 9: find 9 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "9+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "difficulty": "easy",
+          "id": "grade_9_10-q10",
+          "number": 10,
+          "prompt": "Sample question 10: find 10 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "10+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Tuesday"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 12,
+          "difficulty": "easy",
+          "id": "grade_9_10-q11",
+          "number": 11,
+          "prompt": "Sample question 11: find 11 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "11+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "difficulty": "easy",
+          "id": "grade_9_10-q12",
+          "number": 12,
+          "prompt": "Sample question 12: find 12 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "12+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 14,
+          "difficulty": "easy",
+          "id": "grade_9_10-q13",
+          "number": 13,
+          "prompt": "Sample question 13: find 13 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "13+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 15,
+          "difficulty": "easy",
+          "id": "grade_9_10-q14",
+          "number": 14,
+          "prompt": "Sample question 14: find 14 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "14+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 16,
+          "difficulty": "easy",
+          "id": "grade_9_10-q15",
+          "number": 15,
+          "prompt": "Sample question 15: find 15 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "15+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Wednesday"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 17,
+          "difficulty": "easy",
+          "id": "grade_9_10-q16",
+          "number": 16,
+          "prompt": "Sample question 16: find 16 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "16+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 18,
+          "difficulty": "easy",
+          "id": "grade_9_10-q17",
+          "number": 17,
+          "prompt": "Sample question 17: find 17 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "17+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 19,
+          "difficulty": "easy",
+          "id": "grade_9_10-q18",
+          "number": 18,
+          "prompt": "Sample question 18: find 18 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "18+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 20,
+          "difficulty": "easy",
+          "id": "grade_9_10-q19",
+          "number": 19,
+          "prompt": "Sample question 19: find 19 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "19+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 21,
+          "difficulty": "easy",
+          "id": "grade_9_10-q20",
+          "number": 20,
+          "prompt": "Sample question 20: find 20 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "20+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Thursday"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 22,
+          "difficulty": "easy",
+          "id": "grade_9_10-q21",
+          "number": 21,
+          "prompt": "Sample question 21: find 21 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "21+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 23,
+          "difficulty": "easy",
+          "id": "grade_9_10-q22",
+          "number": 22,
+          "prompt": "Sample question 22: find 22 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "22+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 24,
+          "difficulty": "easy",
+          "id": "grade_9_10-q23",
+          "number": 23,
+          "prompt": "Sample question 23: find 23 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "23+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 25,
+          "difficulty": "easy",
+          "id": "grade_9_10-q24",
+          "number": 24,
+          "prompt": "Sample question 24: find 24 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "24+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 26,
+          "difficulty": "easy",
+          "id": "grade_9_10-q25",
+          "number": 25,
+          "prompt": "Sample question 25: find 25 + 1.",
+          "skill": "sample_arithmetic",
+          "verification": {
+            "inputs": {
+              "expression": "25+1"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Friday"
+    }
+  ],
+  "verification": {
+    "status": "PASS"
+  },
+  "worksheet": {
+    "grade": "grade_9_10",
+    "grade_or_course": "grade_9_10",
+    "question_count": 25,
+    "title": "MTS - WEEKLY WORKSHEET SAMPLE",
+    "week_start": "2026-09-07"
+  }
+}

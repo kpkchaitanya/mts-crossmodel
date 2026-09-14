@@ -1,0 +1,61 @@
+{
+  "publication": {
+    "status": "published",
+    "destination_folder_id": "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS",
+    "pair": {
+      "status": "published",
+      "student_worksheet": {
+        "id": "1uKBxLFAkCJkjegb-LsUWHXHUcsQbptb2k1NqyeqtrrY",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1uKBxLFAkCJkjegb-LsUWHXHUcsQbptb2k1NqyeqtrrY/edit?usp=drivesdk"
+      },
+      "answer_key": {
+        "id": "14YMuGltnMevhtmRURUlD1Rw4839G0SqBMJP19DDfJmU",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/14YMuGltnMevhtmRURUlD1Rw4839G0SqBMJP19DDfJmU/edit?usp=drivesdk"
+      }
+    }
+  },
+  "delivery": {
+    "status": "delivered",
+    "week_folder": {
+      "id": "1O_WUC7txmWC81aF_w-i3uko-6fl0K_A4",
+      "name": "Week_2026-08-24",
+      "webViewLink": "https://drive.google.com/drive/folders/1O_WUC7txmWC81aF_w-i3uko-6fl0K_A4",
+      "created": true
+    },
+    "record": {
+      "status": "delivered",
+      "mode": "copy",
+      "destination_id": "1O_WUC7txmWC81aF_w-i3uko-6fl0K_A4",
+      "student_worksheet": {
+        "source_document_id": "1uKBxLFAkCJkjegb-LsUWHXHUcsQbptb2k1NqyeqtrrY",
+        "document": {
+          "id": "1Uy8FxgADxP67gkivetiajAvS6J5eyVhuiEJFgOWGZz4",
+          "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24",
+          "parents": [
+            "1O_WUC7txmWC81aF_w-i3uko-6fl0K_A4"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1Uy8FxgADxP67gkivetiajAvS6J5eyVhuiEJFgOWGZz4/edit?usp=drivesdk"
+        }
+      },
+      "answer_key": {
+        "source_document_id": "14YMuGltnMevhtmRURUlD1Rw4839G0SqBMJP19DDfJmU",
+        "document": {
+          "id": "1orYyucJYEf9Z4nyipKpFq5reHnISPnYXypbxnPOxEco",
+          "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24_KEY",
+          "parents": [
+            "1O_WUC7txmWC81aF_w-i3uko-6fl0K_A4"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1orYyucJYEf9Z4nyipKpFq5reHnISPnYXypbxnPOxEco/edit?usp=drivesdk"
+        }
+      }
+    }
+  }
+}

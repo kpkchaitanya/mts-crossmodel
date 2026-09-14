@@ -1,0 +1,693 @@
+{
+  "curriculum": {
+    "week_number": 2,
+    "week_start": "2026-08-24"
+  },
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 15,
+          "difficulty": "easy",
+          "number": 1,
+          "prompt": "There are 7 apples. 8 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "7+8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "difficulty": "easy",
+          "number": 2,
+          "prompt": "There are 12 apples. 5 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "12-5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 15,
+          "difficulty": "easy",
+          "number": 3,
+          "prompt": "There are 9 apples. 6 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "9+6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "easy",
+          "number": 4,
+          "prompt": "There are 15 apples. 6 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "15-6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "difficulty": "easy",
+          "number": 5,
+          "prompt": "There are 4 apples. 9 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "4+9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "difficulty": "easy",
+          "number": 6,
+          "prompt": "There are 18 apples. 7 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "18-7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 16,
+          "difficulty": "easy",
+          "number": 7,
+          "prompt": "There are 8 apples. 8 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "8+8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "easy",
+          "number": 8,
+          "prompt": "There are 13 apples. 4 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "13-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "difficulty": "easy",
+          "number": 9,
+          "prompt": "There are 6 apples. 7 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "6+7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 16,
+          "difficulty": "easy",
+          "number": 10,
+          "prompt": "There are 19 apples. 3 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "19-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 10,
+          "difficulty": "easy",
+          "number": 11,
+          "prompt": "There are 5 apples. 5 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "5+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "difficulty": "easy",
+          "number": 12,
+          "prompt": "There are 16 apples. 9 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "16-9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 18,
+          "difficulty": "easy",
+          "number": 13,
+          "prompt": "There are 9 apples. 9 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "9+9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "difficulty": "easy",
+          "number": 14,
+          "prompt": "There are 11 apples. 4 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "11-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "difficulty": "easy",
+          "number": 15,
+          "prompt": "There are 7 apples. 6 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "7+6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "easy",
+          "number": 16,
+          "prompt": "There are 14 apples. 8 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "14-8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "difficulty": "easy",
+          "number": 17,
+          "prompt": "There are 3 apples. 8 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "3+8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "easy",
+          "number": 18,
+          "prompt": "There are 17 apples. 5 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "17-5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "easy",
+          "number": 19,
+          "prompt": "There are 6 apples. 6 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "6+6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "difficulty": "easy",
+          "number": 20,
+          "prompt": "There are 12 apples. 7 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "12-7"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 13,
+          "difficulty": "easy",
+          "number": 21,
+          "prompt": "There are 8 apples. 5 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "8+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "difficulty": "easy",
+          "number": 22,
+          "prompt": "There are 10 apples. 3 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "10-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 14,
+          "difficulty": "easy",
+          "number": 23,
+          "prompt": "There are 7 apples. 7 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "7+7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "easy",
+          "number": 24,
+          "prompt": "There are 15 apples. 9 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "15-9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "difficulty": "easy",
+          "number": 25,
+          "prompt": "There are 9 apples. 4 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "9+4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "difficulty": "easy",
+          "number": 26,
+          "prompt": "There are 13 apples. 6 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "13-6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "difficulty": "easy",
+          "number": 27,
+          "prompt": "There are 5 apples. 8 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "5+8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "easy",
+          "number": 28,
+          "prompt": "There are 16 apples. 7 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "16-7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 10,
+          "difficulty": "easy",
+          "number": 29,
+          "prompt": "There are 4 apples. 6 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "4+6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "easy",
+          "number": 30,
+          "prompt": "There are 18 apples. 9 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "18-9"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 15,
+          "difficulty": "easy",
+          "number": 31,
+          "prompt": "There are 6 apples. 9 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "6+9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "easy",
+          "number": 32,
+          "prompt": "There are 11 apples. 5 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "11-5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 14,
+          "difficulty": "easy",
+          "number": 33,
+          "prompt": "There are 8 apples. 6 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "8+6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "easy",
+          "number": 34,
+          "prompt": "There are 14 apples. 6 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "14-6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "easy",
+          "number": 35,
+          "prompt": "There are 3 apples. 9 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "3+9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "difficulty": "easy",
+          "number": 36,
+          "prompt": "There are 17 apples. 8 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "17-8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "easy",
+          "number": 37,
+          "prompt": "There are 7 apples. 5 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "7+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "easy",
+          "number": 38,
+          "prompt": "There are 12 apples. 4 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "12-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 16,
+          "difficulty": "easy",
+          "number": 39,
+          "prompt": "There are 9 apples. 7 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "9+7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "difficulty": "easy",
+          "number": 40,
+          "prompt": "There are 19 apples. 6 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "19-6"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 11,
+          "difficulty": "easy",
+          "number": 41,
+          "prompt": "There are 5 apples. 6 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "5+6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "easy",
+          "number": 42,
+          "prompt": "There are 13 apples. 5 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "13-5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 17,
+          "difficulty": "easy",
+          "number": 43,
+          "prompt": "There are 8 apples. 9 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "8+9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "easy",
+          "number": 44,
+          "prompt": "There are 16 apples. 8 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "16-8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "easy",
+          "number": 45,
+          "prompt": "There are 4 apples. 8 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "4+8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "easy",
+          "number": 46,
+          "prompt": "There are 15 apples. 7 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "15-7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 14,
+          "difficulty": "easy",
+          "number": 47,
+          "prompt": "There are 6 apples. 8 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "6+8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "easy",
+          "number": 48,
+          "prompt": "There are 10 apples. 4 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "10-4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 16,
+          "difficulty": "easy",
+          "number": 49,
+          "prompt": "There are 7 apples. 9 more arrive. How many in all?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "7+9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12,
+          "difficulty": "easy",
+          "number": 50,
+          "prompt": "There are 18 apples. 6 are given away. How many left?",
+          "skill": "add_sub_within_20",
+          "verification": {
+            "inputs": {
+              "expression": "18-6"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "status": "PENDING"
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_1",
+    "question_count": 50,
+    "title": "MTS - WEEKLY WORKSHEET",
+    "week_start": "2026-08-24"
+  }
+}

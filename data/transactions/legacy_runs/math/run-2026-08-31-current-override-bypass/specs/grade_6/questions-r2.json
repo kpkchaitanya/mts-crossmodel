@@ -1,0 +1,1031 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 18,
+          "cognitive_action": "reverse_reason",
+          "difficulty": "low_plus",
+          "form_family": "generic.reverse_reasoning",
+          "number": 1,
+          "prompt": "Item 1: The prime factors 3 x 3 x 2 multiply to what number?",
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "skill": "prime factorization basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3*3*2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 10,
+          "cognitive_action": "construct_equivalent",
+          "difficulty": "low_plus",
+          "form_family": "generic.create_equivalent",
+          "number": 2,
+          "prompt": "Item 2: Find the greatest common factor of 20 and 30.",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "factor pairs and multiples",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "a": 20,
+              "b": 30
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 30,
+          "cognitive_action": "evaluate_reasonableness",
+          "difficulty": "low_plus",
+          "form_family": "generic.reasonable_answer",
+          "number": 3,
+          "prompt": "Item 3: The prime factors 2 x 3 x 5 multiply to what number?",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "skill": "prime factorization basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "cognitive_action": "translate",
+          "difficulty": "medium",
+          "form_family": "generic.equivalent_form",
+          "number": 4,
+          "prompt": "Item 4: A bag has 2 red counters and 5 blue counters. How many counters are in the bag?",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "skill": "ratio concepts",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1.0,
+          "cognitive_action": "interpret",
+          "difficulty": "medium",
+          "form_family": "generic.visual_grouping",
+          "number": 5,
+          "prompt": "Item 5: Write 10 tenths as a decimal.",
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "skill": "fractions and decimals",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "10/10"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30.0,
+          "cognitive_action": "construct",
+          "difficulty": "medium",
+          "form_family": "generic.construct_example",
+          "number": 6,
+          "prompt": "Item 6: The ratio of red to blue tiles is 2:5. If there are 12 red tiles, how many blue tiles are there?",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "skill": "ratio reasoning",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "12*5/2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30,
+          "cognitive_action": "compare",
+          "difficulty": "medium",
+          "form_family": "generic.compare_select",
+          "number": 7,
+          "prompt": "Item 7: The prime factors 2 x 3 x 5 multiply to what number?",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "skill": "prime factorization basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 20,
+          "cognitive_action": "compose_operations",
+          "difficulty": "medium",
+          "form_family": "generic.multi_step",
+          "number": 8,
+          "prompt": "Item 8: The prime factors 2 x 2 x 5 multiply to what number?",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "skill": "prime factorization basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*2*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 18,
+          "cognitive_action": "decide",
+          "difficulty": "low_plus",
+          "form_family": "generic.decision_table",
+          "number": 9,
+          "prompt": "Item 9: The prime factors 3 x 3 x 2 multiply to what number?",
+          "representation": "decision_table",
+          "response_type": "selection",
+          "skill": "prime factorization basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3*3*2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "cognitive_action": "apply",
+          "difficulty": "medium",
+          "form_family": "generic.measurement_context",
+          "number": 10,
+          "prompt": "Item 10: Find the greatest common factor of 16 and 24.",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "skill": "factor pairs and multiples",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "a": 16,
+              "b": 24
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 30,
+          "cognitive_action": "construct",
+          "difficulty": "medium",
+          "form_family": "generic.construct_example",
+          "number": 11,
+          "prompt": "Item 11: The prime factors 2 x 3 x 5 multiply to what number?",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "skill": "prime factorization basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "model",
+          "difficulty": "medium",
+          "form_family": "generic.context_story",
+          "number": 12,
+          "prompt": "Item 12: A bag has 4 red counters and 5 blue counters. How many counters are in the bag?",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "skill": "ratio concepts",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1.8,
+          "cognitive_action": "translate",
+          "difficulty": "medium",
+          "form_family": "generic.equivalent_form",
+          "number": 13,
+          "prompt": "Item 13: Write 18 tenths as a decimal.",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "skill": "fractions and decimals",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "18/10"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 20.0,
+          "cognitive_action": "evaluate_reasonableness",
+          "difficulty": "medium",
+          "form_family": "generic.reasonable_answer",
+          "number": 14,
+          "prompt": "Item 14: The ratio of red to blue tiles is 2:4. If there are 10 red tiles, how many blue tiles are there?",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "skill": "ratio reasoning",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "10*4/2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30,
+          "cognitive_action": "select_strategy",
+          "difficulty": "medium_plus",
+          "form_family": "generic.choose_operation",
+          "number": 15,
+          "prompt": "Item 15: The prime factors 2 x 3 x 5 multiply to what number?",
+          "representation": "short_context",
+          "response_type": "selection",
+          "skill": "prime factorization basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 20,
+          "cognitive_action": "classify",
+          "difficulty": "medium_plus",
+          "form_family": "generic.classify",
+          "number": 16,
+          "prompt": "Item 16: The prime factors 2 x 2 x 5 multiply to what number?",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "skill": "prime factorization basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*2*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 18,
+          "cognitive_action": "justify",
+          "difficulty": "medium",
+          "form_family": "generic.justify_claim",
+          "number": 17,
+          "prompt": "Item 17: The prime factors 3 x 3 x 2 multiply to what number?",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "skill": "prime factorization basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3*3*2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "cognitive_action": "compute",
+          "difficulty": "medium",
+          "form_family": "generic.direct_compute",
+          "number": 18,
+          "prompt": "Item 18: Find the greatest common factor of 12 and 18.",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "factor pairs and multiples",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "a": 12,
+              "b": 18
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 30,
+          "cognitive_action": "locate",
+          "difficulty": "medium",
+          "form_family": "generic.number_line",
+          "number": 19,
+          "prompt": "Item 19: The prime factors 2 x 3 x 5 multiply to what number?",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "skill": "prime factorization basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "cognitive_action": "estimate",
+          "difficulty": "medium",
+          "form_family": "generic.estimate",
+          "number": 20,
+          "prompt": "Item 20: A bag has 3 red counters and 5 blue counters. How many counters are in the bag?",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "skill": "ratio concepts",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2.6,
+          "cognitive_action": "invert_operation",
+          "difficulty": "medium_plus",
+          "form_family": "generic.inverse_operation",
+          "number": 21,
+          "prompt": "Item 21: Write 26 tenths as a decimal.",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "skill": "fractions and decimals",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "26/10"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 12.0,
+          "cognitive_action": "decompose",
+          "difficulty": "medium_plus",
+          "form_family": "generic.compose_decompose",
+          "number": 22,
+          "prompt": "Item 22: The ratio of red to blue tiles is 2:3. If there are 8 red tiles, how many blue tiles are there?",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "skill": "ratio reasoning",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "8*3/2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30,
+          "cognitive_action": "match",
+          "difficulty": "medium_plus",
+          "form_family": "generic.match_rule",
+          "number": 23,
+          "prompt": "Item 23: The prime factors 2 x 3 x 5 multiply to what number?",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "skill": "prime factorization basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 20,
+          "cognitive_action": "evaluate_reasonableness",
+          "difficulty": "medium_plus",
+          "form_family": "generic.error_check",
+          "number": 24,
+          "prompt": "Item 24: The prime factors 2 x 2 x 5 multiply to what number?",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "skill": "prime factorization basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*2*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 18,
+          "cognitive_action": "estimate",
+          "difficulty": "medium",
+          "form_family": "generic.estimate",
+          "number": 25,
+          "prompt": "Item 25: The prime factors 3 x 3 x 2 multiply to what number?",
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "skill": "prime factorization basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3*3*2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "decompose",
+          "difficulty": "medium",
+          "form_family": "generic.compose_decompose",
+          "number": 26,
+          "prompt": "Item 26: Find the greatest common factor of 18 and 27.",
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "skill": "factor pairs and multiples",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "a": 18,
+              "b": 27
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 30,
+          "cognitive_action": "compute",
+          "difficulty": "medium_plus",
+          "form_family": "generic.direct_compute",
+          "number": 27,
+          "prompt": "Item 27: The prime factors 2 x 3 x 5 multiply to what number?",
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "prime factorization basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "cognitive_action": "classify",
+          "difficulty": "medium_plus",
+          "form_family": "generic.classify",
+          "number": 28,
+          "prompt": "Item 28: A bag has 2 red counters and 5 blue counters. How many counters are in the bag?",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "skill": "ratio concepts",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.4,
+          "cognitive_action": "analyze_exception",
+          "difficulty": "medium_plus",
+          "form_family": "generic.find_counterexample",
+          "number": 29,
+          "prompt": "Item 29: Write 34 tenths as a decimal.",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "skill": "fractions and decimals",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "34/10"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30.0,
+          "cognitive_action": "apply",
+          "difficulty": "medium_plus",
+          "form_family": "generic.measurement_context",
+          "number": 30,
+          "prompt": "Item 30: The ratio of red to blue tiles is 2:5. If there are 12 red tiles, how many blue tiles are there?",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "skill": "ratio reasoning",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "12*5/2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30,
+          "cognitive_action": "satisfy_constraint",
+          "difficulty": "medium_plus",
+          "form_family": "generic.constraint_solve",
+          "number": 31,
+          "prompt": "Item 31: The prime factors 2 x 3 x 5 multiply to what number?",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "skill": "prime factorization basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 20,
+          "cognitive_action": "translate",
+          "difficulty": "high",
+          "form_family": "generic.equivalent_form",
+          "number": 32,
+          "prompt": "Item 32: The prime factors 2 x 2 x 5 multiply to what number?",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "skill": "prime factorization basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*2*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 18,
+          "cognitive_action": "connect_representations",
+          "difficulty": "medium",
+          "form_family": "generic.multi_representation",
+          "number": 33,
+          "prompt": "Item 33: The prime factors 3 x 3 x 2 multiply to what number?",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "skill": "prime factorization basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3*3*2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "cognitive_action": "select_strategy",
+          "difficulty": "medium_plus",
+          "form_family": "generic.choose_operation",
+          "number": 34,
+          "prompt": "Item 34: Find the greatest common factor of 14 and 21.",
+          "representation": "short_context",
+          "response_type": "selection",
+          "skill": "factor pairs and multiples",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "a": 14,
+              "b": 21
+            },
+            "method": "gcf"
+          }
+        },
+        {
+          "answer": 30,
+          "cognitive_action": "order",
+          "difficulty": "medium_plus",
+          "form_family": "generic.sort_order",
+          "number": 35,
+          "prompt": "Item 35: The prime factors 2 x 3 x 5 multiply to what number?",
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "skill": "prime factorization basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "locate",
+          "difficulty": "medium_plus",
+          "form_family": "generic.number_line",
+          "number": 36,
+          "prompt": "Item 36: A bag has 4 red counters and 5 blue counters. How many counters are in the bag?",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "skill": "ratio concepts",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4.2,
+          "cognitive_action": "compose_operations",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_step",
+          "number": 37,
+          "prompt": "Item 37: Write 42 tenths as a decimal.",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "skill": "fractions and decimals",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "42/10"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 20.0,
+          "cognitive_action": "construct_equivalent",
+          "difficulty": "high",
+          "form_family": "generic.create_equivalent",
+          "number": 38,
+          "prompt": "Item 38: The ratio of red to blue tiles is 2:4. If there are 10 red tiles, how many blue tiles are there?",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "ratio reasoning",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "10*4/2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30,
+          "cognitive_action": "retrieve",
+          "difficulty": "high",
+          "form_family": "generic.representation_read",
+          "number": 39,
+          "prompt": "Item 39: The prime factors 2 x 3 x 5 multiply to what number?",
+          "representation": "table_graph_or_diagram",
+          "response_type": "numeric_answer",
+          "skill": "prime factorization basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 20,
+          "cognitive_action": "analyze_exception",
+          "difficulty": "high",
+          "form_family": "generic.find_counterexample",
+          "number": 40,
+          "prompt": "Item 40: The prime factors 2 x 2 x 5 multiply to what number?",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "skill": "prime factorization basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2*2*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PASS",
+    "summary": {
+      "deterministic_checked": 40,
+      "failures": [],
+      "questions": 40,
+      "reasoning_required": 0,
+      "results": [
+        {
+          "computed": 18,
+          "expected": 18,
+          "number": 1,
+          "status": "PASS"
+        },
+        {
+          "computed": 10,
+          "expected": 10,
+          "number": 2,
+          "status": "PASS"
+        },
+        {
+          "computed": 30,
+          "expected": 30,
+          "number": 3,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 4,
+          "status": "PASS"
+        },
+        {
+          "computed": 1.0,
+          "expected": 1.0,
+          "number": 5,
+          "status": "PASS"
+        },
+        {
+          "computed": 30.0,
+          "expected": 30.0,
+          "number": 6,
+          "status": "PASS"
+        },
+        {
+          "computed": 30,
+          "expected": 30,
+          "number": 7,
+          "status": "PASS"
+        },
+        {
+          "computed": 20,
+          "expected": 20,
+          "number": 8,
+          "status": "PASS"
+        },
+        {
+          "computed": 18,
+          "expected": 18,
+          "number": 9,
+          "status": "PASS"
+        },
+        {
+          "computed": 8,
+          "expected": 8,
+          "number": 10,
+          "status": "PASS"
+        },
+        {
+          "computed": 30,
+          "expected": 30,
+          "number": 11,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 12,
+          "status": "PASS"
+        },
+        {
+          "computed": 1.8,
+          "expected": 1.8,
+          "number": 13,
+          "status": "PASS"
+        },
+        {
+          "computed": 20.0,
+          "expected": 20.0,
+          "number": 14,
+          "status": "PASS"
+        },
+        {
+          "computed": 30,
+          "expected": 30,
+          "number": 15,
+          "status": "PASS"
+        },
+        {
+          "computed": 20,
+          "expected": 20,
+          "number": 16,
+          "status": "PASS"
+        },
+        {
+          "computed": 18,
+          "expected": 18,
+          "number": 17,
+          "status": "PASS"
+        },
+        {
+          "computed": 6,
+          "expected": 6,
+          "number": 18,
+          "status": "PASS"
+        },
+        {
+          "computed": 30,
+          "expected": 30,
+          "number": 19,
+          "status": "PASS"
+        },
+        {
+          "computed": 8,
+          "expected": 8,
+          "number": 20,
+          "status": "PASS"
+        },
+        {
+          "computed": 2.6,
+          "expected": 2.6,
+          "number": 21,
+          "status": "PASS"
+        },
+        {
+          "computed": 12.0,
+          "expected": 12.0,
+          "number": 22,
+          "status": "PASS"
+        },
+        {
+          "computed": 30,
+          "expected": 30,
+          "number": 23,
+          "status": "PASS"
+        },
+        {
+          "computed": 20,
+          "expected": 20,
+          "number": 24,
+          "status": "PASS"
+        },
+        {
+          "computed": 18,
+          "expected": 18,
+          "number": 25,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 26,
+          "status": "PASS"
+        },
+        {
+          "computed": 30,
+          "expected": 30,
+          "number": 27,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 28,
+          "status": "PASS"
+        },
+        {
+          "computed": 3.4,
+          "expected": 3.4,
+          "number": 29,
+          "status": "PASS"
+        },
+        {
+          "computed": 30.0,
+          "expected": 30.0,
+          "number": 30,
+          "status": "PASS"
+        },
+        {
+          "computed": 30,
+          "expected": 30,
+          "number": 31,
+          "status": "PASS"
+        },
+        {
+          "computed": 20,
+          "expected": 20,
+          "number": 32,
+          "status": "PASS"
+        },
+        {
+          "computed": 18,
+          "expected": 18,
+          "number": 33,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 34,
+          "status": "PASS"
+        },
+        {
+          "computed": 30,
+          "expected": 30,
+          "number": 35,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 36,
+          "status": "PASS"
+        },
+        {
+          "computed": 4.2,
+          "expected": 4.2,
+          "number": 37,
+          "status": "PASS"
+        },
+        {
+          "computed": 20.0,
+          "expected": 20.0,
+          "number": 38,
+          "status": "PASS"
+        },
+        {
+          "computed": 30,
+          "expected": 30,
+          "number": 39,
+          "status": "PASS"
+        },
+        {
+          "computed": 20,
+          "expected": 20,
+          "number": 40,
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "structure_errors": []
+    }
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_6",
+    "grade_display_name": "Grade 6",
+    "grade_or_course": "grade_6",
+    "question_count": 40,
+    "title": "MTS - WEEKLY MATH WORKSHEET",
+    "week_start": "2026-08-31"
+  }
+}

@@ -1,0 +1,8 @@
+﻿{
+    "status":  "delivery_failed",
+    "failed_grade":  "grade_5",
+    "error":  "Google Drive userRateLimitExceeded during Final Delivery after Grade 1 delivery copy was created; no automatic retry attempted.",
+    "week_of":  "2026-09-07",
+    "source_artifacts":  "data/transactions/runs/run-2026-09-07-grades-1-5-9-10-publish-deliver/published-artifacts.json",
+    "stale_delivery_record":  "data\\transactions\\runs\\run-2026-09-07-grades-1-5-9-10-publish-deliver\\delivered-artifacts-stale-before-rate-limit-2026-09-03.json"
+}

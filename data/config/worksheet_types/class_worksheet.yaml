@@ -1,0 +1,25 @@
+version: "1.0"
+worksheet_type_id: "class-worksheet"
+display_name: "Class Worksheet"
+status: "active"
+compatible_subjects: ["math"]
+duration_minutes: 15
+grade_defaults:
+  grade_1: {questions_per_worksheet: 20, expected_pages: 1}
+  grade_4: {questions_per_worksheet: 32, expected_pages: 2}
+  grade_5: {questions_per_worksheet: 32, expected_pages: 2}
+  grade_6: {questions_per_worksheet: 32, expected_pages: 2}
+  grade_9_10: {questions_per_worksheet: 32, expected_pages: 2, grade_split: {grade_9: 16, grade_10: 16}}
+template_selection:
+  template_manifest: "data/master/subjects/math/template_manifests/class-worksheet.json"
+  template_key_by_grade:
+    grade_1: "grade_1_class"
+    grade_4: "standard_class"
+    grade_5: "standard_class"
+    grade_6: "standard_class"
+    grade_9_10: "high_school_combined"
+validation:
+  require_verification: true
+  require_visual_qa: true
+extension_readiness:
+  regression_baseline: "tests/subjects/math/test_target_package_imports.py"

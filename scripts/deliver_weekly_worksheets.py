@@ -16,10 +16,9 @@ SCOPES = ["https://www.googleapis.com/auth/drive"]
 REPO = Path(__file__).resolve().parents[1]
 OAUTH_TOKEN = Path(r"c:\Users\neeli\kpkDevelopment\mts-new\.secrets\oauth-token.json")
 
-sys.path.insert(0, str(REPO / "src" / "runtime"))
-sys.path.insert(0, str(REPO / "src" / "rendering"))
-import google_docs_adapter  # noqa: E402
-import policy  # noqa: E402
+sys.path.insert(0, str(REPO / "src"))
+from mts.infrastructure.google_docs import google_docs_adapter  # noqa: E402
+from mts.setup_project.configure import resolve_effective_config  # noqa: E402
 
 
 def normalize_grade_id(worksheet_id: str) -> str:
@@ -87,16 +86,16 @@ def main() -> None:
     args = parser.parse_args()
 
     run_root = args.run_root if args.run_root.is_absolute() else REPO / args.run_root
-    resolved_policy = policy.resolve(
+    effective_config = resolve_effective_config(
         {"subject": args.subject, "worksheet_type": args.worksheet_type}, repository_root=REPO
     )
-    publishing = resolved_policy["publishing"]
+    publishing = effective_config["publishing"]
     delivery = publishing["final_delivery"]
     if not delivery["enabled"]:
         raise SystemExit("Final Delivery is disabled in configuration.")
     destinations = delivery["destinations_by_grade"]
 
-    week_of = resolve_week_of(args.week_of, dict(resolved_policy["calendar"]))
+    week_of = resolve_week_of(args.week_of, dict(effective_config["calendar"]))
     folder_name = delivery["week_folder_pattern"].replace("{{WEEK_OF}}", week_of)
 
     pairs, source_path = load_pairs(run_root)
@@ -112,27 +111,54 @@ def main() -> None:
         print(f"DRY_RUN {len(selected)} pairs")
         return
 
+    output = run_root / "delivered-artifacts.json"
+    failure_output = run_root / "delivery-failure.json"
+    if output.exists():
+        output.unlink()
+    if failure_output.exists():
+        failure_output.unlink()
+
     drive, docs = build_clients()
     adapter = google_docs_adapter.GoogleDocsAdapter(drive, docs)
     results: dict[str, dict] = {}
     for grade_id in selected:
-        parent_id = destinations[grade_id]["folder_id"]
-        week_folder = adapter.ensure_child_folder(parent_id, folder_name)
-        pair = pairs[grade_id]
-        delivered = adapter.deliver_pair(
-            {"artifact_kind": "student_worksheet", "status": "published", "document": pair["student_worksheet"]},
-            {"artifact_kind": "answer_key", "status": "published", "document": pair["answer_key"]},
-            week_folder["id"],
-            mode=delivery["mode"],
-            deliver_answer_key=delivery["deliver_answer_key"],
-        )
-        results[grade_id] = {"parent_folder_id": parent_id, "week_folder": week_folder, **delivered}
-        print(f"{grade_id} -> {week_folder.get('webViewLink', week_folder['id'])}")
-        for kind in ("student_worksheet", "answer_key"):
-            if kind in delivered:
-                print(f"  {kind}={delivered[kind]['document']['webViewLink']}")
+        try:
+            parent_id = destinations[grade_id]["folder_id"]
+            week_folder = adapter.ensure_child_folder(parent_id, folder_name)
+            pair = pairs[grade_id]
+            delivered = adapter.deliver_pair(
+                {"artifact_kind": "student_worksheet", "status": "published", "document": pair["student_worksheet"]},
+                {"artifact_kind": "answer_key", "status": "published", "document": pair["answer_key"]},
+                week_folder["id"],
+                mode=delivery["mode"],
+                deliver_answer_key=delivery["deliver_answer_key"],
+            )
+            results[grade_id] = {"parent_folder_id": parent_id, "week_folder": week_folder, **delivered}
+            print(f"{grade_id} -> {week_folder.get('webViewLink', week_folder['id'])}")
+            for kind in ("student_worksheet", "answer_key"):
+                if kind in delivered:
+                    print(f"  {kind}={delivered[kind]['document']['webViewLink']}")
+        except Exception as error:
+            failure_output.write_text(
+                json.dumps(
+                    {
+                        "status": "delivery_failed",
+                        "failed_grade": grade_id,
+                        "error": str(error),
+                        "audience": delivery["audience"],
+                        "week_of": week_of,
+                        "week_folder_name": folder_name,
+                        "mode": delivery["mode"],
+                        "source_artifacts": source_path.relative_to(REPO).as_posix(),
+                        "completed_grades": results,
+                    },
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            raise
 
-    output = run_root / "delivered-artifacts.json"
     output.write_text(
         json.dumps(
             {

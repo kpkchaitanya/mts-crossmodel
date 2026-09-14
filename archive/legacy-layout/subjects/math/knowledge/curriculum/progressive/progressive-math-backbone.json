@@ -1,0 +1,1648 @@
+{
+  "schema_version": "1.0",
+  "title": "MTS Progressive Mathematics Curriculum Backbone — Grades 1–12",
+  "status": "high_level_v1",
+  "standards_included": false,
+  "purpose": "Concept-first vertical curriculum backbone used to align long-term progression before attaching standards or district pacing.",
+  "provenance": {
+    "type": "MTS_synthesized_curriculum_backbone",
+    "basis": [
+      "User-provided MTS curriculum analysis structure and sample",
+      "Previously agreed Grade 1–12 progressive master view in this project",
+      "Existing local NC standards cache and CCS pacing cache used as supporting context only"
+    ],
+    "not_official_ccs_pacing": true,
+    "note": "Conceptual progression layer. CCS pacing selects active concepts; NC standards are attached in a later enrichment layer."
+  },
+  "unit_families": [
+    {
+      "id": "number_operations",
+      "name": "Number Sense & Operations"
+    },
+    {
+      "id": "fractions_ratios",
+      "name": "Fractions, Ratios & Proportional Reasoning"
+    },
+    {
+      "id": "algebra_functions",
+      "name": "Patterns, Algebra & Functions"
+    },
+    {
+      "id": "geometry_measurement",
+      "name": "Geometry, Measurement & Trigonometry"
+    },
+    {
+      "id": "data_probability",
+      "name": "Data, Statistics & Probability"
+    },
+    {
+      "id": "modeling_connections",
+      "name": "Advanced Modeling / Connections"
+    }
+  ],
+  "vertical_spines": [
+    "Quantity → Number → Operation → Unknown → Variable → Equation → Relationship → Function → Function Family → Rate of Change",
+    "Equal Parts → Fractions → Ratios → Proportions → Slope → Linear Functions → Nonlinear Functions → Instantaneous Rate of Change",
+    "Shape → Measurement → Area → Coordinate Geometry → Similarity → Trigonometry → Analytic Geometry",
+    "Sort/Count → Graphs → Distributions → Sampling/Probability → Bivariate Data → Regression → Statistical Inference"
+  ],
+  "grades": {
+    "grade_1": {
+      "grade": 1,
+      "units": {
+        "number_operations": {
+          "unit_family": "Number Sense & Operations",
+          "unit_name": "Number Sense & Addition/Subtraction",
+          "key_concepts": [
+            "counting and number representation",
+            "compare/order numbers",
+            "tens and ones",
+            "number line",
+            "addition/subtraction meaning",
+            "make-10 and fact families",
+            "unknowns"
+          ],
+          "progression": "Concrete quantities become numbers; operations describe joining, separating and comparing.",
+          "builds_from": [],
+          "leads_to": [
+            "ones/tens/hundreds",
+            "compare/order",
+            "skip counting"
+          ]
+        },
+        "fractions_ratios": {
+          "unit_family": "Fractions, Ratios & Proportional Reasoning",
+          "unit_name": "Equal Parts Foundations",
+          "key_concepts": [
+            "halves",
+            "fourths",
+            "equal shares",
+            "partition shapes"
+          ],
+          "progression": "Visual sharing introduces equal parts and fractional thinking.",
+          "builds_from": [],
+          "leads_to": [
+            "equal groups",
+            "arrays",
+            "repeated addition"
+          ]
+        },
+        "algebra_functions": {
+          "unit_family": "Patterns, Algebra & Functions",
+          "unit_name": "Early Algebraic Thinking",
+          "key_concepts": [
+            "equality",
+            "missing numbers",
+            "true/false equations",
+            "repeating and growing patterns"
+          ],
+          "progression": "Unknown quantities and patterns prepare students to generalize relationships.",
+          "builds_from": [],
+          "leads_to": [
+            "number patterns",
+            "addition/subtraction relationships",
+            "rule-based sequences"
+          ]
+        },
+        "geometry_measurement": {
+          "unit_family": "Geometry, Measurement & Trigonometry",
+          "unit_name": "Shapes & Measurement Foundations",
+          "key_concepts": [
+            "compare lengths",
+            "2D/3D shapes",
+            "shape attributes",
+            "compose/decompose shapes",
+            "basic time concepts"
+          ],
+          "progression": "Students move from visual recognition to measurable and structural attributes.",
+          "builds_from": [],
+          "leads_to": [
+            "standard length units",
+            "clocks",
+            "coins"
+          ]
+        },
+        "data_probability": {
+          "unit_family": "Data, Statistics & Probability",
+          "unit_name": "Organize and Compare Data",
+          "key_concepts": [
+            "sort and classify",
+            "count categories",
+            "picture representations",
+            "compare category counts"
+          ],
+          "progression": "Data begins as organizing and comparing concrete objects.",
+          "builds_from": [],
+          "leads_to": [
+            "picture graphs",
+            "bar graphs",
+            "tables"
+          ]
+        },
+        "modeling_connections": {
+          "unit_family": "Advanced Modeling / Connections",
+          "unit_name": "Everyday Quantities",
+          "key_concepts": [
+            "joining/separating stories",
+            "sharing",
+            "measuring",
+            "comparing"
+          ],
+          "progression": "Arithmetic is grounded in everyday situations rather than isolated computation.",
+          "builds_from": [],
+          "leads_to": [
+            "money",
+            "measurement",
+            "arrays"
+          ]
+        }
+      }
+    },
+    "grade_2": {
+      "grade": 2,
+      "units": {
+        "number_operations": {
+          "unit_family": "Number Sense & Operations",
+          "unit_name": "Place Value & Addition/Subtraction Fluency",
+          "key_concepts": [
+            "ones/tens/hundreds",
+            "compare/order",
+            "skip counting",
+            "mental strategies",
+            "regrouping concepts",
+            "estimation",
+            "even/odd"
+          ],
+          "progression": "Place value becomes the structure behind multi-digit arithmetic.",
+          "builds_from": [
+            "counting and number representation",
+            "compare/order numbers",
+            "tens and ones"
+          ],
+          "leads_to": [
+            "multiplication facts",
+            "division meaning",
+            "inverse relationship"
+          ]
+        },
+        "fractions_ratios": {
+          "unit_family": "Fractions, Ratios & Proportional Reasoning",
+          "unit_name": "Equal Groups & Partitioning",
+          "key_concepts": [
+            "equal groups",
+            "arrays",
+            "repeated addition",
+            "halves/thirds/fourths",
+            "partition rectangles"
+          ],
+          "progression": "Equal groups prepare multiplication; partitioning extends fraction ideas.",
+          "builds_from": [
+            "halves",
+            "fourths",
+            "equal shares"
+          ],
+          "leads_to": [
+            "unit fractions",
+            "fractions on number lines",
+            "equivalence foundations"
+          ]
+        },
+        "algebra_functions": {
+          "unit_family": "Patterns, Algebra & Functions",
+          "unit_name": "Patterns & Unknowns",
+          "key_concepts": [
+            "number patterns",
+            "addition/subtraction relationships",
+            "rule-based sequences",
+            "unknown quantities"
+          ],
+          "progression": "Repeated rules and inverse operations strengthen relational thinking.",
+          "builds_from": [
+            "equality",
+            "missing numbers",
+            "true/false equations"
+          ],
+          "leads_to": [
+            "properties of multiplication",
+            "missing factors",
+            "equations"
+          ]
+        },
+        "geometry_measurement": {
+          "unit_family": "Geometry, Measurement & Trigonometry",
+          "unit_name": "Measurement, Time, Money & Shapes",
+          "key_concepts": [
+            "standard length units",
+            "clocks",
+            "coins",
+            "shape attributes",
+            "partition rectangles"
+          ],
+          "progression": "Measurement gives numbers units and connects arithmetic to space and time.",
+          "builds_from": [
+            "compare lengths",
+            "2D/3D shapes",
+            "shape attributes"
+          ],
+          "leads_to": [
+            "rectangular area",
+            "perimeter",
+            "elapsed time"
+          ]
+        },
+        "data_probability": {
+          "unit_family": "Data, Statistics & Probability",
+          "unit_name": "Graphs & Comparison",
+          "key_concepts": [
+            "picture graphs",
+            "bar graphs",
+            "tables",
+            "comparative questions"
+          ],
+          "progression": "Students move from raw categories to visual data representations.",
+          "builds_from": [
+            "sort and classify",
+            "count categories",
+            "picture representations"
+          ],
+          "leads_to": [
+            "bar graphs",
+            "line plots",
+            "measurement data"
+          ]
+        },
+        "modeling_connections": {
+          "unit_family": "Advanced Modeling / Connections",
+          "unit_name": "Repeated Groups & Measures",
+          "key_concepts": [
+            "money",
+            "measurement",
+            "arrays",
+            "repeated groups"
+          ],
+          "progression": "Multiple contexts prepare multiplication and proportional thinking.",
+          "builds_from": [
+            "joining/separating stories",
+            "sharing",
+            "measuring"
+          ],
+          "leads_to": [
+            "equal groups",
+            "arrays",
+            "area"
+          ]
+        }
+      }
+    },
+    "grade_3": {
+      "grade": 3,
+      "units": {
+        "number_operations": {
+          "unit_family": "Number Sense & Operations",
+          "unit_name": "Multiplication, Division & Multi-Digit Operations",
+          "key_concepts": [
+            "multiplication facts",
+            "division meaning",
+            "inverse relationship",
+            "properties",
+            "multi-digit addition/subtraction",
+            "rounding",
+            "estimation"
+          ],
+          "progression": "Equal groups mature into multiplication/division as core operations.",
+          "builds_from": [
+            "ones/tens/hundreds",
+            "compare/order",
+            "skip counting"
+          ],
+          "leads_to": [
+            "large-number place value",
+            "rounding",
+            "multi-digit addition/subtraction"
+          ]
+        },
+        "fractions_ratios": {
+          "unit_family": "Fractions, Ratios & Proportional Reasoning",
+          "unit_name": "Fractions as Numbers",
+          "key_concepts": [
+            "unit fractions",
+            "fractions on number lines",
+            "equivalence foundations",
+            "compare fractions"
+          ],
+          "progression": "Fractions shift from parts of shapes to numbers with magnitude.",
+          "builds_from": [
+            "equal groups",
+            "arrays",
+            "repeated addition"
+          ],
+          "leads_to": [
+            "equivalent fractions",
+            "compare fractions",
+            "add/subtract fractions"
+          ]
+        },
+        "algebra_functions": {
+          "unit_family": "Patterns, Algebra & Functions",
+          "unit_name": "Arithmetic Structure",
+          "key_concepts": [
+            "properties of multiplication",
+            "missing factors",
+            "equations",
+            "multi-step patterns"
+          ],
+          "progression": "Students use structure and properties to reason beyond memorized facts.",
+          "builds_from": [
+            "number patterns",
+            "addition/subtraction relationships",
+            "rule-based sequences"
+          ],
+          "leads_to": [
+            "multiplicative comparison",
+            "factor relationships",
+            "number patterns"
+          ]
+        },
+        "geometry_measurement": {
+          "unit_family": "Geometry, Measurement & Trigonometry",
+          "unit_name": "Area, Perimeter & Measurement",
+          "key_concepts": [
+            "rectangular area",
+            "perimeter",
+            "elapsed time",
+            "mass",
+            "capacity",
+            "quadrilateral classification"
+          ],
+          "progression": "Multiplication becomes geometric through area; measurement becomes multi-step.",
+          "builds_from": [
+            "standard length units",
+            "clocks",
+            "coins"
+          ],
+          "leads_to": [
+            "angles",
+            "parallel/perpendicular lines",
+            "symmetry"
+          ]
+        },
+        "data_probability": {
+          "unit_family": "Data, Statistics & Probability",
+          "unit_name": "Measurement Data & Graphs",
+          "key_concepts": [
+            "bar graphs",
+            "line plots",
+            "measurement data",
+            "multi-step interpretation"
+          ],
+          "progression": "Data tasks increasingly require arithmetic reasoning.",
+          "builds_from": [
+            "picture graphs",
+            "bar graphs",
+            "tables"
+          ],
+          "leads_to": [
+            "line plots",
+            "fractional data",
+            "interpretation"
+          ]
+        },
+        "modeling_connections": {
+          "unit_family": "Advanced Modeling / Connections",
+          "unit_name": "Multiplicative Thinking",
+          "key_concepts": [
+            "equal groups",
+            "arrays",
+            "area",
+            "sharing",
+            "fraction contexts"
+          ],
+          "progression": "Multiplication, geometry and fractions connect through multiplicative structure.",
+          "builds_from": [
+            "money",
+            "measurement",
+            "arrays"
+          ],
+          "leads_to": [
+            "multiplicative comparison",
+            "scaling intuition",
+            "factors/multiples"
+          ]
+        }
+      }
+    },
+    "grade_4": {
+      "grade": 4,
+      "units": {
+        "number_operations": {
+          "unit_family": "Number Sense & Operations",
+          "unit_name": "Multi-Digit Arithmetic & Number Structure",
+          "key_concepts": [
+            "large-number place value",
+            "rounding",
+            "multi-digit addition/subtraction",
+            "multiplication",
+            "division",
+            "factors",
+            "multiples",
+            "prime/composite"
+          ],
+          "progression": "Whole-number computation becomes more general and structurally organized.",
+          "builds_from": [
+            "multiplication facts",
+            "division meaning",
+            "inverse relationship"
+          ],
+          "leads_to": [
+            "powers of 10",
+            "decimal place value",
+            "multi-digit multiplication"
+          ]
+        },
+        "fractions_ratios": {
+          "unit_family": "Fractions, Ratios & Proportional Reasoning",
+          "unit_name": "Fraction Equivalence & Operations",
+          "key_concepts": [
+            "equivalent fractions",
+            "compare fractions",
+            "add/subtract fractions",
+            "mixed numbers",
+            "fraction × whole number",
+            "fraction-decimal connections"
+          ],
+          "progression": "Fraction magnitude and equivalence become tools for operations.",
+          "builds_from": [
+            "unit fractions",
+            "fractions on number lines",
+            "equivalence foundations"
+          ],
+          "leads_to": [
+            "add/subtract unlike fractions",
+            "multiply fractions",
+            "fraction division foundations"
+          ]
+        },
+        "algebra_functions": {
+          "unit_family": "Patterns, Algebra & Functions",
+          "unit_name": "Multiplicative Relationships & Patterns",
+          "key_concepts": [
+            "multiplicative comparison",
+            "factor relationships",
+            "number patterns",
+            "generalized arithmetic relationships"
+          ],
+          "progression": "Students begin expressing relationships multiplicatively rather than only additively.",
+          "builds_from": [
+            "properties of multiplication",
+            "missing factors",
+            "equations"
+          ],
+          "leads_to": [
+            "parentheses",
+            "order/structure of operations",
+            "numerical expressions"
+          ]
+        },
+        "geometry_measurement": {
+          "unit_family": "Geometry, Measurement & Trigonometry",
+          "unit_name": "Angles, Lines, Symmetry & Measurement",
+          "key_concepts": [
+            "angles",
+            "parallel/perpendicular lines",
+            "symmetry",
+            "measurement conversion",
+            "area/perimeter",
+            "shape classification"
+          ],
+          "progression": "Geometric properties become measurable and classifiable.",
+          "builds_from": [
+            "rectangular area",
+            "perimeter",
+            "elapsed time"
+          ],
+          "leads_to": [
+            "volume formulas",
+            "composite solids",
+            "coordinate plane"
+          ]
+        },
+        "data_probability": {
+          "unit_family": "Data, Statistics & Probability",
+          "unit_name": "Fractional Measurement Data",
+          "key_concepts": [
+            "line plots",
+            "fractional data",
+            "interpretation",
+            "operations on measurement data"
+          ],
+          "progression": "Fractions are applied to real measurements and data.",
+          "builds_from": [
+            "bar graphs",
+            "line plots",
+            "measurement data"
+          ],
+          "leads_to": [
+            "measurement data",
+            "fraction/decimal interpretation",
+            "graphs"
+          ]
+        },
+        "modeling_connections": {
+          "unit_family": "Advanced Modeling / Connections",
+          "unit_name": "Bridge to Proportional Reasoning",
+          "key_concepts": [
+            "multiplicative comparison",
+            "scaling intuition",
+            "factors/multiples",
+            "measurement conversion"
+          ],
+          "progression": "Multiplicative structure starts preparing students for ratios and scale.",
+          "builds_from": [
+            "equal groups",
+            "arrays",
+            "area"
+          ],
+          "leads_to": [
+            "numerical",
+            "graphical",
+            "geometric"
+          ]
+        }
+      }
+    },
+    "grade_5": {
+      "grade": 5,
+      "units": {
+        "number_operations": {
+          "unit_family": "Number Sense & Operations",
+          "unit_name": "Decimal & Whole-Number Operations",
+          "key_concepts": [
+            "powers of 10",
+            "decimal place value",
+            "multi-digit multiplication",
+            "division",
+            "decimal operations",
+            "estimation"
+          ],
+          "progression": "The base-ten system extends from whole numbers to decimals.",
+          "builds_from": [
+            "large-number place value",
+            "rounding",
+            "multi-digit addition/subtraction"
+          ],
+          "leads_to": [
+            "fraction division",
+            "decimal fluency",
+            "factors and multiples"
+          ]
+        },
+        "fractions_ratios": {
+          "unit_family": "Fractions, Ratios & Proportional Reasoning",
+          "unit_name": "Fraction Operations",
+          "key_concepts": [
+            "add/subtract unlike fractions",
+            "multiply fractions",
+            "fraction division foundations",
+            "fraction models",
+            "fractions ↔ decimals"
+          ],
+          "progression": "Students operate flexibly across fraction and decimal representations.",
+          "builds_from": [
+            "equivalent fractions",
+            "compare fractions",
+            "add/subtract fractions"
+          ],
+          "leads_to": [
+            "ratio meaning",
+            "equivalent ratios",
+            "unit rates"
+          ]
+        },
+        "algebra_functions": {
+          "unit_family": "Patterns, Algebra & Functions",
+          "unit_name": "Numerical Expressions & Coordinate Patterns",
+          "key_concepts": [
+            "parentheses",
+            "order/structure of operations",
+            "numerical expressions",
+            "rules and patterns",
+            "coordinate patterns"
+          ],
+          "progression": "Arithmetic expressions become the precursor to algebraic expressions.",
+          "builds_from": [
+            "multiplicative comparison",
+            "factor relationships",
+            "number patterns"
+          ],
+          "leads_to": [
+            "variables",
+            "algebraic expressions",
+            "properties"
+          ]
+        },
+        "geometry_measurement": {
+          "unit_family": "Geometry, Measurement & Trigonometry",
+          "unit_name": "Volume, Coordinate Geometry & Classification",
+          "key_concepts": [
+            "volume formulas",
+            "composite solids",
+            "coordinate plane",
+            "ordered pairs",
+            "hierarchy of shapes"
+          ],
+          "progression": "Students connect formulas, coordinates and spatial structure.",
+          "builds_from": [
+            "angles",
+            "parallel/perpendicular lines",
+            "symmetry"
+          ],
+          "leads_to": [
+            "polygon area",
+            "nets",
+            "surface area"
+          ]
+        },
+        "data_probability": {
+          "unit_family": "Data, Statistics & Probability",
+          "unit_name": "Fraction & Decimal Data",
+          "key_concepts": [
+            "measurement data",
+            "fraction/decimal interpretation",
+            "graphs",
+            "multi-step applications"
+          ],
+          "progression": "Data becomes another context for rational-number operations.",
+          "builds_from": [
+            "line plots",
+            "fractional data",
+            "interpretation"
+          ],
+          "leads_to": [
+            "statistical questions",
+            "distributions",
+            "center"
+          ]
+        },
+        "modeling_connections": {
+          "unit_family": "Advanced Modeling / Connections",
+          "unit_name": "Multiple Representations",
+          "key_concepts": [
+            "numerical",
+            "graphical",
+            "geometric",
+            "symbolic"
+          ],
+          "progression": "Students translate the same relationship across representations.",
+          "builds_from": [
+            "multiplicative comparison",
+            "scaling intuition",
+            "factors/multiples"
+          ],
+          "leads_to": [
+            "number → ratio",
+            "ratio → variable",
+            "variable → equation"
+          ]
+        }
+      }
+    },
+    "grade_6": {
+      "grade": 6,
+      "units": {
+        "number_operations": {
+          "unit_family": "Number Sense & Operations",
+          "unit_name": "Rational Number System",
+          "key_concepts": [
+            "fraction division",
+            "decimal fluency",
+            "factors and multiples",
+            "positive/negative numbers",
+            "absolute value",
+            "coordinate numbers"
+          ],
+          "progression": "The number system expands to signed rational numbers and more abstract operations.",
+          "builds_from": [
+            "powers of 10",
+            "decimal place value",
+            "multi-digit multiplication"
+          ],
+          "leads_to": [
+            "positive/negative fractions and decimals",
+            "addition/subtraction",
+            "multiplication/division"
+          ]
+        },
+        "fractions_ratios": {
+          "unit_family": "Fractions, Ratios & Proportional Reasoning",
+          "unit_name": "Ratios & Rates",
+          "key_concepts": [
+            "ratio meaning",
+            "equivalent ratios",
+            "unit rates",
+            "ratio tables",
+            "percent foundations"
+          ],
+          "progression": "Multiplicative comparison becomes formal ratio and rate reasoning.",
+          "builds_from": [
+            "add/subtract unlike fractions",
+            "multiply fractions",
+            "fraction division foundations"
+          ],
+          "leads_to": [
+            "unit rate",
+            "proportional relationships",
+            "constant of proportionality"
+          ]
+        },
+        "algebra_functions": {
+          "unit_family": "Patterns, Algebra & Functions",
+          "unit_name": "Variables, Expressions, Equations & Inequalities",
+          "key_concepts": [
+            "variables",
+            "algebraic expressions",
+            "properties",
+            "one-variable equations",
+            "inequalities"
+          ],
+          "progression": "Arithmetic relationships are generalized symbolically.",
+          "builds_from": [
+            "parentheses",
+            "order/structure of operations",
+            "numerical expressions"
+          ],
+          "leads_to": [
+            "equivalent expressions",
+            "distributive property",
+            "multi-step equations"
+          ]
+        },
+        "geometry_measurement": {
+          "unit_family": "Geometry, Measurement & Trigonometry",
+          "unit_name": "Area, Surface Area, Volume & Coordinates",
+          "key_concepts": [
+            "polygon area",
+            "nets",
+            "surface area",
+            "volume",
+            "coordinate geometry"
+          ],
+          "progression": "Geometry uses formulas and coordinates as algebraic tools.",
+          "builds_from": [
+            "volume formulas",
+            "composite solids",
+            "coordinate plane"
+          ],
+          "leads_to": [
+            "scale drawings",
+            "angle relationships",
+            "circles"
+          ]
+        },
+        "data_probability": {
+          "unit_family": "Data, Statistics & Probability",
+          "unit_name": "Statistical Distributions",
+          "key_concepts": [
+            "statistical questions",
+            "distributions",
+            "center",
+            "variability",
+            "data displays"
+          ],
+          "progression": "Statistics becomes a formal study of distributions rather than just graphs.",
+          "builds_from": [
+            "measurement data",
+            "fraction/decimal interpretation",
+            "graphs"
+          ],
+          "leads_to": [
+            "sampling",
+            "populations",
+            "variability"
+          ]
+        },
+        "modeling_connections": {
+          "unit_family": "Advanced Modeling / Connections",
+          "unit_name": "Generalization of Arithmetic",
+          "key_concepts": [
+            "number → ratio",
+            "ratio → variable",
+            "variable → equation"
+          ],
+          "progression": "Students transition from computing quantities to representing relationships.",
+          "builds_from": [
+            "numerical",
+            "graphical",
+            "geometric"
+          ],
+          "leads_to": [
+            "proportional models",
+            "percent models",
+            "scale models"
+          ]
+        }
+      }
+    },
+    "grade_7": {
+      "grade": 7,
+      "units": {
+        "number_operations": {
+          "unit_family": "Number Sense & Operations",
+          "unit_name": "Operations with Rational Numbers",
+          "key_concepts": [
+            "positive/negative fractions and decimals",
+            "addition/subtraction",
+            "multiplication/division",
+            "properties",
+            "sign rules"
+          ],
+          "progression": "Rational-number operations become fluent and support algebra.",
+          "builds_from": [
+            "fraction division",
+            "decimal fluency",
+            "factors and multiples"
+          ],
+          "leads_to": [
+            "rational/irrational numbers",
+            "square and cube roots",
+            "exponent laws"
+          ]
+        },
+        "fractions_ratios": {
+          "unit_family": "Fractions, Ratios & Proportional Reasoning",
+          "unit_name": "Proportional Relationships",
+          "key_concepts": [
+            "unit rate",
+            "proportional relationships",
+            "constant of proportionality",
+            "tables",
+            "graphs",
+            "percent",
+            "scale factor"
+          ],
+          "progression": "Ratio reasoning becomes a function-like relationship y = kx.",
+          "builds_from": [
+            "ratio meaning",
+            "equivalent ratios",
+            "unit rates"
+          ],
+          "leads_to": [
+            "slope",
+            "rate of change",
+            "dilation"
+          ]
+        },
+        "algebra_functions": {
+          "unit_family": "Patterns, Algebra & Functions",
+          "unit_name": "Expressions, Equations & Inequalities",
+          "key_concepts": [
+            "equivalent expressions",
+            "distributive property",
+            "multi-step equations",
+            "inequalities"
+          ],
+          "progression": "Students manipulate symbolic forms to solve and represent constraints.",
+          "builds_from": [
+            "variables",
+            "algebraic expressions",
+            "properties"
+          ],
+          "leads_to": [
+            "multi-step equations",
+            "slope",
+            "intercepts"
+          ]
+        },
+        "geometry_measurement": {
+          "unit_family": "Geometry, Measurement & Trigonometry",
+          "unit_name": "Scale Geometry & Circles",
+          "key_concepts": [
+            "scale drawings",
+            "angle relationships",
+            "circles",
+            "triangle construction",
+            "area",
+            "volume"
+          ],
+          "progression": "Scale factor connects proportional reasoning directly to geometry.",
+          "builds_from": [
+            "polygon area",
+            "nets",
+            "surface area"
+          ],
+          "leads_to": [
+            "translations",
+            "rotations",
+            "reflections"
+          ]
+        },
+        "data_probability": {
+          "unit_family": "Data, Statistics & Probability",
+          "unit_name": "Sampling & Probability",
+          "key_concepts": [
+            "sampling",
+            "populations",
+            "variability",
+            "informal inference",
+            "experimental probability",
+            "theoretical probability"
+          ],
+          "progression": "Data reasoning moves from description to prediction and inference.",
+          "builds_from": [
+            "statistical questions",
+            "distributions",
+            "center"
+          ],
+          "leads_to": [
+            "scatter plots",
+            "association",
+            "lines of fit"
+          ]
+        },
+        "modeling_connections": {
+          "unit_family": "Advanced Modeling / Connections",
+          "unit_name": "Ratio → Equation → Graph",
+          "key_concepts": [
+            "proportional models",
+            "percent models",
+            "scale models",
+            "graph interpretation"
+          ],
+          "progression": "Multiple representations become central to mathematical modeling.",
+          "builds_from": [
+            "number → ratio",
+            "ratio → variable",
+            "variable → equation"
+          ],
+          "leads_to": [
+            "constant rate",
+            "slope",
+            "intercept"
+          ]
+        }
+      }
+    },
+    "grade_8": {
+      "grade": 8,
+      "units": {
+        "number_operations": {
+          "unit_family": "Number Sense & Operations",
+          "unit_name": "Real Numbers & Exponents",
+          "key_concepts": [
+            "rational/irrational numbers",
+            "square and cube roots",
+            "exponent laws",
+            "scientific notation"
+          ],
+          "progression": "The number system expands beyond rationals and exponent structure becomes formal.",
+          "builds_from": [
+            "positive/negative fractions and decimals",
+            "addition/subtraction",
+            "multiplication/division"
+          ],
+          "leads_to": [
+            "expression structure",
+            "exponent rules",
+            "quantitative reasoning"
+          ]
+        },
+        "fractions_ratios": {
+          "unit_family": "Fractions, Ratios & Proportional Reasoning",
+          "unit_name": "Rate of Change & Similarity",
+          "key_concepts": [
+            "slope",
+            "rate of change",
+            "dilation",
+            "similarity",
+            "scale factor"
+          ],
+          "progression": "Proportional reasoning matures into slope and geometric similarity.",
+          "builds_from": [
+            "unit rate",
+            "proportional relationships",
+            "constant of proportionality"
+          ],
+          "leads_to": [
+            "constant rate",
+            "rate of change",
+            "linear vs exponential change"
+          ]
+        },
+        "algebra_functions": {
+          "unit_family": "Patterns, Algebra & Functions",
+          "unit_name": "Linear Equations & Functions",
+          "key_concepts": [
+            "multi-step equations",
+            "slope",
+            "intercepts",
+            "y = mx + b",
+            "systems",
+            "function concept",
+            "linear vs nonlinear"
+          ],
+          "progression": "Relationships become formal functions with multiple representations.",
+          "builds_from": [
+            "equivalent expressions",
+            "distributive property",
+            "multi-step equations"
+          ],
+          "leads_to": [
+            "equations",
+            "inequalities",
+            "systems"
+          ]
+        },
+        "geometry_measurement": {
+          "unit_family": "Geometry, Measurement & Trigonometry",
+          "unit_name": "Transformations & Pythagorean Geometry",
+          "key_concepts": [
+            "translations",
+            "rotations",
+            "reflections",
+            "dilations",
+            "congruence",
+            "similarity",
+            "Pythagorean theorem",
+            "distance"
+          ],
+          "progression": "Transformation geometry links shape, coordinates and algebra.",
+          "builds_from": [
+            "scale drawings",
+            "angle relationships",
+            "circles"
+          ],
+          "leads_to": [
+            "coordinate transformations",
+            "congruence",
+            "distance/slope connections"
+          ]
+        },
+        "data_probability": {
+          "unit_family": "Data, Statistics & Probability",
+          "unit_name": "Bivariate Data",
+          "key_concepts": [
+            "scatter plots",
+            "association",
+            "lines of fit",
+            "two-way tables"
+          ],
+          "progression": "Students study relationships between two variables.",
+          "builds_from": [
+            "sampling",
+            "populations",
+            "variability"
+          ],
+          "leads_to": [
+            "one-variable data",
+            "two-variable data",
+            "association"
+          ]
+        },
+        "modeling_connections": {
+          "unit_family": "Advanced Modeling / Connections",
+          "unit_name": "Proportionality → Linear Function",
+          "key_concepts": [
+            "constant rate",
+            "slope",
+            "intercept",
+            "systems",
+            "model comparison"
+          ],
+          "progression": "Students shift from arithmetic relationships to functional models.",
+          "builds_from": [
+            "proportional models",
+            "percent models",
+            "scale models"
+          ],
+          "leads_to": [
+            "representation translation",
+            "model selection",
+            "interpretation"
+          ]
+        }
+      }
+    },
+    "grade_9": {
+      "grade": 9,
+      "units": {
+        "number_operations": {
+          "unit_family": "Number Sense & Operations",
+          "unit_name": "Algebraic Quantities & Exponents",
+          "key_concepts": [
+            "expression structure",
+            "exponent rules",
+            "quantitative reasoning",
+            "formula manipulation"
+          ],
+          "progression": "Number operations become embedded tools for algebraic modeling.",
+          "builds_from": [
+            "rational/irrational numbers",
+            "square and cube roots",
+            "exponent laws"
+          ],
+          "leads_to": [
+            "radicals",
+            "rational exponents",
+            "polynomial operations"
+          ]
+        },
+        "fractions_ratios": {
+          "unit_family": "Fractions, Ratios & Proportional Reasoning",
+          "unit_name": "Rates & Exponential Change",
+          "key_concepts": [
+            "constant rate",
+            "rate of change",
+            "linear vs exponential change",
+            "geometric sequences"
+          ],
+          "progression": "Rate reasoning broadens from proportional to linear and exponential growth.",
+          "builds_from": [
+            "slope",
+            "rate of change",
+            "dilation"
+          ],
+          "leads_to": [
+            "similar triangles",
+            "scale relationships",
+            "sine"
+          ]
+        },
+        "algebra_functions": {
+          "unit_family": "Patterns, Algebra & Functions",
+          "unit_name": "Linear & Exponential Functions",
+          "key_concepts": [
+            "equations",
+            "inequalities",
+            "systems",
+            "function notation",
+            "slope",
+            "sequences",
+            "transformations",
+            "modeling"
+          ],
+          "progression": "Functions become the main language for relationships.",
+          "builds_from": [
+            "multi-step equations",
+            "slope",
+            "intercepts"
+          ],
+          "leads_to": [
+            "quadratic functions",
+            "factoring",
+            "quadratic equations"
+          ]
+        },
+        "geometry_measurement": {
+          "unit_family": "Geometry, Measurement & Trigonometry",
+          "unit_name": "Coordinate Geometry & Congruence",
+          "key_concepts": [
+            "coordinate transformations",
+            "congruence",
+            "distance/slope connections",
+            "geometric reasoning"
+          ],
+          "progression": "Coordinate methods connect algebra and geometry.",
+          "builds_from": [
+            "translations",
+            "rotations",
+            "reflections"
+          ],
+          "leads_to": [
+            "Pythagorean relationships",
+            "right-triangle trigonometry",
+            "circle properties"
+          ]
+        },
+        "data_probability": {
+          "unit_family": "Data, Statistics & Probability",
+          "unit_name": "Statistics & Regression Foundations",
+          "key_concepts": [
+            "one-variable data",
+            "two-variable data",
+            "association",
+            "regression ideas",
+            "model interpretation"
+          ],
+          "progression": "Data analysis starts supporting predictive models.",
+          "builds_from": [
+            "scatter plots",
+            "association",
+            "lines of fit"
+          ],
+          "leads_to": [
+            "compound events",
+            "independence",
+            "conditional probability"
+          ]
+        },
+        "modeling_connections": {
+          "unit_family": "Advanced Modeling / Connections",
+          "unit_name": "Equation ↔ Table ↔ Graph ↔ Function",
+          "key_concepts": [
+            "representation translation",
+            "model selection",
+            "interpretation",
+            "constraints"
+          ],
+          "progression": "Students view one relationship through multiple mathematical lenses.",
+          "builds_from": [
+            "constant rate",
+            "slope",
+            "intercept"
+          ],
+          "leads_to": [
+            "nonlinear models",
+            "roots/intersections",
+            "geometric ratios"
+          ]
+        }
+      }
+    },
+    "grade_10": {
+      "grade": 10,
+      "units": {
+        "number_operations": {
+          "unit_family": "Number Sense & Operations",
+          "unit_name": "Radicals, Rational Exponents & Polynomial Arithmetic",
+          "key_concepts": [
+            "radicals",
+            "rational exponents",
+            "polynomial operations",
+            "algebraic simplification"
+          ],
+          "progression": "The algebraic number toolkit expands to support nonlinear functions.",
+          "builds_from": [
+            "expression structure",
+            "exponent rules",
+            "quantitative reasoning"
+          ],
+          "leads_to": [
+            "complex numbers",
+            "advanced algebraic manipulation",
+            "domain restrictions"
+          ]
+        },
+        "fractions_ratios": {
+          "unit_family": "Fractions, Ratios & Proportional Reasoning",
+          "unit_name": "Similarity & Trigonometric Ratios",
+          "key_concepts": [
+            "similar triangles",
+            "scale relationships",
+            "sine",
+            "cosine",
+            "tangent"
+          ],
+          "progression": "Proportional geometry becomes trigonometry.",
+          "builds_from": [
+            "constant rate",
+            "rate of change",
+            "linear vs exponential change"
+          ],
+          "leads_to": [
+            "exponential growth/decay",
+            "logarithms",
+            "inverse relationships"
+          ]
+        },
+        "algebra_functions": {
+          "unit_family": "Patterns, Algebra & Functions",
+          "unit_name": "Quadratic & Polynomial Foundations",
+          "key_concepts": [
+            "quadratic functions",
+            "factoring",
+            "quadratic equations",
+            "roots",
+            "vertex",
+            "transformations",
+            "polynomial structure"
+          ],
+          "progression": "Students move from linear to nonlinear function behavior.",
+          "builds_from": [
+            "equations",
+            "inequalities",
+            "systems"
+          ],
+          "leads_to": [
+            "higher-degree polynomials",
+            "rational functions",
+            "exponential/log functions"
+          ]
+        },
+        "geometry_measurement": {
+          "unit_family": "Geometry, Measurement & Trigonometry",
+          "unit_name": "Similarity, Right-Triangle Trig & Circles",
+          "key_concepts": [
+            "Pythagorean relationships",
+            "right-triangle trigonometry",
+            "circle properties",
+            "coordinate geometry"
+          ],
+          "progression": "Geometry and algebra combine through similarity, trigonometry and analytic methods.",
+          "builds_from": [
+            "coordinate transformations",
+            "congruence",
+            "distance/slope connections"
+          ],
+          "leads_to": [
+            "unit circle",
+            "radians",
+            "trig graphs"
+          ]
+        },
+        "data_probability": {
+          "unit_family": "Data, Statistics & Probability",
+          "unit_name": "Compound & Conditional Probability",
+          "key_concepts": [
+            "compound events",
+            "independence",
+            "conditional probability",
+            "counting foundations"
+          ],
+          "progression": "Probability becomes structured around conditions and multiple events.",
+          "builds_from": [
+            "one-variable data",
+            "two-variable data",
+            "association"
+          ],
+          "leads_to": [
+            "sampling",
+            "distributions",
+            "inference"
+          ]
+        },
+        "modeling_connections": {
+          "unit_family": "Advanced Modeling / Connections",
+          "unit_name": "Linear → Quadratic; Similarity → Trigonometry",
+          "key_concepts": [
+            "nonlinear models",
+            "roots/intersections",
+            "geometric ratios",
+            "applications"
+          ],
+          "progression": "Two major transitions occur: nonlinear functions and formal trigonometric reasoning.",
+          "builds_from": [
+            "representation translation",
+            "model selection",
+            "interpretation"
+          ],
+          "leads_to": [
+            "polynomial",
+            "rational",
+            "exponential"
+          ]
+        }
+      }
+    },
+    "grade_11": {
+      "grade": 11,
+      "units": {
+        "number_operations": {
+          "unit_family": "Number Sense & Operations",
+          "unit_name": "Advanced Algebraic Number Tools",
+          "key_concepts": [
+            "complex numbers",
+            "advanced algebraic manipulation",
+            "domain restrictions"
+          ],
+          "progression": "Number concepts primarily support broader function families and equation solving.",
+          "builds_from": [
+            "radicals",
+            "rational exponents",
+            "polynomial operations"
+          ],
+          "leads_to": [
+            "advanced manipulation",
+            "precision",
+            "domain reasoning"
+          ]
+        },
+        "fractions_ratios": {
+          "unit_family": "Fractions, Ratios & Proportional Reasoning",
+          "unit_name": "Exponential & Logarithmic Change",
+          "key_concepts": [
+            "exponential growth/decay",
+            "logarithms",
+            "inverse relationships",
+            "log laws"
+          ],
+          "progression": "Multiplicative growth is generalized and inverted through logarithms.",
+          "builds_from": [
+            "similar triangles",
+            "scale relationships",
+            "sine"
+          ],
+          "leads_to": [
+            "compound growth",
+            "rates",
+            "financial models"
+          ]
+        },
+        "algebra_functions": {
+          "unit_family": "Patterns, Algebra & Functions",
+          "unit_name": "Advanced Function Families",
+          "key_concepts": [
+            "higher-degree polynomials",
+            "rational functions",
+            "exponential/log functions",
+            "inverse functions",
+            "composition",
+            "piecewise functions"
+          ],
+          "progression": "Function families are studied as one connected system.",
+          "builds_from": [
+            "quadratic functions",
+            "factoring",
+            "quadratic equations"
+          ],
+          "leads_to": [
+            "function families",
+            "composition",
+            "inverse functions"
+          ]
+        },
+        "geometry_measurement": {
+          "unit_family": "Geometry, Measurement & Trigonometry",
+          "unit_name": "Trigonometric Functions & Analytic Geometry",
+          "key_concepts": [
+            "unit circle",
+            "radians",
+            "trig graphs",
+            "identities",
+            "trig equations",
+            "conics"
+          ],
+          "progression": "Triangle ratios expand into periodic functions and analytic geometry.",
+          "builds_from": [
+            "Pythagorean relationships",
+            "right-triangle trigonometry",
+            "circle properties"
+          ],
+          "leads_to": [
+            "unit-circle mastery",
+            "identities",
+            "trig equations"
+          ]
+        },
+        "data_probability": {
+          "unit_family": "Data, Statistics & Probability",
+          "unit_name": "Statistical Inference",
+          "key_concepts": [
+            "sampling",
+            "distributions",
+            "inference",
+            "statistical claims",
+            "model interpretation"
+          ],
+          "progression": "Students move from describing samples to reasoning about populations.",
+          "builds_from": [
+            "compound events",
+            "independence",
+            "conditional probability"
+          ],
+          "leads_to": [
+            "probability distributions",
+            "expected value",
+            "sampling"
+          ]
+        },
+        "modeling_connections": {
+          "unit_family": "Advanced Modeling / Connections",
+          "unit_name": "Connected Function System",
+          "key_concepts": [
+            "polynomial",
+            "rational",
+            "exponential",
+            "logarithmic",
+            "trigonometric"
+          ],
+          "progression": "Students compare function families by structure, behavior and modeling purpose.",
+          "builds_from": [
+            "nonlinear models",
+            "roots/intersections",
+            "geometric ratios"
+          ],
+          "leads_to": [
+            "average vs instantaneous rate",
+            "limit intuition",
+            "continuity"
+          ]
+        }
+      }
+    },
+    "grade_12": {
+      "grade": 12,
+      "units": {
+        "number_operations": {
+          "unit_family": "Number Sense & Operations",
+          "unit_name": "Algebra as a Modeling Tool",
+          "key_concepts": [
+            "advanced manipulation",
+            "precision",
+            "domain reasoning",
+            "numerical approximation"
+          ],
+          "progression": "Number and algebra skills become embedded tools rather than standalone units.",
+          "builds_from": [
+            "complex numbers",
+            "advanced algebraic manipulation",
+            "domain restrictions"
+          ],
+          "leads_to": []
+        },
+        "fractions_ratios": {
+          "unit_family": "Fractions, Ratios & Proportional Reasoning",
+          "unit_name": "Advanced Growth & Proportional Models",
+          "key_concepts": [
+            "compound growth",
+            "rates",
+            "financial models",
+            "scientific scaling"
+          ],
+          "progression": "Rate and proportional reasoning support sophisticated real-world models.",
+          "builds_from": [
+            "exponential growth/decay",
+            "logarithms",
+            "inverse relationships"
+          ],
+          "leads_to": []
+        },
+        "algebra_functions": {
+          "unit_family": "Patterns, Algebra & Functions",
+          "unit_name": "Precalculus Function Synthesis",
+          "key_concepts": [
+            "function families",
+            "composition",
+            "inverse functions",
+            "transformations",
+            "sequences",
+            "series",
+            "parametric relationships"
+          ],
+          "progression": "Students synthesize the full function toolkit in preparation for calculus.",
+          "builds_from": [
+            "higher-degree polynomials",
+            "rational functions",
+            "exponential/log functions"
+          ],
+          "leads_to": []
+        },
+        "geometry_measurement": {
+          "unit_family": "Geometry, Measurement & Trigonometry",
+          "unit_name": "Advanced Trigonometry, Vectors & Analytic Geometry",
+          "key_concepts": [
+            "unit-circle mastery",
+            "identities",
+            "trig equations",
+            "laws of sines/cosines",
+            "vectors",
+            "conics"
+          ],
+          "progression": "Geometry becomes coordinate, vector and function based.",
+          "builds_from": [
+            "unit circle",
+            "radians",
+            "trig graphs"
+          ],
+          "leads_to": []
+        },
+        "data_probability": {
+          "unit_family": "Data, Statistics & Probability",
+          "unit_name": "Advanced Probability & Statistics",
+          "key_concepts": [
+            "probability distributions",
+            "expected value",
+            "sampling",
+            "inference",
+            "regression",
+            "model evaluation"
+          ],
+          "progression": "Statistical thinking emphasizes uncertainty, inference and model quality.",
+          "builds_from": [
+            "sampling",
+            "distributions",
+            "inference"
+          ],
+          "leads_to": []
+        },
+        "modeling_connections": {
+          "unit_family": "Advanced Modeling / Connections",
+          "unit_name": "Calculus Readiness & Mathematical Modeling",
+          "key_concepts": [
+            "average vs instantaneous rate",
+            "limit intuition",
+            "continuity",
+            "accumulation/area",
+            "optimization",
+            "financial/scientific models"
+          ],
+          "progression": "Students connect functions, rate of change and accumulation as a bridge to calculus.",
+          "builds_from": [
+            "polynomial",
+            "rational",
+            "exponential"
+          ],
+          "leads_to": []
+        }
+      }
+    }
+  }
+}

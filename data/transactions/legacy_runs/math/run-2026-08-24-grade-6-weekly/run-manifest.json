@@ -1,0 +1,120 @@
+{
+  "approvals": [
+    {
+      "approval_id": "approval-2e0876192d2240018498ef949024be53",
+      "artifact_revision": "grade-6-scope-r1",
+      "gate": "scope_review",
+      "notes": null,
+      "recorded_at": "2026-08-28T18:35:57.368587+00:00",
+      "reviewer": "user-authorized-auto-run",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-a3ae6f113e0c4b2faee4d0477c2b7b17",
+      "artifact_revision": "grade-6-questions-r1",
+      "gate": "question_review",
+      "notes": null,
+      "recorded_at": "2026-08-28T18:35:57.368638+00:00",
+      "reviewer": "user-authorized-auto-run",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-ff0ce210259644d8b80153d06c1466cf",
+      "artifact_revision": "grade-6-verification-r1",
+      "gate": "verification_review",
+      "notes": null,
+      "recorded_at": "2026-08-28T18:35:57.368668+00:00",
+      "reviewer": "user-authorized-auto-run",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-a007db29ff304b88bf68d78884b2572b",
+      "artifact_revision": "grade-6-render-r1",
+      "gate": "formatting_review",
+      "notes": "Automated read-back and PDF QA passed; user authorized automatic approval.",
+      "recorded_at": "2026-08-28T18:38:51.981963+00:00",
+      "reviewer": "user-authorized-auto-run",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-c13f23f1a9074dac8330a7b05e29431f",
+      "artifact_revision": "grade-6-final-qa-r1",
+      "gate": "publish_approval",
+      "notes": "User authorized automatic approval and publication.",
+      "recorded_at": "2026-08-28T18:38:51.982131+00:00",
+      "reviewer": "user-authorized-auto-run",
+      "status": "approved"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_kind": "student_worksheet",
+      "document": {
+        "id": "1TrdAMuC1rMxMH2klEU4gvFSKNLTEOwh_j1sPsbw9fmM",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-24",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1TrdAMuC1rMxMH2klEU4gvFSKNLTEOwh_j1sPsbw9fmM/edit?usp=drivesdk"
+      },
+      "status": "published"
+    },
+    {
+      "artifact_kind": "answer_key",
+      "document": {
+        "id": "1Md6kviACtVkSDJHuJn_8_r4NDBoAjkb6vJqC-GMgwi0",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "parents": [
+          "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS"
+        ],
+        "webViewLink": "https://docs.google.com/document/d/1Md6kviACtVkSDJHuJn_8_r4NDBoAjkb6vJqC-GMgwi0/edit?usp=drivesdk"
+      },
+      "status": "published"
+    }
+  ],
+  "checkpoints": [],
+  "manifest_version": "1.0",
+  "policy_fingerprint": "e3eefc2cfdf269537545e2bc402004f1c711c5edb0cbe25110b35adc2aa77013",
+  "policy_snapshot_path": "resolved-policy.json",
+  "publication": {
+    "answer_key_url": "https://docs.google.com/document/d/1MhtPxuW2bmqnRFsdHddQS9G5bTMCZ-ugRmncM8zdj4I/edit?usp=drivesdk",
+    "destination_folder_id": "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS",
+    "status": "published",
+    "worksheet_url": "https://docs.google.com/document/d/1tBtO3TFMDwL9B_KMXUhelAmkQwoa__m82YloVmIEOj8/edit?usp=drivesdk"
+  },
+  "qa": {
+    "blank_pages": 0,
+    "pages": 2,
+    "pdf_layout": "PASS",
+    "placeholders": false,
+    "populated_questions": 40,
+    "readback": "PASS",
+    "template_slots_per_day": 10,
+    "unused_slots_per_day": 0
+  },
+  "request": {
+    "grade_ids": [
+      "grade_6"
+    ],
+    "subject": "math",
+    "week_start": "2026-08-24",
+    "worksheet_type": "weekly-worksheet"
+  },
+  "request_fingerprint": "d51bc04c3856a8de12167e4e261d5f6843976384a33487f4dd05829f9c786996",
+  "run_id": "run-2026-08-24-grade-6-weekly",
+  "spec_references": [
+    {
+      "fingerprint": "5454739335834866a36a05c993f7e4e62a450c885d4d9a81ba3ac1ec1eb41fbc",
+      "revision": "r1",
+      "spec_path": "math/run-2026-08-24-grade-6-weekly/specs/grade-6/r1.json",
+      "worksheet_id": "grade-6"
+    }
+  ],
+  "started_at": "2026-08-28T18:35:57.362876+00:00",
+  "status": "published",
+  "subject": "math",
+  "telemetry": {
+    "token_usage": null
+  },
+  "worksheet_type": "weekly-worksheet"
+}

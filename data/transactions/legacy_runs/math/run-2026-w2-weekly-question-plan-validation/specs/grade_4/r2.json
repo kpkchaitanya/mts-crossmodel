@@ -1,0 +1,697 @@
+{
+  "curriculum": {
+    "week_start": "2026-08-24"
+  },
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 30,
+          "difficulty": "low_plus",
+          "number": 1,
+          "prompt": "What is the value of the digit in the tens place of 1,137?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "3*10"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30,
+          "difficulty": "low_plus",
+          "number": 2,
+          "prompt": "A bar graph shows 8 apples, 10 pears, and 12 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "8+10+12"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 38,
+          "difficulty": "low_plus",
+          "number": 3,
+          "prompt": "How much greater is 1,211 than 1,173?",
+          "skill": "compare multi-digit numbers",
+          "verification": {
+            "inputs": {
+              "expression": "1211-1173"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 82,
+          "difficulty": "medium",
+          "number": 4,
+          "prompt": "Find the value: 1,173 - 1,091",
+          "skill": "addition/subtraction",
+          "verification": {
+            "inputs": {
+              "expression": "1173-1091"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 15,
+          "difficulty": "medium",
+          "number": 5,
+          "prompt": "Find the product: 3 x 5",
+          "skill": "multiplication facts",
+          "verification": {
+            "inputs": {
+              "expression": "3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 45,
+          "difficulty": "medium",
+          "number": 6,
+          "prompt": "A bar graph shows 11 apples, 15 pears, and 19 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "11+15+19"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 40,
+          "difficulty": "medium",
+          "number": 7,
+          "prompt": "A number is 5 times as many as 8. What is the number?",
+          "skill": "multiplicative comparison",
+          "verification": {
+            "inputs": {
+              "expression": "5*8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 200,
+          "difficulty": "medium",
+          "number": 8,
+          "prompt": "What is the value of the digit in the hundreds place of 1,274?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "2*100"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 40,
+          "difficulty": "medium",
+          "number": 9,
+          "prompt": "A bar graph shows 14 apples, 20 pears, and 6 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "14+20+6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 75,
+          "difficulty": "medium",
+          "number": 10,
+          "prompt": "How much greater is 1,422 than 1,347?",
+          "skill": "compare multi-digit numbers",
+          "verification": {
+            "inputs": {
+              "expression": "1422-1347"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 1,
+          "difficulty": "low_plus",
+          "number": 11,
+          "prompt": "What is the value of the digit in the ones place of 1,411?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "1*1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 35,
+          "difficulty": "medium",
+          "number": 12,
+          "prompt": "A bar graph shows 17 apples, 5 pears, and 13 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "17+5+13"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 112,
+          "difficulty": "medium",
+          "number": 13,
+          "prompt": "How much greater is 1,633 than 1,521?",
+          "skill": "compare multi-digit numbers",
+          "verification": {
+            "inputs": {
+              "expression": "1633-1521"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2528,
+          "difficulty": "medium",
+          "number": 14,
+          "prompt": "Find the value: 1,346 + 1,182",
+          "skill": "addition/subtraction",
+          "verification": {
+            "inputs": {
+              "expression": "1346+1182"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 32,
+          "difficulty": "medium",
+          "number": 15,
+          "prompt": "Find the product: 4 x 8",
+          "skill": "multiplication facts",
+          "verification": {
+            "inputs": {
+              "expression": "4*8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 50,
+          "difficulty": "medium",
+          "number": 16,
+          "prompt": "A bar graph shows 20 apples, 10 pears, and 20 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "20+10+20"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 65,
+          "difficulty": "medium",
+          "number": 17,
+          "prompt": "A number is 5 times as many as 13. What is the number?",
+          "skill": "multiplicative comparison",
+          "verification": {
+            "inputs": {
+              "expression": "5*13"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "medium_plus",
+          "number": 18,
+          "prompt": "What is the value of the digit in the ones place of 1,548?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "8*1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 45,
+          "difficulty": "medium_plus",
+          "number": 19,
+          "prompt": "A bar graph shows 23 apples, 15 pears, and 7 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "23+15+7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 149,
+          "difficulty": "medium_plus",
+          "number": 20,
+          "prompt": "How much greater is 1,844 than 1,695?",
+          "skill": "compare multi-digit numbers",
+          "verification": {
+            "inputs": {
+              "expression": "1844-1695"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 80,
+          "difficulty": "medium",
+          "number": 21,
+          "prompt": "What is the value of the digit in the tens place of 1,685?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "8*10"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 40,
+          "difficulty": "medium",
+          "number": 22,
+          "prompt": "A bar graph shows 6 apples, 20 pears, and 14 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "6+20+14"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 186,
+          "difficulty": "medium",
+          "number": 23,
+          "prompt": "How much greater is 2,055 than 1,869?",
+          "skill": "compare multi-digit numbers",
+          "verification": {
+            "inputs": {
+              "expression": "2055-1869"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 246,
+          "difficulty": "medium",
+          "number": 24,
+          "prompt": "Find the value: 1,519 - 1,273",
+          "skill": "addition/subtraction",
+          "verification": {
+            "inputs": {
+              "expression": "1519-1273"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 10,
+          "difficulty": "medium",
+          "number": 25,
+          "prompt": "Find the product: 5 x 2",
+          "skill": "multiplication facts",
+          "verification": {
+            "inputs": {
+              "expression": "5*2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 35,
+          "difficulty": "medium_plus",
+          "number": 26,
+          "prompt": "A bar graph shows 9 apples, 5 pears, and 21 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "9+5+21"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 42,
+          "difficulty": "medium_plus",
+          "number": 27,
+          "prompt": "A number is 7 times as many as 6. What is the number?",
+          "skill": "multiplicative comparison",
+          "verification": {
+            "inputs": {
+              "expression": "7*6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 800,
+          "difficulty": "medium_plus",
+          "number": 28,
+          "prompt": "What is the value of the digit in the hundreds place of 1,822?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "8*100"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30,
+          "difficulty": "medium_plus",
+          "number": 29,
+          "prompt": "A bar graph shows 12 apples, 10 pears, and 8 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "12+10+8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 223,
+          "difficulty": "medium_plus",
+          "number": 30,
+          "prompt": "How much greater is 2,266 than 2,043?",
+          "skill": "compare multi-digit numbers",
+          "verification": {
+            "inputs": {
+              "expression": "2266-2043"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 1000,
+          "difficulty": "medium",
+          "number": 31,
+          "prompt": "What is the value of the digit in the thousands place of 1,959?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "1*1000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 45,
+          "difficulty": "medium",
+          "number": 32,
+          "prompt": "A bar graph shows 15 apples, 15 pears, and 15 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "15+15+15"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 260,
+          "difficulty": "medium",
+          "number": 33,
+          "prompt": "How much greater is 2,477 than 2,217?",
+          "skill": "compare multi-digit numbers",
+          "verification": {
+            "inputs": {
+              "expression": "2477-2217"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3056,
+          "difficulty": "medium_plus",
+          "number": 34,
+          "prompt": "Find the value: 1,692 + 1,364",
+          "skill": "addition/subtraction",
+          "verification": {
+            "inputs": {
+              "expression": "1692+1364"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30,
+          "difficulty": "medium_plus",
+          "number": 35,
+          "prompt": "Find the product: 6 x 5",
+          "skill": "multiplication facts",
+          "verification": {
+            "inputs": {
+              "expression": "6*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 60,
+          "difficulty": "medium_plus",
+          "number": 36,
+          "prompt": "A bar graph shows 18 apples, 20 pears, and 22 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "18+20+22"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 77,
+          "difficulty": "medium_plus",
+          "number": 37,
+          "prompt": "A number is 7 times as many as 11. What is the number?",
+          "skill": "multiplicative comparison",
+          "verification": {
+            "inputs": {
+              "expression": "7*11"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "medium_plus",
+          "number": 38,
+          "prompt": "What is the value of the digit in the ones place of 2,096?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "6*1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 35,
+          "difficulty": "medium_plus",
+          "number": 39,
+          "prompt": "A bar graph shows 21 apples, 5 pears, and 9 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "21+5+9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 297,
+          "difficulty": "high",
+          "number": 40,
+          "prompt": "How much greater is 2,688 than 2,391?",
+          "skill": "compare multi-digit numbers",
+          "verification": {
+            "inputs": {
+              "expression": "2688-2391"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 30,
+          "difficulty": "medium",
+          "number": 41,
+          "prompt": "What is the value of the digit in the tens place of 2,233?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "3*10"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 50,
+          "difficulty": "medium_plus",
+          "number": 42,
+          "prompt": "A bar graph shows 24 apples, 10 pears, and 16 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "24+10+16"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 334,
+          "difficulty": "medium_plus",
+          "number": 43,
+          "prompt": "How much greater is 2,899 than 2,565?",
+          "skill": "compare multi-digit numbers",
+          "verification": {
+            "inputs": {
+              "expression": "2899-2565"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 410,
+          "difficulty": "medium_plus",
+          "number": 44,
+          "prompt": "Find the value: 1,865 - 1,455",
+          "skill": "addition/subtraction",
+          "verification": {
+            "inputs": {
+              "expression": "1865-1455"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 56,
+          "difficulty": "medium_plus",
+          "number": 45,
+          "prompt": "Find the product: 7 x 8",
+          "skill": "multiplication facts",
+          "verification": {
+            "inputs": {
+              "expression": "7*8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 45,
+          "difficulty": "medium_plus",
+          "number": 46,
+          "prompt": "A bar graph shows 7 apples, 15 pears, and 23 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "7+15+23"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 32,
+          "difficulty": "high",
+          "number": 47,
+          "prompt": "A number is 8 times as many as 4. What is the number?",
+          "skill": "multiplicative comparison",
+          "verification": {
+            "inputs": {
+              "expression": "8*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 0,
+          "difficulty": "high",
+          "number": 48,
+          "prompt": "What is the value of the digit in the ones place of 2,370?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "0*1"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 40,
+          "difficulty": "high",
+          "number": 49,
+          "prompt": "A bar graph shows 10 apples, 20 pears, and 10 oranges sold. How many pieces of fruit were sold in total?",
+          "skill": "data and graphing",
+          "verification": {
+            "inputs": {
+              "expression": "10+20+10"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 371,
+          "difficulty": "high",
+          "number": 50,
+          "prompt": "How much greater is 3,110 than 2,739?",
+          "skill": "compare multi-digit numbers",
+          "verification": {
+            "inputs": {
+              "expression": "3110-2739"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PENDING"
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "Grade 4",
+    "question_count": 50,
+    "title": "MTS - WEEKLY WORKSHEET",
+    "week_start": "2026-08-24"
+  }
+}

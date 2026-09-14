@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "worksheet_type_id": "weekly-worksheet",
+  "subject": "math",
+  "status": "active",
+  "template_fallback": false,
+  "inspection_status": "inspected",
+  "last_inspected": "2026-08-28",
+  "worksheet_template": {
+    "id": "1am6MWISljNdj6rytAUDN-ulRozi1XIH4H0R0-VDEAqo",
+    "url": "https://docs.google.com/document/d/1am6MWISljNdj6rytAUDN-ulRozi1XIH4H0R0-VDEAqo/edit?usp=drive_link",
+    "revision_id": "36",
+    "title": "MTS-TEMPLATE-MATH-WeeklyWorksheet-SIMPLE-BRANDED"
+  },
+  "answer_key_template": {
+    "id": "1aqfc31qO8LxuSx319hfakJouHsalMQ09WgFpMt_8S3Y",
+    "url": "https://docs.google.com/document/d/1aqfc31qO8LxuSx319hfakJouHsalMQ09WgFpMt_8S3Y/edit?usp=drive_link",
+    "revision_id": "37",
+    "title": "MTS-TEMPLATE-MATH-WeeklyWorksheet-AnswerKey-SIMPLE-BRANDED"
+  },
+  "layout": {
+    "status": "inspected",
+    "question_slots": 50,
+    "questions_per_day_capacity": 10,
+    "sections": {"monday": [1,10], "tuesday": [1,10], "wednesday": [1,10], "thursday": [1,10], "friday": [1,10]},
+    "outer_layout": "single-column daily sections",
+    "special_blocks": [],
+    "default_question_font_pt": null,
+    "grade_specific_overrides": {"grade_6": {"questions_per_day": 8, "remove_unused_slots": true}},
+    "remove_unused_slots": true,
+    "placeholder_scheme": "<DAY>_<Q|A><LOCAL_NUMBER>"
+  },
+  "cache_rule": "Inspect both Weekly master documents before the first render. Record live revision IDs and layout metadata here. Reuse the cached structure only when both revision IDs match; reinspect changed masters before rendering."
+}

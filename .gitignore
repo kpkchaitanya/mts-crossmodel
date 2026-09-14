@@ -12,3 +12,6 @@ __pycache__/
 .DS_Store
 .env
 .env.*
+# Print backend binary and spooled PDFs; the backend is fetched per machine, never committed.
+tools/*.exe
+outputs/print/

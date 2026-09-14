@@ -1,0 +1,379 @@
+{
+  "approvals": [
+    {
+      "approval_id": "approval-5fed998e1c194fa1888af28c46dd9f92",
+      "artifact_revision": "scope-r1",
+      "gate": "scope_review",
+      "notes": "question_plan validation run",
+      "recorded_at": "2026-08-28T21:14:49.653667+00:00",
+      "reviewer": "script-test",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-8c4d1cfe925748f284ecc31656ad125b",
+      "artifact_revision": "grade_1-questions-r1",
+      "gate": "question_review",
+      "notes": "question_plan validation run",
+      "recorded_at": "2026-08-28T21:14:49.661931+00:00",
+      "reviewer": "script-test",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-3ab49f9bb05445e284960ea44d8aa4cd",
+      "artifact_revision": "grade_1-verification-r1",
+      "gate": "verification_review",
+      "notes": "question_plan validation run",
+      "recorded_at": "2026-08-28T21:14:49.663529+00:00",
+      "reviewer": "script-test",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-cd68ba76259b40e098bdf1537df52734",
+      "artifact_revision": "grade_4-questions-r1",
+      "gate": "question_review",
+      "notes": "question_plan validation run",
+      "recorded_at": "2026-08-28T21:14:49.669401+00:00",
+      "reviewer": "script-test",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-8469e154ea6440ee9c45a794d46e9bc9",
+      "artifact_revision": "grade_4-verification-r1",
+      "gate": "verification_review",
+      "notes": "question_plan validation run",
+      "recorded_at": "2026-08-28T21:14:49.670667+00:00",
+      "reviewer": "script-test",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-03a08b1212c34fdf837d721b45d1a721",
+      "artifact_revision": "grade_5-questions-r1",
+      "gate": "question_review",
+      "notes": "question_plan validation run",
+      "recorded_at": "2026-08-28T21:14:49.676514+00:00",
+      "reviewer": "script-test",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-f9b37d8c6f294d8c95762b802d5e07e8",
+      "artifact_revision": "grade_5-verification-r1",
+      "gate": "verification_review",
+      "notes": "question_plan validation run",
+      "recorded_at": "2026-08-28T21:14:49.678032+00:00",
+      "reviewer": "script-test",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-2c38a9c88944488da7522794aa2efc1e",
+      "artifact_revision": "grade_6-questions-r1",
+      "gate": "question_review",
+      "notes": "question_plan validation run",
+      "recorded_at": "2026-08-28T21:14:49.682653+00:00",
+      "reviewer": "script-test",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-1430b5fce5f241c39c4b215b60d7be91",
+      "artifact_revision": "grade_6-verification-r1",
+      "gate": "verification_review",
+      "notes": "question_plan validation run",
+      "recorded_at": "2026-08-28T21:14:49.683690+00:00",
+      "reviewer": "script-test",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-4b32965cc526435088d285d6363a7ab9",
+      "artifact_revision": "grade_9_10-questions-r1",
+      "gate": "question_review",
+      "notes": "question_plan validation run",
+      "recorded_at": "2026-08-28T21:14:49.687365+00:00",
+      "reviewer": "script-test",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-2afc235142b64cf49ce5394cf6d01562",
+      "artifact_revision": "grade_9_10-verification-r1",
+      "gate": "verification_review",
+      "notes": "question_plan validation run",
+      "recorded_at": "2026-08-28T21:14:49.688805+00:00",
+      "reviewer": "script-test",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-1c9fd2dae3144e08ab6d991263be4aa0",
+      "artifact_revision": "grade_1-render-r1",
+      "gate": "formatting_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T21:23:33.762188+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-262f38c3cf994262b0e90e95ecc7c5d2",
+      "artifact_revision": "grade_4-render-r1",
+      "gate": "formatting_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T21:23:44.835047+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-4557c5a76c9847aaa3706424833abbe3",
+      "artifact_revision": "grade_5-render-r1",
+      "gate": "formatting_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T21:23:54.826414+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-1eeac0c276344ba79555732c5cb8699b",
+      "artifact_revision": "grade_6-render-r1",
+      "gate": "formatting_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T21:24:04.513800+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-bb3a7980ec7a41339e0416554380dd28",
+      "artifact_revision": "grade_9_10-render-r1",
+      "gate": "formatting_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T21:24:14.453358+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-a1b230c10da64d6cb2b56e81f9f80537",
+      "artifact_revision": "batch-r1",
+      "gate": "publish_approval",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T21:24:16.343386+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-f00ab7226ce240949e7f1294e2ff014e",
+      "artifact_revision": "grade_9_10-questions-r4",
+      "gate": "question_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T22:10:03.652537+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-f9e912d240624faa813411cf81d2a395",
+      "artifact_revision": "grade_9_10-verification-r4",
+      "gate": "verification_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T22:10:03.654020+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-b7a46a8967f34aa99b9569e9f0ef0617",
+      "artifact_revision": "grade_9_10-render-r4",
+      "gate": "formatting_review",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T22:10:16.701989+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    },
+    {
+      "approval_id": "approval-847b1b89470a4bf1a67268ae97a26730",
+      "artifact_revision": "grade_9_10-batch-r4",
+      "gate": "publish_approval",
+      "notes": "gates=bypass all (explicit current-user instruction)",
+      "recorded_at": "2026-08-28T22:10:16.706503+00:00",
+      "reviewer": "auto-bypass",
+      "status": "approved"
+    }
+  ],
+  "artifacts": [
+    {
+      "answer_key": {
+        "id": "1AzY-uBinEwnW7GqKzmgF0hDHXAFTUKnio1OwR5x9CqY",
+        "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "webViewLink": "https://docs.google.com/document/d/1AzY-uBinEwnW7GqKzmgF0hDHXAFTUKnio1OwR5x9CqY/edit"
+      },
+      "grade": "grade_1",
+      "worksheet": {
+        "id": "1bgYZ1ppQ8uqYmOUpAWgNU5A7AbWfPEuwW4FY9pFCzAM",
+        "name": "MTS-Math-1stGrade-WeeklyWorksheet-2026-08-24",
+        "webViewLink": "https://docs.google.com/document/d/1bgYZ1ppQ8uqYmOUpAWgNU5A7AbWfPEuwW4FY9pFCzAM/edit"
+      }
+    },
+    {
+      "answer_key": {
+        "id": "1N6GSb2y-TFHjO-xNWfM83ecj2ccwflKawrgVx2Lkcgg",
+        "name": "MTS-Math-4thGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "webViewLink": "https://docs.google.com/document/d/1N6GSb2y-TFHjO-xNWfM83ecj2ccwflKawrgVx2Lkcgg/edit"
+      },
+      "grade": "grade_4",
+      "worksheet": {
+        "id": "18-Vr5X9uqMTrO94QSvhV9Mh7VLuX1isVzbxfWOXK8W8",
+        "name": "MTS-Math-4thGrade-WeeklyWorksheet-2026-08-24",
+        "webViewLink": "https://docs.google.com/document/d/18-Vr5X9uqMTrO94QSvhV9Mh7VLuX1isVzbxfWOXK8W8/edit"
+      }
+    },
+    {
+      "answer_key": {
+        "id": "1Ra-wUlaL_9laCV-o_vspMrVMEKq1Na4UAMrRtCHJQWw",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "webViewLink": "https://docs.google.com/document/d/1Ra-wUlaL_9laCV-o_vspMrVMEKq1Na4UAMrRtCHJQWw/edit"
+      },
+      "grade": "grade_5",
+      "worksheet": {
+        "id": "1bGYLjd9vSjFpvphkt_LfgQDQte5eWKDwuu9TNZ9UQVM",
+        "name": "MTS-Math-5thGrade-WeeklyWorksheet-2026-08-24",
+        "webViewLink": "https://docs.google.com/document/d/1bGYLjd9vSjFpvphkt_LfgQDQte5eWKDwuu9TNZ9UQVM/edit"
+      }
+    },
+    {
+      "answer_key": {
+        "id": "1ADaD3jBBlXhUq9V7niPTGewr55Zhz2sd-7zpx1V6lfs",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "webViewLink": "https://docs.google.com/document/d/1ADaD3jBBlXhUq9V7niPTGewr55Zhz2sd-7zpx1V6lfs/edit"
+      },
+      "grade": "grade_6",
+      "worksheet": {
+        "id": "1x4-2X8DrKOryt_76fWwW2-X4FkxkLA2ZORZfb1nQhwE",
+        "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-24",
+        "webViewLink": "https://docs.google.com/document/d/1x4-2X8DrKOryt_76fWwW2-X4FkxkLA2ZORZfb1nQhwE/edit"
+      }
+    },
+    {
+      "answer_key": {
+        "id": "1dwp613_23krz4yhuZc7R0N61X9Ih2b6a3X970gcymr4",
+        "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-08-24_KEY",
+        "webViewLink": "https://docs.google.com/document/d/1dwp613_23krz4yhuZc7R0N61X9Ih2b6a3X970gcymr4/edit"
+      },
+      "grade": "grade_9_10",
+      "worksheet": {
+        "id": "1V0k8w9dNknF1yXqqZkMYbpUp5kC_T8KIMQ3trl9f2rw",
+        "name": "MTS-Math-9th_10thGrade-WeeklyWorksheet-2026-08-24",
+        "webViewLink": "https://docs.google.com/document/d/1V0k8w9dNknF1yXqqZkMYbpUp5kC_T8KIMQ3trl9f2rw/edit"
+      }
+    }
+  ],
+  "checkpoints": [],
+  "corrections": [
+    {
+      "grade": "grade_9_10",
+      "reason": "raw Python exponent notation (25**(1/2)) replaced with proper radical symbols",
+      "spec_revision": "r3"
+    }
+  ],
+  "gates": {
+    "bypassed": [
+      "scope_review",
+      "question_review",
+      "verification_review",
+      "formatting_review",
+      "publish_approval"
+    ],
+    "mode": "bypass_all",
+    "requested_by": "current_user"
+  },
+  "manifest_version": "1.0",
+  "policy_fingerprint": "9052573bed8cce7de035ca10a67ab623626b997745b1b9be511c52a98a1861ca",
+  "policy_snapshot_path": "resolved-policy.json",
+  "publish": {
+    "destination": "1OncoWGkuBzmDDMURq6P9WsJ_ycnRmlXS",
+    "mode": "yes",
+    "requested_by": "current_user"
+  },
+  "question_design": {
+    "difficulty": "medium_plus",
+    "diversity": "medium_plus",
+    "topic_overrides": "grade_1:60%:Count on and Count down using add and subtract; grade_4:30%:data and graphing; grade_5:20%:coordinate geometry; grade_6:20%:prime factorization"
+  },
+  "request": {
+    "subject": "math",
+    "worksheet_type": "weekly-worksheet"
+  },
+  "request_fingerprint": "6a88803fbcc6a544440d23d8bd017b814cea7bae00cec3a5f89335ff3159a107",
+  "run_id": "run-2026-w2-weekly-question-plan-validation",
+  "spec_references": [
+    {
+      "fingerprint": "14614eacf2aea071740d798b70feb7c4dc4559e015e29c17ea5e14b2195c2ab9",
+      "revision": "r1",
+      "spec_path": "math/run-2026-w2-weekly-question-plan-validation/specs/grade_1/r1.json",
+      "worksheet_id": "grade_1"
+    },
+    {
+      "fingerprint": "c5cdd4ea10e09a865323c26fea348344d9d0b21fc371f0eddb5a1be2c8cf8d4e",
+      "revision": "r1",
+      "spec_path": "math/run-2026-w2-weekly-question-plan-validation/specs/grade_4/r1.json",
+      "worksheet_id": "grade_4"
+    },
+    {
+      "fingerprint": "9a2d47d828b95e9f9c972236068f77facdba9b533bedcc1ba265cc08122a1a40",
+      "revision": "r1",
+      "spec_path": "math/run-2026-w2-weekly-question-plan-validation/specs/grade_5/r1.json",
+      "worksheet_id": "grade_5"
+    },
+    {
+      "fingerprint": "080beb081402ccb2a78131f3a059595802e71d49df2d238ec0f68b736445926d",
+      "revision": "r1",
+      "spec_path": "math/run-2026-w2-weekly-question-plan-validation/specs/grade_6/r1.json",
+      "worksheet_id": "grade_6"
+    },
+    {
+      "fingerprint": "954808855d65031af53c725795547eb60f56ebde736400897993505daeaad048",
+      "revision": "r1",
+      "spec_path": "math/run-2026-w2-weekly-question-plan-validation/specs/grade_9_10/r1.json",
+      "worksheet_id": "grade_9_10"
+    },
+    {
+      "fingerprint": "4e0445edbc3e8f5d2e17319e7c53861c65ea7ae9b136a8e34e7cea11ead0453d",
+      "revision": "r2",
+      "spec_path": "math/run-2026-w2-weekly-question-plan-validation/specs/grade_1/r2.json",
+      "worksheet_id": "grade_1"
+    },
+    {
+      "fingerprint": "0770b98fdda6e8f77374a469cfcc3faa3866ae927f355918b46b81b3ff2103a1",
+      "revision": "r2",
+      "spec_path": "math/run-2026-w2-weekly-question-plan-validation/specs/grade_4/r2.json",
+      "worksheet_id": "grade_4"
+    },
+    {
+      "fingerprint": "6c93a8bdfa3f422e7425832210b59bbf81adc151bb0db1b96b7df74da34b508c",
+      "revision": "r2",
+      "spec_path": "math/run-2026-w2-weekly-question-plan-validation/specs/grade_5/r2.json",
+      "worksheet_id": "grade_5"
+    },
+    {
+      "fingerprint": "55ac7222554d7a7aea6a9d798d431341f5dc9a13bf6b6cf97b6125d6bef9dbd2",
+      "revision": "r2",
+      "spec_path": "math/run-2026-w2-weekly-question-plan-validation/specs/grade_6/r2.json",
+      "worksheet_id": "grade_6"
+    },
+    {
+      "fingerprint": "7896f01bc0a15898be202961a34c078dffc0cf4b912b57e17c8351c1979741b1",
+      "revision": "r2",
+      "spec_path": "math/run-2026-w2-weekly-question-plan-validation/specs/grade_9_10/r2.json",
+      "worksheet_id": "grade_9_10"
+    },
+    {
+      "fingerprint": "f13043b1b663f0bd787c2d844de6586205a3a5a83ee6b9bc35fb8c6df5177866",
+      "revision": "r3",
+      "spec_path": "math/run-2026-w2-weekly-question-plan-validation/specs/grade_9_10/r3.json",
+      "worksheet_id": "grade_9_10"
+    },
+    {
+      "fingerprint": "f27a22fab909552c6f26fcd658323b5325ea6da097724a32531f9214e4bba831",
+      "revision": "r4",
+      "spec_path": "math/run-2026-w2-weekly-question-plan-validation/specs/grade_9_10/r4.json",
+      "worksheet_id": "grade_9_10"
+    }
+  ],
+  "started_at": "2026-08-28T21:14:49.637338+00:00",
+  "status": "published",
+  "subject": "math",
+  "telemetry": {
+    "token_usage": null
+  },
+  "worksheet_type": "weekly-worksheet"
+}

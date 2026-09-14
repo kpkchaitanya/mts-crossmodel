@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "all_question_numbers_present": true,
+    "grade_present": true,
+    "no_extra_numbered_slots": true,
+    "no_pending_approval_label": true,
+    "no_unresolved_placeholders": true,
+    "rendered_text_nonempty": true,
+    "title_present": true
+  },
+  "failed_checks": [],
+  "status": "PASS"
+}

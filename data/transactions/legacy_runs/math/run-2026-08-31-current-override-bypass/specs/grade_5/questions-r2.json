@@ -1,0 +1,1326 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 5,
+          "cognitive_action": "retrieve",
+          "difficulty": "low_plus",
+          "form_family": "coordinate.read_component",
+          "number": 1,
+          "prompt": "Item 1: Point P is at (3, 5). What is the y-coordinate of P?",
+          "representation": "ordered_pair",
+          "response_type": "numeric_answer",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 42,
+          "cognitive_action": "locate",
+          "difficulty": "low_plus",
+          "form_family": "generic.number_line",
+          "number": 2,
+          "prompt": "Item 2: Evaluate: 7 x (4 + 2).",
+          "representation": "number_line",
+          "response_type": "numeric_answer",
+          "skill": "numerical expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7*(4+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "cognitive_action": "translate",
+          "difficulty": "low_plus",
+          "form_family": "coordinate.verbal_location",
+          "number": 3,
+          "prompt": "Item 3: Start at the origin, move 5 units right and 7 units up. What is the y-coordinate?",
+          "representation": "verbal_context",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 25,
+          "cognitive_action": "order",
+          "difficulty": "medium",
+          "form_family": "generic.sort_order",
+          "number": 4,
+          "prompt": "Item 4: The pattern is 10, 15, 20, ___. What is next?",
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "skill": "patterns",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "10+3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 60000,
+          "cognitive_action": "construct",
+          "difficulty": "medium",
+          "form_family": "generic.construct_example",
+          "number": 5,
+          "prompt": "Item 5: What is the value of the digit 6 in 60704?",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "skill": "place value",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 180,
+          "cognitive_action": "compare",
+          "difficulty": "medium",
+          "form_family": "generic.compare_select",
+          "number": 6,
+          "prompt": "Item 6: Solve: 20 x 9 = ___.",
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "skill": "whole-number multiplication",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "20*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            3.0,
+            7.0
+          ],
+          "cognitive_action": "construct",
+          "difficulty": "medium",
+          "form_family": "coordinate.write_ordered_pair",
+          "number": 7,
+          "prompt": "Item 7: Find the midpoint of A(1, 4) and B(5, 10).",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "x1": 1,
+              "x2": 5,
+              "y1": 4,
+              "y2": 10
+            },
+            "method": "midpoint"
+          }
+        },
+        {
+          "answer": 5,
+          "cognitive_action": "compare",
+          "difficulty": "medium",
+          "form_family": "coordinate.axis_proximity",
+          "number": 8,
+          "prompt": "Item 8: Point P is at (2, -5). What is its distance from the x-axis?",
+          "representation": "ordered_pair",
+          "response_type": "selection",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 36,
+          "cognitive_action": "apply",
+          "difficulty": "medium",
+          "form_family": "generic.measurement_context",
+          "number": 9,
+          "prompt": "Item 9: Evaluate: 4 x (7 + 2).",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "skill": "numerical expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4*(7+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3452,
+          "cognitive_action": "model",
+          "difficulty": "medium",
+          "form_family": "generic.context_story",
+          "number": 10,
+          "prompt": "Item 10: Solve: 2740 + 712 = ___.",
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "skill": "multi-digit operations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2740+712"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 11,
+          "cognitive_action": "transform",
+          "difficulty": "low_plus",
+          "form_family": "coordinate.translate_point",
+          "number": 11,
+          "prompt": "Item 11: Point A is at (5, 8). Move it 2 right and 3 up. What is the new y-coordinate?",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "8+3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 56,
+          "cognitive_action": "construct_equivalent",
+          "difficulty": "medium",
+          "form_family": "generic.create_equivalent",
+          "number": 12,
+          "prompt": "Item 12: Evaluate: 7 x (6 + 2).",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "numerical expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7*(6+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "cognitive_action": "compare",
+          "difficulty": "medium",
+          "form_family": "coordinate.axis_proximity",
+          "number": 13,
+          "prompt": "Item 13: Point P is at (7, -3). What is its distance from the x-axis?",
+          "representation": "ordered_pair",
+          "response_type": "selection",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 29,
+          "cognitive_action": "select_strategy",
+          "difficulty": "medium",
+          "form_family": "generic.choose_operation",
+          "number": 14,
+          "prompt": "Item 14: The pattern is 20, 23, 26, ___. What is next?",
+          "representation": "short_context",
+          "response_type": "selection",
+          "skill": "patterns",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "20+3*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 60000,
+          "cognitive_action": "analyze_exception",
+          "difficulty": "medium",
+          "form_family": "generic.find_counterexample",
+          "number": 15,
+          "prompt": "Item 15: What is the value of the digit 6 in 61704?",
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "skill": "place value",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 270,
+          "cognitive_action": "evaluate_reasonableness",
+          "difficulty": "medium",
+          "form_family": "generic.error_check",
+          "number": 16,
+          "prompt": "Item 16: Solve: 30 x 9 = ___.",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "skill": "whole-number multiplication",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "30*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "cognitive_action": "translate",
+          "difficulty": "medium",
+          "form_family": "coordinate.verbal_location",
+          "number": 17,
+          "prompt": "Item 17: Start at the origin, move 3 units right and 7 units up. What is the y-coordinate?",
+          "representation": "verbal_context",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            6.0,
+            11.0
+          ],
+          "cognitive_action": "construct",
+          "difficulty": "medium_plus",
+          "form_family": "coordinate.write_ordered_pair",
+          "number": 18,
+          "prompt": "Item 18: Find the midpoint of A(4, 8) and B(8, 14).",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "x1": 4,
+              "x2": 8,
+              "y1": 8,
+              "y2": 14
+            },
+            "method": "midpoint"
+          }
+        },
+        {
+          "answer": 28,
+          "cognitive_action": "justify",
+          "difficulty": "medium_plus",
+          "form_family": "generic.justify_claim",
+          "number": 19,
+          "prompt": "Item 19: Evaluate: 4 x (5 + 2).",
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "skill": "numerical expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4*(5+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3662,
+          "cognitive_action": "satisfy_constraint",
+          "difficulty": "medium_plus",
+          "form_family": "generic.constraint_solve",
+          "number": 20,
+          "prompt": "Item 20: Solve: 2940 + 722 = ___.",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "skill": "multi-digit operations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2940+722"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 4,
+          "cognitive_action": "retrieve",
+          "difficulty": "medium",
+          "form_family": "coordinate.read_component",
+          "number": 21,
+          "prompt": "Item 21: Point P is at (7, 4). What is the y-coordinate of P?",
+          "representation": "ordered_pair",
+          "response_type": "numeric_answer",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 42,
+          "cognitive_action": "translate",
+          "difficulty": "medium",
+          "form_family": "generic.equivalent_form",
+          "number": 22,
+          "prompt": "Item 22: Evaluate: 7 x (4 + 2).",
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "skill": "numerical expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7*(4+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 9,
+          "cognitive_action": "transform",
+          "difficulty": "medium",
+          "form_family": "coordinate.translate_point",
+          "number": 23,
+          "prompt": "Item 23: Point A is at (1, 6). Move it 2 right and 3 up. What is the new y-coordinate?",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "6+3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 45,
+          "cognitive_action": "satisfy_constraint",
+          "difficulty": "medium",
+          "form_family": "generic.constraint_solve",
+          "number": 24,
+          "prompt": "Item 24: The pattern is 30, 35, 40, ___. What is next?",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "skill": "patterns",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "30+3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 60000,
+          "cognitive_action": "evaluate_reasonableness",
+          "difficulty": "medium",
+          "form_family": "generic.reasonable_answer",
+          "number": 25,
+          "prompt": "Item 25: What is the value of the digit 6 in 62704?",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "skill": "place value",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 360,
+          "cognitive_action": "construct",
+          "difficulty": "medium_plus",
+          "form_family": "generic.construct_example",
+          "number": 26,
+          "prompt": "Item 26: Solve: 40 x 9 = ___.",
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "skill": "whole-number multiplication",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "40*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "cognitive_action": "compare",
+          "difficulty": "medium_plus",
+          "form_family": "coordinate.axis_proximity",
+          "number": 27,
+          "prompt": "Item 27: Point P is at (5, -3). What is its distance from the x-axis?",
+          "representation": "ordered_pair",
+          "response_type": "selection",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            8.0,
+            7.0
+          ],
+          "cognitive_action": "construct",
+          "difficulty": "medium_plus",
+          "form_family": "coordinate.write_ordered_pair",
+          "number": 28,
+          "prompt": "Item 28: Find the midpoint of A(6, 4) and B(10, 10).",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "x1": 6,
+              "x2": 10,
+              "y1": 4,
+              "y2": 10
+            },
+            "method": "midpoint"
+          }
+        },
+        {
+          "answer": 36,
+          "cognitive_action": "match",
+          "difficulty": "medium_plus",
+          "form_family": "generic.match_rule",
+          "number": 29,
+          "prompt": "Item 29: Evaluate: 4 x (7 + 2).",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "skill": "numerical expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4*(7+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3872,
+          "cognitive_action": "classify",
+          "difficulty": "medium_plus",
+          "form_family": "generic.classify",
+          "number": 30,
+          "prompt": "Item 30: Solve: 3140 + 732 = ___.",
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "skill": "multi-digit operations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3140+732"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 7,
+          "cognitive_action": "retrieve",
+          "difficulty": "medium",
+          "form_family": "coordinate.read_component",
+          "number": 31,
+          "prompt": "Item 31: Point P is at (1, 7). What is the y-coordinate of P?",
+          "representation": "ordered_pair",
+          "response_type": "numeric_answer",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 56,
+          "cognitive_action": "connect_representations",
+          "difficulty": "medium",
+          "form_family": "generic.multi_representation",
+          "number": 32,
+          "prompt": "Item 32: Evaluate: 7 x (6 + 2).",
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "skill": "numerical expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7*(6+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2,
+          "cognitive_action": "compare",
+          "difficulty": "medium",
+          "form_family": "coordinate.axis_proximity",
+          "number": 33,
+          "prompt": "Item 33: Point P is at (3, -2). What is its distance from the x-axis?",
+          "representation": "ordered_pair",
+          "response_type": "selection",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 49,
+          "cognitive_action": "evaluate_reasonableness",
+          "difficulty": "medium_plus",
+          "form_family": "generic.reasonable_answer",
+          "number": 34,
+          "prompt": "Item 34: The pattern is 40, 43, 46, ___. What is next?",
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "skill": "patterns",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "40+3*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 60000,
+          "cognitive_action": "apply",
+          "difficulty": "medium_plus",
+          "form_family": "generic.measurement_context",
+          "number": 35,
+          "prompt": "Item 35: What is the value of the digit 6 in 63704?",
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "skill": "place value",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 450,
+          "cognitive_action": "compose_operations",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_step",
+          "number": 36,
+          "prompt": "Item 36: Solve: 50 x 9 = ___.",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "skill": "whole-number multiplication",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "50*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "cognitive_action": "transform",
+          "difficulty": "medium_plus",
+          "form_family": "coordinate.translate_point",
+          "number": 37,
+          "prompt": "Item 37: Point A is at (7, 6). Move it 4 right and 2 up. What is the new y-coordinate?",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "6+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            2.0,
+            10.0
+          ],
+          "cognitive_action": "construct",
+          "difficulty": "medium_plus",
+          "form_family": "coordinate.write_ordered_pair",
+          "number": 38,
+          "prompt": "Item 38: Find the midpoint of A(0, 7) and B(4, 13).",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "x1": 0,
+              "x2": 4,
+              "y1": 7,
+              "y2": 13
+            },
+            "method": "midpoint"
+          }
+        },
+        {
+          "answer": 28,
+          "cognitive_action": "satisfy_constraint",
+          "difficulty": "medium_plus",
+          "form_family": "generic.constraint_solve",
+          "number": 39,
+          "prompt": "Item 39: Evaluate: 4 x (5 + 2).",
+          "representation": "constraint_statement",
+          "response_type": "numeric_answer",
+          "skill": "numerical expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4*(5+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4082,
+          "cognitive_action": "construct_equivalent",
+          "difficulty": "high",
+          "form_family": "generic.create_equivalent",
+          "number": 40,
+          "prompt": "Item 40: Solve: 3340 + 742 = ___.",
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "skill": "multi-digit operations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3340+742"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 3,
+          "cognitive_action": "translate",
+          "difficulty": "medium",
+          "form_family": "coordinate.verbal_location",
+          "number": 41,
+          "prompt": "Item 41: Start at the origin, move 3 units right and 3 units up. What is the y-coordinate?",
+          "representation": "verbal_context",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 42,
+          "cognitive_action": "order",
+          "difficulty": "medium_plus",
+          "form_family": "generic.sort_order",
+          "number": 42,
+          "prompt": "Item 42: Evaluate: 7 x (4 + 2).",
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "skill": "numerical expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "7*(4+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "cognitive_action": "transform",
+          "difficulty": "medium_plus",
+          "form_family": "coordinate.translate_point",
+          "number": 43,
+          "prompt": "Item 43: Point A is at (5, 5). Move it 2 right and 2 up. What is the new y-coordinate?",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "5+2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 65,
+          "cognitive_action": "evaluate_reasonableness",
+          "difficulty": "medium_plus",
+          "form_family": "generic.error_check",
+          "number": 44,
+          "prompt": "Item 44: The pattern is 50, 55, 60, ___. What is next?",
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "skill": "patterns",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "50+3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 60000,
+          "cognitive_action": "match",
+          "difficulty": "medium_plus",
+          "form_family": "generic.match_rule",
+          "number": 45,
+          "prompt": "Item 45: What is the value of the digit 6 in 64704?",
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "skill": "place value",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 540,
+          "cognitive_action": "decide",
+          "difficulty": "medium_plus",
+          "form_family": "generic.decision_table",
+          "number": 46,
+          "prompt": "Item 46: Solve: 60 x 9 = ___.",
+          "representation": "decision_table",
+          "response_type": "selection",
+          "skill": "whole-number multiplication",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "60*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": [
+            3.0,
+            5.0
+          ],
+          "cognitive_action": "construct",
+          "difficulty": "high",
+          "form_family": "coordinate.write_ordered_pair",
+          "number": 47,
+          "prompt": "Item 47: Find the midpoint of A(1, 2) and B(5, 8).",
+          "representation": "coordinate_plane",
+          "response_type": "ordered_pair",
+          "skill": "coordinate geometry basics",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "x1": 1,
+              "x2": 5,
+              "y1": 2,
+              "y2": 8
+            },
+            "method": "midpoint"
+          }
+        },
+        {
+          "answer": 3,
+          "cognitive_action": "retrieve",
+          "difficulty": "high",
+          "form_family": "coordinate.read_component",
+          "number": 48,
+          "prompt": "Item 48: Point P is at (2, 3). What is the y-coordinate of P?",
+          "representation": "ordered_pair",
+          "response_type": "numeric_answer",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 36,
+          "cognitive_action": "compose_operations",
+          "difficulty": "high",
+          "form_family": "generic.multi_step",
+          "number": 49,
+          "prompt": "Item 49: Evaluate: 4 x (7 + 2).",
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "skill": "numerical expressions",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "4*(7+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4292,
+          "cognitive_action": "invert_operation",
+          "difficulty": "high",
+          "form_family": "generic.inverse_operation",
+          "number": 50,
+          "prompt": "Item 50: Solve: 3540 + 752 = ___.",
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "skill": "multi-digit operations",
+          "variation_seed": 2026083101,
+          "verification": {
+            "inputs": {
+              "expression": "3540+752"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PASS",
+    "summary": {
+      "deterministic_checked": 50,
+      "failures": [],
+      "questions": 50,
+      "reasoning_required": 0,
+      "results": [
+        {
+          "computed": 5,
+          "expected": 5,
+          "number": 1,
+          "status": "PASS"
+        },
+        {
+          "computed": 42,
+          "expected": 42,
+          "number": 2,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 3,
+          "status": "PASS"
+        },
+        {
+          "computed": 25,
+          "expected": 25,
+          "number": 4,
+          "status": "PASS"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 5,
+          "status": "PASS"
+        },
+        {
+          "computed": 180,
+          "expected": 180,
+          "number": 6,
+          "status": "PASS"
+        },
+        {
+          "computed": [
+            3.0,
+            7.0
+          ],
+          "expected": [
+            3.0,
+            7.0
+          ],
+          "number": 7,
+          "status": "PASS"
+        },
+        {
+          "computed": 5,
+          "expected": 5,
+          "number": 8,
+          "status": "PASS"
+        },
+        {
+          "computed": 36,
+          "expected": 36,
+          "number": 9,
+          "status": "PASS"
+        },
+        {
+          "computed": 3452,
+          "expected": 3452,
+          "number": 10,
+          "status": "PASS"
+        },
+        {
+          "computed": 11,
+          "expected": 11,
+          "number": 11,
+          "status": "PASS"
+        },
+        {
+          "computed": 56,
+          "expected": 56,
+          "number": 12,
+          "status": "PASS"
+        },
+        {
+          "computed": 3,
+          "expected": 3,
+          "number": 13,
+          "status": "PASS"
+        },
+        {
+          "computed": 29,
+          "expected": 29,
+          "number": 14,
+          "status": "PASS"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 15,
+          "status": "PASS"
+        },
+        {
+          "computed": 270,
+          "expected": 270,
+          "number": 16,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 17,
+          "status": "PASS"
+        },
+        {
+          "computed": [
+            6.0,
+            11.0
+          ],
+          "expected": [
+            6.0,
+            11.0
+          ],
+          "number": 18,
+          "status": "PASS"
+        },
+        {
+          "computed": 28,
+          "expected": 28,
+          "number": 19,
+          "status": "PASS"
+        },
+        {
+          "computed": 3662,
+          "expected": 3662,
+          "number": 20,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 21,
+          "status": "PASS"
+        },
+        {
+          "computed": 42,
+          "expected": 42,
+          "number": 22,
+          "status": "PASS"
+        },
+        {
+          "computed": 9,
+          "expected": 9,
+          "number": 23,
+          "status": "PASS"
+        },
+        {
+          "computed": 45,
+          "expected": 45,
+          "number": 24,
+          "status": "PASS"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 25,
+          "status": "PASS"
+        },
+        {
+          "computed": 360,
+          "expected": 360,
+          "number": 26,
+          "status": "PASS"
+        },
+        {
+          "computed": 3,
+          "expected": 3,
+          "number": 27,
+          "status": "PASS"
+        },
+        {
+          "computed": [
+            8.0,
+            7.0
+          ],
+          "expected": [
+            8.0,
+            7.0
+          ],
+          "number": 28,
+          "status": "PASS"
+        },
+        {
+          "computed": 36,
+          "expected": 36,
+          "number": 29,
+          "status": "PASS"
+        },
+        {
+          "computed": 3872,
+          "expected": 3872,
+          "number": 30,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 31,
+          "status": "PASS"
+        },
+        {
+          "computed": 56,
+          "expected": 56,
+          "number": 32,
+          "status": "PASS"
+        },
+        {
+          "computed": 2,
+          "expected": 2,
+          "number": 33,
+          "status": "PASS"
+        },
+        {
+          "computed": 49,
+          "expected": 49,
+          "number": 34,
+          "status": "PASS"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 35,
+          "status": "PASS"
+        },
+        {
+          "computed": 450,
+          "expected": 450,
+          "number": 36,
+          "status": "PASS"
+        },
+        {
+          "computed": 8,
+          "expected": 8,
+          "number": 37,
+          "status": "PASS"
+        },
+        {
+          "computed": [
+            2.0,
+            10.0
+          ],
+          "expected": [
+            2.0,
+            10.0
+          ],
+          "number": 38,
+          "status": "PASS"
+        },
+        {
+          "computed": 28,
+          "expected": 28,
+          "number": 39,
+          "status": "PASS"
+        },
+        {
+          "computed": 4082,
+          "expected": 4082,
+          "number": 40,
+          "status": "PASS"
+        },
+        {
+          "computed": 3,
+          "expected": 3,
+          "number": 41,
+          "status": "PASS"
+        },
+        {
+          "computed": 42,
+          "expected": 42,
+          "number": 42,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 43,
+          "status": "PASS"
+        },
+        {
+          "computed": 65,
+          "expected": 65,
+          "number": 44,
+          "status": "PASS"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 45,
+          "status": "PASS"
+        },
+        {
+          "computed": 540,
+          "expected": 540,
+          "number": 46,
+          "status": "PASS"
+        },
+        {
+          "computed": [
+            3.0,
+            5.0
+          ],
+          "expected": [
+            3.0,
+            5.0
+          ],
+          "number": 47,
+          "status": "PASS"
+        },
+        {
+          "computed": 3,
+          "expected": 3,
+          "number": 48,
+          "status": "PASS"
+        },
+        {
+          "computed": 36,
+          "expected": 36,
+          "number": 49,
+          "status": "PASS"
+        },
+        {
+          "computed": 4292,
+          "expected": 4292,
+          "number": 50,
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "structure_errors": []
+    }
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_5",
+    "grade_display_name": "Grade 5",
+    "grade_or_course": "grade_5",
+    "question_count": 50,
+    "title": "MTS - WEEKLY MATH WORKSHEET",
+    "week_start": "2026-08-31"
+  }
+}

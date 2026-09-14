@@ -1,0 +1,1014 @@
+{
+  "sections": [
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 5,
+          "difficulty": "medium",
+          "number": 1,
+          "prompt": "Point P is at (3, 5). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 42,
+          "difficulty": "medium_plus",
+          "number": 2,
+          "prompt": "Evaluate: 7 x (4 + 2).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "7*(4+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "difficulty": "medium_plus",
+          "number": 3,
+          "prompt": "Point P is at (5, 7). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "verification": {
+            "inputs": {
+              "expression": "7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 25,
+          "difficulty": "medium_plus",
+          "number": 4,
+          "prompt": "The pattern is 10, 15, 20, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "10+3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 60000,
+          "difficulty": "medium_plus",
+          "number": 5,
+          "prompt": "What is the value of the digit 6 in 60704?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 180,
+          "difficulty": "medium_plus",
+          "number": 6,
+          "prompt": "Solve: 20 x 9 = ___.",
+          "skill": "whole-number multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "20*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "difficulty": "high",
+          "number": 7,
+          "prompt": "Point P is at (1, 4). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "difficulty": "high",
+          "number": 8,
+          "prompt": "Point P is at (2, 5). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 36,
+          "difficulty": "high",
+          "number": 9,
+          "prompt": "Evaluate: 4 x (7 + 2).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*(7+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3452,
+          "difficulty": "high",
+          "number": 10,
+          "prompt": "Solve: 2740 + 712 = ___.",
+          "skill": "multi-digit operations",
+          "verification": {
+            "inputs": {
+              "expression": "2740+712"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Friday"
+    },
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 8,
+          "difficulty": "low_plus",
+          "number": 11,
+          "prompt": "Point P is at (5, 8). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "verification": {
+            "inputs": {
+              "expression": "8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 56,
+          "difficulty": "low_plus",
+          "number": 12,
+          "prompt": "Evaluate: 7 x (6 + 2).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "7*(6+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "difficulty": "low_plus",
+          "number": 13,
+          "prompt": "Point P is at (7, 3). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 29,
+          "difficulty": "medium",
+          "number": 14,
+          "prompt": "The pattern is 20, 23, 26, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "20+3*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 60000,
+          "difficulty": "medium",
+          "number": 15,
+          "prompt": "What is the value of the digit 6 in 61704?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 270,
+          "difficulty": "medium",
+          "number": 16,
+          "prompt": "Solve: 30 x 9 = ___.",
+          "skill": "whole-number multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "30*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "difficulty": "medium",
+          "number": 17,
+          "prompt": "Point P is at (3, 7). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "verification": {
+            "inputs": {
+              "expression": "7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 8,
+          "difficulty": "medium",
+          "number": 18,
+          "prompt": "Point P is at (4, 8). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "verification": {
+            "inputs": {
+              "expression": "8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 28,
+          "difficulty": "medium",
+          "number": 19,
+          "prompt": "Evaluate: 4 x (5 + 2).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*(5+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3662,
+          "difficulty": "medium",
+          "number": 20,
+          "prompt": "Solve: 2940 + 722 = ___.",
+          "skill": "multi-digit operations",
+          "verification": {
+            "inputs": {
+              "expression": "2940+722"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Monday"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 4,
+          "difficulty": "medium",
+          "number": 21,
+          "prompt": "Point P is at (7, 4). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 42,
+          "difficulty": "medium",
+          "number": 22,
+          "prompt": "Evaluate: 7 x (4 + 2).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "7*(4+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "medium",
+          "number": 23,
+          "prompt": "Point P is at (1, 6). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "verification": {
+            "inputs": {
+              "expression": "6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 45,
+          "difficulty": "medium_plus",
+          "number": 24,
+          "prompt": "The pattern is 30, 35, 40, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "30+3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 60000,
+          "difficulty": "medium_plus",
+          "number": 25,
+          "prompt": "What is the value of the digit 6 in 62704?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 360,
+          "difficulty": "medium_plus",
+          "number": 26,
+          "prompt": "Solve: 40 x 9 = ___.",
+          "skill": "whole-number multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "40*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "difficulty": "medium_plus",
+          "number": 27,
+          "prompt": "Point P is at (5, 3). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "difficulty": "medium_plus",
+          "number": 28,
+          "prompt": "Point P is at (6, 4). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 36,
+          "difficulty": "medium_plus",
+          "number": 29,
+          "prompt": "Evaluate: 4 x (7 + 2).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*(7+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3872,
+          "difficulty": "high",
+          "number": 30,
+          "prompt": "Solve: 3140 + 732 = ___.",
+          "skill": "multi-digit operations",
+          "verification": {
+            "inputs": {
+              "expression": "3140+732"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Thursday"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 7,
+          "difficulty": "low_plus",
+          "number": 31,
+          "prompt": "Point P is at (1, 7). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "verification": {
+            "inputs": {
+              "expression": "7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 56,
+          "difficulty": "medium",
+          "number": 32,
+          "prompt": "Evaluate: 7 x (6 + 2).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "7*(6+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2,
+          "difficulty": "medium",
+          "number": 33,
+          "prompt": "Point P is at (3, 2). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "verification": {
+            "inputs": {
+              "expression": "2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 49,
+          "difficulty": "medium",
+          "number": 34,
+          "prompt": "The pattern is 40, 43, 46, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "40+3*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 60000,
+          "difficulty": "medium",
+          "number": 35,
+          "prompt": "What is the value of the digit 6 in 63704?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 450,
+          "difficulty": "medium",
+          "number": 36,
+          "prompt": "Solve: 50 x 9 = ___.",
+          "skill": "whole-number multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "50*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6,
+          "difficulty": "medium",
+          "number": 37,
+          "prompt": "Point P is at (7, 6). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "verification": {
+            "inputs": {
+              "expression": "6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 7,
+          "difficulty": "medium_plus",
+          "number": 38,
+          "prompt": "Point P is at (0, 7). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "verification": {
+            "inputs": {
+              "expression": "7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 28,
+          "difficulty": "medium_plus",
+          "number": 39,
+          "prompt": "Evaluate: 4 x (5 + 2).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*(5+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4082,
+          "difficulty": "medium_plus",
+          "number": 40,
+          "prompt": "Solve: 3340 + 742 = ___.",
+          "skill": "multi-digit operations",
+          "verification": {
+            "inputs": {
+              "expression": "3340+742"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Tuesday"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 3,
+          "difficulty": "medium",
+          "number": 41,
+          "prompt": "Point P is at (3, 3). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 42,
+          "difficulty": "medium",
+          "number": 42,
+          "prompt": "Evaluate: 7 x (4 + 2).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "7*(4+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "difficulty": "medium",
+          "number": 43,
+          "prompt": "Point P is at (5, 5). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 65,
+          "difficulty": "medium",
+          "number": 44,
+          "prompt": "The pattern is 50, 55, 60, ___. What is next?",
+          "skill": "patterns",
+          "verification": {
+            "inputs": {
+              "expression": "50+3*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 60000,
+          "difficulty": "medium",
+          "number": 45,
+          "prompt": "What is the value of the digit 6 in 64704?",
+          "skill": "place value",
+          "verification": {
+            "inputs": {
+              "expression": "60000"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 540,
+          "difficulty": "medium_plus",
+          "number": 46,
+          "prompt": "Solve: 60 x 9 = ___.",
+          "skill": "whole-number multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "60*9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2,
+          "difficulty": "medium_plus",
+          "number": 47,
+          "prompt": "Point P is at (1, 2). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "verification": {
+            "inputs": {
+              "expression": "2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "difficulty": "medium_plus",
+          "number": 48,
+          "prompt": "Point P is at (2, 3). What is the y-coordinate of P?",
+          "skill": "coordinate geometry basics",
+          "topic_override": true,
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 36,
+          "difficulty": "medium_plus",
+          "number": 49,
+          "prompt": "Evaluate: 4 x (7 + 2).",
+          "skill": "numerical expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*(7+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4292,
+          "difficulty": "medium_plus",
+          "number": 50,
+          "prompt": "Solve: 3540 + 752 = ___.",
+          "skill": "multi-digit operations",
+          "verification": {
+            "inputs": {
+              "expression": "3540+752"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Wednesday"
+    }
+  ],
+  "verification": {
+    "status": "PASS",
+    "summary": {
+      "deterministic_checked": 50,
+      "failures": [],
+      "questions": 50,
+      "reasoning_required": 0,
+      "results": [
+        {
+          "computed": 5,
+          "expected": 5,
+          "number": 1,
+          "status": "PASS"
+        },
+        {
+          "computed": 42,
+          "expected": 42,
+          "number": 2,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 3,
+          "status": "PASS"
+        },
+        {
+          "computed": 25,
+          "expected": 25,
+          "number": 4,
+          "status": "PASS"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 5,
+          "status": "PASS"
+        },
+        {
+          "computed": 180,
+          "expected": 180,
+          "number": 6,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 7,
+          "status": "PASS"
+        },
+        {
+          "computed": 5,
+          "expected": 5,
+          "number": 8,
+          "status": "PASS"
+        },
+        {
+          "computed": 36,
+          "expected": 36,
+          "number": 9,
+          "status": "PASS"
+        },
+        {
+          "computed": 3452,
+          "expected": 3452,
+          "number": 10,
+          "status": "PASS"
+        },
+        {
+          "computed": 8,
+          "expected": 8,
+          "number": 11,
+          "status": "PASS"
+        },
+        {
+          "computed": 56,
+          "expected": 56,
+          "number": 12,
+          "status": "PASS"
+        },
+        {
+          "computed": 3,
+          "expected": 3,
+          "number": 13,
+          "status": "PASS"
+        },
+        {
+          "computed": 29,
+          "expected": 29,
+          "number": 14,
+          "status": "PASS"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 15,
+          "status": "PASS"
+        },
+        {
+          "computed": 270,
+          "expected": 270,
+          "number": 16,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 17,
+          "status": "PASS"
+        },
+        {
+          "computed": 8,
+          "expected": 8,
+          "number": 18,
+          "status": "PASS"
+        },
+        {
+          "computed": 28,
+          "expected": 28,
+          "number": 19,
+          "status": "PASS"
+        },
+        {
+          "computed": 3662,
+          "expected": 3662,
+          "number": 20,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 21,
+          "status": "PASS"
+        },
+        {
+          "computed": 42,
+          "expected": 42,
+          "number": 22,
+          "status": "PASS"
+        },
+        {
+          "computed": 6,
+          "expected": 6,
+          "number": 23,
+          "status": "PASS"
+        },
+        {
+          "computed": 45,
+          "expected": 45,
+          "number": 24,
+          "status": "PASS"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 25,
+          "status": "PASS"
+        },
+        {
+          "computed": 360,
+          "expected": 360,
+          "number": 26,
+          "status": "PASS"
+        },
+        {
+          "computed": 3,
+          "expected": 3,
+          "number": 27,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 28,
+          "status": "PASS"
+        },
+        {
+          "computed": 36,
+          "expected": 36,
+          "number": 29,
+          "status": "PASS"
+        },
+        {
+          "computed": 3872,
+          "expected": 3872,
+          "number": 30,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 31,
+          "status": "PASS"
+        },
+        {
+          "computed": 56,
+          "expected": 56,
+          "number": 32,
+          "status": "PASS"
+        },
+        {
+          "computed": 2,
+          "expected": 2,
+          "number": 33,
+          "status": "PASS"
+        },
+        {
+          "computed": 49,
+          "expected": 49,
+          "number": 34,
+          "status": "PASS"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 35,
+          "status": "PASS"
+        },
+        {
+          "computed": 450,
+          "expected": 450,
+          "number": 36,
+          "status": "PASS"
+        },
+        {
+          "computed": 6,
+          "expected": 6,
+          "number": 37,
+          "status": "PASS"
+        },
+        {
+          "computed": 7,
+          "expected": 7,
+          "number": 38,
+          "status": "PASS"
+        },
+        {
+          "computed": 28,
+          "expected": 28,
+          "number": 39,
+          "status": "PASS"
+        },
+        {
+          "computed": 4082,
+          "expected": 4082,
+          "number": 40,
+          "status": "PASS"
+        },
+        {
+          "computed": 3,
+          "expected": 3,
+          "number": 41,
+          "status": "PASS"
+        },
+        {
+          "computed": 42,
+          "expected": 42,
+          "number": 42,
+          "status": "PASS"
+        },
+        {
+          "computed": 5,
+          "expected": 5,
+          "number": 43,
+          "status": "PASS"
+        },
+        {
+          "computed": 65,
+          "expected": 65,
+          "number": 44,
+          "status": "PASS"
+        },
+        {
+          "computed": 60000,
+          "expected": 60000,
+          "number": 45,
+          "status": "PASS"
+        },
+        {
+          "computed": 540,
+          "expected": 540,
+          "number": 46,
+          "status": "PASS"
+        },
+        {
+          "computed": 2,
+          "expected": 2,
+          "number": 47,
+          "status": "PASS"
+        },
+        {
+          "computed": 3,
+          "expected": 3,
+          "number": 48,
+          "status": "PASS"
+        },
+        {
+          "computed": 36,
+          "expected": 36,
+          "number": 49,
+          "status": "PASS"
+        },
+        {
+          "computed": 4292,
+          "expected": 4292,
+          "number": 50,
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "structure_errors": []
+    }
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_5",
+    "question_count": 50,
+    "title": "MTS - WEEKLY MATH WORKSHEET",
+    "week_start": "2026-08-31"
+  }
+}

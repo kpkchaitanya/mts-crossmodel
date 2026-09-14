@@ -1,0 +1,556 @@
+{
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 5,
+          "course": "math_1",
+          "difficulty": "low_plus",
+          "number": 1,
+          "prompt": "Item 1: Solve for x: 3x + 4 = 19.",
+          "skill": "solve linear equations and inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 24,
+          "course": "math_1",
+          "difficulty": "low_plus",
+          "number": 2,
+          "prompt": "Item 2: Tickets cost $8 each. What is the cost of 3 tickets?",
+          "skill": "create equations from contexts",
+          "verification": {
+            "inputs": {
+              "expression": "8*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 19,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 3,
+          "prompt": "Item 3: If f(x) = 2x + 5, find f(7).",
+          "skill": "function notation and evaluation",
+          "verification": {
+            "inputs": {
+              "expression": "2*7+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 4,
+          "prompt": "Item 4: A line rises 4 units and runs 1 unit. What is its slope?",
+          "skill": "slope",
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 5,
+          "prompt": "Item 5: Evaluate 4x - 3 when x = 4.",
+          "skill": "simplify expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*4-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 3,
+          "course": "math_1",
+          "difficulty": "low_plus",
+          "number": 6,
+          "prompt": "Item 6: Solve for x: 3x + 4 = 13.",
+          "skill": "solve linear equations and inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 32,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 7,
+          "prompt": "Item 7: Tickets cost $8 each. What is the cost of 4 tickets?",
+          "skill": "create equations from contexts",
+          "verification": {
+            "inputs": {
+              "expression": "8*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 17,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 8,
+          "prompt": "Item 8: If f(x) = 2x + 5, find f(6).",
+          "skill": "function notation and evaluation",
+          "verification": {
+            "inputs": {
+              "expression": "2*6+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 9,
+          "prompt": "Item 9: A line rises 5 units and runs 1 unit. What is its slope?",
+          "skill": "slope",
+          "verification": {
+            "inputs": {
+              "expression": "5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "course": "math_1",
+          "difficulty": "medium_plus",
+          "number": 10,
+          "prompt": "Item 10: Evaluate 4x - 3 when x = 4.",
+          "skill": "simplify expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*4-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 8,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 11,
+          "prompt": "Item 11: Solve for x: 3x + 4 = 28.",
+          "skill": "solve linear equations and inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 40,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 12,
+          "prompt": "Item 12: Tickets cost $8 each. What is the cost of 5 tickets?",
+          "skill": "create equations from contexts",
+          "verification": {
+            "inputs": {
+              "expression": "8*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 15,
+          "course": "math_1",
+          "difficulty": "medium",
+          "number": 13,
+          "prompt": "Item 13: If f(x) = 2x + 5, find f(5).",
+          "skill": "function notation and evaluation",
+          "verification": {
+            "inputs": {
+              "expression": "2*5+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2,
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "number": 14,
+          "prompt": "Item 14: A line rises 2 units and runs 1 unit. What is its slope?",
+          "skill": "slope",
+          "verification": {
+            "inputs": {
+              "expression": "2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "number": 15,
+          "prompt": "Item 15: Evaluate 4x - 3 when x = 4.",
+          "skill": "simplify expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*4-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 6,
+          "course": "math_2",
+          "difficulty": "medium",
+          "number": 16,
+          "prompt": "Item 16: Solve for x: 3x + 4 = 22.",
+          "skill": "solve linear equations and inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 48,
+          "course": "math_2",
+          "difficulty": "medium",
+          "number": 17,
+          "prompt": "Item 17: Tickets cost $8 each. What is the cost of 6 tickets?",
+          "skill": "create equations from contexts",
+          "verification": {
+            "inputs": {
+              "expression": "8*6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "number": 18,
+          "prompt": "Item 18: If f(x) = 2x + 5, find f(4).",
+          "skill": "function notation and evaluation",
+          "verification": {
+            "inputs": {
+              "expression": "2*4+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3,
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "number": 19,
+          "prompt": "Item 19: A line rises 3 units and runs 1 unit. What is its slope?",
+          "skill": "slope",
+          "verification": {
+            "inputs": {
+              "expression": "3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "course": "math_2",
+          "difficulty": "high",
+          "number": 20,
+          "prompt": "Item 20: Evaluate 4x - 3 when x = 4.",
+          "skill": "simplify expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*4-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 4,
+          "course": "math_2",
+          "difficulty": "medium",
+          "number": 21,
+          "prompt": "Item 21: Solve for x: 3x + 4 = 16.",
+          "skill": "solve linear equations and inequalities",
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 24,
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "number": 22,
+          "prompt": "Item 22: Tickets cost $8 each. What is the cost of 3 tickets?",
+          "skill": "create equations from contexts",
+          "verification": {
+            "inputs": {
+              "expression": "8*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 11,
+          "course": "math_2",
+          "difficulty": "medium_plus",
+          "number": 23,
+          "prompt": "Item 23: If f(x) = 2x + 5, find f(3).",
+          "skill": "function notation and evaluation",
+          "verification": {
+            "inputs": {
+              "expression": "2*3+5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4,
+          "course": "math_2",
+          "difficulty": "high",
+          "number": 24,
+          "prompt": "Item 24: A line rises 4 units and runs 1 unit. What is its slope?",
+          "skill": "slope",
+          "verification": {
+            "inputs": {
+              "expression": "4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 13,
+          "course": "math_2",
+          "difficulty": "high",
+          "number": 25,
+          "prompt": "Item 25: Evaluate 4x - 3 when x = 4.",
+          "skill": "simplify expressions",
+          "verification": {
+            "inputs": {
+              "expression": "4*4-3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "verification": {
+    "status": "PASS",
+    "summary": {
+      "deterministic_checked": 25,
+      "failures": [],
+      "questions": 25,
+      "reasoning_required": 0,
+      "results": [
+        {
+          "computed": 5,
+          "expected": 5,
+          "number": 1,
+          "status": "PASS"
+        },
+        {
+          "computed": 24,
+          "expected": 24,
+          "number": 2,
+          "status": "PASS"
+        },
+        {
+          "computed": 19,
+          "expected": 19,
+          "number": 3,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 4,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 5,
+          "status": "PASS"
+        },
+        {
+          "computed": 3,
+          "expected": 3,
+          "number": 6,
+          "status": "PASS"
+        },
+        {
+          "computed": 32,
+          "expected": 32,
+          "number": 7,
+          "status": "PASS"
+        },
+        {
+          "computed": 17,
+          "expected": 17,
+          "number": 8,
+          "status": "PASS"
+        },
+        {
+          "computed": 5,
+          "expected": 5,
+          "number": 9,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 10,
+          "status": "PASS"
+        },
+        {
+          "computed": 8,
+          "expected": 8,
+          "number": 11,
+          "status": "PASS"
+        },
+        {
+          "computed": 40,
+          "expected": 40,
+          "number": 12,
+          "status": "PASS"
+        },
+        {
+          "computed": 15,
+          "expected": 15,
+          "number": 13,
+          "status": "PASS"
+        },
+        {
+          "computed": 2,
+          "expected": 2,
+          "number": 14,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 15,
+          "status": "PASS"
+        },
+        {
+          "computed": 6,
+          "expected": 6,
+          "number": 16,
+          "status": "PASS"
+        },
+        {
+          "computed": 48,
+          "expected": 48,
+          "number": 17,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 18,
+          "status": "PASS"
+        },
+        {
+          "computed": 3,
+          "expected": 3,
+          "number": 19,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 20,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 21,
+          "status": "PASS"
+        },
+        {
+          "computed": 24,
+          "expected": 24,
+          "number": 22,
+          "status": "PASS"
+        },
+        {
+          "computed": 11,
+          "expected": 11,
+          "number": 23,
+          "status": "PASS"
+        },
+        {
+          "computed": 4,
+          "expected": 4,
+          "number": 24,
+          "status": "PASS"
+        },
+        {
+          "computed": 13,
+          "expected": 13,
+          "number": 25,
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "structure_errors": []
+    }
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_9_10",
+    "grade_display_name": "Grades 9 and 10 Combined",
+    "grade_or_course": "grade_9_10",
+    "question_count": 25,
+    "title": "MTS - WEEKLY MATH WORKSHEET",
+    "week_start": "2026-08-31"
+  }
+}

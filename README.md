@@ -81,7 +81,7 @@ canonical `outputs/<subject>/`.
       <td style="border: 1px solid #6b7280;"><code>/generate-worksheet</code></td>
       <td style="border: 1px solid #6b7280;">Subject- and worksheet-type-agnostic entry point; resolves <code>subject</code>, <code>worksheettype</code>, <code>gates</code>, <code>grades</code> (default <code>all</code>), <code>week</code> (default <code>current</code>), and <code>publish</code> (default <code>yes</code>; use <code>publish=no</code> to stage only), and delegates to the matching subject command. See <code>commands/generate-worksheet.md</code>.</td>
       <td style="border: 1px solid #6b7280;"><code>/generate-worksheet subject=math worksheettype=weekly gates=bypass all</code></td>
-      <td style="border: 1px solid #6b7280;">Active for Math; delegates to <code>/generate-weekly-classworksheets</code></td>
+      <td style="border: 1px solid #6b7280;">Active for Math</td>
       <td style="border: 1px solid #6b7280;">Refuses and reports; ELA generation not yet registered</td>
     </tr>
     <tr>
@@ -109,46 +109,6 @@ canonical `outputs/<subject>/`.
       <td style="border: 1px solid #6b7280;">Designed conceptually; standalone command not registered</td>
     </tr>
     <tr>
-      <td style="border: 1px solid #6b7280;">Resolve Weekly Curriculum (RWC)</td>
-      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets</code></td>
-      <td style="border: 1px solid #6b7280;">Resolve the current weekly curriculum scope using cache-first, source-aware logic and stop at Gate 1 when enabled.</td>
-      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets week 5 grades 1,4,5,6,9-10</code></td>
-      <td style="border: 1px solid #6b7280;">Active command path</td>
-      <td style="border: 1px solid #6b7280;">Subject docs exist; command not registered</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #6b7280;">Prepare Batch (PB)</td>
-      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets</code></td>
-      <td style="border: 1px solid #6b7280;">Plan the requested worksheet set, shared overrides, grade/course split, and independent regeneration boundaries.</td>
-      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets week 5 grades 4,5</code></td>
-      <td style="border: 1px solid #6b7280;">Active command path</td>
-      <td style="border: 1px solid #6b7280;">Planned through shared workflow adaptation</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #6b7280;">Prepare Worksheet (PW)</td>
-      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets</code></td>
-      <td style="border: 1px solid #6b7280;">Apply worksheet type, grade/course, counts, sections, difficulty, template profile, and per-worksheet overrides.</td>
-      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets week 5 grade 6 weekly</code></td>
-      <td style="border: 1px solid #6b7280;">Active command path</td>
-      <td style="border: 1px solid #6b7280;">Planned; subject rules documented</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #6b7280;">Generate Worksheet (GW)</td>
-      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets</code></td>
-      <td style="border: 1px solid #6b7280;">Generate the canonical Worksheet Spec, ordered sections, questions, expected answers, standards, and Gate 2 review surface.</td>
-      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets week 5 grade 1</code></td>
-      <td style="border: 1px solid #6b7280;">Active command path</td>
-      <td style="border: 1px solid #6b7280;">Planned; no ELA generation slash command yet</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #6b7280;">Verify Worksheet (VW)</td>
-      <td style="border: 1px solid #6b7280;"><code>/verify-worksheet</code></td>
-      <td style="border: 1px solid #6b7280;">Independently verify the approved Worksheet Spec/question set, report failed or ambiguous items, and stop at Gate 3 when enabled.</td>
-      <td style="border: 1px solid #6b7280;"><code>/verify-worksheet runs/math/&lt;run-id&gt;/specs/&lt;worksheet-spec&gt;.json</code></td>
-      <td style="border: 1px solid #6b7280;">Active command path</td>
-      <td style="border: 1px solid #6b7280;">Verifier requirements documented; command not registered</td>
-    </tr>
-    <tr>
       <td style="border: 1px solid #6b7280;">Format Worksheet (FW)</td>
       <td style="border: 1px solid #6b7280;">Not yet registered</td>
       <td style="border: 1px solid #6b7280;">Render verified worksheet and answer key documents from the same spec without modifying master templates.</td>
@@ -173,6 +133,46 @@ canonical `outputs/<subject>/`.
       <td style="border: 1px solid #6b7280;">Planned; output policy active</td>
     </tr>
     <tr>
+      <td style="border: 1px solid #6b7280;">Deliver Worksheets (DEL)</td>
+      <td style="border: 1px solid #6b7280;"><code>/deliver-worksheets</code></td>
+      <td style="border: 1px solid #6b7280;">Standalone Final Delivery; copies approved pairs from staging into <code>Week_&lt;WEEK_OF&gt;</code> under each grade's audience folder. Pairs from a run root when given, otherwise by staged document name; ambiguous or incomplete matches are refused, never guessed. See <code>commands/deliver-worksheets.md</code>.</td>
+      <td style="border: 1px solid #6b7280;"><code>/deliver-worksheets week=2026-08-31 grades=grade_6</code></td>
+      <td style="border: 1px solid #6b7280;">Active; shares the workflow's delivery policy</td>
+      <td style="border: 1px solid #6b7280;">Active once ELA naming and destinations are configured</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Format-And-Deliver Worksheets (FAD)</td>
+      <td style="border: 1px solid #6b7280;"><code>/format-and-deliver-worksheets</code></td>
+      <td style="border: 1px solid #6b7280;">Classifies every staged pair as conformant (provenance-stamped) or orphan; reconstructs an orphan's Spec from its rendered text, re-renders from the registered template with local numbering, then delivers. Conformant pairs are delivered unmodified, never re-rendered. See <code>commands/format-and-deliver-worksheets.md</code>.</td>
+      <td style="border: 1px solid #6b7280;"><code>/format-and-deliver-worksheets week=2026-09-07 grades=grade_4</code></td>
+      <td style="border: 1px solid #6b7280;">Active; composes deliver-worksheets and reconstruction</td>
+      <td style="border: 1px solid #6b7280;">Active once ELA naming and templates are registered</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Archive Folder (ARC)</td>
+      <td style="border: 1px solid #6b7280;"><code>/archive-folder</code></td>
+      <td style="border: 1px solid #6b7280;">Publishing utility; moves a folder's previous set of loose files into its <code>Archive</code> child folder, in folder mode or in the latest/dated child of a parent folder. Dry run by default. See <code>commands/archive-folder.md</code>.</td>
+      <td style="border: 1px solid #6b7280;"><code>/archive-folder folder=publish foldertype=parent folderdate=latest</code></td>
+      <td style="border: 1px solid #6b7280;">Active; subject-agnostic utility</td>
+      <td style="border: 1px solid #6b7280;">Active; subject-agnostic utility</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Cleanup Folder (CLN)</td>
+      <td style="border: 1px solid #6b7280;"><code>/cleanup-folder</code></td>
+      <td style="border: 1px solid #6b7280;">Destructive companion to <code>/archive-folder</code>; trashes loose files, <code>Archive</code> contents, or both. Drive Trash only, never a permanent delete; never deletes folders. Requires a matching <code>--confirm</code> count and is gated by <code>publishing.cleanup.enabled</code>. See <code>commands/cleanup-folder.md</code>.</td>
+      <td style="border: 1px solid #6b7280;"><code>/cleanup-folder folder=staging scope=archive</code></td>
+      <td style="border: 1px solid #6b7280;">Active; subject-agnostic utility</td>
+      <td style="border: 1px solid #6b7280;">Active; subject-agnostic utility</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #6b7280;">Duplicate Worksheet (DUP)</td>
+      <td style="border: 1px solid #6b7280;"><code>/duplicate-worksheet</code></td>
+      <td style="border: 1px solid #6b7280;">Copies one existing worksheet/key pair and renames the copies from configurable target subject, Worksheet Type, grade, and week naming. Source defaults to staging; an omitted target folder leaves copies beside the source. See <code>commands/duplicate-worksheet.md</code>.</td>
+      <td style="border: 1px solid #6b7280;"><code>/duplicate-worksheet from_subject=math from_grade=grade_6 to_subject=ela to_grade=grade_6</code></td>
+      <td style="border: 1px solid #6b7280;">Active</td>
+      <td style="border: 1px solid #6b7280;">Active for existing artifacts with configured naming</td>
+    </tr>
+    <tr>
       <td style="border: 1px solid #6b7280;">Manage Templates (MT)</td>
       <td style="border: 1px solid #6b7280;">Not yet registered</td>
       <td style="border: 1px solid #6b7280;">Maintain template registration, revision manifests, cache validity, fallback templates, and controlled template promotion.</td>
@@ -182,9 +182,9 @@ canonical `outputs/<subject>/`.
     </tr>
     <tr>
       <td style="border: 1px solid #6b7280;">Manage Workflow (MW)</td>
-      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets</code>, <code>/verify-worksheet</code></td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-worksheet</code></td>
       <td style="border: 1px solid #6b7280;">Enforce gates, persist run manifests, support resume/invalidation, capture telemetry, and preserve auditability.</td>
-      <td style="border: 1px solid #6b7280;"><code>/generate-weekly-classworksheets resume runs/math/&lt;run-id&gt;</code></td>
+      <td style="border: 1px solid #6b7280;"><code>/generate-worksheet run=&lt;run-id&gt;</code></td>
       <td style="border: 1px solid #6b7280;">Active through Math commands</td>
       <td style="border: 1px solid #6b7280;">Shared governance active; ELA command surface pending</td>
     </tr>

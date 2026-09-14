@@ -1,0 +1,925 @@
+{
+  "curriculum_scope_ids": [
+    "grade_6"
+  ],
+  "difficulty": "medium_plus",
+  "diversity": "medium_plus",
+  "form_diversity": "high",
+  "grade_or_course": "grade_6",
+  "plan_version": "1.0",
+  "sections": [
+    {
+      "id": "monday",
+      "slots": [
+        {
+          "cache_hit": true,
+          "cognitive_action": "compute",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.direct_compute",
+          "number": 1,
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "section_title": "Foundation",
+          "skill": "NC.6.RP",
+          "slot": 1,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "reverse_reason",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.reverse_reasoning",
+          "number": 2,
+          "representation": "equation_or_context",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "section_title": "Foundation",
+          "skill": "NC.6.NS",
+          "slot": 2,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.find_counterexample",
+          "number": 3,
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "section_title": "Foundation",
+          "skill": "NC.6.G",
+          "slot": 3,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "match",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.match_rule",
+          "number": 4,
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "section_id": "monday",
+          "section_title": "Foundation",
+          "skill": "NC.6.NS",
+          "slot": 4,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "construct",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.construct_example",
+          "number": 5,
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "section_title": "Foundation",
+          "skill": "NC.6.RP",
+          "slot": 5,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reasonable_answer",
+          "number": 6,
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "monday",
+          "section_title": "Foundation",
+          "skill": "NC.6.NS",
+          "slot": 6,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "apply",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.measurement_context",
+          "number": 7,
+          "representation": "measurement_context",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "section_title": "Foundation",
+          "skill": "NC.6.G",
+          "slot": 7,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "model",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.context_story",
+          "number": 8,
+          "representation": "word_problem",
+          "response_type": "numeric_answer",
+          "section_id": "monday",
+          "section_title": "Foundation",
+          "skill": "NC.6.G",
+          "slot": 8,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        }
+      ],
+      "title": "Foundation"
+    },
+    {
+      "id": "tuesday",
+      "slots": [
+        {
+          "cache_hit": true,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "low_plus",
+          "form_family": "generic.multi_representation",
+          "number": 9,
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "section_title": "Discover",
+          "skill": "NC.6.RP",
+          "slot": 1,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "analyze_exception",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.find_counterexample",
+          "number": 10,
+          "representation": "numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "section_title": "Discover",
+          "skill": "NC.6.NS",
+          "slot": 2,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.reasonable_answer",
+          "number": 11,
+          "representation": "answer_choice_context",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "section_title": "Discover",
+          "skill": "NC.6.G",
+          "slot": 3,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.error_check",
+          "number": 12,
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "section_id": "tuesday",
+          "section_title": "Discover",
+          "skill": "NC.6.NS",
+          "slot": 4,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "estimate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.estimate",
+          "number": 13,
+          "representation": "rounded_values",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "section_title": "Discover",
+          "skill": "NC.6.RP",
+          "slot": 5,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "construct_equivalent",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.create_equivalent",
+          "number": 14,
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "section_title": "Discover",
+          "skill": "NC.6.NS",
+          "slot": 6,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "construct",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.construct_example",
+          "number": 15,
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "section_title": "Discover",
+          "skill": "NC.6.G",
+          "slot": 7,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "decompose",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.compose_decompose",
+          "number": 16,
+          "representation": "part_whole_numeric",
+          "response_type": "numeric_answer",
+          "section_id": "tuesday",
+          "section_title": "Discover",
+          "skill": "NC.6.G",
+          "slot": 8,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        }
+      ],
+      "title": "Discover"
+    },
+    {
+      "id": "wednesday",
+      "slots": [
+        {
+          "cache_hit": true,
+          "cognitive_action": "solve_unknown",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.missing_value",
+          "number": 17,
+          "representation": "equation",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "section_title": "Practice",
+          "skill": "NC.6.RP",
+          "slot": 1,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "translate",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.equivalent_form",
+          "number": 18,
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "section_title": "Practice",
+          "skill": "NC.6.NS",
+          "slot": 2,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "connect_representations",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.multi_representation",
+          "number": 19,
+          "representation": "mixed_numeric_visual",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "section_title": "Practice",
+          "skill": "NC.6.G",
+          "slot": 3,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "decide",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.decision_table",
+          "number": 20,
+          "representation": "decision_table",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "section_title": "Practice",
+          "skill": "NC.6.NS",
+          "slot": 4,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "order",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.sort_order",
+          "number": 21,
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "section_id": "wednesday",
+          "section_title": "Practice",
+          "skill": "NC.6.RP",
+          "slot": 5,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "compute",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.direct_compute",
+          "number": 22,
+          "representation": "symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "section_title": "Practice",
+          "skill": "NC.6.NS",
+          "slot": 6,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.table_complete",
+          "number": 23,
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "wednesday",
+          "section_title": "Practice",
+          "skill": "NC.6.G",
+          "slot": 7,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "justify",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.justify_claim",
+          "number": 24,
+          "representation": "claim_with_numbers",
+          "response_type": "selection",
+          "section_id": "wednesday",
+          "section_title": "Practice",
+          "skill": "NC.6.G",
+          "slot": 8,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        }
+      ],
+      "title": "Practice"
+    },
+    {
+      "id": "thursday",
+      "slots": [
+        {
+          "cache_hit": true,
+          "cognitive_action": "classify",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.classify",
+          "number": 25,
+          "representation": "attribute_list",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "section_title": "Apply and Review",
+          "skill": "NC.6.RP",
+          "slot": 1,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.compare_select",
+          "number": 26,
+          "representation": "numeric_or_verbal_choices",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "section_title": "Apply and Review",
+          "skill": "NC.6.NS",
+          "slot": 2,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.visual_grouping",
+          "number": 27,
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "section_title": "Apply and Review",
+          "skill": "NC.6.G",
+          "slot": 3,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "construct",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.construct_example",
+          "number": 28,
+          "representation": "open_numeric_condition",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "section_title": "Apply and Review",
+          "skill": "NC.6.NS",
+          "slot": 4,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "compose_operations",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.multi_step",
+          "number": 29,
+          "representation": "multi_step_context",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "section_title": "Apply and Review",
+          "skill": "NC.6.RP",
+          "slot": 5,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "invert_operation",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.inverse_operation",
+          "number": 30,
+          "representation": "operation_pair",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "section_title": "Apply and Review",
+          "skill": "NC.6.NS",
+          "slot": 6,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "compare",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.two_way_compare",
+          "number": 31,
+          "representation": "two_value_context",
+          "response_type": "numeric_answer",
+          "section_id": "thursday",
+          "section_title": "Apply and Review",
+          "skill": "NC.6.G",
+          "slot": 7,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "evaluate_reasonableness",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.error_check",
+          "number": 32,
+          "representation": "worked_example_or_claim",
+          "response_type": "selection",
+          "section_id": "thursday",
+          "section_title": "Apply and Review",
+          "skill": "NC.6.G",
+          "slot": 8,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        }
+      ],
+      "title": "Apply and Review"
+    },
+    {
+      "id": "friday",
+      "slots": [
+        {
+          "cache_hit": true,
+          "cognitive_action": "complete",
+          "confidence": "inferred",
+          "difficulty": "medium",
+          "form_family": "generic.table_complete",
+          "number": 33,
+          "representation": "input_output_table",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "section_title": "Mastery",
+          "skill": "NC.6.RP",
+          "slot": 1,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "order",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.sort_order",
+          "number": 34,
+          "representation": "number_set",
+          "response_type": "ordered_list",
+          "section_id": "friday",
+          "section_title": "Mastery",
+          "skill": "NC.6.NS",
+          "slot": 2,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "construct_equivalent",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.create_equivalent",
+          "number": 35,
+          "representation": "numeric_or_symbolic_expression",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "section_title": "Mastery",
+          "skill": "NC.6.G",
+          "slot": 3,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "interpret",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.visual_grouping",
+          "number": 36,
+          "representation": "array_or_grouping",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "section_title": "Mastery",
+          "skill": "NC.6.NS",
+          "slot": 4,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "translate",
+          "confidence": "inferred",
+          "difficulty": "medium_plus",
+          "form_family": "generic.equivalent_form",
+          "number": 37,
+          "representation": "equivalent_expression",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "section_title": "Mastery",
+          "skill": "NC.6.RP",
+          "slot": 5,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "select_strategy",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.choose_operation",
+          "number": 38,
+          "representation": "short_context",
+          "response_type": "selection",
+          "section_id": "friday",
+          "section_title": "Mastery",
+          "skill": "NC.6.NS",
+          "slot": 6,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "match",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.match_rule",
+          "number": 39,
+          "representation": "rule_and_values",
+          "response_type": "selection",
+          "section_id": "friday",
+          "section_title": "Mastery",
+          "skill": "NC.6.G",
+          "slot": 7,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        },
+        {
+          "cache_hit": true,
+          "cognitive_action": "extend_pattern",
+          "confidence": "inferred",
+          "difficulty": "high",
+          "form_family": "generic.sequence_pattern",
+          "number": 40,
+          "representation": "sequence",
+          "response_type": "numeric_answer",
+          "section_id": "friday",
+          "section_title": "Mastery",
+          "skill": "NC.6.G",
+          "slot": 8,
+          "source_kind": "current",
+          "source_scope": "grade_6",
+          "standards": [
+            "NC.6.RP",
+            "NC.6.NS",
+            "NC.6.G"
+          ],
+          "variation_seed": 20260903173832
+        }
+      ],
+      "title": "Mastery"
+    }
+  ],
+  "source_chain": "yearly_curriculum -> weekly_curriculum -> worksheet_plan -> question_plan -> worksheet_spec",
+  "variation_seed": 20260903173832,
+  "worksheet_type": "weekly-worksheet"
+}

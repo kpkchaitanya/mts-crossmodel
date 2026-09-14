@@ -1,0 +1,693 @@
+{
+  "curriculum": {
+    "week_number": 2,
+    "week_start": "2026-08-24"
+  },
+  "sections": [
+    {
+      "id": "monday",
+      "questions": [
+        {
+          "answer": 30,
+          "difficulty": "medium",
+          "number": 1,
+          "prompt": "Evaluate using the order of operations: (6+4)*3",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(6+4)*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 16,
+          "difficulty": "medium",
+          "number": 2,
+          "prompt": "Evaluate using the order of operations: (15-7)*2",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(15-7)*2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.0,
+          "difficulty": "medium",
+          "number": 3,
+          "prompt": "Evaluate using the order of operations: (9+3)/4",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(9+3)/4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6.0,
+          "difficulty": "medium",
+          "number": 4,
+          "prompt": "Evaluate using the order of operations: (20-8)/2",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(20-8)/2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 72,
+          "difficulty": "medium",
+          "number": 5,
+          "prompt": "Evaluate using the order of operations: (5+7)*6",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(5+7)*6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 3.0,
+          "difficulty": "medium",
+          "number": 6,
+          "prompt": "Evaluate using the order of operations: (18-6)/4",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(18-6)/4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 26,
+          "difficulty": "medium",
+          "number": 7,
+          "prompt": "Evaluate using the order of operations: (4+9)*2",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(4+9)*2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6.0,
+          "difficulty": "medium",
+          "number": 8,
+          "prompt": "Evaluate using the order of operations: (30-12)/3",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(30-12)/3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 75,
+          "difficulty": "medium",
+          "number": 9,
+          "prompt": "Evaluate using the order of operations: (7+8)*5",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(7+8)*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5.0,
+          "difficulty": "medium",
+          "number": 10,
+          "prompt": "Evaluate using the order of operations: (24-9)/3",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(24-9)/3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tuesday",
+      "questions": [
+        {
+          "answer": 744,
+          "difficulty": "medium",
+          "number": 11,
+          "prompt": "Evaluate using the order of operations: 124*6",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "124*6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 860,
+          "difficulty": "medium",
+          "number": 12,
+          "prompt": "Evaluate using the order of operations: 215*4",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "215*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 924,
+          "difficulty": "medium",
+          "number": 13,
+          "prompt": "Evaluate using the order of operations: 308*3",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "308*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1022,
+          "difficulty": "medium",
+          "number": 14,
+          "prompt": "Evaluate using the order of operations: 146*7",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "146*7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1315,
+          "difficulty": "medium",
+          "number": 15,
+          "prompt": "Evaluate using the order of operations: 263*5",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "263*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1236,
+          "difficulty": "medium",
+          "number": 16,
+          "prompt": "Evaluate using the order of operations: 412*3",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "412*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1074,
+          "difficulty": "medium",
+          "number": 17,
+          "prompt": "Evaluate using the order of operations: 179*6",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "179*6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1638,
+          "difficulty": "medium",
+          "number": 18,
+          "prompt": "Evaluate using the order of operations: 234*7",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "234*7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1424,
+          "difficulty": "medium",
+          "number": 19,
+          "prompt": "Evaluate using the order of operations: 356*4",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "356*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1563,
+          "difficulty": "medium",
+          "number": 20,
+          "prompt": "Evaluate using the order of operations: 521*3",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "521*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wednesday",
+      "questions": [
+        {
+          "answer": 32,
+          "difficulty": "medium",
+          "number": 21,
+          "prompt": "Evaluate using the order of operations: (3+5)*(2+2)",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(3+5)*(2+2)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 24,
+          "difficulty": "medium",
+          "number": 22,
+          "prompt": "Evaluate using the order of operations: (10-4)*(3+1)",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(10-4)*(3+1)"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 26,
+          "difficulty": "medium",
+          "number": 23,
+          "prompt": "Evaluate using the order of operations: (6*3)+8",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(6*3)+8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 29,
+          "difficulty": "medium",
+          "number": 24,
+          "prompt": "Evaluate using the order of operations: (9*4)-7",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(9*4)-7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6.0,
+          "difficulty": "medium",
+          "number": 25,
+          "prompt": "Evaluate using the order of operations: (12+6)/3",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(12+6)/3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5.0,
+          "difficulty": "medium",
+          "number": 26,
+          "prompt": "Evaluate using the order of operations: (45-15)/6",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(45-15)/6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 55,
+          "difficulty": "medium",
+          "number": 27,
+          "prompt": "Evaluate using the order of operations: (8*8)-9",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(8*8)-9"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 55,
+          "difficulty": "medium",
+          "number": 28,
+          "prompt": "Evaluate using the order of operations: (7*7)+6",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(7*7)+6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 6.0,
+          "difficulty": "medium",
+          "number": 29,
+          "prompt": "Evaluate using the order of operations: (14+16)/5",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(14+16)/5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5.0,
+          "difficulty": "medium",
+          "number": 30,
+          "prompt": "Evaluate using the order of operations: (50-20)/6",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(50-20)/6"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "thursday",
+      "questions": [
+        {
+          "answer": 1740,
+          "difficulty": "medium",
+          "number": 31,
+          "prompt": "Evaluate using the order of operations: 348*5",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "348*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1302,
+          "difficulty": "medium",
+          "number": 32,
+          "prompt": "Evaluate using the order of operations: 217*6",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "217*6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1716,
+          "difficulty": "medium",
+          "number": 33,
+          "prompt": "Evaluate using the order of operations: 429*4",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "429*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1068,
+          "difficulty": "medium",
+          "number": 34,
+          "prompt": "Evaluate using the order of operations: 356*3",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "356*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1288,
+          "difficulty": "medium",
+          "number": 35,
+          "prompt": "Evaluate using the order of operations: 184*7",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "184*7"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1770,
+          "difficulty": "medium",
+          "number": 36,
+          "prompt": "Evaluate using the order of operations: 295*6",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "295*6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1386,
+          "difficulty": "medium",
+          "number": 37,
+          "prompt": "Evaluate using the order of operations: 462*3",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "462*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1855,
+          "difficulty": "medium",
+          "number": 38,
+          "prompt": "Evaluate using the order of operations: 371*5",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "371*5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1224,
+          "difficulty": "medium",
+          "number": 39,
+          "prompt": "Evaluate using the order of operations: 153*8",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "153*8"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 984,
+          "difficulty": "medium",
+          "number": 40,
+          "prompt": "Evaluate using the order of operations: 246*4",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "246*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    },
+    {
+      "id": "friday",
+      "questions": [
+        {
+          "answer": 40,
+          "difficulty": "medium",
+          "number": 41,
+          "prompt": "Evaluate using the order of operations: (9+11)*2",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(9+11)*2"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 30,
+          "difficulty": "medium",
+          "number": 42,
+          "prompt": "Evaluate using the order of operations: (16-6)*3",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(16-6)*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 10.0,
+          "difficulty": "medium",
+          "number": 43,
+          "prompt": "Evaluate using the order of operations: (21+9)/3",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(21+9)/3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5.0,
+          "difficulty": "medium",
+          "number": 44,
+          "prompt": "Evaluate using the order of operations: (36-16)/4",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(36-16)/4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 80,
+          "difficulty": "medium",
+          "number": 45,
+          "prompt": "Evaluate using the order of operations: (13+7)*4",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(13+7)*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 4.0,
+          "difficulty": "medium",
+          "number": 46,
+          "prompt": "Evaluate using the order of operations: (28-8)/5",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(28-8)/5"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 60,
+          "difficulty": "medium",
+          "number": 47,
+          "prompt": "Evaluate using the order of operations: (19+1)*3",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(19+1)*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 5.0,
+          "difficulty": "medium",
+          "number": 48,
+          "prompt": "Evaluate using the order of operations: (40-10)/6",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "(40-10)/6"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 2048,
+          "difficulty": "medium",
+          "number": 49,
+          "prompt": "Evaluate using the order of operations: 512*4",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "512*4"
+            },
+            "method": "arithmetic_expression"
+          }
+        },
+        {
+          "answer": 1911,
+          "difficulty": "medium",
+          "number": 50,
+          "prompt": "Evaluate using the order of operations: 637*3",
+          "skill": "numerical_expressions_and_multiplication",
+          "verification": {
+            "inputs": {
+              "expression": "637*3"
+            },
+            "method": "arithmetic_expression"
+          }
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "status": "PENDING"
+  },
+  "worksheet": {
+    "duration_minutes": null,
+    "grade": "grade_5",
+    "question_count": 50,
+    "title": "MTS - WEEKLY WORKSHEET",
+    "week_start": "2026-08-24"
+  }
+}

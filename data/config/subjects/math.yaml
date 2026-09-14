@@ -1,0 +1,36 @@
+version: "1.0"
+subject: "math"
+mode:
+  default: "human_supervised"
+curriculum:
+  confidence_labels: ["confirmed", "strongly_inferred", "inferred"]
+  progressive_backbone: "subjects/math/knowledge/curriculum/progressive/progressive-math-backbone.json"
+verification:
+  recompute_every_answer: true
+  check_sufficient_information: true
+  check_unintended_answers: true
+  check_pattern_uniqueness: true
+  check_notation_and_diagrams: true
+publishing:
+  target: "outputs/math"
+  # Class counts for the local printing utility. A grade absent here is not printed by `grades=all`
+  # and is refused when named explicitly, so a new grade can never print an unreviewed count.
+  printing:
+    copies_by_grade:
+      grade_1: {student_worksheet: 5, answer_key: 1}
+      grade_4: {student_worksheet: 6, answer_key: 1}
+      grade_5: {student_worksheet: 4, answer_key: 1}
+      grade_6: {student_worksheet: 3, answer_key: 1}
+# Single definition of rendered document names. Rendering writes these names and folder-anchored
+# delivery reads them back, so the two must never drift apart.
+naming:
+  weekly:
+    document_name_pattern: "{{PREFIX}}-{{WEEK_OF}}"
+    answer_key_suffix: "_KEY"
+    prefix_by_grade:
+      grade_1: "MTS-Math-1stGrade-WeeklyWorksheet"
+      grade_4: "MTS-Math-4thGrade-WeeklyWorksheet"
+      grade_5: "MTS-Math-5thGrade-WeeklyWorksheet"
+      grade_6: "MTS-Math-6thGrade-WeeklyWorksheet"
+      grade_9_10: "MTS-Math-9th_10thGrade-WeeklyWorksheet"
+

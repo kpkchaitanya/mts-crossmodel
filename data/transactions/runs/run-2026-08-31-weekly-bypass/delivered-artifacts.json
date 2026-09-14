@@ -1,0 +1,44 @@
+{
+  "status": "delivered",
+  "audience": "parents",
+  "week_of": "2026-08-31",
+  "week_folder_name": "Week_2026-08-31",
+  "mode": "copy",
+  "source_artifacts": "data/transactions/runs/run-2026-08-31-weekly-bypass/published-artifacts.json",
+  "grades": {
+    "grade_6": {
+      "parent_folder_id": "10tSM2SwAxzGkzuYT47vNCo16K9TtPZre",
+      "week_folder": {
+        "webViewLink": "https://drive.google.com/drive/folders/19zCP43UQ4cdvdbrqrYqR744eEX8zTdPk",
+        "id": "19zCP43UQ4cdvdbrqrYqR744eEX8zTdPk",
+        "name": "Week_2026-08-31",
+        "created": false
+      },
+      "status": "delivered",
+      "mode": "copy",
+      "destination_id": "19zCP43UQ4cdvdbrqrYqR744eEX8zTdPk",
+      "student_worksheet": {
+        "source_document_id": "1V3ABreCGhB1E6Y7Op1Piv8KoQ2q1hjEmpyKTNLX9o5I",
+        "document": {
+          "id": "1wxJvHeDPswjdyg6YPjnYIDyq9VTXaJnq5qE1qntIvcI",
+          "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31",
+          "parents": [
+            "19zCP43UQ4cdvdbrqrYqR744eEX8zTdPk"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1wxJvHeDPswjdyg6YPjnYIDyq9VTXaJnq5qE1qntIvcI/edit?usp=drivesdk"
+        }
+      },
+      "answer_key": {
+        "source_document_id": "1rd08cHKNhs9Jlf6nka_QztBX17ZHETDiib9EI0eM0do",
+        "document": {
+          "id": "1eCJ7r3_A2_20Rjkn31WlAj4rotXt8edZyUVjyBzVIhA",
+          "name": "MTS-Math-6thGrade-WeeklyWorksheet-2026-08-31_KEY",
+          "parents": [
+            "19zCP43UQ4cdvdbrqrYqR744eEX8zTdPk"
+          ],
+          "webViewLink": "https://docs.google.com/document/d/1eCJ7r3_A2_20Rjkn31WlAj4rotXt8edZyUVjyBzVIhA/edit?usp=drivesdk"
+        }
+      }
+    }
+  }
+}
