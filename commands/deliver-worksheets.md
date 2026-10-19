@@ -17,7 +17,7 @@ Concrete CLI entry point:
 .\.venv\Scripts\python.exe scripts/deliver_folder.py --week 2026-08-31 --dry-run
 .\.venv\Scripts\python.exe scripts/deliver_folder.py --week 2026-08-31 --grades grade_6 --apply
 .\.venv\Scripts\python.exe scripts/deliver_folder.py --subject ela --week 2026-09-07 --dry-run
-.\.venv\Scripts\python.exe scripts/deliver_folder.py --run-root data/transactions/runs/<run-id> --week current --apply
+.\.venv\Scripts\python.exe scripts/deliver_folder.py --subject math --run-root data/transactions/runs/<run-id> --week current --apply
 ```
 
 ## Parameters
@@ -29,7 +29,7 @@ Concrete CLI entry point:
 | `run` (run root) | a run directory | none | When given, pairs come from that run's `published-artifacts.json`. See Pairing below. |
 | `source_folder` | a Drive folder ID | `publishing.staging.approved_folder_id` | Staging folder to pair from when no run root is given. |
 | `mode` | `copy`, `move` | `publishing.final_delivery.mode` (`copy`) | `copy` keeps staging as the audit trail. |
-| `subject` | a configured subject id (e.g. `math`, `ela`) | the subject the command is running under | Selects that subject's naming; delivery destinations are shared across subjects. |
+| `subject` | a configured subject id, or comma-separated subject ids (e.g. `math`, `ela`, `math,ela`) | `math,ela` | Selects each subject's naming; delivery destinations are shared across subjects. A run root requires an explicit single subject. |
 | `on_missing` | `skip`, `fail` | `skip` | `skip` delivers every grade that has a staged pair and records the rest; `fail` blocks the run when any requested grade is missing. |
 | `dry_run` | `yes`, `no` | `yes` | `yes` resolves and pairs without copying anything. |
 
@@ -78,6 +78,11 @@ requested grade is present.
    reported issue.
 4. Do not proceed to `--apply` without a new, explicit instruction.
 5. Report the resulting Delivery Record.
+
+When multiple subjects are supplied, each subject is paired against its own naming configuration and
+delivered independently into the same grade/week destinations. A source pair from one subject is
+never matched by another subject's naming configuration. `--run-root` cannot be combined with
+multiple subjects because a run root records one subject's exact artifact pairs.
 
 Delivery is idempotent: `reuse_existing_week_folder` means a re-delivery resolves the existing week
 folder rather than creating a second one, so a correction lands in place.

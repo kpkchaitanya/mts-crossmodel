@@ -12,7 +12,7 @@ import sys
 
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 REPO = Path(__file__).resolve().parents[1]
-DEFAULT_SUBJECT = "math"
+DEFAULT_SUBJECT = "math,ela"
 OAUTH_TOKEN = Path(r"c:\Users\neeli\kpkDevelopment\mts-new\.secrets\oauth-token.json")
 
 sys.path.insert(0, str(REPO / "src"))
@@ -64,36 +64,49 @@ def main() -> None:
     parser.add_argument("--source-folder", default=None, help="Staging folder ID; defaults to the approved staging folder.")
     parser.add_argument("--mode", choices=["copy", "move"], default=None)
     parser.add_argument("--on-missing", choices=["skip", "fail"], default=None, help="Default skip: deliver what is staged.")
-    # Absent by default so it stays an optional guard; config loading falls back to DEFAULT_SUBJECT.
-    parser.add_argument("--subject", default=None, help="Subject whose configuration and naming to use.")
+    # Absent by default so both configured subjects are delivered.
+    parser.add_argument("--subject", default=None, help="Subject(s) whose configuration and naming to use.")
     parser.add_argument("--report", type=Path, default=None, help="Optional path to write the Delivery Record.")
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--dry-run", dest="dry_run", action="store_true", default=True)
     group.add_argument("--apply", dest="dry_run", action="store_false", help="Perform the delivery. Run --dry-run first.")
     args = parser.parse_args()
 
-    effective_config = resolve_distribution_config(args.subject or DEFAULT_SUBJECT, repository_root=REPO)
+    drive, docs = build_clients()
+    adapter = google_docs_adapter.GoogleDocsAdapter(drive, docs)
+    subjects = [subject.strip() for subject in (args.subject or DEFAULT_SUBJECT).split(",") if subject.strip()]
+    if not subjects:
+        raise SystemExit("At least one subject is required.")
+    if args.run_root and len(subjects) > 1:
+        raise SystemExit("--run-root cannot be combined with multiple subjects.")
+
     run_root = None
     if args.run_root:
         run_root = args.run_root if args.run_root.is_absolute() else REPO / args.run_root
-    request = {
-        "week": args.week,
-        "grades": args.grades,
-        "mode": args.mode,
-        "on_missing": args.on_missing,
-        "source_folder_id": args.source_folder,
-        "subject": args.subject,
-    }
+    records = []
+    for subject in subjects:
+        effective_config = resolve_distribution_config(subject, repository_root=REPO)
+        request = {
+            "week": args.week,
+            "grades": args.grades,
+            "mode": args.mode,
+            "on_missing": args.on_missing,
+            "source_folder_id": args.source_folder,
+            "subject": subject,
+        }
+        record = deliver.run_deliver(
+            request, effective_config, adapter, dry_run=args.dry_run, run_root=run_root
+        )
+        records.append(record)
+        if len(subjects) > 1:
+            print(f"subject={subject}")
+        report(record)
 
-    drive, docs = build_clients()
-    adapter = google_docs_adapter.GoogleDocsAdapter(drive, docs)
-    record = deliver.run_deliver(request, effective_config, adapter, dry_run=args.dry_run, run_root=run_root)
-
-    report(record)
     if args.report:
-        args.report.write_text(json.dumps(record, indent=2), encoding="utf-8")
+        payload = records[0] if len(records) == 1 else records
+        args.report.write_text(json.dumps(payload, indent=2), encoding="utf-8")
         print(f"record={args.report}")
-    if record["status"] == "failed":
+    if any(record["status"] == "failed" for record in records):
         raise SystemExit(1)
 
 

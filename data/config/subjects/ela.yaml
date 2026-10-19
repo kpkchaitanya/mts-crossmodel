@@ -22,8 +22,12 @@ publishing:
     copies_by_grade:
       grade_1: {student_worksheet: 5, answer_key: 1}
       grade_4: {student_worksheet: 6, answer_key: 1}
-      grade_5: {student_worksheet: 4, answer_key: 1}
-      grade_6: {student_worksheet: 3, answer_key: 1}
+      # grade_5: {student_worksheet: 4, answer_key: 1}
+      # grade_6: {student_worksheet: 2, answer_key: 0}
+      grade_5: {student_worksheet: 0, answer_key: 0}
+      grade_6: {student_worksheet: 6, answer_key: 1}
+
+      grade_9_10: {student_worksheet: 7, answer_key: 1}
 # Names of the staged ELA artifacts, read back by distribution utilities. The key suffix precedes
 # the file extension.
 naming:

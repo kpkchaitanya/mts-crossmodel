@@ -26,7 +26,12 @@ CONFIG = {
         "printing": {
             "enabled": True,
             "printer_name": "Brother HL-L2380DW series Printer",
+            "available_printer_names": [
+                "Brother HL-L2380DW series Printer",
+                "HPI7119FE (HP Color LaserJet Pro MFP 3301)",
+            ],
             "duplex": "duplex_long",
+            "color_mode": "black_and_white",
             "default_source": "staging",
             "require_confirmation": True,
             "copies_by_grade": {
@@ -76,6 +81,37 @@ def staging_adapter(**kwargs):
     return PrintAdapter(files={"staging-approved": staged_files()}, folders={"staging-approved": []}, **kwargs)
 
 
+def batch_configs_and_adapter():
+    math_config = {**CONFIG, "subject": "math"}
+    ela_config = {
+        **CONFIG,
+        "subject": "ela",
+        "naming": {
+            "weekly": {
+                "document_name_pattern": "{{PREFIX}}-{{WEEK_OF}}",
+                "answer_key_suffix": "-KEY",
+                "file_extension": ".pdf",
+                "prefix_by_grade": {
+                    "grade_1": "MTS-ELA-1",
+                    "grade_6": "MTS-ELA-6",
+                },
+            }
+        },
+    }
+    ela_files = [
+        file_entry("e1w", f"MTS-ELA-1-{WEEK}.pdf"),
+        file_entry("e1k", f"MTS-ELA-1-{WEEK}-KEY.pdf"),
+        file_entry("e6w", f"MTS-ELA-6-{WEEK}.pdf"),
+        file_entry("e6k", f"MTS-ELA-6-{WEEK}-KEY.pdf"),
+    ]
+    adapter = PrintAdapter(
+        files={"staging-approved": staged_files() + ela_files},
+        folders={"staging-approved": []},
+    )
+    requests = [{"week": WEEK, "subject": subject} for subject in ("math", "ela")]
+    return requests, [math_config, ela_config], adapter
+
+
 def test_dry_run_plans_configured_class_counts_and_prints_nothing():
     adapter = staging_adapter()
     printer = FakePrinter()
@@ -85,6 +121,30 @@ def test_dry_run_plans_configured_class_counts_and_prints_nothing():
     assert record["planned_copies"] == 5 + 1 + 3 + 1
     assert printer.jobs == []
     assert adapter.exported == []
+    assert record["color_mode"] == "black_and_white"
+
+
+def test_configured_hp_printer_name_is_selected_in_the_print_record():
+    record = print_jobs.run_print(
+        {"week": WEEK, "printer_name": "HPI7119FE (HP Color LaserJet Pro MFP 3301)"},
+        CONFIG,
+        staging_adapter(),
+        FakePrinter(),
+        dry_run=True,
+    )
+
+    assert record["printer_name"] == "HPI7119FE (HP Color LaserJet Pro MFP 3301)"
+
+
+def test_unconfigured_printer_name_fails_closed():
+    with pytest.raises(print_jobs.PrintError, match="is not configured"):
+        print_jobs.run_print(
+            {"week": WEEK, "printer_name": "Unknown Printer"},
+            CONFIG,
+            staging_adapter(),
+            FakePrinter(),
+            dry_run=True,
+        )
 
 
 def test_apply_spools_each_document_once_with_its_copy_count():
@@ -227,7 +287,71 @@ def test_a_subject_staged_as_pdfs_pairs_on_names_that_carry_an_extension():
     assert printer.jobs == [(f"MTS-ELA-RC-1-{WEEK}.pdf", 5), (f"MTS-ELA-RC-1-{WEEK}-KEY.pdf", 1)]
 
 
+def test_batch_dry_run_plans_each_subject_and_sums_the_confirmation_total():
+    requests, configs, adapter = batch_configs_and_adapter()
+
+    records = print_jobs.run_print_batch(requests, configs, adapter, dry_run=True)
+
+    assert [record["request"]["subject"] for record in records] == ["math", "ela"]
+    assert [record["planned_copies"] for record in records] == [10, 10]
+    assert sum(record["planned_copies"] for record in records) == 20
+    assert adapter.exported == []
+
+
+def test_batch_confirmation_is_checked_before_any_subject_spools():
+    requests, configs, adapter = batch_configs_and_adapter()
+    created_printers = []
+
+    def make_printer(config, record):
+        printer = FakePrinter()
+        created_printers.append(printer)
+        return printer
+
+    with pytest.raises(print_jobs.PrintError, match="does not match"):
+        print_jobs.run_print_batch(
+            requests,
+            configs,
+            adapter,
+            make_printer,
+            dry_run=False,
+            confirm=19,
+        )
+
+    assert created_printers == []
+    assert adapter.exported == []
+
+
+def test_batch_apply_prints_subjects_in_order_after_aggregate_confirmation():
+    requests, configs, adapter = batch_configs_and_adapter()
+    created = []
+
+    def make_printer(config, record):
+        printer = FakePrinter()
+        created.append((config["subject"], printer))
+        return printer
+
+    records = print_jobs.run_print_batch(
+        requests,
+        configs,
+        adapter,
+        make_printer,
+        dry_run=False,
+        confirm=20,
+    )
+
+    assert [subject for subject, _ in created] == ["math", "ela"]
+    assert [record["status"] for record in records] == ["printed", "printed"]
+    assert [name for name, _ in created[0][1].jobs] == [
+        f"MTS-1st-{WEEK}", f"MTS-1st-{WEEK}_KEY", f"MTS-6th-{WEEK}", f"MTS-6th-{WEEK}_KEY",
+    ]
+    assert [name for name, _ in created[1][1].jobs] == [
+        f"MTS-ELA-1-{WEEK}.pdf", f"MTS-ELA-1-{WEEK}-KEY.pdf",
+        f"MTS-ELA-6-{WEEK}.pdf", f"MTS-ELA-6-{WEEK}-KEY.pdf",
+    ]
+
+
 def test_cli_holds_no_policy():
     source = (REPO / "scripts" / "print_worksheets.py").read_text(encoding="utf-8")
     assert "copies_by_grade" not in source
-    assert "run_print(" in source
+    assert 'DEFAULT_SUBJECT = "math,ela"' in source
+    assert "run_print_batch(" in source

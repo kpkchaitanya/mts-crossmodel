@@ -20,9 +20,10 @@ resolution, pairing, and the mandatory dry-run-then-confirm sequence. Also read:
 ## Parameters
 
 Parse `week`, `grades`, `subject`, `run`, `source_folder`, `mode`, `on_missing`, and `dry_run` exactly
-as documented in `commands/deliver-worksheets.md`. Default `week` to `current`, `grades` to `all`,
-`subject` to the subject this invocation is already running under, `mode` to the configured
-`final_delivery.mode`, `on_missing` to `skip`, and `dry_run` to `yes`.
+as documented in `commands/deliver-worksheets.md`. `subject` may be one configured subject id or a
+comma-separated list such as `math,ela`; each subject is matched against its own naming
+configuration. Default `week` to `current`, `grades` to `all`, `subject` to `math,ela`, `mode` to
+the configured `final_delivery.mode`, `on_missing` to `skip`, and `dry_run` to `yes`.
 
 ## Required sequence
 

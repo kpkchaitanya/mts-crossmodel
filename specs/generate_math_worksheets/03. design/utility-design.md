@@ -776,8 +776,8 @@ The one decision this utility owns is how many copies of each document to print.
 2. Backends are external PDF viewers driven by a fixed argument list, never a shell string. SumatraPDF
    prints silently with exact copy and duplex control; Acrobat is the no-install fallback and prints
    one copy per invocation at the printer's default duplex.
-3. Applying requires `--confirm <total copies>` matching the plan **at apply time**, the same guard as
-   cleanup (§3.5). A dry run is not authorization: paper cannot be un-printed.
+3. Applying requires `--confirm <total copies>` matching the combined subject plan **at apply time**,
+   the same guard as cleanup (§3.5). A dry run is not authorization: paper cannot be un-printed.
 4. A failure mid-target records what already printed and what did not, so a re-run can be scoped by
    hand rather than reprinting the whole set.
 
@@ -789,11 +789,11 @@ The subject file contributes `publishing.printing.copies_by_grade` only.
 
 ### 6.6 Subject Neutrality
 
-Printing resolves configuration through `resolve_distribution_config` — `base.yaml` merged with the
-subject file, with **no** worksheet-type compatibility check and **no** template-registry lookup. Both
-of those gate *authoring*: a subject whose templates and verification rules await approval must stay
-unable to generate worksheets, but that is no reason it cannot print artifacts it already has. Any
-utility that renders must keep using `resolve_effective_config`.
+Printing resolves configuration through `resolve_distribution_config` for each selected subject —
+`base.yaml` merged with that subject file, with **no** worksheet-type compatibility check and **no**
+template-registry lookup. Both of those gate *authoring*: a subject whose templates and verification
+rules await approval must stay unable to generate worksheets, but that is no reason it cannot print
+artifacts it already has. Any utility that renders must keep using `resolve_effective_config`.
 
 Two staging shapes follow from this, and the adapter handles both in `export_pdf`: a Google Doc is
 exported to PDF, a file already stored as `application/pdf` is downloaded unchanged, and any other
@@ -811,15 +811,15 @@ works. Math omits the field and its names are unaffected.
 | `include` | `both`, `worksheet`, `key` | `both` |
 | `copies` | per-grade overrides | configured counts |
 | `printer` | a Windows printer name | `publishing.printing.printer_name` |
-| `subject` | a configured subject id | the subject in use |
+| `subject` | one or more comma-separated configured subject ids | `math,ela` |
 | `dry_run` | `yes`, `no` | `yes` |
 
 CLI entry point:
 
 ```powershell
 python scripts/print_worksheets.py --week current --dry-run
-python scripts/print_worksheets.py --week current --apply --confirm 20
-python scripts/print_worksheets.py --subject ela --week 2026-09-07 --dry-run
+python scripts/print_worksheets.py --subject math,ela --week current --dry-run
+python scripts/print_worksheets.py --subject ela --week current --dry-run
 ```
 
 ## 7. Test Design

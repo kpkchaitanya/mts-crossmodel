@@ -15,6 +15,7 @@ import tempfile
 SAFE_NAME = re.compile(r"[^A-Za-z0-9._-]+")
 # SumatraPDF -print-settings tokens; simplex is the safe default for a printer without a duplex unit.
 DUPLEX_SETTINGS = {"simplex": "simplex", "duplex_long": "duplexlong", "duplex_short": "duplexshort"}
+COLOR_SETTINGS = {"black_and_white": "monochrome", "color": "color"}
 
 
 class PdfPrinterError(RuntimeError):
@@ -24,14 +25,17 @@ class PdfPrinterError(RuntimeError):
 class _BasePdfPrinter:
     backend = "base"
 
-    def __init__(self, executable: str | Path, *, printer_name: str, duplex: str = "simplex", spool_dir: str | Path | None = None) -> None:
+    def __init__(self, executable: str | Path, *, printer_name: str, duplex: str = "simplex", color_mode: str = "black_and_white", spool_dir: str | Path | None = None) -> None:
         if not printer_name:
             raise PdfPrinterError("printer_name is required.")
         if duplex not in DUPLEX_SETTINGS:
             raise PdfPrinterError(f"duplex must be one of {', '.join(DUPLEX_SETTINGS)}.")
+        if color_mode not in COLOR_SETTINGS:
+            raise PdfPrinterError(f"color_mode must be one of {', '.join(COLOR_SETTINGS)}.")
         self.executable = Path(executable)
         self.printer_name = printer_name
         self.duplex = duplex
+        self.color_mode = color_mode
         self.spool_dir = Path(spool_dir) if spool_dir else Path(tempfile.gettempdir()) / "mts-print"
 
     def _spool_file(self, content: bytes, name: str) -> Path:
@@ -63,12 +67,12 @@ class SumatraPdfPrinter(_BasePdfPrinter):
         command = [
             str(self.executable),
             "-print-to", self.printer_name,
-            "-print-settings", f"{copies}x,{DUPLEX_SETTINGS[self.duplex]}",
+            "-print-settings", f"{copies}x,{DUPLEX_SETTINGS[self.duplex]},{COLOR_SETTINGS[self.color_mode]}",
             "-silent", "-exit-when-done",
             str(path),
         ]
         self._run(command, path)
-        return {"backend": self.backend, "printer": self.printer_name, "copies": copies, "duplex": self.duplex, "file": str(path)}
+        return {"backend": self.backend, "printer": self.printer_name, "copies": copies, "duplex": self.duplex, "color_mode": self.color_mode, "file": str(path)}
 
 
 class AcrobatPdfPrinter(_BasePdfPrinter):
@@ -94,6 +98,7 @@ def build_printer(
     repository_root: str | Path,
     backend: str | None = None,
     printer_name: str | None = None,
+    color_mode: str | None = None,
 ) -> _BasePdfPrinter:
     """Construct the configured backend; an unknown or unconfigured backend fails closed."""
     name = backend or settings.get("backend")
@@ -113,8 +118,9 @@ def build_printer(
         path,
         printer_name=printer_name or settings.get("printer_name", ""),
         duplex=settings.get("duplex", "simplex"),
+        color_mode=color_mode or settings.get("color_mode", "black_and_white"),
         spool_dir=spool_dir,
     )
 
 
-__all__ = ["AcrobatPdfPrinter", "PdfPrinterError", "SumatraPdfPrinter", "build_printer", "DUPLEX_SETTINGS"]
+__all__ = ["AcrobatPdfPrinter", "PdfPrinterError", "SumatraPdfPrinter", "build_printer", "DUPLEX_SETTINGS", "COLOR_SETTINGS"]

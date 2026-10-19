@@ -350,6 +350,7 @@ def test_a_matching_subject_filter_is_a_no_op_check():
 def test_the_cli_script_holds_no_decision_logic():
     source = (REPO / "scripts" / "deliver_folder.py").read_text(encoding="utf-8")
     assert source.count("run_deliver(") == 1
+    assert 'DEFAULT_SUBJECT = "math,ela"' in source
     for leaked in ("prefix_by_grade", "destinations_by_grade", "week_folder_pattern", "deliver_pair", "_KEY"):
         assert leaked not in source
 

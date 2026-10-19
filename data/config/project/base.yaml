@@ -127,6 +127,10 @@ publishing:
   printing:
     enabled: true
     printer_name: "Brother HL-L2380DW series Printer"
+    available_printer_names:
+      - "Brother HL-L2380DW series Printer"
+      - "HPI7119FE (HP Color LaserJet Pro MFP 3301)"
+    color_mode: "black_and_white"
     # sumatra prints silently with exact copy and duplex control; acrobat is the no-install fallback
     # (one invocation per copy, printer default duplex).
     backend: "sumatra"

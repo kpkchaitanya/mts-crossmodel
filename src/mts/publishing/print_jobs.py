@@ -8,7 +8,7 @@ See `specs/generate_math_worksheets/03. design/utility-design.md` section 6.
 """
 from __future__ import annotations
 
-from collections.abc import Mapping, Sequence
+from collections.abc import Callable, Mapping, Sequence
 from typing import Any
 
 from mts.publishing import deliver
@@ -44,6 +44,25 @@ def resolve_source(requested: Any, settings: Mapping[str, Any]) -> str:
     if source not in ("staging", "publish"):
         raise PrintError("source must be 'staging' or 'publish'.")
     return source
+
+
+def resolve_printer_name(requested: Any, settings: Mapping[str, Any]) -> str:
+    printer_name = requested or settings.get("printer_name")
+    if not printer_name:
+        raise PrintError("A printer name is required.")
+    available = settings.get("available_printer_names") or [settings.get("printer_name")]
+    if printer_name not in available:
+        raise PrintError(
+            f"Printer '{printer_name}' is not configured. Choose one of: {', '.join(available)}"
+        )
+    return printer_name
+
+
+def resolve_color_mode(settings: Mapping[str, Any]) -> str:
+    color_mode = settings.get("color_mode", "black_and_white")
+    if color_mode not in {"black_and_white", "color"}:
+        raise PrintError("color_mode must be 'black_and_white' or 'color'.")
+    return color_mode
 
 
 def resolve_roles(include: Any) -> tuple[str, ...]:
@@ -181,6 +200,8 @@ def run_print(
     """Resolve, plan, and optionally spool every print job, returning one Print Record."""
     check_subject_matches(request, effective_config)
     settings = printing_settings(effective_config)
+    printer_name = resolve_printer_name(request.get("printer_name"), settings)
+    color_mode = resolve_color_mode(settings)
     source = resolve_source(request.get("source"), settings)
     roles = resolve_roles(request.get("include"))
     overrides = parse_copy_overrides(request.get("copies"))
@@ -259,12 +280,67 @@ def run_print(
         "week_of": week_of,
         "source": source,
         "include": request.get("include") or "both",
-        "printer_name": settings.get("printer_name"),
+        "printer_name": printer_name,
         "duplex": settings.get("duplex", "simplex"),
+        "color_mode": color_mode,
         "planned_copies": total_copies,
         "request": dict(request),
         "targets": target_records,
     }
+
+
+def run_print_batch(
+    requests: Sequence[Mapping[str, Any]],
+    effective_configs: Sequence[Mapping[str, Any]],
+    adapter: Any,
+    printer_factory: Callable[[Mapping[str, Any], Mapping[str, Any]], Any] | None = None,
+    *,
+    dry_run: bool = True,
+    confirm: int | None = None,
+) -> list[dict[str, Any]]:
+    """Plan multiple subjects together and apply them sequentially under one confirmation total."""
+    if not requests or len(requests) != len(effective_configs):
+        raise PrintError("Each print request must have one matching subject configuration.")
+
+    records = [
+        run_print(request, config, adapter, dry_run=True)
+        for request, config in zip(requests, effective_configs)
+    ]
+    if dry_run:
+        return records
+
+    settings = [printing_settings(config) for config in effective_configs]
+    if any(item.get("require_confirmation", True) for item in settings):
+        check_confirmation(
+            sum(record["planned_copies"] for record in records),
+            confirm,
+            {"require_confirmation": True},
+        )
+
+    printers = []
+    for config, record in zip(effective_configs, records):
+        has_jobs = any(target["unprinted"] for target in record["targets"])
+        if has_jobs and printer_factory is None:
+            raise PrintError("A printer factory is required to apply a print batch.")
+        printers.append(printer_factory(config, record) if has_jobs else None)
+
+    for index, (record, printer) in enumerate(zip(records, printers)):
+        record["dry_run"] = False
+        for target in record["targets"]:
+            jobs = target["unprinted"]
+            if jobs:
+                _print_jobs(target, jobs, adapter, printer)
+        record["status"] = overall_status(record["targets"], applied_status="printed")
+        if record["status"] == "failed":
+            for pending in records[index + 1:]:
+                pending["dry_run"] = False
+                pending["status"] = "not_started"
+                for target in pending["targets"]:
+                    if target["unprinted"]:
+                        target["status"] = "not_started"
+            break
+
+    return records
 
 
 def _restrict_targets_to_named_grades(
@@ -329,6 +405,9 @@ __all__ = [
     "printing_settings",
     "resolve_copies",
     "resolve_roles",
+    "resolve_printer_name",
+    "resolve_color_mode",
     "resolve_source",
     "run_print",
+    "run_print_batch",
 ]
